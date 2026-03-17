@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "esg_washing_package"
+version = "0.1.0"
+dependencies = [
+    "pandas",
+    "pymupdf",
+    "nltk",
+    "scikit-learn",
+    "textblob"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["*"]

@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: esg_washing_package
+Version: 0.1.0
+Requires-Dist: pandas
+Requires-Dist: pymupdf
+Requires-Dist: nltk
+Requires-Dist: scikit-learn
+Requires-Dist: textblob

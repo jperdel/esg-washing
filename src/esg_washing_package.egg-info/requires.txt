@@ -1,0 +1,5 @@
+pandas
+pymupdf
+nltk
+scikit-learn
+textblob

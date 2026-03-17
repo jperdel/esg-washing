@@ -1,0 +1,54 @@
+# --- Carpetas de Proyecto Específicas ---
+data/
+logs/
+results/
+notebooks/
+
+# --- Diario personal del proyecto ---
+diario.txt
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# --- Jupyter Notebooks ---
+.ipynb_checkpoints
+
+# --- Entorno y Configuración ---
+.env
+.venv
+env/
+venv/
+ENV/
+
+# --- Sistema (OS) ---
+.DS_Store
+Thumbs.db

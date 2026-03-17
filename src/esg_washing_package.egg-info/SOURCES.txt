@@ -1,0 +1,6 @@
+pyproject.toml
+src/esg_washing_package.egg-info/PKG-INFO
+src/esg_washing_package.egg-info/SOURCES.txt
+src/esg_washing_package.egg-info/dependency_links.txt
+src/esg_washing_package.egg-info/requires.txt
+src/esg_washing_package.egg-info/top_level.txt
