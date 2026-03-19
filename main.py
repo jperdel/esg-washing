@@ -1,5 +1,5 @@
 from esg_washing_pipeline import ESGWashingPipeline
-from config import SAMPLE_DATA_DIR, RESULTS_DIR
+from config import RESULTS_DIR, PDF_DATA_DIR
 
 from pathlib import Path
 from datetime import datetime
@@ -23,7 +23,8 @@ def main(data_dir: Path, results_dir: Path):
         pipeline = ESGWashingPipeline()
         
         logger.info(f"Escaneando ficheros en: {data_dir}")
-        informes_list = [f for f in data_dir.iterdir() if f.is_file()]
+        # informes_list = [f for f in data_dir.iterdir() if f.is_file()]
+        informes_list = [f for f in data_dir.rglob("*") if f.is_file()]
         logger.info(f"Se han encontrado {len(informes_list)} ficheros para analizar")
 
         filename = f"results_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv"
@@ -38,4 +39,4 @@ def main(data_dir: Path, results_dir: Path):
 
 if __name__ == "__main__":
 
-    main(SAMPLE_DATA_DIR, RESULTS_DIR)
+    main(PDF_DATA_DIR, RESULTS_DIR)

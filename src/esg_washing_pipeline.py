@@ -176,17 +176,77 @@ class ESGWashingPipeline:
         except Exception as e:
             logger.error(f"No se pudo guardar el archivo CSV: {e}")
 
+    def get_plots(self) -> None:
+        """Gráficas de los resultados"""
+        pass
+
     def run_analysis(self, pdf_paths: List[Path], res_path: Path, file_name: str) -> None:
         """Ejecuta el pipeline completo para una lista de PDFs."""
         
+        import re
+
         logger.info(f"Iniciando análisis de {len(pdf_paths)} documentos.")
         
         # 1. Extracción y Limpieza
         processed_texts = [self.extract_from_pdf(path) for path in pdf_paths]
         
         # Mapeo de textos válidos para no perder la referencia del nombre del archivo
-        valid_data = [(path.name, txt) for path, txt in zip(pdf_paths, processed_texts) if txt]
+        valid_data = [(path.name, path.parent.name, path.parent.parent.name, txt) for path, txt in zip(pdf_paths, processed_texts) if txt]
         
         if not valid_data:
             logger.warning("No se obtuvo texto válido de ningún documento. Abortando análisis.")
             return
+
+        pattern = pattern = r"20\d{2}"
+
+        names = [item[0] for item in valid_data]
+        year = [re.search(pattern, item[0]).group() for item in valid_data]
+        country = [item[1] for item in valid_data]
+        company = [item[2] for item in valid_data]
+        valid_texts = [item[3] for item in valid_data]
+
+        # 2. Cálculo de Sostenibilidad (SUS) mediante TF-IDF
+        logger.info("Calculando puntuaciones de sostenibilidad (TF-IDF)...")
+        vectorizer = TfidfVectorizer(vocabulary=self.keywords, binary=False)
+        tfidf_matrix = vectorizer.fit_transform(valid_texts)
+        sus_scores = tfidf_matrix.toarray().sum(axis=1)
+
+        # 3. Cálculo de Sentimiento (SEN)
+        logger.info("Analizando sentimiento de los informes...")
+        sen_scores = [TextBlob(txt).sentiment.polarity for txt in valid_texts]
+
+        # 4. Normalización Z-score y Cálculo de ESGSI
+        def z_score(data):
+            arr = np.array(data)
+            std = np.std(arr)
+            if std == 0:
+                logger.debug("Desviación estándar es 0 en la normalización. Devolviendo ceros.")
+                return np.zeros_like(arr)
+            return (arr - np.mean(arr)) / std
+
+        logger.info("Normalizando puntuaciones y calculando índice ESGSI...")
+        norm_sen = z_score(sen_scores)
+        norm_sus = z_score(sus_scores)
+        esgsi_scores = norm_sen - norm_sus
+
+        # 5. Construcción de resultados
+        results = []
+        for i, score in enumerate(esgsi_scores):
+            results.append({
+                "Documento": names[i],
+                "País": country[i],
+                "Compañía": company[i],
+                "Año": year[i],
+                "SUS_Score": round(sus_scores[i], 4),
+                "SEN_Score": round(sen_scores[i], 4),
+                "ESGSI": round(score, 4),
+                "Etiqueta": "Potential ESG-washing" if score > 0 else "Likely Genuine"
+            })
+
+        df_res = pd.DataFrame(results)
+        
+        # Log de resumen del hallazgo
+        washing_count = len(df_res[df_res["ESGSI"] > 0])
+        logger.info(f"Análisis completado. Casos de riesgo detectados: {washing_count}/{len(df_res)}")
+
+        self.save_results(df_res, res_path, file_name)
