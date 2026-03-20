@@ -3,3 +3,6 @@ pymupdf
 nltk
 scikit-learn
 textblob
+loguru
+matplotlib
+seaborn

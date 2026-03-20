@@ -10,7 +10,10 @@ dependencies = [
     "pymupdf",
     "nltk",
     "scikit-learn",
-    "textblob"
+    "textblob",
+    "loguru",
+    "matplotlib",
+    "seaborn"
 ]
 
 [tool.setuptools.packages.find]

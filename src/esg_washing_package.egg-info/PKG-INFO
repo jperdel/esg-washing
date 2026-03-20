@@ -6,3 +6,6 @@ Requires-Dist: pymupdf
 Requires-Dist: nltk
 Requires-Dist: scikit-learn
 Requires-Dist: textblob
+Requires-Dist: loguru
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
