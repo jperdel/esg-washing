@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 from typing import List
 from textblob import TextBlob
 from sklearn.feature_extraction.text import TfidfVectorizer

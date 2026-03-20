@@ -13,7 +13,8 @@ dependencies = [
     "textblob",
     "loguru",
     "matplotlib",
-    "seaborn"
+    "seaborn",
+    "gensim"
 ]
 
 [tool.setuptools.packages.find]

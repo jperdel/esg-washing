@@ -7,14 +7,14 @@ from nltk.stem import WordNetLemmatizer
 from loguru import logger
 
 class TextProcessor:
-    def __init__(self, language='english'):
+    def __init__(self, language='english', extra_sw=[]):
         # Descarga de recursos una sola vez al instanciar
         nltk.download('punkt', quiet=True)
         nltk.download('stopwords', quiet=True)
         nltk.download('wordnet', quiet=True)
         
         self.lemmatizer = WordNetLemmatizer()
-        self.stop_words = set(stopwords.words(language))
+        self.stop_words = set(stopwords.words(language) + extra_sw)
         logger.debug("TextProcessor inicializado.")
 
     def extract_from_pdf(self, pdf_path: Path) -> str:

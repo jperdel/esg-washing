@@ -1,64 +1,22 @@
-# from esg_washing_pipeline import ESGWashingPipeline
-# from config import RESULTS_DIR, PDF_DATA_DIR
-
-# from pathlib import Path
-# from datetime import datetime
-
-# import sys
-# from loguru import logger
-
-# logger.remove()
-# logger.add(sys.stderr, format="<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan>{message}</cyan>", level="INFO")
-# logger.add("logs/pipeline_{time:YYYY-MM-DD}.log", rotation="10 MB", retention="10 days", level="DEBUG")
-
-# def main(data_dir: Path, results_dir: Path):
-#     logger.info("Iniciando Pipeline de detección de ESG-Washing")
-    
-#     # Verificación de directorios
-#     if not data_dir.exists():
-#         logger.error(f"El directorio de datos no existe: {data_dir}")
-#         return
-
-#     try:
-#         pipeline = ESGWashingPipeline()
-        
-#         logger.info(f"Escaneando ficheros en: {data_dir}")
-#         # informes_list = [f for f in data_dir.iterdir() if f.is_file()]
-#         informes_list = [f for f in data_dir.rglob("*") if f.is_file()]
-#         logger.info(f"Se han encontrado {len(informes_list)} ficheros para analizar")
-
-#         filename = f"results_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv"
-        
-#         # Ejecución del análisis
-#         pipeline.run_analysis(informes_list, results_dir, filename)
-        
-#         logger.success(f"Proceso finalizado correctamente. Resultados guardados en {results_dir / filename}")
-
-#     except Exception as e:
-#         logger.exception(f"Error crítico durante la ejecución del pipeline: {e}")
-
-# if __name__ == "__main__":
-
-#     main(PDF_DATA_DIR, RESULTS_DIR)
-
 import sys
 import re
 import pandas as pd
 from pathlib import Path
 from datetime import datetime
 from loguru import logger
+from topic_modeler import LDATopicModeler
 
 # Importación de las nuevas clases y configuración
 from text_processor import TextProcessor
 from esgsi_analyzer import ESGSIAnalyzer
-from config import RESULTS_DIR, PDF_DATA_DIR, KEYWORDS
+from config import METRICS_RESULTS_DIR, LDA_RESULTS_DIR, PDF_DATA_DIR, ESG_KEYWORDS, K_TOPICS, PERSONAL_SW
 
 # Configuración de logs
 logger.remove()
 logger.add(sys.stderr, format="<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan>{message}</cyan>", level="INFO")
 logger.add("logs/pipeline_{time:YYYY-MM-DD}.log", rotation="10 MB", retention="10 days", level="DEBUG")
 
-def main(data_dir: Path, results_dir: Path):
+def main(data_dir: Path, results_dir: Path, lda_dir: Path):
     logger.info("Iniciando Pipeline de detección de ESG-Washing (Versión Modular)")
     
     if not data_dir.exists():
@@ -67,8 +25,9 @@ def main(data_dir: Path, results_dir: Path):
 
     try:
         # 1. Inicialización de componentes
-        processor = TextProcessor()
-        analyzer = ESGSIAnalyzer(keywords=KEYWORDS)
+        processor = TextProcessor(extra_sw=PERSONAL_SW)
+        analyzer = ESGSIAnalyzer(keywords=ESG_KEYWORDS)
+        lda_modeler = LDATopicModeler(num_topics=K_TOPICS)
         
         # 2. Escaneo de ficheros
         logger.info(f"Escaneando ficheros en: {data_dir}")
@@ -107,12 +66,26 @@ def main(data_dir: Path, results_dir: Path):
 
         # 4. Fase de Análisis (Cálculos Estadísticos)
         texts_list = [d["clean_text"] for d in corpus_data]
+        doc_names = [d["Documento"] for d in corpus_data]
         
         sus_scores = analyzer.calculate_sus_scores(texts_list)
         sen_scores = analyzer.calculate_sen_scores(texts_list)
         esgsi_scores = analyzer.compute_index(sus_scores, sen_scores)
 
-        # 5. Consolidación de resultados
+        # 5. Fase de Análisis Cualitativo (Topic Modeling - LDA)
+        logger.info("Iniciando modelado de temas (LDA)...")
+        lda_modeler.prepare_corpus(texts_list)
+        coherence = lda_modeler.fit()
+        logger.info(f"Coherencia del modelo LDA: {coherence:.4f}")
+
+        # Los resultados de LDA se guardan en una subcarpeta dentro de results_dir
+        lda_modeler.save_results(lda_dir, doc_names)
+        # Guardar diccionario y modelo (Artefactos binarios)
+        lda_modeler.save_model_artifacts(lda_dir)
+
+        logger.info(f"Resultados, diccionario y modelo del LDA guardados en: {lda_dir}")
+
+        # 6. Consolidación de resultados
         results = []
         for i, data in enumerate(corpus_data):
             score = esgsi_scores[i]
@@ -127,7 +100,7 @@ def main(data_dir: Path, results_dir: Path):
                 "Etiqueta": "Potential ESG-washing" if score > 0 else "Likely Genuine"
             })
 
-        # 6. Guardado de resultados
+        # 7. Guardado de resultados
         df_res = pd.DataFrame(results)
         results_dir.mkdir(parents=True, exist_ok=True)
         filename = f"results_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv"
@@ -143,4 +116,4 @@ def main(data_dir: Path, results_dir: Path):
         logger.exception(f"Error crítico durante la ejecución del pipeline: {e}")
 
 if __name__ == "__main__":
-    main(PDF_DATA_DIR, RESULTS_DIR)
+    main(PDF_DATA_DIR, METRICS_RESULTS_DIR, LDA_RESULTS_DIR)
