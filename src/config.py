@@ -12,6 +12,7 @@ LDA_RESULTS_DIR = RESULTS_DIR / "lda"
 K_TOPICS = 10
 
 # NLP PARAMETERS
+SPACY_MODEL = 'en_core_web_md'
 ESG_KEYWORDS = [
     'environment', 'social', 'governance', 'sustainability', 
     'carbon', 'emissions', 'diversity', 'inclusion', 'waste',
@@ -24,7 +25,7 @@ PERSONAL_SW = [
     'almirall', 'amadeus', 'apple', 'arcelormittal', 'avangrid', 'bankia', 
     'bankinter', 'bbva', 'caixabank', 'deloitte', 'goldman', 'iberdrola', 
     'inditex', 'kpmg', 'naturgy', 'pwc', 'repsol', 'sachs', 'santander', 
-    'telefonica', 'abn', 'wwwiberdrolacom', 'iberdrola',
+    'telefonica', 'abn', 'wwwiberdrolacom', 'iberdrola', 'santanders',
 
     # --- NOMBRES PROPIOS Y APELLIDOS ---
     'aboukhair', 'alvarez', 'botin', 'galan', 'huerta', 'ignacio', 'javier', 
@@ -41,5 +42,8 @@ PERSONAL_SW = [
     'accordingly', 'achieve', 'achieved', 'across', 'addition', 'additional', 
     'additionally', 'address', 'abide', 'abrupt', 'absence', 'absent', 
     'absorb', 'absorbing', 'absorbs', 'absorption', 'accept', 'acceptance', 
-    'accepting', 'accepts', 'unaffected', 'undetectable', 'unfold', 'vivid'
+    'accepting', 'accepts', 'unaffected', 'undetectable', 'unfold', 'vivid', 'banking',
+    
+    # TÉRMINOS BANCARIOS
+    'banco', 'hedge', 'grupo'
 ]

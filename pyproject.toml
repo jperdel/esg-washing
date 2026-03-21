@@ -8,13 +8,14 @@ version = "0.1.0"
 dependencies = [
     "pandas",
     "pymupdf",
-    "nltk",
+    "spacy",
     "scikit-learn",
     "textblob",
     "loguru",
     "matplotlib",
     "seaborn",
-    "gensim"
+    "gensim",
+    "wordcloud"
 ]
 
 [tool.setuptools.packages.find]

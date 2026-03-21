@@ -9,7 +9,7 @@ from topic_modeler import LDATopicModeler
 # Importación de las nuevas clases y configuración
 from text_processor import TextProcessor
 from esgsi_analyzer import ESGSIAnalyzer
-from config import METRICS_RESULTS_DIR, LDA_RESULTS_DIR, PDF_DATA_DIR, ESG_KEYWORDS, K_TOPICS, PERSONAL_SW
+from config import METRICS_RESULTS_DIR, LDA_RESULTS_DIR, PDF_DATA_DIR, ESG_KEYWORDS, K_TOPICS, PERSONAL_SW, SPACY_MODEL
 
 # Configuración de logs
 logger.remove()
@@ -25,7 +25,7 @@ def main(data_dir: Path, results_dir: Path, lda_dir: Path):
 
     try:
         # 1. Inicialización de componentes
-        processor = TextProcessor(extra_sw=PERSONAL_SW)
+        processor = TextProcessor(extra_sw=PERSONAL_SW, spacy_model=SPACY_MODEL)
         analyzer = ESGSIAnalyzer(keywords=ESG_KEYWORDS)
         lda_modeler = LDATopicModeler(num_topics=K_TOPICS)
         
