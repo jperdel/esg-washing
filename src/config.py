@@ -4,6 +4,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "data"
 PDF_DATA_DIR = DATA_DIR / "pdf"
+CLEAN_DATA_DIR = DATA_DIR / "clean"
 RESULTS_DIR = BASE_DIR / "results"
 METRICS_RESULTS_DIR = RESULTS_DIR / "metrics"
 LDA_RESULTS_DIR = RESULTS_DIR / "lda"
