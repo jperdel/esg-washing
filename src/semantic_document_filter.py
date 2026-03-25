@@ -143,8 +143,6 @@ class SemanticDocumentFilter:
         
         logger.success(f"Procesamiento completo y similitud coseno calculada para {pdf_path.name}.")
         return results
-    
-    # ... (Tus métodos anteriores se quedan igual)
 
     def save_results(self, pdf_path: Path, results: dict):
         """
