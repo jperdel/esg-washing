@@ -10,7 +10,25 @@ METRICS_RESULTS_DIR = RESULTS_DIR / "metrics"
 LDA_RESULTS_DIR = RESULTS_DIR / "lda"
 
 # LDA PARAMETERS
-K_TOPICS = 10
+K_TOPICS_LIST = [10, 15, 20, 25]
+ALPHA_LIST = ['asymmetric']
+K_ITERS = 5
+
+# FILTERING DOCUMENTS PARAMETERS W/ VERTEXAI
+LOCATION = "us-central1"
+EMBEDDING_MODEL = "text-embedding-004"
+CHUNK_SIZE = 1200
+OVERLAP = 300
+ANCHOR_QUERIES = [
+    # Vector faro para E
+    "Climate change mitigation and adaptation strategies. Reduction of greenhouse gas emissions, including Scope 1, Scope 2, and Scope 3 data. Decarbonization roadmaps, net-zero targets, and carbon neutrality commitments. Energy efficiency, transition to renewable energy sources like wind or solar. Water stewardship, waste management, circular economy principles, and biodiversity protection. Environmental impact of supply chain and manufacturing processes.",
+    # Vector faro para S
+    "Human rights due diligence and labor standards. Diversity, equity, and inclusion (DEI) policies, gender pay gap reporting, and representation of minorities. Occupational health and safety (OHS) protocols and employee well-being programs. Talent attraction, retention, and professional development. Corporate social responsibility (CSR), community engagement, and philanthropic initiatives. Social impact of products and services on customers and local communities.",
+    # Vector faro para G
+    "Corporate governance framework, board of directors composition, independence, and diversity. Executive compensation linked to ESG performance and sustainability targets. Anti-corruption policies, whistleblowing mechanisms, and business ethics. Risk management systems, internal audits, and compliance with non-financial reporting directives. Shareholder rights, transparency in tax strategy, and data privacy security.",
+    # Vector faro para "commitment"
+    "Commitment to international standards such as GRI, SASB, TCFD, or UN Sustainable Development Goals (SDGs). Forward-looking statements regarding sustainability ambitions, long-term visions, and strategic ESG integration. Stakeholder engagement processes and materiality assessment results."
+]
 
 # NLP PARAMETERS
 SPACY_MODEL = 'en_core_web_md'

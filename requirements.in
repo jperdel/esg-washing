@@ -7,4 +7,5 @@ loguru
 matplotlib
 seaborn
 gensim
+google-cloud-aiplatform
 wordcloud

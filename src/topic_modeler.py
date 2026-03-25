@@ -6,10 +6,13 @@ from loguru import logger
 from gensim import corpora
 from gensim.models import LdaModel
 from gensim.models.coherencemodel import CoherenceModel
+import stat 
+import os
 
 class LDATopicModeler:
-    def __init__(self, num_topics=10, random_state=42):
+    def __init__(self, num_topics=10, alpha='auto', random_state=None):
         self.num_topics = num_topics
+        self.alpha = alpha
         self.random_state = random_state
         self.dictionary = None
         self.corpus = None
@@ -23,11 +26,16 @@ class LDATopicModeler:
         self.tokenized_texts = [t.split() for t in texts]
         
         self.dictionary = corpora.Dictionary(self.tokenized_texts)
-        # Opcional: Filtrar palabras extremas que aparecen en < 2 documentos o > 90%
-        self.dictionary.filter_extremes(no_below=2, no_above=0.9)
+        self.dictionary.filter_extremes(no_below=3, no_above=0.9)
         
         self.corpus = [self.dictionary.doc2bow(text) for text in self.tokenized_texts]
         logger.debug(f"Diccionario creado con {len(self.dictionary)} tokens únicos.")
+
+    def update(self, num_topics:int, alpha:str|float):
+        """Actualiza los valores de alpha y número de tópicos del LDA"""
+        self.alpha = alpha
+        self.num_topics = num_topics
+        logger.debug(f"Valores actualizados a alpha={alpha} y num_topics={num_topics}")
 
     def fit(self):
         """Entrena el modelo LDA y calcula la coherencia."""
@@ -35,14 +43,15 @@ class LDATopicModeler:
             logger.error("El corpus no está preparado. Llama a prepare_corpus() primero.")
             return
 
-        logger.info(f"Entrenando modelo LDA con k={self.num_topics}...")
+        logger.debug(f"Entrenando modelo LDA con k={self.num_topics} y alpha={self.alpha}...")
         self.model = LdaModel(
             corpus=self.corpus,
             num_topics=self.num_topics,
+            alpha=self.alpha,
             id2word=self.dictionary,
             random_state=self.random_state,
-            passes=10,
-            alpha='auto'
+            passes=50,
+            iterations=100
         )
         
         # Cálculo de Coherencia (C_v es la más común en literatura)

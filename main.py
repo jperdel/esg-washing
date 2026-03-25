@@ -9,7 +9,7 @@ from topic_modeler import LDATopicModeler
 # Importación de las nuevas clases y configuración
 from text_processor import TextProcessor
 from esgsi_analyzer import ESGSIAnalyzer
-from config import METRICS_RESULTS_DIR, LDA_RESULTS_DIR, PDF_DATA_DIR, ESG_KEYWORDS, K_TOPICS, PERSONAL_SW, SPACY_MODEL, CLEAN_DATA_DIR
+from config import *
 
 # Configuración de logs
 logger.remove()
@@ -36,7 +36,6 @@ def main(
         # 1. Inicialización de componentes
         if run_preproc: processor = TextProcessor(extra_sw=PERSONAL_SW, spacy_model=SPACY_MODEL)
         if run_esgsi_analysis: analyzer = ESGSIAnalyzer(keywords=ESG_KEYWORDS)
-        if run_lda: lda_modeler = LDATopicModeler(num_topics=K_TOPICS)
         
         if run_preproc:
             logger.info("Ejecutando la limpieza de datos")
@@ -92,9 +91,8 @@ def main(
 
         if run_esgsi_analysis:
             logger.info("Ejecutando el analisis ESGSI")
+            
             # 4. Fase de Análisis (Cálculos Estadísticos)
-            
-            
             sus_scores = analyzer.calculate_sus_scores(texts_list)
             sen_scores = analyzer.calculate_sen_scores(texts_list)
             esgsi_scores = analyzer.compute_index(sus_scores, sen_scores)
@@ -117,7 +115,7 @@ def main(
             # 6. Guardado de resultados
             df_res = pd.DataFrame(results)
             results_dir.mkdir(parents=True, exist_ok=True)
-            filename = f"results.csv" #_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.csv"
+            filename = f"results.csv"
             output_path = results_dir / filename
             
             df_res.to_csv(output_path, index=False)
@@ -128,18 +126,42 @@ def main(
 
         if run_lda:
             logger.info("Ejecutando el Topic Modeling con LDA")
+
             # 7. Fase de Análisis Cualitativo (Topic Modeling - LDA)
             logger.info("Iniciando modelado de temas (LDA)...")
+            lda_modeler = LDATopicModeler()
             lda_modeler.prepare_corpus(texts_list)
-            coherence = lda_modeler.fit()
-            logger.info(f"Coherencia del modelo LDA: {coherence:.4f}")
 
-            # Los resultados de LDA se guardan en una subcarpeta dentro de results_dir
-            lda_modeler.save_results(lda_dir, doc_names)
-            # Guardar diccionario y modelo (Artefactos binarios)
-            lda_modeler.save_model_artifacts(lda_dir)
+            lda_dir.mkdir(parents=True, exist_ok=True)
 
-            logger.info(f"Resultados, diccionario y modelo del LDA guardados en: {lda_dir}")
+            coherence_list = list()
+
+            total_models = len(K_TOPICS_LIST) * len(ALPHA_LIST) * K_ITERS
+            n_model = 1
+
+            for num_topics in K_TOPICS_LIST:
+                for alpha in ALPHA_LIST:
+                    for k in range(K_ITERS):
+        
+                        logger.info(f"Entrenando modelo #{n_model}/{total_models}")
+                        n_model += 1
+
+                        lda_modeler.update(num_topics, alpha)
+                        coherence = lda_modeler.fit()
+                        coherence_list.append([num_topics, alpha, k, coherence])
+                        logger.info(f"Coherencia del modelo LDA - alpha_{lda_modeler.alpha}_n_topics_{lda_modeler.num_topics}_k_{k}: {coherence:.4f}")
+
+                        # Los resultados de LDA se guardan en una subcarpeta dentro de results_dir
+                        aux_dir = lda_dir / f"alpha_{lda_modeler.alpha}_n_topics_{lda_modeler.num_topics}_k_{k}"
+                        lda_modeler.save_results(aux_dir, doc_names)
+                        # Guardar diccionario y modelo (Artefactos binarios)
+                        lda_modeler.save_model_artifacts(aux_dir)
+
+                        logger.info(f"Resultados, diccionario y modelo del LDA guardados en: {aux_dir}")
+            
+            # Save coherence list
+            df_coherence = pd.DataFrame(coherence_list, columns=['Num. topics', 'Alpha', 'Iter', 'Coherence'])
+            df_coherence.to_csv(lda_dir / "coherence.csv", index=False)
 
     except Exception as e:
         logger.exception(f"Error crítico durante la ejecución del pipeline: {e}")
@@ -152,7 +174,7 @@ if __name__ == "__main__":
     run_lda = True
 
     main(
-        PDF_DATA_DIR,
+        PDF_DATA_DIR / "España" / "BBVA",
         METRICS_RESULTS_DIR,
         LDA_RESULTS_DIR,
         CLEAN_DATA_DIR,
