@@ -6,23 +6,25 @@ from sklearn.metrics.pairwise import cosine_similarity
 from google.cloud import aiplatform
 from vertexai.language_models import TextEmbeddingModel
 from loguru import logger  # <-- Importamos loguru
+import json
 
+import warnings
+warnings.filterwarnings("ignore") # No vamos a actualizar versiones de VertexAI ni GCP
 
 class SemanticDocumentFilter:
     """
     Clase para procesar PDFs de informes anuales, generar chunks 
     y calcular la similitud semántica contra Queries Faro (Anchor Queries).
     """
-    def __init__(self, project_id: str, location: str, embedding_model_name: str = "text-embedding-004"):
+    def __init__(self, project_id: str, location: str, embedding_model_name: str="text-embedding-004", run_chunker: bool=True):
         logger.info(f"Inicializando pipeline en GCP Project: {project_id}...")
         
-        # Inicializar GCP y Vertex AI
-        aiplatform.init(project=project_id, location=location)
-        
         # Cargar el modelo de embeddings una sola vez para la sesión
-        self.embedding_model = TextEmbeddingModel.from_pretrained(embedding_model_name)
-        self.anchor_embeddings = None
-        logger.success("Modelo de embeddings cargado correctamente.")
+        if run_chunker: 
+            aiplatform.init(project=project_id, location=location)
+            self.embedding_model = TextEmbeddingModel.from_pretrained(embedding_model_name)
+            self.anchor_embeddings = None
+            logger.success("Modelo de embeddings cargado correctamente.")
         
     def fit_anchors(self, anchor_queries: list[str]):
         """
@@ -33,7 +35,7 @@ class SemanticDocumentFilter:
         logger.success("Vectores Faro (Anchors) listos para la comparación.")
 
     def get_clean_text(self, pdf_path: Path) -> str:
-        """Extrae el texto de todas las páginas y realiza una limpieza de bajo nivel."""
+        """Extrae el texto y realiza una limpieza estructural preservando la semántica."""
         if not pdf_path.exists():
             logger.error(f"No se encontró el archivo PDF: {pdf_path}")
             raise FileNotFoundError(f"No se encontró el archivo: {pdf_path}")
@@ -43,26 +45,33 @@ class SemanticDocumentFilter:
         
         with fitz.open(pdf_path) as doc:
             for page in doc:
+
                 text = page.get_text("text")
-                text = re.sub(r'-\n', '', text)
+                text = re.sub(r'https?://\S+|www\.\S+', '', text)
+                text = re.sub(r'(\w+)-\n(\w+)', r'\1\2', text)
+                text = text.encode("ascii", "ignore").decode("ascii") 
                 text = re.sub(r'\n', ' ', text)
+                
                 full_text.append(text)
         
         combined_text = " ".join(full_text)
         cleaned_text = re.sub(r'\s+', ' ', combined_text).strip()
+        
         logger.debug(f"Texto extraído y limpiado del PDF ({len(cleaned_text)} caracteres).")
         return cleaned_text
 
     def split_into_chunks(self, text: str, pdf_path: Path, chunk_size: int = 1200, overlap: int = 300) -> dict:
         """Divide el texto en bloques con solape y adjunta metadatos."""
-        chunks = []
+        chunks = list()
         start = 0
         text_len = len(text)
+        indices_list = list()
         
         while start < text_len:
             end = start + chunk_size
             content = text[start:end].strip()
-            
+            indices_list.append([start, end])
+
             if content:
                 chunks.append(content)
             
@@ -77,7 +86,8 @@ class SemanticDocumentFilter:
         return {
             "file": pdf_path.name,
             "path": pdf_path,
-            "chunks": chunks
+            "chunks": chunks,
+            "index": indices_list
         }
 
     def get_embeddings(self, textos: list[str], batch_size: int = 40) -> np.ndarray:
@@ -99,18 +109,6 @@ class SemanticDocumentFilter:
             logger.debug(f"Lote procesado: {len(all_embeddings)}/{total_textos} embeddings calculados...")
 
         return np.array(all_embeddings)
-    
-    def save_results(self, pdf_path: Path, results: dict):
-        """
-        Guarda el resultado en el mismo path pero en la carpeta clean
-        """
-        res_path = str(pdf_path).parent.replace('pdf', 'clean')
-        res_name = str(pdf_path).name.replace('pdf', 'clean')
-        res_path = Path(res_path) / res_name
-
-        res_path.mkdir(parents=True, exist_ok=True)
-
-
 
     def process_document(self, pdf_path: Path, chunk_size: int = 1200, overlap: int = 300) -> dict:
         """
@@ -141,20 +139,22 @@ class SemanticDocumentFilter:
         max_sim = cosine_similarity(chunk_embeddings, self.anchor_embeddings).max(axis=1)
         results['similarity'] = max_sim
         
+        results['full_text'] = text
+
         logger.success(f"Procesamiento completo y similitud coseno calculada para {pdf_path.name}.")
         return results
 
     def save_results(self, pdf_path: Path, results: dict):
         """
-        Guarda el resultado en formato JSON sustituyendo la carpeta 'pdf' por 'clean' 
+        Guarda el resultado en formato JSON sustituyendo la carpeta 'pdf' por 'chunks' 
         en la estructura de directorios y cambiando la extensión del archivo a .json.
         """
         # 1. Convertimos la ruta a String para el reemplazo de carpetas intermedias
         path_str = str(pdf_path)
         
-        # 2. Reemplazamos la carpeta 'pdf' por 'clean'
+        # 2. Reemplazamos la carpeta 'pdf' por 'chunks'
         # Nota: if 'pdf' no está en la ruta, se quedará igual, así que añade un fallback si lo necesitas
-        nuevo_path_str = path_str.replace('pdf', 'clean')
+        nuevo_path_str = path_str.replace('pdf', 'chunks')
         
         # 3. Lo volvemos a pasar a Path y cambiamos la extensión a .json
         res_path = Path(nuevo_path_str).with_suffix('.json')
@@ -167,7 +167,9 @@ class SemanticDocumentFilter:
             cleaned_results = {
                 "file": results.get("file"),
                 "path": str(results.get("path")),
+                "full_text": str(results.get("full_text")),
                 "chunks": results.get("chunks", []),
+                "index": [list(idx) for idx in results.get("index", [])],
                 "similarity": [float(s) for s in results.get("similarity", [])]
             }
 
@@ -198,7 +200,7 @@ class SemanticDocumentFilter:
         logger.info(f"Se encontraron {total_files} archivos PDF para procesar en '{root_folder.name}'.")
 
         for idx, pdf_path in enumerate(pdf_files, start=1):
-            logger.info(f"[{idx}/{total_files}] Iniciando procesamiento de: {pdf_path.name}")
+            logger.info(f"[{idx}/{total_files}] Iniciando procesamiento de: {pdf_path}")
             
             try:
                 # 1. Procesamos el documento
@@ -217,3 +219,80 @@ class SemanticDocumentFilter:
                 continue
 
         logger.success(f"Proceso de la carpeta '{root_folder.name}' finalizado. Se intentaron procesar {total_files} PDFs.")
+
+    def merge_chunks(self, chunks: list[str], indices: list[list[int]], full_text: str):
+
+        merged_intervals = list()
+
+        if len(chunks) > 1:
+
+            for i in range(len(chunks)-1):
+                curr_start, curr_end = indices[i]
+                next_start, next_end = indices[i+1]
+                
+                if next_start <= curr_end:
+                    
+                    curr_end = max(curr_end, next_end)
+                else:
+                    merged_intervals.append((curr_start, curr_end))
+
+            merged_intervals.append((curr_start, curr_end))
+
+            final_parts = []
+            for i, (start, end) in enumerate(merged_intervals):
+                part_text = full_text[start:end]
+                final_parts.append(part_text)
+
+            return "\n\n\n\n".join(final_parts)
+
+        elif len(chunks) == 1:
+            return chunks[0]
+        
+        else:
+            return ""
+
+    def filter_relevant_chunks(self, json_folder: Path, similarity_threshold: float):
+
+        logger.info(f"Filtrando los chunks en la carpeta {json_folder} por similitud...")
+        json_paths = [p for p in json_folder.rglob('*') if p.suffix.lower() == '.json']
+
+        num_of_empty_docs = 0
+        total_docs = len(json_paths)
+
+        for i, path in enumerate(json_paths, 1):
+
+            if i%50==0:
+                logger.info(f"Procesados {i}/{total_docs} documentos")
+
+            with open(path, mode="r", encoding="utf-8") as f:
+                aux_data = json.load(f)
+            
+                relevant_chunk_list = [x[0] for x in zip(aux_data['chunks'], aux_data['similarity']) if x[1] > similarity_threshold]
+                relevant_index_list = [x[0] for x in zip(aux_data['index'], aux_data['similarity']) if x[1] > similarity_threshold]
+                full_text = aux_data['full_text']
+
+                merged_revelant_chunks = self.merge_chunks(relevant_chunk_list, relevant_index_list, full_text)
+
+                aux_data.pop('similarity')
+                aux_data.pop('full_text')
+                aux_data['chunks'] = relevant_chunk_list
+                aux_data['index'] = relevant_index_list
+                aux_data['relevant_text'] = merged_revelant_chunks
+            
+            if len(relevant_chunk_list) == 0:
+                logger.warning(f"El documento {path} no tiene chunks con una relevancia superior o igual a {similarity_threshold}")
+                num_of_empty_docs += 1
+
+            path_str = str(path)
+            filt_path_str = path_str.replace('chunks', 'filtered')
+            filt_path = Path(filt_path_str).with_suffix('.json')
+
+            filt_path.parent.mkdir(parents=True, exist_ok=True)
+
+            with open(filt_path, mode='w', encoding="utf-8") as f:
+
+                json.dump(aux_data, f, indent=4)
+
+            logger.debug(f"Filtrado con éxito el fichero {path} y guardado en {filt_path}")
+        
+        logger.success(f"Filtrados todos los documentos: {num_of_empty_docs} de {total_docs} no tienen chunks relevantes para un umbral de similitud de {similarity_threshold}")

@@ -1,6 +1,7 @@
 import numpy as np
 from typing import List
-from textblob import TextBlob
+# from textblob import TextBlob
+import pysentiment2 as ps
 from sklearn.feature_extraction.text import TfidfVectorizer
 from loguru import logger
 
@@ -18,9 +19,19 @@ class ESGSIAnalyzer:
         return tfidf_matrix.toarray().sum(axis=1)
 
     def calculate_sen_scores(self, texts: List[str]) -> List[float]:
-        """Calcula el sentimiento (SEN) usando TextBlob."""
+        """Calcula el sentimiento (SEN) usando Pysentiment2."""
+        lm = ps.LM()
+
         logger.info("Calculando métricas de Sentimiento...")
-        return [TextBlob(txt).sentiment.polarity for txt in texts]
+        tokenized_texts = [lm.tokenize(text) for text in texts]
+        scores = [lm.get_score(text)['Polarity'] for text in tokenized_texts]
+
+        return scores
+        
+        # OLD VERSION: ORIGINAL LAGASIO PAPER
+        # """Calcula el sentimiento (SEN) usando TextBlob."""
+        # logger.info("Calculando métricas de Sentimiento...")
+        # return [TextBlob(txt).sentiment.polarity for txt in texts]
 
     def _z_score_normalization(self, data: np.ndarray) -> np.ndarray:
         """Aplica la normalización Z necesaria para el índice de Lagasio."""

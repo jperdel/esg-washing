@@ -4,6 +4,8 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "data"
 PDF_DATA_DIR = DATA_DIR / "pdf"
+CHUNKED_DATA_DIR = DATA_DIR / "chunks"
+FILTERED_DATA_DIR = DATA_DIR / "filtered"
 CLEAN_DATA_DIR = DATA_DIR / "clean"
 RESULTS_DIR = BASE_DIR / "results"
 METRICS_RESULTS_DIR = RESULTS_DIR / "metrics"
@@ -29,7 +31,7 @@ ANCHOR_QUERIES = [
     # Vector faro para "commitment"
     "Commitment to international standards such as GRI, SASB, TCFD, or UN Sustainable Development Goals (SDGs). Forward-looking statements regarding sustainability ambitions, long-term visions, and strategic ESG integration. Stakeholder engagement processes and materiality assessment results."
 ]
-
+SIMILARITY_THRESHOLD = 0.6
 # NLP PARAMETERS
 SPACY_MODEL = 'en_core_web_md'
 ESG_KEYWORDS = [
