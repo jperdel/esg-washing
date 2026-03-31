@@ -32,16 +32,21 @@ def main(
         run_lda: bool
 ):
     
-    logger.info(f"Iniciando Pipeline de detección de ESG-Washing (Versión Modular) - Preprocesado: {run_preproc}, ESGSI: {run_esgsi_analysis}, LDA: {run_lda}")
+    logger.info(f"""Iniciando Pipeline de detección de ESG-Washing (Versión Modular): \n
+                - Chunker: {run_chunker}, \n
+                - Filtrado semántico: {run_filter}, \n
+                - Preprocesado: {run_preproc},  \n
+                - Cálculo del ESGSI: {run_esgsi_analysis},  \n
+                - LDA: {run_lda}""")
     
     if not pdf_data_dir.exists():
         logger.error(f"El directorio de datos no existe: {pdf_data_dir}")
         return
 
     try:
+        if run_chunker or run_filter: filterer = SemanticDocumentFilter(project_id=PROJECT_ID, location=LOCATION, run_chunker=run_chunker)   
         if run_preproc: processor = TextProcessor(extra_sw=PERSONAL_SW, spacy_model=SPACY_MODEL)
-        if run_esgsi_analysis: analyzer = ESGSIAnalyzer(keywords=ESG_KEYWORDS)
-        if run_chunker or run_filter: filterer = SemanticDocumentFilter(project_id=PROJECT_ID, location=LOCATION, run_chunker=run_chunker)    
+        if run_esgsi_analysis: analyzer = ESGSIAnalyzer(keywords=ESG_KEYWORDS) 
 
         if run_chunker:
             filterer.fit_anchors(ANCHOR_QUERIES)
@@ -182,7 +187,7 @@ if __name__ == "__main__":
 
     # Elige las partes del pipeline a ejecutar
     run_chunker = False
-    run_filter = False
+    run_filter = True
     run_preproc = True
     run_esgsi_analysis = True
     run_lda = False

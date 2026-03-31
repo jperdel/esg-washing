@@ -16,7 +16,8 @@ class ESGSIAnalyzer:
         """Calcula la puntuación de sostenibilidad (SUS) mediante TF-IDF."""
         logger.info("Calculando métricas SUS (TF-IDF)...")
         tfidf_matrix = self.vectorizer.fit_transform(texts)
-        return tfidf_matrix.toarray().sum(axis=1)
+        return tfidf_matrix.toarray().mean(axis=1)
+        # return tfidf_matrix.toarray().sum(axis=1) # El paper original suma. Interacción con TF-iDF???
 
     def calculate_sen_scores(self, texts: List[str]) -> List[float]:
         """Calcula el sentimiento (SEN) usando Pysentiment2."""

@@ -253,7 +253,7 @@ class SemanticDocumentFilter:
 
     def filter_relevant_chunks(self, json_folder: Path, similarity_threshold: float):
 
-        logger.info(f"Filtrando los chunks en la carpeta {json_folder} por similitud...")
+        logger.info(f"Filtrando los chunks en la carpeta {json_folder} por similitud coseno...")
         json_paths = [p for p in json_folder.rglob('*') if p.suffix.lower() == '.json']
 
         num_of_empty_docs = 0
@@ -262,7 +262,7 @@ class SemanticDocumentFilter:
         for i, path in enumerate(json_paths, 1):
 
             if i%50==0:
-                logger.info(f"Procesados {i}/{total_docs} documentos")
+                logger.info(f"Filtrados {i}/{total_docs} documentos")
 
             with open(path, mode="r", encoding="utf-8") as f:
                 aux_data = json.load(f)
