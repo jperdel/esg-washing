@@ -96,7 +96,7 @@ def main(
                 return
             
             processed_dir.mkdir(parents=True, exist_ok=True)
-            pd.DataFrame(corpus_data).to_csv(processed_dir / 'processed_texts.csv', index=False)
+            pd.DataFrame(corpus_data).to_csv(processed_dir / 'processed_texts.csv', index=False, sep=';')
         
         else:
             if (CLEAN_DATA_DIR / 'processed_texts.csv').exists():
@@ -139,7 +139,7 @@ def main(
             filename = f"results.csv"
             output_path = results_dir / filename
             
-            df_res.to_csv(output_path, index=False)
+            df_res.to_csv(output_path, index=False, sep=';')
             
             washing_count = len(df_res[df_res["ESGSI"] > 0])
             logger.success(f"Proceso finalizado. Casos de riesgo: {washing_count}/{len(df_res)}")
@@ -178,7 +178,7 @@ def main(
                         logger.info(f"Resultados, diccionario y modelo del LDA guardados en: {aux_dir}")
             
             df_coherence = pd.DataFrame(coherence_list, columns=['Num. topics', 'Alpha', 'Iter', 'Coherence'])
-            df_coherence.to_csv(lda_dir / "coherence.csv", index=False)
+            df_coherence.to_csv(lda_dir / "coherence.csv", index=False, sep=';')
 
     except Exception as e:
         logger.exception(f"Error crítico durante la ejecución del pipeline: {e}")
@@ -186,11 +186,11 @@ def main(
 if __name__ == "__main__":
 
     # Elige las partes del pipeline a ejecutar
-    run_chunker = False
+    run_chunker = True
     run_filter = True
     run_preproc = True
     run_esgsi_analysis = True
-    run_lda = False
+    run_lda = True
 
     main(
         PDF_DATA_DIR,

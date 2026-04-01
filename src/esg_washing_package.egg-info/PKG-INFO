@@ -1,11 +1,14 @@
 Metadata-Version: 2.4
 Name: esg_washing_package
-Version: 0.1.0
+Version: 0.1.1
 Requires-Dist: pandas
 Requires-Dist: pymupdf
-Requires-Dist: nltk
+Requires-Dist: spacy
 Requires-Dist: scikit-learn
 Requires-Dist: textblob
 Requires-Dist: loguru
 Requires-Dist: matplotlib
 Requires-Dist: seaborn
+Requires-Dist: gensim
+Requires-Dist: wordcloud
+Requires-Dist: pysentiment2

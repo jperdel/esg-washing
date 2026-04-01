@@ -82,7 +82,7 @@ class LDATopicModeler:
                 "Keywords": ", ".join([f"{word} ({round(prob, 3)})" for word, prob in words])
             })
         
-        pd.DataFrame(topics_data).to_csv(lda_dir / "lda_topics_keywords.csv", index=False)
+        pd.DataFrame(topics_data).to_csv(lda_dir / "lda_topics_keywords.csv", index=False, sep=';')
         logger.info(f"Keywords de tópicos guardadas en {lda_dir}/lda_topics_keywords.csv")
 
         # 2. Guardar Distribución de Tópicos por Documento
@@ -99,7 +99,7 @@ class LDATopicModeler:
         df_docs = pd.DataFrame(doc_topic_dist)
         # Reordenar columnas para que Documento y Dominant_Topic estén al principio
         cols = ["Documento", "Dominant_Topic"] + [c for c in df_docs.columns if c.startswith("Topic_")]
-        df_docs[cols].to_csv(lda_dir / "lda_document_distribution.csv", index=False)
+        df_docs[cols].to_csv(lda_dir / "lda_document_distribution.csv", index=False, sep=';')
         
         logger.info(f"Distribución de documentos guardada en {lda_dir}/lda_document_distribution.csv")
 

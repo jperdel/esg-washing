@@ -90,7 +90,7 @@ class SemanticDocumentFilter:
             "index": indices_list
         }
 
-    def get_embeddings(self, textos: list[str], batch_size: int = 40) -> np.ndarray:
+    def get_embeddings(self, textos: list[str], batch_size: int = 25) -> np.ndarray:
         """
         Convierte una lista de textos en una matriz de vectores numéricos,
         procesando en lotes pequeños para respetar límites de la API de Google.

@@ -1,8 +1,11 @@
 pandas
 pymupdf
-nltk
+spacy
 scikit-learn
 textblob
 loguru
 matplotlib
 seaborn
+gensim
+wordcloud
+pysentiment2
