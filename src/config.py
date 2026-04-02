@@ -33,7 +33,7 @@ with open(METADATA_DIR / "anchor_queries_v2.txt", "r", encoding="utf-8") as f:
 
 # NLP PARAMETERS
 SPACY_MODEL = 'en_core_web_md'
-ESG_KEYWORDS = pd.read_csv(METADATA_DIR / "LM_dictionary.csv")['word'].drop_duplicates()
+ESG_KEYWORDS = pd.read_csv(METADATA_DIR / "LM_dictionary_lemmatized.csv")['0']
 
 with open(METADATA_DIR / 'personal_stopwords.txt', 'r', encoding='utf-8') as f:
     PERSONAL_SW = f.read().split("\n")

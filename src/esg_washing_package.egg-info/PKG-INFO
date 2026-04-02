@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: esg_washing_package
-Version: 0.1.1
+Version: 0.1.2
 Requires-Dist: pandas
 Requires-Dist: pymupdf
 Requires-Dist: spacy
@@ -12,3 +12,4 @@ Requires-Dist: seaborn
 Requires-Dist: gensim
 Requires-Dist: wordcloud
 Requires-Dist: pysentiment2
+Requires-Dist: google-cloud-aiplatform

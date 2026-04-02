@@ -9,3 +9,4 @@ seaborn
 gensim
 wordcloud
 pysentiment2
+google-cloud-aiplatform

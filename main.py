@@ -100,7 +100,7 @@ def main(
         
         else:
             if (CLEAN_DATA_DIR / 'processed_texts.csv').exists():
-                df_clean = pd.read_csv(CLEAN_DATA_DIR / 'processed_texts.csv')
+                df_clean = pd.read_csv(CLEAN_DATA_DIR / 'processed_texts.csv', sep=';')
                 corpus_data = list()
 
                 for _, row in df_clean.iterrows():
@@ -186,11 +186,11 @@ def main(
 if __name__ == "__main__":
 
     # Elige las partes del pipeline a ejecutar
-    run_chunker = True
-    run_filter = True
-    run_preproc = True
+    run_chunker = False
+    run_filter = False
+    run_preproc = False
     run_esgsi_analysis = True
-    run_lda = True
+    run_lda = False
 
     main(
         PDF_DATA_DIR,

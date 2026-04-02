@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "esg_washing_package"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
     "pandas",
     "pymupdf",
@@ -16,7 +16,8 @@ dependencies = [
     "seaborn",
     "gensim",
     "wordcloud",
-    "pysentiment2"
+    "pysentiment2",
+    "google-cloud-aiplatform"
 ]
 
 [tool.setuptools.packages.find]
