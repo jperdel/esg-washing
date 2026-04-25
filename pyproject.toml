@@ -7,17 +7,13 @@ name = "esg_washing_package"
 version = "0.1.2"
 dependencies = [
     "pandas",
+    "openpyxl",
     "pymupdf",
     "spacy",
     "scikit-learn",
-    "textblob",
     "loguru",
-    "matplotlib",
-    "seaborn",
     "gensim",
-    "wordcloud",
     "pysentiment2",
-    "google-cloud-aiplatform"
 ]
 
 [tool.setuptools.packages.find]

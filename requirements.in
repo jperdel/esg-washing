@@ -1,13 +1,8 @@
 pandas
+openpyxl
 pymupdf
 spacy
 scikit-learn
 loguru
-matplotlib
-seaborn
 gensim
-google-cloud-aiplatform
-# google-genai
-wordcloud
-pysentiment2    # Para calcular el SEN en base al diccionario Loughran and McDonald
-# textblob        # Cálculo del SEN del paper original
+pysentiment2

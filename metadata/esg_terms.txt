@@ -1,0 +1,50 @@
+# ESG canonical vocabulary — single source of truth.
+#
+# Forms: spaCy lemma (output of TextProcessor), so they match directly
+# the lemmatized corpus used for TF-IDF (ESG_KEYWORDS in config.py).
+#
+# Also used to build _ESG_KW_RE in lexical_document_filter.py (raw PDF text).
+# Morphological variation (plurals, gerunds, prefixes) and multi-word patterns
+# are handled there via _EXTRA_PATTERNS — edit this file for vocabulary changes.
+#
+# One term per line. Lines starting with # and blank lines are ignored.
+
+# --- Environmental ---
+carbon
+emission
+ghg
+co2
+climate
+renewable
+biodiversity
+waste
+deforestation
+reforestation
+greenhouse
+solar
+environmental
+
+# --- Sustainability & Decarbonisation ---
+sustainability
+sustainable
+decarbonization
+decarbonize
+offset
+recycle
+recyclable
+
+# --- Social ---
+diversity
+stakeholder
+
+# --- Governance & Reporting Frameworks ---
+esg
+csr
+materiality
+tcfd
+gri
+sasb
+sfdr
+csrd
+sbti
+sdg

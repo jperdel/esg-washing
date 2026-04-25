@@ -1,0 +1,125 @@
+# ============================================================
+# LDA-SPECIFIC STOPWORDS
+# Aplicadas únicamente durante la construcción del corpus LDA.
+# No afectan al preprocesado general ni al scoring ESGSI.
+#
+# Incluye:
+#   - Nombres de empresa que dominan tópicos sin aportar contenido ESG
+#   - Sufijos societarios y abreviaturas contables
+#   - Boilerplate de reporting anual (formatos URD francés, Aufsichtsrat alemán)
+#   - Gentilicios/topónimos que identifican la empresa, no el tema ESG
+#   - Artefactos de tokenización/truncación
+# ============================================================
+
+# -- Sufijos societarios y denominaciones genéricas --
+gmbh
+ltd
+spa
+nv
+plc
+ag
+inc
+corp
+sa
+
+# -- Boilerplate de informes anuales (URD Francia, supervisory boards Alemania) --
+document
+registration
+universal
+statutory
+supervisory
+chairman
+remuneration
+appendix
+appendice
+caption
+recognise
+recognize
+fiscal
+shall
+programme
+program
+
+# -- Artefactos de truncación / encoding --
+nancial
+tion
+ment
+mot
+prev
+eurm
+eur
+eurm
+dec
+abp
+
+# -- Nombres de empresa (dominarían tópicos sin contenido ESG) --
+# Banca
+unicredit
+intesa
+sanpaolo
+nordea
+nordeas
+bnpp
+adyen
+abinbev
+inbev
+ambev
+
+# Automóvil
+volkswagen
+daimler
+ferrari
+stellantis
+
+# Seguros
+ergo
+
+# Energía
+eni
+enis
+
+# Tecnología / industria
+infineon
+siemens
+siemen
+semiconductor
+sap
+
+# Telecomunicaciones
+telekom
+tmobile
+
+# Lujo / retail
+lvmh
+kering
+herm
+maison
+hennessy
+vuitton
+essilorluxottica
+essilor
+ahold
+delhaize
+
+# Infraestructura
+vincis
+concession
+
+# Mercados / bolsa
+brse
+clearstream
+eurex
+qimonda
+
+# -- Gentilicios y topónimos que identifican compañía, no tema ESG --
+france
+french
+german
+dutch
+netherlands
+spain
+spanish
+italy
+italian
+austria
+vienna
