@@ -166,7 +166,10 @@ def load_document_metadata(xlsx_path: Path) -> dict:
             if pd.isna(doc_type_raw) or doc_type_raw == 0:
                 doc_type = None
             else:
-                doc_type = str(doc_type_raw).strip()
+                # collapse interno + strip: el Excel trae "Annual report " con
+                # espacio final en alguna celda, que si no crearía una
+                # categoría distinta de "Annual report".
+                doc_type = re.sub(r"\s+", " ", str(doc_type_raw)).strip()
 
             lookup[(country_excel, company_norm, year)] = doc_type
 

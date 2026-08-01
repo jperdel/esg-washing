@@ -19,6 +19,7 @@ from config import (
     METADATA_EXCEL,
     SPACY_MODEL, ESG_KEYWORDS, HEDGE_KEYWORDS, QUANT_PATTERNS, ESGSI_EXT_WEIGHTS, PERSONAL_SW,
     K_TOPICS_LIST, ALPHA_LIST, K_ITERS, LDA_STOPWORDS,
+    LDA_N_SEEDS, LDA_TOPN_STABILITY,
     PDF_DATA_DIR, LEXICAL_DATA_DIR, CLEAN_DATA_DIR, METRICS_RESULTS_DIR, LDA_RESULTS_DIR,
     LEXICAL_KW_THRESHOLD, LEXICAL_CONTEXT_PARAS, LEXICAL_MIN_ZONE_LEN,
 )
@@ -133,6 +134,10 @@ def main(
                         "Año":            year,
                         "TipoDocumento":  doc_type,
                         "clean_text":     clean_text,
+                        # Texto crudo (solo colapsando espacios) para el QUANT:
+                        # los patrones de cifras y porcentajes necesitan los
+                        # dígitos, que el preprocesado elimina.
+                        "raw_text":       re.sub(r"\s+", " ", raw_text).strip(),
                     })
 
             if not corpus_data:
@@ -185,13 +190,31 @@ def main(
         texts_list = [d["clean_text"] for d in corpus_data]
         doc_names  = [d["Documento"]  for d in corpus_data]
 
+        # El QUANT necesita el texto crudo: sobre el preprocesado los patrones
+        # de porcentajes y cifras devuelven cero porque el preprocesado
+        # descarta los tokens numéricos.
+        raw_texts_list: list[str] = []
+        if run_esgsi_analysis:
+            missing_raw = [
+                d["Documento"] for d in corpus_data
+                if not isinstance(d.get("raw_text"), str) or not d["raw_text"].strip()
+            ]
+            if missing_raw:
+                logger.error(
+                    f"{len(missing_raw)} documentos sin 'raw_text' (p. ej. {missing_raw[:3]}). "
+                    "El CSV procede de una versión anterior del pipeline: "
+                    "vuelve a ejecutar con run_preproc=True."
+                )
+                return
+            raw_texts_list = [d["raw_text"] for d in corpus_data]
+
         # -- Análisis ESGSI ----------------------------------------------
         if run_esgsi_analysis:
             logger.info("Ejecutando análisis ESGSI...")
 
             sus_scores   = analyzer.calculate_sus_scores(texts_list)
             sen_scores   = analyzer.calculate_sen_scores(texts_list)
-            quant_scores = analyzer.calculate_quant_scores(texts_list)
+            quant_scores = analyzer.calculate_quant_scores(raw_texts_list)
             hedge_scores = analyzer.calculate_hedge_scores(texts_list)
 
             esgsi_scores     = analyzer.compute_index(sus_scores, sen_scores)
@@ -238,9 +261,10 @@ def main(
             lda_modeler.prepare_corpus(texts_list, lda_stopwords=LDA_STOPWORDS)
             lda_dir.mkdir(parents=True, exist_ok=True)
 
-            coherence_rows = []
-            total_models   = len(K_TOPICS_LIST) * len(ALPHA_LIST) * K_ITERS
-            n_model        = 1
+            coherence_rows: list[dict[str, object]] = []
+            stability_rows: list[dict[str, object]] = []
+            total_models    = len(K_TOPICS_LIST) * len(ALPHA_LIST) * K_ITERS
+            n_model         = 1
 
             for num_topics in K_TOPICS_LIST:
                 for alpha in ALPHA_LIST:
@@ -272,9 +296,29 @@ def main(
                         lda_modeler.save_model_artifacts(run_dir)
                         logger.info(f"Artefactos guardados en: {run_dir}")
 
+                    # Estabilidad entre semillas para esta combinación (k, alpha).
+                    # Se activa poniendo LDA_N_SEEDS > 0 en config.py.
+                    if LDA_N_SEEDS > 0:
+                        stab = lda_modeler.compute_stability(
+                            n_seeds=LDA_N_SEEDS, topn=LDA_TOPN_STABILITY
+                        )
+                        if stab:
+                            stability_rows.append({
+                                "Num_topics":    num_topics,
+                                "Alpha":         alpha,
+                                "Mean_jaccard":  round(stab["mean_jaccard"], 4),
+                                "Std_jaccard":   round(stab["std_jaccard"],  4),
+                                "N_comparisons": stab["n_comparisons"],
+                            })
+
             df_coh = pd.DataFrame(coherence_rows)
             df_coh.to_csv(lda_dir / "coherence.csv", index=False, sep=";")
             logger.success(f"Coherencia guardada en {lda_dir / 'coherence.csv'}")
+
+            if stability_rows:
+                df_stab = pd.DataFrame(stability_rows)
+                df_stab.to_csv(lda_dir / "stability.csv", index=False, sep=";")
+                logger.success(f"Estabilidad guardada en {lda_dir / 'stability.csv'}")
 
     except Exception as e:
         logger.exception(f"Error crítico en el pipeline: {e}")

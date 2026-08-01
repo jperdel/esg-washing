@@ -1,5 +1,5 @@
 from pathlib import Path
-import pandas as pd
+from loguru import logger
 
 # PATHS
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,12 +33,53 @@ LEXICAL_MIN_ZONE_LEN  = 150   # minimum chars for a zone to be emitted
 # NLP PARAMETERS
 SPACY_MODEL = 'en_core_web_md'
 
-with open(METADATA_DIR / "esg_terms.txt", "r", encoding="utf-8") as f:
-    ESG_KEYWORDS = [
-        line.strip().lower()
-        for line in f
-        if line.strip() and not line.startswith("#")
-    ]
+
+# ---------------------------------------------------------------------------
+# Léxicos generados por scripts/build_lexicons.py
+# ---------------------------------------------------------------------------
+
+def _load_generated_lexicon(generated: Path, source: Path) -> list[str]:
+    """
+    Carga un léxico generado, comprobando que existe y que no está obsoleto
+    respecto a su fichero fuente.
+
+    Estos ficheros no se editan a mano: los produce scripts/build_lexicons.py
+    pasando cada término por el mismo TextProcessor que preprocesa el corpus,
+    de forma que vocabulario y corpus queden en la misma representación.
+    """
+    if not generated.exists():
+        raise FileNotFoundError(
+            f"Falta el léxico generado '{generated.name}'. "
+            f"Ejecuta:  python scripts/build_lexicons.py"
+        )
+
+    if source.exists() and source.stat().st_mtime > generated.stat().st_mtime:
+        logger.warning(
+            f"'{source.name}' se ha modificado después de generar '{generated.name}'. "
+            f"Vuelve a ejecutar:  python scripts/build_lexicons.py"
+        )
+
+    with open(generated, "r", encoding="utf-8") as f:
+        return [
+            line.strip().lower()
+            for line in f
+            if line.strip() and not line.startswith("#")
+        ]
+
+
+# Vocabulario TF-IDF del SUS — formas lematizadas, alineadas con el corpus.
+ESG_KEYWORDS = _load_generated_lexicon(
+    METADATA_DIR / "esg_terms_lemmatized.txt",
+    METADATA_DIR / "esg_terms.txt",
+)
+
+# HEDGE — categorías L&M indicativas de lenguaje impreciso/especulativo,
+# lematizadas para poder cruzarse con el corpus (el diccionario original
+# viene en formas flexionadas y solo cruzaba el 46 % de sus entradas).
+HEDGE_KEYWORDS = set(_load_generated_lexicon(
+    METADATA_DIR / "lm_hedge_lemmatized.txt",
+    METADATA_DIR / "RAW_LM_dictionary.csv",
+))
 
 with open(METADATA_DIR / 'personal_stopwords.txt', 'r', encoding='utf-8') as f:
     PERSONAL_SW = f.read().split("\n")
@@ -51,19 +92,16 @@ with open(METADATA_DIR / 'lda_stopwords.txt', 'r', encoding='utf-8') as f:
         if line.strip() and not line.startswith("#")
     )
 
-# HEDGE KEYWORDS — categorías L&M indicativas de lenguaje impreciso/especulativo
-_lm_raw = pd.read_csv(METADATA_DIR / "RAW_LM_dictionary.csv")
-HEDGE_KEYWORDS = set(
-    _lm_raw[_lm_raw['sentiment'].isin(['Uncertainty', 'WeakModal', 'StrongModal', 'Constraining'])]
-    ['word'].str.lower().tolist()
-)
-
-# QUANT SCORE — patrones RegEx para contenido cuantificable y marcos regulatorios
+# QUANT SCORE — patrones RegEx para contenido cuantificable y marcos regulatorios.
+# IMPORTANTE: se aplican sobre el texto CRUDO (raw_text), nunca sobre el texto
+# preprocesado: el preprocesado elimina los tokens numéricos, así que sobre él
+# 'percentages' y 'large_numbers' darían siempre cero.
 QUANT_PATTERNS = {
     # Porcentajes (ej. "42%", "3.5 %")
     "percentages":     r'\b\d+(?:[.,]\d+)?\s*%',
-    # Cifras métricas grandes: 4+ dígitos (excluye años si se quiere, pero se normaliza)
-    "large_numbers":   r'\b\d{4,}\b',
+    # Cifras métricas grandes (4+ dígitos), excluyendo años 19xx/20xx: un informe
+    # no es más cuantitativo por citar muchas fechas.
+    "large_numbers":   r'\b(?!(?:19|20)\d{2}\b)\d{4,}\b',
     # Unidades de emisiones y energía
     "units":           r'\b(?:tonne|ton|mt|ktco2|co2e?|ghg|kwh|mwh|gwh|twh|mw|gw|litre|liter|m3|cubic meter)\b',
     # Marcos regulatorios de referencia

@@ -1,50 +1,197 @@
-# ESG canonical vocabulary — single source of truth.
+# Vocabulario ESG canónico — única fuente de verdad.
 #
-# Forms: spaCy lemma (output of TextProcessor), so they match directly
-# the lemmatized corpus used for TF-IDF (ESG_KEYWORDS in config.py).
+# FORMATO: forma natural en singular, una por línea. NO lematizar a mano.
+#   · El plural lo añade automáticamente el regex ("emission" cubre "emissions").
+#   · Espacios y guiones son intercambiables ("net zero" cubre "net-zero").
+#   · Las líneas que empiezan por # y las vacías se ignoran.
 #
-# Also used to build _ESG_KW_RE in lexical_document_filter.py (raw PDF text).
-# Morphological variation (plurals, gerunds, prefixes) and multi-word patterns
-# are handled there via _EXTRA_PATTERNS — edit this file for vocabulary changes.
+# ESTE FICHERO ALIMENTA DOS CONSUMIDORES CON REPRESENTACIONES DISTINTAS:
 #
-# One term per line. Lines starting with # and blank lines are ignored.
+#   1. lexical_document_filter._ESG_KW_RE — regex sobre el texto CRUDO del PDF.
+#      Usa las formas de aquí tal cual, con tolerancia de plural y separadores.
+#
+#   2. config.ESG_KEYWORDS — vocabulario TF-IDF sobre el corpus LEMATIZADO.
+#      NO se lee de aquí directamente: se lee de esg_terms_lemmatized.txt, que
+#      genera scripts/build_lexicons.py pasando cada término por el MISMO
+#      TextProcessor que preprocesa el corpus. Así el vocabulario y el corpus
+#      hablan siempre la misma lengua.
+#
+# >>> DESPUÉS DE EDITAR ESTE FICHERO, EJECUTA:  python scripts/build_lexicons.py
+#     El script avisa de los términos que no sobreviven al preprocesado.
+#
+# Los términos con dígitos (scope 1, article 8, ifrs s1) NO van aquí: el
+# preprocesado elimina los tokens numéricos, así que nunca podrían puntuar en
+# el TF-IDF. Viven en _EXTRA_PATTERNS de lexical_document_filter.py, que solo
+# actúa sobre texto crudo.
+#
+# Estado: vocabulario auditado por F. sobre 880 zonas de 4 memorias 2023.
+# Los 147 términos adicionales de feedback/Terminos_ESG_no_detectados.xlsx
+# NO están incorporados todavía (pendiente de análisis de sesgo sectorial).
 
-# --- Environmental ---
+# --- Ambiental: clima y emisiones ---
 carbon
 emission
 ghg
 co2
+co2e
 climate
+greenhouse
+methane
+footprint
+offset
+net zero
+low carbon
+carbon neutrality
+climate change
+
+# --- Ambiental: energía ---
 renewable
+solar
+photovoltaic
+hydrogen
+green hydrogen
+biomass
+biofuel
+fuel
+coal
+electricity
+electrification
+energy transition
+energy consumption
+energy efficiency
+energy mix
+wind power
+wind energy
+transition plan
+
+# --- Ambiental: recursos y naturaleza ---
 biodiversity
-waste
+ecosystem
 deforestation
 reforestation
-greenhouse
-solar
-environmental
+water
+waste
+pollution
+hazardous
+plastic
+packaging
+drought
+flood
+flooding
+heat wave
+natural disaster
+nature-based solution
+chemical management
 
-# --- Sustainability & Decarbonisation ---
+# --- Sostenibilidad y economía circular ---
 sustainability
 sustainable
 decarbonization
+decarbonisation
 decarbonize
-offset
+decarbonise
 recycle
+recycling
 recyclable
+circular
+circularity
+circular economy
 
-# --- Social ---
+# --- Social: personas y equidad ---
 diversity
+inclusion
+inclusive
+gender
+equality
+discrimination
+harassment
+racism
+injury
 stakeholder
+human right
+health and safety
+occupational health
+child labor
+forced labor
+labor right
+fair labor
+fair wage
+fair compensation
+fair condition
+living wage
+modern slavery
+social impact
+social responsibility
+social compliance
+social commitment
+social standard
+social norm
+community engagement
+training program
+training hour
+training and development
+employee wellbeing
+ungp
 
-# --- Governance & Reporting Frameworks ---
+# --- Gobernanza y ética ---
+governance
+remuneration
+transparency
+corruption
+bribery
+whistleblowing
+cybersecurity
+risk management
+due diligence
+data protection
+data privacy
+data security
+information security
+data breach
+fair competition
+responsible business
+responsible sourcing
+responsible investment
+supply chain management
+supply chain transparency
+supply chain risk
+supply chain due diligence
+tax avoidance
+tax policy
+tax transparency
+
+# --- Marcos de reporting y ratings ---
 esg
 csr
 materiality
+double materiality
+material topic
+non-financial
+nonfinancial
 tcfd
 gri
+global reporting initiative
 sasb
 sfdr
 csrd
-sbti
+esrs
+issb
+tnfd
 sdg
+sbti
+science based target
+cdp
+gdpr
+eu taxonomy
+taxonomy aligned
+taxonomy alignment
+taxonomy eligible
+un global compact
+ecovadis
+sustainalytics
+ftse4good
+msci esg
+leed
+zdhc
+green bond
+green investment

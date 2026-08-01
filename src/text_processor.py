@@ -57,13 +57,26 @@ class TextProcessor:
         
         tokens = []
         for token in doc:
-            if (not token.is_stop and 
-                not token.is_punct and 
+            if (not token.is_stop and
+                not token.is_punct and
                 not token.is_space and
-                token.is_alpha and
-                len(token.text) > 2 and 
+                self._is_content_token(token.text) and
+                len(token.text) > 2 and
                 token.lemma_ not in self.custom_stopwords):
-                
+
                 tokens.append(token.lemma_)
-        
+
         return " ".join(tokens)
+
+    @staticmethod
+    def _is_content_token(text: str) -> bool:
+        """
+        Acepta tokens alfanuméricos con al menos dos letras.
+
+        Sustituye al antiguo filtro `token.is_alpha`, que descartaba términos
+        ESG imprescindibles por contener un dígito: "co2", "co2e", "sf6",
+        "ftse4good", "iso14001". Al exigir dos letras seguimos descartando
+        cifras puras ("2023", "14001") y referencias de página ("p12", "q1"),
+        que solo aportarían ruido al TF-IDF y al LDA.
+        """
+        return text.isalnum() and sum(c.isalpha() for c in text) >= 2

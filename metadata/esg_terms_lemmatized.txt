@@ -1,0 +1,156 @@
+# GENERADO POR scripts/build_lexicons.py — NO EDITAR A MANO.
+# Fuente: esg_terms.txt | Vocabulario TF-IDF del SUS (formas lematizadas).
+biodiversity
+biofuel
+biomass
+bribery
+carbon
+carbon neutrality
+cdp
+chemical management
+child labor
+circular
+circular economy
+circularity
+climate
+climate change
+co2
+co2e
+coal
+community engagement
+corruption
+csr
+csrd
+cybersecurity
+data privacy
+data protection
+datum breach
+datum security
+decarbonisation
+decarbonise
+decarbonization
+decarbonize
+deforestation
+diligence
+discrimination
+diversity
+double materiality
+drought
+ecosystem
+ecovadi
+electricity
+electrification
+emission
+employee wellbee
+energy consumption
+energy efficiency
+energy mix
+energy transition
+equality
+esg
+esr
+fair compensation
+fair competition
+fair condition
+fair labor
+fair wage
+flood
+flooding
+footprint
+force labor
+ftse4good
+fuel
+gdpr
+gender
+ghg
+global compact
+global reporting initiative
+governance
+green bond
+green hydrogen
+green investment
+greenhouse
+gri
+harassment
+hazardous
+health safety
+heat wave
+human right
+hydrogen
+inclusion
+inclusive
+information security
+injury
+issb
+labor right
+leed
+live wage
+low carbon
+material topic
+materiality
+methane
+modern slavery
+msci esg
+natural disaster
+nature base solution
+net zero
+non financial
+nonfinancial
+occupational health
+offset
+packaging
+photovoltaic
+plastic
+pollution
+racism
+recyclable
+recycle
+recycling
+reforestation
+remuneration
+renewable
+responsible business
+responsible investment
+responsible sourcing
+risk management
+sasb
+sbti
+science base target
+sdg
+sfdr
+social commitment
+social compliance
+social impact
+social norm
+social responsibility
+social standard
+solar
+stakeholder
+supply chain diligence
+supply chain management
+supply chain risk
+supply chain transparency
+sustainability
+sustainable
+sustainalytic
+tax avoidance
+tax policy
+tax transparency
+taxonomy
+taxonomy align
+taxonomy alignment
+taxonomy eligible
+tcfd
+tnfd
+training development
+training hour
+training program
+transition plan
+transparency
+ungp
+waste
+water
+whistleblowe
+wind energy
+wind power
+zdhc

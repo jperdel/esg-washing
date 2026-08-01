@@ -35,9 +35,19 @@ class ESGSIAnalyzer:
         self.quant_patterns = {k: re.compile(v, re.IGNORECASE) for k, v in quant_patterns.items()}
         self.ext_weights = ext_weights or {"w_quant": 0.5, "w_hedge": 0.5}
 
-        self.vectorizer = TfidfVectorizer(vocabulary=self.keywords, binary=False)
+        # El vocabulario contiene expresiones multipalabra ya lematizadas
+        # ("human right", "circular economy"). Con el ngram_range por defecto
+        # (1,1) el analizador solo generaría unigramas y esas entradas
+        # puntuarían siempre cero, sin lanzar ningún error.
+        max_n = max((len(k.split()) for k in self.keywords), default=1)
+        self.vectorizer = TfidfVectorizer(
+            vocabulary=self.keywords,
+            ngram_range=(1, max_n),
+            binary=False,
+        )
         logger.debug(
-            f"ESGSIAnalyzer listo — {len(self.keywords)} keywords ESG, "
+            f"ESGSIAnalyzer listo — {len(self.keywords)} keywords ESG "
+            f"(n-grama máximo {max_n}), "
             f"{len(self.hedge_words)} hedge words, "
             f"{len(self.quant_patterns)} patrones QUANT."
         )
@@ -59,16 +69,20 @@ class ESGSIAnalyzer:
         tokenized = [lm.tokenize(t) for t in texts]
         return np.array([lm.get_score(t)["Polarity"] for t in tokenized])
 
-    def calculate_quant_scores(self, texts: List[str]) -> np.ndarray:
+    def calculate_quant_scores(self, raw_texts: List[str]) -> np.ndarray:
         """
         Densidad de contenido cuantificable: suma de ocurrencias de los patrones
         QUANT (porcentajes, cifras, unidades físicas, marcos regulatorios),
         normalizada por el número de tokens del documento para hacerla
         comparable entre textos de distinta longitud.
+
+        ATENCIÓN: recibe el texto CRUDO extraído del PDF, no el preprocesado.
+        El preprocesado descarta los tokens numéricos, así que sobre él los
+        patrones 'percentages' y 'large_numbers' devuelven siempre cero.
         """
         logger.info("Calculando QUANT scores (RegEx sobre cifras y marcos regulatorios)...")
         scores = []
-        for text in texts:
+        for text in raw_texts:
             n_tokens = max(len(text.split()), 1)
             hits = sum(len(pat.findall(text)) for pat in self.quant_patterns.values())
             scores.append(hits / n_tokens)

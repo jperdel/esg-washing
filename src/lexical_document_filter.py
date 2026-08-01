@@ -37,40 +37,72 @@ def _load_esg_terms() -> list[str]:
             if line.strip() and not line.startswith("#")
         ]
 
-# Patterns that require prefix or multi-word matching — raw PDF text only.
-# 'social' and 'energy' only when accompanied by ESG context to avoid false positives.
+# Patterns that CANNOT be expressed as a flat term in esg_terms.txt:
+#   · morphological families that need prefix matching
+#   · terms containing digits (excluded from esg_terms.txt because the
+#     preprocessing drops numeric tokens, so they could never score in TF-IDF)
+#   · precision collocations: 'social', 'water' and 'energy' are far too
+#     polysemous to count bare, so they only match in ESG context
+# Everything expressible as plain words belongs in esg_terms.txt, not here.
 _EXTRA_PATTERNS: list[str] = [
+    # Morphological families
+    r"environ\w+",                                                 # environment, environmental…
     r"sustainab\w+",                                               # sustainability, sustainably…
-    r"decarboni\w+",                                               # decarbonize, decarbonization…
+    r"decarboni\w+",                                               # decarbonize, decarbonisation…
     r"recycl\w+",                                                  # recycling, recyclable…
     r"offset\w+",                                                  # offsetting, offsetted…
+    r"electrif\w+",                                                # electrification, electrified…
+    r"inclusiv\w+",                                                # inclusive, inclusivity…
+    r"circulari\w+",                                               # circularity…
+    r"cybersecuri\w+",                                             # cybersecurity…
+    r"whistleblow\w+",                                             # whistleblowing, whistleblower…
+    r"injur\w+",                                                   # injury, injuries…
+    # Terms with digits
     r"co2e?",
-    r"scope\s*[123]",
+    r"scope\s*[123]\b",
     r"scope\s+(?:one|two|three)",
-    r"water\s+(?:usage|consumption|stewardship|management)",
-    r"social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license)",
-    r"energy\s+(?:consumption|efficiency|transition|mix)",
-    r"human[\s\-]rights?",
-    r"net[\s\-]zero",
-    r"circular\s+economy",
-    r"paris\s+agreement",
-    r"health\s+and\s+safety",
-    r"employee\s+well\w*",
-    r"supply[\s\-]chain\s+(?:ethics|risk)",
-    r"responsible\s+(?:sourcing|investment|business)",
-    r"double\s+materiality",
-    r"transition\s+plan",
-    r"renewable\s+energy",
-    r"wind\s+(?:power|energy)",
+    r"article\s*[689]\b",
+    r"ifrs\s*s[12]\b",
+    r"iso\s*(?:14001|45001|50001|37001)\b",
     r"tonne\w*\s+(?:co2|carbon)",
-    r"science[\s\-]based\s+targets?",
-    r"un\s+sdg",
+    # Precision collocations for high-frequency polysemous heads
+    r"social\s+(?:responsibility|impact|policy|pillar|report|performance|value|"
+    r"welfare|audit|capital|sustainability|license|licence|dialogue|protection|"
+    r"partner|standard|norm|commitment|compliance)",
+    r"water\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress)",
+    r"energy\s+(?:consumption|efficiency|transition|mix|intensity|storage)",
+    r"employee\s+well\w*",
+    # Expresiones cuya parte específica desaparece en el preprocesado y que por
+    # eso no pueden vivir en esg_terms.txt: "paris" está en personal_stopwords
+    # y "just" es stopword de spaCy, así que como entrada TF-IDF quedarían en
+    # "agreement" y "transition", demasiado genéricas. Aquí sí funcionan,
+    # porque el regex actúa sobre el texto crudo.
+    r"paris\s+agreement",
+    r"just\s+transition",
 ]
 
-_ESG_TERMS  = _load_esg_terms()
-_terms_pat  = "|".join(f"{t}s?" for t in _ESG_TERMS)
-_extra_pat  = "|".join(_EXTRA_PATTERNS)
-_ESG_KW_RE  = re.compile(rf"\b(?:{_terms_pat}|{_extra_pat})\b", re.IGNORECASE)
+
+def _term_to_pattern(term: str) -> str:
+    """
+    Convert a natural-form term from esg_terms.txt into a regex fragment.
+
+    Spaces and hyphens are interchangeable, so a single entry "net zero"
+    matches "net zero", "net-zero" and "net  zero"; an optional trailing "s"
+    on the last word covers regular plurals ("emission" → "emissions").
+    """
+    parts = re.split(r"[\s\-]+", term.strip())
+    return r"[\s\-]+".join(re.escape(p) for p in parts) + "s?"
+
+
+_ESG_TERMS = _load_esg_terms()
+
+# Longest first: regex alternation is leftmost-first, not longest-match, so
+# without this "carbon" would shadow "carbon neutrality" and the keywords_found
+# metadata would report the less specific term.
+_sorted_terms = sorted(_ESG_TERMS, key=lambda t: (-len(t.split()), -len(t)))
+_terms_pat = "|".join(_term_to_pattern(t) for t in _sorted_terms)
+_extra_pat = "|".join(_EXTRA_PATTERNS)
+_ESG_KW_RE = re.compile(rf"\b(?:{_terms_pat}|{_extra_pat})\b", re.IGNORECASE)
 
 # ── Running header / footer detection ───────────────────────────────────────
 _HEADER_RATIO  = 0.08
@@ -105,6 +137,7 @@ class LexicalDocumentFilter:
         self.kw_threshold  = kw_threshold
         self.context_paras = context_paras
         self.min_zone_len  = min_zone_len
+        self._root_folder: Path | None = None   # set by process_folder()
 
     # ──────────────────────────────────────────────────────────────────────────
     # Public API
@@ -114,6 +147,7 @@ class LexicalDocumentFilter:
         """Extract and save ESG zones for every PDF under root_folder."""
         if not root_folder.exists():
             raise FileNotFoundError(f"Carpeta no encontrada: {root_folder}")
+        self._root_folder = root_folder
         pdf_files = [p for p in root_folder.rglob("*") if p.suffix.lower() == ".pdf"]
         logger.info(f"LexicalFilter: {len(pdf_files)} PDFs en '{root_folder.name}'.")
         for idx, pdf in enumerate(pdf_files, 1):
@@ -370,8 +404,26 @@ class LexicalDocumentFilter:
             return ""
         return "\n\n\n\n".join(z["text"] for z in zones)
 
+    def _output_path(self, pdf_path: Path) -> Path:
+        """
+        Mirror the source tree under data/chunks_lexical/, preserving the
+        country/company subfolders.
+
+        Built from the relative path to the scanned root instead of a string
+        replace of "pdf": a company or file whose name happens to contain
+        "pdf" would otherwise corrupt the destination path.
+        """
+        root = self._root_folder
+        if root is not None:
+            try:
+                relative = pdf_path.relative_to(root)
+                return (root.parent / "chunks_lexical" / relative).with_suffix(".json")
+            except ValueError:
+                logger.warning(f"{pdf_path} fuera de la raíz {root}; se usa la ruta absoluta.")
+        return pdf_path.with_suffix(".json")
+
     def _save_results(self, pdf_path: Path, result: dict):
-        out_path = Path(str(pdf_path).replace("pdf", "chunks_lexical")).with_suffix(".json")
+        out_path = self._output_path(pdf_path)
         out_path.parent.mkdir(parents=True, exist_ok=True)
         payload = {
             "file":          result["file"],

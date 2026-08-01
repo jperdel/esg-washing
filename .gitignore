@@ -6,6 +6,7 @@ results/
 # --- Personal ---
 diario.txt
 private_config.py
+feedback/
 
 # --- Python ---
 __pycache__/
