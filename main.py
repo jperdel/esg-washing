@@ -1,6 +1,7 @@
 from __future__ import annotations
 import sys
 import re
+import hashlib
 import pandas as pd
 from pathlib import Path
 from loguru import logger
@@ -18,6 +19,7 @@ from metadata_loader import load_document_metadata, get_doc_type
 from config import (
     METADATA_EXCEL,
     SPACY_MODEL, ESG_KEYWORDS, HEDGE_KEYWORDS, QUANT_PATTERNS, ESGSI_EXT_WEIGHTS, PERSONAL_SW,
+    SUS_MODE,
     K_TOPICS_LIST, ALPHA_LIST, K_ITERS, LDA_STOPWORDS,
     LDA_N_SEEDS, LDA_TOPN_STABILITY,
     PDF_DATA_DIR, LEXICAL_DATA_DIR, CLEAN_DATA_DIR, METRICS_RESULTS_DIR, LDA_RESULTS_DIR,
@@ -86,6 +88,7 @@ def main(
                 hedge_words=HEDGE_KEYWORDS,
                 quant_patterns=QUANT_PATTERNS,
                 ext_weights=ESGSI_EXT_WEIGHTS,
+                sus_mode=SUS_MODE,
             )
 
         # -- Extracción lexical (reemplaza chunking + filtrado semántico) ----
@@ -187,6 +190,28 @@ def main(
                     year,
                 )
 
+        # -- Deduplicación --------------------------------------------------
+        # El corpus contiene el mismo informe bajo dos nombres de fichero
+        # (p. ej. una versión "_repaired" de un PDF corrupto). Ambos extraen
+        # texto idéntico, así que entrarían dos veces en cada media, z-score y
+        # correlación, y desbalancearían el panel de ese país-año.
+        seen: dict[str, str] = {}
+        deduped = []
+        for row in corpus_data:
+            digest = hashlib.md5(str(row["clean_text"]).encode("utf-8")).hexdigest()
+            if digest in seen:
+                logger.warning(
+                    f"Documento duplicado descartado: '{row['Documento']}' "
+                    f"({row['Compañía']}, {row['Año']}) es idéntico a '{seen[digest]}'."
+                )
+                continue
+            seen[digest] = row["Documento"]
+            deduped.append(row)
+
+        if len(deduped) != len(corpus_data):
+            logger.info(f"Corpus deduplicado: {len(corpus_data)} -> {len(deduped)} documentos únicos.")
+            corpus_data = deduped
+
         texts_list = [d["clean_text"] for d in corpus_data]
         doc_names  = [d["Documento"]  for d in corpus_data]
 
@@ -210,9 +235,15 @@ def main(
 
         # -- Análisis ESGSI ----------------------------------------------
         if run_esgsi_analysis:
-            logger.info("Ejecutando análisis ESGSI...")
+            logger.info(f"Ejecutando análisis ESGSI (SUS_MODE='{SUS_MODE}')...")
 
-            sus_scores   = analyzer.calculate_sus_scores(texts_list)
+            # Las tres especificaciones del SUS se calculan siempre: la elegida
+            # alimenta el índice y las otras dos quedan en el CSV para la tabla
+            # de robustez metodológica.
+            sus_variants = analyzer.calculate_sus_variants(texts_list)
+            sus_scores   = sus_variants[SUS_MODE]
+            breadth      = analyzer.calculate_breadth_scores(texts_list)
+
             sen_scores   = analyzer.calculate_sen_scores(texts_list)
             quant_scores = analyzer.calculate_quant_scores(raw_texts_list)
             hedge_scores = analyzer.calculate_hedge_scores(texts_list)
@@ -230,7 +261,15 @@ def main(
                     "Compañía":       data["Compañía"],
                     "Año":            data["Año"],
                     "TipoDocumento":  data.get("TipoDocumento", "Unknown"),
-                    "SUS_Score":      round(float(sus_scores[i]),       4),
+                    "SUS_Score":      round(float(sus_scores[i]),       6),
+                    # Especificaciones alternativas del SUS (tabla de robustez)
+                    "SUS_density":      round(float(sus_variants["density"][i]),      6),
+                    "SUS_tfidf_length": round(float(sus_variants["tfidf_length"][i]), 6),
+                    "SUS_lagasio":      round(float(sus_variants["lagasio"][i]),      6),
+                    # Amplitud temática: nº efectivo de términos ESG distintos.
+                    # No entra en el índice; es la dimensión que el SUS de
+                    # Lagasio medía sin pretenderlo.
+                    "Breadth":        round(float(breadth[i]),          4),
                     "SEN_Score":      round(float(sen_scores[i]),       4),
                     "QUANT_Score":    round(float(quant_scores[i]),     4),
                     "HEDGE_Score":    round(float(hedge_scores[i]),     4),

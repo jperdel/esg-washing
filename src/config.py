@@ -108,6 +108,14 @@ QUANT_PATTERNS = {
     "frameworks":      r'\b(?:gri|tcfd|sasb|issb|sdg|ungc|sfdr|csrd|un global compact|paris agreement|taxonomy)\b',
 }
 
+# SUS — especificación del componente de sustancia.
+#   'density'      : menciones ESG por 100 palabras (propuesta de este trabajo)
+#   'tfidf_length' : TF-IDF de Lagasio normalizado por longitud (robustez)
+#   'lagasio'      : TF-IDF con normalización L2, réplica del paper original
+# Las tres se calculan y se guardan en results.csv; esta elige cuál alimenta
+# el índice. Ver la docstring de ESGSIAnalyzer para la justificación.
+SUS_MODE = 'density'
+
 # ESGSI EXTENDIDO — pesos para los dos nuevos componentes
 # ESGSI_ext = Z(SEN) - Z(SUS) - w_quant*Z(QUANT) + w_hedge*Z(HEDGE)
 # QUANT alto → menos washing (el informe tiene datos duros) → se resta
