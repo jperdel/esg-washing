@@ -1,0 +1,302 @@
+\section{Robustness to the substance specification}
+\label{sec:robustness}
+
+\S\ref{sec:original} established that the substance component of \citet{lagasio2024} is
+underdetermined: the aggregation from per-term TF-IDF values to a document-level $\SUS_i$ is
+never stated, and the \texttt{norm} setting is never mentioned. More than one implementation
+is therefore admissible on the published description. Of these two silences, this section
+takes up the second: the three specifications defined in \S\ref{sec:index} span the
+admissible choices of term weighting and vector normalisation. The aggregation silence is
+disposed of analytically rather than by comparison, in \S\ref{sec:measurement}. This section
+measures how far the index and its labels move across the choices it does span.
+
+Two things this section does not do. It does not choose a specification: the selection
+argument rests on agreement with an independently constructed yardstick and is made in
+\S\ref{sec:validity}. And it does not treat agreement between two specifications as evidence
+that either is correct --- two estimators can agree closely and both be measuring the wrong
+quantity, which is precisely the diagnosis \S\ref{sec:measurement} reaches for one of the
+three. Throughout, the \emph{score} normalisation is held fixed at $z$-scores; the
+sensitivity of the index to that separate choice is the object of \S\ref{sec:artefact}.
+
+\subsection{Design}
+
+The three specifications cross the two open choices one factor at a time. $\susdens$ and
+$\sustfidf$ share a denominator --- document length --- and differ only in whether terms are
+weighted uniformly or by IDF, so the pair isolates \emph{term weighting}. $\sustfidf$ and
+$\suslag$ share IDF weights and differ only in whether the term vector is divided by document
+length or scaled to unit $L_2$ norm, so that pair isolates \emph{vector normalisation}.
+$\suslag$ implements the inference --- conceded as reasonable in \S\ref{sec:original} and
+\S\ref{sec:measurement} --- that the four disclosed \texttt{TfidfVectorizer} settings were the
+only departures from library defaults, leaving the default $L_2$ setting in force; the
+original never states it in terms. We also report
+$\BREADTH$, the effective number of
+distinct vocabulary terms (\S\ref{sec:index}): a diagnostic rather than an index component,
+and a measure of topical spread that carries no information about how much ESG content a
+document holds.
+
+\subsection{Component-level sensitivity}
+
+Table~\ref{tab:robustness-components} gives the correlation matrix over the three
+specifications and $\BREADTH$.
+
+\begin{table}[htbp]
+\centering
+\caption{Pearson correlations among the three substance specifications and $\BREADTH$
+($n = 343$).}
+\label{tab:robustness-components}
+\begin{tabular}{lrrrr}
+\toprule
+ & $\susdens$ & $\sustfidf$ & $\suslag$ & $\BREADTH$ \\
+\midrule
+$\susdens$  & 1.0000 & 0.9926 & 0.4177 & 0.4626 \\
+$\sustfidf$ & 0.9926 & 1.0000 & 0.4600 & 0.5118 \\
+$\suslag$   & 0.4177 & 0.4600 & 1.0000 & 0.9733 \\
+$\BREADTH$  & 0.4626 & 0.5118 & 0.9733 & 1.0000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The two contrasts can be read off directly. Across the weighting contrast, $r = 0.9926$:
+replacing uniform weights with IDF weights leaves the measurement essentially unchanged.
+Across the vector-normalisation contrast, $r = 0.4600$; between the two specifications that differ in
+both factors, $r = 0.4177$.
+
+The $\BREADTH$ column identifies what the substitution does. $\suslag$ correlates $0.9733$
+with a pure diversity statistic --- higher than it correlates with either of the two
+alternative substance measures, and higher than either of those correlates with $\BREADTH$.
+Under $L_2$ vector normalisation the score is closer to being a restatement of topical spread than
+it is to being a measure of substance. \S\ref{sec:measurement} supplies the mechanism: unit
+scaling discards vector magnitude and retains only direction, so what survives is the mix
+across the vocabulary, not the amount.
+
+\subsection{Index-level sensitivity and classification agreement}
+
+Table~\ref{tab:robustness-index} carries the comparison through to the assembled index and
+its labels.
+
+\begin{table}[htbp]
+\centering
+\caption{Index correlation and classification agreement against $\ESGSI(\susdens)$
+($n = 343$). Labels follow the original's rule, $\ESGSI > 0 \Rightarrow$ ``Potential
+ESG-washing''. Score normalisation is $z$-score in every row.}
+\label{tab:robustness-index}
+\begin{tabular}{llrrr}
+\toprule
+Substance specification & Factors varied & Pearson $r$ & Flagged & Label flips \\
+\midrule
+$\susdens$ (reference) & ---                        & 1.0000 & 171/343 & --- \\
+$\sustfidf$            & weighting                  & 0.9961 & 167/343 & 6 (1.7\,\%) \\
+$\suslag$              & weighting, vector norm.    & 0.6964 & 159/343 & 96 (28.0\,\%) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+$\suslag$ differs from the reference in both factors, so its 96 flips are not, by themselves,
+evidence about which factor drives them; the attribution needs an argument, not a reading of
+the table. The argument is a bound, and it uses only the two counts already reported. At most
+6 documents anywhere in the corpus disagree under weighting alone (the
+$\susdens$--$\sustfidf$ row). Of the 96 documents on which $\susdens$ and $\suslag$ disagree,
+therefore, at most 6 can be documents that already disagreed under weighting before vector
+normalisation was even applied. At least $96 - 6 = 90$ of the 96 are documents on which
+weighting left the label unchanged and vector normalisation alone flipped it --- for those
+documents, vector normalisation is the entire explanation, with weighting contributing
+nothing. Vector normalisation accounts for at least 90 of the 96 combined label changes;
+weighting cannot be credited with more than the 6 flips it produces on its own, anywhere in
+the corpus. The ranking in Table~\ref{tab:robustness-index} is not an artefact of comparing
+every specification to $\susdens$ rather than to one another: vector normalisation dominates
+under any attribution consistent with the two counts already in the table.
+
+Separately, every row of Table~\ref{tab:robustness-index} shares the same $\Z(\SEN)$ term,
+and $\SEN$ is only weakly related to any of the three substance measures. Subtracting a
+common component that carries little of its own relationship to the compared variables tends
+to inflate the correlation between two differences relative to the correlation between the
+terms being subtracted --- not as a matter of mathematical necessity, but empirically, and it
+does so here: every index-level correlation in Table~\ref{tab:robustness-index} runs above
+its component-level counterpart in Table~\ref{tab:robustness-components} (0.9961 against
+0.9926; 0.6964 against 0.4177). Read the index-level number accordingly: it is not a tighter
+estimate of how closely the underlying substance measurements agree than the component-level
+number is. If anything it is the looser of the two, inflated by a term the compared
+specifications do not even differ on.
+
+\subsection{Interpretation}
+
+The result is one sentence: \emph{term weighting is second-order and vector normalisation is
+first-order}. Substituting uniform weights for IDF moves six documents out of 343; changing
+the vector normalisation moves ninety-six. Roughly a quarter of all classifications depend on
+a parameter the original never states in terms. What that establishes is a matter of stakes
+rather than of bookkeeping, and it should be read alongside the concession
+\S\ref{sec:measurement} makes: the \texttt{norm} setting is recoverable from the convention
+that only non-default arguments are reported, and we rely on that convention ourselves, so we
+do not present the silence as a reproducibility failure. We present it as a first-order choice
+left to an inference. The two implementations the published text does not distinguish
+\emph{explicitly} disagree about the label of more than one report in four, which is why we
+report both rather than settle the question by convention.
+
+The aggregation rule is the opposite case in both respects, and \S\ref{sec:measurement}
+disposes of it by argument rather than by comparison: no convention supplies a default for it,
+yet because the index is $z$-scored a positive affine rescaling such as switching from a sum
+to a mean over the vocabulary cancels out, so that silence does not move a single label even
+though nothing in the original resolves it.
+
+It follows that the near-identity of $\susdens$ and $\sustfidf$ is not a validation of either.
+It establishes insensitivity to one parameter, which is a property of the parameter, not a
+warrant for the measure. Both could be poor measures of substance and would still agree at
+$0.9926$. What separates the specifications is external evidence, and that is
+\S\ref{sec:validity}'s subject; the present section only quantifies the cost of getting the
+choice wrong.
+
+\subsection{Robustness to the vocabulary}
+\label{sec:robustness-lexicon}
+
+The section so far varies how the vocabulary is weighted and how the resulting vector is
+normalised, never which terms it contains. That leaves untouched the standing objection to any
+dictionary-based measure: the result is an artefact of the word list, and a different list would
+have produced a different index. \S\ref{sec:lexicon} puts that objection in measured form --- an
+external audit of 880 zones from four FY2023 reports identified 147 ESG terms present in the
+text and absent from our 154 entries --- and those terms are the material for a robustness check
+on the vocabulary itself.
+
+Each of the 143 distinct candidate strings behind that list was measured across all 343 reports
+for frequency and dispersion and classified on those statistics (\S\ref{sec:lexicon}); admitting
+the dispersed entries and the polysemous ones handled by collocation, and holding back those
+flagged sectoral, takes the vocabulary from 154 to 289 lemmatised TF-IDF entries.
+Table~\ref{tab:robustness-lexicon} varies it in two steps: the expansion, then the 22 terms held
+back as sectoral.
+
+Both experiments run on the same 343 documents and score them with different vocabularies; the
+extracted text is held fixed at the expansion's own extraction. That isolation is deliberate and
+it is not free: our vocabulary file drives the paragraph-selection regex of
+\S\ref{sec:extraction} as well as the TF-IDF vocabulary, so an end-to-end comparison of the two
+vocabularies would confound what is scored with what is extracted. Holding the corpus fixed
+removes the confound at the cost that the first column of
+Table~\ref{tab:robustness-lexicon} is not the index reported elsewhere in this paper: the
+adopted specification of \S\ref{sec:lexicon} scores its own extraction, where mean $\susdens$ is
+5.897 rather than 5.168. The difference between those two figures is an extraction effect, and
+\S\ref{sec:limitations} reports it.
+
+\begin{table}[htbp]
+\centering
+\caption{Sensitivity of the index to the scoring vocabulary, corpus held fixed ($n = 343$). Each
+column after the first is compared with the column immediately to its left. All three columns
+score the same extracted text, so the first is the adopted 154-term vocabulary on the
+expansion's extraction and not the run reported elsewhere in this paper (see text). Labels
+follow the original's rule, $\ESGSI > 0 \Rightarrow$ ``Potential ESG-washing''; score
+normalisation is $z$-score in every column. The trend is negative and significant beyond any
+conventional level in all three ($p < 10^{-7}$ throughout), with the independence caveat of
+\S\ref{sec:temporal} attaching to each.}
+\label{tab:robustness-lexicon}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+ & 154 terms & 289 terms & 289 $+$ 22 sectoral \\
+\midrule
+Mean $\susdens$                  & 5.168 & 6.516 & 6.541 \\
+Change vs preceding column       & ---   & $+26.1$\,\% & $+0.4$\,\% \\
+\addlinespace
+Flagged                          & 172/343 & 164/343 & 167/343 \\
+Label flips vs preceding column  & ---   & 18 (5.2\,\%) & 3 (0.9\,\%) \\
+Pearson $r$ vs preceding column  & ---   & 0.9882 & 0.9998 \\
+\addlinespace
+$\ESGSI(\susdens)$ slope         & $-0.219$/yr & $-0.194$/yr & $-0.193$/yr \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Near-doubling the vocabulary raises mean substance density by $26.1$\,\%, so the added terms
+match text rather than nothing, and it moves the index very little: $r = 0.9882$, 18 of 343
+labels change (5.2\,\%), and the flagged count falls from 172/343 to 164/343. The temporal slope
+of \S\ref{sec:temporal} goes from $-0.219$ to $-0.194$ per year on this corpus
+(\S\ref{sec:temporal-vocabulary}). The 22 terms held back as sectoral move 3 labels of 343 when
+added on top of the expansion; \S\ref{sec:limitations} reports what they do at firm level and
+why they are excluded.
+
+Two limits bound the check narrowly. The 289-term list is not independent of the corpus it is
+tested on: its candidates came from auditing four of these reports and were classified on
+statistics computed from all 343. And the check is one-sided, because terms were admitted for
+being broadly dispersed, which is precisely the property that makes a term least able to move a
+density ranking; a vocabulary built on other principles is untested, and nothing here bounds
+what one would do. What the check bounds is the index's sensitivity to a defensible extension of
+this vocabulary on this corpus. It does not establish that the vocabulary is right.
+
+The check is not specific to the terms we chose. Deleting 30 of the 154 entries at random and
+rescoring --- 5,000 draws --- moves a median of 17 labels at a mean index correlation of 0.988;
+our 18 flips and 0.9882 sit at the 56th and 58th percentiles of that distribution, and among the
+random draws that displace the index as far as ours does the median is 19 labels against our 18.
+What the experiment measures is therefore the index's insensitivity to a vocabulary perturbation
+of this magnitude, not the adequacy of the particular terms admitted. Matched on occurrence mass
+rather than on term count the curated expansion is modestly the more stable of the two, at the
+eighteenth percentile of the random distribution; we report that without leaning on it.
+
+Part of the agreement is structural rather than empirical. The 154 entries are retained whole
+inside the 289, so the increment is additive, and its standard deviation is $0.236$ of the base
+measure's. That ratio alone bounds the correlation between the two substance scores below at
+$\sqrt{1-0.236^{2}} = 0.972$ and the correlation between the two indices at $0.984$. The
+observed $0.9882$ lies about a quarter of the way up a window $0.016$ wide. The exercise is not
+vacuous --- a fifth of the expanded numerator is new material --- but the range in which the
+answer could have landed was fixed by the acceptance rule before any document was scored,
+because terms admitted on dispersion contribute a near-constant per-document increment.
+
+Placed beside Table~\ref{tab:robustness-index}, the two experiments complete the set of choices
+this paper varies (Table~\ref{tab:robustness-hierarchy}).
+
+\begin{table}[htbp]
+\centering
+\caption{Labels moved by each of the three choices this paper varies ($n = 343$; $z$-score
+normalisation and the $\ESGSI > 0$ threshold throughout). Each row names its own baseline: the
+third is an increment on the robustness vocabulary, not on the adopted one. The rows are not
+commensurable perturbations and the column does not rank the choices by importance; see the
+text.}
+\label{tab:robustness-hierarchy}
+\begin{tabular}{@{}llr@{}}
+\toprule
+Choice varied & Measured against & Labels moved \\
+\midrule
+Vector normalisation (Table~\ref{tab:robustness-index})
+  & $\ESGSI(\susdens)$, 154 terms & 96/343 (28.0\,\%) \\
+Scoring vocabulary, 154 $\to$ 289 terms
+  & $\ESGSI(\susdens)$, 154 terms & 18/343 (5.2\,\%) \\
+Sectoral terms, $+22$
+  & the 289-term vocabulary      & 3/343 (0.9\,\%) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The three rows are not perturbations of comparable size, and the column should not be read as
+ranking the choices by how much each matters. Across 2,354 random perturbations of this
+vocabulary, label flips scale as $(1-r)^{0.57}$, close to the square root of the index
+displacement. On that scaling the three rows differ by a factor of $1.3$ although the
+displacements behind them differ by a factor of $1{,}500$: each moves about as many labels as
+any perturbation of its size would move. What separates the rows is how far each moved the
+index, not what kind of choice each was. Nor is the third row's margin over the second what it
+appears: measured against the adopted specification rather than incrementally, the full
+$289+22$ vocabulary moves 17 labels, not 3. What the column licenses is narrower than a
+hierarchy and is still this section's point: of the three choices we varied, the one
+\citet{lagasio2024} never states in terms is the one that changes the most classifications.
+
+The specification adopted for the paper is unchanged --- the 154 entries of \S\ref{sec:lexicon},
+on which every figure reported elsewhere is computed. Both vocabularies here are robustness
+instruments, not candidates for re-selection: the selection argument is \S\ref{sec:validity}'s,
+and it is not re-run on the expanded list.
+
+\subsection{The threshold qualifies the flip counts}
+
+Label flips are counts of documents crossing $\ESGSI = 0$, and that boundary is definitional.
+The original states the rule and reports no calibration of it against any external benchmark
+(\S\ref{sec:index}). With score normalisation fixed at $z$-score throughout this section, the
+consequence is structural: $\ESGSI$ is
+a difference of two mean-zero variables, so it has mean zero by construction and the $> 0$
+rule flags close to half the corpus under every specification --- 171, 167 and 159 of 343
+reports respectively. The cut-off is a property of the sample, not of any firm in it.
+
+Two implications. First, the flip counts are boundary-dependent: imperfectly correlated
+indices disagree first about documents lying near the cut-off, so a threshold placed elsewhere
+would return different counts. The absolute flip rate is not an error rate and should not be
+read as one. Second, the comparison between the two rows is unaffected, because both are
+measured against the same boundary on the same sample: whatever the threshold does to $6$, it
+does to $96$. The contrast between the two factors is what this section claims; the level is
+conditional on a convention.
+\S\ref{sec:limitations} takes up the arbitrariness of that convention, and of the relative
+ranking it rests on, as a limitation of our own index and not only of the original's.
+
+Finally, the same underdetermination applies to any result computed from this index. The
+temporal series in \S\ref{sec:temporal} is therefore reported under all three specifications
+rather than under the adopted one alone.

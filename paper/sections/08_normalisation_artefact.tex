@@ -1,0 +1,324 @@
+\section{The score-normalisation artefact}
+\label{sec:artefact}
+
+The original's headline empirical conclusion is that ESG-washing is largely
+absent from the reports it studies: \emph{``The ESGSI predominantly shows
+negative values, suggesting a general absence of greenwashing practices among
+the entities studied''} \citep[p.~6]{lagasio2024}. This section argues that the
+conclusion is an artefact of two methodological choices, neither of which the
+paper states in a form a reader could act on --- the \emph{score normalisation}
+applied cross-sectionally to the two components at index assembly, which the paper
+specifies twice and inconsistently, and the specification of the substance
+component (\S\ref{sec:index}), whose aggregation rule it never gives at all
+--- rather than a property of the disclosure.
+
+The argument has three parts, and they are deliberately kept separate because
+they do not carry equal weight. The first establishes, from the original's own
+published tables, \emph{which} score normalisation produced its numbers; this
+rests on arithmetic that requires nothing of our pipeline. The second shows
+analytically why that choice determines the sign of the reported mean; it too
+requires nothing of our pipeline, and nothing of the original beyond the two
+maps themselves. The third demonstrates the consequence on our corpus. The
+first two are jointly sufficient for the section's claim and neither uses our
+data; the third is corroboration, and we mark it as such.
+
+\subsection{Which score normalisation produced the published numbers}
+\label{sec:artefact-which}
+
+Section 3.3 of the original states its score normalisation in prose:
+
+\begin{quote}
+``To ensure comparability, both sentiment and sustainability scores are
+normalized to a uniform scale using min-max normalization. This normalization
+technique is widely used in text analysis and machine learning to address
+potential biases due to variations in document length and linguistic style
+(Sebastiani, 2002).'' \citep[p.~4]{lagasio2024}
+\end{quote}
+
+\noindent The formula printed a few lines below, in the same subsection, is a
+difference of $z$-scores:
+\begin{equation}
+\label{eq:artefact-printed}
+\ESGSI_i \;=\; \frac{\SEN_i - \overline{\SEN}}{\sigma_{\SEN}}
+\;-\; \frac{\SUS_i - \overline{\SUS}}{\sigma_{\SUS}}
+\end{equation}
+with the six symbols defined immediately beneath it as the component scores,
+their sample means and their sample standard deviations
+\citep[p.~4]{lagasio2024}. The paper never reconciles the two; we flagged the
+contradiction at the point of definition (\S\ref{sec:index}) and resolve it here.
+
+Four lines of evidence, all drawn from the original's own Table~2 ($n = 749$),
+settle it against the printed formula.
+
+\emph{Support.} The table notes state verbatim that the \emph{``Normalized
+Sustainability Score: Scores range from 0 (low sustainability) to 1 (high
+sustainability)''} and that the \emph{``Normalized Sentiment Score \dots
+[is] normalized between 0 and 1''} \citep[p.~6]{lagasio2024}; the note to
+Figure~1 repeats that the plotted component scores run \emph{``over a
+continuous range from 0 to 1''} \citep[p.~5]{lagasio2024}. The reported
+minima, $0.0546$ for the sustainability component and $0.0000$ for the
+sentiment component, are both non-negative. A $z$-scored variable has mean
+zero and positive dispersion, so its minimum is necessarily negative. Neither
+component can have been $z$-scored.
+
+\emph{Dispersion.} Table~2 gives standard deviations of $0.1321$ for the
+sustainability component and $0.0853$ for the sentiment component. A $z$-score
+has unit variance by construction. Two variables with standard deviations of
+$0.1321$ and $0.0853$ have not been $z$-scored.
+
+\emph{Location.} Table~2 reports mean $\ESGSI = -0.2179$ with standard
+deviation $0.1614$. The sentiment component has mean $0.3727$ and the
+sustainability component mean $0.5906$, and
+\begin{equation}
+\label{eq:artefact-identity}
+0.3727 - 0.5906 \;=\; -0.2179 ,
+\end{equation}
+which is the reported mean exactly. Under Equation~\eqref{eq:artefact-printed}
+the sample mean of $\ESGSI$ is $0$ by construction, since it is a difference of
+two mean-zero variables. It is not $0$.
+
+\emph{Quantiles.} Table~2 also reports quartiles. For the index they are
+$-0.3245$, $-0.2177$ and $-0.1054$ \citep[p.~6]{lagasio2024}: the third
+quartile lies below the labelling threshold, so at least three quarters of the
+$749$ reports fall at or below $-0.1054$, and the share the original's own
+instrument would have labelled \emph{``Potential ESGwashing''} is bounded above
+at roughly one report in four --- at most $188$ of $749$ on the most
+conservative of the standard quantile conventions. The original never reports
+that share (\S\ref{sec:original}); its own table bounds it. The bound is hard
+to reconcile with Equation~\eqref{eq:artefact-printed}. Under the printed
+formula the index has mean zero by construction, so for only a quarter of the
+sample to exceed zero the index would have to be pronouncedly right-skewed,
+with its mean at or above its own third quartile. Nothing in Table~2 supplies
+such a skew: the reported quartiles are close to evenly spaced about the median
+for the sustainability component ($0.5020 / 0.5876 / 0.6732$, gaps of $0.0856$
+and $0.0856$), for the sentiment component ($0.3188 / 0.3668 / 0.4169$, gaps of
+$0.0480$ and $0.0501$), and for the reported index itself, whose mean
+($-0.2179$) and median ($-0.2177$) differ by $0.0002$.
+
+The identity in Equation~\eqref{eq:artefact-identity} is not confined to the
+overall row. Subtracting the reported ``Normalized Sustainability Score'' from
+the reported ``Normalized Sentiment Score'' reproduces the reported $\ESGSI$ in
+every one of the twenty-eight rows the original publishes across Tables~2--6:
+exactly in twenty-four of them, and to within one unit in the fourth decimal
+place --- the resolution at which the components themselves are printed --- in
+the remaining four (Table~\ref{tab:artefact-rows}). No row was selected or
+omitted; the table below is the complete published set.
+
+\begin{table}[htbp]
+\centering
+\caption{Reconstruction of the original's reported $\ESGSI$ as the difference
+of its two reported components. Every row published in \citet{lagasio2024},
+Tables~2--6, is included. Four rows --- Consumer Staples, the Table~4 total,
+and the second and fourth ESG quartiles --- differ by one unit in the fourth
+decimal place, which is the resolution at which the two components are printed.
+All figures are read from the original.}
+\label{tab:artefact-rows}
+\begin{tabular}{lrrrr}
+\toprule
+Row & Norm.\ $\SEN$ & Norm.\ $\SUS$ & Difference & Reported $\ESGSI$ \\
+\midrule
+\multicolumn{5}{l}{\emph{Table 2, p.~6 --- full sample}} \\
+Overall                & 0.3727 & 0.5906 & $-0.2179$ & $-0.2179$ \\
+\midrule
+\multicolumn{5}{l}{\emph{Table 3, p.~7 --- by region}} \\
+Europe                 & 0.3477 & 0.6144 & $-0.2667$ & $-0.2667$ \\
+North America          & 0.3917 & 0.5731 & $-0.1814$ & $-0.1814$ \\
+South America          & 0.3229 & 0.6622 & $-0.3393$ & $-0.3393$ \\
+Other                  & 0.3665 & 0.5760 & $-0.2095$ & $-0.2095$ \\
+Total                  & 0.3572 & 0.6064 & $-0.2492$ & $-0.2492$ \\
+\midrule
+\multicolumn{5}{l}{\emph{Table 4, p.~7 --- by GICS sector}} \\
+Communication Services & 0.3637 & 0.5909 & $-0.2272$ & $-0.2272$ \\
+Consumer Discretionary & 0.4087 & 0.5889 & $-0.1802$ & $-0.1802$ \\
+Consumer Staples       & 0.4048 & 0.6138 & $-0.2090$ & $-0.2089$ \\
+Energy                 & 0.3478 & 0.6595 & $-0.3117$ & $-0.3117$ \\
+Financials             & 0.3460 & 0.5944 & $-0.2484$ & $-0.2484$ \\
+Health Care            & 0.3832 & 0.5775 & $-0.1943$ & $-0.1943$ \\
+Industrials            & 0.3850 & 0.5743 & $-0.1893$ & $-0.1893$ \\
+Information Technology & 0.3788 & 0.5547 & $-0.1759$ & $-0.1759$ \\
+Materials              & 0.3584 & 0.6187 & $-0.2603$ & $-0.2603$ \\
+Real Estate            & 0.3634 & 0.5672 & $-0.2038$ & $-0.2038$ \\
+Utilities              & 0.3483 & 0.5873 & $-0.2390$ & $-0.2390$ \\
+Total                  & 0.3716 & 0.5934 & $-0.2218$ & $-0.2217$ \\
+\midrule
+\multicolumn{5}{l}{\emph{Table 5, p.~8 --- by total-assets quartile}} \\
+1st quartile           & 0.3853 & 0.5688 & $-0.1835$ & $-0.1835$ \\
+2nd quartile           & 0.3829 & 0.5878 & $-0.2049$ & $-0.2049$ \\
+3rd quartile           & 0.3620 & 0.5949 & $-0.2329$ & $-0.2329$ \\
+4th quartile           & 0.3595 & 0.6093 & $-0.2498$ & $-0.2498$ \\
+Total                  & 0.3724 & 0.5902 & $-0.2178$ & $-0.2178$ \\
+\midrule
+\multicolumn{5}{l}{\emph{Table 6, p.~9 --- by ESG-score quartile}} \\
+1st quartile           & 0.3857 & 0.5650 & $-0.1793$ & $-0.1793$ \\
+2nd quartile           & 0.3772 & 0.5898 & $-0.2126$ & $-0.2127$ \\
+3rd quartile           & 0.3751 & 0.5855 & $-0.2104$ & $-0.2104$ \\
+4th quartile           & 0.3529 & 0.6223 & $-0.2694$ & $-0.2695$ \\
+Total                  & 0.3727 & 0.5907 & $-0.2180$ & $-0.2180$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+One passage in the original describes its index in terms that fit the printed
+formula rather than the tables. Introducing Figure~1, the paper states that the
+distribution \emph{``is bell-shaped and centered around an ESGSI of zero''} and
+that \emph{``a symmetric dispersion pattern around the central value indicates
+an equivalent propensity for documents to exhibit both potential greenwashing
+behaviors and genuine sustainability representation''} \citep[p.~6]{lagasio2024}.
+That description is not consistent with Table~2 on the same page --- mean
+$-0.2179$, median $-0.2177$, third quartile $-0.1054$, all below zero --- nor
+with the paper's own summary of that table, two paragraphs later, that the index
+\emph{``predominantly shows negative values''}. We do not attempt to explain the
+discrepancy, and we do not treat prose as evidence about which map was applied:
+the determination above rests on the numeric tables, which are also what every
+downstream analysis in the original --- Tables~3--7 and the ANOVA --- is
+computed from.
+
+The estimated index is therefore the difference of the two reported components
+on their $[0,1]$ scale, the min--max rescaling of the original's own prose, and
+not the $z$-score difference the paper prints. What the four arguments establish
+jointly is the negative, and it is the negative that the section needs: the
+published numbers were not produced by Equation~\eqref{eq:artefact-printed}.
+Nothing in that conclusion requires the rescaling to have been min--max in every
+operational detail. It requires only that the components be bounded and that the
+index be their plain difference, and the original's tables show both directly.
+
+This argument uses only numbers the original published. It would stand unchanged
+if our corpus, our vocabulary and our pipeline did not exist, and it is not
+revisited, reinforced or qualified anywhere later in this paper. The choice is
+established here, and only here.
+
+\subsection{Why the choice determines the sign of the result}
+\label{sec:artefact-why}
+
+Write $\Z(\cdot)$ for the $z$-score map and $M(\cdot)$ for the min--max map
+applied cross-sectionally to a finished component score. Both are affine and
+increasing, so within a component they are rank-equivalent; they are not
+equivalent once two components are differenced, because they equalise the two
+components' dispersions in different ways.
+
+Under $\Z$, the sample mean of $\Z(\SEN) - \Z(\SUS)$ is $0$ identically,
+whatever the two components contain: the estimator centres the index on its own
+labelling threshold before any document is read. What remains free is only the
+shape of the distribution about that centre, so whether a majority falls below
+zero becomes a question about the skew of a mean-zero variable rather than about
+disclosure practice --- and the original's own reported quartiles
+(\S\ref{sec:artefact-which}) describe components that supply no such skew.
+Under the printed formula, ``predominantly negative'' is neither available as a
+result nor interpretable as one. Under $M$, the sample mean is
+\begin{equation}
+\label{eq:artefact-mm-mean}
+\overline{M(\SEN)} - \overline{M(\SUS)},
+\end{equation}
+which the construction pins to no particular value; it is fixed by where each
+component's mass sits inside its own observed range.
+Equation~\eqref{eq:artefact-mm-mean} is a statement about the position of two
+marginal distributions within their ranges, not about firm behaviour. The
+original reports the two quantities directly --- substance $0.5906$, above the
+midpoint of its own reported range, against sentiment $0.3727$, well below the
+midpoint of its --- and their difference is the reported index mean, by
+Equation~\eqref{eq:artefact-identity}. The original describes the same
+asymmetry in words, calling its sustainability scores \emph{``skewed towards
+higher values''} and its sentiment scores approximately bell-shaped
+\citep[p.~6]{lagasio2024}. The sign of the mean is therefore a fact about where
+two marginal distributions sit within their own ranges. It becomes a claim
+about firm behaviour only through the zero threshold, which is definitional and
+uncalibrated (\S\ref{sec:index}) and which inherits the asymmetry directly.
+
+The paper's own justification for the choice does not survive inspection. The
+sole stated defence is that min--max score normalisation addresses
+\emph{``potential biases due to variations in document length and linguistic
+style''} \citep[p.~4]{lagasio2024}, a claim repeated at the end of its
+Section~3.2.3. Min--max score normalisation is a single monotone affine
+rescaling applied across the cross-section, $(x - \min x)/(\max x - \min x)$.
+It is rank-preserving within each variable, so whatever dependence on document
+length is present in $\SUS_i$ before the rescaling is present, in the same rank
+order, after it. A rank-preserving cross-sectional map cannot remove a
+dependence that survives in the ranks. The operation that could --- vector
+normalisation, applied to the document's term vector at the TF-IDF stage, whose
+length-neutrality we demonstrate in \S\ref{sec:measurement} --- is credited with
+nothing and is never named (\S\ref{sec:original}). The paper's only stated
+protection against length bias is attributed to the operation that cannot
+provide it, while the operation that can provide it goes unmentioned.
+
+\subsection{The consequence, demonstrated on our corpus}
+\label{sec:artefact-consequence}
+
+We can now ask what the two choices do jointly. Because our corpus, ESG
+vocabulary and sentiment dictionary all differ from the original's by design
+(\S\ref{sec:scope}, \S\ref{sec:lexicon}), what follows is a demonstration of a
+mechanism on an independent sample; it is not a replication of the original's
+estimate and is not offered as further evidence for
+\S\ref{sec:artefact-which}.
+
+Table~\ref{tab:artefact-factorial} crosses the two score normalisations with
+two substance specifications --- our density specification $\susdens$ and the
+L2 vector-normalised TF-IDF specification $\suslag$ that follows the original's
+weighting (\S\ref{sec:index}) --- over our 343 reports.
+
+\begin{table}[htbp]
+\centering
+\caption{Mean index and number of reports flagged ($\ESGSI > 0$) under the
+$2 \times 2$ factorial over score normalisation and substance specification,
+$n = 343$. The two $z$-score means are zero by construction and are printed at
+the same resolution as the others. Counts are quantities of our corpus and are
+not estimates of any quantity of the original's sample.}
+\label{tab:artefact-factorial}
+\begin{tabular}{llrr}
+\toprule
+Score normalisation & Substance specification & Mean & Flagged \\
+\midrule
+$z$-score & $\susdens$ & $0.0000$ & $171/343$ \\
+$z$-score & $\suslag$  & $0.0000$ & $159/343$ \\
+min--max  & $\susdens$ & $-0.0004$ & $166/343$ \\
+min--max  & $\suslag$  & $\mathbf{-0.2388}$ & $\mathbf{54/343}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Only the joint configuration moves the mean appreciably away from zero; the
+other three cells sit within $0.0004$ of it. Holding the substance
+specification at $\suslag$ and switching the score normalisation to $z$-scores
+returns the mean to zero exactly; holding min--max and switching the substance
+specification to $\susdens$ returns it to within $0.0004$ of zero. The flagged
+count falls from about half the corpus to $54/343$ only in the joint cell.
+
+Three restrictions on how this may be read. First, our $-0.2388$ and the
+original's $-0.2179$ differ by $0.0209$, and the correspondence between them is
+consistency, not proof: a matching sign and order of magnitude obtained on a
+different corpus with a different vocabulary corroborates
+the mechanism and does not establish it, and coincidence is possible. The claim
+we make is that these two choices jointly reproduce the statistic and are
+jointly necessary for it \emph{on our corpus} --- not that we have shown what
+the original ran, which \S\ref{sec:artefact-which} establishes on stronger and
+independent grounds. Second, the flagged counts of $171/343$ and $54/343$
+are quantities of our corpus alone and are not estimates of the original's
+flagged share. The original never reports that share (\S\ref{sec:original}) and
+nothing in this subsection recovers it; the only statement available about it is
+the upper bound its own published quartiles impose, and that bound was obtained
+in \S\ref{sec:artefact-which} without reference to anything here. Third, a
+reader who rejects this subsection in its entirety is left with
+\S\ref{sec:artefact-which} and \S\ref{sec:artefact-why} intact, and those are
+sufficient for the section's claim.
+
+\subsection{What follows}
+\label{sec:artefact-scope}
+
+The published conclusion does not survive the paper's own printed formula.
+Under Equation~\eqref{eq:artefact-printed} the index is centred on its own
+labelling threshold by construction, so ``predominantly negative'' is not a
+substantive result the estimator can return; under the min--max rescaling
+actually used, the sign of the mean is set by the position of two marginal
+distributions within their own ranges and by the substance specification --- the
+first specified twice and inconsistently, the second not specified at all. The
+conclusion is thus a property of the index as assembled, and it is not stable
+under alternatives that the paper's own text licenses --- which is the empirical
+counterpart of the label instability we report in \S\ref{sec:robustness}.
+
+This is a claim about the instrument, and its scope should not be overread. We
+do not claim that ESG-washing is prevalent, nor that the firms in the
+original's sample engage in it; establishing either would require an external
+benchmark that neither the original nor this paper possesses
+(\S\ref{sec:limitations}). What we claim is narrower and, we think, harder to
+avoid: the reported absence of ESG-washing is a consequence of the score
+normalisation applied and of how substance was specified, and neither choice
+was disclosed in a form that would have let a reader see it.

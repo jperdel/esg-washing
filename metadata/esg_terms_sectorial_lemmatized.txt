@@ -1,0 +1,21 @@
+# GENERADO POR scripts/build_lexicons.py — NO EDITAR A MANO.
+# Fuente: esg_terms_sectorial.txt | Vocabulario TF-IDF del SUS (formas lematizadas).
+board oversight
+community relation
+cop28
+cover crop
+ecodesign
+energy storage
+executive compensation
+fairtrade
+food safety
+leather working group
+live income
+microfiber
+nutrition
+peatland
+sedex
+sf6
+smeta
+virgin polyester
+well cotton

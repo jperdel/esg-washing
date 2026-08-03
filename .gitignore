@@ -8,7 +8,6 @@ diario.txt
 private_config.py
 feedback/
 notebooks/
-paper/
 
 # --- Python ---
 __pycache__/
@@ -35,3 +34,11 @@ ENV/
 # --- Sistema operativo ---
 .DS_Store
 Thumbs.db
+
+# --- Intermedios de LaTeX (el .tex y el .pdf sí se versionan) ---
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.blg
+paper/*.bbl
+paper/*.toc

@@ -1,0 +1,73 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{natbib}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+% ---------------------------------------------------------------------------
+% Shared macros — see _research/conventions.md. Do not redefine in sections.
+% ---------------------------------------------------------------------------
+\newcommand{\SUS}{\ensuremath{\mathrm{SUS}}}
+\newcommand{\SEN}{\ensuremath{\mathrm{SEN}}}
+\newcommand{\QUANT}{\ensuremath{\mathrm{QUANT}}}
+\newcommand{\HEDGE}{\ensuremath{\mathrm{HEDGE}}}
+\newcommand{\BREADTH}{\ensuremath{\mathrm{BREADTH}}}
+\newcommand{\ESGSI}{\ensuremath{\mathrm{ESGSI}}}
+\newcommand{\ESGSIext}{\ensuremath{\mathrm{ESGSI}^{\mathrm{ext}}}}
+\newcommand{\Z}{\ensuremath{Z}}
+% La etiqueta de especificación va como SUPERÍNDICE para dejar libre el
+% subíndice, que §6 necesita para el índice de documento (\susdens_d).
+% Con la etiqueta en el subíndice, \susdens_d daba «Double subscript».
+\newcommand{\susdens}{\ensuremath{\SUS^{\mathrm{dens}}}}
+\newcommand{\sustfidf}{\ensuremath{\SUS^{\mathrm{tfidf}\text{-}\ell}}}
+\newcommand{\suslag}{\ensuremath{\SUS^{\mathrm{tfidf}\text{-}L2}}}
+
+\title{Measurement Properties of Dictionary-Based ESG-Washing Indices:\\
+A Technical Reassessment and Longitudinal Extension}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+% ===========================================================================
+% PLACEHOLDERS — deliberately not drafted. A human author writes these.
+% ===========================================================================
+% \input{sections/P1_abstract}
+% \input{sections/P2_introduction}
+% \input{sections/P3_literature}
+
+% ===========================================================================
+% TECHNICAL SECTIONS
+% ===========================================================================
+\input{sections/01_scope}
+\input{sections/02_original_specification}
+\input{sections/03_data}
+\input{sections/04_extraction}
+\input{sections/05_lexicon}
+\input{sections/06_index_specification}
+\input{sections/07_measurement_critique}
+\input{sections/08_normalisation_artefact}
+\input{sections/09_convergent_validity}
+\input{sections/10_robustness}
+\input{sections/11_temporal_results}
+\input{sections/12_limitations}
+
+% \input{sections/P4_discussion}
+% \input{sections/P5_conclusion}
+
+\appendix
+\input{sections/13_reproducibility}
+
+\bibliographystyle{elsarticle-harv}
+\bibliography{references}
+
+\end{document}

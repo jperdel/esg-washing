@@ -24,9 +24,15 @@
 # el TF-IDF. Viven en _EXTRA_PATTERNS de lexical_document_filter.py, que solo
 # actúa sobre texto crudo.
 #
-# Estado: vocabulario auditado por F. sobre 880 zonas de 4 memorias 2023.
-# Los 147 términos adicionales de feedback/Terminos_ESG_no_detectados.xlsx
-# NO están incorporados todavía (pendiente de análisis de sesgo sectorial).
+# Estado: los términos de la auditoría externa (880 zonas de 4 memorias 2023)
+# YA están incorporados. Cada candidato se midió sobre los 343 informes
+# completos —ocurrencias, documentos, empresas, países y cuota de la empresa
+# que más lo usa— antes de admitirlo. Resultado: 102 aceptados por dispersión,
+# 18 frecuentes y polisémicos resueltos con colocaciones, y 22 sectoriales
+# apartados en esg_terms_sectorial.txt.
+#
+# La especificación que reporta el paper sigue siendo el vocabulario de 154
+# términos; esta ampliación se documenta como prueba de robustez.
 
 # --- Ambiental: clima y emisiones ---
 carbon
@@ -195,3 +201,161 @@ leed
 zdhc
 green bond
 green investment
+
+
+# --- Terminos incorporados tras el analisis de dispersion sobre 343 informes ---
+# Dispersos entre empresas y paises, sin concentracion sectorial.
+absenteeism
+accessibility
+affordability
+agroforestry
+air pollutant
+air quality
+animal welfare
+anti-money laundering
+apprentice
+audit committee
+business ethics
+clean energy
+code of conduct
+code of ethics
+collective bargaining
+compost
+conflict of interest
+conflicts of interest
+consumer protection
+customer privacy
+customer satisfaction
+dei
+duty of vigilance
+effluent
+employee engagement
+energy management
+equal opportunity
+equal pay
+ergonomic
+fair trade
+female representation
+first aid
+freedom of association
+geothermal
+global warming
+green energy
+habitat
+human capital
+human trafficking
+hydroelectric
+hydropower
+independent director
+indigenous
+insider trading
+internal audit
+internal control
+iso 14001
+iso 45001
+iso 50001
+labor practices
+land use
+landfill
+lca
+life cycle assessment
+lobbying
+local community
+maternity
+mental health
+microplastic
+minimum wage
+money laundering
+natural capital
+nox
+oecd guidelines
+particulate matter
+pay equity
+philanthropy
+political contribution
+product quality
+product safety
+raw material
+refrigerant
+regenerative agriculture
+related party
+reskilling
+resource efficiency
+responsible marketing
+risk appetite
+road safety
+sapin
+say on pay
+scenario analysis
+social dialogue
+social protection
+soil health
+speak up
+species
+succession planning
+supplier assessment
+supply chain
+talent development
+tax strategy
+trade union
+upskilling
+vigilance plan
+volatile organic
+wastewater
+wetland
+wind farm
+wind turbine
+work-life balance
+works council
+
+# --- Terminos frecuentes y dispersos, admitidos sueltos ---
+antitrust
+disability
+donation
+ethical
+fatality
+fraud
+grievance
+ilo
+integrity
+marine
+ocean
+sanction
+volunteer
+wellbeing
+whistleblower
+
+# --- Colocaciones de 'compliance' (lista de INCLUSION) ---
+# 'compliance' suelto tiene un 44,5 % de usos genericos sin contexto y un
+# 8,7 % contable/auditoria. Ver metadata/colocaciones_analisis.md.
+compliance officer
+compliance committee
+compliance function
+compliance department
+compliance management system
+compliance program
+compliance programme
+compliance training
+compliance risk
+compliance violation
+non-compliance
+regulatory compliance
+ethics and compliance
+compliance and ethics
+tax compliance
+
+# --- Colocaciones de 'social' (lista de INCLUSION) ---
+# 'social' suelto arrastra social security, social media y social network.
+social performance
+social risk
+social audit
+social inclusion
+social partner
+social indicator
+social issue
+social enterprise
+
+# --- Colocaciones de 'proxy' (adjudicadas en la auditoria externa) ---
+# 'proxy' suelto captura mayoritariamente 'proxy hedging', tecnica financiera.
+proxy statement
+proxy advisor

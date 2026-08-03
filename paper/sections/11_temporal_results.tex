@@ -1,0 +1,468 @@
+\section{Temporal results}
+\label{sec:temporal}
+
+The original is cross-sectional by construction, and its conclusion names the extension it
+does not attempt: ``The cross-sectional nature of our data limits causal inferences,
+highlighting the need for longitudinal studies to examine how changes in corporate
+characteristics and regulatory environments affect ESGSI over time'' \citep[p.~10]{lagasio2024}.
+This section supplies that series on our panel.
+
+It is reported last among the empirical sections, and it is subordinate to what precedes it.
+\S\ref{sec:measurement} establishes that a TF-IDF substance score measures the \emph{mix} of
+ESG terms rather than their amount, and \S\ref{sec:artefact} that the original's headline
+conclusion follows from an undisclosed score-normalisation choice. Having argued that the
+instrument is unsound under one admissible specification, we cannot then present a time series
+of it as the paper's contribution. What follows is the payload the corrected instrument
+delivers, conditional on the choices justified in \S\ref{sec:validity} and bounded by the
+sensitivity documented in \S\ref{sec:robustness}. The central claim remains
+\S\ref{sec:artefact}'s. By the end of the section the reason for the subordination will be
+sharper than a matter of ordering: \S\ref{sec:temporal-mandate} identifies a mechanism under
+which the series would move exactly as it does with no change in firm conduct whatever, and
+that mechanism is a property of the index architecture rather than of our panel.
+
+The series is computed under $\ESGSI(\susdens)$, the specification \S\ref{sec:validity} selects
+on convergent validity against $\QUANT$. We report the base index only: the extended index
+carries two arbitrary weights, and \S\ref{sec:limitations} sets out why its temporal slope is
+contaminated rather than cleaner.
+
+\subsection{The series}
+
+Table~\ref{tab:temporal-series} gives the yearly mean. The panel is complete: 49 firms, seven
+years, 343 documents, exactly 49 in every year, with no entry, exit or backfill. The mean falls
+from $0.563$ in 2018 to $-0.674$ in 2024 and is strictly decreasing in every year of the
+window. An OLS regression of the document-level index on calendar year ($n = 343$) gives a
+slope of $-0.205$ per year with $p = 1.7\times10^{-8}$.
+
+\begin{table}[htbp]
+\centering
+\caption{Mean $\ESGSI$ by year, under the adopted substance specification and under the
+$L_2$-normalised alternative. Balanced panel, 49 documents per year. Values are read from the
+pipeline output, which standardises with the population standard deviation.}
+\label{tab:temporal-series}
+\small
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+ & 2018 & 2019 & 2020 & 2021 & 2022 & 2023 & 2024 \\
+\midrule
+$\ESGSI(\susdens)$ (adopted) & $0.563$ & $0.471$ & $0.161$ & $0.007$ & $-0.121$ & $-0.407$ & $-0.674$ \\
+$\ESGSI(\suslag)$            & $0.561$ & $0.453$ & $0.106$ & $-0.168$ & $-0.274$ & $-0.371$ & $-0.307$ \\
+Documents & 49 & 49 & 49 & 49 & 49 & 49 & 49 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three qualifications attach to that regression before anything is read off it.
+
+The slope is a summary, not a model of the path: the year-on-year decrements are uneven, and
+nothing here identifies a constant annual rate. The crossing from positive to negative between
+2021 and 2022 is likewise not a calibrated event. Both components are score-normalised across
+the pooled sample, so the index has mean zero over the seven years by construction; the
+location of the zero crossing is a property of the estimation window, not of the disclosure.
+The slope is invariant to that centring; the levels are not.
+
+The $p$-values reported throughout this section, here and in
+Table~\ref{tab:temporal-subsample}, come from OLS on document-level observations and treat the
+343 documents as independent. They are not. The panel is 49 firms observed seven times each,
+and both firm-level heterogeneity and within-firm serial correlation are present by
+construction, so the effective number of independent units is nearer 49 than 343 and the
+conventional standard errors are anti-conservative. We do not report clustered or
+panel-corrected inference. The magnitudes that survive that objection are not the $p$-values
+but the facts they summarise: seven consecutive yearly means falling in sequence, a decline
+of comparable sign and larger magnitude reappearing in a disjoint single-country subsample,
+and driver quantities that are directly counted rather than estimated
+(Table~\ref{tab:temporal-drivers}). Readers who discount the exponents should discount them;
+the section's argument does not rest on any of them being exact.
+
+\subsection{What moves, and what does not}
+
+$\ESGSI = \Z(\SEN) - \Z(\SUS)$, so a decline is either tone falling or substance rising. The
+displacement sits on the substance side. Table~\ref{tab:temporal-drivers} decomposes the
+endpoints.
+
+\begin{table}[htbp]
+\centering
+\caption{Driver decomposition, 2018 against 2024. Per-report means.}
+\label{tab:temporal-drivers}
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Quantity & 2018 & 2024 & Change \\
+\midrule
+Extracted ESG text per report (lemmatised tokens) & 27{,}906 & 63{,}654 & $+128.1\%$ \\
+ESG mentions per report & 1{,}382.7 & 4{,}832.0 & $+249.5\%$ \\
+$\susdens$ (mentions per 100 words) & 4.87 & 7.45 & $+52.8\%$ \\
+$\BREADTH$ (effective distinct terms) & 28.99 & 41.73 & $+43.9\%$ \\
+Extracted zones per report & 178.5 & 275.2 & $+54.2\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three quantities grow together. The volume of text the extraction stage identifies as
+ESG-relevant more than doubles; within that text, ESG mentions grow faster still, so density
+rises by half again against the larger denominator; and the mentions spread over more of the
+vocabulary, raising the effective number of distinct terms by 44\%. Reports are not merely
+longer. They are lexically denser in ESG terms and broader in coverage.
+
+$\SEN$ shows no detectable trend. Regressed on calendar year over the same panel, its slope is
+$+0.0016$ per year with $p = 0.666$: a point estimate two orders of magnitude below the index
+slope, and of the wrong sign to contribute to the decline, since rising tone raises $\ESGSI$.
+Two things follow and a third does not. It follows that the movement in the index is located on
+the substance side, and that the decline is not produced by firms writing in a less positive
+register. It does not follow that tone is uninformative, or that $\SEN$ measures nothing: a
+failure to reject at $p = 0.666$ is an absence of detectable movement, not a demonstrated null,
+and $\SEN$ retains cross-sectional variance that enters every index value in the panel. We
+claim the location of the movement, not the irrelevance of the component.
+
+The null does dispose of one specific objection, and only that one. A dictionary-based index
+applied longitudinally invites the charge that a fixed word list scores 2024 language
+differently from 2018 language, so that an apparent trend is dictionary drift rather than
+disclosure change. For the \emph{sentiment} dictionary that charge would bind only if the
+movement were in $\SEN$, and it is not. It does not extend to the ESG vocabulary, which is
+where the load is carried and where the equivalent objection is live rather than closed:
+\S\ref{sec:temporal-mandate} takes it up, and does not resolve it.
+
+What the series does not establish is that the added substance is real activity. The index
+registers that firms wrote more, and more diversely, about ESG topics per unit of text. Whether
+that text corresponds to conduct is outside what any text-derived index can determine.
+
+\subsection{Alternative explanations}
+
+Table~\ref{tab:temporal-threats} lists the explanations a downward trend in this index admits
+besides a change in disclosure, the check available against each, and what that check settles.
+Two rows are not settled: the first of the two is bounded but not removed, the second is
+neither, and both are the subject of \S\ref{sec:temporal-mandate}.
+
+\begin{table}[htbp]
+\centering
+\caption{Alternative explanations for the decline, and the status of each after the checks
+this design supports.}
+\label{tab:temporal-threats}
+\small
+\begin{tabular}{@{}p{4.5cm}p{5.6cm}p{3.4cm}@{}}
+\toprule
+Explanation & Check & Status \\
+\midrule
+Country and document-type mix drift across years
+& Balanced panel: 49 documents and a fixed per-country count every year; 33--36 annual
+reports, 12--15 URDs, 1 sustainability report per year (\S\ref{sec:data})
+& Excluded by construction \\
+The country/type confound generates the slope
+& Germany: 98 documents, one country, one document type, $-0.301$/yr
+& Excluded within that subsample \\
+Reports simply got longer
+& $\susdens$ is a ratio; dilution lowers it (\S\ref{sec:measurement})
+& Excluded; biases against the finding \\
+Extraction admits more text over time
+& Marginal zones enter at the density threshold, below the mean; extraction-stage density
+rises across the window
+& Excluded on the extensive margin \\
+ESG language concentrated rather than increased
+& None: no whole-document density is computed by year
+& Not testable in this design \\
+Sentiment dictionary scores 2024 language differently
+& $\SEN$ slope $+0.0016$/yr, $p = 0.666$
+& No movement to explain \\
+ESG vocabulary contains entries whose referents postdate 2018
+& Recomputed with the 34-term reporting-frameworks block deleted: slope $-0.155$/yr,
+$p = 2.5\times10^{-5}$ (\S\ref{sec:temporal-mandate})
+& Bounded, not excluded \\
+Mandated disclosure raises term counts without a change in conduct
+& None: exposure is common to all firms and collinear with calendar time
+& Not excluded (\S\ref{sec:temporal-mandate}) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Composition.} The panel is exactly balanced. The same 49 firms appear in all seven
+years, every year contributes exactly 49 documents, and every country's own count is identical
+in every year (\S\ref{sec:data}). The country mix cannot drift because there is nothing for it
+to drift into. Document-type composition is likewise stable: every year contains between 33 and
+36 annual reports, between 12 and 15 URDs and exactly one standalone sustainability report, a
+year-to-year variation of at most three documents in 49 and not directional.
+
+Balance is bought at a price that belongs here rather than in a later section. Requiring one
+report per firm in each of seven consecutive years selects firms that reported continuously
+across the window and survived it. The trend is therefore a within-firm trend among continuous
+reporters, and the sample it generalises to is that population, not European issuers at large.
+This restricts external validity; it does not generate an internal trend, since the selection
+is applied identically to every year.
+
+\paragraph{Length.} A report that grows without adding ESG content does not raise $\susdens$; it
+lowers it. \S\ref{sec:measurement} demonstrates the point directly: appending 56,000 non-ESG
+filler words to a 22,576-word document, with ESG mentions held at 695, drops density from
+$3.0785$ to $0.8845$ per 100 words, while the $L_2$-normalised score does not move at all. The
+denominator is doing exactly what a density denominator should. Length growth on its own is
+therefore not a rival explanation for the decline in $\ESGSI$ but a force working against it,
+and the observed rise in density is net of whatever dilution the growth in report length
+produced.
+
+\paragraph{Extraction yield.} $\susdens$ counts vocabulary hits over the lemmatised tokens of
+the \emph{extracted} zones, not of the whole document, and the extraction stage admits more
+text in later years --- zones per report rise from 178.5 to 275.2. If the measure were
+mechanically tracking that yield, the growth would be an artefact of the pipeline. It is not,
+and the direction of the selection is why. Zones are built around paragraphs that clear a
+keyword-density threshold of 1.0 per 100 words, with one paragraph of context admitted on
+either side (\S\ref{sec:extraction}). Text admitted at the extensive margin therefore enters at
+or near that threshold, well below the corpus mean, and the context windows import adjacent
+text with no density requirement at all: adding zones dilutes. The extraction-stage keyword
+density --- the \S\ref{sec:extraction} quantity, computed with the full regex over raw text,
+and not to be read as $\susdens$ --- nevertheless rises monotonically across the window
+rather than falling, and it does so under both readings of that quantity, the pooled ratio
+and the mean of per-report values. The intensive margin dominates the extensive one, which is
+the opposite of what a yield artefact would produce.
+
+One residual is not disposed of. Extraction and measurement share a vocabulary
+(\S\ref{sec:extraction}), so density is measured on text selected for being ESG-dense. A firm
+that held its total ESG content fixed but consolidated it into denser, more clearly delimited
+passages --- a dedicated non-financial statement in place of remarks scattered through the
+report --- would raise the density of the extracted zones without raising the density of the
+document. No whole-document density is computed by year, so we cannot separate that from an
+increase in content, and the yield of the extraction stage relative to the full PDF was
+measured on a 20-document sample rather than year by year. We flag this rather than dismiss it.
+
+\paragraph{The single-country subsample.} The strongest of the composition checks is that the
+trend holds inside one country with one document type. Germany contributes 98 documents ---
+14 firms over seven years --- and all 98 are annual reports. Within that subsample the slope is
+$-0.301$ per year with $p = 1.2\times10^{-6}$, steeper than the pooled estimate rather than
+attenuated (Table~\ref{tab:temporal-subsample}).
+
+\begin{table}[htbp]
+\centering
+\caption{Trend in $\ESGSI(\susdens)$, pooled panel and single-country subsample. OLS of the
+document-level index on calendar year. Both $p$-values assume independent observations, which
+49 firms observed seven times each are not.}
+\label{tab:temporal-subsample}
+\small
+\begin{tabular}{@{}lrrrl@{}}
+\toprule
+Sample & $n$ & Slope/yr & $p$ & Composition \\
+\midrule
+Full panel & 343 & $-0.205$ & $1.7\times10^{-8}$ & 7 countries, 3 document types \\
+Germany only & 98 & $-0.301$ & $1.2\times10^{-6}$ & 1 country, 1 document type \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+What this check removes, and what it does not, must be stated exactly.
+\S\ref{sec:data} identifies a near-total confound between country and document type and treats
+any cross-sectional comparison along either dimension as uninterpretable. Inside the German
+subsample neither factor varies, so neither can be generating the slope \emph{there}. That is
+the whole of the inference. It does not make the German subsample representative, and it does
+not transfer to the pooled estimate by extension: it shows that a trend of this sign and
+magnitude exists in a slice where the confound is absent, not that the confound is absent from
+the pooled slope. The German slope is in fact steeper than the pooled one, which is itself
+evidence that the rate is heterogeneous across the panel, so $-0.301$ is not to be read as a
+European rate. The subsample is 98 documents from 14 firms, so the dependence between
+observations noted for the pooled regression binds harder here, not less. And it is silent by
+construction about
+anything acting on all seven countries at once --- which is the next subsection's problem, and
+the one this check is least able to address.
+
+\subsection{The objection this design cannot answer}
+\label{sec:temporal-mandate}
+
+The window 2018--2024 is the interval over which European non-financial reporting moved from
+largely voluntary to substantially prescribed. A firm that adds a taxonomy-alignment table, a
+framework index and a standards-referenced non-financial statement adds ESG vocabulary to its
+report in quantity, without necessarily changing anything it does. Our numerator counts words.
+It cannot distinguish the two, and the objection is the strongest available against reading
+this series as evidence about firms.
+
+The mechanism is not hypothetical in our instrument; it is visible in the vocabulary. The
+154-term list contains entries --- \emph{csrd}, \emph{esrs}, \emph{issb}, \emph{sfdr},
+\emph{tcfd}, and four members of the \emph{taxonomy} family --- that name regimes, standards
+and disclosure categories which either did not exist or were not in force at the start of the
+window. Their near-absence from 2018 reports is a matter of chronology, not of disclosure
+behaviour. A fixed word list applied across a period in which the referents of some of its
+entries came into being will register an increase that is to that extent definitional. This is
+the ESG-vocabulary counterpart of the dictionary-drift objection that the $\SEN$ null disposes
+of on the sentiment side. Here it is not disposed of. The definitional part of it can be
+bounded, and below we bound it; the objection as a whole survives that bound.
+
+\S\ref{sec:validity} supplies one measurement of the drift, and it points the wrong way for
+us. Fourteen vocabulary entries overlap the \QUANT{} regex --- eleven in the
+\texttt{frameworks} group, three in \texttt{units} --- and carry 7.50\% of all $\SUS$
+occurrences pooled. That share is not stationary: the \texttt{frameworks} group rises from
+10.15\% of all \QUANT{} hits in 2018 to 21.87\% in 2024. Framework and standard references
+roughly double as a share of quantified disclosure across exactly the window in which the
+series declines. The drift is real, it is measured, and it is in the direction the objection
+predicts.
+
+Two counterweights are available, and neither disposes of the confound; the first bounds the
+part of it that is purely definitional, the second is an argument only.
+
+The first is to delete the offending vocabulary and recompute. The \emph{reporting frameworks
+and ratings} block of
+\S\ref{sec:lexicon} is the block in which regime names live, and it is where every entry
+above sits. Dropping it in its entirety --- all 34 of its terms, taking the vocabulary from
+154 to 120 --- removes far more than the chronologically suspect entries, since the block also
+contains framework vocabulary that predates the window. It is deliberately over-inclusive: we
+want an upper bound on what the definitional component can be worth, so we discard the whole
+block rather than adjudicate entry by entry. Table~\ref{tab:temporal-frameworks} reports the
+result. The rise in density falls from $+52.8\%$ to roughly $+43\%$, and the index slope from
+$-0.205$ to $-0.155$ per year --- about three quarters of its magnitude --- remaining
+significant at any conventional level.
+
+\begin{table}[htbp]
+\centering
+\caption{Temporal trend with the \emph{reporting frameworks and ratings} block removed from
+the ESG vocabulary (154 $\to$ 120 terms). Density is the mean of per-report $\susdens$ values.
+$p$-values carry the same independence caveat as everywhere else in this section.}
+\label{tab:temporal-frameworks}
+\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+ & Full vocabulary (154) & Frameworks excluded (120) \\
+\midrule
+Mean density, 2018 $\to$ 2024 & $4.87 \to 7.45$ & $4.43 \to 6.35$ \\
+$\ESGSI(\susdens)$ slope & $-0.205$/yr & $-0.155$/yr \\
+$p$ & $1.7\times10^{-8}$ & $2.5\times10^{-5}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+What that check bounds and what it leaves untouched must be stated exactly, because it is
+easy to overread. It shows that the trend is not an artefact of counting regime names: strip
+every one of them, and three quarters of the slope is still there. It does \emph{not} dispose
+of the mandate confound, and we do not offer it as doing so. A reporting regime elicits
+substantive disclosure as well as its own acronyms --- emissions-scope terms, net-zero
+language and the greater part of the environmental vocabulary are prescribed by the same
+regimes without naming them --- and that portion of the effect is not separable from conduct
+by any vocabulary edit, because the words involved are exactly the words a firm that had
+genuinely changed its conduct would also use. The 34-term deletion bounds the purely
+definitional component of the confound. The rest of the confound is untouched, and it is the
+larger part.
+
+The second counterweight is breadth. A compliance template inserts a bounded set of named items, which
+predicts more mentions concentrated on few terms. What we observe is broadening: the distinct
+vocabulary entries present per report rise from 68.65 to 105.45 of 154, and $\BREADTH$ from
+28.99 to 41.73. That is more than a handful of new acronyms can produce. It is not decisive
+either, because the mandates in question prescribe reporting across environmental, social and
+governance topics simultaneously, so a mandate effect can broaden coverage as well as deepen
+it. The counterweight restates the confound at a higher level rather than resolving it.
+
+No design in this paper can do better than that bound, and it is worth being precise about
+why the residue is not reachable. A reporting mandate is a common time shock. It applies to all 49 firms in the same years, so its exposure
+is collinear with calendar year, which is the regressor. The balanced panel, the document-type
+check and the German subsample all remove \emph{cross-sectional} composition; none of them
+removes anything that moves with time. The German result is the weakest defence available here
+rather than the strongest, since German issuers face the same European regimes as the rest of
+the panel: holding country and document type fixed does nothing to hold the regulatory calendar
+fixed. Identification would require variation in exposure --- firms inside and outside scope,
+or staggered application dates --- which a panel of 49 large European issuers, all in scope,
+does not contain.
+
+The consequence is a restriction on the claim rather than a hedge around it. What the series
+identifies is that ESG-lexical content per unit of extracted text rose across 2018--2024 while
+tone did not. Whether the added text reflects changed conduct, compliance with a new reporting
+regime, or unchanged conduct newly described in a prescribed vocabulary is not identified here,
+and the second and third of those are the ones an informed reader should regard as most likely
+to be doing work.
+
+There is a sharper consequence, and it belongs to \S\ref{sec:artefact}'s argument rather than
+to this section's. Under the mandate reading the index does not merely fail to observe conduct.
+$\ESGSI = \Z(\SEN) - \Z(\SUS)$ falls when substance rises, so a firm that adds a mandated
+taxonomy table is scored as less likely to be greenwashing --- by construction, for having
+complied. An instrument whose washing score is mechanically reduced by regulatory compliance is
+not measuring the discrepancy between talk and action; over a window of tightening mandates it
+is measuring the volume of prescribed talk. That is a property of the architecture we inherit,
+not of our corpus, and it applies to any application of this index family across a period of
+regulatory change, the original's included. The series is accordingly better read as a further
+demonstration of \S\ref{sec:artefact}'s point than as a finding about European firms.
+
+\subsection{Sensitivity of the series to the substance specification}
+
+The direction and the significance of the trend hold under all three substance specifications
+of \S\ref{sec:index}: the yearly means decline and the slope is negative at conventional levels
+under $\susdens$, $\sustfidf$ and $\suslag$ alike.
+
+The shape does not hold uniformly, and we state the difference rather than smooth it. The
+yearly series is strictly monotone under $\susdens$ and under $\sustfidf$. It is \emph{not}
+monotone under $\suslag$: 2024 rebounds to $-0.307$, above the 2023 value of $-0.371$
+(Table~\ref{tab:temporal-series}), so that specification yields a series that is monotone over
+2018--2023 and reverses in the final year. Monotonicity is therefore a claim about our
+specification and about the length-normalised TF-IDF variant, and we make it only for those
+two; what generalises across all three is the sign and the significance of the slope.
+
+This precision is required rather than fastidious. \S\ref{sec:robustness} has just established
+that the three specifications disagree on 28.0\% of the labels and that the choice between them
+is not settled by anything the original discloses. A temporal section that then asserted
+uniform behaviour across those same specifications would be claiming a stability that the
+preceding section demonstrably refutes. The rebound is also the one place in the window where
+the two series separate visibly, and it is consistent with \S\ref{sec:robustness}'s diagnosis:
+$\suslag$ correlates $0.9733$ with $\BREADTH$, so a year in which coverage broadens without a
+commensurate rise in amount moves it differently from a density measure.
+
+\subsection{Sensitivity of the series to the vocabulary}
+\label{sec:temporal-vocabulary}
+
+A dictionary index invites one further objection of the same family as the composition ones:
+that the decline is a property of the word list rather than of the reports. The check is to
+move the boundary of the list and recompute. The audit of \S\ref{sec:lexicon} supplies the
+material --- 147 ESG terms present in the extracted text and absent from our vocabulary ---
+and each candidate was measured across all 343 documents for frequency and dispersion before
+admission, taking the vocabulary from 154 entries to 289.
+
+Under the 289-entry vocabulary the yearly series is essentially unchanged. The slope moves
+from $-0.219$ to $-0.194$ per year, each significant at $p < 10^{-7}$, and restoring the 22
+entries the same exercise had set aside as sector-specific leaves it at $-0.193$. Both figures
+are computed on the expansion's extraction with the corpus held fixed
+(\S\ref{sec:robustness-lexicon}), which is why the base slope here is $-0.219$ rather than the
+$-0.205$ of Table~\ref{tab:temporal-series}: the two are not differenced, and only the
+proportional movement between them is read. The series does turn on where the boundary is
+drawn, and this section contains both directions. Moving it outward, by the 135 audited
+entries, changes the slope by about a ninth; moving it inward, by striking the 34-term
+reporting-frameworks block (Table~\ref{tab:temporal-frameworks}), changes it by about a fifth,
+and the two are of the same order rather than of different ones. What the outward check bounds
+is the sensitivity of the series to a defensible extension of this vocabulary, built from these
+documents and admitted on dispersion measured over them. It bounds nothing about a vocabulary
+built on other principles.
+
+This is not a rebuttal of \S\ref{sec:temporal-mandate}, and the two must not be run together.
+Vocabulary insensitivity is a statement about our discretion: had we drawn the boundary of this
+word list where the audit supports drawing it instead, the trend would be what it is, so the
+result is not an artefact of that choice.
+The mandate confound is a statement about chronology: some entries name regimes that did not
+exist in 2018, and could not have appeared in an early report whatever the firm was doing.
+Enlarging the vocabulary with further contemporary ESG terms does nothing about the second,
+and there is reason to think it aggravates it. The candidates were harvested from FY2023
+reports (\S\ref{sec:lexicon}), so the added entries are drawn from language at the end of the
+window; every framework name in the 154-term list is carried forward untouched; and the
+enlarged list is not independent of the corpus it is tested on. The bound on the definitional
+component is still the one in Table~\ref{tab:temporal-frameworks} --- $-0.155$ per year with
+the reporting-frameworks block struck out --- and the vocabulary check neither tightens nor
+loosens it. Robustness to the lexicon and identification of what the lexicon counts are
+different questions. The first is bounded here, in one direction, for a class of terms selected
+on this corpus for the property that makes them least able to move a density ranking; the
+second is not settled anywhere in this paper.
+
+\subsection{What the series licenses}
+
+Both components enter the index after score normalisation across the sample
+(\S\ref{sec:artefact}'s object, not \S\ref{sec:measurement}'s), and one consequence must be
+explicit before any of these numbers is quoted elsewhere. The index has no cardinal meaning.
+A mean of $-0.674$ is not a quantity of ESG-washing but a position within the distribution of
+this corpus. Levels are not comparable between corpora: no level reported here is comparable
+with any figure in \citet{lagasio2024}, or in any other application of the same architecture,
+whatever the score-normalisation rule. This holds even though $\susdens$ is the one substance
+specification whose raw value is corpus-independent, because the score normalisation
+reintroduces sample dependence downstream, at index assembly. The slope inherits the same
+property: $-0.205$ per year is in pooled standard deviations of this sample per year, so it is
+no more transferable than the levels are, and a slope estimated on another corpus would not be
+commensurable with it. Only the within-sample ordering and the direction of change over time
+are interpretable.
+
+Within those bounds, the result is this. On a balanced panel of 49 continuously reporting
+European firms over 2018--2024, mean tone-minus-substance declines strictly, and the decline is
+carried by the substance component, with no detectable movement in tone. It is not a
+composition artefact: the panel is balanced by construction, and the decline survives in a
+subsample where the corpus's country and document-type confound does not exist. It is not a
+length or an extraction-yield artefact, both of which would bias the measure the other way. Its
+sign and significance are invariant to the substance specification, though its monotonicity is
+not, and they survive at roughly three quarters of magnitude when every reporting-framework
+term is struck from the vocabulary. What it is not shown to be is evidence about conduct, and
+the reporting mandates that arrived over the same window supply a specific mechanism by which
+the index would move as it does with conduct held fixed (\S\ref{sec:temporal-mandate}) --- a
+mechanism whose purely definitional part we can bound but whose remainder no design available
+to us can separate from calendar time. That is what the corrected instrument yields
+over time: a demonstration of consequences, not the paper's claim.

@@ -1,0 +1,32 @@
+# Vocabulario ESG SECTORIAL — se activa con INCLUDE_SECTORAL en config.py.
+#
+# Terminos concentrados en un sector o en pocas empresas, medidos sobre los
+# 343 informes: aparecen en 12 empresas o menos, o mas del 50 % de sus
+# ocurrencias estan en una sola empresa. Suman el 2,0 % de la masa candidata.
+#
+# Se separan porque premian a la empresa por su sector y no por cuanto
+# divulga, lo que sesga cualquier comparacion entre companias. Se conservan
+# para poder medir cuanto cambian los resultados al incluirlos.
+
+b corp
+better cotton
+board oversight
+community relations
+cop 28
+cop28
+cover crop
+ecodesign
+energy storage
+executive compensation
+fairtrade
+food safety
+iso 37001
+leather working group
+living income
+microfiber
+nutrition
+peatland
+sedex
+sf6
+smeta
+virgin polyester

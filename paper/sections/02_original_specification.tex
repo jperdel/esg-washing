@@ -1,0 +1,176 @@
+\section{What the original specifies, and what it does not}
+\label{sec:original}
+
+This section sets out the index of \citet{lagasio2024} as published, then delimits where
+the published specification stops. The exercise is documentary: it uses none of our
+pipeline and asserts nothing about what the original's code did. Where the article is
+silent we record the silence; we do not substitute what standard practice would have been.
+There is one exception, and because it is the pivot on which a referee would press we make
+it in the open rather than in a footnote: the \texttt{norm} setting is inferable from the
+convention that only non-default library arguments are reported, we make that inference and
+rely on it in \S\ref{sec:measurement}, and we accordingly do not count it among the gaps
+that make this index irreproducible.
+The article is open access under CC BY~4.0, so contested points are quoted rather than
+paraphrased. Page numbers are the article's own.
+
+\subsection{The published construction}
+
+The index has two components. The sentiment component $\SEN_i$ is the score returned by the
+TextBlob library for report $i$ (p.~4), which the index definition calls the ``sentiment
+polarity score''. The substance component $\SUS_i$ is derived from scikit-learn's
+\texttt{TfidfVectorizer}, version 0.24.2 (p.~3), evaluated against an author-constructed
+list of ESG keywords. The index is the difference of the two components
+after score normalisation, and the labelling rule is definitional: $\ESGSI > 0$ is
+``Potential ESGwashing'', $\ESGSI \le 0$ is ``Likely Genuine'' (pp.~4--5). No calibration
+against an external benchmark is reported.
+
+The vectoriser settings are disclosed in two sentences (p.~4):
+
+\begin{quote}
+``We use Scikit-learn's TfidfVectorizer with settings chosen to balance comprehensiveness
+and computational efficiency, in line with best practices in NLP research. These settings
+include ignoring terms that appear in more than 95~\% of documents, only considering terms
+that appear in at least 2 documents, limiting the vocabulary to the top 10,000 terms, and
+considering both unigrams and bigrams.''
+\end{quote}
+
+In library terms, \texttt{max\_df=0.95}, \texttt{min\_df=2}, \texttt{max\_features=10000},
+\texttt{ngram\_range=(1,2)}. These four are the only vectoriser settings the article
+discloses, and they are described in prose only: the article prints no parameter names, no
+code listing and no equation for $\SUS_i$. Two further sentences in the same paragraph bear
+on the vectoriser and add no settings. The first establishes that IDF weighting is in use:
+the method evaluates ``the relative importance of each term within the documents against the
+entire dataset'' (p.~4). The second states that the vectoriser ``is used with adjustable
+settings to accommodate the unique features of different sustainability reports'' (p.~4);
+no setting beyond the four above is given.
+
+The step from per-term values to a document-level score is where the specification stops.
+Two sentences bear on it. From the original's \S3.2.1 (p.~4): ``Each document is then
+vectorized with the TF-IDF model to calculate a score for each term based on its frequency
+relative to other documents.'' From its \S3.2.3 (p.~4): ``It combines sentiment scores with TF-IDF scores of
+sustainability terms to objectively evaluate how extensively sustainability topics are
+discussed in the reports.'' The abstract adds only ``integrating sentiment analysis with
+the frequency of sustainability terms to calculate the ESGSI'' (p.~1). In the index formula,
+$\SUS_i$ is glossed as ``sustainability score for company i'' --- a name, not a
+construction.
+
+\subsection{What is disclosed, and what is not}
+
+Table~\ref{tab:original-disclosure} separates the two.
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Elements of the original specification, by disclosure status.}
+\label{tab:original-disclosure}
+\begin{tabular}{p{0.46\textwidth}p{0.44\textwidth}}
+\toprule
+Element & Status in \citet{lagasio2024} \\
+\midrule
+Vectoriser implementation and version & Disclosed: scikit-learn \texttt{TfidfVectorizer} 0.24.2 (pp.~3--4) \\
+\texttt{max\_df}, \texttt{min\_df}, \texttt{max\_features}, \texttt{ngram\_range} & Disclosed in prose (p.~4) \\
+IDF weighting in use & Disclosed (p.~4) \\
+Sentiment instrument & Disclosed: TextBlob polarity (p.~4) \\
+Keyword-list provenance & Disclosed: GRI (2021) and SASB (2018) standards (p.~4) \\
+Labelling threshold & Disclosed, definitional (pp.~4--5) \\
+\addlinespace
+\texttt{norm} (vector normalisation) & Not stated; library default reasonably inferable \\
+\texttt{sublinear\_tf}, \texttt{smooth\_idf} & Not stated; library defaults reasonably inferable \\
+Aggregation from per-term TF-IDF to $\SUS_i$ & Not stated; not a library setting, so no default supplies it \\
+Whether TF-IDF is computed over the 10,000-term vocabulary and then subset to the keywords, or the vectoriser is restricted to the keywords & Not stated \\
+Keyword-list size and contents & Not published; three example terms only \\
+Custom stopword additions to the NLTK defaults & Not published \\
+Whether raw or preprocessed text reached TextBlob & Not stated \\
+Score normalisation (min--max or $z$-score) & Contradictory; see \S\ref{sec:artefact} \\
+Share of firms flagged ``Potential ESGwashing'' & Never reported \\
+Cohen's Kappa, 5-fold cross-validation, TF-IDF sensitivity analysis & Announced (p.~5), never reported \\
+Data availability statement & ``No'' (p.~10) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Four entries warrant expansion. First, \emph{vector} normalisation. The \texttt{norm}
+parameter is never named; the strings \emph{L2} and \emph{Euclidean} do not occur in the
+article at all; and no rescaling of document vectors is described under any other wording.
+The article does use the word \emph{normalization}, but of two other operations: lowercasing
+and character stripping during preprocessing (p.~3), and the rescaling of the finished
+component scores across the sample (p.~4), which is a different operation at a different
+stage (\S\ref{sec:artefact}). Table~\ref{tab:original-disclosure} therefore records
+\texttt{norm} as not stated, which is a fact about the text; it does not record it as a
+reproducibility gap, and we concede the point openly. The four disclosed settings are
+exactly four non-default \texttt{TfidfVectorizer} arguments, so a reader following the
+ordinary convention that only departures from library defaults are reported would infer
+that the remaining defaults --- \texttt{norm='l2'} among them --- were in force. That
+inference is reasonable, we rely on it ourselves, and \S\ref{sec:measurement} draws it
+explicitly and labels it as an inference. It remains an inference rather than a statement
+of the article, so we do not say that the original L2-normalised its document vectors and
+we do not say that it did not; but a silence that a standard convention closes is not where
+the reproducibility charge of \S\ref{sec:original-consequence} rests.
+
+Second, the vocabulary. Its provenance is given --- the indicator lists ``are based on
+established ESG reporting frameworks such as Global Reporting Initiative (GRI) Standards
+\ldots and Sustainable Accounting Standards Board (SASB) Standards'' (p.~4) --- but its
+size is never stated and the list is never published. Three example terms appear
+(``Diversity'', ``Carbon Emissions'', ``Equal Employment Opportunities''); there is no
+appendix, table or supplementary file.
+
+Third, the announced validation (p.~5):
+
+\begin{quote}
+``For the manual data collection process, we employ two independent raters and calculate
+Cohen's Kappa to assess agreement \ldots We use 5-fold cross-validation to evaluate the
+robustness of our LDA and sentiment analysis models \ldots We also conduct sensitivity
+analyses by varying key parameters (e.g., number of LDA topics, TF-IDF settings) to test
+the robustness of our results.''
+\end{quote}
+
+Neither a Kappa value nor a cross-validation figure nor a sensitivity result appears
+anywhere in the article: outside the reference list, the passage above is the only
+occurrence of \emph{Kappa}, of \emph{cross-validation} and of \emph{sensitivity} in the
+text. The announced sensitivity analysis names TF-IDF settings explicitly, so a reported
+version of it would bear directly on the vectoriser silences recorded above
+(\S\ref{sec:measurement}).
+
+Fourth, the data availability statement, which consists of the heading ``Data
+availability'' and the single word ``No'' (p.~10).
+
+\subsection{One further disagreement, resolved elsewhere}
+
+Within its \S3.3 the article prints a formula that is a difference of $z$-scores ---
+reproduced verbatim in \S\ref{sec:index} --- and states in prose, in the same subsection,
+that ``both sentiment and sustainability scores are normalized to a uniform scale using
+min-max normalization'' (p.~4). These are different estimators and the article never
+reconciles them. We record the disagreement here and adjudicate it in
+\S\ref{sec:artefact}, on evidence of a different kind; nothing in the present section turns
+on which reading is correct.
+
+\subsection{Consequence for what follows}
+\label{sec:original-consequence}
+
+A reader who set out to compute this index would have to supply, from outside the article,
+at minimum: the aggregation rule from per-term values to $\SUS_i$, the keyword list and its
+size, the score-normalisation rule, and the text passed to the sentiment instrument. Each
+is a free parameter, and \S\ref{sec:robustness} shows that admissible settings differ in the
+numbers they produce. The index as published is therefore not reproducible from its own
+description. The obstacle is not access --- the full text was available to us --- but the
+completeness of the description.
+
+The first of those four is the strongest instance and carries the charge on its own. The
+step from a vector of per-term TF-IDF values to a single $\SUS_i$ is a modelling decision,
+not a library argument: sum, mean, maximum and weighted variants are all available, the
+article names none of them, and no reporting convention supplies a default because the
+choice is not a default of anything. This is the respect in which it differs from
+\texttt{norm}, where the convention that only non-default arguments are reported does close
+the gap and we have said so above. The second is of the same kind: a keyword list that is
+neither published nor sized cannot be reconstructed by any convention, and it is what makes
+strict replication impossible at the lexicon stage (\S\ref{sec:lexicon}). The third is not a
+silence at all but a contradiction --- the prose of the original's \S3.3 and the formula
+printed in the same subsection specify different estimators, and no convention adjudicates
+between two statements the article itself makes. None of these three is answerable from
+outside the article, and the charge stands on them.
+
+This governs the design of what follows. Because the original specification does not
+determine a unique implementation, we do not implement one: we implement several and report
+results across them. That is why \S\ref{sec:index} carries three substance specifications
+rather than one, and why \S\ref{sec:robustness} reports how the index and its labels move
+between them.

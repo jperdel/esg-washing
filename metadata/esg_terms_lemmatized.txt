@@ -1,9 +1,21 @@
 # GENERADO POR scripts/build_lexicons.py — NO EDITAR A MANO.
 # Fuente: esg_terms.txt | Vocabulario TF-IDF del SUS (formas lematizadas).
+absenteeism
+accessibility
+affordability
+agroforestry
+air pollutant
+air quality
+animal welfare
+anti money laundering
+antitrust
+apprentice
+audit committee
 biodiversity
 biofuel
 biomass
 bribery
+business ethic
 carbon
 carbon neutrality
 cdp
@@ -12,15 +24,35 @@ child labor
 circular
 circular economy
 circularity
+clean energy
 climate
 climate change
 co2
 co2e
 coal
+code conduct
+code ethic
+collective bargaining
 community engagement
+compliance committee
+compliance department
+compliance ethic
+compliance function
+compliance management system
+compliance officer
+compliance program
+compliance programme
+compliance risk
+compliance training
+compliance violation
+compost
+conflict interest
+consumer protection
 corruption
 csr
 csrd
+customer privacy
+customer satisfaction
 cybersecurity
 data privacy
 data protection
@@ -31,101 +63,188 @@ decarbonise
 decarbonization
 decarbonize
 deforestation
+dei
 diligence
+disability
 discrimination
 diversity
+donation
 double materiality
 drought
+duty vigilance
 ecosystem
 ecovadi
+effluent
 electricity
 electrification
 emission
+employee engagement
 employee wellbee
 energy consumption
 energy efficiency
+energy management
 energy mix
 energy transition
+equal opportunity
+equal pay
 equality
+ergonomic
 esg
 esr
+ethic compliance
+ethical
 fair compensation
 fair competition
 fair condition
 fair labor
+fair trade
 fair wage
+fatality
+female representation
 flood
 flooding
 footprint
 force labor
+fraud
+freedom association
 ftse4good
 fuel
 gdpr
 gender
+geothermal
 ghg
 global compact
 global reporting initiative
+global warming
 governance
 green bond
+green energy
 green hydrogen
 green investment
 greenhouse
 gri
+grievance
+habitat
 harassment
 hazardous
 health safety
 heat wave
+human capital
 human right
+human trafficking
+hydroelectric
 hydrogen
+hydropower
+ilo
 inclusion
 inclusive
+independent director
+indigenous
 information security
 injury
+insider trading
+integrity
+internal audit
+internal control
 issb
+labor practice
 labor right
+land use
+landfill
+lca
 leed
+life cycle assessment
 live wage
+lobby
+local community
 low carbon
+marine
 material topic
 materiality
+maternity
+mental health
 methane
+microplastic
+minimum wage
 modern slavery
+money laundering
 msci esg
+natural capital
 natural disaster
 nature base solution
 net zero
+non compliance
 non financial
 nonfinancial
+nox
 occupational health
+ocean
+oecd guideline
 offset
 packaging
+particulate matter
+pay equity
+philanthropy
 photovoltaic
 plastic
+political contribution
 pollution
+product quality
+product safety
+proxy advisor
+proxy statement
 racism
+raw material
 recyclable
 recycle
 recycling
 reforestation
+refrigerant
+regenerative agriculture
+regulatory compliance
+relate party
 remuneration
 renewable
+reskille
+resource efficiency
 responsible business
 responsible investment
+responsible marketing
 responsible sourcing
+risk appetite
 risk management
+road safety
+sanction
+sapin
 sasb
 sbti
+scenario analysis
 science base target
 sdg
 sfdr
+social audit
 social commitment
 social compliance
+social dialogue
+social enterprise
 social impact
+social inclusion
+social indicator
+social issue
 social norm
+social partner
+social performance
+social protection
 social responsibility
+social risk
 social standard
+soil health
 solar
+specie
 stakeholder
+succession planning
+supplier assessment
+supply chain
 supply chain diligence
 supply chain management
 supply chain risk
@@ -133,8 +252,11 @@ supply chain transparency
 sustainability
 sustainable
 sustainalytic
+talent development
 tax avoidance
+tax compliance
 tax policy
+tax strategy
 tax transparency
 taxonomy
 taxonomy align
@@ -142,15 +264,28 @@ taxonomy alignment
 taxonomy eligible
 tcfd
 tnfd
+trade union
 training development
 training hour
 training program
 transition plan
 transparency
 ungp
+upskille
+vigilance plan
+volatile organic
+volunteer
 waste
+wastewater
 water
+wellbee
+wetland
 whistleblowe
+whistleblower
 wind energy
+wind farm
 wind power
+wind turbine
+work life balance
+works council
 zdhc

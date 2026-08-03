@@ -1,0 +1,128 @@
+\section{Scope and relationship to the original study}
+\label{sec:scope}
+
+This study is an adaptation of the ESG-washing index of \citet{lagasio2024}, not a
+strict replication of it. We re-implement the index architecture and examine its
+measurement properties, but three inputs differ by design --- the corpus, the ESG
+vocabulary and the sentiment dictionary --- and one of the three cannot be aligned at
+all from the published record, because the original never publishes its vocabulary or
+its size. The delta is stated
+here, at the outset, so that no later result is read as a failed reproduction of
+something it never attempted to reproduce.
+
+\paragraph{What is carried over.} Two things. First, the index architecture: a
+document-level tone score and a document-level substance score, each rescaled across
+the sample, differenced, and thresholded at zero to produce a binary label. Second,
+the tone-minus-substance logic that motivates it --- positive language in excess of
+measurable substantive content as the observable signature of ESG-washing. Both are
+carried over unchanged, including the zero threshold and the labelling rule, which the
+original states explicitly (\S\ref{sec:index}). Where the original's specification is incomplete
+we do not close the gap silently: \S\ref{sec:original} documents each silence, and
+\S\ref{sec:index} carries three substance specifications precisely because the
+original's description does not determine one.
+
+\paragraph{Where we diverge, and why.} Table~\ref{tab:scope-divergence} sets out the
+full delta. Three of its entries are input choices that require a reason; a fourth is a
+pipeline stage with no counterpart in the original.
+
+\emph{Corpus.} The original starts from the top 2{,}000 firms by market capitalisation
+in Refinitiv and retains the 749 with a standalone, English-language ESG report for
+2023; ``companies that integrated their ESG disclosure within their annual financial
+reports were excluded'' \citep[p.~3]{lagasio2024}. Our corpus is drawn largely from the population that
+rule excludes: 343 unique reports from 49 firms in seven European countries over
+2018--2024, of which 235 are annual reports, 101 universal registration documents (URD)
+and 7 are standalone sustainability reports. The entailment runs from the panel design,
+and we state its direction rather than present the divergence as unavoidable: we adopt a
+balanced seven-year panel --- longitudinal work being what the original's own conclusion
+calls for --- and it is that choice which rules out the original's inclusion criterion. A
+balanced panel requires one annually recurring disclosure per firm in every year of the
+window. The annual report, and in France the URD, is a periodic regulatory filing that
+every firm in the frame publishes in every year; a standalone sustainability report is
+issued at the firm's discretion, so neither its existence nor its recurrence over seven
+consecutive years can be assumed. Our own corpus shows how binding that is here: of the 49
+firms, exactly one --- Sanofi-Aventis --- is represented by standalone sustainability
+reports across the window, and it is so in all seven years, so a panel restricted to that
+document type would have contained one firm. What our records hold is the document
+\emph{selected} for each firm-year, not what each firm made available, so this is a
+statement about what a document-type restriction would have left us with and not about what
+these firms published. Relatedly, 43 of the 49 firms are represented by a single document
+type across the whole window; the six that change do so once, from annual report to URD,
+consistent with the French regime. Retaining the original's rule would have made panel
+membership a function of the firm's chosen reporting vehicle --- a disclosure behaviour
+in its own right --- and left the panel unbalanced. The restriction to 49 firms in seven
+European countries is a separate sampling-frame decision and not a consequence of the
+panel design; it, and the operational consequence of mixing document types inside a
+single index, are treated in \S\ref{sec:data} and \S\ref{sec:limitations}.
+
+\emph{Lexicon.} The original's keyword list is attributed to GRI (2021) and SASB
+(2018), but its size is never stated, the list is never published, and the data
+availability statement reads in full ``No'' (\S\ref{sec:original}). We therefore built
+a purpose-designed 154-term vocabulary and publish it in full (\S\ref{sec:repro}). The
+consequence is stated plainly rather than deferred to a limitations paragraph: our
+substance score and the original's are not the same measurement, and no numerical
+difference between the two indices can be attributed cleanly to any single design
+choice (\S\ref{sec:lexicon}).
+
+\emph{Sentiment dictionary.} The original scores tone with TextBlob polarity, a
+general-purpose pattern-based tool. We use the Loughran--McDonald finance dictionary
+\citep{loughran2011}, which is calibrated on disclosure language; the original's own
+conclusion names ``refining sentiment analysis techniques'' \citep[p.~10]{lagasio2024} among the extensions
+it anticipates. The two are not interchangeable instruments, and each carries its own
+defects --- ours are set out in \S\ref{sec:limitations}, and what the original discloses
+about its own instrument is audited in \S\ref{sec:original} --- so the tone components
+are no more directly comparable across the two studies than the substance components
+are.
+
+\emph{Text unit.} A fourth divergence is a stage rather than an input: we vectorise
+lexically extracted ESG zones, not whole reports (\S\ref{sec:extraction}). It has no
+counterpart in the original, which vectorises the report entire; it is required here
+because ESG disclosure in an annual report or URD sits inside a much larger financial
+and legal document; and it fixes the denominator against which the length effects of
+\S\ref{sec:measurement} operate. Its cost --- an untested filtering stage upstream of
+every number we report --- is conceded in \S\ref{sec:limitations}.
+
+\paragraph{Temporal extension.} The original states
+that a panel was unnecessary for its purpose --- ``a cross-sectional dataset focused on
+a single year (2023) is sufficient. Our methodology does not require a panel dataset
+spanning multiple years'' \citep[p.~3]{lagasio2024} --- and its conclusion states the opposite: ``The
+cross-sectional nature of our data limits causal inferences, highlighting the need for
+longitudinal studies to examine how changes in corporate characteristics and
+regulatory environments affect ESGSI over time'' \citep[p.~10]{lagasio2024}. The two sit in tension in
+the original; our design resolves it in favour of the second. \S\ref{sec:temporal}
+reports the resulting series, conditional on the measurement findings established
+before it.
+
+\paragraph{What the technical sections establish.} \S\ref{sec:original} audits what the
+original specifies and what it leaves unspecified;
+\S\ref{sec:data}--\S\ref{sec:index} document our corpus, extraction, lexicon and index.
+\S\ref{sec:measurement} shows that \emph{vector} normalisation, not term weighting,
+governs what a TF-IDF substance score measures, and \S\ref{sec:artefact} that the
+original's headline conclusion turns on two undisclosed choices, one of them a
+\emph{score} normalisation.
+\S\ref{sec:validity} and \S\ref{sec:robustness} establish which substance
+specification survives an independent validity check and how far the labels move
+across specifications. \S\ref{sec:temporal} gives the 2018--2024 series,
+\S\ref{sec:limitations} the limitations, and \S\ref{sec:repro} the full parameter,
+vocabulary and lexicon listings.
+
+\begin{table}[htbp]
+\centering
+\caption{Specification delta against \citet{lagasio2024}.}
+\label{tab:scope-divergence}
+\small
+\begin{tabular}{@{}lp{4.6cm}p{5.2cm}@{}}
+\toprule
+ & \citet{lagasio2024} & This study \\
+\midrule
+Design & Cross-sectional, 2023 only & Balanced panel, 2018--2024 \\
+Documents & 749 standalone ESG reports, one per firm & 343 unique reports: 235 annual reports, 101 URD, 7 standalone sustainability reports \\
+Firms & 749, worldwide, from a Refinitiv top-2{,}000 starting sample & 49, seven European countries, each present in all seven years \\
+Inclusion rule & English only; firms reporting ESG inside the annual report excluded & One annually recurring filing per firm-year, chiefly the annual report or URD --- largely the population the original excludes \\
+Text vectorised & Whole report & Lexically extracted ESG zones (\S\ref{sec:extraction}) \\
+ESG vocabulary & GRI/SASB-derived; size not stated, list not published & 154 terms, published in full (\S\ref{sec:repro}) \\
+Tone dictionary & TextBlob polarity & Loughran--McDonald \\
+Substance score & One score; aggregation over the vocabulary not specified & Three specifications, reported side by side (\S\ref{sec:index}) \\
+Score normalisation & Prose says min--max; printed formula is a $z$-score difference & $z$-score; both examined (\S\ref{sec:artefact}) \\
+\bottomrule
+\end{tabular}
+\end{table}

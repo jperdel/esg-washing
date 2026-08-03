@@ -1,0 +1,251 @@
+\section{Index specification}
+\label{sec:index}
+
+This section defines every quantity the paper computes. It is the reference
+definition: later sections select among the specifications given here
+(\S\ref{sec:validity}), test sensitivity to that selection
+(\S\ref{sec:robustness}) and report the resulting series (\S\ref{sec:temporal}),
+but none of them redefines anything.
+
+\subsection{Notation and the two text representations}
+\label{sec:index-notation}
+
+Let $d = 1,\dots,n$ index the $n = 343$ reports of \S\ref{sec:data} and $j = 1,\dots,V$
+the entries of the lemmatised ESG vocabulary of \S\ref{sec:lexicon}, with
+$V = 154$. Preprocessing emits two representations of each document, and the
+components are not all computed on the same one:
+
+\begin{itemize}
+  \item \emph{lemmatised text} --- lowercased, stopword-filtered,
+        punctuation- and numeral-stripped, lemmatised (\S\ref{sec:lexicon});
+        whitespace token count $\ell_d$, with $L_d = \max(\ell_d, 1)$;
+  \item \emph{raw extracted text} --- the ESG zones of \S\ref{sec:extraction}
+        with whitespace collapsed and nothing else removed, digits intact;
+        whitespace token count $r_d$, with $R_d = \max(r_d, 1)$.
+\end{itemize}
+
+$\QUANT$ is computed on the raw extracted text; $\SUS$, $\SEN$, $\HEDGE$ and
+$\BREADTH$ are computed on the lemmatised text. The split is not incidental.
+Preprocessing discards numeric tokens, so on lemmatised text the
+\texttt{percentages} and \texttt{large\_numbers} families of $\QUANT$ match
+nothing and return exactly zero for every document, without error. Every
+length-normalised component is divided by the token count of the
+representation it is computed on --- $R_d$ for $\QUANT$, $L_d$ for the
+others --- and the two counts are not interchangeable.
+
+Let $c_{dj}$ be the raw count of vocabulary entry $j$ in the lemmatised text
+of $d$, obtained with a fixed-vocabulary count vectoriser over token sequences
+of length $1$ to $3$; let $df_j = |\{d : c_{dj} > 0\}|$ and
+
+\begin{equation}
+\label{eq:idf}
+\mathrm{idf}_j \;=\; \ln\!\frac{1+n}{1+df_j} \;+\; 1 ,
+\end{equation}
+
+scikit-learn's smoothed inverse document frequency \citep{pedregosa2011}.
+Supplying the vocabulary in advance disables document-frequency and
+feature-count filtering, so the \texttt{max\_df}, \texttt{min\_df} and
+\texttt{max\_features} settings the original discloses (\S\ref{sec:original})
+are inoperative here: all $V$ entries are retained and scored in every
+document.
+Cross-sectional rescaling of a finished component score $x$ is
+\begin{equation}
+\label{eq:zscore}
+\Z(x)_d \;=\; \frac{x_d - \bar{x}}{\sigma_x},
+\qquad \sigma_x = \sqrt{\tfrac{1}{n}\textstyle\sum_d (x_d-\bar{x})^2},
+\end{equation}
+with $\Z(x) \equiv 0$ when $\sigma_x = 0$. Both $\bar{x}$ and $\sigma_x$ are
+taken over the $n$ documents analysed, so every index value below is a
+position within this corpus, not an absolute quantity.
+
+\subsection{The substance component: three specifications}
+\label{sec:index-sus}
+
+The original does not determine a single construction of $\SUS$: it discloses
+\texttt{TfidfVectorizer} settings but neither the vector normalisation nor
+the aggregation from per-term weights to a document score (\S\ref{sec:original}).
+We therefore compute three, differing in term weighting and in vector
+normalisation:
+
+\begin{align}
+\label{eq:susdens}
+\susdens_d   &= 100 \cdot \frac{\sum_{j} c_{dj}}{L_d}, \\[4pt]
+\label{eq:sustfidf}
+\sustfidf_d  &= 100 \cdot \frac{\sum_{j} c_{dj}\,\mathrm{idf}_j}{L_d}, \\[4pt]
+\label{eq:suslag}
+\suslag_d    &= \frac{1}{V} \sum_{j}
+                \frac{c_{dj}\,\mathrm{idf}_j}
+                     {\bigl\lVert \mathbf{c}_d \odot \mathbf{idf} \bigr\rVert_2},
+\end{align}
+
+where $\mathbf{c}_d \odot \mathbf{idf}$ is the elementwise product of the
+count vector with the idf vector, and $\suslag_d = 0$ by convention when a
+document contains no vocabulary entry. The subscripts name the scaling
+applied to the term vector: $\ell$ for division by document length, $L2$ for
+vector normalisation, that is scaling the term vector to unit $L_2$ norm.
+Equation~\eqref{eq:susdens} is ESG mentions
+per 100 lemmatised tokens under uniform term weights.
+Equation~\eqref{eq:sustfidf} applies idf weights to the same
+length-normalised construction. Equation~\eqref{eq:suslag} is our reading of
+the original: idf weights, L2 vector normalisation of the document's term
+vector, mean over the vocabulary. The factors $100$ and $1/V$ are positive
+affine rescalings and are annihilated by \eqref{eq:zscore}; the sum-versus-mean
+choice in \eqref{eq:suslag} is therefore immaterial, and the specifications
+differ only in weighting and in vector normalisation. Both idf specifications
+estimate $df_j$ on the analysed sample and are corpus-dependent;
+\eqref{eq:susdens} is not.
+
+\subsection{Tone, quantification, hedging and breadth}
+\label{sec:index-components}
+
+\paragraph{Sentiment.} $\SEN$ is Loughran--McDonald polarity
+\citep{loughran2011}. Let $s^{+}_d$ and $s^{-}_d$ count the tokens of the
+lemmatised text whose Porter stem belongs to the positive (140 stems) and
+negative (893 stems) lists respectively:
+\begin{equation}
+\label{eq:sen}
+\SEN_d \;=\; \frac{s^{+}_d - s^{-}_d}{s^{+}_d + s^{-}_d + \varepsilon},
+\qquad \varepsilon = 10^{-6}.
+\end{equation}
+Here $\varepsilon$ only prevents division by zero. This is a bounded ratio on
+$[-1,1]$, not a density: up to $\varepsilon$ it depends only on the balance of
+$s^{+}_d$ and $s^{-}_d$, not on how many sentiment-bearing tokens the document
+contains, and it is $0$ when there are none.
+
+\paragraph{Quantification.} $\QUANT$ is the density of regular-expression
+hits from four families (Table~\ref{tab:index-quant}) over the \emph{raw}
+extracted text, matched case-insensitively:
+\begin{equation}
+\label{eq:quant}
+\QUANT_d \;=\; \frac{1}{R_d}\sum_{g \in G} m_g(\mathrm{raw}_d),
+\end{equation}
+with $m_g$ the number of matches of family $g$ and
+$G = \{\textit{percentages}, \textit{large\_numbers}, \textit{units},
+\textit{frameworks}\}$.
+
+\begin{table}[ht]
+\centering
+\caption{The four $\QUANT$ regular-expression families.}
+\label{tab:index-quant}
+\begin{tabular}{ll}
+\toprule
+Family & Pattern \\
+\midrule
+percentages    & \verb@\b\d+(?:[.,]\d+)?\s*%@ \\
+large\_numbers & \verb@\b(?!(?:19|20)\d{2}\b)\d{4,}\b@ \\
+units          & \verb@\b(?:tonne|ton|mt|ktco2|co2e?|ghg|kwh|mwh|@ \\
+               & \verb@gwh|twh|mw|gw|litre|liter|m3|cubic meter)\b@ \\
+frameworks     & \verb@\b(?:gri|tcfd|sasb|issb|sdg|ungc|sfdr|csrd|@ \\
+               & \verb@un global compact|paris agreement|taxonomy)\b@ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The \texttt{large\_numbers} family excludes four-digit strings of the form
+\texttt{19xx} and \texttt{20xx}, so that citing dates does not register as
+quantification.
+
+\paragraph{Hedging.} $\HEDGE$ is the share of lemmatised tokens belonging to
+the hedge lexicon $H$ of \S\ref{sec:lexicon} ($|H| = 1{,}263$ forms, the
+Uncertainty, WeakModal, StrongModal and Constraining categories of
+\citealp{loughran2011}, lemmatised):
+\begin{equation}
+\label{eq:hedge}
+\HEDGE_d \;=\; \frac{\bigl|\{t \in \mathrm{tokens}(\mathrm{lem}_d) : t \in H\}\bigr|}{L_d}.
+\end{equation}
+
+\paragraph{Breadth.} $\BREADTH$ is the effective number of distinct ESG terms
+in a document: the exponential of the Shannon entropy of the term-share
+distribution, i.e.\ a Hill number of order one \citep{hill1973}. With
+$p_{dj} = c_{dj} / \max\bigl(\sum_{k} c_{dk},\, 1\bigr)$,
+\begin{equation}
+\label{eq:breadth}
+\BREADTH_d \;=\; \exp\Bigl(-\!\!\sum_{j:\,p_{dj}>0} p_{dj} \ln p_{dj}\Bigr)
+\;\in\; [1, V].
+\end{equation}
+It equals $1$ when all mentions fall on one term --- and, by the
+$\max(\cdot,1)$ convention in $p_{dj}$, also when a document contains no
+vocabulary entry at all --- and $V$ when mentions are spread uniformly across
+the vocabulary. \textbf{$\BREADTH$ is not a component of
+either index.} It is reported alongside them because it is the quantity
+$\suslag$ turns out to measure (\S\ref{sec:measurement}); reporting it as a
+separate column is what allows that claim to be checked against the published
+results rather than taken on assertion.
+
+\subsection{The composite indices}
+\label{sec:index-composite}
+
+\begin{align}
+\label{eq:esgsi}
+\ESGSI_d    &= \Z(\SEN)_d - \Z(\SUS)_d, \\[2pt]
+\label{eq:esgsiext}
+\ESGSIext_d &= \Z(\SEN)_d - \Z(\SUS)_d - w_q\,\Z(\QUANT)_d + w_h\,\Z(\HEDGE)_d,
+\end{align}
+
+with $w_q = w_h = 0.5$. The signs follow the construction: quantified
+disclosure counts against a washing reading and is subtracted, hedged
+disclosure counts towards one and is added. The weights are set by fiat and
+are not calibrated (\S\ref{sec:limitations}). Equation~\eqref{eq:esgsi} takes
+$\SUS$ from one of \eqref{eq:susdens}--\eqref{eq:suslag}; we write
+$\ESGSI(\susdens)$ and so on where the choice matters. The labelling rule is
+the original's, and is definitional rather than estimated: $\ESGSI_d > 0$
+yields \emph{Potential ESGwashing}, $\ESGSI_d \leq 0$ yields \emph{Likely
+Genuine} \citep[pp.~4--5]{lagasio2024}. The unhyphenated spelling is the
+original's and is used wherever its rule is quoted; our pipeline writes the
+same label as \emph{Potential ESG-washing}, which is the string that appears
+in our output file (\S\ref{sec:repro}).
+
+Equation~\eqref{eq:esgsi} reproduces the formula printed by
+\citet[p.~4]{lagasio2024},
+\[
+\ESGSI_i = \frac{\SEN_i - \overline{\SEN}}{\sigma_{\SEN}}
+       - \frac{\SUS_i - \overline{\SUS}}{\sigma_{\SUS}},
+\]
+while the prose of the same subsection states that ``both sentiment and
+sustainability scores are normalized to a uniform scale using min-max
+normalization'' \citep[p.~4]{lagasio2024}. A difference of z-scores and a
+difference of min--max-rescaled scores are not monotone transforms of one
+another. We adopt the printed formula throughout; the contradiction is
+recorded here at the point of definition and adjudicated in
+\S\ref{sec:artefact}.
+
+Table~\ref{tab:index-parameters} collects every constant and every
+representation choice on which the definitions above depend; the full
+lexicons, versions and seeds are in \S\ref{sec:repro}. That appendix reprints
+the same values in Table~\ref{tab:repro-params}, adding the extraction and
+preprocessing stages, so that a reader has one consolidated listing. The two
+tables are not independent sources: the values are defined here, and the
+appendix table is a consolidation of this one together with
+\S\ref{sec:extraction} and \S\ref{sec:lexicon}. Any disagreement between them
+would be an error in the appendix.
+
+\begin{table}[ht]
+\centering
+\caption{Parameters of the index specification.}
+\label{tab:index-parameters}
+\begin{tabular}{lll}
+\toprule
+Parameter & Value & Applies to \\
+\midrule
+Text representation              & lemmatised & $\SUS$, $\SEN$, $\HEDGE$, $\BREADTH$ \\
+                                 & raw extracted & $\QUANT$ \\
+Vocabulary size $V$              & 154 lemmatised entries & $\SUS$, $\BREADTH$ \\
+$n$-gram range                   & $(1,3)$, from the longest entry & $\SUS$, $\BREADTH$ \\
+Document-frequency filtering     & none; vocabulary fixed in advance & all $\SUS$, $\BREADTH$ \\
+Term-frequency transform         & raw counts, no sublinear damping & all $\SUS$ \\
+idf weights                      & smoothed, Eq.~\eqref{eq:idf} & $\sustfidf$, $\suslag$ \\
+Vector normalisation             & none & $\susdens$, $\sustfidf$ \\
+                                 & L2, within document & $\suslag$ \\
+Aggregation over $j$             & sum & $\susdens$, $\sustfidf$ \\
+                                 & mean over $V$ & $\suslag$ \\
+Length denominator               & $L_d$ (lemmatised tokens) & $\susdens$, $\sustfidf$, $\HEDGE$ \\
+                                 & $R_d$ (raw tokens) & $\QUANT$ \\
+                                 & none & $\suslag$, $\SEN$, $\BREADTH$ \\
+Hedge lexicon size               & 1{,}263 forms & $\HEDGE$ \\
+Polarity smoothing $\varepsilon$ & $10^{-6}$ & $\SEN$ \\
+Score normalisation              & z-score, population $\sigma$ & $\ESGSI$, $\ESGSIext$ \\
+Extended-index weights           & $w_q = w_h = 0.5$ & $\ESGSIext$ \\
+Label threshold                  & $\ESGSI > 0$ & both indices \\
+\bottomrule
+\end{tabular}
+\end{table}

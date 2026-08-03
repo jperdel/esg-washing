@@ -15,6 +15,7 @@ keyword density (keywords per 100 words).
 
 from __future__ import annotations
 
+import os
 import re
 import json
 import fitz
@@ -28,14 +29,28 @@ from loguru import logger
 
 _METADATA_DIR = Path(__file__).resolve().parent.parent / "metadata"
 
-def _load_esg_terms() -> list[str]:
-    path = _METADATA_DIR / "esg_terms.txt"
+def _read_terms(path: Path) -> list[str]:
     with open(path, encoding="utf-8") as fh:
         return [
             line.strip().lower()
             for line in fh
             if line.strip() and not line.startswith("#")
         ]
+
+
+def _load_esg_terms() -> list[str]:
+    """
+    Vocabulario base, más el sectorial si ESG_INCLUDE_SECTORAL=1.
+
+    Se lee la variable de entorno en vez de importar config para no acoplar
+    este módulo al cargador de léxicos generados: la extracción debe poder
+    ejecutarse aunque los ficheros lematizados aún no existan.
+    """
+    terms = _read_terms(_METADATA_DIR / "esg_terms.txt")
+    if os.getenv("ESG_INCLUDE_SECTORAL", "0") == "1":
+        extra = _read_terms(_METADATA_DIR / "esg_terms_sectorial.txt")
+        terms += [t for t in extra if t not in set(terms)]
+    return terms
 
 # Patterns that CANNOT be expressed as a flat term in esg_terms.txt:
 #   · morphological families that need prefix matching
@@ -57,6 +72,13 @@ _EXTRA_PATTERNS: list[str] = [
     r"cybersecuri\w+",                                             # cybersecurity…
     r"whistleblow\w+",                                             # whistleblowing, whistleblower…
     r"injur\w+",                                                   # injury, injuries…
+    r"disabilit\w+",                                               # disability, disabilities…
+    r"fatalit\w+",                                                 # fatality, fatalities…
+    r"philanthrop\w+",                                             # philanthropy, philanthropic…
+    r"ergonomic\w*",                                               # ergonomic, ergonomics…
+    r"absenteeism",
+    r"local\s+communit\w+",                                        # local community/communities
+    r"equal\s+opportunit\w+",                                      # equal opportunity/opportunities
     # Terms with digits
     r"co2e?",
     r"scope\s*[123]\b",
@@ -417,7 +439,8 @@ class LexicalDocumentFilter:
         if root is not None:
             try:
                 relative = pdf_path.relative_to(root)
-                return (root.parent / "chunks_lexical" / relative).with_suffix(".json")
+                suffix = "_sec" if os.getenv("ESG_INCLUDE_SECTORAL", "0") == "1" else ""
+                return (root.parent / f"chunks_lexical{suffix}" / relative).with_suffix(".json")
             except ValueError:
                 logger.warning(f"{pdf_path} fuera de la raíz {root}; se usa la ruta absoluta.")
         return pdf_path.with_suffix(".json")

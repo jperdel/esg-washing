@@ -1,5 +1,14 @@
+import os
 from pathlib import Path
 from loguru import logger
+
+# VOCABULARIO SECTORIAL
+# Los 22 términos concentrados en un sector o en pocas empresas viven en un
+# fichero aparte. Se activan con la variable de entorno ESG_INCLUDE_SECTORAL=1,
+# que además desvía todas las salidas a rutas con sufijo '_sec' para que las
+# dos ejecuciones puedan convivir y compararse.
+INCLUDE_SECTORAL = os.getenv("ESG_INCLUDE_SECTORAL", "0") == "1"
+_SUF = "_sec" if INCLUDE_SECTORAL else ""
 
 # PATHS
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -8,11 +17,11 @@ METADATA_DIR = BASE_DIR / "metadata"
 
 DATA_DIR = BASE_DIR / "data"
 PDF_DATA_DIR = DATA_DIR / "pdf"
-LEXICAL_DATA_DIR        = DATA_DIR / "chunks_lexical"
-CLEAN_DATA_DIR = DATA_DIR / "clean"
+LEXICAL_DATA_DIR        = DATA_DIR / f"chunks_lexical{_SUF}"
+CLEAN_DATA_DIR = DATA_DIR / f"clean{_SUF}"
 
 RESULTS_DIR = BASE_DIR / "results"
-METRICS_RESULTS_DIR = RESULTS_DIR / "metrics"
+METRICS_RESULTS_DIR = RESULTS_DIR / f"metrics{_SUF}"
 LDA_RESULTS_DIR = RESULTS_DIR / "lda"
 
 # METADATA
@@ -72,6 +81,15 @@ ESG_KEYWORDS = _load_generated_lexicon(
     METADATA_DIR / "esg_terms_lemmatized.txt",
     METADATA_DIR / "esg_terms.txt",
 )
+
+if INCLUDE_SECTORAL:
+    _sec = _load_generated_lexicon(
+        METADATA_DIR / "esg_terms_sectorial_lemmatized.txt",
+        METADATA_DIR / "esg_terms_sectorial.txt",
+    )
+    ESG_KEYWORDS = ESG_KEYWORDS + [t for t in _sec if t not in set(ESG_KEYWORDS)]
+    logger.info(f"Vocabulario SECTORIAL activo: +{len(_sec)} términos "
+                f"({len(ESG_KEYWORDS)} en total).")
 
 # HEDGE — categorías L&M indicativas de lenguaje impreciso/especulativo,
 # lematizadas para poder cruzarse con el corpus (el diccionario original

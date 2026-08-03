@@ -1,0 +1,153 @@
+\section{Document extraction: the lexical ESG-zone filter}
+\label{sec:extraction}
+
+The original study vectorises each report in its entirety: a standalone
+sustainability report is, by construction, already ESG text, so
+\citet{lagasio2024} needs no step to separate ESG content from anything else.
+Our corpus is different by design (\S\ref{sec:scope}, \S\ref{sec:data}): annual
+reports and URDs in which ESG disclosure is embedded inside a much larger
+financial and legal document. Feeding the whole report to the downstream
+measures would let financial-statement bulk and document length dominate
+every score. Extraction is therefore a required stage with no counterpart in
+the original, and it fixes the denominator against which the length effects
+of \S\ref{sec:measurement} and \S\ref{sec:artefact} operate.
+
+\subsection{Paragraph segmentation}
+
+Each PDF is read with PyMuPDF's block-level extractor
+(\texttt{page.get\_text("blocks")}), text blocks only, sorted top-to-bottom,
+left-to-right, by \texttt{src/lexical\_document\_filter.py}
+(\texttt{LexicalDocumentFilter}), whose full parameter and dependency
+listing is in \S\ref{sec:repro}. A block is accepted as a paragraph only
+after passing four filters, in order: (i) \emph{margin strip} — dropped if entirely in the top
+or bottom margin band ($y_1 < 0.08h$ or $y_0 > 0.92h$, $h$ = page height);
+(ii) \emph{running header/footer suppression} — every margin-band block of
+at most 120 characters is normalised (digits $\to$ \texttt{\#}) and counted
+across the document's pages, and any normalised string recurring on more
+than 30\% of pages is blacklisted and dropped wherever it occurs; (iii)
+\emph{financial-table detection} — a block is dropped as tabular only if it
+contains \emph{no} ESG keyword (the regex defined below) \emph{and} either
+its digit-to-character ratio exceeds 0.35 with at most 6 lines, or every
+line is under 60 characters, there are at least two lines, and the first has
+no terminal punctuation (period, exclamation mark, question mark, or colon);
+the keyword veto keeps a table row that happens to carry ESG content rather
+than discarding it as noise; (iv) \emph{section headers} — an all-caps block
+(ignoring non-letters), at least two letters, at most 10 tokens, under 60\%
+single-character tokens, with no token matching a bare-filename pattern (a
+run of word characters, a period, then a 2--6 character suffix, e.g.\
+\texttt{report.pdf}), is emitted as a \texttt{\S~TITLE~\S} marker that tags
+subsequent paragraphs with their section, rather than entering the
+paragraph stream.
+Surviving text has URLs stripped, hyphenated line breaks rejoined, non-ASCII
+characters dropped, and whitespace collapsed.
+
+\subsection{Density scoring and zone construction}
+
+Each paragraph $p$ is scored by keyword density,
+\begin{equation}
+\mathrm{density}(p) = 100 \times \frac{\mathrm{kw\_count}(p)}{\mathrm{words}(p)},
+\label{eq:kw-density}
+\end{equation}
+where $\mathrm{kw\_count}(p)$ counts matches, on the raw paragraph text, of a
+single compiled regex combining the 154-term vocabulary of \S\ref{sec:lexicon}
+— hyphen/space-interchangeable, pluralisable, sorted longest-first so that
+\emph{carbon neutrality} is not shadowed by \emph{carbon} — with 24
+additional patterns not expressible as flat terms: morphological families
+(\texttt{sustainab\textbackslash w+}, \dots), digit-bearing terms
+(\texttt{co2e?}, \texttt{scope\,[123]}, ISO codes), and collocations that
+disambiguate polysemous heads (\emph{social}, \emph{water}, \emph{energy})
+from their non-ESG senses.
+
+A paragraph is \emph{hot} if $\mathrm{density}(p) \geq 1.0$. Every hot
+paragraph is expanded to a window of one paragraph either side; overlapping
+or adjacent windows ($\mathrm{lo} \leq \mathrm{prev\_hi}+1$) are merged into
+one contiguous zone; merged zones under 150 characters are dropped. Table
+statistics (keyword count, word count, density) are recomputed on each
+surviving zone's concatenated text, not summed from its paragraphs.
+Table~\ref{tab:extraction-params} lists the free parameters governing hot-paragraph
+detection and zone construction, none tuned by grid search; the thresholds internal to
+financial-table and section-header detection above are additional constants, given in
+prose rather than tabulated. Per PDF, zones are sorted by start offset and joined
+into one \texttt{relevant\_text} field, which is all that every later stage
+(\S\ref{sec:lexicon} onward) reads.
+
+\begin{table}[htbp]
+\centering
+\caption{Extraction parameters.}
+\label{tab:extraction-params}
+\begin{tabular}{lr}
+\toprule
+Parameter & Value \\
+\midrule
+Keyword-density threshold (hot paragraph) & 1.0 / 100 words \\
+Context window & $\pm 1$ paragraph \\
+Minimum zone length & 150 characters \\
+Header/footer repeat threshold & $>30\%$ of pages \\
+Margin bands & top 8\% / bottom 8\% of page height \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Yield}
+
+Table~\ref{tab:extraction-yield} reports extraction volume over all 344
+processed PDFs. Extraction runs before deduplication, so its basis is 344
+rather than the 343 of the analysed corpus; the extra file is the duplicate
+removed at \S\ref{sec:data}, and every figure downstream of preprocessing is on
+343. On a fixed, disclosed 20-PDF draw (seed 7; \S\ref{sec:repro}),
+not part of the pipeline itself, a mean 35.5\% (median 35.7\%, range
+9.0\%--59.6\%) of a report's word count survives into its ESG zones.
+
+\begin{table}[htbp]
+\centering
+\caption{Extraction yield, aggregated over 344 PDFs.}
+\label{tab:extraction-yield}
+\begin{tabular}{lr}
+\toprule
+Statistic & Value \\
+\midrule
+Total zones & 74,004 \\
+Zones per document (mean, sd) & 215.1, 152.9 \\
+Extracted words per document (mean) & 76,743 \\
+Total extracted words & 26,399,487 \\
+Words per zone (mean across documents) & 396.3 \\
+Corpus-wide keyword density (extracted text) & 3.658 / 100 words \\
+Yield vs.\ full PDF (20-doc sample, mean / median) & 35.5\% / 35.7\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Design rationale}
+
+The filter is a pure function of the PDF and the lexicon files: no network
+call, no external API, no random seed on this path. This matters directly
+for the determinism claimed in \S\ref{sec:repro}. An earlier version of the
+pipeline extracted fixed-size chunks (1,200 characters, 300-character
+overlap) and selected among them with a semantic filter — cosine
+similarity, in an embedding space from a hosted model (Vertex AI
+\texttt{text-embedding-004}), against hand-written anchor queries. That
+filter was removed and replaced by the deterministic lexical filter above,
+together with every remaining dependency on the hosted embedding service;
+the repository records what changed but not why, so no claim is made here
+about the original motivation. The methodological case for the replacement
+stands independently of that history: a filter behind a paid, versioned,
+externally hosted model cannot satisfy a full-determinism claim, because the
+model can change or be deprecated independently of this codebase and the
+same PDF is not guaranteed to yield the same selection on a later run.
+
+\subsection{Recall is bounded by the lexicon}
+
+Extraction's matching set is a strict superset of the measurement
+vocabulary: the 24 extra patterns above — morphological families,
+digit-bearing terms, four precision collocations for polysemous heads, and
+\emph{paris agreement} and \emph{just transition}, the two phrases
+\S\ref{sec:lexicon} records as removed by hand from the 154-term list because
+they collapse under lemmatisation — can make a paragraph hot and pull a zone
+in, but are not part of the fixed 154-term count that \SUS\ itself tallies.
+Two bounds follow, not one: a term outside extraction's combined set triggers
+no hot paragraph and enters no zone, so it is invisible everywhere; a term
+inside that set but outside the 154 — \emph{paris agreement} is the documented
+case — can still reach a zone without ever being counted by \SUS, so its
+own recall is bounded by the narrower list even for text the filter has
+already admitted. \S\ref{sec:limitations} develops the consequences; it is
+noted here as a direct property of this step.

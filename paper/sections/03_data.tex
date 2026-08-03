@@ -1,0 +1,120 @@
+\section{Data and corpus construction}
+\label{sec:data}
+
+The corpus comprises 343 unique corporate reports from 49 companies
+headquartered in seven European countries (Belgium, Finland, France,
+Germany, Italy, the Netherlands, Spain), one report per company per year
+from 2018 to 2024. The panel is exactly balanced: every year contributes 49
+documents, and at a finer grain every country contributes a fixed number of
+documents in every year of the panel (France 17, Germany 14, the
+Netherlands 6, Italy 5, Spain 4, Finland 2, Belgium 1). Balance here is
+temporal, not cross-national: countries are represented in wildly unequal
+numbers, as Table~\ref{tab:data-country} shows, but each country's own
+count is identical in every one of the seven years, so no year departs
+compositionally from any other.
+
+Three document types are represented: annual reports, the Universal
+Registration Document (URD; French \emph{document d'enregistrement
+universel}), and standalone sustainability reports. Document type was assigned per report from an
+external metadata file (\texttt{muestras\_informes.xlsx}), joined to each
+PDF by country, publication year and a normalised company name --- Unicode-
+folded, punctuation-stripped, and reconciled through a manual company-name
+map covering divergences between the directory tree and the metadata
+source. The join resolved all 343 documents; no case was left unmatched.
+
+\subsection{The country/type confound is a structural property of the corpus}
+
+Table~\ref{tab:data-country} reports the corpus by country and document
+type. Document type is confounded with country almost completely: 99 of the
+corpus's 101 URD filings are French, and all 98 German documents are annual
+reports. Both are properties of national reporting practice rather than
+sampling accidents --- the URD is the standard annual regulatory filing for
+French listed companies and routinely carries the extended sustainability
+disclosure, whereas the German issuers in this sample report ESG content
+inside the ordinary annual report. We state this here as a design property
+of the corpus, not as a limitation discovered later: within the pooled
+panel, a country effect and a document-type effect are not separately
+identifiable. Because Germany is simultaneously a single country and a
+single document type (98 of 98 documents are German annual reports), it is
+the one slice of the panel where a temporal estimate is free of this
+confound, and \S\ref{sec:temporal} reports a within-Germany regression for
+that reason.
+
+\begin{table}[htbp]
+\centering
+\caption{Corpus composition by country and document type.}
+\label{tab:data-country}
+\begin{tabular}{lrrrrr}
+\toprule
+Country & Companies & Annual report & URD & Sustainability report & Total \\
+\midrule
+France           & 17 & 13  & 99  & 7 & 119 \\
+Germany          & 14 & 98  & 0   & 0 & 98  \\
+Netherlands      & 6  & 40  & 2   & 0 & 42  \\
+Italy            & 5  & 35  & 0   & 0 & 35  \\
+Spain            & 4  & 28  & 0   & 0 & 28  \\
+Finland          & 2  & 14  & 0   & 0 & 14  \\
+Belgium          & 1  & 7   & 0   & 0 & 7   \\
+\midrule
+Total            & 49 & 235 & 101 & 7 & 343 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:data-year} reports the same corpus by year. Composition by
+document type is stable across the panel (annual reports 33--36 per year,
+URD 12--15, sustainability reports 1 per year), which matters when the
+temporal series (\S\ref{sec:temporal}) is read against a fixed compositional
+backdrop rather than a shifting one.
+
+\begin{table}[htbp]
+\centering
+\caption{Corpus composition by year.}
+\label{tab:data-year}
+\begin{tabular}{lrrrr}
+\toprule
+Year & Annual report & URD & Sustainability report & Total \\
+\midrule
+2018 & 36  & 12  & 1 & 49  \\
+2019 & 33  & 15  & 1 & 49  \\
+2020 & 33  & 15  & 1 & 49  \\
+2021 & 33  & 15  & 1 & 49  \\
+2022 & 34  & 14  & 1 & 49  \\
+2023 & 33  & 15  & 1 & 49  \\
+2024 & 33  & 15  & 1 & 49  \\
+\midrule
+Total & 235 & 101 & 7 & 343 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Comparability across document types}
+
+The panel spans three document types with different structure and
+different length: annual reports in which ESG disclosure is one section
+among many financial and operational ones, URD filings that combine
+regulatory financial, governance and non-financial statements, and
+standalone sustainability reports that are ESG content throughout. Raw
+comparability across types cannot be assumed. Every measurement from
+\S\ref{sec:extraction} onward accordingly operates not on whole documents but
+on the ESG-relevant zones the lexical filter identifies within each one,
+which is what lets a single index construction (\S\ref{sec:index}) be applied
+uniformly across all three types. \S\ref{sec:scope} sets out how this corpus
+relates to the source study's; here it is the object of measurement.
+
+\subsection{Deduplication}
+
+Corpus assembly began from 344 collected PDF filings, one more than the
+final corpus size. A content-hash comparison identified a single duplicate
+pair: a 2019 annual report for Wolters Kluwer (Netherlands) and a
+\texttt{\_repaired} re-issue of the same filing under a different filename.
+The hash is taken over the preprocessed representation of
+\S\ref{sec:lexicon} rather than the raw extraction, so the criterion is
+that two documents are indistinguishable to every downstream measure; here
+the two files are in fact identical at the extraction stage as well. The
+\texttt{\_repaired} copy was removed as a data-quality control, leaving 343
+unique reports. The balanced panel reported above --- 49 documents in every
+year, and a fixed per-country count within every year --- holds only after
+this step: before deduplication, 2019 carried 50 documents, with the
+Netherlands contributing 7 rather than 6, while every other year already
+stood at 49.

@@ -1,0 +1,281 @@
+\section{Limitations}
+\label{sec:limitations}
+
+A paper arguing that a published conclusion is an artefact of undisclosed choices is
+held to its own standard, so the accounting below is complete rather than selective.
+(The original's runs to two paragraphs in its conclusion and acknowledges two items: the
+cross-sectional design, and that ESGSI measures could be more sophisticated, p.~10.)
+Table~\ref{tab:limitations-origin} attributes each limitation to our design or to the
+index we re-implement, descriptively only. Inheritance is not a defence: an inherited
+defect constrains our results exactly as much as one of our own, and the first two
+items apply to \citet{lagasio2024}, and to any future user of this index family, with
+equal force.
+
+\subsection{The threshold is definitional, and the index has no cardinal scale}
+
+Under score normalisation by $z$-score, $\ESGSI = \Z(\SEN) - \Z(\SUS)$ is a difference
+of two mean-zero variables, so the rule $\ESGSI > 0 \Rightarrow$ ``Potential
+ESG-washing'' partitions any sample at approximately its median by construction. Our
+171 flagged documents of 343 are arithmetic, not an estimate: no figure in this paper
+estimates how much ESG-washing this corpus contains, and no reader should take one as
+such. The threshold is inherited. The original adopts the same zero cut with no
+calibration against any external case and never reports the share it flags, although
+its own published quartiles bound that share at no more than 25\,\% of 749
+(\S\ref{sec:original}).
+
+Both components are rescaled across the sample, so neither they nor the index carry
+cardinal meaning. An $\ESGSI$ of $+1.5$ is a position in this corpus's distribution,
+not a quantity of anything; values are not comparable across corpora, across
+vocabularies, or between this study and the original. Only within-sample ordering, and
+change over time with composition held fixed, are interpretable.
+
+\subsection{Corpus dependence}
+
+$\sustfidf$ and $\suslag$ estimate document frequencies on the analysed sample. Adding
+documents changes every idf and hence every historical score, so a report's 2018 value
+is not stable under corpus extension --- a live defect for a longitudinal design,
+which must re-score the whole panel whenever it grows. $\susdens$ estimates no document
+frequencies, so its substance component is stable under extension; that does not lift
+the limitation from the index. Score normalisation is cross-sectional under every
+specification, so every $\ESGSI$ reported here, including the whole yearly series of
+\S\ref{sec:temporal}, would move if the panel were extended. The series is one of
+positions within this corpus, not of levels.
+
+\subsection{Confounds and unjustified constants}
+
+Country and document type are near-perfectly confounded (\S\ref{sec:data}): 99 of 101
+URDs are French, all 98 German documents are annual reports, and all seven standalone
+sustainability reports are French. No cross-country or cross-type comparison in this
+corpus is interpretable and we make none; the country and type means in
+\S\ref{sec:data} identify neither effect. The within-Germany analysis (\S\ref{sec:temporal})
+holds both fixed --- one country, one document type, 98 documents, slope $-0.301$/yr,
+$p = 1.2 \times 10^{-6}$ --- but it does so on 14 firms, and it establishes that the
+decline is not produced by composition, not that the pooled magnitude is right. The
+cross-section is 49 firms throughout, observed seven times each, so the $p$-values in
+\S\ref{sec:temporal} are anti-conservative for the reasons given there; we report no
+clustered or panel-corrected inference.
+
+The extended-index weights $w_q = w_h = 0.5$ were chosen without justification and never
+varied. We report no result that depends on $\ESGSIext$, which is why no sensitivity
+analysis was run --- not because the choice is defensible, and any use of $\ESGSIext$
+beyond this paper would need one.
+
+\subsection{\QUANT{} is not independent of what it adjudicates}
+
+\QUANT{} is the criterion on which the specification choice rests. The selection of
+$\susdens$ over $\suslag$ in \S\ref{sec:validity} turns on their agreement with \QUANT{}, and
+the argument is a convergent-validity argument: it is worth what the independence of the two
+instruments is worth. That independence fails in two ways, one of which we can remove by
+recomputation and one of which we cannot. Fourteen entries of the 154-term ESG vocabulary
+are also counted by \QUANT{} --- eleven by its \texttt{frameworks} group and three
+(\emph{co2}, \emph{co2e}, \emph{ghg}) by its \texttt{units} group --- and they carry
+7.50\,\% of all \SUS{} occurrences. The two groups that contain the shared terms are
+together 36.77\,\% of all \QUANT{} hits (\texttt{frameworks} 17.22\,\%, \texttt{units}
+19.55\,\%), so the contamination is not confined to a corner of the criterion. Nor is
+it stationary: the \texttt{frameworks} share rises from 10.15\,\% of \QUANT{} hits in
+2018 to 21.87\,\% in 2024, so the shared component grows across exactly the window over
+which \S\ref{sec:temporal} reports a trend.
+
+Two consequences follow, and they are different in kind. The first is settled by
+recomputation rather than by argument, and \S\ref{sec:validity-disjoint} reports it: stripping
+the 14 shared entries from the vocabulary and \QUANT{} of the \texttt{frameworks} and
+\texttt{units} groups drops every correlation by roughly two fifths --- $\susdens$ from
+0.6663 to 0.4112, $\sustfidf$ from 0.6817 to 0.4125, $\suslag$ from 0.3217 to 0.1799. So the
+levels reported there are upper bounds and the true level of convergent validity is moderate,
+not strong; that limitation stands and we state it in those terms. The ranking is not
+similarly affected --- the length-normalised specifications stay roughly twice as close to
+\QUANT{} as $\suslag$, and the ratio widens slightly, 2.29$\times$ against 2.07$\times$. We
+had previously nothing better than an argument for why the ranking should survive, and that
+argument does not hold (\S\ref{sec:validity}); what supports it is the recomputation and
+nothing else. The second consequence touches the extended index: $\ESGSI$ itself does not
+contain \QUANT{} and is unaffected, but $\ESGSIext$ subtracts both $\Z(\QUANT)$ and
+$\Z(\SUS)$, so there the shared mass reinforces rather than cancels and the growing
+\texttt{frameworks} share inflates the extended index's temporal slope.
+
+What recomputation does not touch is the more serious of the two failures, and it is the one
+that remains the most serious limitation in this paper. \QUANT{} and \SUS{} are computed over
+the same extracted zones, with denominators that are two measures of the same document's
+length (\S\ref{sec:validity}). Deleting shared strings does not make the two instruments
+independent samples of anything; both still see only the text \S\ref{sec:extraction} admitted,
+and no vocabulary edit can change that. The convergent-validity claim is therefore conditional
+on the extraction stage under either set of bases.
+
+\subsection{\QUANT{} is also crude, and shares no denominator with \SUS{}}
+
+Independence of construction was bought at the price of commensurability. \SUS{},
+\HEDGE{} and $\BREADTH$ are densities over 14.4M lemmatised, stopword-filtered tokens;
+\QUANT{} is a density over 26.2M raw tokens, a base roughly 1.8 times larger and
+differently composed. No two components of the index share a denominator. Score
+normalisation makes them addable, so the arithmetic of $\ESGSIext$ is well defined, but
+it is the score normalisation that makes them comparable rather than anything about the
+quantities themselves.
+
+The criterion is also noisy in a way we can name but have not corrected. Its
+\texttt{large\_numbers} family matches any run of four or more digits with calendar
+years excluded, which counts page numbers, note references, ISINs, share counts and
+monetary figures alongside quantified ESG disclosure; it is 6.92\,\% of all \QUANT{}
+hits (13{,}518 matches) and no part of it was validated against ESG content. And the
+measure has a hard floor that one document reaches: a single report of the 343 records
+zero \QUANT{} matches across all four families, so its $\Z(\QUANT)$ is bounded below by
+the sample and is not a measurement of anything. That document is also among the
+shortest extractions in the corpus, which is the dependence \S\ref{sec:validity} already
+notes --- \QUANT{} and \SUS{} are computed over the same zones, and a report from which
+extraction recovered little text is low on both for reasons unrelated to disclosure.
+
+\subsection{The vocabulary: a recall floor and its own construction artefacts}
+
+Recall is bounded by the vocabulary at both the extraction and counting stages: an
+unlisted term is not under-weighted but absent. An external audit of 880 zones from
+four FY2023 reports found 147 ESG terms present in the text and absent from our
+vocabulary, over 2,970 occurrences, led by \emph{compliance} (436) and \emph{social}
+(275). None of the 147 is incorporated into the adopted vocabulary, every figure in this
+paper is computed on the 154 entries, and recall is bounded by that omission. The audit
+shares the bound it measures: it matched lexically, inside already-extracted zones, so
+paraphrase is invisible to it too.
+
+A sector-bias analysis has since been run over all 343 reports, and it converts one item
+on this list from an unresolved omission into a design choice we disclose rather than
+defend as necessary. Of the audited candidates, 22 are concentrated enough in a single
+industry to be called sectoral, and they are excluded; they carry 2.0\,\% of the 143
+candidates' occurrence mass and 0.37\,\% of the substance numerator they would be added
+to. The 22 natural-form entries yield 19 live TF-IDF entries: \emph{b corp},
+\emph{iso 37001} and \emph{cop 28} do not survive preprocessing, and two of the survivors
+are lemmatisation artefacts of the class this subsection goes on to describe ---
+\emph{better cotton} becomes \emph{well cotton} and \emph{living income} becomes
+\emph{live income}, the latter scoring two occurrences in one firm. Added on top of the
+expanded 289-term robustness vocabulary of \S\ref{sec:robustness-lexicon}, they move mean
+$\susdens$ from 6.5162 to 6.5406, the
+flagged count from 164/343 to 167/343 and the trend slope from $-0.194$ to $-0.193$/yr;
+the two indices correlate 0.99980 and three labels of 343 change.
+
+Some of them do what the objection predicts, and that is why they are out: mean
+$\susdens$ rises $0.354$ for Danone (\emph{nutrition}, \emph{food safety}), $0.111$ for
+Enel (\emph{energy storage}) and $0.099$ for Schneider Electric, against a corpus mean of
+$0.024$, and 34 of the 49 firms gain less than $0.02$ --- firms credited for the industry
+they operate in rather than for what they disclosed. The exclusion avoids a bias we can
+name and measure, and we prefer it on that ground; what it does not do is carry any
+result.
+
+The bin is not one kind of term. The rule sorts on concentration without distinguishing
+its causes, so alongside industry vocabulary it holds house-style governance language ---
+\emph{executive compensation} appears in 29 of the 49 companies and is excluded on the
+second limb of the rule, that half its occurrences sit in one firm --- and one conference
+name. Two entries were measured as zero by a tokeniser that split on letters only:
+re-measured with word boundaries, \emph{sf6} is correctly sectoral and \emph{cop28} meets
+the acceptance rule and sits in the sectoral file in error. And the dispersion of
+\emph{board oversight} depends on the base: 8 companies as a natural-form phrase, 30 as
+the lemmatised bigram the vocabulary actually matches, because stopword removal
+manufactures the adjacency. The rule was applied consistently; its inputs were not all
+measured on the representation the instrument scores.
+
+Against the 96 labels of 343 that vector normalisation moves (\S\ref{sec:robustness}),
+the 22 sectoral terms move three, so no claim in this paper would read differently had we
+included them. The decision is disclosed and immaterial, not necessary; the note in
+\texttt{esg\_terms.txt} deferring it to a sector-bias analysis overstated what such an
+analysis could settle.
+
+Precision is bounded too, by the construction rule \S\ref{sec:lexicon} defends. Passing
+every vocabulary entry through the corpus preprocessor guarantees that vocabulary and
+text share a representation, and it produces entries that are lemmatisation artefacts
+rather than terms: \emph{esr} from \emph{esrs}, \emph{whistleblowe} from
+\emph{whistleblowing}, \emph{ecovadi}, \emph{sustainalytic}, \emph{live wage},
+\emph{employee wellbee}, \emph{datum breach}. The rule makes these harmless for matching,
+since the corpus passes through the same transformation, but not harmless for
+weighting. \emph{esr}
+occurs 6{,}282 times across 74 of the 343 documents at $\mathrm{idf} = 2.52$, placing it
+in the high-idf group that \S\ref{sec:measurement} identifies as the one the idf
+specifications most heavily up-weight; it is the largest single entry in that group.
+The rare-term critique we direct at $\suslag$ therefore applies to our own vocabulary,
+and it applies to $\sustfidf$ as well as to $\suslag$. Only $\susdens$, which weights
+every entry equally, is insensitive to it. We did not audit the vocabulary for
+artefacts before running the analysis, and no entry was removed on that ground.
+
+\subsection{One extraction pipeline, one tone dictionary}
+
+Every result is conditional on the zone extraction of \S\ref{sec:extraction}, whose free
+parameters --- a density threshold of 1.0 keyword per 100 words, a $\pm 1$-paragraph
+context window, a 150-character minimum zone --- were set by judgement and never
+varied. That stage discards roughly two thirds of each report and sits upstream of
+every number here, and it has no counterpart in the original, so the limitation is ours
+alone.
+
+The extraction stage shares its vocabulary with the measurement stage, so building the
+robustness vocabulary of \S\ref{sec:robustness-lexicon} varied it incidentally, and the
+effect can be read off. Holding the adopted 154-term scoring vocabulary fixed and
+swapping only the extraction --- 154 natural-form terms against 296 --- takes the corpus
+from 14.4 to 16.4 million lemmatised tokens, lowers mean $\susdens$ from 5.897 to 5.168,
+moves 7 of 343 labels and leaves the two indices correlated at 0.988. The added zones are
+therefore poorer in adopted-vocabulary terms than the zones already admitted, which is
+what the density threshold predicts of text entering at the extensive margin. This is one
+point, not a sensitivity analysis: the three free parameters of \S\ref{sec:extraction} ---
+the density threshold, the context window and the minimum zone length --- are still never
+varied.
+
+\SEN{} is a dictionary count and inherits the known limitations of
+\citet{loughran2011} on non-financial narrative text: no negation or intensifier
+handling, a 140-positive against 893-negative asymmetry in the stem lists, and a
+bounded polarity ratio that is insensitive to the volume of matched terms --- a report
+with 4 positive and 2 negative matches scores exactly as one with 400 and 200. Our
+input is lemmatised text that the LM tokeniser then stems again. Substituting this
+dictionary for the original's is itself a divergence (\S\ref{sec:scope}) and one more
+reason the two indices are not the same instrument --- as is our vocabulary, which
+cannot be aligned with the original's because the original's is unpublished
+(\S\ref{sec:lexicon}).
+
+\subsection{No external validation, and no blind specification choice}
+
+The check in \S\ref{sec:validity} is a construct check against an internal yardstick, not
+a criterion check. Neither this study nor the original tests $\ESGSI$ against an
+external greenwashing benchmark --- regulatory findings, controversy data, or
+hand-labelled cases. We identify that absence in the original (\S\ref{sec:original}) and
+concede it here in the same terms: $\ESGSI$ is a measure whose validity rests on its
+definition. The concession runs further than the original's does. Our one positive
+methodological claim --- that $\susdens$ is the specification to prefer --- is decided
+by a criterion we built ourselves, from our own regexes over our own extracted zones.
+The original's specification is undisclosed and ours is disclosed, but neither is
+anchored to anything outside its author's pipeline.
+
+Nor was the comparison blind. The vocabulary, the extraction parameters, the \QUANT{}
+regex families and the specification set were all fixed by us with the results
+visible, and no part of the corpus was held out. Every individual choice is disclosed
+in \S\ref{sec:repro} and each is defended where it is made, which is the disclosure
+standard we hold the original to; disclosure is not the same as pre-commitment, and we
+claim only the first. The classification thresholds of \S\ref{sec:robustness-lexicon} ---
+twelve companies, half the occurrences in one firm --- were set later than the rest and
+with the results they adjudicate already computable, so they fall inside this concession
+rather than outside it.
+
+\begin{table}[htbp]
+\centering
+\caption{Attribution of each limitation. ``Inherited'' means the property follows from
+the index architecture of \citet{lagasio2024} and holds for the original as well.}
+\label{tab:limitations-origin}
+\small
+\begin{tabular}{@{}p{8.4cm}l@{}}
+\toprule
+Limitation & Origin \\
+\midrule
+Zero threshold is definitional, not calibrated & Inherited \\
+No cardinal scale; scores are sample-relative & Inherited \\
+idf corpus dependence of $\sustfidf$, $\suslag$ & Inherited \\
+Vocabulary not comparable to the original's & Inherited (list unpublished) \\
+No external greenwashing benchmark & Shared \\
+Country / document-type confound & Ours (corpus design) \\
+Cross-section of 49 firms; no clustered inference & Ours \\
+$\ESGSIext$ weights $w_q = w_h = 0.5$ & Ours \\
+Criterion \QUANT{} shares 14 terms with \SUS{} (7.50\,\% of \SUS{} mass); levels in
+\S\ref{sec:validity} are upper bounds & Ours \\
+Criterion and measure read the same extracted zones; not removable & Ours \\
+No component shares a token base with any other & Ours \\
+\texttt{large\_numbers} counts non-ESG figures (6.92\,\% of \QUANT{}) & Ours \\
+\QUANT{} floors at zero for 1 of 343 documents & Ours \\
+Lexical recall floor (147 audited omissions) & Ours \\
+Sectoral vocabulary excluded by choice (moves 3 labels of 343) & Ours (disclosed) \\
+Lemmatisation artefacts up-weighted by idf (\emph{esr}) & Ours \\
+Single untested extraction stage & Ours (no counterpart) \\
+Extraction vocabulary varied once, incidentally (7 labels of 343) & Ours \\
+\SEN{} dictionary limitations & Ours (dictionary substituted) \\
+Specification chosen non-blind, no held-out data & Ours \\
+\bottomrule
+\end{tabular}
+\end{table}

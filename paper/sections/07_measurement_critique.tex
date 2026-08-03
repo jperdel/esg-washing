@@ -1,0 +1,242 @@
+\section{Measurement critique: TF-IDF as a representation, not an instrument}
+\label{sec:measurement}
+
+TF-IDF was designed for information retrieval \citep{sparckjones1972,manning2008}.
+Retrieval ranks documents against a query, so a document's absolute scale is a nuisance
+parameter: what matters is whether this document is a better match than that one, and a
+report that says the same things twice as often is not a better match. Measurement asks a
+different question --- how much of a construct a document contains --- and there the scale
+\emph{is} the quantity of interest. The object of this section is the representation as it
+comes out of the box: idf term weights, and the unit-length scaling of the document vector
+that is the library default. Both are calibrated for the first question and neither is safe
+for the second, but they are not equally unsafe. \textbf{The vector normalisation is
+first-order and the term weighting is second-order}, and the section is ordered accordingly.
+The argument concerns a class of methods, it holds analytically, and it would hold unchanged
+if the original had documented every setting it used. It is not a claim about the original's
+conclusion; that claim belongs to \S\ref{sec:artefact} and rests on evidence of a different
+kind.
+
+One attribution point governs everything below, and we concede it at the outset rather than
+leave a referee to raise it. The original \citep{lagasio2024} discloses four
+\texttt{TfidfVectorizer} settings and never mentions \texttt{norm} (\S\ref{sec:original}).
+The four it discloses are exactly four non-default arguments, so a reader following the
+ordinary convention that only departures from library defaults are reported would infer that
+the remaining defaults --- \texttt{norm='l2'} among them --- were in force in the library
+version the article names \citep{pedregosa2011}. We make that inference and we hold it to be
+reasonable. Having relied on it here, we do not also count the silence on \texttt{norm} as a
+reproducibility failure: \S\ref{sec:original-consequence} rests that charge on the
+aggregation rule, which is a modelling step rather than a library setting and which no
+default convention can supply, on the unpublished keyword list, and on the contradiction
+between the original's prose and its printed formula on score normalisation. Those three are
+unanswerable from any convention; this one is not, and we say so in both places.
+
+The inference is nonetheless an \emph{inference}, it is labelled as one wherever it is used,
+and it can be denied at no cost to the argument: what follows is a property of $\suslag$ ---
+our reconstruction under that inference (\S\ref{sec:index}) --- and of any pipeline built the
+same way. It is not a documented choice of the original, and we do not assert that the
+original made it.
+
+\subsection{Vector normalisation discards magnitude}
+
+Vector normalisation --- L2 scaling of a document's term vector to unit length, applied
+within the document at the TF-IDF stage --- retains the vector's direction, that is the
+\emph{mix} across terms, and discards its length, that is \emph{how much} there is. The
+algebra is immediate: for any $\mathbf{v} \neq \mathbf{0}$ and any scalar $c > 0$,
+
+\begin{equation}
+\frac{c\,\mathbf{v}}{\lVert c\,\mathbf{v}\rVert_2}
+= \frac{c\,\mathbf{v}}{c\,\lVert \mathbf{v}\rVert_2}
+= \frac{\mathbf{v}}{\lVert \mathbf{v}\rVert_2}.
+\label{eq:l2-invariance}
+\end{equation}
+
+Two documents whose ESG term counts are proportional to one another therefore receive
+\emph{identical} unit vectors. Nothing downstream recovers the difference: the aggregation
+from per-term values to a document score is then applied to identical inputs and returns
+identical outputs, whatever that aggregation is --- sum, mean, weighted mean or anything
+else. This is not an approximation or a small-sample effect; it is an identity.
+
+The distinction matters because it separates the two silences in the original's
+specification, which are unequal in both respects that matter. They are unequal in what a
+convention can close: \texttt{norm} has a library default and the aggregation rule has none
+(\S\ref{sec:original}). They are also unequal in consequence, and in the opposite direction.
+Sum and mean differ by the constant factor $1/V$, and $\Z(\cdot)$ annihilates a positive
+affine rescaling of a component, so on our index the aggregation choice cannot move a single
+value (\S\ref{sec:index}) --- the silence no convention closes turns out to be the harmless
+one here. The vector normalisation is not of that kind. It does not rescale the score; it
+changes what the score is a function of, which is why an inference, however reasonable, is a
+thin thing to leave a first-order choice resting on.
+
+Whether that is a defect depends on the construct being measured. Discarding magnitude is
+appropriate when the question is which document best matches a query. It is not appropriate
+here: $\ESGSI$ contrasts the tone of a report against the amount of substance behind it, so
+a substance component that returns the same value for a document and for the same document
+carrying twenty times the ESG content is measuring on the wrong side of that comparison.
+
+\subsection{Two demonstrations}
+
+Equation~\eqref{eq:l2-invariance} predicts two failures. Both are executed end to end on the
+live pipeline rather than argued, so that the pipeline is shown to behave as the algebra
+says rather than assumed to.
+
+\emph{Amplification.} We take a document synthesised from the observed vocabulary counts of
+one report --- synthesised so that the counts can be scaled exactly without perturbing the
+$n$-gram structure --- multiply those counts by $k \in \{1, 2, 5, 20\}$, re-embed the result
+in the remaining reports and re-run the full vectorisation. Scaling a document's own counts
+leaves every $df_j$ unchanged, since a term present remains present and a term absent remains
+absent, so the idf vector is fixed across the four runs and the comparison is clean.
+Table~\ref{tab:measurement-scaling} reports the outcome. Twenty times the ESG content leaves
+$\suslag$ unmoved to machine precision, while any specification with a length denominator
+rises by the factor $k L_1 / L_k$, as it should.
+
+\begin{table}[ht]
+\centering
+\caption{The same document with ESG term counts multiplied by $k$. $\suslag$ is reported
+relative to its value at $k = 1$: Equation~\eqref{eq:l2-invariance} does not depend on the idf
+vector, so the ratio is exact for any corpus, whereas the level is corpus-dependent. The
+maximum absolute deviation across the four runs is $6.9 \times 10^{-18}$.}
+\label{tab:measurement-scaling}
+\begin{tabular}{rrrrr}
+\toprule
+$k$ & Tokens & ESG hits & $\susdens$ & $\suslag$, relative to $k=1$ \\
+\midrule
+1  & 16{,}556 & 700      & 4.2281  & 1.000000 \\
+2  & 18{,}112 & 1{,}400  & 7.7297  & 1.000000 \\
+5  & 22{,}780 & 3{,}500  & 15.3644 & 1.000000 \\
+20 & 46{,}120 & 14{,}000 & 30.3556 & 1.000000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\emph{Dilution.} The converse is the case a reader will recognise from practice. We append
+56{,}000 non-ESG filler tokens, drawn from the document's own frequent non-vocabulary words,
+to a 22{,}576-token report, leaving its 695 ESG mentions untouched.
+Table~\ref{tab:measurement-dilution} reports the outcome: measured ESG density falls from
+3.0785 to 0.8845 per 100 tokens, a $3.48$-fold dilution, and $\suslag$ does not move to ten
+decimal places. A report can be padded without limit --- with boilerplate, with repetition,
+with any material outside the ESG vocabulary --- at no cost to its measured sustainability
+substance.
+
+\begin{table}[ht]
+\centering
+\caption{Dilution of a report with non-ESG filler text.}
+\label{tab:measurement-dilution}
+\begin{tabular}{lrrrr}
+\toprule
+Variant & Tokens & ESG hits & $\susdens$ & $\suslag$ \\
+\midrule
+Original             & 22{,}576 & 695 & 3.0785 & 0.0347763839 \\
+$+\,56{,}000$ filler & 78{,}576 & 695 & 0.8845 & 0.0347763839 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{What survives vector normalisation is a spread measure}
+
+If magnitude is discarded, something else is being measured, and it is worth naming. Let
+$\mathbf{u} \geq \mathbf{0}$ be a unit vector in $\mathbb{R}^{V}$, with $V = 154$ the
+vocabulary size (\S\ref{sec:index}). Then
+
+\begin{equation}
+1 \;\leq\; \sum_{j=1}^{V} u_j \;\leq\; \sqrt{V}.
+\label{eq:unit-sum-bounds}
+\end{equation}
+
+In Equation~\eqref{eq:unit-sum-bounds} the lower bound follows from
+$\bigl(\sum_j u_j\bigr)^2 = \sum_j u_j^2 + \sum_{j \neq l} u_j
+u_l \geq \lVert \mathbf{u} \rVert_2^2 = 1$ for non-negative $\mathbf{u}$, with equality when
+all mass sits on a single term; the upper bound is Cauchy--Schwarz, with equality when the
+mass is spread evenly over all $V$ terms. Between the two, mass spread evenly over $m$ terms
+gives $\sum_j u_j = \sqrt{m}$. Aggregating an L2-normalised vector over the vocabulary ---
+$\suslag$ is that sum divided by $V$ --- therefore rewards \emph{dispersion across terms},
+not \emph{amount of content}: a report mentioning many distinct ESG topics once each scores
+above a report treating a few of them intensively, and the ceiling is set by the size of the
+vocabulary rather than by the disclosure.
+
+That is what the data show. On our corpus $\suslag$ correlates $0.9733$ with $\BREADTH$, the
+effective number of distinct vocabulary terms (\S\ref{sec:index}), and $0.4177$ with ESG
+density. It is, to a correlation of $0.97$, a measure of topical breadth carrying the name of
+a measure of disclosure intensity. Breadth is a legitimate construct and may well be worth
+reporting; it is simply not the construct the index is defined to capture.
+
+\subsection{The term weighting is second-order}
+
+Inverse document frequency down-weights terms that appear everywhere, because in retrieval a
+term present in every document separates nothing. In a corpus of ESG disclosure the same
+terms are present everywhere for the opposite reason: they are what the genre is about.
+Rarity and topical centrality are inversely related here, so idf transfers weight away from
+the vocabulary that carries the disclosure and towards the vocabulary that does not.
+Table~\ref{tab:measurement-idf} gives the inversion on our corpus.
+
+\begin{table}[ht]
+\centering
+\caption{Concentration of ESG term occurrences by idf band ($n = 343$).}
+\label{tab:measurement-idf}
+\begin{tabular}{lrr}
+\toprule
+Band & Terms & Share of all ESG occurrences \\
+\midrule
+$\mathrm{idf} < 1.2$ (document frequency $> 280$) & 43 & 78.35\,\% \\
+$\mathrm{idf} > 2$                                & 46 & 2.80\,\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Forty-three terms hold 78.35\,\% of all ESG occurrences in the corpus and are weighted at
+close to the floor of $1$; forty-six hold 2.80\,\% and are weighted at up to nearly five
+times it. The exchange rate is explicit at the level of individual terms. \emph{Fair
+condition} occurs eight times in the entire corpus and carries $\mathrm{idf} = 4.8947$;
+\emph{climate}, among the most frequent entries in the vocabulary, carries
+$\mathrm{idf} = 1.0088$. One mention of the former is therefore worth $4.852$ mentions of the
+latter. No account of what a sustainability report discloses supports that exchange rate, and
+no reader of such a report would recognise it.
+
+It is nonetheless the weaker of the two criticisms, and we say so rather than present the
+pair as equals. The inversion is theoretically indefensible and empirically close to inert,
+for the reason the table itself supplies: the terms idf promotes carry 2.80\,\% of the mass.
+Holding the treatment of length fixed --- $\susdens$ and $\sustfidf$ both divide by document
+length, and neither applies vector normalisation (\S\ref{sec:index}) --- and varying only the
+term weighting, the two specifications correlate $0.9926$, and their assembled indices
+disagree about the label of $6$ of $343$ reports. Varying the vector normalisation instead
+moves $96$ of $343$ (\S\ref{sec:robustness}). A reader who accepts the first-order argument and
+rejects this subsection in its entirety loses nothing that matters here.
+
+The concession runs further, and stating it is what keeps the first-order claim credible.
+Nothing above indicts idf weighting as such for measurement use: with the vector
+normalisation replaced by a length denominator, the same idf weights produce a specification
+that agrees with our independent yardstick at least as well as any other we compute
+(\S\ref{sec:validity}). What this section establishes is a defect of one library default, not
+of the weighting scheme and not of the family.
+
+\subsection{The sentiment component is exposed to the same class of problem}
+
+The critique above concerns one half of the index. The other half is $\SEN_i$, TextBlob
+polarity, which enters $\ESGSI$ with the same weight as the substance component
+(\S\ref{sec:index}). TextBlob's polarity is a pattern-matching lexicon whose scores are
+modified by negation and by intensifiers. The original's preprocessing, disclosed in its
+Section~3.1.1 (p.~3), lowercases, strips URLs, numerals and punctuation, removes NLTK's
+English stopwords augmented by an unpublished custom list, discards every token shorter than
+three characters, and lemmatises \citep{lagasio2024}. That pipeline removes the tokens those
+rules operate on --- \emph{no} falls below the three-character floor, \emph{not} and
+\emph{very} are NLTK stopwords --- and stopword removal breaks the adjacency the modifier
+rules read. A polarity score is still returned; it is no longer the quantity the instrument
+was validated to produce. Whether the raw text or this preprocessed output reached TextBlob
+is never stated (\S\ref{sec:original}), and the five-fold cross-validation announced for the
+sentiment model is never reported. The instrument is therefore either applied outside its
+validity conditions or it is not, and the article does not say which.
+Our own substitution, a count-based finance dictionary that presupposes no negation or
+intensifier parsing (\S\ref{sec:index}), is a divergence by design and not a repair.
+
+\subsection{What carries into the next section}
+
+Both criticisms share a structure. There is a vector-normalisation choice at the TF-IDF stage
+and a score-normalisation choice at index assembly; at each stage that choice dominates the
+weighting choice; and the original states neither (\S\ref{sec:original}). The two are not
+undisclosed in the same way, and the difference cuts against us in the first case and for us
+in the second: the first is recoverable from a reporting convention, as conceded above,
+whereas the second is not merely unstated but stated twice and inconsistently, in prose and
+in a printed formula that specify different estimators. The second stage is the subject of
+\S\ref{sec:artefact}. What the present section supplies is the reason to expect a result
+there: once first-order choices of this kind are left to a convention or to a contradiction,
+a published conclusion that turns on one of them is a predictable outcome rather than a
+coincidence.

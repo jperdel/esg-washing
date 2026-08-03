@@ -1,0 +1,280 @@
+\section{Convergent validity and specification choice}
+\label{sec:validity}
+
+\S\ref{sec:original} established that \citet{lagasio2024} states neither how per-term
+TF-IDF values are aggregated into a document-level substance score nor whether the term
+vector is normalised, and \S\ref{sec:measurement} that the second of those silences is
+first-order: it determines what the resulting quantity measures. Three substance
+specifications therefore remain live and no reading of the original's text selects among
+them. This section selects on evidence, using a criterion external to the specifications
+compared --- external, but not independent of them, and the two respects in which it is
+not are stated below with their magnitudes rather than deferred to
+\S\ref{sec:limitations}. One of the two is then removed by recomputation on bases the two
+instruments do not share (\S\ref{sec:validity-disjoint}); the other is not removable within
+this design and is reported as a bound.
+
+\subsection{\QUANT{} as a yardstick, and the senses in which it is not independent}
+
+\QUANT{} (\S\ref{sec:index}) is a density of regular-expression matches over the
+\emph{raw} extracted text: percentage expressions, integers of four or more digits with
+calendar years excluded, physical units of mass, energy and volume, and reporting-framework
+acronyms, divided by the raw token count $R_d$. Its construction shares almost nothing with
+any \SUS{} specification. There is no vectoriser, no lemmatised vocabulary, no
+document-frequency weighting and no vector space; the token base is the raw text with
+digits intact, whereas every \SUS{} specification is computed on the lemmatised,
+stopword-filtered text (\S\ref{sec:lexicon}).
+
+It also targets a property that substantive disclosure should exhibit: a report that
+discloses substance quantifies it, in tonnes, percentages and absolute counts, and names
+the frameworks under which those figures are computed. Agreement with \QUANT{} is
+therefore a convergent-validity test in the sense of \citet{campbell1959} --- two
+instruments built by largely unrelated means, aimed at overlapping constructs, should
+covary. Agreement does not prove validity, since \QUANT{} is itself a crude instrument and
+two measures can covary for irrelevant reasons; but a substance measure that does not
+covary with independently counted quantitative content is hard to defend.
+
+``Almost nothing'' is doing work in that claim, and we discharge it before the result rather
+than after it. Independence of construction fails in one respect --- fourteen vocabulary
+entries are counted by both instruments --- and independence of sampling in another: both
+are computed over the same extracted text, with denominators that are two measures of the
+same document's length. Both are quantified below, and neither is left to
+\S\ref{sec:limitations}.
+
+\begin{table}[htbp]
+\centering
+\caption{Correlation of each substance specification with \QUANT{} ($n = 343$).}
+\label{tab:validity-quant}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Substance specification & Pearson $r$ & Spearman $\rho$ \\
+\midrule
+$\sustfidf$ & 0.6817 & 0.7220 \\
+$\susdens$ & 0.6663 & 0.7076 \\
+$\suslag$ & 0.3217 & 0.4299 \\
+Sublinear TF, length-normalised & $+0.0067$ & --- \\
+Sublinear TF, mean over vocabulary & $+0.5262$ & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The two length-normalised specifications track independently measured quantitative
+content roughly twice as well as the L2-normalised specification does. The ordering is
+unchanged under rank correlation, so it is not produced by a handful of extreme documents,
+though the gap narrows there (0.7076 against 0.4299). This is the predicted consequence of
+the invariance identity in \S\ref{sec:measurement}: $\suslag$ discards the magnitude of a
+document's ESG content and retains only its direction across the vocabulary, and quantified
+content is a magnitude.
+
+\subsection{The yardstick is partly contaminated}
+
+The specification choice in this paper rests on agreement with \QUANT{}, and \QUANT{} is not
+clean: it counts some of the same strings that the \SUS{} vocabulary counts. The instrument
+doing the validating and the instrument being validated share terms. We give the size of the
+overlap, the reason the obvious defence of it fails, and then, in
+\S\ref{sec:validity-disjoint}, the computation that settles what the defence cannot.
+
+The \texttt{frameworks} group of \QUANT{} matches 11 entries of the 154-term ESG vocabulary
+(\emph{csrd}, \emph{gri}, \emph{issb}, \emph{sasb}, \emph{sdg}, \emph{sfdr}, \emph{tcfd},
+and four members of the \emph{taxonomy} family); the \texttt{units} group matches three more
+(\emph{co2}, \emph{co2e}, \emph{ghg}). Those 14 shared entries account for 67{,}194 of
+895{,}996 vocabulary occurrences over the deduplicated corpus, i.e.\ \textbf{7.50\,\%} of
+total \SUS{} occurrence mass.
+The exposure on the \QUANT{} side we can only bound: the \texttt{frameworks} group, which
+holds 11 of the 14 shared entries but also patterns with no vocabulary counterpart
+(\emph{un global compact}, \emph{paris agreement}), supplies 17.22\,\% of all \QUANT{} hits
+pooled over the corpus, and the \texttt{units} group adds the remaining three. We do not
+report the shared entries' exact share of \QUANT{} hits, and it should not be read off the
+group totals. What the group totals do show is that the overlap is not stationary: the
+\texttt{frameworks} share rises from 10.15\,\% of \QUANT{} hits in 2018 to 21.87\,\% in
+2024, so the shared component grows across the study window and must be carried into
+\S\ref{sec:temporal}.
+
+There is a tempting defence, and it does not hold. It runs: the 14 entries belong to the
+vocabulary, every specification is computed over that same vocabulary, so the overlap
+inflates every row of Table~\ref{tab:validity-quant} alike and cannot generate the ordering
+between rows. Two things are wrong with it. First, 7.50\,\% is an \emph{occurrence-mass}
+share, which is the weight those entries carry under uniform weighting --- that is, under
+$\susdens$ and under no other specification in the table. IDF weighting penalises terms
+present in nearly every document, and framework acronyms, \emph{co2} and \emph{ghg} are
+exactly such terms, so the shared entries carry less than their mass share under
+$\sustfidf$ and $\suslag$; and under L2 scaling a term present in almost every document
+contributes little cross-sectional variance to a score that has been stripped of magnitude.
+Second, and more basic: what displaces a correlation is the covariance the shared terms
+carry \emph{within each specification}, and a share of occurrences bounds no covariance. No
+arithmetic converts 7.50\,\% of mentions into a maximum displacement of $r$, so the claim
+that a shared component of that size could not manufacture the distance between 0.6663 and
+0.3217 would be an assertion and not a calculation.
+
+The plausible direction is against us. Both mechanisms above reduce the shared entries'
+leverage under $\suslag$ relative to $\susdens$, so if the overlap displaces the table at
+all it plausibly lifts the top rows further than the bottom row --- inflating the very gap
+this section reports. Every correlation in Table~\ref{tab:validity-quant} is therefore an
+upper bound on the level of convergent validity, and we do not defend the ranking by
+argument.
+
+\subsection{The table recomputed on disjoint bases}
+\label{sec:validity-disjoint}
+
+One computation settles what argument cannot, and we ran it. We deleted the 14 shared
+entries from the ESG vocabulary, leaving 140 terms, and restricted \QUANT{} to its two
+purely numeric families, \texttt{percentages} and \texttt{large\_numbers}, dropping
+\texttt{frameworks} and \texttt{units} in their entirety. The two instruments then share no
+string. The restricted \QUANT{} correlates 0.8738 with the full one, so it is a
+substantially different criterion and not a cosmetic variant of the same one.
+Table~\ref{tab:validity-disjoint} recomputes the comparison on those disjoint bases.
+
+\begin{table}[htbp]
+\centering
+\caption{Correlation with \QUANT{} on the contaminated and on the fully disjoint bases
+($n = 343$). Disjoint bases: ESG vocabulary reduced from 154 to 140 entries, \QUANT{}
+restricted to \texttt{percentages} and \texttt{large\_numbers}. Pearson $r$ throughout.}
+\label{tab:validity-disjoint}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Substance specification & Full bases & Disjoint bases \\
+\midrule
+$\sustfidf$ & 0.6817 & 0.4125 \\
+$\susdens$ & 0.6663 & 0.4112 \\
+$\suslag$ & 0.3217 & 0.1799 \\
+\addlinespace
+Ratio, $\susdens$ to $\suslag$ & 2.07$\times$ & 2.29$\times$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Read it precisely, because it concedes one thing and establishes another. Every absolute
+correlation falls, by roughly two fifths --- so the overlap does inflate the level of
+agreement, the figures in Table~\ref{tab:validity-quant} are upper bounds exactly as the
+previous subsection said, and the level of convergent validity on clean bases is moderate
+rather than strong. What the overlap does \emph{not} do is manufacture the ordering. The
+two length-normalised specifications remain roughly twice as close to independently counted
+quantitative content as the L2-normalised one, and the relative distance is slightly
+\emph{larger} once the shared strings are gone, 2.29$\times$ against 2.07$\times$. That is
+the opposite of what the previous subsection expected: on the mechanisms set out there the
+overlap should have widened the gap, and in fact it was compressing it slightly. We record
+that we had the sign wrong, which is the reason for running the computation rather than
+arguing about it. The ranking on which this section's selection rests survives the removal
+of everything the two instruments had in common; its level does not, and we do not claim it.
+
+The narrow gap between $\sustfidf$ and $\susdens$ narrows further, to 0.0013, which
+reinforces rather than disturbs the reasoning of \S\ref{sec:validity-adopted}: the criterion
+separates the length-normalised pair from $\suslag$ and does not separate the pair.
+
+Neither table, in any case, reaches the part of the diagnosis that uses no yardstick at all.
+The invariance identity of \S\ref{sec:measurement} is algebraic rather than correlational:
+$\suslag$ returns the same value for any two documents whose ESG counts are proportional ---
+demonstrated end to end at a deviation of $6.9 \times 10^{-18}$ under twentyfold
+amplification, and unchanged to ten decimal places under a 3.48-fold dilution that drops
+measured density from 3.0785 to 0.8845 per 100 words. And $\suslag$ correlates 0.9733 with
+$\BREADTH$, a diversity statistic computed with no regex, no raw text and no \QUANT{}.
+Convergent validity here corroborates a diagnosis that was reached without it. The levels in
+Table~\ref{tab:validity-quant} are inflated; the ordering is not, and the diagnosis does not
+stand on either table alone.
+
+\subsection{Independence of construction is not independence of sampling}
+
+\QUANT{} and \SUS{} are computed over the same extracted zones (\S\ref{sec:extraction}).
+Neither instrument sees text the other does not. A report from which extraction recovered
+little usable text scores low on both for reasons that have nothing to do with disclosure
+quality, and any bias in the extraction stage --- its density threshold, its context window
+--- propagates identically to both sides of the comparison. The test establishes convergent
+validity conditional on the extraction stage, not agreement with anything outside our
+pipeline. We have no external ESG-washing benchmark; neither does the original
+(\S\ref{sec:limitations}).
+
+The denominators sharpen the same point. \QUANT{} is a count over raw tokens $R_d$;
+$\susdens$ and $\sustfidf$ are counts over lemmatised tokens $L_d$. These are not the same
+variable, but they are two measures of the length of one document and they vary together,
+and two ratios with collinear denominators correlate for that reason alone. The
+specifications that win the test are the ones built like the yardstick, and $\suslag$, being
+scale-free, cannot benefit from that mechanism even in principle.
+
+The corpus bounds how much of the result this can explain. The fourth row of
+Table~\ref{tab:validity-quant} is a specification whose cross-sectional variation is
+dominated by its length denominator --- a numerator confined to a narrow range over a length
+that is not, as the next subsection establishes --- and it correlates $+0.0067$ with
+\QUANT{}. Were \QUANT{}'s variation across
+documents driven by its own length denominator, that specification would correlate strongly
+with it. It does not, which puts the common-denominator artefact near zero on this corpus.
+That is an argument from the data, not a formal partialling-out of length, which we do not
+report.
+
+\subsection{Why sublinear TF fails, and where}
+
+Raw density invites an obvious objection: a report that repeats one commitment ten times
+is scored as though it disclosed ten times as much. The standard remedy is sublinear
+term-frequency scaling \citep{manning2008}, which replaces the count $c_{dj}$ by
+$1 + \log c_{dj}$ so that the eleventh mention contributes far less than the second.
+Applied with the same length denominator,
+\begin{equation}
+\label{eq:sublinear}
+\SUS^{\mathrm{sub}}_d \;=\; \frac{100}{L_d}\sum_{j:\,c_{dj}>0}\bigl(1+\log c_{dj}\bigr),
+\end{equation}
+the result is not merely weaker but null: $r = +0.0067$ with \QUANT{}, indistinguishable
+from zero and two orders of magnitude below $\susdens$.
+
+The failure has to be localised before anything is concluded from it, because two distinct
+quantities are involved and they behave in opposite directions. The vocabulary is curated at
+154 terms and a document contains on average 87.75 of them, so the sum in the numerator of
+\eqref{eq:sublinear} ranges over a bounded and comparatively narrow interval: log damping
+compresses each term's contribution towards its mere presence, and the sum accordingly
+tracks the number of \emph{distinct} vocabulary terms in the document rather than the volume
+of mentions. Document length is under no such bound. The sign change is the diagnostic.
+Taken before the division, the numerator of \eqref{eq:sublinear} moves with the
+distinct-term count; taken after it, the finished score correlates $-0.3214$ with that same
+count, because variation in $L_d$ now dominates the ratio. The two figures describe
+different quantities and neither is interpretable without saying which. What a user of the
+specification would compute is the second: a measure that falls with document length
+irrespective of content.
+
+The defect is therefore the interaction and not the damping. Aggregated as a mean over the
+vocabulary instead of divided by document length, sublinear TF correlates $+0.5262$ with
+\QUANT{} --- the same damping, a different denominator, most of the agreement restored.
+Sublinear weighting is unusable in this configuration; it is not unusable. We report the
+distinction because the null result, stated at the level of a method family, would be false.
+
+One kind of evidence is excluded here by design. The specifications also differ in the shape
+of the temporal series they produce, and that behaviour is used neither for nor against any
+of them in this section. A specification selected because it delivered the trend the paper
+later reports would make that trend an artefact of the selection.
+\S\ref{sec:temporal} reports the series and \S\ref{sec:robustness} the sensitivity of the
+index to the specification; the selection uses Table~\ref{tab:validity-quant} and
+\S\ref{sec:measurement} only.
+
+\subsection{The repetition objection, and what would answer it}
+
+The objection that motivated sublinear TF is not thereby answered --- it is misdirected.
+Damping treats repetition as measurement noise to be suppressed inside the substance
+score. But a report that restates the same commitment across five sections is exhibiting
+a behaviour of interest, plausibly correlated with the construct the index is meant to
+detect, and folding it into the substance measure discards that information. The
+appropriate response is to measure redundancy as a quantity in its own right --- through
+the concentration of the term distribution, or near-duplicate detection across sections
+--- and to enter it in the index alongside substance. $\BREADTH$ (\S\ref{sec:index}) is
+a first step in that direction and is the reason we report it, but it is reported rather
+than incorporated. We implement no redundancy component and claim no result about one;
+this is recorded as the direction the objection actually points.
+
+\subsection{Specification adopted}
+\label{sec:validity-adopted}
+
+Table~\ref{tab:validity-quant} ranks $\sustfidf$ first, at 0.6817 against 0.6663. We adopt
+$\susdens$ nonetheless, and the reason is not that the difference is negligible. The gap is
+0.0154 between two measures that correlate 0.9926 with each other; whether it is
+statistically distinguishable is a question about dependent correlations that we do not
+test, so we neither claim the two specifications are equivalent on the criterion nor treat
+the ordering between them as informative. The criterion's discriminating power in this
+section lies between the length-normalised pair and $\suslag$ --- a factor of two --- and
+not within the pair.
+
+The tie is therefore broken on a structural ground rather than an evidential one. $\susdens$
+estimates nothing on the sample: it requires no document frequencies, so a report's score
+does not change when the corpus grows and is comparable across corpora, whereas both
+IDF-weighted specifications are defined relative to these 343 reports
+(\S\ref{sec:limitations}). Between two specifications the convergent test does not separate,
+we take the one that does not carry the sample around with it.
+
+Little rests on that choice and a great deal rests on the other one. The two
+length-normalised substance scores correlate 0.9926 and the labels they produce differ on 6
+of 343 documents, figures \S\ref{sec:robustness} establishes; $\suslag$ differs from the
+adopted specification on 96 of 343. \S\ref{sec:robustness} quantifies that consequence.

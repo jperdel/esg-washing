@@ -40,6 +40,15 @@ from text_processor import TextProcessor
 SPACY_MODEL    = "en_core_web_md"
 HEDGE_CATEGORIES = ["Uncertainty", "WeakModal", "StrongModal", "Constraining"]
 
+# Colapsos revisados a mano y admitidos: la palabra superviviente es lo
+# bastante específica en este corpus como para no generar falsos positivos.
+#   "due diligence" -> "diligence" : 4.330 ocurrencias, casi todas del propio
+#                                    sintagma; "diligence" suelto es raro.
+#   "eu taxonomy"   -> "taxonomy"  : 16.662 ocurrencias, en memorias europeas
+#                                    "taxonomy" es la Taxonomía de la UE.
+# Cualquier otro colapso se excluye del TF-IDF automáticamente.
+COLLAPSE_ALLOWED = {"due diligence", "eu taxonomy"}
+
 
 def _read_terms(path: Path) -> list[str]:
     with open(path, encoding="utf-8") as fh:
@@ -50,15 +59,23 @@ def _read_terms(path: Path) -> list[str]:
         ]
 
 
-def build_esg_vocabulary(processor: TextProcessor) -> list[str]:
+def build_esg_vocabulary(
+    processor: TextProcessor,
+    source: str = "esg_terms.txt",
+    target: str = "esg_terms_lemmatized.txt",
+) -> list[str]:
     """
-    Lematiza esg_terms.txt con el pipeline real y avisa de los términos que no
+    Lematiza el vocabulario con el pipeline real y avisa de los términos que no
     sobreviven al preprocesado (los que el filtro de stopwords o de dígitos
     deja vacíos, y que por tanto serían keywords muertas en el TF-IDF).
+
+    Se invoca dos veces: para el vocabulario base y para el sectorial, que se
+    mantiene en un fichero aparte porque su inclusión es una decisión de diseño
+    y no un detalle de implementación.
     """
-    src = METADATA_DIR / "esg_terms.txt"
+    src = METADATA_DIR / source
     terms = _read_terms(src)
-    logger.info(f"esg_terms.txt: {len(terms)} términos canónicos.")
+    logger.info(f"{source}: {len(terms)} términos canónicos.")
 
     lemmatized: dict[str, str] = {}
     dropped:    list[str]      = []
@@ -74,9 +91,13 @@ def build_esg_vocabulary(processor: TextProcessor) -> list[str]:
             changed.append((term, lemma))
         # Una expresión de varias palabras que se queda en una sola ha perdido
         # justo la parte que la hacía específica: "paris agreement" -> "agreement".
-        # Como entrada de TF-IDF dispararía con cualquier uso genérico.
+        # Como entrada de TF-IDF dispararía con cualquier uso genérico, así que
+        # se EXCLUYE del vocabulario salvo que esté revisada en COLLAPSE_ALLOWED.
+        # Sigue activa en el regex sobre texto crudo, que no lematiza.
         if len(term.split()) > 1 and len(lemma.split()) == 1:
             collapsed.append((term, lemma))
+            if term not in COLLAPSE_ALLOWED:
+                continue
         lemmatized.setdefault(lemma, term)
 
     if dropped:
@@ -103,10 +124,10 @@ def build_esg_vocabulary(processor: TextProcessor) -> list[str]:
         f"Vocabulario TF-IDF: {len(vocab)} entradas únicas, n-grama máximo = {max_n}."
     )
 
-    out = METADATA_DIR / "esg_terms_lemmatized.txt"
+    out = METADATA_DIR / target
     header = (
         "# GENERADO POR scripts/build_lexicons.py — NO EDITAR A MANO.\n"
-        "# Fuente: esg_terms.txt | Vocabulario TF-IDF del SUS (formas lematizadas).\n"
+        f"# Fuente: {source} | Vocabulario TF-IDF del SUS (formas lematizadas).\n"
     )
     out.write_text(header + "\n".join(vocab) + "\n", encoding="utf-8")
     logger.success(f"Escrito: {out}")
@@ -164,6 +185,8 @@ def main():
     processor = TextProcessor(extra_sw=personal_sw, spacy_model=SPACY_MODEL)
 
     build_esg_vocabulary(processor)
+    build_esg_vocabulary(processor, source="esg_terms_sectorial.txt",
+                         target="esg_terms_sectorial_lemmatized.txt")
     build_hedge_lexicon(processor)
 
     logger.success("Léxicos regenerados. Recuerda re-ejecutar el pipeline con "

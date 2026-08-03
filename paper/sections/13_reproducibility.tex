@@ -1,0 +1,291 @@
+\section{Reproducibility}
+\label{sec:repro}
+
+This appendix is the deliberate counterpart to \S\ref{sec:original}: where that
+section catalogues what \citet{lagasio2024} leaves unspecified, this one
+discloses every corresponding element of our own pipeline at the same level
+of detail, because a paper that audits another study's reproducibility and
+then reports its own loosely would be self-refuting.
+
+\subsection{Pipeline and intermediate artefacts}
+
+The pipeline is a fixed sequence of four stages, each reading the previous
+stage's output file and writing its own; there is no step that reads back
+from a later stage. Table~\ref{tab:repro-pipeline} gives the module, input
+and output artefact of each. The whole sequence is invoked as
+\texttt{python main.py}, with three boolean flags
+(\texttt{run\_extraction}, \texttt{run\_preproc}, \texttt{run\_esgsi\_analysis})
+all set to \texttt{True} and a fourth (\texttt{run\_lda}) set to
+\texttt{False}; \S\ref{sec:repro-determinism} explains why.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Pipeline stages and intermediate artefacts.}
+\label{tab:repro-pipeline}
+\begin{tabular}{@{}lp{3.1cm}p{4.3cm}p{4.3cm}@{}}
+\toprule
+Stage & Module & Input & Output artefact \\
+\midrule
+Extraction & \texttt{src/lexical\_\allowbreak document\_\allowbreak filter.py} (\texttt{LexicalDocumentFilter}) & \texttt{data/pdf/*.pdf} (344 files) & \texttt{data/chunks\_lexical/*.json} (344 files, one per PDF) \\
+Preprocessing & \texttt{src/text\_\allowbreak processor.py} (\texttt{TextProcessor}) & \texttt{relevant\_text} field of each JSON & \texttt{data/clean/\allowbreak processed\_texts.csv} (\texttt{;}-separated; \texttt{clean\_text}, \texttt{raw\_text} columns) \\
+Lexicon build (run once, offline) & \texttt{scripts/\allowbreak build\_lexicons.py} & \texttt{metadata/esg\_terms.txt}, \texttt{metadata/RAW\_LM\_dictionary.csv} & \texttt{metadata/esg\_terms\_\allowbreak lemmatized.txt}, \texttt{metadata/lm\_hedge\_\allowbreak lemmatized.txt} (1{,}263 forms) \\
+Measurement \& index assembly & \texttt{src/esgsi\_\allowbreak analyzer.py} (\texttt{ESGSIAnalyzer}), after an MD5 content-hash dedup on \texttt{clean\_text} inside \texttt{main.py} & \texttt{processed\_texts.csv} (344 rows) + the two generated lexicons + \texttt{metadata/\allowbreak muestras\_informes.xlsx} & \texttt{results/metrics/\allowbreak results.csv} (343 rows, 17 columns) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Dependencies}
+
+\texttt{pyproject.toml} declares dependency names without version
+constraints, so it is not itself a reproducibility record. Table
+\ref{tab:repro-deps} gives the resolved environment (conda environment
+\texttt{esgwashing}) actually used to produce \texttt{results.csv}, which is
+the binding version record for this paper.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Runtime dependencies and versions.}
+\label{tab:repro-deps}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Package & Version \\
+\midrule
+Python & 3.11.15 \\
+pandas & 3.0.1 \\
+scikit-learn & 1.8.0 \\
+spaCy & 3.8.11 \\
+\texttt{en\_core\_web\_md} & 3.8.0 \\
+PyMuPDF & 1.27.2 \\
+gensim & 4.4.0 \\
+pysentiment2 & 0.1.1 \\
+loguru & 0.7.3 \\
+openpyxl & 3.1.5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Determinism}
+\label{sec:repro-determinism}
+
+Extraction, preprocessing and measurement together are a pure function of
+the PDFs and the lexicon files in Table~\ref{tab:repro-pipeline}: no network
+call, no external API, and no random seed anywhere on this path. The one
+non-trivial control-flow step, the deduplication that drops \texttt{results.csv}
+from 344 to 343 rows, is itself an MD5 hash of \texttt{clean\_text} with the
+first occurrence kept and the second discarded (\S\ref{sec:data}) --- a
+deterministic function of the corpus, not a random draw. The
+predecessor pipeline queried a hosted embedding model for its semantic
+filter (\S\ref{sec:extraction}); that dependency was removed in its entirety.
+The only sampling anywhere in the codebase is a draw of 20 PDFs (seed 7)
+used to estimate extraction yield as a share of raw PDF text
+(\S\ref{sec:extraction}); it feeds a descriptive statistic, not any column of
+\texttt{results.csv}. Unlike every other quantity in this determinism claim,
+this one draw is not backed by a script in the repository: no committed
+file performs it, so it cannot be independently re-run from the code as it
+stands, only checked against the seed value and resulting statistic
+recorded here and in \S\ref{sec:extraction}. We record this rather than
+imply a reproducibility this step does not have. The only stochastic
+component in the repository is the LDA topic model
+(\texttt{src/topic\_modeler.py}): \texttt{LdaModel.fit()} is called with
+\texttt{random\_state=None} and is therefore unseeded on every run that
+would produce coherence figures; only the separate stability analysis
+(\texttt{compute\_stability}, gated behind \texttt{LDA\_N\_SEEDS>0} and
+never invoked at the repository's current setting of
+\texttt{LDA\_N\_SEEDS=0}) explicitly seeds successive runs \texttt{0}
+through \texttt{n\_seeds-1}. LDA is switched off in its entirety
+(\texttt{run\_lda=False}) and feeds none of \SUS, \SEN, \QUANT, \HEDGE,
+\ESGSI\ or \ESGSIext. Its own
+output file, \texttt{results/lda/coherence.csv}, predates the current code
+and does not match its column schema, so we exclude it from every claim in
+this paper rather than cite a stale artefact.
+
+\subsection{Index parameters}
+
+Table~\ref{tab:repro-params} consolidates, in one place, every free
+parameter used from extraction through index assembly. Each value is
+defined and justified where the corresponding stage is described
+(\S\ref{sec:extraction}, \S\ref{sec:lexicon}, \S\ref{sec:index}); nothing here is
+derived independently of those sections. The index-stage rows repeat
+Table~\ref{tab:index-parameters} exactly, which is the definitional source
+for them; this table adds the extraction and preprocessing stages and
+resolves each value to the identifier the code uses. Where the two tables
+would disagree, \S\ref{sec:index} governs and this one is in error. \Z\ denotes
+score normalisation throughout; it is never vector normalisation
+(\S\ref{sec:index}).
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Parameters, extraction through index assembly.}
+\label{tab:repro-params}
+\begin{tabular}{@{}lp{2.6cm}p{7.4cm}@{}}
+\toprule
+Stage & Parameter & Value \\
+\midrule
+Extraction & Keyword-density threshold & 1.0 keyword / 100 words \\
+Extraction & Context window & $\pm1$ paragraph \\
+Extraction & Minimum zone length & 150 characters \\
+Extraction & Margin bands & top 8\% / bottom 8\% of page height \\
+Extraction & Header/footer repeat threshold & $>30\%$ of pages, candidate blocks $\leq120$ characters \\
+Extraction & Financial-table digit rule & digit share $>0.35$, $\leq6$ lines, no ESG keyword present \\
+Extraction & Financial-table line rule & every line $<60$ characters, $\geq2$ lines, first line without terminal punctuation, no ESG keyword present \\
+Extraction & Section-header rule & all-caps block, $\geq2$ letters, $\leq10$ tokens, $<60\%$ single-character tokens, no dot-extension token (excludes filenames) \\
+\addlinespace
+Preprocessing & spaCy pipeline & \texttt{en\_core\_web\_md}, \texttt{ner} and \texttt{parser} disabled \\
+Preprocessing & Token filter & alphanumeric, $\geq2$ alphabetic characters, length $>2$, not stop/punct/space, lemma $\notin$ 189-entry stopword list \\
+Preprocessing & \texttt{nlp.max\_length} & 5{,}000{,}000 characters \\
+\addlinespace
+\SUS\ (\suslag) & \texttt{TfidfVectorizer} + aggregation & \texttt{vocabulary}\,=\,154 lemmatised terms; \texttt{ngram\_range=(1,3)}; \texttt{norm='l2'}; \texttt{smooth\_idf=True}; \texttt{sublinear\_tf=False}; document score is the \emph{mean} of the L2-normalised term weights over the 154-term vocabulary (\texttt{.mean(axis=1)}) \\
+\SUS\ (\susdens, \sustfidf) & Denominator + aggregation & lemmatised token count $L_d$; document score is the \emph{sum} of (idf-weighted, for \sustfidf) counts over the vocabulary, divided by $L_d$, per-100-word density; no vector normalisation \\
+\SEN & Dictionary + smoothing & pysentiment2 bundled Loughran--McDonald list \citep{loughran2011}, Porter-stemmed at load (140 positive / 893 negative stems); polarity ratio with $\varepsilon = 10^{-6}$ \\
+\QUANT & Regex families & percentages; large numbers ($\geq4$ digits, calendar years excluded); units; framework acronyms; density over raw-text tokens $R_d$ \\
+\HEDGE & Lexicon & 1{,}263-form lemmatised L\&M list (Uncertainty, WeakModal, StrongModal, Constraining); density over $L_d$ \\
+\addlinespace
+\Z\ (score norm.) & Estimator & population sd, $\mathrm{ddof}=0$; zero vector if $\mathrm{sd}=0$ \\
+\ESGSIext & Weights & $w_q=w_h=0.5$ (\texttt{config.ESGSI\_EXT\_WEIGHTS}, arbitrary) \\
+Labelling & Threshold & $\ESGSI>0\Rightarrow$ ``Potential ESG-washing''; else ``Likely Genuine'' \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Output schema}
+
+\subsection*{Which artefacts correspond to which specification}
+
+The repository carries three complete runs, and the distinction matters
+because they were produced by different vocabularies and, since the
+vocabulary also drives paragraph selection
+(\S\ref{sec:robustness-lexicon}), by different extractions.
+\texttt{results/\allowbreak metrics\_baseline\_paper/} holds the adopted
+154-term specification and is the source of every figure reported in this
+paper. \texttt{results/metrics/} and \texttt{results/\allowbreak
+metrics\_sec/} hold the 289-term and 289\,+\,22-term robustness runs of
+\S\ref{sec:robustness-lexicon}. The working tree's
+\texttt{metadata/esg\_\allowbreak terms\_lemmatized.txt} is the 289-entry
+expansion; the adopted 154-entry vocabulary is recoverable from the
+repository history at commit \texttt{ce6804a}, and
+\texttt{metadata/esg\_terms\_\allowbreak sectorial.txt} holds the 22 terms
+the classification set aside. A reader reproducing the paper's numbers needs
+the 154-entry list, not the working-tree file.
+
+\medskip
+Each \texttt{results.csv} is \texttt{;}-separated, 343 rows by 17
+columns, listed in Table~\ref{tab:repro-schema}. The row count is already
+net of the single duplicated report that deduplication removes
+(\S\ref{sec:data}); nothing downstream needs to drop a row by hand. Because
+\QUANT\ and \HEDGE\
+have small standard deviations (0.0035 and 0.0096), recomputing \ESGSIext\
+from the rounded columns reproduces it only to $\pm0.009$; recomputing from
+the unrounded pipeline values is exact. The \ESGSI\ column carries no such
+hazard: no document's index falls within the rounding interval of the
+labelling threshold, so counting strictly positive rounded \ESGSI\ values
+returns 171, exactly the number of \emph{Potential ESG-washing} labels in the
+\texttt{Etiqueta} column.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{\texttt{results.csv} column schema.}
+\label{tab:repro-schema}
+\begin{tabular}{@{}p{5.4cm}p{5.0cm}l@{}}
+\toprule
+Column(s) & Content & Rounding \\
+\midrule
+\texttt{Documento, País, Compañía, Año, TipoDocumento} & Filename, country, company, year, document type & none \\
+\texttt{SUS\_Score, SUS\_density, SUS\_tfidf\_length, SUS\_lagasio} & Three substance specifications, plus the one selected by \texttt{config.SUS\_MODE} (\texttt{SUS\_Score}, currently \susdens) & 6 dp \\
+\texttt{Breadth, SEN\_Score, QUANT\_Score, HEDGE\_Score, ESGSI, ESGSI\_ext} & Remaining components and the two composite indices & 4 dp \\
+\texttt{Etiqueta, Etiqueta\_ext} & Binary label from \ESGSI, \ESGSIext & categorical \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Vocabulary and hedge lexicon as published artefacts}
+
+Against \citet{lagasio2024}, whose keyword list is attributed to GRI (2021)
+and SASB (2018) but never sized, itemised or published, and whose data
+availability statement reads ``No'' (\S\ref{sec:original}), every lexicon that
+feeds a score in this paper is a plain-text file in the repository, one
+canonical form per line, loaded by \texttt{config.py} at run time rather
+than transcribed into the paper: the 154-term ESG vocabulary
+(\texttt{metadata/esg\_terms.txt}, natural singular surface forms across
+seven thematic blocks) and its derived lemmatised form
+(\texttt{metadata/esg\_terms\_lemmatized.txt}, 85 unigrams, 62 bigrams, 7
+trigrams) that the vectoriser actually consumes; the 1{,}263-form lemmatised
+Loughran--McDonald hedge lexicon (\texttt{metadata/lm\_hedge\_lemmatized.txt}),
+built from the Uncertainty/WeakModal/StrongModal/Constraining subset (1{,}245
+of 9{,}752 rows) of the L\&M dictionary \citep{loughran2011}; and the
+189-entry supplementary stopword list
+(\texttt{metadata/personal\_stopwords.txt}) that participates in
+preprocessing. The files a third party would need to recompute every number
+in this paper are the same files that produced them.
+
+\subsection{Four silent-failure defects, repaired}
+
+The four defects below were found and fixed together in one commit,
+\texttt{44114d0} (\emph{fix: repair ESG lexicon pipeline and restore audited
+vocabulary}), but they do not share one origin. Two of them -- the \QUANT\
+routing and the \HEDGE\ lemmatisation mismatch -- were introduced when
+\texttt{calculate\_quant\_scores} and \texttt{calculate\_hedge\_scores} were
+first written, in the same commit that retired the semantic filter for the
+current deterministic pipeline (\texttt{64393f2}, \S\ref{sec:extraction}). The
+other two predate that migration entirely: the alphanumeric token filter
+traces to \texttt{f8bd8a5} (2026-03-21) and the vectoriser's default
+\texttt{ngram\_range=(1,1)} to \texttt{fbcab9f} (2026-03-20), both about a
+week before the semantic filter was even added (\texttt{813005c},
+2026-03-28) and five weeks before it was retired in \texttt{64393f2}. All
+four therefore survived not one refactor but the full semantic-filter era
+and its retirement -- more than four months and several intervening
+commits -- undetected. Every figure in Table~\ref{tab:repro-defects} is
+measured on the corpus rebuilt after \texttt{44114d0}. We report them as a
+methods contribution rather than as housekeeping: each produced a
+plausible-looking number instead of an error, and that failure mode is the
+one most likely to survive peer review in dictionary-based text
+measurement.
+
+A provenance caveat belongs here rather than left implicit. \texttt{44114d0}
+is HEAD on this branch, and every commit-level claim above is checked
+directly against it. It is not, on its own, sufficient to regenerate
+\texttt{results.csv}: the three-specification \SUS\ system
+($\susdens$, $\sustfidf$, $\suslag$ and the \texttt{config.SUS\_MODE}
+switch between them), the \texttt{Breadth} column, and the deduplication
+step of \S\ref{sec:repro-determinism} exist only as uncommitted changes to
+\texttt{main.py}, \texttt{src/config.py} and \texttt{src/esgsi\_analyzer.py}
+on top of that commit. A reader who checks out \texttt{44114d0} exactly
+gets a single, non-selectable TF-IDF-mean \SUS\ score, no \texttt{Breadth}
+column, and 344 undeduplicated rows -- not the pipeline this paper
+describes. Closing this gap requires a further commit capturing that
+working-tree state; until it exists, the commit hash names a necessary but
+not sufficient condition for reproduction.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Silent-failure defects found and repaired in \texttt{44114d0}.}
+\label{tab:repro-defects}
+\begin{tabular}{@{}p{1.6cm}p{5.4cm}p{5.4cm}@{}}
+\toprule
+Component & Silent failure & Fix \\
+\midrule
+\QUANT & \texttt{percentages}/\texttt{large\_numbers} ran on lemmatised \texttt{clean\_text}, which preprocessing had already stripped of digit-bearing tokens; both families matched 0 occurrences in all 344 documents & Routed onto the untouched \texttt{raw\_text} column; post-fix, 109{,}974 and 13{,}518 matches respectively \\
+\SUS\ vocabulary & \texttt{TextProcessor} kept only \texttt{token.is\_alpha} tokens, silently deleting alphanumeric ESG terms (\texttt{co2}, \texttt{co2e}, \texttt{sf6}, \texttt{iso14001}) from \texttt{clean\_text} wherever they occurred, so the corresponding vocabulary entries could never match downstream & Filter replaced by an alphanumeric test requiring $\geq2$ alphabetic characters (still excludes pure figures and page references); \texttt{co2} and \texttt{co2e} occur 13{,}376 and 3{,}390 times in the corrected corpus \\
+\HEDGE & The L\&M dictionary is distributed in inflected form; matched directly against lemmatised \texttt{clean\_text}, it covered only $\approx$46\% of its own entries & Generated lexicon is the union of each original form and its spaCy lemma: 1{,}196 unique inflected forms $\to$ 1{,}263 forms \\
+\SUS\ (multi-word entries) & \texttt{TfidfVectorizer}/\texttt{CountVectorizer} used sklearn's default \texttt{ngram\_range=(1,1)}; every bigram or trigram vocabulary entry (69 of 154, 45\%) scored zero in every document, with no warning raised & \texttt{max\_n} derived at runtime from the vocabulary itself (\texttt{max(len(k.split()) for k in keywords)}\,=\,3) and passed as \texttt{ngram\_range=(1,3)} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The general lesson is not specific to this codebase. In dictionary-based
+measurement, a mis-specified component returns zero rather than raising an
+error: a token filter, a lemmatisation mismatch or a vectoriser default can
+each silently remove an entire category of matches while the pipeline runs
+to completion and writes a number that looks exactly like a low-incidence
+finding. The absence of a signal is therefore indistinguishable, from the
+output alone, from the absence of a defect. None of the four defects in
+Table~\ref{tab:repro-defects} raised an exception, a warning, or an
+out-of-range value; each was found only by checking a component against text
+known in advance to contain the pattern it was supposed to detect.
+Components in this pipeline must therefore be, and were, validated
+individually against known-positive text before their output is trusted in
+any of the results that follow.
