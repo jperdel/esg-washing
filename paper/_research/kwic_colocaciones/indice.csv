@@ -1,0 +1,47 @@
+bloque;termino;n_muestras;ocurrencias
+1;environmental\w*;6;46144
+1;environmentally;6;3762
+1;carbon footprint;6;3425
+1;materiality assessment;6;2236
+1;non-financial information;6;1970
+1;environmental footprint;6;1962
+1;non-financial statement;6;1816
+1;fossil fuel;6;1409
+1;people with disabilities;6;1365
+1;non-financial performance;6;1160
+1;materiality analysis;6;990
+1;fuel consumption;6;951
+1;enterprise risk management;6;778
+1;plastic packaging;6;565
+1;non-financial reporting;6;526
+1;solar power;6;472
+1;solar panel;6;445
+1;ecosystem service;6;383
+1;materiality matrix;6;350
+1;employees with disabilities;6;344
+1;sustainable aviation fuel;6;339
+1;business integrity;6;337
+1;nonfinancial statement;6;333
+1;natural ecosystem;6;292
+1;anti-fraud;6;259
+1;carbon offset;6;239
+1;persons with disabilities;6;238
+1;solar energy;6;225
+1;water footprint;6;219
+1;sustainable packaging;6;219
+1;alternative fuel;6;192
+1;fraud prevention;6;177
+1;packaging waste;6;145
+1;esg risk management;6;137
+1;solar farm;6;135
+1;solar plant;6;130
+1;disability inclusion;6;123
+1;nonfinancial information;6;123
+1;climate scenario analysis;6;96
+1;offsett?ing\s+(?:of\s+)?(?:\w+\s+)?emission;6;72
+1;climate risk management;6;71
+1;ecological footprint;6;70
+1;nonfinancial reporting;6;63
+1;low-carbon fuel;6;53
+1;recyclable packaging;6;40
+1;ecosystem restoration;6;34

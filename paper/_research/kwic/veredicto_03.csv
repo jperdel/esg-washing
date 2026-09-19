@@ -1,0 +1,409 @@
+termino;n;veredicto;categoria;nota
+gender;1;1;ok;
+gender;2;1;ok;
+gender;3;1;ok;
+gender;4;1;ok;
+gender;5;1;ok;
+gender;6;1;ok;
+gender;7;1;ok;
+gender;8;1;ok;
+gender;9;1;ok;
+gender;10;1;ok;
+gender;11;1;ok;
+gender;12;1;ok;
+fuel;1;1;ok;definicion scope 1
+fuel;2;1;ok;
+fuel;3;0;generico;contexto macro crisis energetica
+fuel;4;1;ok;fuel poverty
+fuel;5;0;otro;lista de filiales
+fuel;6;0;financiero;compras de combustible en cuentas
+fuel;7;0;financiero;recargos por combustible
+fuel;8;1;ok;
+fuel;9;1;ok;riesgo regulatorio de emisiones
+fuel;10;0;generico;subastas de suministro regulatorio
+fuel;11;1;ok;
+fuel;12;1;ok;
+corruption;1;0;otro;corrupcion de datos informatica
+corruption;2;1;ok;
+corruption;3;1;ok;
+corruption;4;1;ok;
+corruption;5;1;ok;
+corruption;6;1;ok;
+corruption;7;1;ok;
+corruption;8;1;ok;
+corruption;9;1;ok;
+corruption;10;0;indice;tabla de correspondencia NFS
+corruption;11;1;ok;
+corruption;12;1;ok;
+inclusion;1;1;ok;competencias ESG de consejera
+inclusion;2;1;ok;
+inclusion;3;0;generico;inclusion digital comercial
+inclusion;4;0;otro;nota metodologica inclusion de partes
+inclusion;5;1;ok;
+inclusion;6;1;ok;inclusion financiera
+inclusion;7;1;ok;
+inclusion;8;1;ok;
+inclusion;9;1;ok;
+inclusion;10;1;ok;
+inclusion;11;0;financiero;IFRS 17 risk adjustment
+inclusion;12;1;ok;
+health and safety;1;1;ok;alcance verificacion datos
+health and safety;2;1;ok;
+health and safety;3;0;generico;descripcion de producto
+health and safety;4;1;ok;
+health and safety;5;1;ok;
+health and safety;6;1;ok;
+health and safety;7;1;ok;
+health and safety;8;1;ok;
+health and safety;9;1;ok;
+health and safety;10;1;ok;
+health and safety;11;1;ok;
+health and safety;12;1;ok;
+footprint;1;1;ok;
+footprint;2;1;ok;
+footprint;3;0;generico;presencia internacional
+footprint;4;1;ok;
+footprint;5;0;generico;huella geografica
+footprint;6;0;generico;presencia global
+footprint;7;1;ok;
+footprint;8;1;ok;
+footprint;9;0;generico;huella industrial
+footprint;10;1;ok;
+footprint;11;1;ok;
+footprint;12;1;ok;
+circular;1;1;ok;
+circular;2;0;otro;Circular Assonime documento legal
+circular;3;0;indice;cabecera tabla taxonomia
+circular;4;0;indice;cabecera tabla taxonomia
+circular;5;1;ok;
+circular;6;1;ok;
+circular;7;1;ok;
+circular;8;1;ok;
+circular;9;1;ok;
+circular;10;1;ok;
+circular;11;0;indice;cabecera tabla taxonomia
+circular;12;1;ok;
+csr;1;1;ok;
+csr;2;1;ok;
+csr;3;1;ok;
+csr;4;1;ok;
+csr;5;0;indice;listado de politicas
+csr;6;1;ok;
+csr;7;1;ok;
+csr;8;1;ok;
+csr;9;1;ok;
+csr;10;1;ok;
+csr;11;1;ok;
+csr;12;1;ok;
+independent director;1;0;otro;biografia
+independent director;2;1;ok;
+independent director;3;1;ok;
+independent director;4;0;otro;biografia
+independent director;5;1;ok;
+independent director;6;0;otro;biografia
+independent director;7;1;ok;
+independent director;8;1;ok;
+independent director;9;1;ok;
+independent director;10;1;ok;
+independent director;11;1;ok;
+independent director;12;1;ok;tabla composicion consejo
+offset;1;1;ok;
+offset;2;0;financiero;coberturas contables
+offset;3;0;financiero;compensacion de activos y pasivos
+offset;4;0;financiero;bases imponibles negativas
+offset;5;0;financiero;impuestos
+offset;6;1;ok;
+offset;7;0;financiero;
+offset;8;0;financiero;netting IFRS
+offset;9;0;generico;compensado en sentido macro
+offset;10;0;financiero;compensado en ventas
+offset;11;0;financiero;netting IFRS 7
+offset;12;0;financiero;
+ecosystem;1;0;generico;ecosistema de negocio
+ecosystem;2;1;ok;
+ecosystem;3;0;indice;cabecera tabla taxonomia
+ecosystem;4;1;ok;
+ecosystem;5;1;ok;
+ecosystem;6;0;indice;cabecera tabla taxonomia
+ecosystem;7;1;ok;
+ecosystem;8;0;generico;ecosistema de innovacion
+ecosystem;9;0;generico;ecosistemas locales de negocio
+ecosystem;10;0;generico;ecosistema industrial
+ecosystem;11;1;ok;
+ecosystem;12;0;indice;cabecera tabla taxonomia
+solar;1;1;ok;
+solar;2;0;otro;glosario sistema solar
+solar;3;0;financiero;litigio de seguros
+solar;4;0;otro;sistema solar
+solar;5;1;ok;
+solar;6;0;otro;lista de filiales
+solar;7;0;indice;glosario
+solar;8;1;ok;
+solar;9;0;otro;glosario sistema solar
+solar;10;1;ok;
+solar;11;0;otro;lista de filiales
+solar;12;0;otro;biografia nombre de empresa
+greenhouse;1;1;ok;
+greenhouse;2;0;otro;cita bibliografica
+greenhouse;3;1;ok;
+greenhouse;4;1;ok;
+greenhouse;5;1;ok;
+greenhouse;6;1;ok;
+greenhouse;7;1;ok;
+greenhouse;8;1;ok;
+greenhouse;9;1;ok;
+greenhouse;10;1;ok;
+greenhouse;11;1;ok;
+greenhouse;12;1;ok;
+materiality;1;0;financiero;materialidad de riesgos
+materiality;2;0;financiero;umbrales contables
+materiality;3;0;financiero;consolidacion
+materiality;4;0;financiero;control interno financiero
+materiality;5;1;ok;doble materialidad
+materiality;6;1;ok;
+materiality;7;1;ok;
+materiality;8;1;ok;
+materiality;9;1;ok;
+materiality;10;0;financiero;factores de riesgo
+materiality;11;0;financiero;key audit matter
+materiality;12;0;financiero;fiscal
+packaging;1;1;ok;
+packaging;2;1;ok;
+packaging;3;0;generico;uso final del aluminio
+packaging;4;0;generico;encapsulado de chips
+packaging;5;1;ok;
+packaging;6;1;ok;
+packaging;7;0;generico;modelo de negocio
+packaging;8;1;ok;
+packaging;9;0;otro;nombre de filial
+packaging;10;1;ok;
+packaging;11;0;generico;riesgo de caida de bultos
+packaging;12;0;indice;indice GRI
+transparency;1;1;ok;
+transparency;2;0;generico;gestion de incidentes operativos
+transparency;3;1;ok;
+transparency;4;0;generico;cultura RRHH
+transparency;5;1;ok;
+transparency;6;0;financiero;transparencia de mercado MiFID
+transparency;7;1;ok;
+transparency;8;1;ok;
+transparency;9;0;otro;nombre de ley Sapin II
+transparency;10;1;ok;
+transparency;11;1;ok;
+transparency;12;1;ok;
+fraud;1;0;financiero;informe de auditoria
+fraud;2;1;ok;
+fraud;3;0;otro;Serious Fraud Office
+fraud;4;1;ok;
+fraud;5;0;financiero;informe de auditoria
+fraud;6;0;financiero;informe de auditoria
+fraud;7;1;ok;
+fraud;8;0;financiero;informe de auditoria
+fraud;9;1;ok;
+fraud;10;0;financiero;informe de auditoria
+fraud;11;1;ok;
+fraud;12;0;financiero;informe de auditoria
+code of conduct;1;1;ok;
+code of conduct;2;1;ok;
+code of conduct;3;1;ok;
+code of conduct;4;1;ok;
+code of conduct;5;0;financiero;servicios de auditores
+code of conduct;6;1;ok;
+code of conduct;7;1;ok;
+code of conduct;8;1;ok;
+code of conduct;9;0;indice;listado de documentos publicos
+code of conduct;10;1;ok;
+code of conduct;11;1;ok;
+code of conduct;12;1;ok;
+disabilit\w+;1;1;ok;
+disabilit\w+;2;1;ok;
+disabilit\w+;3;0;financiero;riesgo actuarial de seguros
+disabilit\w+;4;1;ok;
+disabilit\w+;5;1;ok;
+disabilit\w+;6;1;ok;
+disabilit\w+;7;1;ok;
+disabilit\w+;8;0;financiero;provisiones de personal
+disabilit\w+;9;0;financiero;clausula de incentivos
+disabilit\w+;10;1;ok;
+disabilit\w+;11;0;financiero;plan de pensiones consejeros
+disabilit\w+;12;1;ok;
+esrs;1;1;ok;
+esrs;2;1;ok;
+esrs;3;0;indice;
+esrs;4;1;ok;
+esrs;5;0;indice;
+esrs;6;1;ok;
+esrs;7;0;indice;
+esrs;8;1;ok;
+esrs;9;1;ok;
+esrs;10;0;indice;
+esrs;11;1;ok;
+esrs;12;1;ok;
+decarboni\w+;1;1;ok;
+decarboni\w+;2;1;ok;
+decarboni\w+;3;0;generico;tendencia de mercado de clientes
+decarboni\w+;4;1;ok;
+decarboni\w+;5;1;ok;
+decarboni\w+;6;1;ok;
+decarboni\w+;7;1;ok;
+decarboni\w+;8;1;ok;
+decarboni\w+;9;1;ok;
+decarboni\w+;10;1;ok;
+decarboni\w+;11;1;ok;
+decarboni\w+;12;1;ok;
+integrity;1;1;ok;
+integrity;2;0;otro;integridad de datos ciberseguridad
+integrity;3;1;ok;
+integrity;4;1;ok;
+integrity;5;0;otro;integridad de datos
+integrity;6;0;otro;integridad de datos
+integrity;7;1;ok;
+integrity;8;1;ok;
+integrity;9;0;otro;integridad de datos
+integrity;10;1;ok;
+integrity;11;1;ok;
+integrity;12;1;ok;
+water\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress);1;1;ok;
+water\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress);2;1;ok;
+water\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress);3;1;ok;
+water\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress);4;1;ok;
+water\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress);5;1;ok;
+water\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress);6;0;indice;tabla datapoints ESRS
+water\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress);7;1;ok;
+water\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress);8;1;ok;
+water\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress);9;1;ok;
+water\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress);10;1;ok;
+water\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress);11;0;generico;beber agua y salud
+water\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress);12;1;ok;
+ethical;1;1;ok;
+ethical;2;1;ok;
+ethical;3;1;ok;
+ethical;4;1;ok;
+ethical;5;1;ok;
+ethical;6;1;ok;
+ethical;7;1;ok;
+ethical;8;1;ok;
+ethical;9;1;ok;
+ethical;10;1;ok;
+ethical;11;0;financiero;independencia del auditor
+ethical;12;1;ok;
+circular economy;1;0;generico;tendencia de mercado
+circular economy;2;1;ok;
+circular economy;3;0;indice;cabecera tabla taxonomia
+circular economy;4;1;ok;
+circular economy;5;0;indice;cabecera tabla taxonomia
+circular economy;6;1;ok;
+circular economy;7;1;ok;
+circular economy;8;1;ok;
+circular economy;9;1;ok;
+circular economy;10;1;ok;
+circular economy;11;1;ok;
+circular economy;12;1;ok;
+internal audit;1;1;ok;
+internal audit;2;0;financiero;informe del auditor externo
+internal audit;3;1;ok;
+internal audit;4;0;financiero;informe del auditor externo
+internal audit;5;1;ok;
+internal audit;6;1;ok;
+internal audit;7;1;ok;
+internal audit;8;1;ok;
+internal audit;9;0;otro;biografia
+internal audit;10;1;ok;
+internal audit;11;1;ok;
+internal audit;12;0;indice;lista de indicadores
+gri;1;0;indice;nota al pie de tabla
+gri;2;1;ok;
+gri;3;1;ok;
+gri;4;0;indice;glosario
+gri;5;1;ok;
+gri;6;1;ok;
+gri;7;0;indice;sumario
+gri;8;0;indice;cabecera de tabla
+gri;9;0;indice;cabecera de tabla
+gri;10;0;indice;indice de contenidos GRI
+gri;11;1;ok;
+gri;12;0;indice;sumario
+inclusiv\w+;1;1;ok;
+inclusiv\w+;2;0;generico;inclusive of en sentido incluyendo
+inclusiv\w+;3;1;ok;
+inclusiv\w+;4;1;ok;
+inclusiv\w+;5;1;ok;
+inclusiv\w+;6;1;ok;
+inclusiv\w+;7;1;ok;
+inclusiv\w+;8;1;ok;
+inclusiv\w+;9;1;ok;
+inclusiv\w+;10;1;ok;
+inclusiv\w+;11;0;generico;crecimiento inclusivo en adquisicion
+inclusiv\w+;12;1;ok;
+inclusive;1;1;ok;
+inclusive;2;1;ok;
+inclusive;3;1;ok;
+inclusive;4;1;ok;
+inclusive;5;1;ok;
+inclusive;6;1;ok;
+inclusive;7;1;ok;
+inclusive;8;1;ok;
+inclusive;9;1;ok;
+inclusive;10;1;ok;
+inclusive;11;1;ok;
+inclusive;12;1;ok;
+energy consumption;1;1;ok;
+energy consumption;2;1;ok;
+energy consumption;3;1;ok;
+energy consumption;4;1;ok;
+energy consumption;5;1;ok;
+energy consumption;6;0;generico;tendencia de mercado edificios
+energy consumption;7;1;ok;
+energy consumption;8;1;ok;
+energy consumption;9;0;generico;oportunidad comercial de productos
+energy consumption;10;1;ok;
+energy consumption;11;1;ok;
+energy consumption;12;1;ok;
+taxonomy aligned;1;0;indice;plantilla de tabla
+taxonomy aligned;2;1;ok;
+taxonomy aligned;3;1;ok;
+taxonomy aligned;4;0;indice;cabecera de tabla
+taxonomy aligned;5;1;ok;
+taxonomy aligned;6;1;ok;
+taxonomy aligned;7;1;ok;
+taxonomy aligned;8;0;indice;cabecera de tabla
+taxonomy aligned;9;0;indice;cabecera de tabla
+taxonomy aligned;10;0;indice;leyenda de tabla
+taxonomy aligned;11;0;indice;plantilla de tabla
+taxonomy aligned;12;0;indice;titulo de plantilla
+pollution;1;1;ok;
+pollution;2;1;ok;
+pollution;3;1;ok;
+pollution;4;1;ok;
+pollution;5;1;ok;
+pollution;6;1;ok;
+pollution;7;0;indice;cabecera tabla taxonomia
+pollution;8;1;ok;
+pollution;9;1;ok;
+pollution;10;1;ok;
+pollution;11;1;ok;
+pollution;12;1;ok;
+plastic;1;1;ok;
+plastic;2;1;ok;
+plastic;3;1;ok;
+plastic;4;0;indice;glosario
+plastic;5;1;ok;
+plastic;6;1;ok;
+plastic;7;1;ok;
+plastic;8;0;generico;negocio de plasticos
+plastic;9;1;ok;
+plastic;10;1;ok;
+plastic;11;1;ok;
+plastic;12;1;ok;
+recycling;1;1;ok;
+recycling;2;0;financiero;reciclaje de reservas a resultados
+recycling;3;1;ok;
+recycling;4;1;ok;
+recycling;5;1;ok;
+recycling;6;0;otro;disclaimer forward-looking
+recycling;7;1;ok;
+recycling;8;0;indice;indice SASB
+recycling;9;1;ok;
+recycling;10;1;ok;
+recycling;11;0;financiero;reciclaje OCI a resultados
+recycling;12;1;ok;

@@ -1,0 +1,403 @@
+termino;n;veredicto;categoria;nota
+board of directors;1;1;ok;evaluacion del consejo
+board of directors;2;1;ok;politica de diversidad del consejo
+board of directors;3;1;ok;estructura de comites de riesgo
+board of directors;4;1;ok;proceso de remuneracion variable
+board of directors;5;1;ok;beneficios del CEO decididos por consejo
+board of directors;6;1;ok;reglas de quorum del consejo
+supervisory board;1;1;ok;nombramiento de presidente
+supervisory board;2;0;generico;CV con mandatos externos
+supervisory board;3;0;indice;organigrama de organos
+supervisory board;4;1;ok;independencia y formacion del consejo
+supervisory board;5;0;generico;CV consejero en holding familiar
+supervisory board;6;0;generico;CV mandatos externos
+executive committee;1;0;generico;CV de directivo
+executive committee;2;1;ok;normas de informacion privilegiada
+executive committee;3;1;ok;politica ambiental aprobada
+executive committee;4;1;ok;composicion del comite
+executive committee;5;1;ok;aprobacion de objetivos de descarbonizacion
+executive committee;6;1;ok;gobernanza de sostenibilidad
+management board;1;0;indice;referencia cruzada a seccion
+management board;2;0;generico;CV mandatos externos
+management board;3;0;generico;nota al pie de mandato
+management board;4;1;ok;consejo DEI
+management board;5;0;generico;CV en otra empresa
+management board;6;0;indice;etiqueta de organigrama
+risk committee;1;1;ok;
+risk committee;2;1;ok;riesgo tecnologico y ciber
+risk committee;3;1;ok;asistencia a comite
+risk committee;4;1;ok;riesgos emergentes
+risk committee;5;1;ok;gobierno de filiales
+risk committee;6;0;indice;lista de temas del comite
+well-being;1;1;ok;
+well-being;2;1;ok;
+well-being;3;1;ok;
+well-being;4;0;generico;mercado de producto edificios
+well-being;5;1;ok;
+well-being;6;1;ok;
+personal data;1;1;ok;riesgo de proteccion de datos
+personal data;2;1;ok;
+personal data;3;1;ok;
+personal data;4;1;ok;
+personal data;5;1;ok;
+personal data;6;1;ok;
+working condition;1;1;ok;KPI proveedores
+working condition;2;1;ok;
+working condition;3;1;ok;
+working condition;4;1;ok;
+working condition;5;1;ok;
+working condition;6;1;ok;
+external auditor;1;1;ok;auditorias HSE de proveedores
+external auditor;2;0;financiero;auditor de cuentas
+external auditor;3;0;financiero;opinion de auditoria
+external auditor;4;1;ok;prevencion de riesgos penales
+external auditor;5;0;indice;encabezado de seccion
+external auditor;6;0;financiero;informe de auditoria
+employee representative;1;1;ok;
+employee representative;2;1;ok;
+employee representative;3;1;ok;
+employee representative;4;1;ok;
+employee representative;5;1;ok;representacion en consejo
+employee representative;6;1;ok;
+long-term incentive;1;0;indice;referencia cruzada a apartado
+long-term incentive;2;0;financiero;programas expirados contables
+long-term incentive;3;0;financiero;nota contable de gastos RSU
+long-term incentive;4;0;financiero;provisiones contables
+long-term incentive;5;1;ok;estructura retributiva de directivos
+long-term incentive;6;1;ok;objetivos de sostenibilidad en incentivos
+reuse;1;1;ok;
+reuse;2;1;ok;
+reuse;3;1;ok;reutilizacion de CO2
+reuse;4;1;ok;
+reuse;5;1;ok;
+reuse;6;1;ok;
+hse;1;1;ok;
+hse;2;1;ok;
+hse;3;1;ok;
+hse;4;1;ok;
+hse;5;1;ok;
+hse;6;1;ok;
+nomination committee;1;1;ok;
+nomination committee;2;1;ok;
+nomination committee;3;0;indice;tabla de miembros de comites
+nomination committee;4;1;ok;
+nomination committee;5;1;ok;
+nomination committee;6;1;ok;composicion del comite
+electric vehicle;1;1;ok;flota electrica
+electric vehicle;2;0;generico;descripcion de producto bateria
+electric vehicle;3;1;ok;descarbonizacion de cartera
+electric vehicle;4;1;ok;oportunidades climaticas
+electric vehicle;5;0;generico;joint venture de baterias
+electric vehicle;6;1;ok;objetivo de flota
+physical risk;1;1;ok;
+physical risk;2;1;ok;
+physical risk;3;1;ok;
+physical risk;4;1;ok;
+physical risk;5;1;ok;
+physical risk;6;1;ok;
+traceability;1;0;otro;antifalsificacion RFID
+traceability;2;1;ok;
+traceability;3;0;otro;antifalsificacion de medicamentos
+traceability;4;1;ok;regulacion economia circular
+traceability;5;1;ok;
+traceability;6;0;generico;trazabilidad de asignacion de RSU
+transition risk;1;0;indice;lista de datapoints ESRS
+transition risk;2;1;ok;
+transition risk;3;1;ok;
+transition risk;4;1;ok;
+transition risk;5;1;ok;
+transition risk;6;1;ok;
+natural resource;1;1;ok;
+natural resource;2;1;ok;
+natural resource;3;1;ok;
+natural resource;4;1;ok;
+natural resource;5;1;ok;
+natural resource;6;1;ok;retorica promocional
+board committee;1;1;ok;
+board committee;2;1;ok;
+board committee;3;1;ok;
+board committee;4;1;ok;remuneracion de consejeros
+board committee;5;1;ok;
+board committee;6;1;ok;remuneracion de consejeros
+voting right;1;0;financiero;criterio de control NIIF
+voting right;2;1;ok;derechos de accionistas en junta
+voting right;3;0;financiero;fundacion antiopa en notas
+voting right;4;1;ok;igualdad de derechos de voto
+voting right;5;0;financiero;pactos de bloqueo de capital
+voting right;6;0;indice;remision a web
+limited assurance;1;1;ok;
+limited assurance;2;1;ok;
+limited assurance;3;1;ok;
+limited assurance;4;1;ok;
+limited assurance;5;1;ok;
+limited assurance;6;0;financiero;clausula legal del informe
+long-term incentive plan;1;0;financiero;coste y provision contable
+long-term incentive plan;2;1;ok;politica de remuneracion
+long-term incentive plan;3;1;ok;objetivos climaticos en incentivos
+long-term incentive plan;4;1;ok;objetivos climaticos en incentivos
+long-term incentive plan;5;1;ok;retribucion de consejeros
+long-term incentive plan;6;0;generico;planes de empleados de filial
+working hours;1;1;ok;
+working hours;2;0;generico;definicion de FTE
+working hours;3;1;ok;
+working hours;4;1;ok;tasa de accidentes
+working hours;5;1;ok;voluntariado
+working hours;6;1;ok;
+palm oil;1;1;ok;
+palm oil;2;1;ok;
+palm oil;3;1;ok;
+palm oil;4;1;ok;
+palm oil;5;1;ok;
+palm oil;6;1;ok;
+pollutant;1;0;indice;lista de datapoints ESRS
+pollutant;2;1;ok;
+pollutant;3;1;ok;
+pollutant;4;1;ok;
+pollutant;5;1;ok;
+pollutant;6;0;indice;lista de datapoints ESRS
+export control;1;1;ok;tabla de politicas de cumplimiento
+export control;2;1;ok;
+export control;3;1;ok;
+export control;4;1;ok;
+export control;5;1;ok;
+export control;6;0;generico;sanciones a Rusia sin divulgacion ESG
+general meeting of shareholders;1;1;ok;
+general meeting of shareholders;2;0;financiero;informe de partes vinculadas
+general meeting of shareholders;3;1;ok;
+general meeting of shareholders;4;0;financiero;aprobacion de cuentas anuales
+general meeting of shareholders;5;0;indice;destinatario del informe tras indice
+general meeting of shareholders;6;1;ok;
+corporate responsibility;1;1;ok;
+corporate responsibility;2;1;ok;
+corporate responsibility;3;0;generico;CV de consejera
+corporate responsibility;4;0;generico;CV mandato externo
+corporate responsibility;5;0;indice;URL
+corporate responsibility;6;1;ok;
+non-audit service;1;0;financiero;declaracion del auditor
+non-audit service;2;1;ok;supervision de independencia del auditor
+non-audit service;3;0;financiero;declaracion del auditor
+non-audit service;4;1;ok;supervision de independencia del auditor
+non-audit service;5;0;financiero;honorarios de auditoria
+non-audit service;6;0;financiero;declaracion del auditor
+competition law;1;1;ok;
+competition law;2;1;ok;
+competition law;3;0;financiero;cuestion clave de auditoria
+competition law;4;1;ok;
+competition law;5;1;ok;
+competition law;6;0;generico;regulacion del mercado posventa
+flaring;1;1;ok;
+flaring;2;1;ok;
+flaring;3;1;ok;
+flaring;4;1;ok;
+flaring;5;1;ok;
+flaring;6;1;ok;
+eco-design;1;1;ok;
+eco-design;2;1;ok;
+eco-design;3;1;ok;matriz de materialidad
+eco-design;4;1;ok;
+eco-design;5;1;ok;
+eco-design;6;1;ok;
+offshore wind;1;0;generico;lista de aplicaciones de producto
+offshore wind;2;1;ok;financiacion renovable
+offshore wind;3;0;generico;adquisicion empresarial
+offshore wind;4;1;ok;cartera renovable
+offshore wind;5;0;generico;descripcion de mercado en notas NIIF
+offshore wind;6;0;generico;venta de participada
+extreme weather event;1;0;generico;contexto retorico en carta del CEO
+extreme weather event;2;1;ok;
+extreme weather event;3;1;ok;
+extreme weather event;4;1;ok;
+extreme weather event;5;1;ok;
+extreme weather event;6;1;ok;
+protected area;1;0;indice;indice GRI
+protected area;2;1;ok;
+protected area;3;0;indice;plantilla de metricas sin dato
+protected area;4;1;ok;respuesta en indice GRI
+protected area;5;1;ok;
+protected area;6;1;ok;
+malus;1;1;ok;
+malus;2;1;ok;
+malus;3;1;ok;
+malus;4;1;ok;
+malus;5;1;ok;
+malus;6;1;ok;
+energy saving;1;1;ok;
+energy saving;2;1;ok;
+energy saving;3;1;ok;
+energy saving;4;0;generico;demanda de mercado
+energy saving;5;0;financiero;partida contable de certificados
+energy saving;6;1;ok;
+groundwater;1;1;ok;
+groundwater;2;1;ok;
+groundwater;3;0;financiero;politica contable de provisiones
+groundwater;4;1;ok;
+groundwater;5;1;ok;
+groundwater;6;1;ok;
+integrated report;1;1;ok;
+integrated report;2;0;indice;referencia a capitulo
+integrated report;3;0;indice;indice TCFD
+integrated report;4;1;ok;
+integrated report;5;1;ok;
+integrated report;6;1;ok;
+power purchase agreement;1;1;ok;
+power purchase agreement;2;1;ok;
+power purchase agreement;3;1;ok;
+power purchase agreement;4;1;ok;
+power purchase agreement;5;1;ok;
+power purchase agreement;6;1;ok;
+short-term incentive;1;1;ok;
+short-term incentive;2;1;ok;
+short-term incentive;3;1;ok;
+short-term incentive;4;1;ok;objetivos climaticos en STIP
+short-term incentive;5;1;ok;
+short-term incentive;6;1;ok;
+pay ratio;1;0;indice;referencias a secciones
+pay ratio;2;0;otro;ratio fijo-variable no ratio CEO
+pay ratio;3;1;ok;
+pay ratio;4;0;indice;lista de datapoints ESRS
+pay ratio;5;1;ok;
+pay ratio;6;0;indice;tabla SFDR con paginas
+conflict mineral;1;1;ok;
+conflict mineral;2;1;ok;
+conflict mineral;3;1;ok;
+conflict mineral;4;1;ok;
+conflict mineral;5;1;ok;
+conflict mineral;6;1;ok;
+women in management;1;1;ok;
+women in management;2;1;ok;
+women in management;3;1;ok;
+women in management;4;1;ok;
+women in management;5;1;ok;
+women in management;6;1;ok;
+access to energy;1;1;ok;
+access to energy;2;1;ok;
+access to energy;3;1;ok;
+access to energy;4;1;ok;
+access to energy;5;1;ok;
+access to energy;6;1;ok;
+skills development;1;1;ok;
+skills development;2;0;indice;referencia cruzada con pagina
+skills development;3;1;ok;
+skills development;4;1;ok;
+skills development;5;1;ok;
+skills development;6;1;ok;
+compliance system;1;1;ok;
+compliance system;2;1;ok;
+compliance system;3;1;ok;
+compliance system;4;1;ok;
+compliance system;5;1;ok;
+compliance system;6;0;generico;contexto regulatorio sectorial
+un guiding principles;1;1;ok;
+un guiding principles;2;1;ok;
+un guiding principles;3;1;ok;
+un guiding principles;4;1;ok;
+un guiding principles;5;1;ok;
+un guiding principles;6;1;ok;
+safety at work;1;1;ok;
+safety at work;2;1;ok;
+safety at work;3;0;indice;indice GRI
+safety at work;4;1;ok;
+safety at work;5;1;ok;
+safety at work;6;0;indice;indice EINF con paginas
+employee commuting;1;1;ok;
+employee commuting;2;1;ok;
+employee commuting;3;1;ok;
+employee commuting;4;1;ok;
+employee commuting;5;0;indice;etiqueta de grafico
+employee commuting;6;1;ok;
+charging point;1;1;ok;
+charging point;2;1;ok;
+charging point;3;1;ok;
+charging point;4;1;ok;
+charging point;5;1;ok;
+charging point;6;1;ok;
+parental leave;1;1;ok;
+parental leave;2;1;ok;
+parental leave;3;1;ok;
+parental leave;4;1;ok;
+parental leave;5;1;ok;
+parental leave;6;1;ok;
+employee share ownership;1;0;financiero;cancelacion de autocartera
+employee share ownership;2;1;ok;
+employee share ownership;3;0;indice;referencia cruzada a apartado
+employee share ownership;4;0;financiero;reduccion de capital
+employee share ownership;5;1;ok;
+employee share ownership;6;1;ok;
+consumer health;1;1;ok;matriz de materialidad
+consumer health;2;0;indice;tabla de correspondencias con paginas
+consumer health;3;0;otro;nombre de linea de negocio
+consumer health;4;0;otro;categoria de producto
+consumer health;5;0;indice;tabla de correspondencias con paginas
+consumer health;6;0;otro;nombre de division Bayer
+employee training;1;0;indice;indice GRI
+employee training;2;1;ok;
+employee training;3;0;generico;prevencion de incendios operativa
+employee training;4;1;ok;
+employee training;5;0;indice;lista de palancas de gestion
+employee training;6;0;indice;tabla de mapeo ODS
+vehicle safety;1;0;financiero;listado de litigios
+vehicle safety;2;1;ok;
+vehicle safety;3;1;ok;matriz de materialidad
+vehicle safety;4;1;ok;
+vehicle safety;5;0;otro;antirrobo
+vehicle safety;6;0;generico;descripcion de marco regulatorio
+smart grid;1;1;ok;
+smart grid;2;1;ok;
+smart grid;3;1;ok;
+smart grid;4;1;ok;
+smart grid;5;1;ok;
+smart grid;6;0;generico;narrativa de ciudad inteligente
+vulnerable group;1;1;ok;
+vulnerable group;2;0;generico;contexto macroeconomico
+vulnerable group;3;1;ok;
+vulnerable group;4;1;ok;
+vulnerable group;5;1;ok;
+vulnerable group;6;1;ok;
+external assurance;1;0;indice;encabezado sobre reguladores
+external assurance;2;0;indice;indice GRI
+external assurance;3;0;indice;etiqueta de diagrama de tres lineas
+external assurance;4;1;ok;verificacion externa de indicadores
+external assurance;5;0;indice;etiqueta de diagrama de tres lineas
+external assurance;6;0;indice;indice GRI
+psychosocial risk;1;1;ok;
+psychosocial risk;2;1;ok;
+psychosocial risk;3;1;ok;
+psychosocial risk;4;1;ok;
+psychosocial risk;5;1;ok;
+psychosocial risk;6;1;ok;
+green deal;1;1;ok;
+green deal;2;1;ok;
+green deal;3;1;ok;
+green deal;4;1;ok;
+green deal;5;1;ok;
+green deal;6;1;ok;
+three lines of defence;1;1;ok;
+three lines of defence;2;0;indice;referencia cruzada con pagina
+three lines of defence;3;1;ok;
+three lines of defence;4;1;ok;
+three lines of defence;5;1;ok;
+three lines of defence;6;1;ok;
+oil spill;1;1;ok;
+oil spill;2;1;ok;
+oil spill;3;1;ok;
+oil spill;4;1;ok;
+oil spill;5;1;ok;
+oil spill;6;1;ok;
+product stewardship;1;1;ok;
+product stewardship;2;1;ok;tabla de respuestas a riesgos
+product stewardship;3;1;ok;
+product stewardship;4;1;ok;
+product stewardship;5;1;ok;
+product stewardship;6;1;ok;
+board composition;1;1;ok;
+board composition;2;1;ok;
+board composition;3;1;ok;
+board composition;4;1;ok;
+board composition;5;1;ok;
+board composition;6;1;ok;
+re100;1;1;ok;
+re100;2;1;ok;
+re100;3;1;ok;
+re100;4;1;ok;
+re100;5;1;ok;
+re100;6;1;ok;

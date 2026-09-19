@@ -1,0 +1,403 @@
+termino;n;veredicto;categoria;nota
+wind power;1;1;ok;
+wind power;2;1;ok;
+wind power;3;0;otro;nombre de filial en listado societario
+wind power;4;1;ok;
+wind power;5;1;ok;
+wind power;6;1;ok;
+zdhc;1;1;ok;
+zdhc;2;1;ok;
+zdhc;3;1;ok;
+zdhc;4;1;ok;
+zdhc;5;1;ok;
+zdhc;6;1;ok;
+supply chain management;1;1;ok;
+supply chain management;2;0;generico;complejidad operativa de la cadena
+supply chain management;3;0;otro;nombre de funcion en tabla de plantilla
+supply chain management;4;0;otro;nombre de funcion corporativa
+supply chain management;5;1;ok;
+supply chain management;6;1;ok;
+philanthropy;1;1;ok;
+philanthropy;2;1;ok;
+philanthropy;3;1;ok;
+philanthropy;4;1;ok;
+philanthropy;5;1;ok;listado de asuntos RSC materiales
+philanthropy;6;1;ok;
+apprentice;1;0;generico;nota de perimetro de plantilla HGB
+apprentice;2;1;ok;
+apprentice;3;0;generico;nota de perimetro de plantilla HGB
+apprentice;4;1;ok;
+apprentice;5;0;generico;exclusion en definicion de metrica
+apprentice;6;0;generico;nota metodologica de perimetro
+air quality;1;1;ok;
+air quality;2;1;ok;
+air quality;3;1;ok;
+air quality;4;1;ok;
+air quality;5;1;ok;
+air quality;6;0;generico;condiciones de sala limpia
+flooding;1;1;ok;
+flooding;2;1;ok;
+flooding;3;1;ok;
+flooding;4;1;ok;
+flooding;5;1;ok;
+flooding;6;1;ok;
+leed;1;1;ok;
+leed;2;1;ok;
+leed;3;1;ok;
+leed;4;1;ok;
+leed;5;1;ok;
+leed;6;1;ok;
+effluent;1;1;ok;
+effluent;2;1;ok;
+effluent;3;1;ok;
+effluent;4;1;ok;
+effluent;5;0;indice;nombre de estandar GRI 303
+effluent;6;1;ok;
+food safety;1;0;otro;nombre de DG de la Comision
+food safety;2;0;otro;biografia de consejero
+food safety;3;1;ok;
+food safety;4;1;ok;
+food safety;5;1;ok;
+food safety;6;0;indice;glosario
+compliance programme;1;1;ok;
+compliance programme;2;1;ok;
+compliance programme;3;0;financiero;cumplimiento de retenciones FATCA
+compliance programme;4;1;ok;
+compliance programme;5;1;ok;
+compliance programme;6;1;ok;
+insider trading;1;0;indice;encabezado mezclado con indice
+insider trading;2;1;ok;
+insider trading;3;1;ok;
+insider trading;4;1;ok;
+insider trading;5;1;ok;
+insider trading;6;1;ok;
+road safety;1;1;ok;
+road safety;2;1;ok;
+road safety;3;1;ok;
+road safety;4;1;ok;
+road safety;5;1;ok;
+road safety;6;1;ok;
+talent development;1;1;ok;
+talent development;2;1;ok;
+talent development;3;1;ok;
+talent development;4;1;ok;
+talent development;5;0;otro;responsabilidades de consejero tipo biografia
+talent development;6;1;ok;
+green hydrogen;1;1;ok;
+green hydrogen;2;1;ok;
+green hydrogen;3;1;ok;
+green hydrogen;4;1;ok;
+green hydrogen;5;1;ok;
+green hydrogen;6;1;ok;
+lca;1;1;ok;
+lca;2;0;financiero;letras de credito agroindustrial Brasil
+lca;3;1;ok;
+lca;4;1;ok;
+lca;5;1;ok;
+lca;6;1;ok;
+compliance training;1;1;ok;
+compliance training;2;1;ok;
+compliance training;3;1;ok;
+compliance training;4;1;ok;
+compliance training;5;1;ok;
+compliance training;6;0;indice;encabezado de seccion
+ungp;1;1;ok;
+ungp;2;1;ok;
+ungp;3;1;ok;
+ungp;4;1;ok;
+ungp;5;1;ok;
+ungp;6;1;ok;
+social performance;1;0;indice;referencia a secciones del informe
+social performance;2;1;ok;
+social performance;3;1;ok;
+social performance;4;1;ok;
+social performance;5;0;generico;boilerplate de alcance del informe
+social performance;6;1;ok;
+social standard;1;1;ok;
+social standard;2;1;ok;
+social standard;3;1;ok;
+social standard;4;1;ok;
+social standard;5;0;indice;referencia a estandares ESRS sociales
+social standard;6;1;ok;
+tax strategy;1;1;ok;
+tax strategy;2;1;ok;
+tax strategy;3;1;ok;listado de politicas aprobadas
+tax strategy;4;1;ok;
+tax strategy;5;1;ok;
+tax strategy;6;0;generico;agenda del consejo estrategia financiera
+pay equity;1;1;ok;
+pay equity;2;1;ok;
+pay equity;3;1;ok;
+pay equity;4;1;ok;
+pay equity;5;1;ok;
+pay equity;6;1;ok;
+ecodesign;1;1;ok;
+ecodesign;2;1;ok;
+ecodesign;3;1;ok;
+ecodesign;4;1;ok;
+ecodesign;5;1;ok;
+ecodesign;6;1;ok;
+tax compliance;1;0;financiero;nombre de ley FATCA
+tax compliance;2;1;ok;
+tax compliance;3;0;financiero;servicios no auditoria
+tax compliance;4;0;indice;encabezado de seccion
+tax compliance;5;1;ok;
+tax compliance;6;1;ok;
+say on pay;1;1;ok;
+say on pay;2;1;ok;
+say on pay;3;0;indice;cabecera de tabla y pie de pagina
+say on pay;4;1;ok;
+say on pay;5;1;ok;
+say on pay;6;1;ok;
+social enterprise;1;1;ok;
+social enterprise;2;1;ok;
+social enterprise;3;1;ok;
+social enterprise;4;1;ok;
+social enterprise;5;1;ok;
+social enterprise;6;1;ok;
+resource efficiency;1;1;ok;
+resource efficiency;2;0;indice;tabla SASB
+resource efficiency;3;0;indice;tabla de correspondencia TCFD
+resource efficiency;4;1;ok;
+resource efficiency;5;1;ok;
+resource efficiency;6;0;indice;tabla de correspondencia TCFD
+social inclusion;1;1;ok;
+social inclusion;2;1;ok;
+social inclusion;3;1;ok;
+social inclusion;4;1;ok;
+social inclusion;5;1;ok;
+social inclusion;6;1;ok;
+iso\s*50001\b;1;1;ok;
+iso\s*50001\b;2;1;ok;
+iso\s*50001\b;3;1;ok;
+iso\s*50001\b;4;1;ok;
+iso\s*50001\b;5;1;ok;
+iso\s*50001\b;6;1;ok;
+proxy advisor;1;1;ok;
+proxy advisor;2;1;ok;
+proxy advisor;3;1;ok;
+proxy advisor;4;0;generico;logistica de junta covid
+proxy advisor;5;0;indice;referencia cruzada a seccion
+proxy advisor;6;1;ok;
+training and development;1;0;generico;I+D de componentes no formacion
+training and development;2;1;ok;
+training and development;3;1;ok;
+training and development;4;0;indice;encabezado entre tablas
+training and development;5;1;ok;
+training and development;6;1;ok;
+sustainalytics;1;1;ok;
+sustainalytics;2;1;ok;
+sustainalytics;3;1;ok;
+sustainalytics;4;1;ok;
+sustainalytics;5;1;ok;
+sustainalytics;6;1;ok;
+reforestation;1;1;ok;
+reforestation;2;1;ok;
+reforestation;3;1;ok;
+reforestation;4;1;ok;
+reforestation;5;0;indice;texto de meta ODS en tabla
+reforestation;6;1;ok;
+sapin;1;1;ok;
+sapin;2;1;ok;
+sapin;3;1;ok;
+sapin;4;1;ok;
+sapin;5;1;ok;
+sapin;6;1;ok;
+minimum wage;1;1;ok;
+minimum wage;2;1;ok;
+minimum wage;3;1;ok;
+minimum wage;4;1;ok;
+minimum wage;5;1;ok;
+minimum wage;6;0;indice;indice GRI 202-1
+social commitment;1;0;indice;listado de enlaces web
+social commitment;2;1;ok;
+social commitment;3;1;ok;
+social commitment;4;1;ok;
+social commitment;5;1;ok;
+social commitment;6;1;ok;
+green energy;1;1;ok;
+green energy;2;0;generico;tendencias de mercado de clientes
+green energy;3;1;ok;
+green energy;4;1;ok;
+green energy;5;0;otro;nombre de empresa Adani Green Energy
+green energy;6;0;generico;contexto macro de politicas
+geothermal;1;1;ok;
+geothermal;2;1;ok;
+geothermal;3;1;ok;
+geothermal;4;0;financiero;deterioro de activos
+geothermal;5;0;indice;glosario
+geothermal;6;0;indice;fila plantilla taxonomia al 0%
+ftse4good;1;0;generico;lista de indices bursatiles de la accion
+ftse4good;2;1;ok;
+ftse4good;3;0;generico;lista de indices bursatiles de la accion
+ftse4good;4;1;ok;
+ftse4good;5;1;ok;
+ftse4good;6;1;ok;
+wetland;1;1;ok;
+wetland;2;1;ok;
+wetland;3;1;ok;
+wetland;4;1;ok;
+wetland;5;1;ok;
+wetland;6;1;ok;
+responsible marketing;1;1;ok;
+responsible marketing;2;1;ok;
+responsible marketing;3;1;ok;
+responsible marketing;4;1;ok;
+responsible marketing;5;0;indice;referencia cruzada y tabla correspondencia
+responsible marketing;6;1;ok;
+human trafficking;1;1;ok;
+human trafficking;2;0;indice;tabla de correspondencia
+human trafficking;3;1;ok;
+human trafficking;4;1;ok;
+human trafficking;5;1;ok;
+human trafficking;6;1;ok;
+just\s+transition;1;1;ok;
+just\s+transition;2;1;ok;
+just\s+transition;3;1;ok;
+just\s+transition;4;1;ok;
+just\s+transition;5;1;ok;
+just\s+transition;6;1;ok;
+iso 50001;1;1;ok;
+iso 50001;2;1;ok;
+iso 50001;3;0;otro;certificaciones del papel impreso
+iso 50001;4;1;ok;
+iso 50001;5;1;ok;
+iso 50001;6;1;ok;
+local community;1;1;ok;
+local community;2;1;ok;
+local community;3;1;ok;
+local community;4;1;ok;
+local community;5;1;ok;
+local community;6;1;ok;
+executive compensation;1;0;otro;titulo de informe de la AMF
+executive compensation;2;1;ok;
+executive compensation;3;0;indice;referencia cruzada a capitulo
+executive compensation;4;1;ok;
+executive compensation;5;0;financiero;marco regulatorio Solvencia II
+executive compensation;6;1;ok;
+labor right;1;1;ok;
+labor right;2;1;ok;
+labor right;3;1;ok;
+labor right;4;1;ok;
+labor right;5;1;ok;
+labor right;6;1;ok;
+employee\s+well\w*;1;1;ok;
+employee\s+well\w*;2;1;ok;
+employee\s+well\w*;3;1;ok;
+employee\s+well\w*;4;1;ok;
+employee\s+well\w*;5;1;ok;
+employee\s+well\w*;6;1;ok;
+tonne\w*\s+(?:co2|carbon);1;1;ok;
+tonne\w*\s+(?:co2|carbon);2;1;ok;
+tonne\w*\s+(?:co2|carbon);3;1;ok;
+tonne\w*\s+(?:co2|carbon);4;1;ok;
+tonne\w*\s+(?:co2|carbon);5;1;ok;
+tonne\w*\s+(?:co2|carbon);6;1;ok;
+female representation;1;1;ok;
+female representation;2;1;ok;
+female representation;3;1;ok;
+female representation;4;1;ok;
+female representation;5;1;ok;
+female representation;6;1;ok;
+taxonomy alignment;1;1;ok;
+taxonomy alignment;2;1;ok;
+taxonomy alignment;3;1;ok;
+taxonomy alignment;4;1;ok;
+taxonomy alignment;5;1;ok;
+taxonomy alignment;6;1;ok;
+tnfd;1;1;ok;
+tnfd;2;1;ok;
+tnfd;3;1;ok;
+tnfd;4;0;indice;tabla de contenidos ESRS
+tnfd;5;1;ok;
+tnfd;6;1;ok;
+compliance violation;1;0;financiero;cuestion clave de auditoria provisiones
+compliance violation;2;0;financiero;cuestion clave de auditoria provisiones
+compliance violation;3;1;ok;
+compliance violation;4;1;ok;
+compliance violation;5;0;financiero;cuestion clave de auditoria provisiones
+compliance violation;6;1;ok;malus y clawback
+community engagement;1;1;ok;
+community engagement;2;0;indice;indice GRI 413-1
+community engagement;3;0;indice;titulo de indicador GRI 413-1
+community engagement;4;0;indice;tabla GRI 413-1
+community engagement;5;1;ok;
+community engagement;6;1;ok;
+social partner;1;1;ok;
+social partner;2;1;ok;
+social partner;3;1;ok;
+social partner;4;1;ok;
+social partner;5;1;ok;
+social partner;6;0;financiero;nota de litigios
+affordability;1;1;ok;
+affordability;2;1;ok;
+affordability;3;1;ok;
+affordability;4;0;generico;politica comercial de precios y rebates
+affordability;5;1;ok;
+affordability;6;0;generico;ventaja competitiva de precio
+ifrs\s*s[12]\b;1;0;indice;tabla de correspondencia ESRS-ISSB
+ifrs\s*s[12]\b;2;1;ok;
+ifrs\s*s[12]\b;3;1;ok;
+ifrs\s*s[12]\b;4;0;indice;nota al pie
+ifrs\s*s[12]\b;5;1;ok;
+ifrs\s*s[12]\b;6;0;indice;tabla de correspondencia ESRS-ISSB
+social indicator;1;0;indice;encabezado de seccion
+social indicator;2;0;indice;referencia a seccion web
+social indicator;3;1;ok;
+social indicator;4;0;indice;encabezado de tabla
+social indicator;5;0;indice;encabezado de seccion
+social indicator;6;0;indice;tabla de datapoints ESRS
+tax transparency;1;1;ok;
+tax transparency;2;1;ok;
+tax transparency;3;0;indice;referencia cruzada a informe
+tax transparency;4;1;ok;
+tax transparency;5;0;indice;cabecera de pagina continued
+tax transparency;6;1;ok;
+heat wave;1;1;ok;
+heat wave;2;1;ok;
+heat wave;3;1;ok;
+heat wave;4;1;ok;
+heat wave;5;1;ok;
+heat wave;6;1;ok;
+social compliance;1;1;ok;
+social compliance;2;0;indice;referencia cruzada a capitulo
+social compliance;3;1;ok;
+social compliance;4;1;ok;
+social compliance;5;1;ok;
+social compliance;6;1;ok;
+volatile organic;1;1;ok;
+volatile organic;2;1;ok;
+volatile organic;3;1;ok;
+volatile organic;4;1;ok;
+volatile organic;5;1;ok;
+volatile organic;6;1;ok;
+fair competition;1;1;ok;
+fair competition;2;1;ok;
+fair competition;3;1;ok;
+fair competition;4;1;ok;
+fair competition;5;1;ok;
+fair competition;6;0;generico;regulacion de mercados MiFID
+nature-based solution;1;1;ok;
+nature-based solution;2;1;ok;
+nature-based solution;3;1;ok;
+nature-based solution;4;1;ok;
+nature-based solution;5;1;ok;
+nature-based solution;6;1;ok;
+supplier assessment;1;1;ok;
+supplier assessment;2;0;indice;tabla de indicadores
+supplier assessment;3;1;ok;
+supplier assessment;4;0;indice;encabezado de seccion
+supplier assessment;5;1;ok;
+supplier assessment;6;1;ok;
+reskilling;1;1;ok;
+reskilling;2;1;ok;
+reskilling;3;1;ok;
+reskilling;4;1;ok;
+reskilling;5;1;ok;
+reskilling;6;1;ok;
+life cycle assessment;1;1;ok;
+life cycle assessment;2;1;ok;
+life cycle assessment;3;1;ok;
+life cycle assessment;4;1;ok;
+life cycle assessment;5;1;ok;
+life cycle assessment;6;1;ok;

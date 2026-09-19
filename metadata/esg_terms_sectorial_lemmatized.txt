@@ -1,21 +1,34 @@
 # GENERADO POR scripts/build_lexicons.py — NO EDITAR A MANO.
 # Fuente: esg_terms_sectorial.txt | Vocabulario TF-IDF del SUS (formas lematizadas).
+access energy
+access healthcare
 board oversight
+breeam
+charge point
 community relation
+conflict mineral
 cop28
 cover crop
 ecodesign
 energy storage
 executive compensation
+export control
 fairtrade
+flare
+food bank
 food safety
 leather working group
 live income
 microfiber
 nutrition
+oil spill
+palm oil
 peatland
+safety datum sheet
 sedex
 sf6
+smart grid
+smart meter
 smeta
 virgin polyester
 well cotton

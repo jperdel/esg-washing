@@ -1,0 +1,537 @@
+# Lista de terminos candidatos a evaluar. Orden aleatorio (semilla 20260905).
+# La lista mezcla candidatos solidos y candidatos dudosos: NO asumas que
+# todos son validos. Tu tarea es juzgar cada uno contra la muestra.
+# 532 terminos.
+
+energy saving
+senior independent director
+climate-related health impact
+social dialogue
+customer health and nutrition
+esg+f
+supplier assessment
+access to land
+short-term incentive
+board attendance
+inclusion
+crisis management
+health and safety
+reuse
+data protection
+vulnerable group
+board committee
+employee training
+sustainability due diligence
+energy transition
+employee well-being
+takeover
+working condition
+waste recycled
+tax policy
+patient safety
+three lines of defence
+carbon neutrality
+product traceability
+green recovery
+science based target
+performance share
+climate change adaptation
+plastic waste
+export control
+air emission
+voluntary emission reduction certificate
+energy mix
+antitrust
+emission reduction target
+talent development
+road safety
+corporate volunteering
+double materiality
+dow jones sustainability index
+change of control
+product quality
+diesel emission
+whistleblowing hotline
+sustainable event
+sustainable financing
+residual emission
+sustainable mobility
+transition risk
+oil spill
+food bank
+tcfd
+inclusive workplace
+protected area
+executive compensation
+whistle-blowing hotline
+loyalty voting structure
+special voting share
+energy efficiency
+consumer health and safety
+esg ambition
+childcare
+sustainable packaging
+net zero
+information security
+governance body
+global warming
+waste management
+photovoltaic plant
+renewable electricity
+sustainable taxation
+ftse4good
+ozone layer
+supply chain responsibility
+offshore wind
+locked-in emission
+climate impact
+materiality matrix
+carbon credit
+circular economy
+emission reduction
+material topic
+governance structure
+corporate governance
+smart grid
+power purchase agreement
+sustainable long-term value creation
+ilo convention
+animal welfare
+breeam
+esg target
+business integrity
+nox emission
+safety data sheet
+supplier sustainability score
+environmental performance
+living wage
+natural resource
+stakeholder engagement
+compliance system
+employee engagement survey
+non-discrimination
+sasb
+non-financial performance
+corporate responsibility
+zero accident
+anti-discrimination policy
+governance risk and compliance
+renewable electricity certificate
+executive remuneration
+internal control
+annual corporate governance report
+natural capital
+corporate culture
+human rights due diligence
+remuneration policy
+counterfeiting
+air quality
+compliance risk
+sustainable growth
+reach registration
+equal pay
+long-term incentive plan
+sustainability reporting
+responsible lobbying
+supervisory board
+corporate governance code
+business travel
+mitigation hierarchy
+healthy eating
+avoided emission
+green project
+speak-up culture
+pollutant
+board diversity policy
+climate change
+waste-to-energy
+access to healthcare
+litigation
+talent attraction and retention
+conflict of interest
+general meeting of shareholders
+esg committee
+emission
+greenhouse gas emission
+green bond principles
+limited assurance
+energy consumption
+traceability
+internal control over financial reporting
+csr reporting scope
+women in management
+pay ratio
+esg rating
+external assurance
+scope 3
+sustainable finance
+director independence
+diversity and inclusion
+sustainable retailing
+esg-related control
+biodiversity
+sustainability ambition
+sustainability performance
+external auditor
+shareholder rights
+ecovadis
+anti-bribery management system
+speak-up line
+workplace safety
+business continuity
+direct emission
+harmful consumption
+refrigerant
+gri standard
+consumer health
+sustainability report
+conflict mineral
+environmental policy
+energy use per wafer
+esg risk
+work-life balance
+board diversity
+s&p global corporate sustainability assessment
+anti-bribery
+scope 1 emission
+customer satisfaction
+bribery
+consumer safety
+supplier code of conduct
+succession planning
+electrification
+un guiding principles on business and human rights
+scope 3 emission
+global minimum tax
+esg objective
+non-audit service
+renewable source
+board composition
+emission factor
+articles of association
+disability
+gender equality
+indirect emission
+electric vehicle
+carbon neutral
+green energy
+sulfur dioxide emission
+climate scenario
+hard-to-abate emission
+logistics emission
+accidental pollution
+internal carbon price
+fair labour condition
+emissions trading system
+anti-corruption
+code of ethics
+wind farm
+wastewater
+green financing
+sustainability
+social dividend
+non-financial information
+iirc
+whistleblowing
+green building
+inclusive insurance
+employee engagement
+stakeholder dialogue
+water management
+water management plan
+collective labour agreement
+hse
+transparency
+sustainable development goal
+Science Based Targets initiative
+afforestation
+collective bargaining agreement
+renewable installed capacity
+audit committee
+nomination committee
+climate hazard
+well-being
+fixed remuneration
+forced labour
+social commitment
+reforestation
+environmental indicator
+corruption
+human rights
+women in management position
+sustainability index
+gender diversity
+taxonomy-aligned
+hydroelectric
+deferred prosecution agreement
+remuneration committee
+palm oil
+worlds most ethical companies
+iss esg
+skills development
+fraud prevention
+landfill
+product use emission
+access to energy
+life cycle assessment
+economic sanction
+carbon sink
+carbon literacy
+business travel emission
+esg
+musculoskeletal disorder
+sustainability target
+integrated report
+accident rate
+environmental impact
+gri indicator
+working hours
+child labour
+employee commuting
+product responsibility
+accountability
+healthy sales
+employee turnover
+key audit matter
+ecodesign
+non-financial statement
+climate transition plan
+independent third party
+ghg emission
+human capital
+incident response
+executive committee
+ghg neutrality
+vulnerable population
+supplier sustainability assessment
+ethical culture
+esrs
+oecd guidelines for multinational enterprises
+esg reporting
+sustainable development
+Good Manufacturing Practice
+maternity and paternity leave
+occupational illness
+employee commuting emission
+reputational risk
+ethics training
+employee share ownership
+risk management
+geothermal
+trade sanction
+supply chain emission
+labour law
+eco-design
+employee wellness programme
+corporate sustainability assessment
+board of directors
+three lines of defense
+low-alcohol beer
+carbon emission
+socially responsible investor
+corporate human rights benchmark
+workforce
+long-term incentive
+stakeholder
+physical risk
+employee share ownership plan
+recycled content
+recycling
+supply chain human rights
+environmental damage
+scenario analysis
+groundwater
+internal audit
+vehicle recall
+injury rate
+scope 2 emission
+diversity equity and inclusion
+female representation
+ghg protocol
+supplier audit
+materiality assessment
+works council
+un guiding principles
+shared value
+code of conduct
+corporate governance statement
+vehicle safety
+alert system
+employee representative
+biodiversity action plan
+water stress
+materiality
+non-financial reporting
+psychological safety
+it control
+Ethisphere
+low-carbon energy
+qualification matrix
+emission intensity
+gender balance
+smart meter
+decarbonisation
+food waste
+stakeholder expectation
+esg performance measure
+cdp
+coal-fired power plant
+soil contamination
+auditor independence
+waste heat
+business ethics
+community engagement
+hydrocarbon spill
+risk committee
+quality management system
+un global compact
+chief sustainability officer
+pollution
+2030 agenda
+esg score
+extreme weather event
+cage free
+remuneration report
+product safety
+management board
+scope 2
+controlling shareholder
+climate-related risk
+cybersecurity
+green deal
+carbon removal
+tax transparency
+risk appetite
+fossil fuel
+employee
+supply chain responsible management
+iso 14001
+malus
+carbon footprint
+quality of supply
+csr policy
+clean energy
+deforestation
+green electricity
+pharmacovigilance
+water footprint
+material safety data sheet
+paris agreement
+flaring
+co2 emission
+trade union
+voting right
+sustainability committee
+taxonomy-eligible
+responsible sourcing
+sbti
+nutrition
+regulatory compliance
+collective bargaining
+re100
+global reporting initiative
+disability employment
+remote working
+governance risk and compliance framework
+environmental protection
+methane emission
+local community
+scope 1
+minimum wage
+waste
+rba code of conduct
+carbon offset
+coso framework
+environmental footprint
+charging point
+medical ethics
+esg factor
+diversity policy
+sfdr
+ethics and compliance
+sustainability policy
+csrd
+ethical principle
+non-financial rating agency
+renewable energy
+sustainability-linked bond
+lobbying
+employee wellness
+sustainability strategy
+board sustainability expertise
+climate scenario analysis
+product recall
+circularity
+sustainable value creation
+employee benefit
+enterprise risk management
+eu taxonomy
+solar panel
+climate change mitigation
+philanthropy
+private security provider
+eligible green project
+energy management system
+bioethics
+personal data
+variable remuneration
+ocean freight
+groundwater contamination
+speak-up
+psychosocial risk
+board evaluation
+climate risk
+energy attribute certificate
+safety at work
+water discharge
+installed renewable capacity
+voluntary principles on security and human rights
+independent director
+environmental risk
+leed
+board tenure
+water consumption
+cage-free egg
+sustainable aviation fuel
+ecosystem
+climate objective
+green bond
+occupational health and safety
+corsia
+esg agenda
+climate resilience
+pharmaceutical residue
+climate action
+board independence
+msci esg rating
+iso 50001
+related party transaction
+product stewardship
+value chain emission
+coal-fired plant
+corporate average fuel economy
+reputation risk
+competition law
+pay transparency
+green investment
+waste generated
+environmental management system
+parental leave
+training hour
+clinical trial
+corporate social responsibility
+biofuel
+environmental compliance
+esg data
+green hydrogen
+data privacy
+societal impact
+compliance programme
+environmental impact assessment
+esg topic
+water withdrawal
+responsible supply chain management
+responsible tax
+sustainability statements
+site remediation
+environmental product declaration

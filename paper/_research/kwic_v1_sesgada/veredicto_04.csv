@@ -1,0 +1,409 @@
+termino;n;veredicto;categoria;nota
+low carbon;1;1;ok;
+low carbon;2;1;ok;
+low carbon;3;1;ok;
+low carbon;4;1;ok;
+low carbon;5;1;ok;
+low carbon;6;1;ok;
+low carbon;7;1;ok;
+low carbon;8;1;ok;
+low carbon;9;1;ok;actividad de taxonomia UE
+low carbon;10;1;ok;
+low carbon;11;1;ok;
+low carbon;12;1;ok;
+risk appetite;1;1;ok;supervision del consejo sobre riesgos
+risk appetite;2;0;financiero;limite de ratio Solvencia II
+risk appetite;3;1;ok;marco de apetito de riesgo del consejo
+risk appetite;4;1;ok;
+risk appetite;5;1;ok;
+risk appetite;6;1;ok;integridad y prevencion de delitos
+risk appetite;7;1;ok;
+risk appetite;8;1;ok;lista de negocios prohibidos
+risk appetite;9;0;financiero;capacidad de absorcion de perdidas y VaR
+risk appetite;10;0;financiero;riesgo de mercado de cartera
+risk appetite;11;1;ok;
+risk appetite;12;1;ok;
+sdg;1;1;ok;
+sdg;2;1;ok;
+sdg;3;1;ok;
+sdg;4;1;ok;
+sdg;5;1;ok;
+sdg;6;1;ok;
+sdg;7;1;ok;
+sdg;8;1;ok;
+sdg;9;1;ok;premio de igualdad de genero
+sdg;10;1;ok;
+sdg;11;1;ok;
+sdg;12;1;ok;
+data protection;1;1;ok;formacion pro bono a entidades sociales
+data protection;2;1;ok;
+data protection;3;1;ok;
+data protection;4;1;ok;
+data protection;5;1;ok;
+data protection;6;0;indice;tabla de temas con numeros de pagina
+data protection;7;1;ok;
+data protection;8;0;indice;indice de contenidos con paginas
+data protection;9;1;ok;
+data protection;10;1;ok;
+data protection;11;1;ok;
+data protection;12;1;ok;
+hydrogen;1;1;ok;
+hydrogen;2;1;ok;
+hydrogen;3;1;ok;
+hydrogen;4;1;ok;
+hydrogen;5;1;ok;
+hydrogen;6;1;ok;
+hydrogen;7;1;ok;
+hydrogen;8;1;ok;
+hydrogen;9;1;ok;
+hydrogen;10;1;ok;
+hydrogen;11;1;ok;nota al pie de datos ambientales
+hydrogen;12;1;ok;
+net zero;1;1;ok;
+net zero;2;1;ok;
+net zero;3;1;ok;
+net zero;4;1;ok;
+net zero;5;1;ok;
+net zero;6;1;ok;
+net zero;7;0;indice;indice de contenidos con paginas
+net zero;8;1;ok;
+net zero;9;1;ok;
+net zero;10;1;ok;
+net zero;11;1;ok;
+net zero;12;1;ok;
+cybersecuri\w+;1;1;ok;
+cybersecuri\w+;2;1;ok;inventario de politicas del grupo
+cybersecuri\w+;3;1;ok;
+cybersecuri\w+;4;1;ok;
+cybersecuri\w+;5;0;generico;area de I+D industrial
+cybersecuri\w+;6;0;indice;referencia cruzada del formulario 20-F
+cybersecuri\w+;7;1;ok;
+cybersecuri\w+;8;1;ok;
+cybersecuri\w+;9;1;ok;
+cybersecuri\w+;10;1;ok;
+cybersecuri\w+;11;1;ok;
+cybersecuri\w+;12;0;generico;curso de liderazgo en prosa de margenes
+cybersecurity;1;1;ok;
+cybersecurity;2;1;ok;
+cybersecurity;3;1;ok;matriz de competencias del consejo
+cybersecurity;4;1;ok;
+cybersecurity;5;1;ok;lista de temas materiales
+cybersecurity;6;1;ok;
+cybersecurity;7;0;generico;curso de liderazgo en prosa de margenes
+cybersecurity;8;1;ok;
+cybersecurity;9;1;ok;
+cybersecurity;10;1;ok;
+cybersecurity;11;1;ok;
+cybersecurity;12;1;ok;
+energy efficiency;1;1;ok;
+energy efficiency;2;1;ok;
+energy efficiency;3;1;ok;
+energy efficiency;4;1;ok;
+energy efficiency;5;1;ok;
+energy efficiency;6;1;ok;
+energy efficiency;7;1;ok;
+energy efficiency;8;1;ok;
+energy efficiency;9;1;ok;
+energy efficiency;10;0;generico;perspectiva de mercado de motores navales
+energy efficiency;11;1;ok;
+energy efficiency;12;1;ok;tabla de datos Pilar 3
+due diligence;1;1;ok;
+due diligence;2;0;financiero;diligencias del consejo sobre cuentas
+due diligence;3;1;ok;
+due diligence;4;0;financiero;due diligence de adquisiciones
+due diligence;5;1;ok;
+due diligence;6;1;ok;
+due diligence;7;1;ok;
+due diligence;8;1;ok;
+due diligence;9;1;ok;
+due diligence;10;1;ok;
+due diligence;11;0;financiero;honorarios del auditor
+due diligence;12;0;financiero;riesgo de M&A
+taxonomy eligible;1;1;ok;
+taxonomy eligible;2;1;ok;
+taxonomy eligible;3;1;ok;
+taxonomy eligible;4;1;ok;
+taxonomy eligible;5;1;ok;
+taxonomy eligible;6;1;ok;
+taxonomy eligible;7;1;ok;
+taxonomy eligible;8;1;ok;
+taxonomy eligible;9;1;ok;
+taxonomy eligible;10;1;ok;
+taxonomy eligible;11;1;ok;
+taxonomy eligible;12;1;ok;
+sanction;1;1;ok;dato de sanciones disciplinarias anticorrupcion
+sanction;2;1;ok;
+sanction;3;1;ok;
+sanction;4;1;ok;
+sanction;5;1;ok;
+sanction;6;1;ok;
+sanction;7;0;generico;impacto en trafico de concesiones
+sanction;8;0;generico;escenario macro geopolitico
+sanction;9;0;indice;fila del indice de contenidos GRI
+sanction;10;1;ok;
+sanction;11;1;ok;
+sanction;12;1;ok;
+disability;1;1;ok;lista de temas materiales
+disability;2;1;ok;
+disability;3;1;ok;
+disability;4;1;ok;
+disability;5;1;ok;
+disability;6;1;ok;
+disability;7;0;financiero;obligaciones de pensiones por invalidez
+disability;8;1;ok;
+disability;9;1;ok;
+disability;10;1;ok;
+disability;11;0;financiero;seguro en retribucion de directivos
+disability;12;1;ok;
+equality;1;1;ok;
+equality;2;1;ok;
+equality;3;0;indice;nota al pie que enumera los ODS
+equality;4;1;ok;
+equality;5;1;ok;
+equality;6;1;ok;
+equality;7;1;ok;
+equality;8;1;ok;
+equality;9;1;ok;
+equality;10;1;ok;
+equality;11;1;ok;
+equality;12;1;ok;
+decarbonization;1;1;ok;politica climatica y mercado de CO2
+decarbonization;2;1;ok;
+decarbonization;3;1;ok;
+decarbonization;4;1;ok;
+decarbonization;5;1;ok;
+decarbonization;6;1;ok;
+decarbonization;7;1;ok;
+decarbonization;8;1;ok;
+decarbonization;9;1;ok;
+decarbonization;10;1;ok;
+decarbonization;11;1;ok;
+decarbonization;12;1;ok;
+whistleblow\w+;1;1;ok;
+whistleblow\w+;2;1;ok;
+whistleblow\w+;3;1;ok;
+whistleblow\w+;4;1;ok;
+whistleblow\w+;5;1;ok;
+whistleblow\w+;6;1;ok;
+whistleblow\w+;7;1;ok;
+whistleblow\w+;8;1;ok;
+whistleblow\w+;9;1;ok;
+whistleblow\w+;10;1;ok;
+whistleblow\w+;11;0;indice;indice de contenidos con paginas
+whistleblow\w+;12;1;ok;
+co2e;1;1;ok;
+co2e;2;1;ok;
+co2e;3;1;ok;
+co2e;4;1;ok;
+co2e;5;1;ok;
+co2e;6;1;ok;
+co2e;7;1;ok;
+co2e;8;1;ok;
+co2e;9;1;ok;
+co2e;10;1;ok;
+co2e;11;1;ok;
+co2e;12;1;ok;
+discrimination;1;1;ok;
+discrimination;2;1;ok;
+discrimination;3;1;ok;
+discrimination;4;1;ok;
+discrimination;5;1;ok;
+discrimination;6;1;ok;
+discrimination;7;1;ok;
+discrimination;8;1;ok;
+discrimination;9;1;ok;
+discrimination;10;1;ok;
+discrimination;11;1;ok;
+discrimination;12;1;ok;
+eu taxonomy;1;0;indice;indice ESRS con paginas
+eu taxonomy;2;0;indice;indice de contenidos con paginas
+eu taxonomy;3;1;ok;
+eu taxonomy;4;0;indice;indice de contenidos con paginas
+eu taxonomy;5;1;ok;epigrafe con divulgacion real detras
+eu taxonomy;6;1;ok;
+eu taxonomy;7;1;ok;
+eu taxonomy;8;1;ok;
+eu taxonomy;9;1;ok;
+eu taxonomy;10;0;indice;indice metodologico con paginas
+eu taxonomy;11;1;ok;
+eu taxonomy;12;1;ok;
+social responsibility;1;1;ok;
+social responsibility;2;1;ok;
+social responsibility;3;1;ok;
+social responsibility;4;1;ok;
+social responsibility;5;1;ok;
+social responsibility;6;1;ok;
+social responsibility;7;1;ok;
+social responsibility;8;0;indice;listado de epigrafes con paginas
+social responsibility;9;0;indice;listado de epigrafes con paginas
+social responsibility;10;1;ok;
+social responsibility;11;1;ok;
+social responsibility;12;1;ok;
+offset\w+;1;0;financiero;compensacion de activos y pasivos
+offset\w+;2;0;financiero;efecto compensatorio en resultados
+offset\w+;3;1;ok;
+offset\w+;4;0;financiero;compensacion de instrumentos financieros
+offset\w+;5;0;financiero;ahorros que compensan costes
+offset\w+;6;0;financiero;contrapartida en patrimonio
+offset\w+;7;1;ok;compensaciones de biodiversidad
+offset\w+;8;0;financiero;contrapartida de derivados
+offset\w+;9;1;ok;
+offset\w+;10;1;ok;
+offset\w+;11;1;ok;
+offset\w+;12;1;ok;
+energy transition;1;1;ok;
+energy transition;2;1;ok;
+energy transition;3;1;ok;
+energy transition;4;1;ok;
+energy transition;5;1;ok;
+energy transition;6;1;ok;
+energy transition;7;1;ok;
+energy transition;8;1;ok;
+energy transition;9;1;ok;
+energy transition;10;0;generico;descripcion comercial de divisiones de banca
+energy transition;11;1;ok;
+energy transition;12;1;ok;
+electrif\w+;1;1;ok;
+electrif\w+;2;1;ok;
+electrif\w+;3;0;generico;tendencias de mercado del segmento
+electrif\w+;4;1;ok;
+electrif\w+;5;1;ok;
+electrif\w+;6;1;ok;
+electrif\w+;7;1;ok;
+electrif\w+;8;1;ok;
+electrif\w+;9;1;ok;
+electrif\w+;10;1;ok;
+electrif\w+;11;1;ok;
+electrif\w+;12;0;generico;crecimiento del segmento de automocion
+hazardous;1;1;ok;
+hazardous;2;1;ok;
+hazardous;3;1;ok;
+hazardous;4;1;ok;
+hazardous;5;1;ok;
+hazardous;6;1;ok;
+hazardous;7;1;ok;
+hazardous;8;1;ok;
+hazardous;9;1;ok;
+hazardous;10;1;ok;
+hazardous;11;1;ok;
+hazardous;12;1;ok;clasificacion de residuos en litigio ambiental
+injur\w+;1;0;financiero;ramo de seguro de danos corporales
+injur\w+;2;1;ok;
+injur\w+;3;0;indice;tabla de puntos de dato ESRS
+injur\w+;4;0;financiero;definicion de pension por invalidez
+injur\w+;5;0;financiero;parte perjudicada en litigio
+injur\w+;6;0;indice;tabla de puntos de dato ESRS
+injur\w+;7;1;ok;
+injur\w+;8;1;ok;
+injur\w+;9;1;ok;
+injur\w+;10;1;ok;
+injur\w+;11;1;ok;
+injur\w+;12;1;ok;
+related party;1;1;ok;competencias del consejo
+related party;2;0;indice;indice de contenidos con paginas
+related party;3;1;ok;
+related party;4;0;indice;indice de notas con paginas
+related party;5;1;ok;
+related party;6;0;indice;indice de notas con paginas
+related party;7;1;ok;
+related party;8;0;indice;indice de notas con paginas
+related party;9;1;ok;
+related party;10;0;financiero;nota contable de partes vinculadas
+related party;11;1;ok;
+related party;12;1;ok;
+conflicts of interest;1;1;ok;
+conflicts of interest;2;1;ok;
+conflicts of interest;3;1;ok;
+conflicts of interest;4;1;ok;
+conflicts of interest;5;1;ok;
+conflicts of interest;6;0;indice;indice de contenidos con paginas
+conflicts of interest;7;0;indice;listado de epigrafes con paginas
+conflicts of interest;8;1;ok;
+conflicts of interest;9;1;ok;
+conflicts of interest;10;1;ok;
+conflicts of interest;11;1;ok;
+conflicts of interest;12;1;ok;
+works council;1;0;otro;cargo en lista de miembros del consejo
+works council;2;1;ok;
+works council;3;1;ok;
+works council;4;1;ok;
+works council;5;1;ok;
+works council;6;1;ok;
+works council;7;0;otro;cargo en lista de miembros del consejo
+works council;8;0;generico;tramite de una adquisicion
+works council;9;0;otro;cargo en lista de organos de gobierno
+works council;10;1;ok;
+works council;11;0;otro;biografia de un consejero
+works council;12;1;ok;
+non-compliance;1;0;financiero;informe de auditoria sobre formato ESEF
+non-compliance;2;1;ok;
+non-compliance;3;1;ok;
+non-compliance;4;0;financiero;incumplimiento de covenants
+non-compliance;5;1;ok;
+non-compliance;6;1;ok;
+non-compliance;7;1;ok;
+non-compliance;8;1;ok;
+non-compliance;9;0;financiero;informe de auditoria sobre formato ESEF
+non-compliance;10;1;ok;
+non-compliance;11;1;ok;
+non-compliance;12;1;ok;
+local\s+communit\w+;1;1;ok;
+local\s+communit\w+;2;1;ok;
+local\s+communit\w+;3;1;ok;
+local\s+communit\w+;4;1;ok;
+local\s+communit\w+;5;0;indice;listado de epigrafes con paginas
+local\s+communit\w+;6;1;ok;
+local\s+communit\w+;7;1;ok;bloque de creacion de valor con datos
+local\s+communit\w+;8;1;ok;
+local\s+communit\w+;9;1;ok;
+local\s+communit\w+;10;1;ok;
+local\s+communit\w+;11;1;ok;
+local\s+communit\w+;12;1;ok;
+code of ethics;1;1;ok;
+code of ethics;2;1;ok;
+code of ethics;3;1;ok;
+code of ethics;4;0;financiero;independencia del auditor ViO
+code of ethics;5;1;ok;
+code of ethics;6;1;ok;
+code of ethics;7;1;ok;
+code of ethics;8;1;ok;
+code of ethics;9;1;ok;
+code of ethics;10;0;financiero;independencia del auditor ViO
+code of ethics;11;1;ok;
+code of ethics;12;0;financiero;codigo IESBA de auditores
+cdp;1;1;ok;
+cdp;2;1;ok;
+cdp;3;1;ok;
+cdp;4;1;ok;
+cdp;5;1;ok;
+cdp;6;1;ok;
+cdp;7;1;ok;
+cdp;8;1;ok;
+cdp;9;1;ok;
+cdp;10;1;ok;
+cdp;11;1;ok;criterio ambiental en retribucion
+cdp;12;1;ok;
+compliance committee;1;1;ok;
+compliance committee;2;1;ok;
+compliance committee;3;1;ok;
+compliance committee;4;0;otro;cargo externo en biografia de consejero
+compliance committee;5;1;ok;
+compliance committee;6;1;ok;
+compliance committee;7;1;ok;
+compliance committee;8;1;ok;
+compliance committee;9;1;ok;
+compliance committee;10;1;ok;
+compliance committee;11;1;ok;
+compliance committee;12;1;ok;
+coal;1;0;financiero;cobertura de materias primas
+coal;2;0;generico;comentario de precios de mercado
+coal;3;1;ok;
+coal;4;0;generico;comentario de precios de mercado
+coal;5;1;ok;
+coal;6;1;ok;fila de mix de generacion con cero carbon
+coal;7;1;ok;nota metodologica de huella de carbono
+coal;8;1;ok;
+coal;9;1;ok;
+coal;10;1;ok;coste de derechos de emision
+coal;11;0;generico;comentario de precios de mercado
+coal;12;0;otro;alquitran de hulla en anecdota historica

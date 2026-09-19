@@ -1,0 +1,409 @@
+termino;n;veredicto;categoria;nota
+risk appetite;1;1;ok;gestion de riesgos corporativa
+risk appetite;2;1;ok;gobierno del riesgo
+risk appetite;3;1;ok;
+risk appetite;4;0;financiero;marco prudencial bancario
+risk appetite;5;1;ok;gestion de riesgos corporativa
+risk appetite;6;0;financiero;umbral de liquidez
+risk appetite;7;1;ok;
+risk appetite;8;1;ok;
+risk appetite;9;1;ok;ciberseguridad
+risk appetite;10;1;ok;riesgo CSR en credito
+risk appetite;11;0;financiero;limites de liquidez
+risk appetite;12;1;ok;riesgo de compliance
+low carbon;1;1;ok;
+low carbon;2;1;ok;
+low carbon;3;1;ok;
+low carbon;4;1;ok;
+low carbon;5;1;ok;tabla de riesgos climaticos
+low carbon;6;1;ok;
+low carbon;7;1;ok;
+low carbon;8;1;ok;
+low carbon;9;1;ok;
+low carbon;10;1;ok;
+low carbon;11;1;ok;
+low carbon;12;1;ok;
+hydrogen;1;1;ok;tabla taxonomia
+hydrogen;2;0;otro;plantilla legal taxonomia nuclear/gas
+hydrogen;3;0;otro;nota al pie acronimo programa
+hydrogen;4;0;otro;plantilla legal taxonomia nuclear/gas
+hydrogen;5;0;otro;programa de talento llamado Hydrogen
+hydrogen;6;1;ok;
+hydrogen;7;1;ok;
+hydrogen;8;0;otro;plantilla legal taxonomia nuclear/gas
+hydrogen;9;1;ok;hydrogen cyanide contaminante
+hydrogen;10;0;generico;patrocinio America's Cup
+hydrogen;11;1;ok;
+hydrogen;12;1;ok;hydrogen sulfide contaminante
+data protection;1;1;ok;
+data protection;2;1;ok;
+data protection;3;1;ok;
+data protection;4;1;ok;
+data protection;5;1;ok;
+data protection;6;1;ok;
+data protection;7;1;ok;
+data protection;8;1;ok;
+data protection;9;1;ok;
+data protection;10;1;ok;
+data protection;11;1;ok;
+data protection;12;1;ok;
+sdg;1;1;ok;
+sdg;2;1;ok;
+sdg;3;0;indice;referencia cruzada tabla PRB
+sdg;4;1;ok;
+sdg;5;1;ok;
+sdg;6;1;ok;
+sdg;7;1;ok;
+sdg;8;1;ok;
+sdg;9;1;ok;
+sdg;10;1;ok;
+sdg;11;1;ok;mapa de materialidad
+sdg;12;1;ok;
+net zero;1;1;ok;
+net zero;2;1;ok;
+net zero;3;1;ok;
+net zero;4;1;ok;
+net zero;5;1;ok;
+net zero;6;1;ok;
+net zero;7;1;ok;
+net zero;8;1;ok;
+net zero;9;1;ok;
+net zero;10;1;ok;
+net zero;11;1;ok;
+net zero;12;1;ok;
+cybersecuri\w+;1;1;ok;
+cybersecuri\w+;2;1;ok;
+cybersecuri\w+;3;1;ok;
+cybersecuri\w+;4;1;ok;
+cybersecuri\w+;5;1;ok;objetivo de remuneracion
+cybersecuri\w+;6;0;generico;servicios comerciales de ciberseguridad
+cybersecuri\w+;7;1;ok;
+cybersecuri\w+;8;1;ok;etiqueta de ficha de riesgo
+cybersecuri\w+;9;1;ok;
+cybersecuri\w+;10;1;ok;
+cybersecuri\w+;11;1;ok;
+cybersecuri\w+;12;1;ok;
+cybersecurity;1;1;ok;
+cybersecurity;2;1;ok;
+cybersecurity;3;0;generico;area tecnologica de I+D
+cybersecurity;4;1;ok;
+cybersecurity;5;1;ok;
+cybersecurity;6;1;ok;
+cybersecurity;7;1;ok;
+cybersecurity;8;1;ok;
+cybersecurity;9;1;ok;
+cybersecurity;10;1;ok;
+cybersecurity;11;1;ok;
+cybersecurity;12;0;generico;tendencia sectorial
+energy efficiency;1;1;ok;
+energy efficiency;2;1;ok;
+energy efficiency;3;1;ok;
+energy efficiency;4;1;ok;
+energy efficiency;5;1;ok;
+energy efficiency;6;1;ok;
+energy efficiency;7;1;ok;
+energy efficiency;8;1;ok;
+energy efficiency;9;1;ok;
+energy efficiency;10;1;ok;
+energy efficiency;11;1;ok;
+energy efficiency;12;1;ok;
+due diligence;1;1;ok;
+due diligence;2;1;ok;
+due diligence;3;1;ok;
+due diligence;4;0;indice;tabla de correspondencia NFRD/TCFD
+due diligence;5;0;generico;continuidad de negocio proveedores
+due diligence;6;1;ok;
+due diligence;7;1;ok;
+due diligence;8;0;financiero;due diligence de suscripcion
+due diligence;9;1;ok;
+due diligence;10;1;ok;
+due diligence;11;1;ok;
+due diligence;12;1;ok;
+taxonomy eligible;1;0;indice;definicion tipo glosario
+taxonomy eligible;2;1;ok;
+taxonomy eligible;3;1;ok;
+taxonomy eligible;4;1;ok;
+taxonomy eligible;5;1;ok;
+taxonomy eligible;6;1;ok;
+taxonomy eligible;7;0;indice;leyenda de tabla
+taxonomy eligible;8;1;ok;
+taxonomy eligible;9;1;ok;
+taxonomy eligible;10;1;ok;
+taxonomy eligible;11;0;indice;cabeceras de tabla repetidas
+taxonomy eligible;12;0;indice;leyenda de tabla
+disability;1;0;financiero;seguro de prevision del CEO
+disability;2;0;financiero;prestaciones de pensiones
+disability;3;1;ok;
+disability;4;0;financiero;riesgo actuarial de seguros
+disability;5;1;ok;
+disability;6;1;ok;
+disability;7;1;ok;
+disability;8;1;ok;
+disability;9;1;ok;
+disability;10;0;financiero;plan de prevision de consejeros
+disability;11;1;ok;
+disability;12;0;financiero;hipotesis actuariales
+sanction;1;1;ok;
+sanction;2;1;ok;
+sanction;3;0;financiero;sanciones estatutarias accionistas
+sanction;4;1;ok;
+sanction;5;1;ok;
+sanction;6;1;ok;
+sanction;7;1;ok;
+sanction;8;1;ok;
+sanction;9;1;ok;
+sanction;10;0;generico;sanciones geopoliticas a Rusia
+sanction;11;1;ok;
+sanction;12;1;ok;
+equality;1;1;ok;
+equality;2;1;ok;
+equality;3;1;ok;
+equality;4;1;ok;
+equality;5;1;ok;
+equality;6;1;ok;
+equality;7;1;ok;
+equality;8;1;ok;
+equality;9;1;ok;
+equality;10;0;indice;tabla de correspondencia KPI
+equality;11;1;ok;
+equality;12;0;indice;tabla de correspondencia EINF
+decarbonization;1;1;ok;
+decarbonization;2;1;ok;
+decarbonization;3;1;ok;
+decarbonization;4;1;ok;
+decarbonization;5;1;ok;
+decarbonization;6;1;ok;
+decarbonization;7;1;ok;
+decarbonization;8;1;ok;
+decarbonization;9;1;ok;
+decarbonization;10;1;ok;
+decarbonization;11;1;ok;
+decarbonization;12;1;ok;
+whistleblow\w+;1;1;ok;
+whistleblow\w+;2;1;ok;
+whistleblow\w+;3;1;ok;
+whistleblow\w+;4;1;ok;
+whistleblow\w+;5;1;ok;
+whistleblow\w+;6;1;ok;
+whistleblow\w+;7;1;ok;
+whistleblow\w+;8;1;ok;
+whistleblow\w+;9;1;ok;
+whistleblow\w+;10;0;indice;tabla de correspondencia NFS
+whistleblow\w+;11;1;ok;
+whistleblow\w+;12;1;ok;
+co2e;1;0;indice;entrada de glosario
+co2e;2;1;ok;
+co2e;3;1;ok;
+co2e;4;1;ok;
+co2e;5;1;ok;
+co2e;6;1;ok;
+co2e;7;1;ok;
+co2e;8;1;ok;
+co2e;9;1;ok;
+co2e;10;1;ok;
+co2e;11;1;ok;
+co2e;12;1;ok;
+offset\w+;1;0;financiero;contrapartida contable
+offset\w+;2;1;ok;compensacion de carbono
+offset\w+;3;0;financiero;contrapartida contable
+offset\w+;4;0;financiero;coberturas
+offset\w+;5;0;financiero;compensacion IAS 32
+offset\w+;6;0;generico;compensar inflacion salarial
+offset\w+;7;0;financiero;netting derivados
+offset\w+;8;0;financiero;contrapartida contable
+offset\w+;9;0;financiero;netting
+offset\w+;10;0;financiero;impuestos diferidos compensables
+offset\w+;11;0;financiero;indice de notas contables
+offset\w+;12;0;financiero;
+discrimination;1;0;indice;indice SASB/GRI
+discrimination;2;1;ok;
+discrimination;3;1;ok;
+discrimination;4;1;ok;
+discrimination;5;1;ok;
+discrimination;6;1;ok;
+discrimination;7;1;ok;
+discrimination;8;1;ok;
+discrimination;9;1;ok;
+discrimination;10;0;indice;indice GRI
+discrimination;11;1;ok;
+discrimination;12;1;ok;
+eu taxonomy;1;1;ok;
+eu taxonomy;2;0;otro;informe de aseguramiento del auditor
+eu taxonomy;3;1;ok;
+eu taxonomy;4;1;ok;
+eu taxonomy;5;1;ok;
+eu taxonomy;6;1;ok;
+eu taxonomy;7;0;generico;procedimiento del consejo de supervision
+eu taxonomy;8;1;ok;
+eu taxonomy;9;1;ok;
+eu taxonomy;10;1;ok;
+eu taxonomy;11;1;ok;
+eu taxonomy;12;1;ok;
+social responsibility;1;1;ok;
+social responsibility;2;1;ok;perfil de competencias del consejo
+social responsibility;3;1;ok;
+social responsibility;4;1;ok;
+social responsibility;5;1;ok;
+social responsibility;6;1;ok;
+social responsibility;7;0;generico;mencion de pasada en riesgo TIC
+social responsibility;8;1;ok;
+social responsibility;9;0;otro;texto del codigo de buen gobierno
+social responsibility;10;0;indice;referencia cruzada
+social responsibility;11;0;indice;nombre de capitulo
+social responsibility;12;1;ok;
+energy transition;1;1;ok;nombre de iniciativa climatica
+energy transition;2;1;ok;
+energy transition;3;1;ok;
+energy transition;4;1;ok;
+energy transition;5;1;ok;
+energy transition;6;1;ok;
+energy transition;7;1;ok;
+energy transition;8;1;ok;
+energy transition;9;1;ok;
+energy transition;10;1;ok;
+energy transition;11;1;ok;
+energy transition;12;1;ok;
+electrif\w+;1;0;generico;motor de mercado semiconductores
+electrif\w+;2;1;ok;
+electrif\w+;3;1;ok;
+electrif\w+;4;1;ok;
+electrif\w+;5;1;ok;
+electrif\w+;6;1;ok;
+electrif\w+;7;1;ok;
+electrif\w+;8;1;ok;
+electrif\w+;9;1;ok;
+electrif\w+;10;1;ok;
+electrif\w+;11;1;ok;
+electrif\w+;12;0;generico;eslogan estrategico de negocio
+injur\w+;1;1;ok;
+injur\w+;2;1;ok;
+injur\w+;3;0;indice;indice GRI
+injur\w+;4;1;ok;
+injur\w+;5;0;generico;producto de seguro
+injur\w+;6;1;ok;
+injur\w+;7;1;ok;
+injur\w+;8;0;indice;indice GRI
+injur\w+;9;1;ok;
+injur\w+;10;0;financiero;taxonomia de riesgo operacional
+injur\w+;11;1;ok;
+injur\w+;12;1;ok;
+hazardous;1;1;ok;
+hazardous;2;0;indice;glosario metodologico
+hazardous;3;1;ok;
+hazardous;4;1;ok;
+hazardous;5;1;ok;
+hazardous;6;1;ok;
+hazardous;7;1;ok;
+hazardous;8;1;ok;
+hazardous;9;0;indice;tabla de correspondencia GRI/SASB
+hazardous;10;1;ok;
+hazardous;11;1;ok;
+hazardous;12;1;ok;
+works council;1;0;otro;biografia de consejero
+works council;2;1;ok;
+works council;3;0;otro;informe de auditoria
+works council;4;1;ok;
+works council;5;0;otro;salida de consejero
+works council;6;1;ok;
+works council;7;1;ok;
+works council;8;1;ok;
+works council;9;0;generico;presentacion de estrategia comercial
+works council;10;1;ok;
+works council;11;0;otro;biografias de consejeros
+works council;12;1;ok;
+non-compliance;1;1;ok;
+non-compliance;2;0;financiero;auditoria ESEF
+non-compliance;3;0;financiero;auditoria ESEF
+non-compliance;4;1;ok;
+non-compliance;5;0;generico;penalizaciones comerciales
+non-compliance;6;1;ok;
+non-compliance;7;1;ok;
+non-compliance;8;0;financiero;informe de auditoria
+non-compliance;9;0;financiero;auditoria ESEF
+non-compliance;10;0;financiero;auditoria ESEF
+non-compliance;11;0;financiero;auditoria ESEF
+non-compliance;12;1;ok;
+conflicts of interest;1;1;ok;
+conflicts of interest;2;1;ok;
+conflicts of interest;3;1;ok;
+conflicts of interest;4;1;ok;
+conflicts of interest;5;1;ok;
+conflicts of interest;6;1;ok;
+conflicts of interest;7;1;ok;
+conflicts of interest;8;1;ok;
+conflicts of interest;9;1;ok;
+conflicts of interest;10;1;ok;
+conflicts of interest;11;1;ok;
+conflicts of interest;12;0;indice;indice ESRS
+code of ethics;1;0;financiero;independencia del auditor
+code of ethics;2;1;ok;
+code of ethics;3;0;financiero;independencia del auditor
+code of ethics;4;0;financiero;norma profesional de auditoria interna
+code of ethics;5;1;ok;
+code of ethics;6;0;financiero;independencia del auditor
+code of ethics;7;1;ok;
+code of ethics;8;0;financiero;independencia del auditor
+code of ethics;9;1;ok;
+code of ethics;10;0;financiero;independencia del auditor
+code of ethics;11;0;financiero;contrato de liquidez AMAFI
+code of ethics;12;1;ok;
+local\s+communit\w+;1;1;ok;
+local\s+communit\w+;2;1;ok;
+local\s+communit\w+;3;1;ok;
+local\s+communit\w+;4;0;indice;tabla de correspondencia GRI
+local\s+communit\w+;5;1;ok;
+local\s+communit\w+;6;0;generico;factor de riesgo de proyectos
+local\s+communit\w+;7;1;ok;
+local\s+communit\w+;8;1;ok;
+local\s+communit\w+;9;1;ok;
+local\s+communit\w+;10;1;ok;
+local\s+communit\w+;11;0;generico;tendencia de consumo
+local\s+communit\w+;12;1;ok;
+related party;1;0;financiero;nota contable
+related party;2;1;ok;politica de transacciones vinculadas
+related party;3;0;financiero;
+related party;4;0;indice;tabla de correspondencia
+related party;5;0;indice;indice de contenidos
+related party;6;0;financiero;informe especial del auditor
+related party;7;0;financiero;nota contable
+related party;8;0;indice;descripcion de seccion
+related party;9;0;financiero;nota contable
+related party;10;0;financiero;nota contable
+related party;11;0;financiero;nota contable
+related party;12;0;financiero;nota contable
+cdp;1;1;ok;
+cdp;2;1;ok;
+cdp;3;1;ok;
+cdp;4;1;ok;
+cdp;5;1;ok;
+cdp;6;1;ok;
+cdp;7;0;indice;indice TCFD
+cdp;8;1;ok;
+cdp;9;1;ok;
+cdp;10;1;ok;
+cdp;11;1;ok;
+cdp;12;1;ok;
+compliance committee;1;1;ok;
+compliance committee;2;1;ok;
+compliance committee;3;1;ok;
+compliance committee;4;1;ok;
+compliance committee;5;0;otro;biografia en otra empresa
+compliance committee;6;0;otro;biografia en otra empresa
+compliance committee;7;1;ok;
+compliance committee;8;0;otro;biografia en otra empresa
+compliance committee;9;1;ok;
+compliance committee;10;1;ok;
+compliance committee;11;1;ok;
+compliance committee;12;0;otro;biografia en otra empresa
+coal;1;0;financiero;cobertura de materias primas
+coal;2;1;ok;
+coal;3;1;ok;
+coal;4;1;ok;
+coal;5;1;ok;
+coal;6;1;ok;
+coal;7;1;ok;
+coal;8;1;ok;
+coal;9;1;ok;
+coal;10;1;ok;
+coal;11;1;ok;
+coal;12;1;ok;

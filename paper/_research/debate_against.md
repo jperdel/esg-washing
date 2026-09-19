@@ -311,7 +311,7 @@ sixteen `social …` collocations.
 
 This is not pedantry, because `social` is the largest candidate by mass and the
 cost is quantified in the author's own working file
-(`metadata/colocaciones_analisis.md`):
+(`informes/colocaciones_analisis.md`):
 
 > "se pierde la cola larga de usos válidos de `social`, que según este mismo
 > análisis es **la mayor parte** de sus casi 50.000 ocurrencias"

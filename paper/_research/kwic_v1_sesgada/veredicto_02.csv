@@ -1,0 +1,401 @@
+termino;n;veredicto;categoria;nota
+carbon;1;1;ok;objetivo reduccion emisiones cartera
+carbon;2;1;ok;neutralidad carbono 2050
+carbon;3;1;ok;soluciones aseguradoras transicion baja en carbono
+carbon;4;1;ok;objetivo scope 1 y 2
+carbon;5;1;ok;topico material huella de carbono
+carbon;6;1;ok;objetivo neutralidad
+carbon;7;1;ok;plan intensidad carbono SBTi
+carbon;8;1;ok;equipo transicion baja en carbono
+carbon;9;1;ok;pilar estrategico carbono
+carbon;10;1;ok;modelo de negocio bajo en carbono
+carbon;11;1;ok;huella de carbono clientes
+carbon;12;1;ok;economia neutra en carbono 2050
+carbon;13;1;ok;planes sobre uso de carbono
+carbon;14;1;ok;objetivo cero emisiones
+carbon;15;1;ok;proyecto Zero Carbon con dato
+carbon;16;1;ok;objetivo neutralidad 2030
+carbon;17;1;ok;transformacion baja en carbono
+carbon;18;1;ok;umbral intensidad de carbono taxonomia
+carbon;19;1;ok;KPI reduccion emisiones por vehiculo
+carbon;20;1;ok;programa reduccion CO2 y residuos
+human right;1;1;ok;principio de respeto a derechos humanos
+human right;2;1;ok;principios Global Compact
+human right;3;1;ok;codigo de conducta basado en DUDH
+human right;4;1;ok;dato proveedores evaluados
+human right;5;1;ok;debida diligencia
+human right;6;1;ok;compromiso de respeto
+human right;7;1;ok;respeto y diversidad
+human right;8;1;ok;comite de derechos humanos
+human right;9;0;indice;sumario con numeros de pagina
+human right;10;1;ok;valores y respeto a las personas
+human right;11;1;ok;publicacion de politica
+human right;12;1;ok;respeto en cadena de valor
+human right;13;1;ok;marco regulatorio de reporte no financiero
+human right;14;1;ok;mapa de riesgos y cumplimiento
+human right;15;1;ok;formacion del consejo
+human right;16;1;ok;codigo de conducta
+human right;17;1;ok;convenios OIT y carta internacional
+human right;18;0;indice;sumario con numeros de pagina
+human right;19;1;ok;monitorizacion impactos en proveedores
+human right;20;1;ok;enfoque RSC
+stakeholder;1;1;ok;reporte integrado financiero y sostenibilidad
+stakeholder;2;0;generico;creacion de valor por adquisicion
+stakeholder;3;1;ok;compromiso de sostenibilidad
+stakeholder;4;0;generico;plataformas digitales y monetizacion
+stakeholder;5;0;generico;herramienta de feedback de liderazgo
+stakeholder;6;0;generico;marco financiero y crecimiento de ingresos
+stakeholder;7;1;ok;barometro construccion sostenible y UN-Habitat
+stakeholder;8;1;ok;principios GRI de reporte
+stakeholder;9;0;generico;canales de informacion corporativa
+stakeholder;10;0;generico;dividendo desapalancamiento e inversion
+stakeholder;11;0;indice;sumario con numeros de pagina
+stakeholder;12;0;generico;junta general por medios remotos
+stakeholder;13;1;ok;implicacion comunidad local y agua
+stakeholder;14;1;ok;principios GRI de reporte
+stakeholder;15;1;ok;programa Sharing Beauty With All
+stakeholder;16;0;indice;sumario con numeros de pagina
+stakeholder;17;1;ok;definicion de sostenibilidad
+stakeholder;18;0;indice;sumario con numeros de pagina
+stakeholder;19;0;generico;cierre de carta del consejero delegado
+stakeholder;20;0;indice;sumario con numeros de pagina
+climate change;1;1;ok;puntuaciones CDP
+climate change;2;1;ok;ESRS E1 material
+climate change;3;1;ok;compromiso Acuerdo de Paris
+climate change;4;1;ok;comite de auditoria y riesgos climaticos
+climate change;5;1;ok;compromiso sobre impacto propio
+climate change;6;1;ok;mitigacion como prioridad
+climate change;7;1;ok;declaracion sobre urgencia climatica
+climate change;8;0;indice;referencia cruzada a seccion
+climate change;9;0;indice;sumario con numeros de pagina
+climate change;10;1;ok;indices ESG y climaticos como producto
+climate change;11;0;indice;referencia cruzada a seccion
+climate change;12;0;indice;sumario con numeros de pagina
+climate change;13;1;ok;compromiso TCFD
+climate change;14;1;ok;riesgo material climatico
+climate change;15;1;ok;triple A del CDP
+climate change;16;1;ok;requisitos ESRS E1-3 y control interno
+climate change;17;1;ok;puntuacion CDP
+climate change;18;1;ok;adhesion TCFD
+climate change;19;1;ok;formacion del consejo
+climate change;20;1;ok;cambio climatico entre riesgos del entorno
+co2e?;1;1;ok;reduccion emisiones scope 1 2 y 3
+co2e?;2;1;ok;datos climaticos SBTi
+co2e?;3;1;ok;KPI ESG emisiones
+co2e?;4;1;ok;reduccion 80% emisiones producto
+co2e?;5;1;ok;reduccion CO2 en estrategia
+co2e?;6;1;ok;impresion neutra en carbono
+co2e?;7;1;ok;toneladas compensadas
+co2e?;8;1;ok;reduccion 81% emisiones plantas
+co2e?;9;1;ok;reduccion 27% emisiones
+co2e?;10;1;ok;reduccion emisiones vehiculos
+co2e?;11;1;ok;toneladas por consumo energetico
+co2e?;12;1;ok;equivalentes CO2 en metodologia
+co2e?;13;1;ok;captura y almacenamiento
+co2e?;14;1;ok;proyectos CCS
+co2e?;15;1;ok;emisiones scope 1+2
+co2e?;16;1;ok;limite regulatorio de flota
+co2e?;17;1;ok;precio del CO2 y competitividad del carbon
+co2e?;18;1;ok;condicion de desempeno medida en kt CO2
+co2e?;19;1;ok;objetivo reduccion emisiones
+co2e?;20;1;ok;emisiones netas totales
+internal control;1;1;ok;definicion y objetivos del control interno
+internal control;2;1;ok;gobierno corporativo y control interno
+internal control;3;1;ok;sistema de control interno del grupo
+internal control;4;1;ok;modelo integrado de riesgos
+internal control;5;1;ok;eficacia del sistema segun consejo
+internal control;6;0;indice;sumario con numeros de pagina
+internal control;7;1;ok;fiabilidad de la informacion reportada
+internal control;8;1;ok;autoevaluacion incluye medioambiente y RRHH
+internal control;9;0;indice;sumario con puntos y pagina
+internal control;10;0;indice;listado de epigrafes numerados
+internal control;11;1;ok;comite de auditoria supervisa control interno
+internal control;12;1;ok;supervision del comite de auditoria
+internal control;13;1;ok;responsabilidades del consejo de direccion
+internal control;14;0;indice;sumario con numeros de pagina
+internal control;15;1;ok;eficacia confirmada por el consejo
+internal control;16;1;ok;comite trata control interno y compliance
+internal control;17;1;ok;comite de etica y cumplimiento
+internal control;18;0;indice;sumario del informe de gestion
+internal control;19;1;ok;informes de aseguramiento a proveedores
+internal control;20;1;ok;controles sobre datos de seguridad laboral
+waste;1;1;ok;financiacion de residuos organicos circular
+waste;2;1;ok;fabricacion sin residuos como uso del producto
+waste;3;1;ok;ecodiseno y gestion de residuos
+waste;4;1;ok;reutilizacion de miles de toneladas
+waste;5;1;ok;reduccion de plastico
+waste;6;1;ok;gestion y reciclaje de residuos
+waste;7;1;ok;riesgo de gestion de residuos
+waste;8;1;ok;campana contra el plastico
+waste;9;0;indice;sumario con puntos y pagina
+waste;10;1;ok;67% menos residuos que la media
+waste;11;0;generico;menos desperdicio por digitalizacion
+waste;12;1;ok;reduccion de residuos e invendidos
+waste;13;1;ok;riesgo ambiental en proveedores
+waste;14;1;ok;minimizar impacto de residuos
+waste;15;1;ok;evitar residuos en la estrategia
+waste;16;1;ok;enfoque circular
+waste;17;1;ok;proyectos de desperdicio alimentario
+waste;18;1;ok;KPI reduccion desperdicio alimentario
+waste;19;1;ok;regulacion de baterias y residuos
+waste;20;1;ok;sistema de reciclaje MeRSy
+renewable;1;1;ok;energia de fuentes renovables en GWh
+renewable;2;1;ok;aumento de renovables en el mix
+renewable;3;1;ok;proyecto con electricidad renovable
+renewable;4;1;ok;transicion a energia renovable
+renewable;5;0;financiero;credito puente renovable dos veces
+renewable;6;1;ok;financiacion de renovables emergentes
+renewable;7;1;ok;energia renovable en produccion
+renewable;8;1;ok;PPA 100% renovable
+renewable;9;1;ok;objetivo 100% electricidad renovable
+renewable;10;1;ok;inversion en sector renovable
+renewable;11;1;ok;almacen con energia renovable
+renewable;12;1;ok;mayor operador renovable del mundo
+renewable;13;1;ok;datos de electricidad renovable
+renewable;14;1;ok;prioridad de energias renovables
+renewable;15;0;generico;demanda de derivados electricos
+renewable;16;1;ok;objetivo 100% electricidad renovable
+renewable;17;1;ok;oportunidades de la transicion
+renewable;18;1;ok;22% de electricidad renovable
+renewable;19;1;ok;red con 100% renovable
+renewable;20;1;ok;certificados renovables auditados
+electricity;1;1;ok;electricidad con garantia de origen
+electricity;2;0;generico;catalogo de soluciones para edificios
+electricity;3;1;ok;solar cubre 30% del consumo
+electricity;4;1;ok;alcance 2 electricidad comprada
+electricity;5;1;ok;100% renovable con garantias de origen
+electricity;6;1;ok;compromiso RE100
+electricity;7;1;ok;acceso a electricidad verde
+electricity;8;1;ok;vidrio con electricidad descarbonizada
+electricity;9;1;ok;descarbonizacion de cartera sectorial
+electricity;10;1;ok;riesgo laboral electrico
+electricity;11;1;ok;compromiso RE100
+electricity;12;1;ok;alcance 1 y 2 por electricidad
+electricity;13;1;ok;financiacion acero con electricidad verde
+electricity;14;1;ok;100% renovable garantias de origen
+electricity;15;1;ok;KPI consumo centros de datos
+electricity;16;1;ok;conexion de parques eolicos y solares
+electricity;17;1;ok;objetivo electricidad renovable 2023
+electricity;18;0;generico;revision de cartera crediticia sectorial
+electricity;19;1;ok;objetivo electricidad renovable
+electricity;20;1;ok;hallazgos auditoria de proveedores
+esg;1;1;ok;criterios ESG de inversores
+esg;2;1;ok;ratings y pertenencia a indices
+esg;3;1;ok;datos y KPI ESG
+esg;4;1;ok;nombramiento de responsable ESG
+esg;5;1;ok;objetivos ESG internos
+esg;6;1;ok;ponderacion de objetivos ESG en retribucion
+esg;7;1;ok;tabla de KPI ESG
+esg;8;1;ok;comite ESG del consejo
+esg;9;0;indice;nombre de seccion del informe
+esg;10;1;ok;objetivos ESG 20% del incentivo
+esg;11;1;ok;composicion del comite ESG
+esg;12;1;ok;rating Sustainalytics
+esg;13;1;ok;presidencia del comite ESG
+esg;14;1;ok;creacion del comite ESG
+esg;15;1;ok;pertenencia a indices de sostenibilidad
+esg;16;1;ok;riesgo climatico y expectativas ESG
+esg;17;1;ok;rating MSCI e indice CAC40 ESG
+esg;18;1;ok;compromiso net-zero cadena de valor
+esg;19;0;indice;sumario con numeros de pagina
+esg;20;1;ok;ESG critico para inversores
+diversity;1;1;ok;metricas de mujeres en plantilla
+diversity;2;1;ok;politica de diversidad y paridad
+diversity;3;1;ok;principios de diversidad del consejo
+diversity;4;1;ok;objetivo 40% mujeres en 2025
+diversity;5;1;ok;pilar de la hoja de ruta RSC
+diversity;6;1;ok;eje de la estrategia de RRHH
+diversity;7;1;ok;formacion en diversidad e inclusion
+diversity;8;1;ok;concepto de diversidad del consejo
+diversity;9;1;ok;comite trata diversidad y talento
+diversity;10;1;ok;diversidad como objetivo ESG retributivo
+diversity;11;1;ok;mision del comite sobre diversidad
+diversity;12;1;ok;objetivo estrategico DEI
+diversity;13;1;ok;objetivos de mujeres en liderazgo
+diversity;14;1;ok;compromiso y dato de mujeres
+diversity;15;1;ok;posicionamiento sobre diversidad y libertades
+diversity;16;1;ok;objetivo mujeres en direccion
+diversity;17;1;ok;pilar de la hoja de ruta RSC
+diversity;18;1;ok;riesgo de talento y diversidad
+diversity;19;1;ok;topico material
+diversity;20;1;ok;concepto de diversidad del consejo
+scope\s*[123]\b;1;1;ok;objetivo SBT alcances 1 2 y 3
+scope\s*[123]\b;2;1;ok;ampliacion del reporte de alcance 3
+scope\s*[123]\b;3;1;ok;nota metodologica de consumo energetico
+scope\s*[123]\b;4;1;ok;neutralidad alcances 1 y 2 en 2025
+scope\s*[123]\b;5;1;ok;emisiones directas industriales
+scope\s*[123]\b;6;1;ok;datos de emisiones por alcance
+scope\s*[123]\b;7;1;ok;indicador no financiero alcance 3
+scope\s*[123]\b;8;1;ok;serie de emisiones por alcance
+scope\s*[123]\b;9;1;ok;nota al grafico de emisiones
+scope\s*[123]\b;10;1;ok;objetivo reduccion alcance 3
+scope\s*[123]\b;11;1;ok;objetivos GEI alcances 1 y 2
+scope\s*[123]\b;12;1;ok;palancas por alcance
+scope\s*[123]\b;13;1;ok;objetivo intensidad de carbono
+scope\s*[123]\b;14;1;ok;reduccion en la cadena de valor
+scope\s*[123]\b;15;1;ok;objetivo 25% alcances 1 y 2
+scope\s*[123]\b;16;1;ok;objetivo emisiones financiadas
+scope\s*[123]\b;17;1;ok;reduccion 45% alcances 1 y 2
+scope\s*[123]\b;18;1;ok;huella de carbono por alcance
+scope\s*[123]\b;19;1;ok;avance 23.4% sobre base 2019
+scope\s*[123]\b;20;1;ok;objetivo alcance 3 uso de producto
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);1;1;ok;oportunidades de la transicion energetica
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);2;1;ok;reduccion consumo y emisiones
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);3;1;ok;eficiencia energetica del producto
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);4;1;ok;finanzas sostenibles y descarbonizacion
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);5;1;ok;serie de consumo energetico
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);6;1;ok;emisiones atribuibles al consumo
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);7;1;ok;KPI eficiencia energetica
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);8;1;ok;KPI ESG consumo de flota
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);9;1;ok;plan de reduccion de consumo
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);10;1;ok;consumo y mix industrial
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);11;1;ok;riesgo de transicion TCFD
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);12;1;ok;oportunidad de reduccion de consumo
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);13;1;ok;neutralidad en cerveceras
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);14;1;ok;transicion energetica en la estrategia
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);15;1;ok;KPI ESG consumo energetico
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);16;1;ok;criterio de sitio neutro en carbono
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);17;1;ok;plan de eficiencia y sostenibilidad
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);18;1;ok;articulo 173 y TCFD
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);19;1;ok;KPI ESG consumo energetico
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);20;1;ok;asesoramiento ESG en transicion
+non-financial;1;0;financiero;limites de compromisos aprobados por el consejo
+non-financial;2;1;ok;estado no financiero consolidado
+non-financial;3;1;ok;informe no financiero con verificacion
+non-financial;4;0;indice;sumario con numeros de pagina
+non-financial;5;1;ok;marco legal del estado extrafinanciero
+non-financial;6;1;ok;objetivos ESG no financieros en retribucion
+non-financial;7;0;indice;sumario con numeros de pagina
+non-financial;8;0;indice;sumario con numeros de pagina
+non-financial;9;0;indice;sumario con numeros de pagina
+non-financial;10;1;ok;declaracion de desempeno extrafinanciero
+non-financial;11;1;ok;reporte integrado con informacion no financiera
+non-financial;12;0;indice;sumario con numeros de pagina
+non-financial;13;0;financiero;sociedades no financieras como contraparte
+non-financial;14;1;ok;marco legal del estado extrafinanciero
+non-financial;15;1;ok;estado no financiero con verificacion
+non-financial;16;0;indice;sumario con numeros de pagina
+non-financial;17;1;ok;estado no financiero consolidado
+non-financial;18;1;ok;estado no financiero segun directiva
+non-financial;19;0;indice;sumario con numeros de pagina
+non-financial;20;0;financiero;informacion por segmentos
+co2;1;1;ok;indicadores de analisis de ciclo de vida
+co2;2;1;ok;cifra clave de reduccion de emisiones
+co2;3;1;ok;cifra clave de reduccion de emisiones
+co2;4;1;ok;reduccion 21% emisiones directas
+co2;5;1;ok;reporte de emisiones por electricidad
+co2;6;1;ok;retos ambientales del sector
+co2;7;1;ok;ahorro de emisiones por solar
+co2;8;1;ok;eliminacion de CO2 atmosferico
+co2;9;1;ok;objetivo retributivo de impacto carbono
+co2;10;1;ok;eliminacion por tonelada de CO2
+co2;11;1;ok;bono verde vehiculos cero emisiones
+co2;12;1;ok;reduccion huella de producto
+co2;13;1;ok;escenario IEA de emisiones globales
+co2;14;0;otro;CO2 como gas en envasado de cerveza
+co2;15;1;ok;reduccion 14.5% emisiones
+co2;16;1;ok;criterio de acciones de desempeno
+co2;17;1;ok;precio del CO2 y objetivo europeo
+co2;18;1;ok;emisiones alcances 1 y 2
+co2;19;1;ok;fondo de captura de 20 Mt
+co2;20;1;ok;sumideros de carbono
+recycl\w+;1;0;financiero;reciclaje contable de reservas
+recycl\w+;2;1;ok;reciclaje de materiales en riesgos ESG
+recycl\w+;3;1;ok;reciclabilidad de aeronaves
+recycl\w+;4;0;financiero;reciclaje de coberturas a resultados
+recycl\w+;5;0;financiero;reciclaje desde OCI a resultados
+recycl\w+;6;1;ok;contenido reciclado en embalaje
+recycl\w+;7;1;ok;reciclabilidad y ecodiseno ESPR
+recycl\w+;8;1;ok;objetivo 3R y ODS 12.5
+recycl\w+;9;0;financiero;reciclaje de reservas a resultados
+recycl\w+;10;1;ok;reciclaje de subproductos alimentarios
+recycl\w+;11;1;ok;reciclaje de capsulas de cafe
+recycl\w+;12;1;ok;reciclaje quimico de plasticos
+recycl\w+;13;1;ok;carton reciclado y programas de recogida
+recycl\w+;14;1;ok;reciclaje de residuos industriales
+recycl\w+;15;0;financiero;reciclaje de perdidas de cambio
+recycl\w+;16;1;ok;materia prima reciclada por pirolisis
+recycl\w+;17;1;ok;envases con contenido reciclado
+recycl\w+;18;1;ok;diseno para la reciclabilidad
+recycl\w+;19;1;ok;planta de reciclaje quimico
+recycl\w+;20;1;ok;envases y reciclaje como tendencia
+audit committee;1;1;ok;estructura de gobierno y control
+audit committee;2;1;ok;supervision del consejo sobre el comite
+audit committee;3;1;ok;composicion de comites del consejo
+audit committee;4;1;ok;informe del consejo de supervision
+audit committee;5;1;ok;organigrama de gobierno corporativo
+audit committee;6;1;ok;mapa de riesgos presentado al comite
+audit committee;7;1;ok;investigaciones anticorrupcion reportadas
+audit committee;8;1;ok;asistencia a reuniones del comite
+audit committee;9;1;ok;interlocucion del CFO con el comite
+audit committee;10;1;ok;comites del consejo incluido CSR
+audit committee;11;0;financiero;informe de auditoria de cuentas
+audit committee;12;1;ok;reporte de control interno al comite
+audit committee;13;1;ok;compliance reporta al comite
+audit committee;14;1;ok;comites del consejo incluido CSR
+audit committee;15;1;ok;contacto presidente comite y CFO
+audit committee;16;1;ok;contacto presidente comite y CFO
+audit committee;17;1;ok;contacto presidente comite y CFO
+audit committee;18;1;ok;independencia de los comites
+audit committee;19;1;ok;comites del consejo de supervision
+audit committee;20;1;ok;compliance reporta al comite
+biodiversity;1;1;ok;corredor de biodiversidad del proyecto
+biodiversity;2;1;ok;estrategia de biodiversidad con objetivos
+biodiversity;3;1;ok;preservacion y alianza con WWF
+biodiversity;4;1;ok;beneficios a suelo y biodiversidad
+biodiversity;5;0;indice;sumario con puntos y pagina
+biodiversity;6;1;ok;salvaguarda de areas protegidas
+biodiversity;7;1;ok;impacto en naturaleza de la financiacion
+biodiversity;8;1;ok;huella ambiental del edificio
+biodiversity;9;1;ok;factores ambientales en analisis crediticio
+biodiversity;10;0;otro;cargo de una consejera en su curriculum
+biodiversity;11;1;ok;prioridad de la politica ambiental
+biodiversity;12;1;ok;razon de ser y respeto a la biodiversidad
+biodiversity;13;1;ok;nueva ambicion de biodiversidad
+biodiversity;14;1;ok;tabla de taxonomia europea
+biodiversity;15;1;ok;estandares de certificacion de creditos
+biodiversity;16;1;ok;proteccion de ecosistemas
+biodiversity;17;1;ok;convenios y protocolo de Nagoya
+biodiversity;18;1;ok;matriz de materialidad
+biodiversity;19;1;ok;politica y reforestacion en el plan
+biodiversity;20;1;ok;doble materialidad del topico E4
+ghg;1;1;ok;datos para el test de estres climatico
+ghg;2;1;ok;emisiones directas alcance 1
+ghg;3;1;ok;crecimiento de emisiones y calentamiento
+ghg;4;1;ok;objetivo reduccion 55%
+ghg;5;1;ok;hoja de ruta de neutralidad
+ghg;6;1;ok;riesgo climatico y sectores
+ghg;7;1;ok;protocolo GHG y recalculo
+ghg;8;1;ok;objetivo 40% en cartera inmobiliaria
+ghg;9;1;ok;emisiones de operaciones propias
+ghg;10;1;ok;emisiones directas e indirectas
+ghg;11;1;ok;datos de emisiones por alcance
+ghg;12;1;ok;regulacion de emisiones de vehiculos
+ghg;13;1;ok;metodologia protocolo GHG
+ghg;14;1;ok;creditos de carbono frente a emisiones
+ghg;15;1;ok;alcance del reporte ESRS
+ghg;16;1;ok;emisiones directas
+ghg;17;1;ok;indicador no financiero alcances 1+2
+ghg;18;1;ok;protocolo GHG y ahorros
+ghg;19;1;ok;protocolo GHG e ISO 14064
+ghg;20;1;ok;protocolo GHG para indicadores
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);1;1;ok;compromiso con etica y RSC
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);2;1;ok;politica de sostenibilidad aprobada
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);3;1;ok;banca de impacto social con datos
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);4;0;indice;nota con referencia cruzada
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);5;1;ok;equilibrio crecimiento y bienestar social
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);6;0;indice;encabezado y referencia cruzada
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);7;1;ok;dialogo con interlocutores sociales
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);8;1;ok;estrategia presentada a los interlocutores
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);9;1;ok;criterio de evaluacion del consejo
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);10;0;indice;sumario con numeros de pagina
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);11;1;ok;alcance del reporte no financiero
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);12;1;ok;impacto social de la fundacion
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);13;1;ok;estandares de desempeno social
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);14;1;ok;acuerdos con interlocutores sociales
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);15;1;ok;sostenibilidad social segun GRI
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);16;1;ok;alcance del reporte no financiero
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);17;1;ok;eje de la estrategia de RRHH
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);18;1;ok;Global Compact y ODS
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);19;1;ok;reorganizacion discutida con los sindicatos
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);20;0;indice;sumario con numeros de pagina

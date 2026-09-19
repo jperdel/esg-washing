@@ -42,3 +42,6 @@ paper/*.out
 paper/*.blg
 paper/*.bbl
 paper/*.toc
+
+# --- Informes de trabajo (no se versionan) ---
+informes/

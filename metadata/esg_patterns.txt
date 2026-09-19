@@ -1,0 +1,47 @@
+# GENERADO POR scripts/export_vocab_v3.py a partir de metadata/ESG_terms_v3.csv.
+# Para cambiar el vocabulario, edita las decisiones (ESG_terms_v3_decisiones.csv),
+# ejecuta build_vocab_v3.py y despues este script. No editar a mano.
+#
+# Patrones regex, uno por linea. Solo actuan en la extraccion (texto crudo).
+#
+# >>> DESPUES DE REGENERAR, EJECUTA:  python scripts/build_lexicons.py
+
+
+# --- E: Ambiental (16) ---
+circulari\w+
+co2e?
+decarboni\w+
+electrif\w+
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage)
+environmental\w*
+environmentally
+iso\s*14001\b
+iso\s*50001\b
+offsett?ing\s+(?:of\s+)?(?:\w+\s+)?carbon
+offsett?ing\s+(?:of\s+)?(?:\w+\s+)?emission\w*
+paris\s+agreement
+recycl\w+
+scope\s*[123]\b
+tonne\w*\s+(?:co2|carbon)
+water\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress)
+
+# --- S: Social (11) ---
+employee\s+well\w*
+equal\s+opportunit\w+
+ergonomic\w*
+fatalit\w+
+inclusiv\w+
+injur\w+
+iso\s*45001\b
+just\s+transition
+local\s+communit\w+
+philanthrop\w+
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance)
+
+# --- G: Gobernanza (2) ---
+cybersecuri\w+
+whistleblow\w+
+
+# --- TRANS: Transversal (marcos, sostenibilidad en general) (2) ---
+ifrs\s*s[12]\b
+sustainab\w+

@@ -1,0 +1,533 @@
+termino;clave;pilar;pilar_disenso;sectorial;sectorial_disenso;colocacion;consenso;n_revisores;revisores;estado_vocabulario;cubierto_por;justificacion
+accidental pollution;accidental pollution;E;;0;0;1;maximo;3;1+2+3;cubierto;pollution;Total prevention chapter and site risk analysis
+air quality;air quality;E;;0;0;1;maximo;3;1+2+3;en vocabulario;;Iberdrola awareness campaigns and Total NOx impact assessment
+animal welfare;animal welfare;E;;1;0;0;maximo;3;1+2+3;en vocabulario;;Ahold environmental ESG statement on cage free eggs
+avoided emission;avoided emission;E;;0;0;1;maximo;3;1+2+3;cubierto;emission;ASML distinguishes avoided from reduced emissions
+biodiversity;biodiversity;E;;0;0;0;maximo;3;1+2+3;en vocabulario;;Iberdrola Total Sanofi plans commitments and reports
+biodiversity action plan;biodiversity action plan;E;;0;0;1;maximo;3;1+2+3;cubierto;biodiversity;Total deploys plans for sites in protected areas
+biofuel;biofuel;E;;1;0;0;maximo;3;1+2+3;en vocabulario;;Total certified sustainable biofuels and La Mede biorefinery
+carbon credit;carbon credit;E;;0;0;1;maximo;3;1+2+3;cubierto;carbon;ASML plans purchasing and retiring carbon credits
+carbon footprint;carbon footprint;E;;0;0;1;maximo;3;1+2+3;cubierto;footprint;AXA Sanofi Total and ASML measure and reduce footprint
+carbon neutrality;carbon neutrality;E;;0;0;1;maximo;3;1+2+3;en vocabulario;;Sanofi 2050 pledge and AXA 2025 operations target
+carbon offset;carbon offset;E;;0;0;1;maximo;3;1+2+3;cubierto;carbon;ASML offset portfolio limited to removal projects
+carbon sink;carbon sink;E;;0;0;1;maximo;3;1+2+3;cubierto;carbon;Iberdrola offsets with sinks and Total invests in NBS
+cdp;cdp;E;E/TRANS;0;0;0;maximo;3;1+2+3;en vocabulario;;Sanofi Total and ASML respond to Carbon Disclosure Project
+charging point;charging point;E;;0;1;1;maximo;3;1+2+3;HUECO;;Iberdrola and Total recharging infrastructure targets
+circular economy;circular economy;E;;0;0;1;maximo;3;1+2+3;en vocabulario;;Iberdrola Total Enel ASML circular strategies
+climate action;climate action;E;;0;0;1;maximo;3;1+2+3;cubierto;climate;ASML topic pairing energy efficiency with climate action
+climate change;climate change;E;;0;0;0;maximo;3;1+2+3;en vocabulario;;combated and adapted to by Iberdrola Sanofi Enel ASML
+climate change adaptation;climate change adaptation;E;;0;0;1;maximo;3;1+2+3;cubierto;climate change;Enel adaptation plans and Sanofi adapting to consequences
+climate change mitigation;climate change mitigation;E;;0;0;1;maximo;3;1+2+3;cubierto;climate change;Enel and ASML taxonomy classification of climate actions
+climate resilience;climate resilience;E;;0;0;1;maximo;3;1+2+3;cubierto;climate;Sanofi climate resilience strategy and ASML resilience analysis
+climate risk;climate risk;E;;0;0;1;maximo;3;1+2+3;cubierto;climate;Sanofi Enel and ASML identify climate-related risks
+climate scenario;climate scenario;E;;0;0;1;maximo;3;1+2+3;cubierto;climate;Enel long-term climate scenarios for asset vulnerability
+climate transition plan;climate transition plan;E;;0;0;1;maximo;3;1+2+3;cubierto;transition plan;ASML strategic roadmap toward GHG neutrality
+co2 emission;co2 emission;E;;0;0;1;maximo;3;1+2+3;cubierto;emission;quantified by Iberdrola Total Airbus Stellantis Enel
+corporate average fuel economy;corporate average fuel economy;E;;1;0;1;maximo;3;1+2+3;cubierto;fuel;Stellantis CAFE compliance as bonus payout trigger
+decarbonisation;decarbonization;E;;0;0;0;maximo;3;1+2+3;en vocabulario;;Iberdrola Enel Airbus ASML decarbonisation roadmaps
+deforestation;deforestation;E;;0;0;0;maximo;3;1+2+3;en vocabulario;;Total non-deforestation criterion for biofuel feedstock
+ecosystem;ecosystem;E;;0;0;0;maximo;3;1+2+3;en vocabulario;;Total and Sanofi manage impacts on ecosystems
+electric vehicle;electric vehicle;E;;0;1;1;maximo;3;1+2+3;HUECO;;Iberdrola promotion and Stellantis product regulation
+electrification;electrification;E;;0;1;0;maximo;3;1+2+3;en vocabulario;;Iberdrola Enel electrification of demand ASML of industrial sites
+emission;emission;E;;0;0;0;maximo;3;1+2+3;en vocabulario;;central environmental output word in every industrial report
+emission factor;emission factor;E;;0;0;1;maximo;3;1+2+3;cubierto;emission;Sanofi DEFRA factors and ASML grid emission factors
+emission intensity;emission intensity;E;;0;0;1;maximo;3;1+2+3;cubierto;emission;ASML CO2e per gross profit Iberdrola grams per kWh
+energy attribute certificate;energy attribute certificate;E;;0;0;1;maximo;3;1+2+3;HUECO;;ASML market-based scope 2 accounting instrument
+energy consumption;energy consumption;E;;0;0;1;maximo;3;1+2+3;en vocabulario;;measured and reduced by Sanofi ASML Total
+energy efficiency;energy efficiency;E;;0;0;1;maximo;3;1+2+3;en vocabulario;;Sanofi ASML Iberdrola programmes and product roadmaps
+energy mix;energy mix;E;;0;0;1;maximo;3;1+2+3;en vocabulario;;Enel share of renewable sources in generation mix
+energy saving;energy saving;E;;0;0;1;maximo;3;1+2+3;HUECO;;ASML five-year energy savings master plan
+energy transition;energy transition;E;;0;0;1;maximo;3;1+2+3;en vocabulario;;Iberdrola and Enel central environmental narrative
+environmental compliance;environmental compliance;E;;0;0;1;maximo;3;1+2+3;cubierto;environ\w+;Iberdrola manages environmental compliance by suppliers
+environmental footprint;environmental footprint;E;;0;0;1;maximo;3;1+2+3;cubierto;footprint;Iberdrola corporate environmental footprint Total limiting footprint
+environmental impact;environmental impact;E;;0;0;1;maximo;3;1+2+3;cubierto;environ\w+;assessed by Sanofi Total Iberdrola for sites and products
+environmental impact assessment;environmental impact assessment;E;;0;0;1;maximo;3;1+2+3;cubierto;environ\w+;Total internal rules require assessment for new facilities
+environmental management system;environmental management system;E;;0;0;1;maximo;3;1+2+3;cubierto;environ\w+;Total certified sites and Iberdrola optimisation
+environmental performance;environmental performance;E;;0;0;1;maximo;3;1+2+3;cubierto;environ\w+;Total performance reviewed annually by audit committee
+environmental policy;environmental policy;E;;0;0;1;maximo;3;1+2+3;cubierto;environ\w+;Iberdrola policy and AXA board review of environmental policy
+environmental protection;environmental protection;E;;0;0;1;maximo;3;1+2+3;cubierto;environ\w+;Total provisions employee training and site measures
+environmental risk;environmental risk;E;;0;0;1;maximo;3;1+2+3;cubierto;environ\w+;Total structured management policy for environmental risks
+eu taxonomy;eu taxonomy;E;E/TRANS;0;0;1;maximo;3;1+2+3;en vocabulario;;Airbus ASML Deutsche Boerse eligibility and alignment disclosure
+food waste;food waste;E;;1;0;1;maximo;3;1+2+3;cubierto;waste;Ahold healthy and sustainable KPI and GRI correction
+ghg neutrality;ghg neutrality;E;;0;0;1;maximo;3;1+2+3;cubierto;ghg;ASML value chain neutrality ambition by 2040
+ghg protocol;ghg protocol;E;;0;0;1;maximo;3;1+2+3;cubierto;ghg;Sanofi and ASML calculate emissions per GHG Protocol
+global warming;global warming;E;;0;0;1;maximo;3;1+2+3;en vocabulario;;limiting warming to 1.5 degrees at Sanofi and ASML
+green bond;green bond;E;;0;0;1;maximo;3;1+2+3;en vocabulario;;Iberdrola eligible green projects and ASML green bond framework
+green building;green building;E;;0;0;1;maximo;3;1+2+3;HUECO;;ASML new offices meeting latest green building standards
+green deal;green deal;E;;0;0;0;maximo;3;1+2+3;HUECO;;Iberdrola cites EU Green Deal as recovery instrument
+green electricity;green electricity;E;;0;0;1;maximo;3;1+2+3;cubierto;electricity;ASML direct purchase agreements in Netherlands Taiwan Korea
+green financing;green financing;E;;0;0;1;maximo;3;1+2+3;HUECO;;Iberdrola principal finance instrument for sustainable growth
+green hydrogen;green hydrogen;E;;1;0;1;maximo;3;1+2+3;en vocabulario;;Iberdrola and Total industrial production projects
+greenhouse gas emission;greenhouse gas emission;E;;0;0;1;maximo;3;1+2+3;cubierto;greenhouse;bare gas means natural gas here so phrase needed
+hydroelectric;hydroelectric;E;;1;0;0;maximo;3;1+2+3;en vocabulario;;Iberdrola and Enel generation technology breakdown
+internal carbon price;internal carbon price;E;;0;0;1;maximo;3;1+2+3;cubierto;carbon;ASML sets 200 euro per tonne for investment decisions
+iso 14001;iso 14001;E;;0;0;0;maximo;3;1+2+3;en vocabulario;;environmental management certification at Total and Iberdrola
+iso 50001;iso 50001;E;;0;0;0;maximo;3;1+2+3;en vocabulario;;Sanofi energy management system certification at 28 sites
+landfill;landfill;E;;0;0;0;maximo;3;1+2+3;en vocabulario;;Sanofi landfill disposal rate target below one percent
+life cycle assessment;life cycle assessment;E;;0;0;1;maximo;3;1+2+3;en vocabulario;;ASML product LCAs and Airbus life cycle analysis methodology
+locked-in emission;locked in emission;E;;0;0;1;maximo;3;1+2+3;cubierto;emission;ASML gas boilers and sold product lifetime emissions
+low-carbon energy;low carbon energy;E;;0;0;1;maximo;3;1+2+3;cubierto;low carbon;Sanofi low-carbon energy policy and ASML alternatives
+natural capital;natural capital;E;;0;0;1;maximo;3;1+2+3;en vocabulario;;Iberdrola IIRC capital and Natural Capitals working group
+net zero;net zero;E;;0;0;0;maximo;3;1+2+3;en vocabulario;;ASML and SBTi corporate net-zero standard terminology
+nox emission;nox emission;E;;1;0;1;maximo;3;1+2+3;cubierto;emission;Total offshore exploration and production atmospheric emissions
+oil spill;oil spill;E;;1;0;1;maximo;3;1+2+3;HUECO;;Total accidental hydrocarbon spill reporting and response
+paris agreement;paris agreement;E;;0;0;0;maximo;3;1+2+3;cubierto;paris\s+agreement;alignment target referenced by Sanofi Total ASML Enel
+photovoltaic plant;photovoltaic plant;E;;1;0;1;maximo;3;1+2+3;cubierto;photovoltaic;Iberdrola solar generation assets in Spain
+physical risk;physical risk;E;;0;0;1;maximo;3;1+2+3;HUECO;;Iberdrola Sanofi Enel distinguish physical from transition risk
+pollution;pollution;E;;0;0;0;maximo;3;1+2+3;en vocabulario;;Iberdrola avoids discharges Total prevents accidental pollution
+power purchase agreement;power purchase agreement;E;;0;0;1;maximo;3;1+2+3;HUECO;;ASML Taiwan PPA and Sanofi Enel Mexico agreement
+protected area;protected area;E;;0;0;1;maximo;3;1+2+3;HUECO;;Total avoids exploration in IUCN and Ramsar areas
+recycling;recycling;E;;0;0;0;maximo;3;1+2+3;en vocabulario;;Iberdrola office waste Sanofi 3R rate ASML materials
+reforestation;reforestation;E;;0;0;0;maximo;3;1+2+3;en vocabulario;;Iberdrola trees programme and Total site redevelopment
+refrigerant;refrigerant;E;;0;0;0;maximo;3;1+2+3;en vocabulario;;Sanofi switches to lower global warming potential substitutes
+renewable electricity;renewable electricity;E;;0;0;1;maximo;3;1+2+3;cubierto;electricity;Sanofi RE100 pledge and ASML 100 percent target
+renewable energy;renewable energy;E;;0;0;1;maximo;3;1+2+3;cubierto;renewable;bare renewable ambiguous so phrase retained
+residual emission;residual emission;E;;0;0;1;maximo;3;1+2+3;cubierto;emission;ASML compensates residual emissions starting 2025
+science based target;science based target;E;;0;0;1;maximo;3;1+2+3;en vocabulario;;validated reduction targets at Sanofi and ASML
+site remediation;site remediation;E;;0;0;1;maximo;3;1+2+3;HUECO;;Total reports 114 decommissioned sites under remediation
+smart grid;smart grid;E;;1;0;1;maximo;3;1+2+3;HUECO;;Iberdrola grid digitalisation to lead energy transition
+smart meter;smart meter;E;;1;0;1;maximo;3;1+2+3;HUECO;;Iberdrola UK rollout and Enel second generation meters
+soil contamination;soil contamination;E;;0;0;1;maximo;3;1+2+3;HUECO;;Total assesses soil and groundwater contamination
+solar panel;solar panel;E;;0;0;1;maximo;3;1+2+3;cubierto;solar;ASML installs panels on own buildings for own consumption
+sulfur dioxide emission;sulfur dioxide emission;E;;1;0;1;maximo;3;1+2+3;cubierto;emission;Total refinery SO2 reduction target since 2010
+supply chain emission;supply chain emission;E;;0;0;1;maximo;3;1+2+3;en vocabulario;;ASML upstream scope 3 target separate from social supply chain
+sustainable aviation fuel;sustainable aviation fuel;E;;1;0;1;maximo;3;1+2+3;cubierto;sustainable;Airbus SAF investments and ASML freight purchases
+sustainable mobility;sustainable mobility;E;;0;0;1;maximo;3;1+2+3;cubierto;sustainable;Iberdrola plan and ASML Dutch business mobility pledge
+sustainable packaging;sustainable packaging;E;;0;1;1;maximo;3;1+2+3;cubierto;sustainable;Ahold healthy and sustainable committee KPI
+taxonomy-aligned;taxonomy aligned;E;E/TRANS;0;0;1;maximo;3;1+2+3;en vocabulario;;Airbus turnover of environmentally sustainable activities
+taxonomy-eligible;taxonomy eligible;E;E/TRANS;0;0;1;maximo;3;1+2+3;en vocabulario;;Airbus and ASML classify activities as taxonomy eligible
+tcfd;tcfd;E;;0;0;0;maximo;3;1+2+3;en vocabulario;;Sanofi and Enel apply Task Force climate disclosure recommendations
+transition risk;transition risk;E;;0;0;1;maximo;3;1+2+3;HUECO;;regulatory and market risk tied to emission reduction goals
+waste generated;waste generated;E;;0;0;1;maximo;3;1+2+3;cubierto;waste;Ahold GRI 306-3 tonnage disclosure
+waste management;waste management;E;;0;0;1;maximo;3;1+2+3;cubierto;waste;Sanofi and Total residual waste and recovery plans
+waste recycled;waste recycled;E;;0;0;1;maximo;3;1+2+3;cubierto;waste;Ahold percentage of total waste recycled
+wastewater;wastewater;E;;0;0;0;maximo;3;1+2+3;en vocabulario;;Total treatment plants and discharges into wastewater
+water consumption;water consumption;E;;0;0;1;maximo;3;1+2+3;cubierto;water;Ahold and Sanofi report own operations water use
+water discharge;water discharge;E;;0;0;1;maximo;3;1+2+3;cubierto;water;Total hydrocarbon content of onshore and offshore discharges
+water footprint;water footprint;E;;0;0;1;maximo;3;1+2+3;cubierto;footprint;Iberdrola water scarcity footprint verification
+water stress;water stress;E;;0;0;1;maximo;3;1+2+3;cubierto;water;Total WRI Aqueduct assessment and Sanofi priority sites
+water withdrawal;water withdrawal;E;;0;0;1;maximo;3;1+2+3;cubierto;water;Total fresh water withdrawals and Sanofi water indicator
+wind farm;wind farm;E;;1;0;1;maximo;3;1+2+3;en vocabulario;;Iberdrola offshore and onshore generation assets
+anti-corruption;anti corruption;G;;0;0;0;maximo;3;1+2+3;cubierto;corruption;Airbus policy Total PACI Sanofi GRI 205 disclosure
+antitrust;antitrust;G;;0;0;0;maximo;3;1+2+3;en vocabulario;;AB InBev and ASML competition law compliance exposure
+articles of association;article of association;G;;0;0;1;maximo;3;1+2+3;HUECO;;Ahold Ferrari ASML basic governance rules
+audit committee;audit committee;G;;0;0;1;maximo;3;1+2+3;en vocabulario;;Iberdrola AXA Ferrari PSA oversight of reporting and risk
+auditor independence;auditor independence;G;;0;0;1;maximo;3;1+2+3;HUECO;;Deutsche Boerse statement and AXA declaration
+board attendance;board attendance;G;;0;0;1;maximo;3;1+2+3;HUECO;;Ahold and Ferrari report meeting attendance rates
+board committee;board committee;G;;0;0;1;maximo;3;1+2+3;HUECO;;audit remuneration and nomination committees across firms
+board diversity;board diversity;G;;0;0;1;maximo;3;1+2+3;cubierto;diversity;Ferrari 30 percent policy and Dutch gender board legislation
+board evaluation;board evaluation;G;;0;0;1;maximo;3;1+2+3;HUECO;;Ahold and Enel periodic assessment of own performance
+board of directors;board of director;G;;0;0;1;maximo;3;1+2+3;HUECO;;Iberdrola AXA Ferrari Total governing body
+business continuity;business continuity;G;;0;0;1;maximo;3;1+2+3;HUECO;;Ahold committee topic and Sanofi continuity plans
+business ethics;business ethics;G;;0;0;1;maximo;3;1+2+3;en vocabulario;;Sanofi training modules and Airbus key risk area
+business integrity;business integrity;G;;0;0;1;maximo;3;1+2+3;cubierto;integrity;Airbus and Nokia programme name for ethics compliance
+code of conduct;code of conduct;G;;0;0;1;maximo;3;1+2+3;en vocabulario;;Total Airbus employee and supplier conduct rules
+code of ethics;code of ethics;G;;0;0;1;maximo;3;1+2+3;en vocabulario;;Iberdrola Ahold AXA PSA behavioural rules
+compliance risk;compliance risk;G;;0;0;1;maximo;3;1+2+3;en vocabulario;;Ahold very low appetite for regulatory breaches
+conflict of interest;conflict of interest;G;;0;0;1;maximo;3;1+2+3;en vocabulario;;Ahold Ferrari AB InBev reporting and abstention duties
+corporate governance;corporate governance;G;;0;0;1;maximo;3;1+2+3;cubierto;governance;Dutch Belgian codes and governance statements throughout sample
+corporate governance code;corporate governance code;G;;0;0;1;maximo;3;1+2+3;cubierto;governance;compliance statements at Ahold AB InBev Ferrari
+crisis management;crisis management;G;;0;0;1;maximo;3;1+2+3;HUECO;;Sanofi and Total global crisis management systems
+cybersecurity;cybersecurity;G;;0;0;0;maximo;3;1+2+3;en vocabulario;;Iberdrola analyses Nokia threats Stellantis vehicle guidelines
+data privacy;data privacy;G;;0;0;1;maximo;3;1+2+3;en vocabulario;;Ahold audit committee update and Airbus compliance area
+data protection;data protection;G;;0;0;1;maximo;3;1+2+3;en vocabulario;;ASML regulatory area and Nokia privacy breach risk
+enterprise risk management;enterprise risk management;G;;0;0;1;maximo;3;1+2+3;cubierto;risk management;Ahold ERM programme and Airbus ERM audits
+esg committee;esg committee;G;;0;0;1;maximo;3;1+2+3;cubierto;esg;ASML supervisory board committee discussing climate transition plan
+executive committee;executive committee;G;;0;0;1;maximo;3;1+2+3;HUECO;;Ahold Iberdrola Total senior management body
+export control;export control;G;;0;1;1;maximo;3;1+2+3;HUECO;;Airbus and ASML compliance risk area
+external auditor;external auditor;G;;0;0;1;maximo;3;1+2+3;HUECO;;Ahold and Iberdrola appointment and reporting
+general meeting of shareholders;general meeting of shareholder;G;;0;0;1;maximo;3;1+2+3;HUECO;;Ahold Iberdrola Ferrari approve pay and accounts
+independent director;independent director;G;;0;0;1;maximo;3;1+2+3;en vocabulario;;AXA Airbus Ferrari board composition requirement
+information security;information security;G;;0;0;1;maximo;3;1+2+3;en vocabulario;;Ahold committee update on information and cybersecurity
+internal audit;internal audit;G;;0;0;1;maximo;3;1+2+3;en vocabulario;;Ahold and Ferrari independent objective assurance function
+internal control;internal control;G;;0;0;1;maximo;3;1+2+3;en vocabulario;;Ahold AXA ASML PSA control frameworks and testing
+internal control over financial reporting;internal control over financial reporting;G;;0;0;1;maximo;3;1+2+3;cubierto;internal control;Ferrari ASML AXA ICOFR programmes and reports
+lobbying;lobbying;G;;0;0;0;maximo;3;1+2+3;en vocabulario;;Total sustainable lobbying and Airbus responsible lobbying charter
+malus;malus;G;;0;0;0;maximo;3;1+2+3;HUECO;;AXA variable compensation deferral subject to malus mechanism
+management board;management board;G;;0;0;1;maximo;3;1+2+3;HUECO;;Ahold and ASML executive governing body
+nomination committee;nomination committee;G;;0;0;1;maximo;3;1+2+3;HUECO;;Ahold and Deutsche Boerse selection and succession duties
+pay ratio;pay ratio;G;;0;0;1;maximo;3;1+2+3;HUECO;;Ahold CEO compared to average associate remuneration
+regulatory compliance;regulatory compliance;G;;0;0;1;maximo;3;1+2+3;en vocabulario;;Sanofi obligations and ASML violation of laws risk
+related party transaction;related party transaction;G;;0;0;1;maximo;3;1+2+3;cubierto;related party;Ferrari approval process and Enel disclosure
+remuneration committee;remuneration committee;G;;0;0;1;maximo;3;1+2+3;cubierto;remuneration;Ahold AXA Ferrari advise board on pay
+remuneration policy;remuneration policy;G;;0;0;1;maximo;3;1+2+3;cubierto;remuneration;Ahold AXA ASML Ferrari approved by shareholders
+risk appetite;risk appetite;G;;0;0;1;maximo;3;1+2+3;en vocabulario;;Ahold per category and AXA Solvency limit level
+risk management;risk management;G;;0;0;1;maximo;3;1+2+3;en vocabulario;;Ahold AXA Enel frameworks committees and policies
+shareholder rights;shareholder right;G;;0;0;1;maximo;3;1+2+3;HUECO;;Ahold corporate governance statement section on shareholder authority
+short-term incentive;short term incentive;G;;0;0;1;maximo;3;1+2+3;HUECO;;ASML and Ahold annual cash incentive plans
+succession planning;succession planning;G;;0;0;1;maximo;3;1+2+3;en vocabulario;;Ahold and AXA board and management succession processes
+supervisory board;supervisory board;G;;0;0;1;maximo;3;1+2+3;HUECO;;Ahold Deutsche Boerse ASML PSA oversight body
+supplier code of conduct;supplier code of conduct;G;G/S;0;0;1;maximo;3;1+2+3;cubierto;code of conduct;Airbus and ASML impose labour and conduct requirements
+sustainability committee;sustainability committee;G;G/TRANS;0;0;1;maximo;3;1+2+3;cubierto;sustainability;Ahold Ferrari Iberdrola AXA board committees on sustainability
+tax transparency;tax transparency;G;;0;0;1;maximo;3;1+2+3;en vocabulario;;Iberdrola report on tax transparency of the group
+variable remuneration;variable remuneration;G;;0;0;1;maximo;3;1+2+3;cubierto;remuneration;Iberdrola and AXA annual bonus components
+access to energy;access to energy;S;;1;0;1;maximo;3;1+2+3;HUECO;;Iberdrola Electricity for all programme target
+access to healthcare;access to healthcare;S;;1;0;1;maximo;3;1+2+3;HUECO;;Sanofi patient access as absolute priority in ecodesign
+accident rate;accident rate;S;;0;0;1;maximo;3;1+2+3;HUECO;;Iberdrola injury rate per average number of employees
+bioethics;bioethic;S;;1;0;0;maximo;3;1+2+3;HUECO;;Sanofi committee and advisory bioethics council
+child labour;child labor;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;Total strengthened supplier selection methodology
+childcare;childcare;S;;0;0;0;maximo;3;1+2+3;HUECO;;Airbus on-site kindergarten and sponsored childcare services
+clinical trial;clinical trial;S;;1;0;0;maximo;3;1+2+3;HUECO;;Sanofi transparency commitments and bioethics oversight
+collective bargaining agreement;collective bargaining agreement;S;;0;0;1;maximo;3;1+2+3;cubierto;collective bargaining;Ahold ASML Airbus employee coverage disclosure
+community engagement;community engagement;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;ASML investment in Brainport Eindhoven region
+conflict mineral;conflict mineral;S;;1;0;1;maximo;3;1+2+3;HUECO;;Nokia supplier sustainability evaluation input
+corporate volunteering;corporate volunteering;S;;0;0;1;maximo;3;1+2+3;HUECO;;Iberdrola volunteers and International Volunteer Day
+counterfeiting;counterfeiting;S;;1;0;0;maximo;3;1+2+3;HUECO;;Sanofi tamper-proof packaging authentication and serialization
+customer satisfaction;customer satisfaction;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;Ferrari KPI Iberdrola service quality ASML customer trust
+diversity equity and inclusion;diversity equity and inclusion;S;;0;0;1;maximo;3;1+2+3;cubierto;diversity;Ahold global DE&I framework and 100/100/100 aspiration
+employee engagement;employee engagement;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;Sanofi people survey Ahold associate engagement survey
+employee training;employee training;S;;0;0;1;maximo;3;1+2+3;HUECO;;Iberdrola training hours and Sanofi iLearn modules
+employee turnover;employee turnover;S;;0;0;1;maximo;3;1+2+3;HUECO;;Ahold associate turnover Sanofi voluntary turnover rate
+equal pay;equal pay;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;Iberdrola target to maintain equal pay
+fair labour condition;fair labor condition;S;;0;0;1;maximo;3;1+2+3;cubierto;fair labor;ASML sub-topic with works councils and unions
+female representation;female representation;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;Ahold senior vice president and above metric
+forced labour;forced labor;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;Total prevention as major supply chain concern
+gender balance;gender balance;S;;0;0;1;maximo;3;1+2+3;cubierto;gender;Ahold 100 percent gender balance aspiration
+gender diversity;gender diversity;S;;0;0;1;maximo;3;1+2+3;cubierto;diversity;Ahold reports associates and boards by gender
+gender equality;gender equality;S;;0;0;1;maximo;3;1+2+3;cubierto;equality;Iberdrola promotes women in managerial positions
+harmful consumption;harmful consumption;S;;1;0;1;maximo;3;1+2+3;HUECO;;AB InBev agenda to reduce harmful alcohol consumption
+healthy eating;healthy eating;S;;1;0;1;maximo;3;1+2+3;HUECO;;Ahold customer health and nutrition ambition
+human rights;human right;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;Total salient issues ASML due diligence Airbus policies
+human rights due diligence;human right due diligence;S;;0;0;1;maximo;3;1+2+3;cubierto;due diligence;ASML process supporting UN Guiding Principles
+ilo convention;ilo convention;S;;0;0;1;maximo;3;1+2+3;cubierto;ilo;Total and Airbus reference fundamental ILO conventions
+inclusive insurance;inclusive insurance;S;;1;0;1;maximo;3;1+2+3;cubierto;inclusive;AXA promotion of insurance for vulnerable populations
+labour law;labor law;S;;0;0;1;maximo;3;1+2+3;HUECO;;ASML risk process monitors compliance with local labour laws
+living wage;living wage;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;Airbus commitment and ASML benchmark assessment
+local community;local community;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;Ahold Total ASML Ferrari community relationships
+medical ethics;medical ethics;S;;1;0;1;maximo;3;1+2+3;HUECO;;Sanofi scientific and medical integrity section
+minimum wage;minimum wage;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;ASML adequate wage review by country
+musculoskeletal disorder;musculoskeletal disorder;S;;0;0;0;maximo;3;1+2+3;HUECO;;Total main cause of occupational illnesses
+non-discrimination;non discrimination;S;;0;0;0;maximo;3;1+2+3;cubierto;discrimination;Ferrari material topic and PSA anti-discrimination policy
+occupational health and safety;occupational health and safety;S;;0;0;1;maximo;3;1+2+3;cubierto;occupational health;Ahold audit committee Iberdrola Total employee safety
+occupational illness;occupational illness;S;;0;0;1;maximo;3;1+2+3;HUECO;;Total records and trains personnel on prevention
+patient safety;patient safety;S;;1;0;1;maximo;3;1+2+3;HUECO;;Sanofi clinical trials and medical ethics section
+pay transparency;pay transparency;S;;0;0;1;maximo;3;1+2+3;cubierto;transparency;ASML preparing for EU Pay Transparency Directive
+philanthropy;philanthropy;S;;0;0;0;maximo;3;1+2+3;en vocabulario;;PSA partnerships and philanthropy initiatives
+product quality;product quality;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;Sanofi quality management system and Ferrari material topic
+product safety;product safety;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;Ahold product safety and Ferrari quality of products
+psychological safety;psychological safety;S;;0;0;1;maximo;3;1+2+3;HUECO;;Ahold training and supervisory board deep dive
+psychosocial risk;psychosocial risk;S;;0;0;1;maximo;3;1+2+3;HUECO;;Total global PSR prevention programme in 11 languages
+responsible sourcing;responsible sourcing;S;S/TRANS;0;0;1;maximo;3;1+2+3;en vocabulario;;ASML sustainable sourcing and Iberdrola supplier sustainability policies
+road safety;road safety;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;AB InBev UN target and Total safety prize
+social commitment;social commitment;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;Iberdrola key figures section on community action
+social dialogue;social dialogue;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;PSA informing consulting and negotiating with personnel
+societal impact;societal impact;S;S/TRANS;0;0;1;maximo;3;1+2+3;HUECO;;Enel Total Societal Impact economic social environmental indicators
+talent attraction and retention;talent attraction and retention;S;;0;0;1;maximo;3;1+2+3;HUECO;;Ferrari material topic and Airbus remuneration rationale
+talent development;talent development;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;Ahold cultivate best talent Airbus leadership university
+trade union;trade union;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;ASML and PSA negotiation with employee representatives
+training hour;training hour;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;Iberdrola per employee metric four times European average
+voluntary principles on security and human rights;voluntary principle on security and human right;S;;1;1;0;maximo;3;1+2+3;cubierto;human right;Total governs security forces and private providers
+work-life balance;work life balance;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;Airbus flexible hours and Ferrari material topic
+workforce;workforce;S;;0;0;0;maximo;3;1+2+3;HUECO;;composition and headcount disclosure at Sanofi Airbus ASML
+working condition;working condition;S;;0;0;1;maximo;3;1+2+3;HUECO;;Total assessed by GoodCorporation Airbus regulated by ILO
+works council;works council;S;;0;0;1;maximo;3;1+2+3;en vocabulario;;ASML engagement on terms and conditions of employment
+2030 agenda;2030 agenda;TRANS;;0;0;1;maximo;3;1+2+3;HUECO;;Iberdrola commitment to United Nations 2030 Agenda
+corporate social responsibility;corporate social responsibility;TRANS;;0;0;0;maximo;3;1+2+3;cubierto;social responsibility;Total and PSA use CSR as cross-pillar umbrella
+csrd;csrd;TRANS;;0;0;0;maximo;3;1+2+3;en vocabulario;;Corporate Sustainability Reporting Directive implementation discussed by four firms
+double materiality;double materiality;TRANS;;0;0;1;maximo;3;1+2+3;en vocabulario;;Ahold and ASML CSRD impact and financial materiality
+dow jones sustainability index;dow jone sustainability index;TRANS;;0;0;0;maximo;3;1+2+3;cubierto;sustainability;AXA and Total link pay and reputation to DJSI
+ecovadis;ecovadis;TRANS;;0;0;0;maximo;3;1+2+3;en vocabulario;;Total gold status and Nokia supplier sustainability rating
+esg;esg;TRANS;;0;0;0;maximo;3;1+2+3;en vocabulario;;explicit label for environmental social and governance matters
+esg data;esg data;TRANS;;0;0;1;maximo;3;1+2+3;cubierto;esg;Deutsche Boerse describes growing demand for high-quality ESG data
+esg rating;esg rating;TRANS;;0;0;1;maximo;3;1+2+3;cubierto;esg;Nokia and Total report external ESG rating scores
+esg reporting;esg reporting;TRANS;;0;0;1;maximo;3;1+2+3;cubierto;esg;Deutsche Boerse and Ahold audit committees oversee ESG disclosure
+esg risk;esg risk;TRANS;;0;0;1;maximo;3;1+2+3;cubierto;esg;Ahold risk category covering environmental social governance developments
+esg topic;esg topic;TRANS;;0;0;1;maximo;3;1+2+3;cubierto;esg;Ahold ESG statements tag each indicator with an ESG topic
+esrs;esr;TRANS;;0;0;0;maximo;3;1+2+3;en vocabulario;;ASML reports under European Sustainability Reporting Standards
+external assurance;external assurance;TRANS;;0;0;1;maximo;3;1+2+3;HUECO;;Iberdrola sustainability report prepared and externally assured
+ftse4good;ftse4good;TRANS;;0;0;0;maximo;3;1+2+3;en vocabulario;;Iberdrola and Total cite index membership as ESG recognition
+global reporting initiative;global reporting initiative;TRANS;;0;0;0;maximo;3;1+2+3;en vocabulario;;Ahold and Sanofi report against GRI standards
+gri standard;gri standard;TRANS;;0;0;1;maximo;3;1+2+3;cubierto;gri;GRI indicator references throughout Ahold and Sanofi disclosures
+integrated report;integrated report;TRANS;;0;0;1;maximo;3;1+2+3;HUECO;;Iberdrola and AXA publish IIRC-based integrated reports
+limited assurance;limited assurance;TRANS;;0;0;1;maximo;3;1+2+3;HUECO;;PSA independent third party assurance on non-financial statement
+material topic;material topic;TRANS;;0;0;1;maximo;3;1+2+3;en vocabulario;;Ahold GRI material topics and Ferrari relevant topics
+materiality assessment;materiality assessment;TRANS;;0;0;1;maximo;3;1+2+3;cubierto;materiality;bare materiality is an audit term so phrase required
+materiality matrix;materiality matrix;TRANS;;0;0;1;maximo;3;1+2+3;cubierto;materiality;Ferrari plots sustainability topics by stakeholder relevance
+non-financial information;non financial information;TRANS;;0;0;1;maximo;3;1+2+3;cubierto;non financial;Iberdrola statement of non-financial information PSA non-financial statement
+non-financial rating agency;non financial rating agency;TRANS;;0;0;1;maximo;3;1+2+3;cubierto;non financial;Total lists ratings from non-financial rating agencies
+non-financial reporting;non financial reporting;TRANS;;0;0;1;maximo;3;1+2+3;cubierto;non financial;Ahold audit committee oversees financial and non-financial reporting processes
+oecd guidelines for multinational enterprises;oecd guideline for multinational enterpris;TRANS;;0;0;0;maximo;3;1+2+3;cubierto;oecd guideline;Ahold references framework in shaping sustainable retailing strategy
+sasb;sasb;TRANS;;0;0;0;maximo;3;1+2+3;en vocabulario;;Airbus indexes business integrity disclosure to SASB
+sfdr;sfdr;TRANS;;0;1;0;maximo;3;1+2+3;en vocabulario;;Deutsche Boerse cites sustainable finance disclosure regulation demand
+stakeholder;stakeholder;TRANS;;0;0;0;maximo;3;1+2+3;en vocabulario;;pervasive addressee of ESG disclosure in all seventeen reports
+stakeholder engagement;stakeholder engagement;TRANS;;0;0;1;maximo;3;1+2+3;cubierto;stakeholder;Ferrari Enel and ASML describe engaging stakeholders on ESG
+sustainability;sustainability;TRANS;;0;0;0;maximo;3;1+2+3;en vocabulario;;umbrella word used by every firm across the three pillars
+sustainability due diligence;sustainability due diligence;TRANS;G/TRANS;0;0;1;maximo;3;1+2+3;cubierto;sustainability;Ahold audit committee ESG reporting topic
+sustainability-linked bond;sustainability linked bond;TRANS;;0;0;1;maximo;3;1+2+3;cubierto;sustainability;Ahold board approved issuance underscoring healthy and sustainable approach
+sustainability report;sustainability report;TRANS;;0;0;1;maximo;3;1+2+3;cubierto;sustainability;Iberdrola and Ferrari publish separate sustainability reporting
+sustainability strategy;sustainability strategy;TRANS;;0;0;1;maximo;3;1+2+3;cubierto;sustainability;AXA performance shares tied to sustainability strategy
+sustainability target;sustainability target;TRANS;;0;0;1;maximo;3;1+2+3;cubierto;sustainability;Ahold health and sustainability targets monitored by board committee
+sustainable development;sustainable development;TRANS;;0;0;0;maximo;3;1+2+3;cubierto;sustainable;Iberdrola plan and Sanofi programme spanning environment society governance
+sustainable development goal;sustainable development goal;TRANS;;0;0;1;maximo;3;1+2+3;cubierto;sustainable;SDGs cited by Ahold AB InBev Sanofi Ferrari
+un global compact;un global compact;TRANS;;0;0;1;maximo;3;1+2+3;en vocabulario;;Total renewed as LEAD company in the Global Compact
+breeam;breeam;E;;0;0;0;alto;2;1+3;HUECO;;green building certification cited by Sanofi and ASML
+cage-free egg;cage free egg;E;;1;0;1;alto;2;2+3;HUECO;;indicador propio de huevos de gallinas libres de jaula
+carbon emission;carbon emission;E;;0;0;0;alto;2;2+3;cubierto;emission;reduccion de emisiones de carbono en Ahold y AXA
+carbon neutral;carbon neutral;E;;0;0;0;alto;2;2+3;cubierto;carbon;flota y operaciones carbon neutral
+carbon removal;carbon removal;E;;0;0;1;alto;2;2+3;cubierto;carbon;solo se aceptan offsets de remocion
+circularity;circularity;E;;0;0;0;alto;2;2+3;en vocabulario;;informe de circularidad de Iberdrola
+climate hazard;climate hazard;E;;0;0;1;alto;2;2+3;cubierto;climate;peligros climaticos evaluados a nivel de emplazamiento
+climate-related risk;climate related risk;E;;0;0;1;alto;2;2+3;cubierto;climate;riesgos y oportunidades relacionados con el clima
+climate scenario analysis;climate scenario analysis;E;;0;0;1;alto;2;1+3;cubierto;scenario analysis;Sanofi TCFD case studies since bare scenario analysis means pay
+coal-fired power plant;coal fired power plant;E;;1;0;1;alto;2;2+3;cubierto;coal;cierre de centrales de carbon en Espana e Italia
+corsia;corsia;E;;1;0;0;alto;2;1+2;HUECO;;Airbus cites aviation carbon offsetting sustainability reference
+diesel emission;diesel emission;E;;1;0;1;alto;2;1+3;cubierto;emission;Stellantis provision for US criminal emissions investigations
+ecodesign;ecodesign;E;;0;0;0;alto;2;1+3;en vocabulario;;Iberdrola and Sanofi build environmental criteria into design
+emission reduction target;emission reduction target;E;;0;0;1;alto;2;1+2;cubierto;emission;SBTi validated absolute reduction targets at Sanofi and ASML
+environmental indicator;environmental indicator;E;;0;0;1;alto;2;1+2;cubierto;environ\w+;Total monitors indicators to adapt protection measures
+environmental product declaration;environmental product declaration;E;;0;0;1;alto;2;1+3;cubierto;environ\w+;Iberdrola develops new EPDs with EDP
+extreme weather event;extreme weather event;E;;0;0;1;alto;2;2+3;HUECO;;eventos meteorologicos extremos como riesgo fisico
+flaring;flaring;E;;1;0;0;alto;2;1+2;HUECO;;Total stricter policy on acid gas flaring
+fossil fuel;fossil fuel;E;;0;0;0;alto;2;2+3;cubierto;fuel;reduccion del uso de combustibles fosiles
+ghg emission;ghg emission;E;;0;0;0;alto;2;2+3;cubierto;emission;abreviatura usada por ASML, Nokia, Sanofi
+green recovery;green recovery;E;;0;0;1;alto;2;2+3;HUECO;;Green Recovery tras la crisis sanitaria
+groundwater contamination;groundwater contamination;E;;0;0;1;alto;2;2+3;HUECO;;evaluacion de contaminacion de aguas subterraneas
+installed renewable capacity;installed renewable capacity;E;;1;0;1;alto;2;2+3;cubierto;renewable;capacidad renovable instalada en GW del sector electrico
+leed;leed;E;;0;0;0;alto;2;1+3;en vocabulario;;green building certification cited by Sanofi and ASML
+natural resource;natural resource;E;;0;0;1;alto;2;1+2;HUECO;;Total and Iberdrola limit use of natural resources
+offshore wind;offshore wind;E;;1;0;1;alto;2;2+3;HUECO;;cartera de eolica marina de Iberdrola
+ozone layer;ozone layer;E;;0;0;1;alto;2;2+3;HUECO;;sustitucion de equipos con sustancias que danan el ozono
+palm oil;palm oil;E;;1;0;1;alto;2;1+3;HUECO;;Total reinforced control of palm oil supplier sustainability
+pharmaceutical residue;pharmaceutical residue;E;;1;0;1;alto;2;1+2;HUECO;;Sanofi plans to manage residues in the environment
+plastic waste;plastic waste;E;;0;1;1;alto;2;1+3;cubierto;plastic;Total founding member of Alliance to End Plastic Waste
+re100;re100;E;;0;0;0;alto;2;2+3;HUECO;;compromiso de electricidad 100% renovable de Sanofi
+recycled content;recycled content;E;;0;0;1;alto;2;1+3;cubierto;recycl\w+;ASML aims to use more recycled content in raw materials
+sbti;sbti;E;;0;0;0;alto;2;1+2;en vocabulario;;Science Based Targets initiative validates corporate targets
+scope 1 emission;scope 1 emission;E;;0;0;1;alto;2;2+3;cubierto;emission;scope solo es ambiguo - emisiones directas
+scope 2 emission;scope 2 emission;E;;0;0;1;alto;2;2+3;cubierto;emission;scope solo es ambiguo - emisiones indirectas de energia
+scope 3 emission;scope 3 emission;E;;0;0;1;alto;2;2+3;cubierto;emission;scope solo es ambiguo - emisiones de la cadena de valor
+voluntary emission reduction certificate;voluntary emission reduction certificate;E;;0;0;1;alto;2;2+3;cubierto;emission;VER para compensar emisiones residuales
+waste;waste;E;;0;0;0;alto;2;2+3;en vocabulario;;residuos generados, reciclados y a vertedero
+anti-bribery;anti bribery;G;;0;0;0;alto;2;2+3;cubierto;bribery;certificacion ISO 37001 de sistemas antisoborno
+board composition;board composition;G;;0;0;1;alto;2;2+3;HUECO;;composicion y perfil del consejo evaluados periodicamente
+board independence;board independence;G;;0;0;1;alto;2;1+2;HUECO;;Ahold Ferrari AXA annually confirm independent members
+board tenure;board tenure;G;;0;0;1;alto;2;2+3;HUECO;;mandatos y reeleccion de consejeros
+bribery;bribery;G;;0;0;0;alto;2;1+2;en vocabulario;;AB InBev FCPA and UK Bribery Act exposure
+change of control;change of control;G;;0;0;1;alto;2;2+3;HUECO;;clausulas de cambio de control en Ferrari
+compliance programme;compliance program;G;;0;0;1;alto;2;1+2;en vocabulario;;Airbus Ethics and Compliance Iberdrola compliance unit
+corporate governance statement;corporate governance statement;G;;0;0;1;alto;2;1+2;cubierto;governance;Ahold requirement under Dutch decree on management reports
+corruption;corruption;G;;0;0;0;alto;2;2+3;en vocabulario;;entornos corruptos como riesgo en mercados emergentes
+deferred prosecution agreement;deferred prosecution agreement;G;;0;0;1;alto;2;1+3;HUECO;;Airbus closed agreements in US UK and France
+ethical culture;ethical culture;G;;0;0;1;alto;2;1+2;cubierto;ethical;Iberdrola Ethisphere certification Airbus culture of integrity
+ethics training;ethics training;G;;0;0;1;alto;2;2+3;HUECO;;modulos de formacion en etica e integridad en Sanofi
+executive remuneration;executive remuneration;G;;0;0;1;alto;2;1+2;cubierto;remuneration;AXA and Iberdrola senior executive compensation structure
+fraud prevention;fraud prevention;G;;0;0;1;alto;2;2+3;cubierto;fraud;politicas de prevencion y deteccion de fraude
+governance risk and compliance;governance risk and compliance;G;;0;0;1;alto;2;1+2;cubierto;governance;Ahold GRC framework and global GRC committee
+governance structure;governance structure;G;;0;0;1;alto;2;2+3;cubierto;governance;estructura de gobierno descrita por Ahold
+it control;it control;G;;0;0;1;alto;2;2+3;HUECO;;controles generales de tecnologia de la informacion
+key audit matter;key audit matter;G;;0;0;1;alto;2;1+3;HUECO;;Iberdrola AXA PSA auditor reporting requirement
+long-term incentive;long term incentive;G;;0;0;1;alto;2;1+2;HUECO;;ASML AXA Enel share-based long-term plans
+performance share;performance share;G;;0;0;1;alto;2;1+2;HUECO;;AXA and Ferrari conditional share awards on performance
+remuneration report;remuneration report;G;;0;0;1;alto;2;2+3;cubierto;remuneration;informe de remuneraciones anual
+reputation risk;reputation risk;G;;0;0;1;alto;2;1+3;HUECO;;Enel risk catalog and AB InBev business reputation
+responsible lobbying;responsible lobbying;G;;0;0;1;alto;2;2+3;cubierto;lobbying;Responsible Lobbying Charter de Airbus
+responsible tax;responsible tax;G;;0;0;1;alto;2;1+3;HUECO;;Total adherence to B-Team principles for sustainable taxation
+senior independent director;senior independent director;G;;0;0;1;alto;2;1+3;cubierto;independent director;AXA and Stellantis defined role and duties
+three lines of defense;three line of defense;G;;0;0;1;alto;2;2+3;HUECO;;modelo de tres lineas de defensa de Ahold
+voting right;voting right;G;;0;0;1;alto;2;2+3;HUECO;;derechos de voto y acciones de voto especial
+collective labour agreement;collective labor agreement;S;;0;0;1;alto;2;2+3;HUECO;;CLA Metalektro renovado por ASML
+corporate human rights benchmark;corporate human right benchmark;S;;0;0;0;alto;2;1+3;cubierto;human right;Total ranking in the extractive sector
+disability;disability;S;;0;0;0;alto;2;1+3;en vocabulario;;Total employment agreements and ILO business disability network
+employee;employee;S;;0;0;0;alto;2;2+3;HUECO;;plantilla como destinataria de politicas sociales
+employee benefit;employee benefit;S;;0;0;1;alto;2;1+2;HUECO;;Sanofi personalised medical vision and dental coverage
+employee engagement survey;employee engagement survey;S;;0;0;1;alto;2;2+3;cubierto;employee engagement;associate engagement survey anual de Ahold
+employee share ownership;employee share ownership;S;;0;0;1;alto;2;1+2;HUECO;;Airbus and Nokia employee share purchase plans
+employee wellness programme;employee wellness program;S;;0;0;1;alto;2;2+3;cubierto;employee\s+well\w*;programa Take Care de Sanofi
+food bank;food bank;S;;1;0;1;alto;2;1+2;HUECO;;Ahold works with food banks to feed the undernourished
+inclusion;inclusion;S;;0;0;0;alto;2;1+3;en vocabulario;;Ahold ASML Airbus inclusive workplace ambition
+inclusive workplace;inclusive workplace;S;;0;0;1;alto;2;2+3;cubierto;inclusive;entorno inclusivo donde todas las voces cuentan
+injury rate;injury rate;S;;0;0;1;alto;2;2+3;cubierto;injury;accidentes con baja por numero medio de empleados
+nutrition;nutrition;S;;1;0;0;alto;2;1+2;en vocabulario;;Ahold dietitians podcast and healthier product ranges
+parental leave;parental leave;S;;0;0;1;alto;2;1+2;HUECO;;Airbus maternity and paternity benefits beyond statutory minimum
+product stewardship;product stewardship;S;;1;0;1;alto;2;1+2;HUECO;;Total product steward ensures compliance at market release
+remote working;remote working;S;;0;0;1;alto;2;2+3;HUECO;;flexibilidad de trabajo remoto e hibrido
+shared value;shared value;S;S/TRANS;0;0;1;alto;2;1+2;HUECO;;Enel creating shared value through project assessment
+skills development;skill development;S;;0;0;1;alto;2;2+3;HUECO;;cierre de brechas criticas de competencias en Airbus
+social dividend;social dividend;S;;0;0;1;alto;2;1+3;HUECO;;Iberdrola bylaw established contribution to society
+supplier sustainability score;supplier sustainability score;S;S/TRANS;0;0;1;alto;2;2+3;cubierto;sustainability;puntuacion de sostenibilidad de proveedores en Nokia
+un guiding principles;un guiding principle;S;;0;0;1;alto;2;2+3;HUECO;;principios rectores UNGP citados por ASML
+vulnerable group;vulnerable group;S;;0;0;1;alto;2;1+3;HUECO;;Iberdrola COVID programme and AXA vulnerable populations
+well-being;well being;S;;0;0;0;alto;2;1+3;HUECO;;Sanofi wellness programme Enel social measure ASML sub-topic
+zero accident;zero accident;S;;0;0;1;alto;2;1+2;HUECO;;Iberdrola networks business safety objective
+chief sustainability officer;chief sustainability officer;TRANS;G/TRANS;0;0;1;alto;2;1+3;cubierto;sustainability;Ahold creates dedicated CSO role on executive committee
+corporate responsibility;corporate responsibility;TRANS;;0;0;0;alto;2;2+3;HUECO;;seccion Corporate Responsibility en AXA y Nokia
+corporate sustainability assessment;corporate sustainability assessment;TRANS;;0;0;1;alto;2;1+3;cubierto;sustainability;AXA performance shares linked to S&P Global assessment
+esg objective;esg objective;TRANS;;0;0;1;alto;2;2+3;cubierto;esg;los objetivos ESG del plan de Iberdrola
+esg target;esg target;TRANS;;0;0;1;alto;2;1+3;cubierto;esg;ASML and Iberdrola set explicit ESG objectives
+gri indicator;gri indicator;TRANS;;0;0;1;alto;2;2+3;cubierto;gri;columna de indicador GRI en las tablas ESG
+iirc;iirc;TRANS;;0;0;0;alto;2;2+3;HUECO;;recomendaciones del International Integrated Reporting Council
+independent third party;independent third party;TRANS;;0;0;1;alto;2;2+3;HUECO;;verificador acreditado del estado no financiero de PSA
+non-financial statement;non financial statement;TRANS;;0;0;1;alto;2;2+3;cubierto;non financial;estado no financiero verificado en PSA y Ferrari
+sustainability performance;sustainability performance;TRANS;;0;0;1;alto;2;2+3;cubierto;sustainability;performance solo remite a resultados financieros
+sustainable value creation;sustainable value creation;TRANS;;0;0;1;alto;2;1+2;cubierto;sustainable;Ahold and Iberdrola long-term value creation language
+transparency;transparency;TRANS;G/TRANS;0;0;0;alto;2;1+2;en vocabulario;;recurrent disclosure value at Iberdrola Total Sanofi ASML
+afforestation;afforestation;E;;0;0;0;bajo;1;2;HUECO;;proyectos de forestacion en la cartera de offsets
+air emission;air emission;E;;0;0;1;bajo;1;1;cubierto;emission;Total chronic emissions into the atmosphere
+business travel;business travel;E;;0;0;1;bajo;1;1;HUECO;;ASML and Sanofi emissions category with reduction target
+business travel emission;business travel emission;E;;0;0;1;bajo;1;3;cubierto;emission;emisiones de viajes de negocio de la categoria seis
+cage free;cage free;E;;1;0;1;bajo;1;1;HUECO;;Ahold own indicator on own-brand shell eggs
+carbon literacy;carbon literacy;E;;0;0;1;bajo;1;1;cubierto;carbon;ASML upskills supplier account teams on emissions
+clean energy;clean energy;E;;0;0;1;bajo;1;2;en vocabulario;;inversion en energia limpia de Iberdrola
+climate impact;climate impact;E;;0;0;1;bajo;1;2;cubierto;climate;reduccion del impacto climatico de Ahold
+climate objective;climate objective;E;;0;0;1;bajo;1;2;cubierto;climate;objetivos climaticos y su horizonte temporal
+climate-related health impact;climate related health impact;E;;1;0;1;bajo;1;1;cubierto;climate;Sanofi allergies and vector-borne disease from warming
+coal-fired plant;coal fired plant;E;;1;0;1;bajo;1;1;cubierto;coal;Iberdrola and Enel decommissioning of coal capacity
+direct emission;direct emission;E;;0;0;1;bajo;1;2;cubierto;emission;emisiones directas de la operacion propia
+eco-design;eco design;E;;0;0;0;bajo;1;2;HUECO;;ecodiseno de productos e infraestructuras
+eligible green project;eligible green project;E;;0;0;1;bajo;1;3;HUECO;;proyectos verdes elegibles segun los Green Bond Principles
+emission reduction;emission reduction;E;;0;0;1;bajo;1;3;cubierto;emission;objetivos de reduccion de emisiones validados por SBTi
+emissions trading system;emission trading system;E;;0;0;1;bajo;1;2;cubierto;emission;precios historicos del EU ETS como referencia
+employee commuting;employee commuting;E;;0;0;1;bajo;1;1;HUECO;;ASML scope 3 category with decarbonisation project
+employee commuting emission;employee commuting emission;E;;0;0;1;bajo;1;3;cubierto;emission;emisiones de desplazamientos al trabajo de la categoria siete
+energy management system;energy management system;E;;0;0;1;bajo;1;2;cubierto;energy management;sistemas de gestion de la energia certificados
+energy use per wafer;energy use per wafer;E;;1;0;1;bajo;1;1;HUECO;;ASML product energy efficiency metric per wafer pass
+environmental damage;environmental damage;E;;0;0;1;bajo;1;2;cubierto;environ\w+;provisiones para danos ambientales en Iberdrola
+geothermal;geothermal;E;;1;0;0;bajo;1;3;en vocabulario;;fuente geotermica del mix de generacion de Enel
+green bond principles;green bond principle;E;;0;0;1;bajo;1;2;cubierto;green bond;principios ICMA para proyectos verdes elegibles
+green energy;green energy;E;;0;0;1;bajo;1;2;en vocabulario;;objetivo de aumentar consumo de energia verde
+green investment;green investment;E;;0;0;1;bajo;1;3;en vocabulario;;cartera de inversion verde de AXA de 26.000 millones
+green project;green project;E;;0;0;1;bajo;1;2;HUECO;;Eligible Green Projects financiados con bonos verdes
+groundwater;groundwater;E;;0;0;0;bajo;1;1;HUECO;;Total monitors groundwater after pipeline spill
+hard-to-abate emission;hard to abate emission;E;;0;0;1;bajo;1;1;cubierto;emission;ASML steel and aluminium purchasing challenge
+hydrocarbon spill;hydrocarbon spill;E;;1;0;1;bajo;1;2;HUECO;;seguimiento de vertidos superiores a un barril
+indirect emission;indirect emission;E;;0;0;1;bajo;1;2;cubierto;emission;emisiones indirectas ligadas al consumo energetico
+logistics emission;logistic emission;E;;0;0;1;bajo;1;3;cubierto;emission;emisiones de transporte y distribucion aguas arriba
+methane emission;methane emission;E;;1;0;1;bajo;1;1;cubierto;emission;Total defends US methane emission regulation
+mitigation hierarchy;mitigation hierarchy;E;;0;0;1;bajo;1;2;HUECO;;principios de jerarquia de mitigacion en biodiversidad
+ocean freight;ocean freight;E;;0;0;1;bajo;1;1;cubierto;ocean;ASML modal shift from air to reduce logistics emissions
+pollutant;pollutant;E;;0;0;0;bajo;1;3;HUECO;;naturaleza y concentracion de contaminantes en suelos
+product use emission;product use emission;E;;0;0;1;bajo;1;3;cubierto;emission;emisiones por el uso de los sistemas vendidos a clientes
+renewable electricity certificate;renewable electricity certificate;E;;0;0;1;bajo;1;2;cubierto;electricity;programa REC usado por Sanofi
+renewable installed capacity;renewable installed capacity;E;;1;0;1;bajo;1;1;cubierto;renewable;Enel and Iberdrola utility capacity metric in GW
+renewable source;renewable source;E;;0;0;1;bajo;1;3;cubierto;renewable;fuentes renovables en el mix de generacion
+reuse;reuse;E;;0;0;0;bajo;1;3;HUECO;;reutilizacion de piezas embalajes y materiales
+scenario analysis;scenario analysis;E;;0;0;1;bajo;1;2;en vocabulario;;analisis de escenarios climaticos de Sanofi
+Science Based Targets initiative;science based target initiative;E;;0;0;0;bajo;1;3;cubierto;science based target;validacion cientifica de los objetivos de emisiones
+scope 1;scope 1;E;;0;0;1;bajo;1;1;cubierto;scope\s*[123]\b;direct emissions category at Sanofi ASML Nokia
+scope 2;scope 2;E;;0;0;1;bajo;1;1;cubierto;scope\s*[123]\b;indirect energy emissions category with market-based reporting
+scope 3;scope 3;E;;0;0;1;bajo;1;1;cubierto;scope\s*[123]\b;value chain emissions Ahold board deep dive ASML targets
+sustainable event;sustainable event;E;;0;0;1;bajo;1;1;cubierto;sustainable;Iberdrola ISO 20121 certified general shareholders meeting
+value chain emission;value chain emission;E;;0;0;1;bajo;1;2;cubierto;emission;value chain solo se usa tambien en sentido comercial
+waste heat;waste heat;E;;0;0;1;bajo;1;1;cubierto;waste;ASML reuses factory waste heat through energy grid
+waste-to-energy;waste to energy;E;;0;0;0;bajo;1;2;cubierto;waste;valorizacion energetica de residuos en Sanofi
+water management;water management;E;;0;0;1;bajo;1;2;cubierto;water;planes de gestion del agua por emplazamiento
+water management plan;water management plan;E;;0;0;1;bajo;1;3;cubierto;water;planes de gestion del agua en emplazamientos prioritarios
+accountability;accountability;G;;0;0;0;bajo;1;2;HUECO;;rendicion de cuentas de la direccion sobre la estrategia
+alert system;alert system;G;;0;0;1;bajo;1;2;HUECO;;sistema de alerta sobre incumplimientos en Airbus
+annual corporate governance report;annual corporate governance report;G;;0;0;1;bajo;1;1;cubierto;governance;Iberdrola report in CNMV prescribed format
+anti-bribery management system;anti bribery management system;G;;0;0;1;bajo;1;1;cubierto;bribery;Iberdrola ISO 37001 certification renewed
+board diversity policy;board diversity policy;G;;0;0;1;bajo;1;3;cubierto;diversity;politica de diversidad del consejo en Ferrari e Iberdrola
+board sustainability expertise;board sustainability expertise;G;;0;0;1;bajo;1;3;cubierto;sustainability;matriz de cualificacion con experiencia en sostenibilidad
+competition law;competition law;G;;0;0;1;bajo;1;2;HUECO;;cumplimiento de la normativa de competencia
+compliance system;compliance system;G;;0;0;1;bajo;1;3;HUECO;;sistema de cumplimiento certificado UNE 19601 en Iberdrola
+controlling shareholder;controlling shareholder;G;;0;0;1;bajo;1;3;HUECO;;accionista de control del Estado italiano en Enel
+corporate culture;corporate culture;G;;0;0;1;bajo;1;3;HUECO;;cultura corporativa y etica como categoria de riesgo de Enel
+coso framework;coso framework;G;;0;0;1;bajo;1;1;HUECO;;Ahold and ASML basis for internal control assessment
+director independence;director independence;G;;0;0;1;bajo;1;3;HUECO;;independencia de los consejeros segun la provision 2.1.8
+diversity policy;diversity policy;G;;0;0;1;bajo;1;2;cubierto;diversity;politica de diversidad exigida por el codigo holandes
+economic sanction;economic sanction;G;;0;0;1;bajo;1;3;cubierto;sanction;sanciones economicas y comerciales como riesgo reputacional
+esg performance measure;esg performance measure;G;;0;0;1;bajo;1;1;cubierto;esg;ASML long-term incentive weights ESG measures at 20 percent
+esg-related control;esg related control;G;;0;0;1;bajo;1;1;cubierto;esg;Ahold auditor observations on IT and ESG controls
+ethical principle;ethical principle;G;;0;0;1;bajo;1;3;cubierto;ethical;principios eticos que fundamentan el marco GRC
+ethics and compliance;ethics and compliance;G;;0;0;1;bajo;1;2;en vocabulario;;programa Ethics & Compliance de Airbus
+Ethisphere;ethisphere;G;;0;0;0;bajo;1;3;HUECO;;reconocimiento como una de las empresas mas eticas del mundo
+executive compensation;executive compensation;G;;0;0;1;bajo;1;3;en vocabulario;;compensacion de la direccion ejecutiva revisada por el comite
+fixed remuneration;fixed remuneration;G;;0;0;1;bajo;1;3;cubierto;remuneration;retribucion fija y prima de asistencia de los consejeros
+global minimum tax;global minimum tax;G;;0;0;1;bajo;1;3;HUECO;;tipo minimo global del pilar II de la OCDE
+governance body;governance body;G;;0;0;1;bajo;1;3;cubierto;governance;organos de gobierno y su diversidad segun GRI 405-1
+governance risk and compliance framework;governance risk and compliance framework;G;;0;0;1;bajo;1;3;cubierto;governance;marco GRC con comite global presidido por el CLO
+incident response;incident response;G;;0;0;1;bajo;1;3;HUECO;;tendencias incidentes y respuesta discutidos por el comite
+litigation;litigation;G;;0;0;0;bajo;1;3;HUECO;;litigios reportados periodicamente al comite de auditoria
+long-term incentive plan;long term incentive plan;G;;0;0;1;bajo;1;3;HUECO;;plan de incentivos a largo plazo ligado a metricas ESG
+loyalty voting structure;loyalty voting structure;G;;0;0;1;bajo;1;3;HUECO;;estructura de voto de lealtad en Ferrari y Stellantis
+non-audit service;non audit service;G;;0;0;1;bajo;1;3;HUECO;;prohibicion y aprobacion de servicios distintos de la auditoria
+personal data;personal data;G;;0;0;1;bajo;1;2;HUECO;;confidencialidad de los datos personales de empleados
+qualification matrix;qualification matrix;G;;0;0;1;bajo;1;1;HUECO;;Deutsche Boerse shows sustainability competence of board members
+reputational risk;reputational risk;G;;0;0;1;bajo;1;2;HUECO;;riesgo reputacional en el catalogo de riesgos de Enel
+risk committee;risk committee;G;;0;0;1;bajo;1;2;HUECO;;comite de auditoria, finanzas y riesgos
+speak-up;speak up;G;;0;0;0;bajo;1;2;en vocabulario;;cultura de speak up y Speak Up line de Ahold
+speak-up culture;speak up culture;G;;0;0;1;bajo;1;3;cubierto;speak up;linea Speak Up y cultura de hablar sin temor
+speak-up line;speak up line;G;;0;0;1;bajo;1;1;cubierto;speak up;Ahold channel for associates to raise concerns
+special voting share;special voting share;G;;0;0;1;bajo;1;3;HUECO;;acciones de voto especial del registro de lealtad de Ferrari
+sustainable taxation;sustainable taxation;G;;0;0;1;bajo;1;2;cubierto;sustainable;principios B-Team de fiscalidad sostenible en Total
+takeover;takeover;G;;0;0;0;bajo;1;2;HUECO;;disclosures exigidos por la directiva de OPAs
+tax policy;tax policy;G;;0;0;1;bajo;1;2;en vocabulario;;politica de planificacion fiscal supervisada por auditoria
+three lines of defence;three line of defence;G;;0;0;1;bajo;1;1;HUECO;;Ahold and Iberdrola control and assurance model
+trade sanction;trade sanction;G;;0;0;1;bajo;1;1;cubierto;sanction;AB InBev exposure from operations in Cuba
+whistle-blowing hotline;whistle blowing hotline;G;;0;0;1;bajo;1;3;HUECO;;canal de denuncias con cifras de uso en Sanofi
+whistleblowing;whistleblowing;G;;0;0;0;bajo;1;1;en vocabulario;;Sanofi hotline and Airbus alert system
+whistleblowing hotline;whistleblowing hotline;G;;0;0;1;bajo;1;2;cubierto;whistleblowing;linea de denuncias de Sanofi
+access to land;access to land;S;;1;0;1;bajo;1;3;HUECO;;acceso a la tierra de las comunidades locales como asunto saliente
+anti-discrimination policy;anti discrimination policy;S;;0;0;1;bajo;1;2;cubierto;discrimination;politica antidiscriminacion del grupo PSA
+collective bargaining;collective bargaining;S;;0;0;0;bajo;1;3;en vocabulario;;negociacion colectiva y cobertura de los convenios
+consumer health;consumer health;S;;0;0;1;bajo;1;1;HUECO;;Total limits health and safety risks for consumers
+consumer health and safety;consumer health and safety;S;;0;0;1;bajo;1;2;cubierto;health and safety;limitar riesgos para la salud del consumidor en Total
+consumer safety;consumer safety;S;;0;0;1;bajo;1;3;HUECO;;limitacion de riesgos para la salud y seguridad de los consumidores
+customer health and nutrition;customer health and nutrition;S;;1;0;1;bajo;1;3;cubierto;nutrition;tema ESG de salud y nutricion del cliente en Ahold
+disability employment;disability employment;S;;0;0;1;bajo;1;2;cubierto;disability;acuerdos para el empleo de personas con discapacidad
+diversity and inclusion;diversity and inclusion;S;;0;0;1;bajo;1;2;cubierto;diversity;informe de diversidad e inclusion de Iberdrola
+employee representative;employee representative;S;;0;0;1;bajo;1;2;HUECO;;acuerdos firmados con representantes del personal
+employee share ownership plan;employee share ownership plan;S;;0;0;1;bajo;1;3;HUECO;;planes de accionariado y compra de acciones para empleados
+employee well-being;employee well being;S;;0;0;1;bajo;1;2;cubierto;employee\s+well\w*;bienestar de los empleados y salud mental
+employee wellness;employee wellness;S;;0;0;1;bajo;1;1;cubierto;employee\s+well\w*;Sanofi Take Care programme in 62 countries
+Good Manufacturing Practice;good manufacturing practice;S;;1;0;0;bajo;1;3;HUECO;;buenas practicas de fabricacion del sistema de calidad
+health and safety;health and safety;S;;0;0;1;bajo;1;3;en vocabulario;;compromiso con la salud y la seguridad de los empleados
+healthy sales;healthy sale;S;;1;0;1;bajo;1;2;HUECO;;KPI de ventas saludables del comite de sostenibilidad
+human capital;human capital;S;;0;0;1;bajo;1;2;en vocabulario;;capital humano en la clasificacion IIRC y matriz de Ferrari
+low-alcohol beer;low alcohol beer;S;;1;0;1;bajo;1;1;HUECO;;AB InBev no- and low-alcohol product opportunity
+material safety data sheet;material safety data sheet;S;;1;0;1;bajo;1;1;HUECO;;Total product information for petroleum and chemical products
+maternity and paternity leave;maternity and paternity leave;S;;0;0;1;bajo;1;3;cubierto;maternity;permisos por encima del minimo legal en Airbus
+pharmacovigilance;pharmacovigilance;S;;1;0;0;bajo;1;3;HUECO;;buenas practicas de farmacovigilancia exigidas por el regulador
+private security provider;private security provider;S;;1;0;1;bajo;1;3;HUECO;;empresas de seguridad privada formadas en los VPSHR
+product recall;product recall;S;;1;0;1;bajo;1;2;HUECO;;campanas obligatorias de retirada de vehiculos
+product responsibility;product responsibility;S;;0;0;1;bajo;1;2;HUECO;;categoria de la matriz de materialidad de Ferrari
+product traceability;product traceability;S;;0;0;1;bajo;1;3;HUECO;;serializacion y trazabilidad frente a la falsificacion
+quality management system;quality management system;S;;0;0;1;bajo;1;3;HUECO;;sistema de gestion de calidad auditado internamente
+quality of supply;quality of supply;S;;1;0;1;bajo;1;1;HUECO;;Iberdrola power outage duration improvement target
+rba code of conduct;rba code of conduct;S;;1;0;1;bajo;1;1;cubierto;code of conduct;ASML requires supplier adherence to latest version
+reach registration;reach registration;S;;1;0;1;bajo;1;1;HUECO;;Total chemical product regulatory compliance
+responsible supply chain management;responsible supply chain management;S;;0;0;1;bajo;1;2;cubierto;supply chain management;supply chain solo es operativo o de emisiones
+safety at work;safety at work;S;;0;0;1;bajo;1;1;HUECO;;Ahold sustainable retailing performance focus area
+safety data sheet;safety data sheet;S;;1;0;1;bajo;1;2;HUECO;;fichas de datos de seguridad de productos petroquimicos
+supplier assessment;supplier assessment;S;;0;0;1;bajo;1;2;en vocabulario;;evaluacion de practicas laborales de proveedores
+supplier audit;supplier audit;S;;0;0;1;bajo;1;1;HUECO;;ASML audits supplier GHG capability and maturity
+supplier sustainability assessment;supplier sustainability assessment;S;;0;0;1;bajo;1;1;cubierto;sustainability;Nokia supplier score from performance evaluation
+supply chain human rights;supply chain human right;S;;0;0;1;bajo;1;1;en vocabulario;;Total supplier selection screens fundamental workplace rights
+supply chain responsibility;supply chain responsibility;S;;0;0;1;bajo;1;1;HUECO;;Ferrari material topic on responsible supply chain management
+traceability;traceability;S;;0;0;0;bajo;1;2;HUECO;;trazabilidad de productos y de biocombustibles
+un guiding principles on business and human rights;un guiding principle on business and human right;S;;0;0;1;bajo;1;1;cubierto;human right;ASML basis for human rights due diligence
+vehicle recall;vehicle recall;S;;1;0;1;bajo;1;3;HUECO;;campanas de llamada a revision obligatorias en Mexico
+vehicle safety;vehicle safety;S;;1;0;1;bajo;1;2;HUECO;;normas de seguridad de vehiculos y regulacion FMVSS
+vulnerable population;vulnerable population;S;;0;0;1;bajo;1;2;HUECO;;seguros inclusivos y ayudas a colectivos vulnerables
+women in management;woman in management;S;;0;0;1;bajo;1;1;HUECO;;Iberdrola and Total proportion targets
+women in management position;woman in management position;S;;0;0;1;bajo;1;3;HUECO;;objetivo de mujeres en puestos directivos en Iberdrola y Total
+working hours;working hour;S;;0;0;1;bajo;1;3;HUECO;;regulacion de jornada descansos y horas extraordinarias
+workplace safety;workplace safety;S;;0;0;1;bajo;1;2;HUECO;;safety solo es ambiguo - seguridad en el trabajo
+csr policy;csr policy;TRANS;;0;0;1;bajo;1;2;cubierto;csr;revision anual de la politica de RSC del grupo
+csr reporting scope;csr reporting scope;TRANS;;0;0;1;bajo;1;2;cubierto;csr;perimetro de reporte de RSC en PSA
+esg agenda;esg agenda;TRANS;;0;0;1;bajo;1;2;cubierto;esg;compromiso con stakeholders sobre la agenda ESG
+esg ambition;esg ambition;TRANS;;0;0;1;bajo;1;2;cubierto;esg;nivel de ambicion ESG de ASML
+esg+f;esg f;TRANS;;0;0;0;bajo;1;1;cubierto;esg;Iberdrola brands itself an ESG plus financial leader
+esg factor;esg factor;TRANS;;0;0;1;bajo;1;2;cubierto;esg;impacto financiero material de factores ESG en Nokia
+esg score;esg score;TRANS;;0;0;1;bajo;1;2;cubierto;esg;puntuacion ESG externa reportada por Nokia
+hse;hse;TRANS;;0;0;0;bajo;1;2;HUECO;;funcion que agrupa salud, seguridad y medio ambiente
+iss esg;iss esg;TRANS;;0;0;0;bajo;1;1;cubierto;esg;Total reports upgraded rating from ISS-oekom renamed ISS ESG
+materiality;materiality;TRANS;;0;0;0;bajo;1;3;en vocabulario;;analisis de materialidad de asuntos de sostenibilidad
+msci esg rating;msci esg rating;TRANS;;0;0;1;bajo;1;1;cubierto;msci esg;Total reports its A rating from MSCI
+non-financial performance;non financial performance;TRANS;;0;0;1;bajo;1;2;cubierto;non financial;objetivos financieros y no financieros del negocio
+s&p global corporate sustainability assessment;s p global corporate sustainability assessment;TRANS;;0;0;0;bajo;1;2;cubierto;sustainability;metrica de la retribucion variable de AXA
+socially responsible investor;socially responsible investor;TRANS;;0;0;1;bajo;1;3;HUECO;;inversores socialmente responsables citados en el rating de Total
+stakeholder dialogue;stakeholder dialogue;TRANS;;0;0;1;bajo;1;2;cubierto;stakeholder;dialogo transparente con stakeholders en Total e Iberdrola
+stakeholder expectation;stakeholder expectation;TRANS;;0;0;1;bajo;1;3;cubierto;stakeholder;expectativas de los grupos de interes sobre asuntos ESG
+supply chain responsible management;supply chain responsible management;TRANS;;0;0;1;bajo;1;3;HUECO;;tema material de gestion responsable de la cadena de suministro
+sustainability ambition;sustainability ambition;TRANS;;0;0;1;bajo;1;2;cubierto;sustainability;ambiciones de sostenibilidad de Ahold y ASML
+sustainability index;sustainability index;TRANS;;0;0;1;bajo;1;2;cubierto;sustainability;pertenencia a indices de sostenibilidad
+sustainability policy;sustainability policy;TRANS;;0;0;1;bajo;1;2;cubierto;sustainability;extension de politicas de sostenibilidad a proveedores
+sustainability reporting;sustainability reporting;TRANS;;0;0;1;bajo;1;2;cubierto;sustainability;Corporate Sustainability Reporting Directive y practicas asociadas
+sustainability statements;sustainability statement;TRANS;;0;0;1;bajo;1;2;cubierto;sustainability;seccion ESRS del informe anual de ASML
+sustainable finance;sustainable finance;TRANS;;0;0;1;bajo;1;1;cubierto;sustainable;Iberdrola green financing and Deutsche Boerse ESG products
+sustainable financing;sustainable financing;TRANS;;0;0;1;bajo;1;3;cubierto;sustainable;financiacion sostenible como objetivo de gobernanza de Iberdrola
+sustainable growth;sustainable growth;TRANS;;0;0;1;bajo;1;2;cubierto;sustainable;crecimiento sostenible como ambicion declarada
+sustainable long-term value creation;sustainable long term value creation;TRANS;;0;0;1;bajo;1;3;cubierto;sustainable;creacion de valor sostenible a largo plazo en Ahold y AXA
+sustainable retailing;sustainable retailing;TRANS;;1;0;1;bajo;1;3;cubierto;sustainable;estrategia de venta minorista sostenible propia de Ahold
+worlds most ethical companies;world most ethical company;TRANS;;0;0;1;bajo;1;1;cubierto;ethical;Iberdrola and Nokia cite Ethisphere recognition

@@ -1,0 +1,144 @@
+termino;tipo;pilar;sectorial;ocurrencias;documentos;empresas;n_muestra;aciertos;precision;ic95_inf;ic95_sup;disparos_falsos_estimados;fp_indice;fp_financiero;fp_generico;fp_otro;decision_propuesta;notas_auditor
+supervisory board;termino;G;0;32230;281;44;6;2;0.333;0.097;0.7;21487;1;0;3;0;revisar;CV con mandatos externos | organigrama de organos | CV consejero en holding familiar | CV mandatos externos
+management board;termino;G;0;3555;192;41;6;1;0.167;0.03;0.564;2962;2;0;3;0;retirar;referencia cruzada a seccion | CV mandatos externos | nota al pie de mandato | CV en otra empresa | etiqueta de organigrama
+external auditor;termino;G;0;2481;241;46;6;2;0.333;0.097;0.7;1654;1;3;0;0;revisar;auditor de cuentas | opinion de auditoria | encabezado de seccion | informe de auditoria
+long-term incentive;termino;G;0;2044;252;44;6;2;0.333;0.097;0.7;1363;1;3;0;0;revisar;referencia cruzada a apartado | programas expirados contables | nota contable de gastos RSU | provisiones contables
+voting right;termino;G;0;1536;276;46;6;2;0.333;0.097;0.7;1024;1;3;0;0;revisar;criterio de control NIIF | fundacion antiopa en notas | pactos de bloqueo de capital | remision a web
+executive committee;termino;G;0;5561;223;39;6;5;0.833;0.436;0.97;927;0;0;1;0;mantener;CV de directivo
+traceability;termino;S;0;1694;191;40;6;3;0.5;0.188;0.812;847;0;0;1;2;revisar;antifalsificacion RFID | antifalsificacion de medicamentos | trazabilidad de asignacion de RSU
+electric vehicle;termino;E;1;1869;227;47;6;4;0.667;0.3;0.903;623;0;0;2;0;revisar;descripcion de producto bateria | joint venture de baterias
+risk committee;termino;G;0;3547;220;41;6;5;0.833;0.436;0.97;591;1;0;0;0;mantener;lista de temas del comite
+well-being;termino;S;0;3005;269;49;6;5;0.833;0.436;0.97;501;0;0;1;0;mantener;mercado de producto edificios
+non-audit service;termino;G;0;663;234;43;6;2;0.333;0.097;0.7;442;0;4;0;0;revisar;declaracion del auditor | honorarios de auditoria
+general meeting of shareholders;termino;G;0;843;100;22;6;3;0.5;0.188;0.812;422;1;2;0;0;revisar;informe de partes vinculadas | aprobacion de cuentas anuales | destinatario del informe tras indice
+offshore wind;termino;E;1;589;89;21;6;2;0.333;0.097;0.7;393;0;0;4;0;revisar;lista de aplicaciones de producto | adquisicion empresarial | descripcion de mercado en notas NIIF | venta de participada
+corporate responsibility;termino;TRANS;0;704;166;39;6;3;0.5;0.188;0.812;352;1;0;2;0;revisar;CV de consejera | CV mandato externo | URL
+long-term incentive plan;termino;G;0;1006;172;34;6;4;0.667;0.3;0.903;335;0;1;1;0;revisar;coste y provision contable | planes de empleados de filial
+nomination committee;termino;G;0;1882;184;35;6;5;0.833;0.436;0.97;314;1;0;0;0;mantener;tabla de miembros de comites
+pollutant;termino;E;0;876;154;46;6;4;0.667;0.3;0.903;292;2;0;0;0;revisar;lista de datapoints ESRS
+pay ratio;termino;G;0;426;103;34;6;2;0.333;0.097;0.7;284;3;0;0;1;revisar;referencias a secciones | ratio fijo-variable no ratio CEO | lista de datapoints ESRS | tabla SFDR con paginas
+transition risk;termino;E;0;1626;172;45;6;5;0.833;0.436;0.97;271;1;0;0;0;mantener;lista de datapoints ESRS
+consumer health;termino;S;0;286;63;17;6;1;0.167;0.03;0.564;238;2;0;0;3;retirar;tabla de correspondencias con paginas | nombre de linea de negocio | categoria de producto | nombre de division Bayer
+limited assurance;termino;TRANS;0;1273;215;47;6;5;0.833;0.436;0.97;212;0;1;0;0;mantener;clausula legal del informe
+competition law;termino;G;0;636;163;35;6;4;0.667;0.3;0.903;212;0;1;1;0;revisar;cuestion clave de auditoria | regulacion del mercado posventa
+external assurance;termino;TRANS;0;237;40;13;6;1;0.167;0.03;0.564;198;5;0;0;0;retirar;encabezado sobre reguladores | indice GRI | etiqueta de diagrama de tres lineas
+employee training;termino;S;0;275;138;39;6;2;0.333;0.097;0.7;183;3;0;1;0;revisar;indice GRI | prevencion de incendios operativa | lista de palancas de gestion | tabla de mapeo ODS
+protected area;termino;E;0;526;100;33;6;4;0.667;0.3;0.903;175;2;0;0;0;revisar;indice GRI | plantilla de metricas sin dato
+energy saving;termino;E;0;473;147;40;6;4;0.667;0.3;0.903;158;0;1;1;0;revisar;demanda de mercado | partida contable de certificados
+working hours;termino;S;0;944;212;45;6;5;0.833;0.436;0.97;157;0;0;1;0;mantener;definicion de FTE
+integrated report;termino;TRANS;0;458;87;21;6;4;0.667;0.3;0.903;153;2;0;0;0;revisar;referencia a capitulo | indice TCFD
+employee share ownership;termino;S;0;297;87;20;6;3;0.5;0.188;0.812;148;1;2;0;0;revisar;cancelacion de autocartera | referencia cruzada a apartado | reduccion de capital
+export control;termino;G;1;856;113;26;6;5;0.833;0.436;0.97;143;0;0;1;0;mantener;sanciones a Rusia sin divulgacion ESG
+vehicle safety;termino;S;1;261;31;6;6;3;0.5;0.188;0.812;130;0;1;1;1;revisar;listado de litigios | antirrobo | descripcion de marco regulatorio
+shareholder rights;termino;G;0;130;74;19;6;0;0.0;0.0;0.39;130;2;4;0;0;retirar;nombre de directiva SRD II | declaracion legal de derechos especiales | nombre de ley ARUG II | nombre de directiva voto retribucion | referencia cruzada a seccion
+safety at work;termino;S;0;333;134;31;6;4;0.667;0.3;0.903;111;2;0;0;0;revisar;indice GRI | indice EINF con paginas
+workplace safety;termino;S;0;162;89;27;6;2;0.333;0.097;0.7;108;0;2;2;0;revisar;marketing de producto software | categoria Basilea de riesgo operacional | lista de regulaciones en factores de riesgo
+coso framework;termino;G;0;123;65;12;6;1;0.167;0.03;0.564;102;0;4;1;0;retirar;control interno sobre informacion financiera | sistema de gestion de riesgos
+extreme weather event;termino;E;0;532;173;46;6;5;0.833;0.436;0.97;89;0;0;1;0;mantener;contexto retorico en carta del CEO
+employee turnover;termino;S;0;127;76;32;6;2;0.333;0.097;0.7;85;4;0;0;0;revisar;alcance de verificacion | tabla de referencias EINF | indice GRI | entrada de glosario
+groundwater;termino;E;0;463;110;31;6;5;0.833;0.436;0.97;77;0;1;0;0;mantener;politica contable de provisiones
+counterfeiting;termino;S;1;114;43;12;6;2;0.333;0.097;0.7;76;1;0;3;0;revisar;riesgo de propiedad intelectual | proteccion de marca | listado de riesgos
+product recall;termino;S;0;139;82;21;6;3;0.5;0.188;0.812;70;0;1;2;0;revisar;factor de riesgo comercial | programa de seguros | factor de riesgo financiero
+employee share ownership plan;termino;S;0;137;61;14;6;3;0.5;0.188;0.812;68;0;3;0;0;revisar;estatutos tenencia de acciones consejeros
+auditor independence;termino;G;0;63;37;10;6;0;0.0;0.0;0.39;63;1;5;0;0;retirar;auditoria externa | listado de informes | nota de honorarios de auditoria
+labour law;termino;S;0;121;58;17;6;3;0.5;0.188;0.812;60;0;1;2;0;revisar;litigios | lista de areas legales | factor de riesgo regulatorio
+skills development;termino;S;0;351;115;42;6;5;0.833;0.436;0.97;58;1;0;0;0;mantener;referencia cruzada con pagina
+compliance system;termino;G;0;346;110;26;6;5;0.833;0.436;0.97;58;0;0;1;0;mantener;contexto regulatorio sectorial
+controlling shareholder;termino;G;0;171;83;22;6;4;0.667;0.3;0.903;57;0;2;0;0;revisar;pacto de accionistas en participada | litigio arbitral participada
+employee commuting;termino;E;0;313;108;36;6;5;0.833;0.436;0.97;52;1;0;0;0;mantener;etiqueta de grafico
+smart grid;termino;E;1;258;39;14;6;5;0.833;0.436;0.97;43;0;0;1;0;mantener;narrativa de ciudad inteligente
+vulnerable group;termino;S;0;245;89;31;6;5;0.833;0.436;0.97;41;0;0;1;0;mantener;contexto macroeconomico
+three lines of defence;termino;G;0;215;53;12;6;5;0.833;0.436;0.97;36;1;0;0;0;mantener;referencia cruzada con pagina
+breeam;termino;E;1;201;80;21;6;5;0.833;0.436;0.97;33;1;0;0;0;mantener;entrada de glosario
+supplier audit;termino;S;0;185;71;22;6;5;0.833;0.436;0.97;31;1;0;0;0;mantener;fragmento de tabla de acciones
+access to healthcare;termino;S;1;182;56;17;6;5;0.833;0.436;0.97;30;0;0;1;0;mantener;perspectivas de mercado Healthineers
+vulnerable population;termino;S;0;172;65;24;6;5;0.833;0.436;0.97;29;1;0;0;0;mantener;entrada de glosario
+qualification matrix;termino;G;0;55;28;12;6;3;0.5;0.188;0.812;28;3;0;0;0;revisar;referencia cruzada | encabezado con navegacion | referencia cruzada texto roto
+2030 agenda;termino;TRANS;0;158;78;21;6;5;0.833;0.436;0.97;26;0;0;1;0;mantener;escenario IEA para deterioro de activos
+green building;termino;E;0;135;66;17;6;5;0.833;0.436;0.97;22;1;0;0;0;mantener;entrada de glosario
+childcare;termino;S;0;127;87;31;6;5;0.833;0.436;0.97;21;0;0;1;0;mantener;caso de producto constructivo
+accident rate;termino;S;0;120;58;17;6;5;0.833;0.436;0.97;20;1;0;0;0;mantener;referencia a tabla
+food bank;termino;S;1;102;30;13;6;5;0.833;0.436;0.97;17;1;0;0;0;mantener;definicion de glosario
+green financing;termino;E;0;96;36;13;6;5;0.833;0.436;0.97;16;1;0;0;0;mantener;referencia cruzada a notas
+corporate volunteering;termino;S;0;80;37;15;6;5;0.833;0.436;0.97;13;0;0;0;1;mantener;VIE contrato internacional de practicas
+smart meter;termino;E;1;68;30;10;6;5;0.833;0.436;0.97;11;0;0;1;0;mantener;servicio comercial de distribucion
+board evaluation;termino;G;0;60;24;8;6;5;0.833;0.436;0.97;10;1;0;0;0;mantener;tabla de referencias
+groundwater contamination;termino;E;0;54;30;7;6;5;0.833;0.436;0.97;9;1;0;0;0;mantener;texto de grafico
+board of directors;termino;G;0;32446;288;49;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+personal data;termino;S;0;2702;283;48;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+working condition;termino;S;0;2638;262;47;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+employee representative;termino;S;0;2116;240;43;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+reuse;termino;E;0;1943;225;43;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+hse;termino;S;0;1889;57;12;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+physical risk;termino;E;0;1802;219;47;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+natural resource;termino;E;0;1557;250;45;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+board committee;termino;G;0;1544;271;47;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+palm oil;termino;E;1;878;89;18;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+flaring;termino;E;1;612;19;7;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+eco-design;termino;E;0;594;90;22;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+malus;termino;G;0;518;99;25;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+power purchase agreement;termino;E;0;448;135;39;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+short-term incentive;termino;G;0;442;99;23;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+conflict mineral;termino;S;1;389;75;18;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+women in management;termino;S;0;378;108;32;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+access to energy;termino;S;1;368;34;9;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+un guiding principles;termino;S;0;341;143;40;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+charging point;termino;E;1;303;66;20;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+parental leave;termino;S;0;302;133;40;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+psychosocial risk;termino;S;0;229;82;23;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+green deal;termino;E;0;228;130;38;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+oil spill;termino;E;1;212;20;5;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+product stewardship;termino;E;0;210;32;9;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+board composition;termino;G;0;210;89;27;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+re100;termino;E;0;208;70;18;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+women in management position;termino;S;0;184;76;25;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+zero accident;termino;S;0;156;51;12;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+three lines of defense;termino;G;0;130;65;18;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+occupational illness;termino;S;0;128;55;15;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+energy attribute certificate;termino;E;0;117;60;22;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+Ethisphere;termino;G;0;117;30;6;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+responsible tax;termino;G;0;101;53;14;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+iirc;termino;TRANS;0;92;42;14;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+mitigation hierarchy;termino;E;0;89;40;16;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+musculoskeletal disorder;termino;S;0;82;51;15;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+psychological safety;termino;S;0;70;30;13;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+safety data sheet;termino;S;1;62;32;10;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+pharmacovigilance;termino;S;1;152;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+bioethics;termino;S;1;150;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+special voting share;termino;G;0;104;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+hydrocarbon spill;termino;E;1;55;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+ethics training;termino;G;0;49;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+green project;termino;E;0;48;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+access to land;termino;S;1;47;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+healthy eating;termino;S;1;43;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+product responsibility;termino;S;0;38;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+talent attraction and retention;termino;S;0;35;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+afforestation;termino;E;0;33;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+corsia;termino;E;1;32;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+director independence;termino;G;0;32;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+consumer safety;termino;S;0;32;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+product traceability;termino;S;0;30;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+collective labour agreement;termino;S;0;29;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+board attendance;termino;G;0;28;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+socially responsible investor;termino;TRANS;0;26;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+cage free;termino;E;1;25;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+patient safety;termino;S;1;24;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+site remediation;termino;E;0;22;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+ozone layer;termino;E;0;21;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+medical ethics;termino;S;1;20;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+harmful consumption;termino;S;1;15;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+pharmaceutical residue;termino;E;1;15;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+reach registration;termino;E;1;15;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+vehicle recall;termino;S;1;15;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+soil contamination;termino;E;0;14;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+board independence;termino;G;0;14;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+eligible green project;termino;E;0;14;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+board tenure;termino;G;0;13;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+private security provider;termino;S;1;13;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+low-alcohol beer;termino;S;1;11;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+material safety data sheet;termino;S;1;10;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+deferred prosecution agreement;termino;G;0;9;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+loyalty voting structure;termino;G;0;8;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+supply chain responsibility;termino;S;0;7;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+cage-free egg;termino;E;1;4;;;;;;;;;;;;;no entra (masa o reparto insuficiente);
+whistle-blowing hotline;termino;G;0;4;;;;;;;;;;;;;no entra (masa o reparto insuficiente);

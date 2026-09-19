@@ -1,361 +1,383 @@
-# Vocabulario ESG canónico — única fuente de verdad.
+# GENERADO POR scripts/export_vocab_v3.py a partir de metadata/ESG_terms_v3.csv.
+# Para cambiar el vocabulario, edita las decisiones (ESG_terms_v3_decisiones.csv),
+# ejecuta build_vocab_v3.py y despues este script. No editar a mano.
 #
-# FORMATO: forma natural en singular, una por línea. NO lematizar a mano.
-#   · El plural lo añade automáticamente el regex ("emission" cubre "emissions").
-#   · Espacios y guiones son intercambiables ("net zero" cubre "net-zero").
-#   · Las líneas que empiezan por # y las vacías se ignoran.
+# Terminos en forma natural singular. El regex de extraccion tolera plural y guiones; el SUS usa su forma lematizada.
 #
-# ESTE FICHERO ALIMENTA DOS CONSUMIDORES CON REPRESENTACIONES DISTINTAS:
-#
-#   1. lexical_document_filter._ESG_KW_RE — regex sobre el texto CRUDO del PDF.
-#      Usa las formas de aquí tal cual, con tolerancia de plural y separadores.
-#
-#   2. config.ESG_KEYWORDS — vocabulario TF-IDF sobre el corpus LEMATIZADO.
-#      NO se lee de aquí directamente: se lee de esg_terms_lemmatized.txt, que
-#      genera scripts/build_lexicons.py pasando cada término por el MISMO
-#      TextProcessor que preprocesa el corpus. Así el vocabulario y el corpus
-#      hablan siempre la misma lengua.
-#
-# >>> DESPUÉS DE EDITAR ESTE FICHERO, EJECUTA:  python scripts/build_lexicons.py
-#     El script avisa de los términos que no sobreviven al preprocesado.
-#
-# Los términos con dígitos (scope 1, article 8, ifrs s1) NO van aquí: el
-# preprocesado elimina los tokens numéricos, así que nunca podrían puntuar en
-# el TF-IDF. Viven en _EXTRA_PATTERNS de lexical_document_filter.py, que solo
-# actúa sobre texto crudo.
-#
-# Estado: los términos de la auditoría externa (880 zonas de 4 memorias 2023)
-# YA están incorporados. Cada candidato se midió sobre los 343 informes
-# completos —ocurrencias, documentos, empresas, países y cuota de la empresa
-# que más lo usa— antes de admitirlo. Resultado: 102 aceptados por dispersión,
-# 18 frecuentes y polisémicos resueltos con colocaciones, y 22 sectoriales
-# apartados en esg_terms_sectorial.txt.
-#
-# La especificación que reporta el paper sigue siendo el vocabulario de 154
-# términos; esta ampliación se documenta como prueba de robustez.
-
-# --- Ambiental: clima y emisiones ---
-carbon
-emission
-ghg
-co2
-co2e
-climate
-greenhouse
-methane
-footprint
-offset
-net zero
-low carbon
-carbon neutrality
-climate change
-
-# --- Ambiental: energía ---
-renewable
-solar
-photovoltaic
-hydrogen
-green hydrogen
-biomass
-biofuel
-fuel
-coal
-electricity
-electrification
-energy transition
-energy consumption
-energy efficiency
-energy mix
-wind power
-wind energy
-transition plan
-
-# --- Ambiental: recursos y naturaleza ---
-biodiversity
-ecosystem
-deforestation
-reforestation
-water
-waste
-pollution
-hazardous
-plastic
-packaging
-drought
-flood
-flooding
-heat wave
-natural disaster
-nature-based solution
-chemical management
-
-# --- Sostenibilidad y economía circular ---
-sustainability
-sustainable
-decarbonization
-decarbonisation
-decarbonize
-decarbonise
-recycle
-recycling
-recyclable
-circular
-circularity
-circular economy
-
-# --- Social: personas y equidad ---
-diversity
-inclusion
-inclusive
-gender
-equality
-discrimination
-harassment
-racism
-injury
-stakeholder
-human right
-health and safety
-occupational health
-child labor
-forced labor
-labor right
-fair labor
-fair wage
-fair compensation
-fair condition
-living wage
-modern slavery
-social impact
-social responsibility
-social compliance
-social commitment
-social standard
-social norm
-community engagement
-training program
-training hour
-training and development
-employee wellbeing
-ungp
-
-# --- Gobernanza y ética ---
-governance
-remuneration
-transparency
-corruption
-bribery
-whistleblowing
-cybersecurity
-risk management
-due diligence
-data protection
-data privacy
-data security
-information security
-data breach
-fair competition
-responsible business
-responsible sourcing
-responsible investment
-supply chain management
-supply chain transparency
-supply chain risk
-supply chain due diligence
-tax avoidance
-tax policy
-tax transparency
-
-# --- Marcos de reporting y ratings ---
-esg
-csr
-materiality
-double materiality
-material topic
-non-financial
-nonfinancial
-tcfd
-gri
-global reporting initiative
-sasb
-sfdr
-csrd
-esrs
-issb
-tnfd
-sdg
-sbti
-science based target
-cdp
-gdpr
-eu taxonomy
-taxonomy aligned
-taxonomy alignment
-taxonomy eligible
-un global compact
-ecovadis
-sustainalytics
-ftse4good
-msci esg
-leed
-zdhc
-green bond
-green investment
+# >>> DESPUES DE REGENERAR, EJECUTA:  python scripts/build_lexicons.py
 
 
-# --- Terminos incorporados tras el analisis de dispersion sobre 343 informes ---
-# Dispersos entre empresas y paises, sin concentracion sectorial.
-absenteeism
-accessibility
-affordability
+# --- E: Ambiental (138) ---
 agroforestry
 air pollutant
 air quality
+alternative fuel
 animal welfare
-anti-money laundering
-apprentice
-audit committee
-business ethics
+biodiversity
+biofuel
+biomass
+carbon
+carbon footprint
+carbon neutrality
+carbon offset
+chemical management
+circular economy
+circularity
 clean energy
-code of conduct
-code of ethics
-collective bargaining
+climate
+climate change
+co2
+co2e
+coal
 compost
-conflict of interest
-conflicts of interest
-consumer protection
-customer privacy
-customer satisfaction
-dei
-duty of vigilance
+decarbonisation
+decarbonise
+decarbonization
+decarbonize
+deforestation
+drought
+eco-design
+ecological footprint
+ecosystem restoration
+ecosystem service
 effluent
-employee engagement
-energy management
-equal opportunity
-equal pay
-ergonomic
-fair trade
-female representation
-first aid
-freedom of association
+electricity
+electrification
+emission
+employee commuting
+energy attribute certificate
+energy consumption
+energy efficiency
+energy mix
+energy transition
+environmental footprint
+extreme weather event
+flood
+flooding
+fossil fuel
+fuel consumption
 geothermal
+ghg
 global warming
+green bond
+green building
+green deal
 green energy
+green financing
+green hydrogen
+green investment
+greenhouse
+groundwater
+groundwater contamination
 habitat
-human capital
-human trafficking
+hazardous
+heat wave
 hydroelectric
+hydrogen
 hydropower
-independent director
-indigenous
-insider trading
-internal audit
-internal control
 iso 14001
-iso 45001
 iso 50001
-labor practices
 land use
 landfill
 lca
+leed
 life cycle assessment
-lobbying
+low carbon
+low-carbon fuel
+methane
+microplastic
+mitigation hierarchy
+natural capital
+natural disaster
+natural ecosystem
+natural resource
+nature-based solution
+net zero
+nox
+ocean
+packaging waste
+particulate matter
+photovoltaic
+physical risk
+plastic
+plastic packaging
+pollution
+power purchase agreement
+product stewardship
+raw material consumption
+raw material sourcing
+re100
+recyclable
+recyclable packaging
+recycle
+recycled packaging
+recycled raw material
+recycling
+reforestation
+refrigerant
+regenerative agriculture
+renewable
+resource efficiency
+reuse
+sbti
+science based target
+soil health
+solar energy
+solar farm
+solar panel
+solar plant
+solar power
+species
+supply chain decarbonisation
+supply chain emission
+supply chain footprint
+sustainable aviation fuel
+sustainable packaging
+transition plan
+transition risk
+volatile organic
+waste
+wastewater
+water
+water footprint
+wetland
+wind energy
+wind farm
+wind power
+wind turbine
+zdhc
+
+# --- S: Social (114) ---
+absenteeism
+accessibility
+accident rate
+affordability
+apprentice
+child labor
+childcare
+collective bargaining
+community engagement
+corporate volunteering
+customer privacy
+disability inclusion
+discrimination
+diversity
+donation
+employee engagement
+employee representative
+employee wellbeing
+employees with disabilities
+equal opportunity
+equal pay
+equality
+ergonomic
+fair compensation
+fair condition
+fair labor
+fair trade
+fair wage
+fatality
+female representation
+first aid
+forced labor
+freedom of association
+gender
+grievance
+harassment
+health and safety
+hse
+human capital
+human right
+human trafficking
+ilo
+inclusion
+inclusive
+indigenous
+injury
+iso 45001
+labor practices
+labor right
+living wage
 local community
 maternity
 mental health
-microplastic
 minimum wage
-money laundering
-natural capital
-nox
+modern slavery
+musculoskeletal disorder
+occupational health
+occupational illness
 oecd guidelines
-particulate matter
+parental leave
 pay equity
+people with disabilities
+personal data
+persons with disabilities
 philanthropy
-political contribution
-product quality
 product safety
-raw material
-refrigerant
-regenerative agriculture
-related party
+psychological safety
+psychosocial risk
+racism
 reskilling
-resource efficiency
 responsible marketing
-risk appetite
 road safety
-sapin
-say on pay
-scenario analysis
+skills development
+social audit
+social commitment
+social compliance
 social dialogue
+social enterprise
+social impact
+social inclusion
+social issue
+social norm
+social partner
+social performance
 social protection
-soil health
-speak up
-species
-succession planning
-supplier assessment
-supply chain
+social responsibility
+social risk
+social standard
+stakeholder
+supplier audit
+supply chain audit
+supply chain human right
+supply chain labour
+supply chain worker
 talent development
-tax strategy
 trade union
+training and development
+training hour
+training program
+un guiding principles
+ungp
 upskilling
-vigilance plan
-volatile organic
-wastewater
-wetland
-wind farm
-wind turbine
-work-life balance
-works council
-
-# --- Terminos frecuentes y dispersos, admitidos sueltos ---
-antitrust
-disability
-donation
-ethical
-fatality
-fraud
-grievance
-ilo
-integrity
-marine
-ocean
-sanction
 volunteer
+vulnerable group
+vulnerable population
+well-being
 wellbeing
-whistleblower
+women in management
+women in management position
+work-life balance
+working condition
+working hours
+works council
+zero accident
 
-# --- Colocaciones de 'compliance' (lista de INCLUSION) ---
-# 'compliance' suelto tiene un 44,5 % de usos genericos sin contexto y un
-# 8,7 % contable/auditoria. Ver metadata/colocaciones_analisis.md.
-compliance officer
+# --- G: Gobernanza (85) ---
+anti-fraud
+anti-money laundering
+antitrust
+audit committee
+board committee
+board composition
+board evaluation
+board of directors
+bribery
+business ethics
+business integrity
+climate risk management
+climate scenario analysis
+code of conduct
+compliance and ethics
 compliance committee
-compliance function
 compliance department
+compliance function
 compliance management system
+compliance officer
 compliance program
 compliance programme
-compliance training
 compliance risk
+compliance system
+compliance training
 compliance violation
-non-compliance
-regulatory compliance
+conflict of interest
+conflicts of interest
+corruption
+cybersecurity
+data breach
+data privacy
+data protection
+data security
+due diligence
+enterprise risk management
+esg risk management
+ethical
 ethics and compliance
-compliance and ethics
-tax compliance
-
-# --- Colocaciones de 'social' (lista de INCLUSION) ---
-# 'social' suelto arrastra social security, social media y social network.
-social performance
-social risk
-social audit
-social inclusion
-social partner
-social indicator
-social issue
-social enterprise
-
-# --- Colocaciones de 'proxy' (adjudicadas en la auditoria externa) ---
-# 'proxy' suelto captura mayoritariamente 'proxy hedging', tecnica financiera.
-proxy statement
+ethisphere
+executive committee
+fair competition
+fraud prevention
+gdpr
+governance
+independent director
+information security
+insider trading
+internal audit
+internal control
+lobbying
+malus
+money laundering
+nomination committee
+political contribution
 proxy advisor
+regulatory compliance
+remuneration
+responsible business
+responsible investment
+responsible sourcing
+responsible tax
+risk committee
+sanction
+sapin
+say on pay
+short-term incentive
+speak up
+succession planning
+supplier assessment
+supply chain due diligence
+supply chain ethics
+supply chain risk
+supply chain transparency
+sustainability risk management
+tax avoidance
+tax compliance
+tax policy
+tax strategy
+tax transparency
+three lines of defence
+three lines of defense
+vigilance plan
+whistleblower
+whistleblowing
+
+# --- TRANS: Transversal (marcos, sostenibilidad en general) (30) ---
+2030 agenda
+cdp
+csr
+csrd
+double materiality
+ecovadis
+esg
+esrs
+eu taxonomy
+ftse4good
+global reporting initiative
+iirc
+issb
+limited assurance
+material topic
+materiality analysis
+materiality assessment
+materiality matrix
+msci esg
+sasb
+sdg
+sfdr
+sustainability
+sustainable
+sustainalytics
+taxonomy alignment
+taxonomy eligible
+tcfd
+tnfd
+un global compact

@@ -1,0 +1,144 @@
+termino;tipo;pilar;sectorial;ocurrencias;documentos;empresas
+board of directors;termino;G;0;32446;288;49
+supervisory board;termino;G;0;32230;281;44
+executive committee;termino;G;0;5561;223;39
+management board;termino;G;0;3555;192;41
+risk committee;termino;G;0;3547;220;41
+well-being;termino;S;0;3005;269;49
+personal data;termino;S;0;2702;283;48
+working condition;termino;S;0;2638;262;47
+external auditor;termino;G;0;2481;241;46
+employee representative;termino;S;0;2116;240;43
+long-term incentive;termino;G;0;2044;252;44
+reuse;termino;E;0;1943;225;43
+hse;termino;S;0;1889;57;12
+nomination committee;termino;G;0;1882;184;35
+electric vehicle;termino;E;1;1869;227;47
+physical risk;termino;E;0;1802;219;47
+traceability;termino;S;0;1694;191;40
+transition risk;termino;E;0;1626;172;45
+natural resource;termino;E;0;1557;250;45
+board committee;termino;G;0;1544;271;47
+voting right;termino;G;0;1536;276;46
+limited assurance;termino;TRANS;0;1273;215;47
+long-term incentive plan;termino;G;0;1006;172;34
+working hours;termino;S;0;944;212;45
+palm oil;termino;E;1;878;89;18
+pollutant;termino;E;0;876;154;46
+export control;termino;G;1;856;113;26
+general meeting of shareholders;termino;G;0;843;100;22
+corporate responsibility;termino;TRANS;0;704;166;39
+non-audit service;termino;G;0;663;234;43
+competition law;termino;G;0;636;163;35
+flaring;termino;E;1;612;19;7
+eco-design;termino;E;0;594;90;22
+offshore wind;termino;E;1;589;89;21
+extreme weather event;termino;E;0;532;173;46
+protected area;termino;E;0;526;100;33
+malus;termino;G;0;518;99;25
+energy saving;termino;E;0;473;147;40
+groundwater;termino;E;0;463;110;31
+integrated report;termino;TRANS;0;458;87;21
+power purchase agreement;termino;E;0;448;135;39
+short-term incentive;termino;G;0;442;99;23
+pay ratio;termino;G;0;426;103;34
+conflict mineral;termino;S;1;389;75;18
+women in management;termino;S;0;378;108;32
+access to energy;termino;S;1;368;34;9
+skills development;termino;S;0;351;115;42
+compliance system;termino;G;0;346;110;26
+un guiding principles;termino;S;0;341;143;40
+safety at work;termino;S;0;333;134;31
+employee commuting;termino;E;0;313;108;36
+charging point;termino;E;1;303;66;20
+parental leave;termino;S;0;302;133;40
+employee share ownership;termino;S;0;297;87;20
+consumer health;termino;S;0;286;63;17
+employee training;termino;S;0;275;138;39
+vehicle safety;termino;S;1;261;31;6
+smart grid;termino;E;1;258;39;14
+vulnerable group;termino;S;0;245;89;31
+external assurance;termino;TRANS;0;237;40;13
+psychosocial risk;termino;S;0;229;82;23
+green deal;termino;E;0;228;130;38
+three lines of defence;termino;G;0;215;53;12
+oil spill;termino;E;1;212;20;5
+product stewardship;termino;E;0;210;32;9
+board composition;termino;G;0;210;89;27
+re100;termino;E;0;208;70;18
+breeam;termino;E;1;201;80;21
+supplier audit;termino;S;0;185;71;22
+women in management position;termino;S;0;184;76;25
+access to healthcare;termino;S;1;182;56;17
+vulnerable population;termino;S;0;172;65;24
+controlling shareholder;termino;G;0;171;83;22
+workplace safety;termino;S;0;162;89;27
+2030 agenda;termino;TRANS;0;158;78;21
+zero accident;termino;S;0;156;51;12
+pharmacovigilance;termino;S;1;152;13;3
+bioethics;termino;S;1;150;12;3
+product recall;termino;S;0;139;82;21
+employee share ownership plan;termino;S;0;137;61;14
+green building;termino;E;0;135;66;17
+shareholder rights;termino;G;0;130;74;19
+three lines of defense;termino;G;0;130;65;18
+occupational illness;termino;S;0;128;55;15
+childcare;termino;S;0;127;87;31
+employee turnover;termino;S;0;127;76;32
+coso framework;termino;G;0;123;65;12
+labour law;termino;S;0;121;58;17
+accident rate;termino;S;0;120;58;17
+energy attribute certificate;termino;E;0;117;60;22
+Ethisphere;termino;G;0;117;30;6
+counterfeiting;termino;S;1;114;43;12
+special voting share;termino;G;0;104;10;2
+food bank;termino;S;1;102;30;13
+responsible tax;termino;G;0;101;53;14
+green financing;termino;E;0;96;36;13
+iirc;termino;TRANS;0;92;42;14
+mitigation hierarchy;termino;E;0;89;40;16
+musculoskeletal disorder;termino;S;0;82;51;15
+corporate volunteering;termino;S;0;80;37;15
+psychological safety;termino;S;0;70;30;13
+smart meter;termino;E;1;68;30;10
+auditor independence;termino;G;0;63;37;10
+safety data sheet;termino;S;1;62;32;10
+board evaluation;termino;G;0;60;24;8
+hydrocarbon spill;termino;E;1;55;13;2
+qualification matrix;termino;G;0;55;28;12
+groundwater contamination;termino;E;0;54;30;7
+ethics training;termino;G;0;49;32;14
+green project;termino;E;0;48;35;15
+access to land;termino;S;1;47;9;3
+healthy eating;termino;S;1;43;24;12
+product responsibility;termino;S;0;38;25;8
+talent attraction and retention;termino;S;0;35;28;11
+afforestation;termino;E;0;33;26;16
+corsia;termino;E;1;32;10;3
+director independence;termino;G;0;32;22;5
+consumer safety;termino;S;0;32;17;7
+product traceability;termino;S;0;30;21;5
+collective labour agreement;termino;S;0;29;18;5
+board attendance;termino;G;0;28;18;5
+socially responsible investor;termino;TRANS;0;26;19;7
+cage free;termino;E;1;25;6;2
+patient safety;termino;S;1;24;6;1
+site remediation;termino;E;0;22;22;6
+ozone layer;termino;E;0;21;20;8
+medical ethics;termino;S;1;20;7;1
+harmful consumption;termino;S;1;15;7;2
+pharmaceutical residue;termino;E;1;15;8;2
+reach registration;termino;E;1;15;12;3
+vehicle recall;termino;S;1;15;10;3
+soil contamination;termino;E;0;14;13;5
+board independence;termino;G;0;14;14;11
+eligible green project;termino;E;0;14;9;6
+board tenure;termino;G;0;13;10;3
+private security provider;termino;S;1;13;3;1
+low-alcohol beer;termino;S;1;11;4;1
+material safety data sheet;termino;S;1;10;5;1
+deferred prosecution agreement;termino;G;0;9;6;3
+loyalty voting structure;termino;G;0;8;5;2
+supply chain responsibility;termino;S;0;7;5;4
+cage-free egg;termino;E;1;4;3;2
+whistle-blowing hotline;termino;G;0;4;4;1

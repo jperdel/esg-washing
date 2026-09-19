@@ -1,0 +1,401 @@
+termino;n;veredicto;categoria;nota
+sustainab\w+;1;1;ok;
+sustainab\w+;2;1;ok;
+sustainab\w+;3;0;generico;sustainable long-term value creation del codigo
+sustainab\w+;4;1;ok;
+sustainab\w+;5;1;ok;
+sustainab\w+;6;0;generico;sustainable strategic orientation
+sustainab\w+;7;1;ok;
+sustainab\w+;8;1;ok;
+sustainab\w+;9;1;ok;
+sustainab\w+;10;1;ok;
+sustainab\w+;11;1;ok;
+sustainab\w+;12;0;generico;sustainable profitable growth
+sustainab\w+;13;1;ok;
+sustainab\w+;14;0;generico;grow sustainably
+sustainab\w+;15;1;ok;
+sustainab\w+;16;1;ok;
+sustainab\w+;17;1;ok;
+sustainab\w+;18;0;generico;sustainability of actions = durabilidad
+sustainab\w+;19;0;generico;sustainable distribution to shareholders
+sustainab\w+;20;1;ok;
+sustainab\w+;21;1;ok;
+sustainab\w+;22;1;ok;
+sustainab\w+;23;1;ok;
+sustainab\w+;24;0;indice;referencia cruzada a capitulo
+sustainab\w+;25;1;ok;
+sustainab\w+;26;1;ok;
+sustainab\w+;27;0;generico;sustainable differentiation
+sustainab\w+;28;0;indice;encabezado
+sustainab\w+;29;1;ok;
+sustainab\w+;30;1;ok;tabla GAR
+sustainab\w+;31;0;indice;indice de contenidos
+sustainab\w+;32;1;ok;
+sustainab\w+;33;1;ok;
+sustainab\w+;34;0;indice;encabezado de seccion
+sustainab\w+;35;0;indice;referencia a Sustainability Report
+sustainab\w+;36;1;ok;
+sustainab\w+;37;0;generico;sustainable business partner
+sustainab\w+;38;1;ok;
+sustainab\w+;39;1;ok;
+sustainab\w+;40;1;ok;
+environ\w+;1;1;ok;
+environ\w+;2;0;generico;entorno local
+environ\w+;3;0;indice;tabla GRI
+environ\w+;4;0;indice;tabla TCFD
+environ\w+;5;1;ok;
+environ\w+;6;1;ok;
+environ\w+;7;1;ok;
+environ\w+;8;0;generico;mixed reality environment
+environ\w+;9;1;ok;
+environ\w+;10;1;ok;
+environ\w+;11;1;ok;
+environ\w+;12;1;ok;
+environ\w+;13;1;ok;
+environ\w+;14;0;indice;encabezado
+environ\w+;15;0;generico;social and economic environment
+environ\w+;16;1;ok;
+environ\w+;17;0;financiero;economic environment en notas contables
+environ\w+;18;0;generico;texto garbled regimen fiscal
+environ\w+;19;0;generico;Economic Environment
+environ\w+;20;0;generico;regulatory environment
+environ\w+;21;1;ok;
+environ\w+;22;0;generico;regulatory environment
+environ\w+;23;0;indice;indice de contenidos
+environ\w+;24;1;ok;
+environ\w+;25;0;generico;operate in any environment
+environ\w+;26;1;ok;
+environ\w+;27;1;ok;
+environ\w+;28;1;ok;
+environ\w+;29;1;ok;
+environ\w+;30;1;ok;
+environ\w+;31;1;ok;
+environ\w+;32;1;ok;
+environ\w+;33;1;ok;
+environ\w+;34;0;generico;entorno residencial
+environ\w+;35;0;generico;macro-economic environment
+environ\w+;36;1;ok;inclusive working environment
+environ\w+;37;1;ok;
+environ\w+;38;1;ok;
+environ\w+;39;1;ok;
+environ\w+;40;1;ok;
+remuneration;1;1;ok;
+remuneration;2;1;ok;
+remuneration;3;1;ok;
+remuneration;4;1;ok;
+remuneration;5;1;ok;
+remuneration;6;1;ok;
+remuneration;7;1;ok;
+remuneration;8;1;ok;
+remuneration;9;0;indice;referencia cruzada a capitulo 2
+remuneration;10;0;indice;referencia a Remuneration Report
+remuneration;11;0;financiero;remuneracion de aportaciones en especie
+remuneration;12;1;ok;
+remuneration;13;1;ok;
+remuneration;14;1;ok;tabla retributiva
+remuneration;15;1;ok;
+remuneration;16;1;ok;
+remuneration;17;1;ok;
+remuneration;18;0;indice;referencia a Compensation Report
+remuneration;19;1;ok;
+remuneration;20;0;indice;referencia a Remuneration report
+remuneration;21;0;indice;referencia a Remuneration Report
+remuneration;22;1;ok;
+remuneration;23;1;ok;
+remuneration;24;1;ok;
+remuneration;25;1;ok;
+remuneration;26;1;ok;
+remuneration;27;1;ok;
+remuneration;28;1;ok;
+remuneration;29;1;ok;
+remuneration;30;1;ok;
+remuneration;31;1;ok;
+remuneration;32;1;ok;
+remuneration;33;1;ok;
+remuneration;34;1;ok;
+remuneration;35;0;indice;referencia a web
+remuneration;36;1;ok;
+remuneration;37;0;financiero;gastos de personal
+remuneration;38;1;ok;
+remuneration;39;1;ok;
+remuneration;40;1;ok;
+emission;1;1;ok;
+emission;2;1;ok;
+emission;3;0;financiero;derechos de emision contabilidad
+emission;4;1;ok;
+emission;5;1;ok;
+emission;6;1;ok;
+emission;7;1;ok;
+emission;8;1;ok;
+emission;9;1;ok;
+emission;10;0;indice;glosario
+emission;11;1;ok;
+emission;12;1;ok;
+emission;13;1;ok;
+emission;14;1;ok;
+emission;15;1;ok;
+emission;16;1;ok;
+emission;17;1;ok;
+emission;18;1;ok;
+emission;19;1;ok;
+emission;20;1;ok;
+emission;21;1;ok;
+emission;22;1;ok;
+emission;23;1;ok;
+emission;24;1;ok;
+emission;25;1;ok;
+emission;26;1;ok;
+emission;27;1;ok;
+emission;28;1;ok;
+emission;29;1;ok;
+emission;30;1;ok;
+emission;31;1;ok;
+emission;32;1;ok;
+emission;33;1;ok;
+emission;34;1;ok;
+emission;35;1;ok;
+emission;36;0;indice;encabezado
+emission;37;1;ok;
+emission;38;1;ok;
+emission;39;1;ok;
+emission;40;1;ok;
+sustainability;1;1;ok;
+sustainability;2;1;ok;
+sustainability;3;1;ok;
+sustainability;4;1;ok;
+sustainability;5;1;ok;
+sustainability;6;1;ok;
+sustainability;7;1;ok;
+sustainability;8;0;generico;solvencia del banco
+sustainability;9;1;ok;
+sustainability;10;1;ok;
+sustainability;11;1;ok;
+sustainability;12;1;ok;
+sustainability;13;1;ok;
+sustainability;14;0;generico;businesss sustainability = continuidad
+sustainability;15;1;ok;
+sustainability;16;0;otro;biografia consejero otra empresa
+sustainability;17;1;ok;
+sustainability;18;1;ok;
+sustainability;19;0;indice;tabla ESRS
+sustainability;20;1;ok;
+sustainability;21;1;ok;
+sustainability;22;0;indice;referencia a informe externo
+sustainability;23;1;ok;
+sustainability;24;1;ok;
+sustainability;25;0;indice;referencia a Sustainability Report
+sustainability;26;1;ok;
+sustainability;27;1;ok;
+sustainability;28;1;ok;
+sustainability;29;1;ok;
+sustainability;30;1;ok;
+sustainability;31;1;ok;
+sustainability;32;1;ok;
+sustainability;33;1;ok;
+sustainability;34;0;indice;referencia a Sustainability report
+sustainability;35;1;ok;
+sustainability;36;1;ok;
+sustainability;37;1;ok;
+sustainability;38;1;ok;
+sustainability;39;1;ok;
+sustainability;40;0;indice;referencia cruzada
+governance;1;0;indice;tabla de correspondencia
+governance;2;1;ok;
+governance;3;0;indice;referencia en informe de auditoria
+governance;4;0;indice;indice de contenidos
+governance;5;1;ok;
+governance;6;0;financiero;those charged with governance auditoria
+governance;7;0;indice;encabezado
+governance;8;0;indice;indice de contenidos
+governance;9;1;ok;
+governance;10;0;indice;intro de capitulo
+governance;11;0;indice;lista de apartados
+governance;12;1;ok;
+governance;13;0;indice;encabezado de comite
+governance;14;1;ok;
+governance;15;1;ok;
+governance;16;1;ok;
+governance;17;0;otro;URL
+governance;18;1;ok;
+governance;19;1;ok;
+governance;20;0;otro;division Governance Risk & Compliance
+governance;21;1;ok;
+governance;22;0;indice;encabezado numerado
+governance;23;1;ok;
+governance;24;0;indice;referencia cruzada
+governance;25;1;ok;
+governance;26;1;ok;
+governance;27;0;indice;tabla ESRS
+governance;28;0;indice;encabezado
+governance;29;1;ok;
+governance;30;1;ok;
+governance;31;1;ok;
+governance;32;0;indice;referencia cruzada web
+governance;33;1;ok;
+governance;34;1;ok;
+governance;35;1;ok;
+governance;36;1;ok;
+governance;37;1;ok;
+governance;38;1;ok;
+governance;39;1;ok;
+governance;40;0;indice;encabezado
+climate;1;0;indice;tabla ESRS
+climate;2;1;ok;
+climate;3;0;generico;climatizacion
+climate;4;1;ok;
+climate;5;1;ok;
+climate;6;1;ok;
+climate;7;1;ok;
+climate;8;1;ok;
+climate;9;0;indice;tabla TCFD
+climate;10;1;ok;
+climate;11;1;ok;
+climate;12;1;ok;
+climate;13;1;ok;
+climate;14;1;ok;
+climate;15;1;ok;
+climate;16;1;ok;
+climate;17;1;ok;
+climate;18;1;ok;
+climate;19;1;ok;
+climate;20;1;ok;
+climate;21;1;ok;
+climate;22;1;ok;
+climate;23;1;ok;
+climate;24;1;ok;
+climate;25;0;generico;economic climate
+climate;26;1;ok;
+climate;27;0;indice;encabezado continued
+climate;28;0;indice;encabezado
+climate;29;1;ok;
+climate;30;1;ok;
+climate;31;1;ok;
+climate;32;1;ok;
+climate;33;0;indice;tabla ESRS
+climate;34;1;ok;
+climate;35;1;ok;
+climate;36;0;indice;glosario
+climate;37;1;ok;
+climate;38;1;ok;
+climate;39;1;ok;
+climate;40;1;ok;
+sustainable;1;1;ok;
+sustainable;2;0;indice;referencia cruzada
+sustainable;3;1;ok;
+sustainable;4;0;generico;sustainable leadership
+sustainable;5;0;generico;sustainable corporate governance and growth
+sustainable;6;1;ok;
+sustainable;7;0;generico;sustainable long-term growth
+sustainable;8;1;ok;
+sustainable;9;0;indice;cabecera de tabla
+sustainable;10;1;ok;
+sustainable;11;0;generico;sustainable long-term strategy
+sustainable;12;0;indice;encabezado y remision a web
+sustainable;13;1;ok;
+sustainable;14;1;ok;
+sustainable;15;1;ok;
+sustainable;16;1;ok;
+sustainable;17;1;ok;
+sustainable;18;0;generico;sustainable results
+sustainable;19;1;ok;
+sustainable;20;1;ok;
+sustainable;21;1;ok;
+sustainable;22;1;ok;
+sustainable;23;1;ok;
+sustainable;24;0;otro;nombre WBCSD
+sustainable;25;1;ok;tabla taxonomia
+sustainable;26;1;ok;
+sustainable;27;1;ok;
+sustainable;28;1;ok;
+sustainable;29;1;ok;
+sustainable;30;0;generico;sustainable success del codigo
+sustainable;31;1;ok;
+sustainable;32;0;generico;sustainable HR strategy
+sustainable;33;1;ok;
+sustainable;34;1;ok;
+sustainable;35;0;generico;texto garbled de segmento
+sustainable;36;1;ok;
+sustainable;37;1;ok;
+sustainable;38;1;ok;
+sustainable;39;1;ok;
+sustainable;40;1;ok;
+water;1;0;generico;sector de mercado
+water;2;1;ok;
+water;3;0;financiero;politica contable de provisiones
+water;4;1;ok;
+water;5;1;ok;
+water;6;1;ok;
+water;7;0;financiero;land and water areas no amortizan
+water;8;0;indice;glosario
+water;9;1;ok;
+water;10;1;ok;
+water;11;0;indice;tabla de datapoints ESRS
+water;12;1;ok;
+water;13;0;financiero;land and water areas no amortizan
+water;14;1;ok;
+water;15;1;ok;
+water;16;1;ok;
+water;17;1;ok;
+water;18;1;ok;
+water;19;1;ok;
+water;20;0;financiero;concesiones hidroelectricas juridico
+water;21;1;ok;
+water;22;1;ok;
+water;23;1;ok;
+water;24;1;ok;
+water;25;1;ok;
+water;26;0;otro;biografia
+water;27;1;ok;
+water;28;1;ok;
+water;29;1;ok;
+water;30;1;ok;
+water;31;1;ok;
+water;32;1;ok;
+water;33;1;ok;
+water;34;0;otro;nombre de producto
+water;35;1;ok;
+water;36;1;ok;
+water;37;1;ok;tabla taxonomia
+water;38;1;ok;
+water;39;1;ok;
+water;40;1;ok;
+risk management;1;0;indice;referencia cruzada
+risk management;2;0;indice;indice GRI
+risk management;3;0;financiero;contabilidad de coberturas
+risk management;4;1;ok;
+risk management;5;1;ok;
+risk management;6;0;financiero;nota de riesgo financiero
+risk management;7;1;ok;
+risk management;8;0;indice;encabezado
+risk management;9;1;ok;
+risk management;10;1;ok;
+risk management;11;0;indice;tabla de correspondencia
+risk management;12;0;financiero;contabilidad de coberturas
+risk management;13;1;ok;
+risk management;14;1;ok;
+risk management;15;1;ok;
+risk management;16;0;indice;tabla TCFD
+risk management;17;1;ok;
+risk management;18;1;ok;
+risk management;19;0;otro;biografia
+risk management;20;1;ok;
+risk management;21;1;ok;
+risk management;22;1;ok;
+risk management;23;1;ok;
+risk management;24;0;financiero;riesgo de mercado
+risk management;25;1;ok;
+risk management;26;1;ok;
+risk management;27;0;financiero;tesoreria
+risk management;28;1;ok;matriz de competencias del consejo
+risk management;29;1;ok;
+risk management;30;1;ok;
+risk management;31;1;ok;
+risk management;32;1;ok;
+risk management;33;0;indice;referencia a informe
+risk management;34;1;ok;
+risk management;35;1;ok;
+risk management;36;1;ok;
+risk management;37;0;financiero;boilerplate de auditoria
+risk management;38;0;financiero;verificacion de precios
+risk management;39;1;ok;
+risk management;40;0;indice;referencia en informe de auditoria

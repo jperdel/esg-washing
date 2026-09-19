@@ -1,0 +1,361 @@
+bloque;termino;n_muestras;ocurrencias
+1;sustainab\w+;40;83636
+1;environ\w+;40;75456
+1;remuneration;40;60374
+1;emission;40;54902
+1;governance;40;47289
+1;sustainability;40;46492
+1;climate;40;45438
+1;sustainable;40;35229
+1;water;40;27206
+1;risk management;40;26716
+2;carbon;20;24175
+2;human right;20;21428
+2;stakeholder;20;20744
+2;climate change;20;20725
+2;co2e?;20;19980
+2;internal control;20;19142
+2;waste;20;18181
+2;renewable;20;17399
+2;electricity;20;16973
+2;esg;20;16646
+2;diversity;20;16351
+2;scope\s*[123]\b;20;15611
+2;energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);20;14435
+2;non-financial;20;14069
+2;co2;20;13351
+2;recycl\w+;20;12936
+2;audit committee;20;12404
+2;biodiversity;20;12106
+2;ghg;20;10992
+2;social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);20;10427
+3;corruption;12;10115
+3;gender;12;10100
+3;inclusion;12;10003
+3;fuel;12;9911
+3;health and safety;12;9560
+3;footprint;12;8838
+3;circular;12;8657
+3;csr;12;8400
+3;independent director;12;8312
+3;offset;12;7940
+3;ecosystem;12;7525
+3;esrs;12;7490
+3;materiality;12;7241
+3;solar;12;7159
+3;greenhouse;12;7127
+3;packaging;12;6902
+3;gri;12;6812
+3;transparency;12;6789
+3;fraud;12;6653
+3;code of conduct;12;6635
+3;disabilit\w+;12;6502
+3;integrity;12;6498
+3;decarboni\w+;12;6493
+3;water\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress);12;6446
+3;circular economy;12;5992
+3;ethical;12;5942
+3;inclusiv\w+;12;5793
+3;internal audit;12;5763
+3;inclusive;12;5454
+3;pollution;12;5451
+3;energy consumption;12;5393
+3;taxonomy aligned;12;5304
+3;plastic;12;5222
+3;recycling;12;5183
+4;low carbon;12;4933
+4;risk appetite;12;4851
+4;sdg;12;4751
+4;data protection;12;4645
+4;hydrogen;12;4481
+4;net zero;12;4423
+4;cybersecuri\w+;12;4381
+4;cybersecurity;12;4369
+4;energy efficiency;12;4282
+4;due diligence;12;4260
+4;taxonomy eligible;12;4137
+4;sanction;12;3822
+4;disability;12;3805
+4;equality;12;3669
+4;decarbonization;12;3647
+4;whistleblow\w+;12;3577
+4;co2e;12;3505
+4;discrimination;12;3397
+4;eu taxonomy;12;3396
+4;social responsibility;12;3379
+4;offset\w+;12;3366
+4;energy transition;12;3226
+4;electrif\w+;12;3085
+4;hazardous;12;2989
+4;injur\w+;12;2987
+4;related party;12;2887
+4;conflicts of interest;12;2869
+4;works council;12;2838
+4;non-compliance;12;2811
+4;local\s+communit\w+;12;2750
+4;code of ethics;12;2737
+4;cdp;12;2592
+4;compliance committee;12;2523
+4;coal;12;2424
+5;whistleblowing;12;2365
+5;bribery;12;2360
+5;marine;6;2349
+5;donation;6;2235
+5;electrification;6;2213
+5;collective bargaining;6;2204
+5;employee engagement;6;1960
+5;compliance risk;6;1901
+5;harassment;6;1869
+5;vigilance plan;6;1862
+5;compliance officer;6;1816
+5;social dialogue;6;1810
+5;trade union;6;1748
+5;tcfd;6;1744
+5;occupational health;6;1729
+5;nonfinancial;6;1721
+5;article\s*[689]\b;6;1707
+5;circulari\w+;6;1673
+5;sbti;6;1669
+5;data privacy;6;1656
+5;circularity;6;1652
+5;paris\s+agreement;6;1651
+5;information security;6;1649
+5;material topic;6;1632
+5;carbon neutrality;6;1597
+5;wastewater;6;1594
+5;species;6;1590
+5;ilo;6;1577
+5;deforestation;6;1551
+5;equal\s+opportunit\w+;6;1550
+5;methane;6;1501
+5;conflict of interest;6;1499
+5;double materiality;6;1496
+5;social impact;6;1489
+5;transition plan;6;1486
+5;csrd;6;1454
+5;compliance program;6;1452
+5;training program;6;1433
+5;money laundering;6;1432
+5;injury;6;1357
+5;decarbonisation;6;1353
+5;nutrition;6;1331
+5;animal welfare;6;1322
+5;iso\s*14001\b;6;1278
+5;energy management;6;1274
+5;antitrust;6;1252
+5;customer satisfaction;6;1247
+5;biofuel;6;1232
+5;photovoltaic;6;1231
+5;science based target;6;1226
+5;business ethics;6;1223
+5;whistleblower;6;1200
+5;global warming;6;1120
+5;succession planning;6;1108
+5;freedom of association;6;1083
+5;ocean;6;1058
+5;landfill;6;1056
+5;ethics and compliance;6;1046
+5;duty of vigilance;6;1044
+5;regenerative agriculture;6;1035
+5;grievance;6;1032
+5;wellbeing;6;989
+5;iso 14001;6;980
+5;wind farm;6;976
+5;dei;6;973
+6;product safety;6;962
+6;compliance management system;6;929
+6;gdpr;6;927
+6;child labor;6;917
+6;accessibility;6;912
+6;habitat;6;911
+6;forced labor;6;911
+6;volunteer;6;905
+6;living wage;6;894
+6;compliance function;6;882
+6;green bond;6;875
+6;responsible business;6;864
+6;flood;6;857
+6;mental health;6;857
+6;social risk;6;847
+6;speak up;6;844
+6;sasb;6;823
+6;sfdr;6;812
+6;work-life balance;6;809
+6;biomass;6;801
+6;recyclable;6;800
+6;training hour;6;794
+6;fatalit\w+;6;776
+6;regulatory compliance;6;773
+6;compliance department;6;771
+6;scenario analysis;6;768
+6;human capital;6;763
+6;philanthrop\w+;6;762
+6;natural disaster;6;757
+6;recycle;6;753
+6;absenteeism;6;734
+6;hydroelectric;6;713
+6;oecd guidelines;6;708
+6;equal pay;6;704
+6;energy storage;6;697
+6;ecovadis;6;678
+6;indigenous;6;672
+6;social protection;6;655
+6;responsible investment;6;630
+6;ergonomic\w*;6;627
+6;responsible sourcing;6;625
+6;land use;6;621
+6;product quality;6;621
+6;un global compact;6;618
+6;social issue;6;617
+6;ergonomic;6;611
+6;iso\s*45001\b;6;601
+6;energy mix;6;586
+6;anti-money laundering;6;582
+6;natural capital;6;581
+6;global reporting initiative;6;578
+6;lobbying;6;574
+6;tax policy;6;572
+6;maternity;6;567
+6;modern slavery;6;533
+6;equal opportunity;6;532
+6;nox;6;524
+6;decarbonize;6;518
+6;drought;6;511
+6;wind power;6;510
+6;upskilling;6;504
+6;clean energy;6;499
+6;refrigerant;6;498
+6;social audit;6;492
+6;iso 45001;6;484
+6;data security;6;476
+6;sf6;6;473
+7;consumer protection;6;473
+7;supply chain management;6;470
+7;philanthropy;6;464
+7;zdhc;6;457
+7;air quality;6;453
+7;apprentice;6;453
+7;leed;6;452
+7;effluent;6;448
+7;flooding;6;446
+7;food safety;6;446
+7;insider trading;6;435
+7;compliance programme;6;432
+7;social performance;6;426
+7;road safety;6;421
+7;ungp;6;420
+7;talent development;6;407
+7;compliance training;6;400
+7;lca;6;399
+7;green hydrogen;6;397
+7;social standard;6;371
+7;ecodesign;6;359
+7;pay equity;6;359
+7;tax strategy;6;354
+7;say on pay;6;351
+7;tax compliance;6;340
+7;iso\s*50001\b;6;334
+7;social enterprise;6;334
+7;resource efficiency;6;333
+7;social inclusion;6;330
+7;proxy advisor;6;325
+7;training and development;6;321
+7;sapin;6;316
+7;minimum wage;6;315
+7;sustainalytics;6;315
+7;social commitment;6;310
+7;reforestation;6;308
+7;responsible marketing;6;307
+7;green energy;6;300
+7;human trafficking;6;299
+7;ftse4good;6;298
+7;geothermal;6;296
+7;wetland;6;293
+7;just\s+transition;6;293
+7;executive compensation;6;286
+7;iso 50001;6;285
+7;local community;6;283
+7;labor right;6;261
+7;social indicator;6;259
+7;employee\s+well\w*;6;254
+7;community engagement;6;249
+7;tonne\w*\s+(?:co2|carbon);6;245
+7;female representation;6;245
+7;taxonomy alignment;6;245
+7;compliance violation;6;244
+7;tnfd;6;244
+7;social partner;6;240
+7;affordability;6;239
+7;tax transparency;6;231
+7;ifrs\s*s[12]\b;6;231
+7;social compliance;6;224
+7;volatile organic;6;222
+7;heat wave;6;221
+7;fair competition;6;219
+7;supplier assessment;6;204
+7;nature-based solution;6;202
+7;reskilling;6;192
+7;life cycle assessment;6;188
+8;soil health;6;165
+8;wind turbine;6;157
+8;first aid;6;157
+8;wind energy;6;156
+8;agroforestry;6;153
+8;supply chain due diligence;6;147
+8;fair wage;6;146
+8;smeta;6;139
+8;data breach;6;137
+8;fair compensation;6;137
+8;msci esg;6;135
+8;green investment;6;133
+8;microplastic;6;133
+8;fatality;6;124
+8;decarbonise;6;122
+8;recycled raw material;6;122
+8;fair labor;6;120
+8;labor practices;6;118
+8;air pollutant;6;116
+8;racism;6;116
+8;hydropower;6;115
+8;supply chain risk;6;113
+8;fair trade;6;112
+8;tax avoidance;6;111
+8;sedex;6;108
+8;social norm;6;99
+8;political contribution;6;94
+8;supply chain worker;6;90
+8;issb;6;87
+8;chemical management;6;84
+8;customer privacy;6;82
+8;microfiber;6;79
+8;particulate matter;6;79
+8;iso\s*37001\b;6;77
+8;cop28;6;76
+8;b corp;6;68
+8;compliance and ethics;6;68
+8;iso 37001;6;68
+8;better cotton;6;68
+8;employee wellbeing;6;66
+8;leather working group;6;65
+8;fairtrade;6;60
+8;supply chain audit;6;59
+8;supply chain emission;6;57
+8;compost;6;42
+8;community relations;6;40
+8;raw material sourcing;6;39
+8;raw material consumption;6;34
+8;supply chain transparency;6;34
+8;peatland;6;33
+8;cover crop;6;32
+8;proxy statement;6;25
+8;board oversight;6;18
+8;virgin polyester;6;17
+8;supply chain human right;6;13
+8;supply chain footprint;6;10
+8;cop 28;6;10
+8;fair condition;6;9
+8;scope\s+(?:one|two|three);3;3
+8;supply chain ethics;3;3
+8;living income;2;2
+8;supply chain decarbonisation;1;1
+8;supply chain labour;1;1

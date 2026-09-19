@@ -1,0 +1,362 @@
+termino;tipo;pilar;sectorial;ocurrencias;documentos;empresas
+sustainab\w+;patron;TRANS;0;81897;343;49
+environ\w+;patron;E;0;73941;343;49
+remuneration;termino;G;0;59543;335;49
+emission;termino;E;0;54420;339;49
+sustainability;termino;TRANS;0;45432;342;49
+governance;termino;G;0;44562;342;49
+climate;termino;E;0;44497;340;49
+sustainable;termino;TRANS;0;34621;343;49
+water;termino;E;0;26656;322;49
+risk management;termino;G;0;25793;341;49
+carbon;termino;E;0;23999;338;49
+human right;termino;S;0;20747;330;49
+stakeholder;termino;S;0;20349;338;49
+climate change;termino;E;0;20204;338;49
+co2e?;patron;E;0;19825;326;49
+internal control;termino;G;0;18651;341;49
+waste;termino;E;0;17805;325;49
+renewable;termino;E;0;16996;327;49
+esg;termino;TRANS;0;16984;302;49
+electricity;termino;E;0;16848;331;49
+diversity;termino;S;0;15998;341;49
+scope\s*[123]\b;patron;E;0;15064;299;48
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);patron;E;0;14228;331;49
+non-financial;termino;TRANS;0;13715;332;49
+co2;termino;E;0;13336;316;49
+recycl\w+;patron;E;0;12838;315;49
+audit committee;termino;G;0;12291;331;49
+biodiversity;termino;E;0;11748;271;48
+ghg;termino;E;0;10699;288;48
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);patron;S;0;10053;330;49
+gender;termino;S;0;9961;333;49
+fuel;termino;E;0;9890;316;49
+corruption;termino;G;0;9812;336;49
+inclusion;termino;S;0;9805;334;49
+health and safety;termino;S;0;9155;297;49
+footprint;termino;E;0;8666;325;49
+circular;termino;E;0;8404;297;48
+csr;termino;TRANS;0;8223;209;42
+independent director;termino;G;0;8221;211;35
+offset;termino;E;0;7971;335;49
+ecosystem;termino;E;0;7317;302;49
+solar;termino;E;0;7118;268;49
+greenhouse;termino;E;0;7079;323;49
+materiality;termino;TRANS;0;7076;328;49
+packaging;termino;E;0;6829;249;46
+transparency;termino;G;0;6717;336;49
+fraud;termino;G;0;6651;337;49
+code of conduct;termino;G;0;6585;287;47
+disabilit\w+;patron;S;0;6482;316;49
+esrs;termino;TRANS;0;6440;71;45
+decarboni\w+;patron;E;0;6400;242;49
+integrity;termino;G;0;6376;339;49
+water\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress);patron;E;0;6276;276;47
+ethical;termino;G;0;5805;333;49
+circular economy;termino;E;0;5777;271;48
+internal audit;termino;G;0;5753;331;49
+gri;termino;TRANS;0;5733;279;49
+inclusiv\w+;patron;S;0;5715;306;47
+inclusive;termino;S;0;5381;302;47
+energy consumption;termino;E;0;5289;299;49
+taxonomy aligned;termino;TRANS;0;5279;141;47
+pollution;termino;E;0;5200;266;49
+plastic;termino;E;0;5190;235;45
+recycling;termino;E;0;5144;291;47
+risk appetite;termino;G;0;4936;165;28
+low carbon;termino;E;0;4857;275;48
+hydrogen;termino;E;0;4603;190;48
+data protection;termino;G;0;4517;317;49
+sdg;termino;TRANS;0;4500;274;46
+net zero;termino;E;0;4381;226;49
+cybersecuri\w+;patron;G;0;4308;262;47
+cybersecurity;termino;G;0;4297;262;47
+energy efficiency;termino;E;0;4221;300;49
+due diligence;termino;G;0;4124;312;48
+taxonomy eligible;termino;TRANS;0;4111;159;48
+disability;termino;S;0;3825;306;49
+sanction;termino;G;0;3772;311;49
+equality;termino;S;0;3619;277;48
+decarbonization;termino;E;0;3614;172;42
+whistleblow\w+;patron;G;0;3481;273;46
+co2e;termino;E;0;3401;141;38
+offset\w+;patron;E;0;3361;325;49
+discrimination;termino;S;0;3319;286;47
+eu taxonomy;termino;TRANS;0;3300;167;47
+social responsibility;termino;S;0;3279;298;49
+energy transition;termino;E;0;3205;189;42
+electrif\w+;patron;E;0;3064;163;45
+injur\w+;patron;S;0;2918;260;47
+hazardous;termino;E;0;2893;227;46
+works council;termino;S;0;2834;258;44
+non-compliance;termino;G;0;2807;299;47
+conflicts of interest;termino;G;0;2742;315;49
+code of ethics;termino;G;0;2713;218;37
+local\s+communit\w+;patron;S;0;2676;251;46
+related party;termino;G;0;2590;304;46
+cdp;termino;TRANS;0;2586;245;43
+compliance committee;termino;G;0;2494;174;34
+coal;termino;E;0;2424;196;41
+bribery;termino;G;0;2290;290;49
+whistleblowing;termino;G;0;2285;221;39
+marine;termino;E;0;2273;229;48
+donation;termino;S;0;2211;272;47
+electrification;termino;E;0;2195;160;45
+collective bargaining;termino;S;0;2178;251;47
+employee engagement;termino;S;0;1912;228;47
+compliance risk;termino;G;0;1880;275;46
+harassment;termino;S;0;1838;225;46
+compliance officer;termino;G;0;1818;256;45
+trade union;termino;S;0;1746;266;44
+social dialogue;termino;S;0;1688;155;39
+nonfinancial;termino;TRANS;0;1686;215;46
+article\s*[689]\b;patron;TRANS;0;1671;237;48
+occupational health;termino;S;0;1670;235;42
+paris\s+agreement;patron;E;0;1642;235;46
+tcfd;termino;TRANS;0;1638;243;45
+sbti;termino;E;0;1633;167;45
+information security;termino;G;0;1631;242;44
+vigilance plan;termino;G;0;1623;103;18
+data privacy;termino;G;0;1619;186;41
+circulari\w+;patron;E;0;1580;146;39
+species;termino;E;0;1580;173;43
+wastewater;termino;E;0;1579;170;36
+ilo;termino;S;0;1567;244;45
+material topic;termino;TRANS;0;1565;155;42
+carbon neutrality;termino;E;0;1563;167;38
+circularity;termino;E;0;1559;143;39
+deforestation;termino;E;0;1547;161;44
+methane;termino;E;0;1501;111;33
+conflict of interest;termino;G;0;1498;265;47
+equal\s+opportunit\w+;patron;S;0;1496;285;48
+social impact;termino;S;0;1439;245;48
+double materiality;termino;TRANS;0;1437;101;47
+training program;termino;S;0;1435;213;44
+compliance program;termino;G;0;1432;196;39
+money laundering;termino;G;0;1430;207;37
+csrd;termino;TRANS;0;1427;112;47
+transition plan;termino;E;0;1407;107;46
+decarbonisation;termino;E;0;1339;98;25
+injury;termino;S;0;1328;216;42
+nutrition;termino;S;1;1326;114;32
+animal welfare;termino;E;0;1291;123;26
+iso\s*14001\b;patron;E;0;1262;240;41
+energy management;termino;E;0;1256;212;42
+customer satisfaction;termino;S;0;1245;224;43
+antitrust;termino;G;0;1240;202;43
+science based target;termino;E;0;1225;231;48
+biofuel;termino;E;0;1221;134;37
+photovoltaic;termino;E;0;1213;182;39
+whistleblower;termino;G;0;1184;191;45
+business ethics;termino;G;0;1161;205;41
+global warming;termino;E;0;1120;242;49
+succession planning;termino;G;0;1105;231;41
+freedom of association;termino;S;0;1075;217;45
+landfill;termino;E;0;1036;176;39
+ocean;termino;E;0;1033;190;47
+regenerative agriculture;termino;E;0;1017;62;21
+ethics and compliance;termino;G;0;1017;166;32
+grievance;termino;S;0;1011;147;45
+dei;termino;S;0;972;79;25
+wellbeing;termino;S;0;971;187;48
+iso 14001;termino;E;0;967;207;39
+duty of vigilance;termino;G;0;966;86;17
+gdpr;termino;G;0;930;222;42
+wind farm;termino;E;0;928;117;30
+compliance management system;termino;G;0;920;118;21
+accessibility;termino;S;0;909;195;44
+product safety;termino;S;0;909;155;32
+habitat;termino;E;0;907;169;41
+volunteer;termino;S;0;904;197;43
+compliance function;termino;G;0;895;178;36
+forced labor;termino;S;0;893;136;33
+child labor;termino;S;0;890;166;35
+living wage;termino;S;0;888;105;32
+flood;termino;E;0;878;222;47
+green bond;termino;E;0;868;112;23
+mental health;termino;S;0;856;188;43
+speak up;termino;G;0;841;152;33
+responsible business;termino;G;0;836;194;42
+social risk;termino;S;0;831;154;38
+biomass;termino;E;0;803;175;45
+recyclable;termino;E;0;796;148;34
+work-life balance;termino;S;0;790;187;45
+scenario analysis;termino;G;0;768;166;39
+compliance department;termino;G;0;766;153;37
+training hour;termino;S;0;766;181;40
+regulatory compliance;termino;G;0;761;189;41
+natural disaster;termino;E;0;760;283;47
+fatalit\w+;patron;S;0;750;179;47
+philanthrop\w+;patron;S;0;746;145;32
+recycle;termino;E;0;742;184;37
+human capital;termino;S;0;726;195;42
+sasb;termino;TRANS;0;720;144;38
+sfdr;termino;TRANS;0;720;72;39
+absenteeism;termino;S;0;718;153;29
+hydroelectric;termino;E;0;705;65;15
+equal pay;termino;S;0;700;188;45
+energy storage;termino;E;1;695;104;29
+oecd guidelines;termino;S;0;685;212;46
+ecovadis;termino;TRANS;0;679;123;25
+indigenous;termino;S;0;665;130;39
+social protection;termino;S;0;635;117;34
+responsible investment;termino;G;0;626;148;30
+ergonomic\w*;patron;S;0;624;171;37
+land use;termino;E;0;609;135;38
+ergonomic;termino;S;0;608;170;37
+social issue;termino;S;0;605;164;42
+un global compact;termino;TRANS;0;596;204;43
+responsible sourcing;termino;G;0;594;128;33
+iso\s*45001\b;patron;S;0;593;159;32
+energy mix;termino;E;0;585;155;40
+anti-money laundering;termino;G;0;582;126;26
+product quality;termino;S;0;581;173;33
+global reporting initiative;termino;TRANS;0;570;235;45
+maternity;termino;S;0;565;154;35
+natural capital;termino;E;0;562;78;31
+lobbying;termino;G;0;556;128;38
+nox;termino;E;0;527;145;27
+drought;termino;E;0;514;190;44
+tax policy;termino;G;0;508;148;30
+modern slavery;termino;S;0;508;135;37
+decarbonize;termino;E;0;502;80;27
+equal opportunity;termino;S;0;499;169;40
+refrigerant;termino;E;0;496;96;25
+upskilling;termino;S;0;494;124;37
+clean energy;termino;E;0;488;146;36
+social audit;termino;S;0;481;61;15
+iso 45001;termino;S;0;476;142;31
+data security;termino;G;0;472;169;40
+consumer protection;termino;S;0;471;114;26
+sf6;termino;E;1;469;48;17
+wind power;termino;E;0;464;97;31
+zdhc;termino;E;0;457;30;5
+supply chain management;termino;G;0;454;166;37
+philanthropy;termino;S;0;454;93;23
+apprentice;termino;S;0;452;130;31
+air quality;termino;E;0;449;142;31
+flooding;termino;E;0;447;165;43
+leed;termino;E;0;447;118;26
+effluent;termino;E;0;442;103;28
+food safety;termino;S;1;442;39;12
+compliance programme;termino;G;0;430;85;19
+insider trading;termino;G;0;429;162;34
+road safety;termino;S;0;415;81;24
+talent development;termino;S;0;400;170;42
+green hydrogen;termino;E;0;399;71;27
+lca;termino;E;0;399;82;28
+compliance training;termino;G;0;396;122;31
+ungp;termino;S;0;396;114;43
+social performance;termino;S;0;385;116;25
+social standard;termino;S;0;361;75;24
+tax strategy;termino;G;0;354;108;30
+pay equity;termino;S;0;354;74;24
+ecodesign;termino;E;1;349;44;19
+tax compliance;termino;G;0;333;144;36
+say on pay;termino;G;0;331;87;21
+social enterprise;termino;S;0;331;73;21
+resource efficiency;termino;E;0;330;93;30
+social inclusion;termino;S;0;327;106;33
+iso\s*50001\b;patron;E;0;325;126;28
+proxy advisor;termino;G;0;325;97;25
+training and development;termino;S;0;315;162;40
+sustainalytics;termino;TRANS;0;314;145;38
+reforestation;termino;E;0;309;121;35
+sapin;termino;G;0;308;88;17
+minimum wage;termino;S;0;307;106;36
+social commitment;termino;S;0;305;126;30
+green energy;termino;E;0;303;108;32
+geothermal;termino;E;0;296;97;28
+ftse4good;termino;TRANS;0;296;141;32
+wetland;termino;E;0;293;84;25
+responsible marketing;termino;S;0;292;59;18
+human trafficking;termino;S;0;289;97;41
+just\s+transition;patron;S;0;283;66;27
+iso 50001;termino;E;0;277;116;27
+local community;termino;S;0;272;134;36
+executive compensation;termino;G;1;264;95;25
+labor right;termino;S;0;260;87;25
+employee\s+well\w*;patron;S;0;247;97;34
+tonne\w*\s+(?:co2|carbon);patron;E;0;245;46;15
+female representation;termino;S;0;244;81;25
+taxonomy alignment;termino;TRANS;0;244;68;28
+tnfd;termino;TRANS;0;243;60;27
+compliance violation;termino;G;0;242;51;13
+community engagement;termino;S;0;241;93;30
+social partner;termino;S;0;241;76;24
+affordability;termino;S;0;238;88;27
+ifrs\s*s[12]\b;patron;TRANS;0;231;11;9
+social indicator;termino;S;0;229;80;19
+tax transparency;termino;G;0;224;83;21
+heat wave;termino;E;0;223;83;29
+social compliance;termino;S;0;222;37;10
+volatile organic;termino;E;0;220;100;25
+fair competition;termino;G;0;219;114;33
+nature-based solution;termino;E;0;202;69;25
+supplier assessment;termino;G;0;192;91;26
+reskilling;termino;S;0;192;81;26
+life cycle assessment;termino;E;0;190;82;29
+soil health;termino;E;0;165;46;15
+wind turbine;termino;E;0;157;79;24
+first aid;termino;S;0;157;99;30
+agroforestry;termino;E;0;153;46;14
+wind energy;termino;E;0;153;72;25
+supply chain due diligence;termino;G;0;147;58;21
+fair wage;termino;S;0;145;55;25
+data breach;termino;G;0;139;69;24
+smeta;termino;S;1;139;34;7
+msci esg;termino;TRANS;0;135;86;28
+green investment;termino;E;0;131;33;12
+fair compensation;termino;S;0;131;69;25
+microplastic;termino;E;0;129;39;19
+fatality;termino;S;0;124;58;19
+decarbonise;termino;E;0;122;47;17
+fair labor;termino;S;0;120;41;13
+recycled raw material;termino;E;0;117;34;14
+air pollutant;termino;E;0;116;53;17
+labor practices;termino;S;0;115;52;17
+racism;termino;S;0;115;51;18
+supply chain risk;termino;G;0;112;75;26
+fair trade;termino;S;0;112;47;14
+hydropower;termino;E;0;110;45;20
+sedex;termino;S;1;108;21;6
+tax avoidance;termino;G;0;107;61;21
+social norm;termino;S;0;99;28;9
+political contribution;termino;G;0;90;53;17
+chemical management;termino;E;0;84;28;10
+supply chain worker;termino;S;0;84;19;11
+issb;termino;TRANS;0;83;29;15
+particulate matter;termino;E;0;81;45;18
+customer privacy;termino;S;0;80;38;14
+microfiber;termino;E;1;77;14;4
+iso\s*37001\b;patron;G;1;77;36;8
+cop28;termino;G;1;75;25;18
+compliance and ethics;termino;G;0;68;51;14
+iso 37001;termino;G;1;68;34;8
+better cotton;termino;S;1;68;15;3
+b corp;termino;G;1;67;12;3
+leather working group;termino;S;1;65;31;8
+employee wellbeing;termino;S;0;64;29;17
+fairtrade;termino;S;1;60;27;6
+supply chain audit;termino;S;0;59;16;3
+supply chain emission;termino;E;0;57;29;17
+compost;termino;E;0;42;30;11
+community relations;termino;S;1;40;17;7
+raw material sourcing;termino;E;0;39;29;11
+peatland;termino;E;1;33;28;7
+cover crop;termino;E;1;32;19;7
+raw material consumption;termino;E;0;32;26;12
+supply chain transparency;termino;G;0;32;20;9
+proxy statement;termino;G;0;25;17;5
+virgin polyester;termino;E;1;17;8;2
+board oversight;termino;G;1;17;13;8
+supply chain human right;termino;S;0;13;11;7
+supply chain footprint;termino;E;0;10;5;3
+cop 28;termino;G;1;10;8;8
+fair condition;termino;S;0;9;7;6
+scope\s+(?:one|two|three);patron;E;0;3;3;3
+supply chain ethics;termino;G;0;3;3;2
+living income;termino;S;1;2;2;1
+supply chain decarbonisation;termino;E;0;1;1;1
+supply chain labour;termino;S;0;1;1;1
+raw material efficiency;termino;E;0;0;0;0

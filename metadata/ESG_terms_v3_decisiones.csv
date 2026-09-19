@@ -1,0 +1,45 @@
+termino;accion;sustituto;motivo
+non-financial;retirar;;p=0,30: categoria juridica de la taxonomia, activos no financieros IFRS, boilerplate del auditor. Se probaron colocaciones (statement, information, reporting, performance) y tampoco sirven: 12 aciertos de 36, nombran el documento y no su contenido
+nonfinancial;retirar;;p=0,50: mismos homografos que non-financial, sus colocaciones tampoco sirven
+offset;sustituir;carbon offset|re:offsett?ing\s+(?:of\s+)?(?:\w+\s+)?emission\w*|re:offsett?ing\s+(?:of\s+)?(?:\w+\s+)?carbon;p=0,17: compensacion contable de activos y pasivos, coberturas, bases imponibles, partially offset by
+offset\w+;retirar;;p=0,08: contrapartidas contables, netting de derivados, sustituido junto con offset
+solar;sustituir;solar energy|solar power|solar panel|solar plant|solar farm;p=0,33: glosario (sistema solar), nombres de filiales, litigios
+ecosystem;sustituir;ecosystem service|ecosystem restoration|natural ecosystem;p=0,42: ecosistema de negocio, digital o de innovacion
+materiality;sustituir;materiality assessment|materiality analysis|materiality matrix;p=0,42: materialidad contable y de auditoria, double materiality y material topic ya estan
+fraud;sustituir;anti-fraud|fraud prevention;p=0,42: formula del informe de auditoria (whether due to fraud or error)
+gri;retirar;;p=0,42: casi todo en indices y tablas de correspondencia, global reporting initiative se mantiene
+taxonomy aligned;retirar;;p=0,42: cabeceras y plantillas de tablas regulatorias, eu taxonomy y taxonomy alignment se mantienen
+related party;retirar;;p=0,08: notas contables de operaciones vinculadas e informe especial del auditor
+non-compliance;retirar;;p=0,42: boilerplate ESEF del auditor (free from material non-compliance)
+code of ethics;retirar;;p=0,42: codigo deontologico del auditor, code of conduct se mantiene
+duty of vigilance;retirar;;p=0,17: listas de referencias legales, vigilance plan se mantiene
+consumer protection;retirar;;p=0,17: nombres de leyes y ministerios
+social indicator;retirar;;p=0,17: encabezados y tablas de datapoints
+proxy statement;retirar;;p=0,00: texto legal NYSE repetido
+re:scope\s+(?:one|two|three);retirar;;p=0,00: captura reporting scope one year, nunca emisiones
+raw material efficiency;retirar;;no dispara nunca en el corpus
+re:environ\w+;restringir;re:environmental\w*|re:environmentally;p=0,62, environmental* 0,83 frente a environment suelto 0,31 (entorno economico, regulatorio)
+risk management;sustituir;enterprise risk management|climate risk management|esg risk management|sustainability risk management;p=0,62 con mitad de fallos financieros (coberturas, notas de riesgo), la ronda 2 lo rechazo 2 de 3
+risk appetite;retirar;;marco prudencial bancario, la ronda 2 lo rechazo 2 de 3
+transparency;retirar;;p=0,67 y la ronda 2 lo rechazo 2 de 3, tax transparency y supply chain transparency se mantienen
+fuel;sustituir;fossil fuel|fuel consumption|alternative fuel|sustainable aviation fuel|low-carbon fuel;p=0,58: verbo to fuel, sistemas de combustible, costes
+packaging;sustituir;sustainable packaging|plastic packaging|packaging waste|recyclable packaging|recycled packaging;p=0,50: encapsulado de chips, envases como negocio
+footprint;sustituir;carbon footprint|environmental footprint|water footprint|ecological footprint;p=0,67: huella industrial o geografica, los aciertos llevan carbon o environmental
+circular;retirar;;p=0,67: circulares de junta y Assonime, cabeceras de taxonomia, circular economy y circularity se mantienen
+disability;sustituir;persons with disabilities|people with disabilities|employees with disabilities|disability inclusion;p=0,58: seguro y prestaciones de invalidez
+re:disabilit\w+;retirar;;p=0,67: mismos homografos actuariales, sustituido junto con disability
+integrity;sustituir;business integrity;p=0,67: triada confidencialidad-integridad-disponibilidad de ciberseguridad
+marine;retirar;;p=0,33: cabeceras de taxonomia, obras maritimas, aplicaciones de producto
+energy management;retirar;;p=0,33: lineas de negocio y funcionalidades de producto
+re:article\s*[689]\b;retirar;;p=0,50: estatutos sociales, Reglamento de folletos, codigos AFEP
+dei;retirar;;p=0,50: preposicion italiana (Monte dei Paschi), diversity equity and inclusion cubre el concepto
+supply chain management;retirar;;p=0,50: nombres de servicios, productos bancarios y sociedades
+product quality;retirar;;p=0,33 y la ronda 2 lo rechazo 3 de 3
+customer satisfaction;retirar;;la ronda 2 lo rechazo 3 de 3, p=0,67
+scenario analysis;sustituir;climate scenario analysis;la ronda 2 lo rechazo 3 de 3: escenarios de retribucion variable
+re:sustainab\w+;mantener_aviso;;p=0,68: sentido de duradero (sustainable growth), neutralizarlo solo sube un punto y quita aciertos
+sustainable;mantener_aviso;;p=0,70: mismo caso que sustainab\w+
+governance;mantener_aviso;;p=0,57: 14 de 17 fallos son navegacion que el filtro no captura (encabezados sin numero, referencias cruzadas)
+audit committee;mantener_aviso;;p=0,60: biografias de consejeros y boilerplate del auditor
+tcfd;mantener_aviso;;p=0,33: todos los fallos son navegacion, las menciones en prosa son validas
+hydrogen;mantener_aviso;;p=0,50: plantilla legal de taxonomia nuclear y gas

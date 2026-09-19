@@ -1,0 +1,358 @@
+termino;pilar;sectorial;colocacion;justificacion
+sustainability;TRANS;0;0;umbrella word used by every firm across the three pillars
+sustainable development;TRANS;0;1;Iberdrola plan and Sanofi programme spanning environment society governance
+esg;TRANS;0;0;explicit label for environmental social and governance matters
+esg risk;TRANS;0;1;Ahold risk category covering environmental social governance developments
+esg reporting;TRANS;0;1;Deutsche Boerse and Ahold audit committees oversee ESG disclosure
+esg rating;TRANS;0;1;Nokia and Total report external ESG rating scores
+esg topic;TRANS;0;1;Ahold ESG statements tag each indicator with an ESG topic
+esg target;TRANS;0;1;ASML and Iberdrola set explicit ESG objectives
+esg data;TRANS;0;1;Deutsche Boerse describes growing demand for high-quality ESG data
+esg performance measure;G;0;1;ASML long-term incentive weights ESG measures at 20 percent
+non-financial information;TRANS;0;1;Iberdrola statement of non-financial information PSA non-financial statement
+non-financial reporting;TRANS;0;1;Ahold audit committee oversees financial and non-financial reporting processes
+corporate social responsibility;TRANS;0;1;Total and PSA use CSR as cross-pillar umbrella
+materiality assessment;TRANS;0;1;bare materiality is an audit term so phrase required
+double materiality;TRANS;0;1;Ahold and ASML CSRD impact and financial materiality
+material topic;TRANS;0;1;Ahold GRI material topics and Ferrari relevant topics
+materiality matrix;TRANS;0;1;Ferrari plots sustainability topics by stakeholder relevance
+stakeholder;TRANS;0;0;pervasive addressee of ESG disclosure in all seventeen reports
+stakeholder engagement;TRANS;0;1;Ferrari Enel and ASML describe engaging stakeholders on ESG
+global reporting initiative;TRANS;0;1;Ahold and Sanofi report against GRI standards
+gri standard;TRANS;0;1;GRI indicator references throughout Ahold and Sanofi disclosures
+sustainable development goal;TRANS;0;1;SDGs cited by Ahold AB InBev Sanofi Ferrari
+un global compact;TRANS;0;1;Total renewed as LEAD company in the Global Compact
+csrd;TRANS;0;0;Corporate Sustainability Reporting Directive implementation discussed by four firms
+esrs;TRANS;0;0;ASML reports under European Sustainability Reporting Standards
+sasb;TRANS;0;0;Airbus indexes business integrity disclosure to SASB
+integrated report;TRANS;0;1;Iberdrola and AXA publish IIRC-based integrated reports
+sustainability report;TRANS;0;1;Iberdrola and Ferrari publish separate sustainability reporting
+sustainability strategy;TRANS;0;1;AXA performance shares tied to sustainability strategy
+sustainability target;TRANS;0;1;Ahold health and sustainability targets monitored by board committee
+sustainability committee;TRANS;0;1;Ahold Ferrari Iberdrola AXA board committees on sustainability
+chief sustainability officer;TRANS;0;1;Ahold creates dedicated CSO role on executive committee
+sustainable value creation;TRANS;0;1;Ahold and Iberdrola long-term value creation language
+dow jones sustainability index;TRANS;0;1;AXA and Total link pay and reputation to DJSI
+ftse4good;TRANS;0;0;Iberdrola and Total cite index membership as ESG recognition
+ecovadis;TRANS;0;0;Total gold status and Nokia supplier sustainability rating
+cdp;TRANS;0;0;Sanofi Total and ASML respond to Carbon Disclosure Project
+msci esg rating;TRANS;0;1;Total reports its A rating from MSCI
+iss esg;TRANS;0;0;Total reports upgraded rating from ISS-oekom renamed ISS ESG
+corporate sustainability assessment;TRANS;0;1;AXA performance shares linked to S&P Global assessment
+worlds most ethical companies;TRANS;0;1;Iberdrola and Nokia cite Ethisphere recognition
+non-financial rating agency;TRANS;0;1;Total lists ratings from non-financial rating agencies
+limited assurance;TRANS;0;1;PSA independent third party assurance on non-financial statement
+external assurance;TRANS;0;1;Iberdrola sustainability report prepared and externally assured
+sustainable finance;TRANS;0;1;Iberdrola green financing and Deutsche Boerse ESG products
+sustainability-linked bond;TRANS;0;1;Ahold board approved issuance underscoring healthy and sustainable approach
+oecd guidelines for multinational enterprises;TRANS;0;1;Ahold references framework in shaping sustainable retailing strategy
+2030 agenda;TRANS;0;1;Iberdrola commitment to United Nations 2030 Agenda
+sfdr;TRANS;0;0;Deutsche Boerse cites sustainable finance disclosure regulation demand
+transparency;TRANS;0;0;recurrent disclosure value at Iberdrola Total Sanofi ASML
+esg+f;TRANS;0;0;Iberdrola brands itself an ESG plus financial leader
+climate change;E;0;1;combated and adapted to by Iberdrola Sanofi Enel ASML
+climate change mitigation;E;0;1;Enel and ASML taxonomy classification of climate actions
+climate change adaptation;E;0;1;Enel adaptation plans and Sanofi adapting to consequences
+climate risk;E;0;1;Sanofi Enel and ASML identify climate-related risks
+physical risk;E;0;1;Iberdrola Sanofi Enel distinguish physical from transition risk
+transition risk;E;0;1;regulatory and market risk tied to emission reduction goals
+climate scenario;E;0;1;Enel long-term climate scenarios for asset vulnerability
+climate scenario analysis;E;0;1;Sanofi TCFD case studies since bare scenario analysis means pay
+tcfd;E;0;0;Sanofi and Enel apply Task Force climate disclosure recommendations
+climate resilience;E;0;1;Sanofi climate resilience strategy and ASML resilience analysis
+climate transition plan;E;0;1;ASML strategic roadmap toward GHG neutrality
+climate action;E;0;1;ASML topic pairing energy efficiency with climate action
+global warming;E;0;1;limiting warming to 1.5 degrees at Sanofi and ASML
+paris agreement;E;0;1;alignment target referenced by Sanofi Total ASML Enel
+greenhouse gas emission;E;0;1;bare gas means natural gas here so phrase needed
+ghg protocol;E;0;1;Sanofi and ASML calculate emissions per GHG Protocol
+carbon footprint;E;0;1;AXA Sanofi Total and ASML measure and reduce footprint
+carbon neutrality;E;0;1;Sanofi 2050 pledge and AXA 2025 operations target
+carbon credit;E;0;1;ASML plans purchasing and retiring carbon credits
+carbon offset;E;0;1;ASML offset portfolio limited to removal projects
+internal carbon price;E;0;1;ASML sets 200 euro per tonne for investment decisions
+carbon sink;E;0;1;Iberdrola offsets with sinks and Total invests in NBS
+carbon literacy;E;0;1;ASML upskills supplier account teams on emissions
+co2 emission;E;0;1;quantified by Iberdrola Total Airbus Stellantis Enel
+emission;E;0;0;central environmental output word in every industrial report
+emission intensity;E;0;1;ASML CO2e per gross profit Iberdrola grams per kWh
+emission reduction target;E;0;1;SBTi validated absolute reduction targets at Sanofi and ASML
+emission factor;E;0;1;Sanofi DEFRA factors and ASML grid emission factors
+scope 1;E;0;1;direct emissions category at Sanofi ASML Nokia
+scope 2;E;0;1;indirect energy emissions category with market-based reporting
+scope 3;E;0;1;value chain emissions Ahold board deep dive ASML targets
+avoided emission;E;0;1;ASML distinguishes avoided from reduced emissions
+residual emission;E;0;1;ASML compensates residual emissions starting 2025
+locked-in emission;E;0;1;ASML gas boilers and sold product lifetime emissions
+hard-to-abate emission;E;0;1;ASML steel and aluminium purchasing challenge
+supply chain emission;E;0;1;ASML upstream scope 3 target separate from social supply chain
+net zero;E;0;1;ASML and SBTi corporate net-zero standard terminology
+ghg neutrality;E;0;1;ASML value chain neutrality ambition by 2040
+decarbonisation;E;0;0;Iberdrola Enel Airbus ASML decarbonisation roadmaps
+electrification;E;0;0;Iberdrola Enel electrification of demand ASML of industrial sites
+energy transition;E;0;1;Iberdrola and Enel central environmental narrative
+science based target;E;0;1;validated reduction targets at Sanofi and ASML
+sbti;E;0;0;Science Based Targets initiative validates corporate targets
+eu taxonomy;E;0;1;Airbus ASML Deutsche Boerse eligibility and alignment disclosure
+taxonomy-eligible;E;0;1;Airbus and ASML classify activities as taxonomy eligible
+taxonomy-aligned;E;0;1;Airbus turnover of environmentally sustainable activities
+green bond;E;0;1;Iberdrola eligible green projects and ASML green bond framework
+green financing;E;0;1;Iberdrola principal finance instrument for sustainable growth
+green electricity;E;0;1;ASML direct purchase agreements in Netherlands Taiwan Korea
+renewable energy;E;0;1;bare renewable ambiguous so phrase retained
+renewable electricity;E;0;1;Sanofi RE100 pledge and ASML 100 percent target
+power purchase agreement;E;0;1;ASML Taiwan PPA and Sanofi Enel Mexico agreement
+energy attribute certificate;E;0;1;ASML market-based scope 2 accounting instrument
+energy efficiency;E;0;1;Sanofi ASML Iberdrola programmes and product roadmaps
+energy consumption;E;0;1;measured and reduced by Sanofi ASML Total
+energy saving;E;0;1;ASML five-year energy savings master plan
+energy mix;E;0;1;Enel share of renewable sources in generation mix
+low-carbon energy;E;0;1;Sanofi low-carbon energy policy and ASML alternatives
+solar panel;E;0;1;ASML installs panels on own buildings for own consumption
+waste heat;E;0;1;ASML reuses factory waste heat through energy grid
+water consumption;E;0;1;Ahold and Sanofi report own operations water use
+water withdrawal;E;0;1;Total fresh water withdrawals and Sanofi water indicator
+water stress;E;0;1;Total WRI Aqueduct assessment and Sanofi priority sites
+water footprint;E;0;1;Iberdrola water scarcity footprint verification
+water discharge;E;0;1;Total hydrocarbon content of onshore and offshore discharges
+wastewater;E;0;0;Total treatment plants and discharges into wastewater
+waste management;E;0;1;Sanofi and Total residual waste and recovery plans
+waste generated;E;0;1;Ahold GRI 306-3 tonnage disclosure
+waste recycled;E;0;1;Ahold percentage of total waste recycled
+recycling;E;0;0;Iberdrola office waste Sanofi 3R rate ASML materials
+landfill;E;0;0;Sanofi landfill disposal rate target below one percent
+circular economy;E;0;1;Iberdrola Total Enel ASML circular strategies
+recycled content;E;0;1;ASML aims to use more recycled content in raw materials
+ecodesign;E;0;0;Iberdrola and Sanofi build environmental criteria into design
+life cycle assessment;E;0;1;ASML product LCAs and Airbus life cycle analysis methodology
+environmental footprint;E;0;1;Iberdrola corporate environmental footprint Total limiting footprint
+environmental impact;E;0;1;assessed by Sanofi Total Iberdrola for sites and products
+environmental impact assessment;E;0;1;Total internal rules require assessment for new facilities
+environmental management system;E;0;1;Total certified sites and Iberdrola optimisation
+iso 14001;E;0;0;environmental management certification at Total and Iberdrola
+environmental policy;E;0;1;Iberdrola policy and AXA board review of environmental policy
+environmental compliance;E;0;1;Iberdrola manages environmental compliance by suppliers
+environmental performance;E;0;1;Total performance reviewed annually by audit committee
+environmental indicator;E;0;1;Total monitors indicators to adapt protection measures
+environmental risk;E;0;1;Total structured management policy for environmental risks
+environmental protection;E;0;1;Total provisions employee training and site measures
+environmental product declaration;E;0;1;Iberdrola develops new EPDs with EDP
+biodiversity;E;0;0;Iberdrola Total Sanofi plans commitments and reports
+biodiversity action plan;E;0;1;Total deploys plans for sites in protected areas
+ecosystem;E;0;0;Total and Sanofi manage impacts on ecosystems
+protected area;E;0;1;Total avoids exploration in IUCN and Ramsar areas
+natural capital;E;0;1;Iberdrola IIRC capital and Natural Capitals working group
+natural resource;E;0;1;Total and Iberdrola limit use of natural resources
+deforestation;E;0;0;Total non-deforestation criterion for biofuel feedstock
+reforestation;E;0;0;Iberdrola trees programme and Total site redevelopment
+pollution;E;0;0;Iberdrola avoids discharges Total prevents accidental pollution
+accidental pollution;E;0;1;Total prevention chapter and site risk analysis
+soil contamination;E;0;1;Total assesses soil and groundwater contamination
+groundwater;E;0;0;Total monitors groundwater after pipeline spill
+site remediation;E;0;1;Total reports 114 decommissioned sites under remediation
+air quality;E;0;1;Iberdrola awareness campaigns and Total NOx impact assessment
+air emission;E;0;1;Total chronic emissions into the atmosphere
+green deal;E;0;1;Iberdrola cites EU Green Deal as recovery instrument
+green building;E;0;1;ASML new offices meeting latest green building standards
+breeam;E;0;0;green building certification cited by Sanofi and ASML
+leed;E;0;0;green building certification cited by Sanofi and ASML
+iso 50001;E;0;0;Sanofi energy management system certification at 28 sites
+refrigerant;E;0;0;Sanofi switches to lower global warming potential substitutes
+sustainable mobility;E;0;1;Iberdrola plan and ASML Dutch business mobility pledge
+employee commuting;E;0;1;ASML scope 3 category with decarbonisation project
+business travel;E;0;1;ASML and Sanofi emissions category with reduction target
+ocean freight;E;0;1;ASML modal shift from air to reduce logistics emissions
+sustainable event;E;0;1;Iberdrola ISO 20121 certified general shareholders meeting
+renewable installed capacity;E;1;1;Enel and Iberdrola utility capacity metric in GW
+wind farm;E;1;1;Iberdrola offshore and onshore generation assets
+photovoltaic plant;E;1;1;Iberdrola solar generation assets in Spain
+hydroelectric;E;1;0;Iberdrola and Enel generation technology breakdown
+green hydrogen;E;1;1;Iberdrola and Total industrial production projects
+smart grid;E;1;1;Iberdrola grid digitalisation to lead energy transition
+smart meter;E;1;1;Iberdrola UK rollout and Enel second generation meters
+electric vehicle;E;1;1;Iberdrola promotion and Stellantis product regulation
+charging point;E;1;1;Iberdrola and Total recharging infrastructure targets
+coal-fired plant;E;1;1;Iberdrola and Enel decommissioning of coal capacity
+oil spill;E;1;1;Total accidental hydrocarbon spill reporting and response
+flaring;E;1;0;Total stricter policy on acid gas flaring
+sulfur dioxide emission;E;1;1;Total refinery SO2 reduction target since 2010
+nox emission;E;1;1;Total offshore exploration and production atmospheric emissions
+methane emission;E;1;1;Total defends US methane emission regulation
+biofuel;E;1;0;Total certified sustainable biofuels and La Mede biorefinery
+palm oil;E;1;1;Total reinforced control of palm oil supplier sustainability
+sustainable aviation fuel;E;1;1;Airbus SAF investments and ASML freight purchases
+corsia;E;1;0;Airbus cites aviation carbon offsetting sustainability reference
+food waste;E;1;1;Ahold healthy and sustainable KPI and GRI correction
+sustainable packaging;E;1;1;Ahold healthy and sustainable committee KPI
+animal welfare;E;1;0;Ahold environmental ESG statement on cage free eggs
+cage free;E;1;1;Ahold own indicator on own-brand shell eggs
+pharmaceutical residue;E;1;1;Sanofi plans to manage residues in the environment
+climate-related health impact;E;1;1;Sanofi allergies and vector-borne disease from warming
+corporate average fuel economy;E;1;1;Stellantis CAFE compliance as bonus payout trigger
+diesel emission;E;1;1;Stellantis provision for US criminal emissions investigations
+plastic waste;E;1;1;Total founding member of Alliance to End Plastic Waste
+energy use per wafer;E;1;1;ASML product energy efficiency metric per wafer pass
+human rights;S;0;1;Total salient issues ASML due diligence Airbus policies
+human rights due diligence;S;0;1;ASML process supporting UN Guiding Principles
+un guiding principles on business and human rights;S;0;1;ASML basis for human rights due diligence
+supply chain human rights;S;0;1;Total supplier selection screens fundamental workplace rights
+forced labour;S;0;1;Total prevention as major supply chain concern
+child labour;S;0;1;Total strengthened supplier selection methodology
+ilo convention;S;0;1;Total and Airbus reference fundamental ILO conventions
+local community;S;0;1;Ahold Total ASML Ferrari community relationships
+community engagement;S;0;1;ASML investment in Brainport Eindhoven region
+occupational health and safety;S;0;1;Ahold audit committee Iberdrola Total employee safety
+safety at work;S;0;1;Ahold sustainable retailing performance focus area
+accident rate;S;0;1;Iberdrola injury rate per average number of employees
+zero accident;S;0;1;Iberdrola networks business safety objective
+psychosocial risk;S;0;1;Total global PSR prevention programme in 11 languages
+musculoskeletal disorder;S;0;1;Total main cause of occupational illnesses
+occupational illness;S;0;1;Total records and trains personnel on prevention
+working condition;S;0;1;Total assessed by GoodCorporation Airbus regulated by ILO
+fair labour condition;S;0;1;ASML sub-topic with works councils and unions
+labour law;S;0;1;ASML risk process monitors compliance with local labour laws
+collective bargaining agreement;S;0;1;Ahold ASML Airbus employee coverage disclosure
+works council;S;0;1;ASML engagement on terms and conditions of employment
+trade union;S;0;1;ASML and PSA negotiation with employee representatives
+social dialogue;S;0;1;PSA informing consulting and negotiating with personnel
+living wage;S;0;1;Airbus commitment and ASML benchmark assessment
+minimum wage;S;0;1;ASML adequate wage review by country
+pay transparency;S;0;1;ASML preparing for EU Pay Transparency Directive
+equal pay;S;0;1;Iberdrola target to maintain equal pay
+gender equality;S;0;1;Iberdrola promotes women in managerial positions
+gender diversity;S;0;1;Ahold reports associates and boards by gender
+gender balance;S;0;1;Ahold 100 percent gender balance aspiration
+female representation;S;0;1;Ahold senior vice president and above metric
+women in management;S;0;1;Iberdrola and Total proportion targets
+diversity equity and inclusion;S;0;1;Ahold global DE&I framework and 100/100/100 aspiration
+inclusion;S;0;0;Ahold ASML Airbus inclusive workplace ambition
+non-discrimination;S;0;0;Ferrari material topic and PSA anti-discrimination policy
+disability;S;0;0;Total employment agreements and ILO business disability network
+employee engagement;S;0;1;Sanofi people survey Ahold associate engagement survey
+employee turnover;S;0;1;Ahold associate turnover Sanofi voluntary turnover rate
+employee training;S;0;1;Iberdrola training hours and Sanofi iLearn modules
+training hour;S;0;1;Iberdrola per employee metric four times European average
+talent development;S;0;1;Ahold cultivate best talent Airbus leadership university
+talent attraction and retention;S;0;1;Ferrari material topic and Airbus remuneration rationale
+work-life balance;S;0;1;Airbus flexible hours and Ferrari material topic
+well-being;S;0;0;Sanofi wellness programme Enel social measure ASML sub-topic
+employee wellness;S;0;1;Sanofi Take Care programme in 62 countries
+employee benefit;S;0;1;Sanofi personalised medical vision and dental coverage
+parental leave;S;0;1;Airbus maternity and paternity benefits beyond statutory minimum
+childcare;S;0;0;Airbus on-site kindergarten and sponsored childcare services
+employee share ownership;S;0;1;Airbus and Nokia employee share purchase plans
+workforce;S;0;0;composition and headcount disclosure at Sanofi Airbus ASML
+psychological safety;S;0;1;Ahold training and supervisory board deep dive
+customer satisfaction;S;0;1;Ferrari KPI Iberdrola service quality ASML customer trust
+product safety;S;0;1;Ahold product safety and Ferrari quality of products
+product quality;S;0;1;Sanofi quality management system and Ferrari material topic
+consumer health;S;0;1;Total limits health and safety risks for consumers
+supply chain responsibility;S;0;1;Ferrari material topic on responsible supply chain management
+responsible sourcing;S;0;1;ASML sustainable sourcing and Iberdrola supplier sustainability policies
+supplier code of conduct;S;0;1;Airbus and ASML impose labour and conduct requirements
+supplier sustainability assessment;S;0;1;Nokia supplier score from performance evaluation
+supplier audit;S;0;1;ASML audits supplier GHG capability and maturity
+philanthropy;S;0;0;PSA partnerships and philanthropy initiatives
+corporate volunteering;S;0;1;Iberdrola volunteers and International Volunteer Day
+social commitment;S;0;1;Iberdrola key figures section on community action
+social dividend;S;0;1;Iberdrola bylaw established contribution to society
+shared value;S;0;1;Enel creating shared value through project assessment
+societal impact;S;0;1;Enel Total Societal Impact economic social environmental indicators
+vulnerable group;S;0;1;Iberdrola COVID programme and AXA vulnerable populations
+road safety;S;0;1;AB InBev UN target and Total safety prize
+corporate human rights benchmark;S;0;1;Total ranking in the extractive sector
+patient safety;S;1;1;Sanofi clinical trials and medical ethics section
+clinical trial;S;1;1;Sanofi transparency commitments and bioethics oversight
+bioethics;S;1;0;Sanofi committee and advisory bioethics council
+medical ethics;S;1;1;Sanofi scientific and medical integrity section
+access to healthcare;S;1;1;Sanofi patient access as absolute priority in ecodesign
+counterfeiting;S;1;0;Sanofi tamper-proof packaging authentication and serialization
+harmful consumption;S;1;1;AB InBev agenda to reduce harmful alcohol consumption
+low-alcohol beer;S;1;1;AB InBev no- and low-alcohol product opportunity
+healthy eating;S;1;1;Ahold customer health and nutrition ambition
+nutrition;S;1;0;Ahold dietitians podcast and healthier product ranges
+food bank;S;1;1;Ahold works with food banks to feed the undernourished
+inclusive insurance;S;1;1;AXA promotion of insurance for vulnerable populations
+conflict mineral;S;1;1;Nokia supplier sustainability evaluation input
+rba code of conduct;S;1;1;ASML requires supplier adherence to latest version
+material safety data sheet;S;1;1;Total product information for petroleum and chemical products
+reach registration;S;1;1;Total chemical product regulatory compliance
+product stewardship;S;1;1;Total product steward ensures compliance at market release
+voluntary principles on security and human rights;S;1;1;Total governs security forces and private providers
+access to energy;S;1;1;Iberdrola Electricity for all programme target
+quality of supply;S;1;1;Iberdrola power outage duration improvement target
+corporate governance;G;0;1;Dutch Belgian codes and governance statements throughout sample
+corporate governance code;G;0;1;compliance statements at Ahold AB InBev Ferrari
+corporate governance statement;G;0;1;Ahold requirement under Dutch decree on management reports
+annual corporate governance report;G;0;1;Iberdrola report in CNMV prescribed format
+board of directors;G;0;1;Iberdrola AXA Ferrari Total governing body
+supervisory board;G;0;1;Ahold Deutsche Boerse ASML PSA oversight body
+management board;G;0;1;Ahold and ASML executive governing body
+executive committee;G;0;1;Ahold Iberdrola Total senior management body
+board committee;G;0;1;audit remuneration and nomination committees across firms
+audit committee;G;0;1;Iberdrola AXA Ferrari PSA oversight of reporting and risk
+remuneration committee;G;0;1;Ahold AXA Ferrari advise board on pay
+nomination committee;G;0;1;Ahold and Deutsche Boerse selection and succession duties
+esg committee;G;0;1;ASML supervisory board committee discussing climate transition plan
+board independence;G;0;1;Ahold Ferrari AXA annually confirm independent members
+independent director;G;0;1;AXA Airbus Ferrari board composition requirement
+senior independent director;G;0;1;AXA and Stellantis defined role and duties
+board evaluation;G;0;1;Ahold and Enel periodic assessment of own performance
+board diversity;G;0;1;Ferrari 30 percent policy and Dutch gender board legislation
+qualification matrix;G;0;1;Deutsche Boerse shows sustainability competence of board members
+succession planning;G;0;1;Ahold and AXA board and management succession processes
+board attendance;G;0;1;Ahold and Ferrari report meeting attendance rates
+conflict of interest;G;0;1;Ahold Ferrari AB InBev reporting and abstention duties
+related party transaction;G;0;1;Ferrari approval process and Enel disclosure
+general meeting of shareholders;G;0;1;Ahold Iberdrola Ferrari approve pay and accounts
+shareholder right;G;0;1;Ahold corporate governance statement section on shareholder authority
+articles of association;G;0;1;Ahold Ferrari ASML basic governance rules
+remuneration policy;G;0;1;Ahold AXA ASML Ferrari approved by shareholders
+executive remuneration;G;0;1;AXA and Iberdrola senior executive compensation structure
+variable remuneration;G;0;1;Iberdrola and AXA annual bonus components
+long-term incentive;G;0;1;ASML AXA Enel share-based long-term plans
+short-term incentive;G;0;1;ASML and Ahold annual cash incentive plans
+performance share;G;0;1;AXA and Ferrari conditional share awards on performance
+pay ratio;G;0;1;Ahold CEO compared to average associate remuneration
+malus;G;0;0;AXA variable compensation deferral subject to malus mechanism
+internal control;G;0;1;Ahold AXA ASML PSA control frameworks and testing
+internal control over financial reporting;G;0;1;Ferrari ASML AXA ICOFR programmes and reports
+coso framework;G;0;1;Ahold and ASML basis for internal control assessment
+internal audit;G;0;1;Ahold and Ferrari independent objective assurance function
+external auditor;G;0;1;Ahold and Iberdrola appointment and reporting
+auditor independence;G;0;1;Deutsche Boerse statement and AXA declaration
+key audit matter;G;0;1;Iberdrola AXA PSA auditor reporting requirement
+risk management;G;0;1;Ahold AXA Enel frameworks committees and policies
+enterprise risk management;G;0;1;Ahold ERM programme and Airbus ERM audits
+risk appetite;G;0;1;Ahold per category and AXA Solvency limit level
+three lines of defence;G;0;1;Ahold and Iberdrola control and assurance model
+regulatory compliance;G;0;1;Sanofi obligations and ASML violation of laws risk
+compliance risk;G;0;1;Ahold very low appetite for regulatory breaches
+compliance programme;G;0;1;Airbus Ethics and Compliance Iberdrola compliance unit
+code of ethics;G;0;1;Iberdrola Ahold AXA PSA behavioural rules
+code of conduct;G;0;1;Total Airbus employee and supplier conduct rules
+business ethics;G;0;1;Sanofi training modules and Airbus key risk area
+business integrity;G;0;1;Airbus and Nokia programme name for ethics compliance
+ethical culture;G;0;1;Iberdrola Ethisphere certification Airbus culture of integrity
+anti-corruption;G;0;1;Airbus policy Total PACI Sanofi GRI 205 disclosure
+bribery;G;0;0;AB InBev FCPA and UK Bribery Act exposure
+anti-bribery management system;G;0;1;Iberdrola ISO 37001 certification renewed
+antitrust;G;0;0;AB InBev and ASML competition law compliance exposure
+whistleblowing;G;0;0;Sanofi hotline and Airbus alert system
+speak-up line;G;0;1;Ahold channel for associates to raise concerns
+lobbying;G;0;0;Total sustainable lobbying and Airbus responsible lobbying charter
+data privacy;G;0;1;Ahold audit committee update and Airbus compliance area
+data protection;G;0;1;ASML regulatory area and Nokia privacy breach risk
+cybersecurity;G;0;0;Iberdrola analyses Nokia threats Stellantis vehicle guidelines
+information security;G;0;1;Ahold committee update on information and cybersecurity
+tax transparency;G;0;1;Iberdrola report on tax transparency of the group
+responsible tax;G;0;1;Total adherence to B-Team principles for sustainable taxation
+business continuity;G;0;1;Ahold committee topic and Sanofi continuity plans
+crisis management;G;0;1;Sanofi and Total global crisis management systems
+reputation risk;G;0;1;Enel risk catalog and AB InBev business reputation
+export control;G;0;1;Airbus and ASML compliance risk area
+governance risk and compliance;G;0;1;Ahold GRC framework and global GRC committee
+sustainability due diligence;G;0;1;Ahold audit committee ESG reporting topic
+esg-related control;G;0;1;Ahold auditor observations on IT and ESG controls
+deferred prosecution agreement;G;0;1;Airbus closed agreements in US UK and France
+trade sanction;G;0;1;AB InBev exposure from operations in Cuba

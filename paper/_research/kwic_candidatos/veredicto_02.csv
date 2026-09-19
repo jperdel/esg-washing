@@ -1,0 +1,223 @@
+termino;n;veredicto;categoria;nota
+breeam;1;1;ok;certificacion de tiendas
+breeam;2;1;ok;
+breeam;3;1;ok;
+breeam;4;1;ok;criterio de alineamiento taxonomia
+breeam;5;0;indice;entrada de glosario
+breeam;6;1;ok;
+supplier audit;1;1;ok;
+supplier audit;2;1;ok;
+supplier audit;3;1;ok;
+supplier audit;4;1;ok;
+supplier audit;5;1;ok;
+supplier audit;6;0;indice;fragmento de tabla de acciones
+women in management position;1;1;ok;objetivo de diversidad ligado a retribucion
+women in management position;2;1;ok;
+women in management position;3;1;ok;
+women in management position;4;1;ok;
+women in management position;5;1;ok;
+women in management position;6;1;ok;
+access to healthcare;1;1;ok;
+access to healthcare;2;1;ok;
+access to healthcare;3;1;ok;
+access to healthcare;4;0;generico;perspectivas de mercado Healthineers
+access to healthcare;5;1;ok;
+access to healthcare;6;1;ok;
+vulnerable population;1;1;ok;
+vulnerable population;2;1;ok;promocional pero social
+vulnerable population;3;1;ok;
+vulnerable population;4;1;ok;
+vulnerable population;5;1;ok;
+vulnerable population;6;0;indice;entrada de glosario
+controlling shareholder;1;1;ok;independencia del consejo
+controlling shareholder;2;1;ok;independencia del consejo
+controlling shareholder;3;0;financiero;pacto de accionistas en participada
+controlling shareholder;4;1;ok;independencia del consejo
+controlling shareholder;5;0;financiero;litigio arbitral participada
+controlling shareholder;6;1;ok;composicion comite de retribuciones
+workplace safety;1;0;generico;marketing de producto software
+workplace safety;2;0;financiero;categoria Basilea de riesgo operacional
+workplace safety;3;0;generico;lista de regulaciones en factores de riesgo
+workplace safety;4;1;ok;
+workplace safety;5;1;ok;
+workplace safety;6;0;financiero;categoria Basilea de riesgo operacional
+2030 agenda;1;1;ok;
+2030 agenda;2;1;ok;
+2030 agenda;3;1;ok;
+2030 agenda;4;0;generico;escenario IEA para deterioro de activos
+2030 agenda;5;1;ok;
+2030 agenda;6;1;ok;
+zero accident;1;1;ok;
+zero accident;2;1;ok;
+zero accident;3;1;ok;
+zero accident;4;1;ok;
+zero accident;5;1;ok;
+zero accident;6;1;ok;
+product recall;1;1;ok;dato de seguridad de producto
+product recall;2;1;ok;
+product recall;3;0;generico;factor de riesgo comercial
+product recall;4;0;financiero;programa de seguros
+product recall;5;0;generico;factor de riesgo financiero
+product recall;6;1;ok;
+employee share ownership plan;1;1;ok;recuadro destacado
+employee share ownership plan;2;1;ok;
+employee share ownership plan;3;0;financiero;estatutos tenencia de acciones consejeros
+employee share ownership plan;4;0;financiero;estatutos tenencia de acciones consejeros
+employee share ownership plan;5;1;ok;
+employee share ownership plan;6;0;financiero;estatutos tenencia de acciones consejeros
+green building;1;1;ok;
+green building;2;1;ok;
+green building;3;1;ok;
+green building;4;0;indice;entrada de glosario
+green building;5;1;ok;
+green building;6;1;ok;membresias en asociaciones
+shareholder rights;1;0;financiero;nombre de directiva SRD II
+shareholder rights;2;0;financiero;declaracion legal de derechos especiales
+shareholder rights;3;0;financiero;nombre de ley ARUG II
+shareholder rights;4;0;financiero;nombre de directiva voto retribucion
+shareholder rights;5;0;indice;referencia cruzada a seccion
+shareholder rights;6;0;indice;referencia cruzada a seccion
+three lines of defense;1;1;ok;control interno
+three lines of defense;2;1;ok;
+three lines of defense;3;1;ok;control interno
+three lines of defense;4;1;ok;control interno
+three lines of defense;5;1;ok;
+three lines of defense;6;1;ok;control interno
+occupational illness;1;1;ok;
+occupational illness;2;1;ok;
+occupational illness;3;1;ok;
+occupational illness;4;1;ok;nota metodologica de perimetro
+occupational illness;5;1;ok;nota metodologica de perimetro
+occupational illness;6;1;ok;
+childcare;1;1;ok;
+childcare;2;0;generico;caso de producto constructivo
+childcare;3;1;ok;
+childcare;4;1;ok;
+childcare;5;1;ok;
+childcare;6;1;ok;
+employee turnover;1;1;ok;indice GRI pero con datos
+employee turnover;2;0;indice;alcance de verificacion
+employee turnover;3;0;indice;tabla de referencias EINF
+employee turnover;4;0;indice;indice GRI
+employee turnover;5;1;ok;
+employee turnover;6;0;indice;entrada de glosario
+coso framework;1;0;financiero;control interno sobre informacion financiera
+coso framework;2;0;generico;sistema de gestion de riesgos
+coso framework;3;0;financiero;control interno sobre informacion financiera
+coso framework;4;0;financiero;control interno sobre informacion financiera
+coso framework;5;0;financiero;control interno sobre informacion financiera
+coso framework;6;1;ok;ERM cubre sostenibilidad
+labour law;1;0;financiero;litigios
+labour law;2;1;ok;
+labour law;3;1;ok;
+labour law;4;0;generico;lista de areas legales
+labour law;5;0;generico;factor de riesgo regulatorio
+labour law;6;1;ok;
+accident rate;1;1;ok;
+accident rate;2;0;indice;referencia a tabla
+accident rate;3;1;ok;
+accident rate;4;1;ok;
+accident rate;5;1;ok;
+accident rate;6;1;ok;seguridad de producto aeronautico
+energy attribute certificate;1;1;ok;
+energy attribute certificate;2;1;ok;
+energy attribute certificate;3;1;ok;
+energy attribute certificate;4;1;ok;
+energy attribute certificate;5;1;ok;
+energy attribute certificate;6;1;ok;
+Ethisphere;1;1;ok;
+Ethisphere;2;1;ok;
+Ethisphere;3;1;ok;
+Ethisphere;4;1;ok;
+Ethisphere;5;1;ok;
+Ethisphere;6;1;ok;
+counterfeiting;1;1;ok;
+counterfeiting;2;1;ok;
+counterfeiting;3;0;generico;riesgo de propiedad intelectual
+counterfeiting;4;0;generico;proteccion de marca
+counterfeiting;5;0;generico;proteccion de marca
+counterfeiting;6;0;indice;listado de riesgos
+food bank;1;1;ok;
+food bank;2;1;ok;
+food bank;3;1;ok;
+food bank;4;1;ok;
+food bank;5;1;ok;
+food bank;6;0;indice;definicion de glosario
+responsible tax;1;1;ok;
+responsible tax;2;1;ok;tema material
+responsible tax;3;1;ok;
+responsible tax;4;1;ok;
+responsible tax;5;1;ok;
+responsible tax;6;1;ok;
+green financing;1;1;ok;
+green financing;2;1;ok;
+green financing;3;1;ok;
+green financing;4;1;ok;
+green financing;5;1;ok;
+green financing;6;0;indice;referencia cruzada a notas
+iirc;1;1;ok;marco de reporte
+iirc;2;1;ok;marco de reporte
+iirc;3;1;ok;marco de reporte
+iirc;4;1;ok;
+iirc;5;1;ok;marco de reporte
+iirc;6;1;ok;marco de reporte
+mitigation hierarchy;1;1;ok;
+mitigation hierarchy;2;1;ok;
+mitigation hierarchy;3;1;ok;
+mitigation hierarchy;4;1;ok;
+mitigation hierarchy;5;1;ok;
+mitigation hierarchy;6;1;ok;
+musculoskeletal disorder;1;1;ok;
+musculoskeletal disorder;2;1;ok;
+musculoskeletal disorder;3;1;ok;
+musculoskeletal disorder;4;1;ok;
+musculoskeletal disorder;5;1;ok;
+musculoskeletal disorder;6;1;ok;
+corporate volunteering;1;1;ok;
+corporate volunteering;2;1;ok;
+corporate volunteering;3;1;ok;
+corporate volunteering;4;0;otro;VIE contrato internacional de practicas
+corporate volunteering;5;1;ok;
+corporate volunteering;6;1;ok;
+psychological safety;1;1;ok;
+psychological safety;2;1;ok;
+psychological safety;3;1;ok;
+psychological safety;4;1;ok;
+psychological safety;5;1;ok;
+psychological safety;6;1;ok;
+smart meter;1;0;generico;servicio comercial de distribucion
+smart meter;2;1;ok;capex taxonomia
+smart meter;3;1;ok;
+smart meter;4;1;ok;
+smart meter;5;1;ok;
+smart meter;6;1;ok;
+auditor independence;1;0;financiero;auditoria externa
+auditor independence;2;0;financiero;auditoria externa
+auditor independence;3;0;indice;listado de informes
+auditor independence;4;0;financiero;nota de honorarios de auditoria
+auditor independence;5;0;financiero;nota de honorarios de auditoria
+auditor independence;6;0;financiero;nota de honorarios de auditoria
+safety data sheet;1;1;ok;
+safety data sheet;2;1;ok;
+safety data sheet;3;1;ok;
+safety data sheet;4;1;ok;
+safety data sheet;5;1;ok;
+safety data sheet;6;1;ok;
+board evaluation;1;0;indice;tabla de referencias
+board evaluation;2;1;ok;
+board evaluation;3;1;ok;
+board evaluation;4;1;ok;
+board evaluation;5;1;ok;
+board evaluation;6;1;ok;
+qualification matrix;1;1;ok;
+qualification matrix;2;0;indice;referencia cruzada
+qualification matrix;3;1;ok;
+qualification matrix;4;0;indice;encabezado con navegacion
+qualification matrix;5;0;indice;referencia cruzada texto roto
+qualification matrix;6;1;ok;matriz incluye sostenibilidad
+groundwater contamination;1;0;indice;texto de grafico
+groundwater contamination;2;1;ok;
+groundwater contamination;3;1;ok;
+groundwater contamination;4;1;ok;
+groundwater contamination;5;1;ok;
+groundwater contamination;6;1;ok;

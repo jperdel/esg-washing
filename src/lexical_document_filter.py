@@ -38,6 +38,17 @@ def _read_terms(path: Path) -> list[str]:
         ]
 
 
+def run_suffix() -> str:
+    """
+    Sufijo de las rutas de salida. ESG_RUN_TAG separa ejecuciones con
+    vocabularios distintos (p. ej. 'v3') y ESG_INCLUDE_SECTORAL=1 añade '_sec',
+    de modo que ninguna ejecución pisa la extracción de otra.
+    """
+    tag = os.getenv("ESG_RUN_TAG", "").strip()
+    sec = os.getenv("ESG_INCLUDE_SECTORAL", "0") == "1"
+    return (f"_{tag}" if tag else "") + ("_sec" if sec else "")
+
+
 def _load_esg_terms() -> list[str]:
     """
     Vocabulario base, más el sectorial si ESG_INCLUDE_SECTORAL=1.
@@ -53,55 +64,35 @@ def _load_esg_terms() -> list[str]:
     return terms
 
 # Patterns that CANNOT be expressed as a flat term in esg_terms.txt:
-#   · morphological families that need prefix matching
-#   · terms containing digits (excluded from esg_terms.txt because the
-#     preprocessing drops numeric tokens, so they could never score in TF-IDF)
-#   · precision collocations: 'social', 'water' and 'energy' are far too
-#     polysemous to count bare, so they only match in ESG context
-# Everything expressible as plain words belongs in esg_terms.txt, not here.
-_EXTRA_PATTERNS: list[str] = [
-    # Morphological families
-    r"environ\w+",                                                 # environment, environmental…
-    r"sustainab\w+",                                               # sustainability, sustainably…
-    r"decarboni\w+",                                               # decarbonize, decarbonisation…
-    r"recycl\w+",                                                  # recycling, recyclable…
-    r"offset\w+",                                                  # offsetting, offsetted…
-    r"electrif\w+",                                                # electrification, electrified…
-    r"inclusiv\w+",                                                # inclusive, inclusivity…
-    r"circulari\w+",                                               # circularity…
-    r"cybersecuri\w+",                                             # cybersecurity…
-    r"whistleblow\w+",                                             # whistleblowing, whistleblower…
-    r"injur\w+",                                                   # injury, injuries…
-    r"disabilit\w+",                                               # disability, disabilities…
-    r"fatalit\w+",                                                 # fatality, fatalities…
-    r"philanthrop\w+",                                             # philanthropy, philanthropic…
-    r"ergonomic\w*",                                               # ergonomic, ergonomics…
-    r"absenteeism",
-    r"local\s+communit\w+",                                        # local community/communities
-    r"equal\s+opportunit\w+",                                      # equal opportunity/opportunities
-    # Terms with digits
-    r"co2e?",
-    r"scope\s*[123]\b",
-    r"scope\s+(?:one|two|three)",
-    r"article\s*[689]\b",
-    r"ifrs\s*s[12]\b",
-    r"iso\s*(?:14001|45001|50001|37001)\b",
-    r"tonne\w*\s+(?:co2|carbon)",
-    # Precision collocations for high-frequency polysemous heads
-    r"social\s+(?:responsibility|impact|policy|pillar|report|performance|value|"
-    r"welfare|audit|capital|sustainability|license|licence|dialogue|protection|"
-    r"partner|standard|norm|commitment|compliance)",
-    r"water\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress)",
-    r"energy\s+(?:consumption|efficiency|transition|mix|intensity|storage)",
-    r"employee\s+well\w*",
-    # Expresiones cuya parte específica desaparece en el preprocesado y que por
-    # eso no pueden vivir en esg_terms.txt: "paris" está en personal_stopwords
-    # y "just" es stopword de spaCy, así que como entrada TF-IDF quedarían en
-    # "agreement" y "transition", demasiado genéricas. Aquí sí funcionan,
-    # porque el regex actúa sobre el texto crudo.
-    r"paris\s+agreement",
-    r"just\s+transition",
-]
+#   · morphological families that need prefix matching (sustainab\w+)
+#   · precision collocations for polysemous heads (social, water, energy)
+#   · phrases whose specific word is removed by the preprocessing
+#     ("paris agreement", "just transition")
+# They live in metadata/esg_patterns.txt (and esg_patterns_sectorial.txt),
+# one regex per line, so the vocabulary can be swapped without touching code.
+# They only act on raw text: the TF-IDF vocabulary never sees them.
+def _read_patterns(path: Path) -> list[str]:
+    if not path.exists():
+        return []
+    with open(path, encoding="utf-8") as fh:
+        return [
+            line.strip()
+            for line in fh
+            if line.strip() and not line.startswith("#")
+        ]
+
+
+def _load_esg_patterns() -> list[str]:
+    patterns = _read_patterns(_METADATA_DIR / "esg_patterns.txt")
+    if os.getenv("ESG_INCLUDE_SECTORAL", "0") == "1":
+        extra = _read_patterns(_METADATA_DIR / "esg_patterns_sectorial.txt")
+        patterns += [p for p in extra if p not in set(patterns)]
+    for pat in patterns:
+        re.compile(pat)  # fail at import time, not in the middle of a run
+    return patterns
+
+
+_EXTRA_PATTERNS: list[str] = _load_esg_patterns()
 
 
 def _term_to_pattern(term: str) -> str:
@@ -123,14 +114,26 @@ _ESG_TERMS = _load_esg_terms()
 # metadata would report the less specific term.
 _sorted_terms = sorted(_ESG_TERMS, key=lambda t: (-len(t.split()), -len(t)))
 _terms_pat = "|".join(_term_to_pattern(t) for t in _sorted_terms)
-_extra_pat = "|".join(_EXTRA_PATTERNS)
-_ESG_KW_RE = re.compile(rf"\b(?:{_terms_pat}|{_extra_pat})\b", re.IGNORECASE)
+_ESG_KW_RE = re.compile(
+    r"\b(?:" + "|".join([_terms_pat] + _EXTRA_PATTERNS) + r")\b", re.IGNORECASE
+)
 
 # ── Running header / footer detection ───────────────────────────────────────
 _HEADER_RATIO  = 0.08
 _FOOTER_RATIO  = 0.92
 _REPEAT_THRESH = 0.30
 _MAX_HF_LEN    = 120
+
+# ── Navigation detection (tables of contents, cross-reference tables) ────────
+_NAV_PAGE         = re.compile(r"^\d{1,3}$")
+_NAV_SECNUM       = re.compile(r"^\d{1,2}(?:\.\d{1,2}){1,3}\.?$")          # 2.1  1.3.1
+_NAV_SECNUM_ANY   = re.compile(r"^\d{1,2}(?:\.\d{1,2}){0,3}\.$|^\d{1,2}(?:\.\d{1,2}){1,3}$")
+_NAV_CODE         = re.compile(r"^(?:\d{3}-\d{1,2}|[ESG]\d{1,2}-\d{1,2})$")  # GRI 205-3, ESRS S1-14
+_NAV_PREF         = re.compile(r"^\(?p{1,2}\.$|^page$|^paragraph$", re.IGNORECASE)
+_NAV_LEADER_PAGE  = re.compile(r"(?:\.\s?){5,}\s*\d{1,3}\b")              # Título ...... 123
+_NAV_LEADER       = re.compile(r"_{4,}|(?:\.\s?){4,}")
+_NAV_HEADING      = re.compile(r"^(?:\d{1,2}(?:\.\d{1,2}){1,4}\.?|[IVX]{1,4}\.)\s+\S")
+_NAV_PAGE_END     = re.compile(r"[A-Za-z)][\s_.]+\d{1,3}$")
 
 # ── Section marker ────────────────────────────────────────────────────────────
 _SECTION_MARKER    = "§"
@@ -277,6 +280,56 @@ class LexicalDocumentFilter:
                 return True
         return False
 
+    @staticmethod
+    def _is_navigation(text: str) -> bool:
+        """
+        Índices de contenidos, tablas de correspondencia GRI/ESRS y líneas
+        sueltas de navegación ("Corporate Governance Report 114").
+
+        El extractor los seleccionaba como zonas precisamente por ser densos en
+        palabras clave: son listas de nombres de sección. La auditoría de falsos
+        positivos (paper/_research/kwic) mostró que eran la primera causa de
+        error en los términos más pesados; `governance` fallaba 38 de 40 veces.
+
+        Se evalúa sobre el texto ya limpio (espacios colapsados). Calibrado con
+        2.963 apariciones etiquetadas a mano situadas en su párrafo real: quita
+        el 51 % de las apariciones en índices y el 0,39 % de las menciones ESG
+        genuinas. No persigue encabezados sueltos sin número ni glosarios: ahí
+        el coste de borrar divulgación real supera al beneficio.
+        """
+        tokens = text.split()
+        n = len(tokens)
+        if n == 0:
+            return False
+
+        # 1. Índice o tabla de correspondencia densos: número de página entre
+        #    títulos, numeración de epígrafe seguida de título, códigos GRI/ESRS.
+        markers = 0
+        for i, tok in enumerate(tokens):
+            prv = tokens[i - 1] if i > 0 else ""
+            nxt = tokens[i + 1] if i + 1 < n else ""
+            nxt_title = bool(nxt) and nxt.lstrip("(\"'")[:1].isupper()
+            prv_word = len(prv.strip(",;:()\"'")) >= 2 and prv.strip(",;:()\"'")[0].isalpha()
+            if _NAV_PAGE.match(tok) and prv_word and (not nxt or nxt_title or _NAV_SECNUM_ANY.match(nxt)):
+                markers += 1
+            elif _NAV_SECNUM.match(tok) and nxt_title:
+                markers += 1
+            elif _NAV_CODE.match(tok.strip(",;:()")) or (_NAV_PREF.match(tok) and nxt[:1].isdigit()):
+                markers += 1
+        if len(_NAV_LEADER_PAGE.findall(text)) >= 2:
+            return True
+        if markers >= 4 and markers / n >= 0.08:
+            return True
+
+        # 2. Línea corta de navegación: sin puntuación de frase y con número de
+        #    página al final, numeración multinivel al principio o relleno.
+        if n <= 15:
+            leader = bool(_NAV_LEADER.search(text))
+            if re.search(r"[.!?:;]$", text) and not leader:
+                return False
+            return bool(_NAV_HEADING.match(text) or _NAV_PAGE_END.search(text) or leader)
+        return False
+
     def _extract_paragraphs(self, pdf_path: Path) -> list[dict]:
         """Returns list of {text, start_char, end_char, section_idx, section}."""
         with fitz.open(pdf_path) as doc:
@@ -306,7 +359,7 @@ class LexicalDocumentFilter:
                             units.append(f"{_SECTION_MARKER} {header_clean} {_SECTION_MARKER}")
                         continue
                     cleaned = self._clean_block(ts)
-                    if cleaned:
+                    if cleaned and not self._is_navigation(cleaned):
                         units.append(cleaned)
 
         # Build paragraph list with char offsets
@@ -439,8 +492,7 @@ class LexicalDocumentFilter:
         if root is not None:
             try:
                 relative = pdf_path.relative_to(root)
-                suffix = "_sec" if os.getenv("ESG_INCLUDE_SECTORAL", "0") == "1" else ""
-                return (root.parent / f"chunks_lexical{suffix}" / relative).with_suffix(".json")
+                return (root.parent / f"chunks_lexical{run_suffix()}" / relative).with_suffix(".json")
             except ValueError:
                 logger.warning(f"{pdf_path} fuera de la raíz {root}; se usa la ruta absoluta.")
         return pdf_path.with_suffix(".json")

@@ -1,0 +1,435 @@
+termino;tipo;pilar;sectorial;origen;precision;ocurrencias;aviso
+agroforestry;termino;E;0;auditoria;1.0;153;
+air pollutant;termino;E;0;auditoria;1.0;116;
+air quality;termino;E;0;auditoria;0.833;449;
+animal welfare;termino;E;0;auditoria;0.5;1291;
+biodiversity;termino;E;0;bloque;0.8;11748;
+biofuel;termino;E;0;bloque;1.0;1221;
+biomass;termino;E;0;bloque;0.833;803;
+carbon;termino;E;0;bloque;0.95;23999;
+carbon neutrality;termino;E;0;bloque;0.833;1563;
+chemical management;termino;E;0;bloque;1.0;84;
+circular economy;termino;E;0;manual;0.75;5777;
+circulari\w+;patron;E;0;manual;0.667;1580;
+circularity;termino;E;0;manual;0.5;1559;
+clean energy;termino;E;0;auditoria;0.5;488;
+climate;termino;E;0;bloque;0.8;44497;
+climate change;termino;E;0;bloque;0.8;20204;
+co2;termino;E;0;bloque;0.95;13336;
+co2e;termino;E;0;bloque;0.917;3401;
+co2e?;patron;E;0;manual;1.0;19825;
+coal;termino;E;0;bloque;0.917;2424;
+compost;termino;E;0;auditoria;1.0;42;
+cover crop;termino;E;1;auditoria;1.0;32;
+decarboni\w+;patron;E;0;manual;0.917;6400;
+decarbonisation;termino;E;0;manual;0.833;1339;
+decarbonise;termino;E;0;manual;1.0;122;
+decarbonization;termino;E;0;manual;1.0;3614;
+decarbonize;termino;E;0;manual;1.0;502;
+deforestation;termino;E;0;bloque;0.833;1547;
+drought;termino;E;0;bloque;1.0;514;
+ecodesign;termino;E;1;auditoria;1.0;349;
+ecosystem service;termino;E;0;v3: sustituye a ecosystem;1.0;383;colocacion nueva auditada
+ecosystem restoration;termino;E;0;v3: sustituye a ecosystem;1.0;34;colocacion nueva auditada
+natural ecosystem;termino;E;0;v3: sustituye a ecosystem;0.833;292;colocacion nueva auditada
+effluent;termino;E;0;auditoria;0.833;442;
+electricity;termino;E;0;bloque;0.75;16848;
+electrif\w+;patron;E;0;manual;0.833;3064;
+electrification;termino;E;0;bloque;1.0;2195;
+emission;termino;E;0;bloque;0.925;54420;
+energy consumption;termino;E;0;bloque;0.833;5289;
+energy efficiency;termino;E;0;bloque;1.0;4221;
+energy mix;termino;E;0;bloque;0.667;585;
+energy storage;termino;E;1;auditoria;0.5;695;
+energy transition;termino;E;0;bloque;1.0;3205;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);patron;E;0;manual;1.0;14228;
+environmental\w*;patron;E;0;v3: sustituye a environ\w+;0.833;46144;colocacion nueva auditada
+environmentally;patron;E;0;v3: sustituye a environ\w+;0.667;3762;colocacion nueva a revisar (p=0.667)
+flood;termino;E;0;bloque;0.5;878;
+flooding;termino;E;0;bloque;1.0;447;
+carbon footprint;termino;E;0;v3: sustituye a footprint;1.0;3425;colocacion nueva auditada
+environmental footprint;termino;E;0;v3: sustituye a footprint;0.833;1962;colocacion nueva auditada
+water footprint;termino;E;0;v3: sustituye a footprint;1.0;219;colocacion nueva auditada
+ecological footprint;termino;E;0;v3: sustituye a footprint;0.833;70;colocacion nueva auditada
+fossil fuel;termino;E;0;v3: sustituye a fuel;1.0;1409;colocacion nueva auditada
+fuel consumption;termino;E;0;v3: sustituye a fuel;0.667;951;colocacion nueva a revisar (p=0.667)
+alternative fuel;termino;E;0;v3: sustituye a fuel;0.667;192;colocacion nueva a revisar (p=0.667)
+sustainable aviation fuel;termino;E;0;v3: sustituye a fuel;1.0;339;colocacion nueva auditada
+low-carbon fuel;termino;E;0;v3: sustituye a fuel;0.667;53;colocacion nueva a revisar (p=0.667)
+geothermal;termino;E;0;auditoria;0.5;296;
+ghg;termino;E;0;bloque;0.9;10699;
+global warming;termino;E;0;auditoria;0.667;1120;
+green bond;termino;E;0;bloque;1.0;868;
+green energy;termino;E;0;auditoria;0.5;303;
+green hydrogen;termino;E;0;bloque;1.0;399;
+green investment;termino;E;0;bloque;0.833;131;
+greenhouse;termino;E;0;bloque;0.917;7079;
+habitat;termino;E;0;auditoria;0.833;907;
+hazardous;termino;E;0;bloque;0.833;2893;
+heat wave;termino;E;0;bloque;1.0;223;
+hydroelectric;termino;E;0;auditoria;0.5;705;
+hydrogen;termino;E;0;bloque;0.5;4603;p=0,50: plantilla legal de taxonomia nuclear y gas
+hydropower;termino;E;0;auditoria;1.0;110;
+iso 14001;termino;E;0;auditoria;0.833;967;
+iso 50001;termino;E;0;auditoria;0.833;277;
+iso\s*14001\b;patron;E;0;manual;1.0;1262;
+iso\s*50001\b;patron;E;0;manual;1.0;325;
+land use;termino;E;0;auditoria;0.667;609;
+landfill;termino;E;0;auditoria;1.0;1036;
+lca;termino;E;0;auditoria;0.833;399;
+leed;termino;E;0;bloque;1.0;447;
+life cycle assessment;termino;E;0;auditoria;1.0;190;
+low carbon;termino;E;0;bloque;1.0;4857;
+methane;termino;E;0;bloque;0.833;1501;
+microfiber;termino;E;1;auditoria;0.833;77;
+microplastic;termino;E;0;auditoria;0.833;129;
+natural capital;termino;E;0;auditoria;1.0;562;
+natural disaster;termino;E;0;bloque;0.833;760;
+nature-based solution;termino;E;0;bloque;1.0;202;
+net zero;termino;E;0;bloque;1.0;4381;
+nox;termino;E;0;auditoria;0.833;527;
+ocean;termino;E;0;auditoria;0.833;1033;
+carbon offset;termino;E;0;v3: sustituye a offset;0.833;239;colocacion nueva auditada
+offsett?ing\s+(?:of\s+)?(?:\w+\s+)?emission\w*;patron;E;0;v3: sustituye a offset;1.0;72;colocacion nueva auditada
+offsett?ing\s+(?:of\s+)?(?:\w+\s+)?carbon;patron;E;0;v3: sustituye a offset;;15;colocacion nueva, menos de 20 disparos
+sustainable packaging;termino;E;0;v3: sustituye a packaging;1.0;219;colocacion nueva auditada
+plastic packaging;termino;E;0;v3: sustituye a packaging;1.0;565;colocacion nueva auditada
+packaging waste;termino;E;0;v3: sustituye a packaging;1.0;145;colocacion nueva auditada
+recyclable packaging;termino;E;0;v3: sustituye a packaging;1.0;40;colocacion nueva auditada
+recycled packaging;termino;E;0;v3: sustituye a packaging;;15;colocacion nueva, menos de 20 disparos
+paris\s+agreement;patron;E;0;manual;1.0;1642;
+particulate matter;termino;E;0;auditoria;1.0;81;
+peatland;termino;E;1;auditoria;1.0;33;
+photovoltaic;termino;E;0;bloque;0.833;1213;
+plastic;termino;E;0;bloque;0.833;5190;
+pollution;termino;E;0;bloque;0.917;5200;
+raw material consumption;termino;E;0;manual;0.5;32;
+raw material sourcing;termino;E;0;manual;1.0;39;
+recycl\w+;patron;E;0;manual;0.85;12838;
+recyclable;termino;E;0;manual;0.667;796;
+recycle;termino;E;0;manual;0.667;742;
+recycled raw material;termino;E;0;manual;1.0;117;
+recycling;termino;E;0;manual;0.667;5144;
+reforestation;termino;E;0;bloque;0.833;309;
+refrigerant;termino;E;0;auditoria;1.0;496;
+regenerative agriculture;termino;E;0;auditoria;1.0;1017;
+renewable;termino;E;0;bloque;0.85;16996;
+resource efficiency;termino;E;0;auditoria;0.5;330;
+sbti;termino;E;0;bloque;0.833;1633;
+science based target;termino;E;0;bloque;0.833;1225;
+scope\s*[123]\b;patron;E;0;manual;0.9;15064;
+sf6;termino;E;1;auditoria;1.0;469;
+soil health;termino;E;0;auditoria;1.0;165;
+solar energy;termino;E;0;v3: sustituye a solar;1.0;225;colocacion nueva auditada
+solar power;termino;E;0;v3: sustituye a solar;1.0;472;colocacion nueva auditada
+solar panel;termino;E;0;v3: sustituye a solar;1.0;445;colocacion nueva auditada
+solar plant;termino;E;0;v3: sustituye a solar;0.833;130;colocacion nueva auditada
+solar farm;termino;E;0;v3: sustituye a solar;0.667;135;colocacion nueva a revisar (p=0.667)
+species;termino;E;0;auditoria;0.667;1580;
+supply chain decarbonisation;termino;E;0;manual;1.0;1;
+supply chain emission;termino;E;0;manual;1.0;57;
+supply chain footprint;termino;E;0;manual;0.5;10;
+tonne\w*\s+(?:co2|carbon);patron;E;0;manual;1.0;245;
+transition plan;termino;E;0;bloque;0.667;1407;
+virgin polyester;termino;E;1;auditoria;1.0;17;
+volatile organic;termino;E;0;auditoria;1.0;220;
+waste;termino;E;0;bloque;0.8;17805;
+wastewater;termino;E;0;auditoria;1.0;1579;
+water;termino;E;0;bloque;0.775;26656;
+water\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress);patron;E;0;manual;0.833;6276;
+wetland;termino;E;0;auditoria;1.0;293;
+wind energy;termino;E;0;bloque;0.333;153;
+wind farm;termino;E;0;auditoria;0.5;928;
+wind power;termino;E;0;bloque;0.833;464;
+wind turbine;termino;E;0;auditoria;0.333;157;
+zdhc;termino;E;0;bloque;1.0;457;
+anti-money laundering;termino;G;0;auditoria;1.0;582;
+antitrust;termino;G;0;auditoria;0.667;1240;
+audit committee;termino;G;0;auditoria;0.6;12291;p=0,60: biografias de consejeros y boilerplate del auditor
+b corp;termino;G;1;auditoria;0.667;67;
+board oversight;termino;G;1;auditoria;0.333;17;
+bribery;termino;G;0;bloque;0.75;2290;
+business ethics;termino;G;0;auditoria;0.5;1161;
+code of conduct;termino;G;0;auditoria;0.833;6585;
+compliance and ethics;termino;G;0;manual;0.833;68;
+compliance committee;termino;G;0;manual;0.667;2494;
+compliance department;termino;G;0;manual;1.0;766;
+compliance function;termino;G;0;manual;1.0;895;
+compliance management system;termino;G;0;manual;1.0;920;
+compliance officer;termino;G;0;manual;0.667;1818;
+compliance program;termino;G;0;manual;1.0;1432;
+compliance programme;termino;G;0;manual;0.833;430;
+compliance risk;termino;G;0;manual;0.833;1880;
+compliance training;termino;G;0;manual;0.833;396;
+compliance violation;termino;G;0;manual;0.5;242;
+conflict of interest;termino;G;0;auditoria;1.0;1498;
+conflicts of interest;termino;G;0;auditoria;0.917;2742;
+cop 28;termino;G;1;auditoria;1.0;10;
+cop28;termino;G;1;auditoria;1.0;75;
+corruption;termino;G;0;bloque;0.833;9812;
+cybersecuri\w+;patron;G;0;manual;0.917;4308;
+cybersecurity;termino;G;0;bloque;0.833;4297;
+data breach;termino;G;0;bloque;0.833;139;
+data privacy;termino;G;0;bloque;1.0;1619;
+data protection;termino;G;0;bloque;1.0;4517;
+data security;termino;G;0;bloque;0.833;472;
+due diligence;termino;G;0;bloque;0.75;4124;
+ethical;termino;G;0;auditoria;0.917;5805;
+ethics and compliance;termino;G;0;manual;0.833;1017;
+executive compensation;termino;G;1;auditoria;0.5;264;
+fair competition;termino;G;0;bloque;0.833;219;
+anti-fraud;termino;G;0;v3: sustituye a fraud;0.833;259;colocacion nueva auditada
+fraud prevention;termino;G;0;v3: sustituye a fraud;0.833;177;colocacion nueva auditada
+gdpr;termino;G;0;bloque;1.0;930;
+governance;termino;G;0;bloque;0.575;44562;p=0,57: 14 de 17 fallos son navegacion que el filtro no captura (encabezados sin numero, referencias cruzadas)
+independent director;termino;G;0;auditoria;0.75;8221;
+information security;termino;G;0;bloque;1.0;1631;
+insider trading;termino;G;0;auditoria;0.833;429;
+business integrity;termino;G;0;v3: sustituye a integrity;1.0;337;colocacion nueva auditada
+internal audit;termino;G;0;auditoria;0.667;5753;
+internal control;termino;G;0;auditoria;0.8;18651;
+iso 37001;termino;G;1;auditoria;1.0;68;
+iso\s*37001\b;patron;G;1;manual;1.0;77;
+lobbying;termino;G;0;auditoria;0.5;556;
+money laundering;termino;G;0;auditoria;1.0;1430;
+political contribution;termino;G;0;auditoria;0.5;90;
+proxy advisor;termino;G;0;manual;0.667;325;
+regulatory compliance;termino;G;0;manual;1.0;761;
+remuneration;termino;G;0;bloque;0.8;59543;
+responsible business;termino;G;0;bloque;0.833;836;
+responsible investment;termino;G;0;bloque;0.333;626;
+responsible sourcing;termino;G;0;bloque;1.0;594;
+enterprise risk management;termino;G;0;v3: sustituye a risk management;0.833;778;colocacion nueva auditada
+climate risk management;termino;G;0;v3: sustituye a risk management;0.5;71;colocacion nueva a revisar (p=0.5)
+esg risk management;termino;G;0;v3: sustituye a risk management;0.833;137;colocacion nueva auditada
+sustainability risk management;termino;G;0;v3: sustituye a risk management;;16;colocacion nueva, menos de 20 disparos
+sanction;termino;G;0;auditoria;0.833;3772;
+sapin;termino;G;0;auditoria;1.0;308;
+say on pay;termino;G;0;auditoria;0.833;331;
+climate scenario analysis;termino;G;0;v3: sustituye a scenario analysis;1.0;96;colocacion nueva auditada
+speak up;termino;G;0;auditoria;1.0;841;
+succession planning;termino;G;0;auditoria;1.0;1105;
+supplier assessment;termino;G;0;auditoria;0.667;192;
+supply chain due diligence;termino;G;0;bloque;1.0;147;
+supply chain ethics;termino;G;0;manual;1.0;3;
+supply chain risk;termino;G;0;bloque;0.833;112;
+supply chain transparency;termino;G;0;bloque;0.667;32;
+tax avoidance;termino;G;0;bloque;0.333;107;
+tax compliance;termino;G;0;manual;0.5;333;
+tax policy;termino;G;0;bloque;0.667;508;
+tax strategy;termino;G;0;auditoria;0.833;354;
+tax transparency;termino;G;0;bloque;0.667;224;
+vigilance plan;termino;G;0;auditoria;0.5;1623;
+whistleblow\w+;patron;G;0;manual;0.917;3481;
+whistleblower;termino;G;0;auditoria;0.833;1184;
+whistleblowing;termino;G;0;bloque;0.75;2285;
+absenteeism;termino;S;0;auditoria;0.5;718;
+accessibility;termino;S;0;auditoria;0.833;909;
+affordability;termino;S;0;auditoria;0.667;238;
+apprentice;termino;S;0;auditoria;0.333;452;
+better cotton;termino;S;1;auditoria;0.833;68;
+child labor;termino;S;0;bloque;0.833;890;
+collective bargaining;termino;S;0;auditoria;0.667;2178;
+community engagement;termino;S;0;bloque;0.5;241;
+community relations;termino;S;1;auditoria;0.667;40;
+customer privacy;termino;S;0;auditoria;0.833;80;
+persons with disabilities;termino;S;0;v3: sustituye a disability;0.5;238;colocacion nueva a revisar (p=0.5)
+people with disabilities;termino;S;0;v3: sustituye a disability;0.667;1365;colocacion nueva a revisar (p=0.667)
+employees with disabilities;termino;S;0;v3: sustituye a disability;0.833;344;colocacion nueva auditada
+disability inclusion;termino;S;0;v3: sustituye a disability;1.0;123;colocacion nueva auditada
+discrimination;termino;S;0;bloque;0.833;3319;
+diversity;termino;S;0;bloque;0.8;15998;
+donation;termino;S;0;auditoria;0.833;2211;
+employee engagement;termino;S;0;auditoria;1.0;1912;
+employee wellbeing;termino;S;0;bloque;1.0;64;
+employee\s+well\w*;patron;S;0;manual;1.0;247;
+equal opportunity;termino;S;0;manual;0.667;499;
+equal pay;termino;S;0;auditoria;1.0;700;
+equal\s+opportunit\w+;patron;S;0;manual;0.833;1496;
+equality;termino;S;0;bloque;0.833;3619;
+ergonomic;termino;S;0;auditoria;1.0;608;
+ergonomic\w*;patron;S;0;manual;0.667;624;
+fair compensation;termino;S;0;bloque;1.0;131;
+fair condition;termino;S;0;bloque;0.833;9;
+fair labor;termino;S;0;bloque;1.0;120;
+fair trade;termino;S;0;auditoria;0.833;112;
+fair wage;termino;S;0;bloque;1.0;145;
+fairtrade;termino;S;1;auditoria;1.0;60;
+fatalit\w+;patron;S;0;manual;0.833;750;
+fatality;termino;S;0;manual;0.833;124;
+female representation;termino;S;0;auditoria;1.0;244;
+first aid;termino;S;0;auditoria;1.0;157;
+food safety;termino;S;1;auditoria;0.5;442;
+forced labor;termino;S;0;bloque;1.0;893;
+freedom of association;termino;S;0;auditoria;0.667;1075;
+gender;termino;S;0;bloque;1.0;9961;
+grievance;termino;S;0;auditoria;0.833;1011;
+harassment;termino;S;0;bloque;1.0;1838;
+health and safety;termino;S;0;bloque;0.917;9155;
+human capital;termino;S;0;auditoria;0.667;726;
+human right;termino;S;0;bloque;0.8;20747;
+human trafficking;termino;S;0;auditoria;0.833;289;
+ilo;termino;S;0;auditoria;1.0;1567;
+inclusion;termino;S;0;bloque;0.75;9805;
+inclusiv\w+;patron;S;0;manual;0.833;5715;
+inclusive;termino;S;0;bloque;1.0;5381;
+indigenous;termino;S;0;auditoria;0.667;665;
+injur\w+;patron;S;0;manual;0.667;2918;
+injury;termino;S;0;bloque;0.5;1328;
+iso 45001;termino;S;0;auditoria;1.0;476;
+iso\s*45001\b;patron;S;0;manual;1.0;593;
+just\s+transition;patron;S;0;manual;1.0;283;
+labor practices;termino;S;0;auditoria;0.833;115;
+labor right;termino;S;0;bloque;1.0;260;
+leather working group;termino;S;1;auditoria;1.0;65;
+living income;termino;S;1;auditoria;1.0;2;
+living wage;termino;S;0;bloque;1.0;888;
+local community;termino;S;0;manual;1.0;272;
+local\s+communit\w+;patron;S;0;manual;0.75;2676;
+maternity;termino;S;0;auditoria;1.0;565;
+mental health;termino;S;0;auditoria;1.0;856;
+minimum wage;termino;S;0;auditoria;0.833;307;
+modern slavery;termino;S;0;bloque;1.0;508;
+nutrition;termino;S;1;auditoria;0.833;1326;
+occupational health;termino;S;0;bloque;0.833;1670;
+oecd guidelines;termino;S;0;auditoria;1.0;685;
+pay equity;termino;S;0;auditoria;1.0;354;
+philanthrop\w+;patron;S;0;manual;1.0;746;
+philanthropy;termino;S;0;manual;1.0;454;
+product safety;termino;S;0;auditoria;0.833;909;
+racism;termino;S;0;bloque;0.833;115;
+reskilling;termino;S;0;auditoria;1.0;192;
+responsible marketing;termino;S;0;auditoria;0.833;292;
+road safety;termino;S;0;auditoria;1.0;415;
+sedex;termino;S;1;auditoria;0.833;108;
+smeta;termino;S;1;auditoria;0.833;139;
+social audit;termino;S;0;manual;0.833;481;
+social commitment;termino;S;0;bloque;0.833;305;
+social compliance;termino;S;0;bloque;0.833;222;
+social dialogue;termino;S;0;manual;0.667;1688;
+social enterprise;termino;S;0;manual;1.0;331;
+social impact;termino;S;0;bloque;1.0;1439;
+social inclusion;termino;S;0;manual;1.0;327;
+social issue;termino;S;0;manual;1.0;605;
+social norm;termino;S;0;bloque;0.5;99;
+social partner;termino;S;0;manual;0.833;241;
+social performance;termino;S;0;manual;0.667;385;
+social protection;termino;S;0;manual;0.667;635;
+social responsibility;termino;S;0;bloque;0.667;3279;
+social risk;termino;S;0;manual;1.0;831;
+social standard;termino;S;0;bloque;0.833;361;
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);patron;S;0;manual;0.75;10053;
+stakeholder;termino;S;0;bloque;0.8;20349;
+supply chain audit;termino;S;0;manual;0.833;59;
+supply chain human right;termino;S;0;manual;0.5;13;
+supply chain labour;termino;S;0;manual;0.0;1;
+supply chain worker;termino;S;0;manual;0.833;84;
+talent development;termino;S;0;auditoria;0.833;400;
+trade union;termino;S;0;auditoria;0.833;1746;
+training and development;termino;S;0;bloque;0.667;315;
+training hour;termino;S;0;bloque;1.0;766;
+training program;termino;S;0;bloque;0.833;1435;
+ungp;termino;S;0;bloque;1.0;396;
+upskilling;termino;S;0;auditoria;1.0;494;
+volunteer;termino;S;0;auditoria;1.0;904;
+wellbeing;termino;S;0;auditoria;1.0;971;
+work-life balance;termino;S;0;auditoria;0.667;790;
+works council;termino;S;0;auditoria;0.583;2834;
+cdp;termino;TRANS;0;bloque;0.917;2586;
+csr;termino;TRANS;0;bloque;0.917;8223;
+csrd;termino;TRANS;0;bloque;0.833;1427;
+double materiality;termino;TRANS;0;bloque;1.0;1437;
+ecovadis;termino;TRANS;0;bloque;1.0;679;
+esg;termino;TRANS;0;bloque;0.9;16984;
+esrs;termino;TRANS;0;bloque;0.667;6440;
+eu taxonomy;termino;TRANS;0;bloque;0.833;3300;
+ftse4good;termino;TRANS;0;bloque;0.667;296;
+global reporting initiative;termino;TRANS;0;bloque;1.0;570;
+ifrs\s*s[12]\b;patron;TRANS;0;manual;0.5;231;
+issb;termino;TRANS;0;bloque;0.833;83;
+material topic;termino;TRANS;0;bloque;0.5;1565;
+materiality assessment;termino;TRANS;0;v3: sustituye a materiality;1.0;2236;colocacion nueva auditada
+materiality analysis;termino;TRANS;0;v3: sustituye a materiality;0.667;990;colocacion nueva a revisar (p=0.667)
+materiality matrix;termino;TRANS;0;v3: sustituye a materiality;1.0;350;colocacion nueva auditada
+msci esg;termino;TRANS;0;bloque;0.667;135;
+sasb;termino;TRANS;0;bloque;0.667;720;
+sdg;termino;TRANS;0;bloque;0.917;4500;
+sfdr;termino;TRANS;0;bloque;0.5;720;
+sustainab\w+;patron;TRANS;0;manual;0.675;81897;p=0,68: sentido de duradero (sustainable growth), neutralizarlo solo sube un punto y quita aciertos
+sustainability;termino;TRANS;0;manual;0.8;45432;
+sustainable;termino;TRANS;0;manual;0.7;34621;p=0,70: mismo caso que sustainab\w+
+sustainalytics;termino;TRANS;0;bloque;1.0;314;
+taxonomy alignment;termino;TRANS;0;bloque;1.0;244;
+taxonomy eligible;termino;TRANS;0;bloque;0.667;4111;
+tcfd;termino;TRANS;0;bloque;0.333;1638;p=0,33: todos los fallos son navegacion, las menciones en prosa son validas
+tnfd;termino;TRANS;0;bloque;0.833;243;
+un global compact;termino;TRANS;0;bloque;1.0;596;
+executive committee;termino;G;0;v3: hueco ronda 2 auditado;0.833;5561;
+risk committee;termino;G;0;v3: hueco ronda 2 auditado;0.833;3547;
+well-being;termino;S;0;v3: hueco ronda 2 auditado;0.833;3005;
+nomination committee;termino;G;0;v3: hueco ronda 2 auditado;0.833;1882;
+transition risk;termino;E;0;v3: hueco ronda 2 auditado;0.833;1626;
+limited assurance;termino;TRANS;0;v3: hueco ronda 2 auditado;0.833;1273;
+working hours;termino;S;0;v3: hueco ronda 2 auditado;0.833;944;
+export control;termino;G;1;v3: hueco ronda 2 auditado;0.833;856;
+extreme weather event;termino;E;0;v3: hueco ronda 2 auditado;0.833;532;
+groundwater;termino;E;0;v3: hueco ronda 2 auditado;0.833;463;
+skills development;termino;S;0;v3: hueco ronda 2 auditado;0.833;351;
+compliance system;termino;G;0;v3: hueco ronda 2 auditado;0.833;346;
+employee commuting;termino;E;0;v3: hueco ronda 2 auditado;0.833;313;
+smart grid;termino;E;1;v3: hueco ronda 2 auditado;0.833;258;
+vulnerable group;termino;S;0;v3: hueco ronda 2 auditado;0.833;245;
+three lines of defence;termino;G;0;v3: hueco ronda 2 auditado;0.833;215;
+breeam;termino;E;1;v3: hueco ronda 2 auditado;0.833;201;
+supplier audit;termino;S;0;v3: hueco ronda 2 auditado;0.833;185;
+access to healthcare;termino;S;1;v3: hueco ronda 2 auditado;0.833;182;
+vulnerable population;termino;S;0;v3: hueco ronda 2 auditado;0.833;172;
+2030 agenda;termino;TRANS;0;v3: hueco ronda 2 auditado;0.833;158;
+green building;termino;E;0;v3: hueco ronda 2 auditado;0.833;135;
+childcare;termino;S;0;v3: hueco ronda 2 auditado;0.833;127;
+accident rate;termino;S;0;v3: hueco ronda 2 auditado;0.833;120;
+food bank;termino;S;1;v3: hueco ronda 2 auditado;0.833;102;
+green financing;termino;E;0;v3: hueco ronda 2 auditado;0.833;96;
+corporate volunteering;termino;S;0;v3: hueco ronda 2 auditado;0.833;80;
+smart meter;termino;E;1;v3: hueco ronda 2 auditado;0.833;68;
+board evaluation;termino;G;0;v3: hueco ronda 2 auditado;0.833;60;
+groundwater contamination;termino;E;0;v3: hueco ronda 2 auditado;0.833;54;
+board of directors;termino;G;0;v3: hueco ronda 2 auditado;1.0;32446;
+personal data;termino;S;0;v3: hueco ronda 2 auditado;1.0;2702;
+working condition;termino;S;0;v3: hueco ronda 2 auditado;1.0;2638;
+employee representative;termino;S;0;v3: hueco ronda 2 auditado;1.0;2116;
+reuse;termino;E;0;v3: hueco ronda 2 auditado;1.0;1943;
+hse;termino;S;0;v3: hueco ronda 2 auditado;1.0;1889;
+physical risk;termino;E;0;v3: hueco ronda 2 auditado;1.0;1802;
+natural resource;termino;E;0;v3: hueco ronda 2 auditado;1.0;1557;
+board committee;termino;G;0;v3: hueco ronda 2 auditado;1.0;1544;
+palm oil;termino;E;1;v3: hueco ronda 2 auditado;1.0;878;
+flaring;termino;E;1;v3: hueco ronda 2 auditado;1.0;612;
+eco-design;termino;E;0;v3: hueco ronda 2 auditado;1.0;594;
+malus;termino;G;0;v3: hueco ronda 2 auditado;1.0;518;
+power purchase agreement;termino;E;0;v3: hueco ronda 2 auditado;1.0;448;
+short-term incentive;termino;G;0;v3: hueco ronda 2 auditado;1.0;442;
+conflict mineral;termino;S;1;v3: hueco ronda 2 auditado;1.0;389;
+women in management;termino;S;0;v3: hueco ronda 2 auditado;1.0;378;
+access to energy;termino;S;1;v3: hueco ronda 2 auditado;1.0;368;
+un guiding principles;termino;S;0;v3: hueco ronda 2 auditado;1.0;341;
+charging point;termino;E;1;v3: hueco ronda 2 auditado;1.0;303;
+parental leave;termino;S;0;v3: hueco ronda 2 auditado;1.0;302;
+psychosocial risk;termino;S;0;v3: hueco ronda 2 auditado;1.0;229;
+green deal;termino;E;0;v3: hueco ronda 2 auditado;1.0;228;
+oil spill;termino;E;1;v3: hueco ronda 2 auditado;1.0;212;
+product stewardship;termino;E;0;v3: hueco ronda 2 auditado;1.0;210;
+board composition;termino;G;0;v3: hueco ronda 2 auditado;1.0;210;
+re100;termino;E;0;v3: hueco ronda 2 auditado;1.0;208;
+women in management position;termino;S;0;v3: hueco ronda 2 auditado;1.0;184;
+zero accident;termino;S;0;v3: hueco ronda 2 auditado;1.0;156;
+three lines of defense;termino;G;0;v3: hueco ronda 2 auditado;1.0;130;
+occupational illness;termino;S;0;v3: hueco ronda 2 auditado;1.0;128;
+energy attribute certificate;termino;E;0;v3: hueco ronda 2 auditado;1.0;117;
+Ethisphere;termino;G;0;v3: hueco ronda 2 auditado;1.0;117;
+responsible tax;termino;G;0;v3: hueco ronda 2 auditado;1.0;101;
+iirc;termino;TRANS;0;v3: hueco ronda 2 auditado;1.0;92;
+mitigation hierarchy;termino;E;0;v3: hueco ronda 2 auditado;1.0;89;
+musculoskeletal disorder;termino;S;0;v3: hueco ronda 2 auditado;1.0;82;
+psychological safety;termino;S;0;v3: hueco ronda 2 auditado;1.0;70;
+safety data sheet;termino;S;1;v3: hueco ronda 2 auditado;1.0;62;

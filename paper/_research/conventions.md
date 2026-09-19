@@ -260,7 +260,7 @@ Three bookkeeping facts a section author will otherwise trip on:
   comes from, or use the whole-word one.
 
 **`social` ships as an inclusion list, not an exclusion list.**
-`metadata/colocaciones_analisis.md` recommends exclusion on the evidence — only
+`informes/colocaciones_analisis.md` recommends exclusion on the evidence — only
 8.7 % of `social` is non-ESG and it sits in three enumerable strings — but the
 vocabulary architecture has no exclusion mechanism, and a bare `social` in a
 TF-IDF vocabulary cannot carry a negative lookahead. Eight collocations were

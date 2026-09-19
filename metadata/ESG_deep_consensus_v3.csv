@@ -1,0 +1,362 @@
+termino;tipo;pilar;sectorial;ocurrencias;documentos;empresas;n_muestra;aciertos;precision;ic95_inf;ic95_sup;disparos_falsos_estimados;fp_indice;fp_financiero;fp_generico;fp_otro;decision_propuesta;notas_auditor
+environ\w+;patron;E;0;73941;343;49;40;25;0.625;0.47;0.758;27728;4;1;10;0;revisar;entorno local | tabla GRI | tabla TCFD | mixed reality environment | encabezado | social and economic environment | economic environment en notas contables | texto garbled regimen fiscal | Economic Environment | regulatory environment | indice de contenidos | operate in any environment | entorno res
+sustainab\w+;patron;TRANS;0;81897;343;49;40;27;0.675;0.52;0.799;26617;5;0;8;0;revisar;sustainable long-term value creation del codigo | sustainable strategic orientation | sustainable profitable growth | grow sustainably | sustainability of actions = durabilidad | sustainable distribution to shareholders | referencia cruzada a capitulo | sustainable differentiation | encabezado | ind
+governance;termino;G;0;44562;342;49;40;23;0.575;0.422;0.715;18939;14;1;0;2;revisar;tabla de correspondencia | referencia en informe de auditoria | indice de contenidos | those charged with governance auditoria | encabezado | intro de capitulo | lista de apartados | encabezado de comite | URL | division Governance Risk & Compliance | encabezado numerado | referencia cruzada | tabla
+remuneration;termino;G;0;59543;335;49;40;32;0.8;0.652;0.895;11909;6;2;0;0;mantener;referencia cruzada a capitulo 2 | referencia a Remuneration Report | remuneracion de aportaciones en especie | referencia a Compensation Report | referencia a Remuneration report | referencia a web | gastos de personal
+sustainable;termino;TRANS;0;34621;343;49;40;28;0.7;0.546;0.819;10386;3;0;8;1;revisar;referencia cruzada | sustainable leadership | sustainable corporate governance and growth | sustainable long-term growth | cabecera de tabla | sustainable long-term strategy | encabezado y remision a web | sustainable results | nombre WBCSD | sustainable success del codigo | sustainable HR strategy 
+risk management;termino;G;0;25793;341;49;40;25;0.625;0.47;0.758;9672;7;7;0;1;revisar;referencia cruzada | indice GRI | contabilidad de coberturas | nota de riesgo financiero | encabezado | tabla de correspondencia | tabla TCFD | biografia | riesgo de mercado | tesoreria | referencia a informe | boilerplate de auditoria | verificacion de precios | referencia en informe de auditoria
+non-financial;termino;TRANS;0;13715;332;49;20;6;0.3;0.145;0.519;9600;8;6;0;0;retirar;taxonomy legal category undertakings | statutory auditor boilerplate | non-financial investee undertakings | non-financial risk means operational risk | assurance report title | cross-reference table | garbled heading | cross-reference | non-financial assets liabilities | auditor report boilerplate
+sustainability;termino;TRANS;0;45432;342;49;40;32;0.8;0.652;0.895;9086;5;0;2;1;mantener;solvencia del banco | businesss sustainability = continuidad | biografia consejero otra empresa | tabla ESRS | referencia a informe externo | referencia a Sustainability Report | referencia a Sustainability report | referencia cruzada
+climate;termino;E;0;44497;340;49;40;32;0.8;0.652;0.895;8899;6;0;2;0;mantener;tabla ESRS | climatizacion | tabla TCFD | economic climate | encabezado continued | encabezado | glosario
+offset;termino;E;0;7971;335;49;12;2;0.167;0.047;0.448;6642;0;9;1;0;retirar;coberturas contables | compensacion de activos y pasivos | bases imponibles negativas | impuestos | netting IFRS | compensado en sentido macro | compensado en ventas | netting IFRS 7
+water;termino;E;0;26656;322;49;40;31;0.775;0.625;0.877;5998;2;4;1;2;revisar;sector de mercado | politica contable de provisiones | land and water areas no amortizan | glosario | tabla de datapoints ESRS | concesiones hidroelectricas juridico | biografia | nombre de producto
+audit committee;termino;G;0;12291;331;49;20;12;0.6;0.387;0.781;4916;1;3;0;4;revisar;director biography | auditor report boilerplate | abbreviations list
+solar;termino;E;0;7118;268;49;12;4;0.333;0.138;0.609;4745;1;1;0;6;retirar;glosario sistema solar | litigio de seguros | sistema solar | lista de filiales | glosario | biografia nombre de empresa
+ecosystem;termino;E;0;7317;302;49;12;5;0.417;0.193;0.68;4268;3;0;4;0;retirar;ecosistema de negocio | cabecera tabla taxonomia | ecosistema de innovacion | ecosistemas locales de negocio | ecosistema industrial
+electricity;termino;E;0;16848;331;49;20;15;0.75;0.531;0.888;4212;0;1;3;1;revisar;power price outlook | customer sectors list | utility customer counts | director interests register company name | IFRS 16 PPA accounting
+human right;termino;S;0;20747;330;49;20;16;0.8;0.584;0.919;4149;3;0;0;1;mantener;ESRS index | director bio Human Rights Watch | DPEF cross-reference table | indicator cross-reference
+materiality;termino;TRANS;0;7076;328;49;12;5;0.417;0.193;0.68;4128;0;7;0;0;retirar;materialidad de riesgos | umbrales contables | consolidacion | control interno financiero | factores de riesgo | key audit matter | fiscal
+fuel;termino;E;0;9890;316;49;12;7;0.583;0.32;0.807;4121;0;2;2;1;revisar;contexto macro crisis energetica | lista de filiales | compras de combustible en cuentas | recargos por combustible | subastas de suministro regulatorio
+emission;termino;E;0;54420;339;49;40;37;0.925;0.801;0.974;4081;2;1;0;0;mantener;derechos de emision contabilidad | glosario | encabezado
+stakeholder;termino;S;0;20349;338;49;20;16;0.8;0.584;0.919;4070;1;0;3;0;mantener;dealer distribution model | governance recommendations boilerplate | confidence of stakeholders | glossary entry
+climate change;termino;E;0;20204;338;49;20;16;0.8;0.584;0.919;4041;4;0;0;0;mantener;ESRS cross-reference | taxonomy table headers | section heading | ESRS datapoint table
+fraud;termino;G;0;6651;337;49;12;5;0.417;0.193;0.68;3880;0;6;0;1;retirar;informe de auditoria | Serious Fraud Office
+internal control;termino;G;0;18651;341;49;20;16;0.8;0.584;0.919;3730;0;4;0;0;mantener;auditor report ESEF boilerplate | audit fees note | auditor report boilerplate
+waste;termino;E;0;17805;325;49;20;16;0.8;0.584;0.919;3561;1;0;3;0;mantener;coverage waste in advertising | GRI index
+packaging;termino;E;0;6829;249;46;12;6;0.5;0.254;0.746;3414;1;0;4;1;revisar;uso final del aluminio | encapsulado de chips | modelo de negocio | nombre de filial | riesgo de caida de bultos | indice GRI
+gri;termino;TRANS;0;5733;279;49;12;5;0.417;0.193;0.68;3344;7;0;0;0;retirar;nota al pie de tabla | glosario | sumario | cabecera de tabla | indice de contenidos GRI
+diversity;termino;S;0;15998;341;49;20;16;0.8;0.584;0.919;3200;3;0;1;0;mantener;glossary entry | section heading | business scale and diversity
+offset\w+;patron;E;0;3361;325;49;12;1;0.083;0.015;0.354;3081;0;10;1;0;retirar;contrapartida contable | coberturas | compensacion IAS 32 | compensar inflacion salarial | netting derivados | netting | impuestos diferidos compensables | indice de notas contables
+taxonomy aligned;termino;TRANS;0;5279;141;47;12;5;0.417;0.193;0.68;3079;7;0;0;0;retirar;plantilla de tabla | cabecera de tabla | leyenda de tabla | titulo de plantilla
+footprint;termino;E;0;8666;325;49;12;8;0.667;0.391;0.862;2889;0;0;4;0;revisar;presencia internacional | huella geografica | presencia global | huella industrial
+circular;termino;E;0;8404;297;48;12;8;0.667;0.391;0.862;2801;3;0;0;1;revisar;Circular Assonime documento legal | cabecera tabla taxonomia
+renewable;termino;E;0;16996;327;49;20;17;0.85;0.64;0.948;2549;0;1;1;1;mantener;Siemens Gamesa Renewable Energy in audit | market demand context | cash flow acquisitions
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);patron;S;0;10053;330;49;20;15;0.75;0.531;0.888;2513;4;1;0;0;revisar;KPI table heading | auditor fees for CSR services | SDG correspondence table | section heading | DPEF cross-reference table
+inclusion;termino;S;0;9805;334;49;12;9;0.75;0.468;0.911;2451;0;1;1;1;revisar;inclusion digital comercial | nota metodologica inclusion de partes | IFRS 17 risk adjustment
+related party;termino;G;0;2590;304;46;12;1;0.083;0.015;0.354;2374;3;8;0;0;retirar;nota contable | tabla de correspondencia | indice de contenidos | informe especial del auditor | descripcion de seccion
+biodiversity;termino;E;0;11748;271;48;20;16;0.8;0.584;0.919;2350;4;0;0;0;mantener;taxonomy table header | GAR template header | GRI correspondence table
+hydrogen;termino;E;0;4603;190;48;12;6;0.5;0.254;0.746;2302;0;0;1;5;revisar;plantilla legal taxonomia nuclear/gas | nota al pie acronimo programa | programa de talento llamado Hydrogen | patrocinio America's Cup
+transparency;termino;G;0;6717;336;49;12;8;0.667;0.391;0.862;2239;0;1;2;1;revisar;gestion de incidentes operativos | cultura RRHH | transparencia de mercado MiFID | nombre de ley Sapin II
+disabilit\w+;patron;S;0;6482;316;49;12;8;0.667;0.391;0.862;2161;0;4;0;0;revisar;riesgo actuarial de seguros | provisiones de personal | clausula de incentivos | plan de pensiones consejeros
+esrs;termino;TRANS;0;6440;71;45;12;8;0.667;0.391;0.862;2147;4;0;0;0;revisar;
+integrity;termino;G;0;6376;339;49;12;8;0.667;0.391;0.862;2125;0;0;0;4;revisar;integridad de datos ciberseguridad | integridad de datos
+independent director;termino;G;0;8221;211;35;12;9;0.75;0.468;0.911;2055;0;0;0;3;revisar;biografia
+recycl\w+;patron;E;0;12838;315;49;20;17;0.85;0.64;0.948;1926;1;2;0;0;mantener;GRI correspondence table | hedge reserve recycled to income | OCI not recycled to income
+internal audit;termino;G;0;5753;331;49;12;8;0.667;0.391;0.862;1918;1;2;0;1;revisar;informe del auditor externo | biografia | lista de indicadores
+recycling;termino;E;0;5144;291;47;12;8;0.667;0.391;0.862;1715;1;2;0;1;revisar;reciclaje de reservas a resultados | disclaimer forward-looking | indice SASB | reciclaje OCI a resultados
+esg;termino;TRANS;0;16984;302;49;20;18;0.9;0.699;0.972;1698;1;0;0;1;mantener;index membership list in share data | 20-F cross-reference
+non-compliance;termino;G;0;2807;299;47;12;5;0.417;0.193;0.68;1637;0;6;1;0;retirar;auditoria ESEF | penalizaciones comerciales | informe de auditoria
+corruption;termino;G;0;9812;336;49;12;10;0.833;0.552;0.953;1635;1;0;0;1;mantener;corrupcion de datos informatica | tabla de correspondencia NFS
+disability;termino;S;0;3825;306;49;12;7;0.583;0.32;0.807;1594;0;5;0;0;revisar;seguro de prevision del CEO | prestaciones de pensiones | riesgo actuarial de seguros | plan de prevision de consejeros | hipotesis actuariales
+code of ethics;termino;G;0;2713;218;37;12;5;0.417;0.193;0.68;1583;0;7;0;0;retirar;independencia del auditor | norma profesional de auditoria interna | contrato de liquidez AMAFI
+marine;termino;E;0;2273;229;48;6;2;0.333;0.097;0.7;1515;2;0;1;1;revisar;cabecera tabla taxonomia | categoria de premio | obras maritimas de construccion | leyenda de abreviaturas taxonomia
+scope\s*[123]\b;patron;E;0;15064;299;48;20;18;0.9;0.699;0.972;1506;2;0;0;0;mantener;TCFD correspondence table
+circular economy;termino;E;0;5777;271;48;12;9;0.75;0.468;0.911;1444;2;0;1;0;revisar;tendencia de mercado | cabecera tabla taxonomia
+taxonomy eligible;termino;TRANS;0;4111;159;48;12;8;0.667;0.391;0.862;1370;4;0;0;0;revisar;definicion tipo glosario | leyenda de tabla | cabeceras de tabla repetidas
+risk appetite;termino;G;0;4936;165;28;12;9;0.75;0.468;0.911;1234;0;3;0;0;revisar;marco prudencial bancario | umbral de liquidez | limites de liquidez
+carbon;termino;E;0;23999;338;49;20;19;0.95;0.764;0.991;1200;0;1;0;0;mantener;carbon spot VaR trading
+works council;termino;S;0;2834;258;44;12;7;0.583;0.32;0.807;1181;0;0;1;4;revisar;biografia de consejero | informe de auditoria | salida de consejero | presentacion de estrategia comercial | biografias de consejeros
+code of conduct;termino;G;0;6585;287;47;12;10;0.833;0.552;0.953;1097;1;1;0;0;mantener;servicios de auditores | listado de documentos publicos
+social responsibility;termino;S;0;3279;298;49;12;8;0.667;0.391;0.862;1093;2;0;1;1;revisar;mencion de pasada en riesgo TIC | texto del codigo de buen gobierno | referencia cruzada | nombre de capitulo
+tcfd;termino;TRANS;0;1638;243;45;6;2;0.333;0.097;0.7;1092;4;0;0;0;revisar;tabla de correspondencia TCFD | indice de contenidos | encabezado de seccion | tabla de correspondencia
+ghg;termino;E;0;10699;288;48;20;18;0.9;0.699;0.972;1070;2;0;0;0;mantener;footnote definition | correspondence table
+water\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress);patron;E;0;6276;276;47;12;10;0.833;0.552;0.953;1046;1;0;1;0;mantener;tabla datapoints ESRS | beber agua y salud
+due diligence;termino;G;0;4124;312;48;12;9;0.75;0.468;0.911;1031;1;1;1;0;revisar;tabla de correspondencia NFRD/TCFD | continuidad de negocio proveedores | due diligence de suscripcion
+injur\w+;patron;S;0;2918;260;47;12;8;0.667;0.391;0.862;973;2;1;1;0;revisar;indice GRI | producto de seguro | taxonomia de riesgo operacional
+inclusiv\w+;patron;S;0;5715;306;47;12;10;0.833;0.552;0.953;952;0;0;2;0;mantener;inclusive of en sentido incluyendo | crecimiento inclusivo en adquisicion
+energy consumption;termino;E;0;5289;299;49;12;10;0.833;0.552;0.953;881;0;0;2;0;mantener;tendencia de mercado edificios | oportunidad comercial de productos
+plastic;termino;E;0;5190;235;45;12;10;0.833;0.552;0.953;865;1;0;1;0;mantener;glosario | negocio de plasticos
+nonfinancial;termino;TRANS;0;1686;215;46;6;3;0.5;0.188;0.812;843;1;2;0;0;revisar;activos no financieros IFRS | tabla de correspondencia | informe de auditoria
+energy management;termino;E;0;1256;212;42;6;2;0.333;0.097;0.7;837;1;1;1;1;revisar;funcionalidad de producto | politica de compra de energia | nombre de agencia ADEME | referencia cruzada
+article\s*[689]\b;patron;TRANS;0;1671;237;48;6;3;0.5;0.188;0.812;836;0;3;0;0;revisar;estatutos sociales | reglamento de auditoria
+compliance committee;termino;G;0;2494;174;34;12;8;0.667;0.391;0.862;831;0;0;0;4;revisar;biografia en otra empresa
+vigilance plan;termino;G;0;1623;103;18;6;3;0.5;0.188;0.812;812;3;0;0;0;revisar;indice GRI | indice de contenidos | encabezado de seccion
+duty of vigilance;termino;G;0;966;86;17;6;1;0.167;0.03;0.564;805;1;3;0;1;retirar;lista de referencias legales | salvedad del verificador | referencia cruzada
+material topic;termino;TRANS;0;1565;155;42;6;3;0.5;0.188;0.812;782;3;0;0;0;revisar;indice GRI | cabecera de tabla
+circularity;termino;E;0;1559;143;39;6;3;0.5;0.188;0.812;780;1;0;1;1;revisar;nombre de empresa socia | tabla de indicadores | nombre de linea de negocio logistica
+health and safety;termino;S;0;9155;297;49;12;11;0.917;0.646;0.985;763;0;0;1;0;mantener;descripcion de producto
+collective bargaining;termino;S;0;2178;251;47;6;4;0.667;0.3;0.903;726;1;0;1;0;revisar;encabezado de tabla | definicion de ejecutivos para remuneracion
+cybersecurity;termino;G;0;4297;262;47;12;10;0.833;0.552;0.953;716;0;0;2;0;mantener;area tecnologica de I+D | tendencia sectorial
+csr;termino;TRANS;0;8223;209;42;12;11;0.917;0.646;0.985;685;1;0;0;0;mantener;listado de politicas
+local\s+communit\w+;patron;S;0;2676;251;46;12;9;0.75;0.468;0.911;669;1;0;2;0;revisar;tabla de correspondencia GRI | factor de riesgo de proyectos | tendencia de consumo
+co2;termino;E;0;13336;316;49;20;19;0.95;0.764;0.991;667;1;0;0;0;mantener;footnote reference to legal info
+injury;termino;S;0;1328;216;42;6;3;0.5;0.188;0.812;664;2;1;0;0;revisar;glosario | seguro de lesiones personales | tabla GRI
+animal welfare;termino;E;0;1291;123;26;6;3;0.5;0.188;0.812;646;1;0;0;2;revisar;exclusion legal boilerplate | tabla de correspondencia
+sanction;termino;G;0;3772;311;49;12;10;0.833;0.552;0.953;629;0;1;1;0;mantener;sanciones estatutarias accionistas | sanciones geopoliticas a Rusia
+compliance officer;termino;G;0;1818;256;45;6;4;0.667;0.3;0.903;606;1;0;0;1;revisar;organigrama con nombres | navegacion y organigrama
+equality;termino;S;0;3619;277;48;12;10;0.833;0.552;0.953;603;2;0;0;0;mantener;tabla de correspondencia KPI | tabla de correspondencia EINF
+greenhouse;termino;E;0;7079;323;49;12;11;0.917;0.646;0.985;590;0;0;0;1;mantener;cita bibliografica
+business ethics;termino;G;0;1161;205;41;6;3;0.5;0.188;0.812;580;3;0;0;0;revisar;referencia cruzada | referencia cruzada a paginas | encabezado de seccion
+bribery;termino;G;0;2290;290;49;12;9;0.75;0.468;0.911;572;3;0;0;0;revisar;tabla de correspondencia BMW | glosario UK Bribery Act | tabla de referencias
+whistleblowing;termino;G;0;2285;221;39;12;9;0.75;0.468;0.911;571;2;1;0;0;revisar;lista de temas | encabezado de seccion | procedimientos del auditor
+social dialogue;termino;S;0;1688;155;39;6;4;0.667;0.3;0.903;563;2;0;0;0;revisar;tabla ESRS de referencias | tabla de correspondencia
+discrimination;termino;S;0;3319;286;47;12;10;0.833;0.552;0.953;553;2;0;0;0;mantener;indice SASB/GRI | indice GRI
+eu taxonomy;termino;TRANS;0;3300;167;47;12;10;0.833;0.552;0.953;550;0;0;1;1;mantener;informe de aseguramiento del auditor | procedimiento del consejo de supervision
+decarboni\w+;patron;E;0;6400;242;49;12;11;0.917;0.646;0.985;533;0;0;1;0;mantener;tendencia de mercado de clientes
+circulari\w+;patron;E;0;1580;146;39;6;4;0.667;0.3;0.903;527;2;0;0;0;revisar;columna de tabla | encabezado de seccion
+species;termino;E;0;1580;173;43;6;4;0.667;0.3;0.903;527;2;0;0;0;revisar;glosario
+electrif\w+;patron;E;0;3064;163;45;12;10;0.833;0.552;0.953;511;0;0;2;0;mantener;motor de mercado semiconductores | eslogan estrategico de negocio
+dei;termino;S;0;972;79;25;6;3;0.5;0.188;0.812;486;0;0;0;3;revisar;preposicion italiana dei
+ethical;termino;G;0;5805;333;49;12;11;0.917;0.646;0.985;484;0;1;0;0;mantener;independencia del auditor
+hazardous;termino;E;0;2893;227;46;12;10;0.833;0.552;0.953;482;2;0;0;0;mantener;glosario metodologico | tabla de correspondencia GRI/SASB
+transition plan;termino;E;0;1407;107;46;6;4;0.667;0.3;0.903;469;1;0;1;0;revisar;relevo del socio auditor | tabla de correspondencia
+wind farm;termino;E;0;928;117;30;6;3;0.5;0.188;0.812;464;0;1;0;2;revisar;nota contable de desinversion a FVOCI | lista de filiales
+flood;termino;E;0;878;222;47;6;3;0.5;0.188;0.812;439;0;0;3;0;revisar;definicion de riesgo operacional | factor de riesgo boilerplate | programa de seguros
+pollution;termino;E;0;5200;266;49;12;11;0.917;0.646;0.985;433;1;0;0;0;mantener;cabecera tabla taxonomia
+responsible investment;termino;G;0;626;148;30;6;2;0.333;0.097;0.7;417;2;0;1;1;revisar;glosario de siglas | nombre PRI | glosario | linea de negocio ISS
+customer satisfaction;termino;S;0;1245;224;43;6;4;0.667;0.3;0.903;415;0;0;2;0;revisar;metrica de plan de incentivos | prosa comercial
+antitrust;termino;G;0;1240;202;43;6;4;0.667;0.3;0.903;413;2;0;0;0;revisar;encabezado repetido | tabla SASB
+consumer protection;termino;S;0;471;114;26;6;1;0.167;0.03;0.564;392;0;1;0;4;retirar;nombre de ley Dodd-Frank | nombre de ministerio aleman | procedimientos legales
+product quality;termino;S;0;581;173;33;6;2;0.333;0.097;0.7;387;0;0;4;0;revisar;factor de riesgo regulatorio | indice de bonus
+sdg;termino;TRANS;0;4500;274;46;12;11;0.917;0.646;0.985;375;1;0;0;0;mantener;referencia cruzada tabla PRB
+global warming;termino;E;0;1120;242;49;6;4;0.667;0.3;0.903;373;2;0;0;0;revisar;glosario
+donation;termino;S;0;2211;272;47;6;5;0.833;0.436;0.97;368;1;0;0;0;mantener;cabecera de tabla
+sfdr;termino;TRANS;0;720;72;39;6;3;0.5;0.188;0.812;360;3;0;0;0;revisar;tabla de datapoints ESRS
+cybersecuri\w+;patron;G;0;4308;262;47;12;11;0.917;0.646;0.985;359;0;0;1;0;mantener;servicios comerciales de ciberseguridad
+absenteeism;termino;S;0;718;153;29;6;3;0.5;0.188;0.812;359;1;0;2;0;revisar;lista de indicadores | factor de riesgo pandemia
+freedom of association;termino;S;0;1075;217;45;6;4;0.667;0.3;0.903;358;2;0;0;0;revisar;tabla GRI | referencia cruzada
+hydroelectric;termino;E;0;705;65;15;6;3;0.5;0.188;0.812;352;1;1;1;0;revisar;patente tecnica | siniestro asegurado | glosario
+energy storage;termino;E;1;695;104;29;6;3;0.5;0.188;0.812;348;0;0;3;0;revisar;cartera de startups | descripcion de producto
+compliance risk;termino;G;0;1880;275;46;6;5;0.833;0.436;0.97;313;1;0;0;0;mantener;encabezado de seccion
+apprentice;termino;S;0;452;130;31;6;2;0.333;0.097;0.7;301;0;0;4;0;revisar;nota de perimetro de plantilla HGB | exclusion en definicion de metrica | nota metodologica de perimetro
+trade union;termino;S;0;1746;266;44;6;5;0.833;0.436;0.97;291;0;0;1;0;mantener;retribucion variable
+whistleblow\w+;patron;G;0;3481;273;46;12;11;0.917;0.646;0.985;290;1;0;0;0;mantener;tabla de correspondencia NFS
+co2e;termino;E;0;3401;141;38;12;11;0.917;0.646;0.985;283;1;0;0;0;mantener;entrada de glosario
+occupational health;termino;S;0;1670;235;42;6;5;0.833;0.436;0.97;278;1;0;0;0;mantener;indice GRI
+lobbying;termino;G;0;556;128;38;6;3;0.5;0.188;0.812;278;1;0;2;0;revisar;tabla de requisitos de divulgacion | seguimiento legislativo
+sbti;termino;E;0;1633;167;45;6;5;0.833;0.436;0.97;272;0;0;1;0;mantener;contexto comercial de mercado
+recyclable;termino;E;0;796;148;34;6;4;0.667;0.3;0.903;265;0;2;0;0;revisar;OCI no reciclable a resultados
+work-life balance;termino;S;0;790;187;45;6;4;0.667;0.3;0.903;263;2;0;0;0;revisar;definicion tipo glosario | tabla ESRS
+carbon neutrality;termino;E;0;1563;167;38;6;5;0.833;0.436;0.97;260;1;0;0;0;mantener;glosario
+deforestation;termino;E;0;1547;161;44;6;5;0.833;0.436;0.97;258;1;0;0;0;mantener;tabla ESRS no material
+scenario analysis;termino;G;0;768;166;39;6;4;0.667;0.3;0.903;256;1;1;0;0;revisar;stress test riesgo de mercado | tabla TCFD
+methane;termino;E;0;1501;111;33;6;5;0.833;0.436;0.97;250;0;0;1;0;mantener;proceso tecnico reformado de metano
+equal\s+opportunit\w+;patron;S;0;1496;285;48;6;5;0.833;0.436;0.97;249;0;0;0;1;mantener;nombre de ministerio
+recycle;termino;E;0;742;184;37;6;4;0.667;0.3;0.903;247;2;0;0;0;revisar;tabla de correspondencia
+clean energy;termino;E;0;488;146;36;6;3;0.5;0.188;0.812;244;0;1;1;1;revisar;contexto regulatorio mexicano | Clean Energy Fuels Corp | disposiciones fiscales IRA
+human capital;termino;S;0;726;195;42;6;4;0.667;0.3;0.903;242;1;0;1;0;revisar;marco de capitales del modelo de negocio | encabezado de infografia
+sasb;termino;TRANS;0;720;144;38;6;4;0.667;0.3;0.903;240;2;0;0;0;revisar;indice SASB | presentacion de tabla SASB
+training program;termino;S;0;1435;213;44;6;5;0.833;0.436;0.97;239;1;0;0;0;mantener;encabezado de seccion
+csrd;termino;TRANS;0;1427;112;47;6;5;0.833;0.436;0.97;238;1;0;0;0;mantener;glosario
+conflicts of interest;termino;G;0;2742;315;49;12;11;0.917;0.646;0.985;229;1;0;0;0;mantener;indice ESRS
+supply chain management;termino;G;0;454;166;37;6;3;0.5;0.188;0.812;227;0;0;1;2;revisar;complejidad operativa de la cadena | nombre de funcion en tabla de plantilla | nombre de funcion corporativa
+decarbonisation;termino;E;0;1339;98;25;6;5;0.833;0.436;0.97;223;0;0;0;1;mantener;biografia de consejera
+indigenous;termino;S;0;665;130;39;6;4;0.667;0.3;0.903;222;1;0;0;1;revisar;nombre de fundacion en lista | texto de meta ODS citado
+nutrition;termino;S;1;1326;114;32;6;5;0.833;0.436;0.97;221;0;0;0;1;mantener;nombre de empresa cliente
+food safety;termino;S;1;442;39;12;6;3;0.5;0.188;0.812;221;1;0;0;2;revisar;nombre de DG de la Comision | biografia de consejero | glosario
+cdp;termino;TRANS;0;2586;245;43;12;11;0.917;0.646;0.985;216;1;0;0;0;mantener;indice TCFD
+social protection;termino;S;0;635;117;34;6;4;0.667;0.3;0.903;212;1;0;1;0;revisar;beneficios del consejero ejecutivo | indice ESRS
+ergonomic\w*;patron;S;0;624;171;37;6;4;0.667;0.3;0.903;208;1;0;1;0;revisar;glosario | software ergonomico
+science based target;termino;E;0;1225;231;48;6;5;0.833;0.436;0.97;204;1;0;0;0;mantener;glosario
+land use;termino;E;0;609;135;38;6;4;0.667;0.3;0.903;203;0;1;1;0;revisar;urbanismo de planta | derechos de uso de suelo en flujos de caja
+coal;termino;E;0;2424;196;41;12;11;0.917;0.646;0.985;202;0;1;0;0;mantener;cobertura de materias primas
+photovoltaic;termino;E;0;1213;182;39;6;5;0.833;0.436;0.97;202;0;0;1;0;mantener;mercado de producto aislante
+whistleblower;termino;G;0;1184;191;45;6;5;0.833;0.436;0.97;197;1;0;0;0;mantener;tabla SASB
+energy mix;termino;E;0;585;155;40;6;4;0.667;0.3;0.903;195;0;0;2;0;revisar;tendencia de mercado
+social indicator;termino;S;0;229;80;19;6;1;0.167;0.03;0.564;191;5;0;0;0;retirar;encabezado de seccion | referencia a seccion web | encabezado de tabla | tabla de datapoints ESRS
+ocean;termino;E;0;1033;190;47;6;5;0.833;0.436;0.97;172;0;0;0;1;mantener;toponimo Oceano Indico
+ethics and compliance;termino;G;0;1017;166;32;6;5;0.833;0.436;0.97;169;1;0;0;0;mantener;referencia cruzada
+tax policy;termino;G;0;508;148;30;6;4;0.667;0.3;0.903;169;2;0;0;0;revisar;referencia cruzada | encabezado
+grievance;termino;S;0;1011;147;45;6;5;0.833;0.436;0.97;168;1;0;0;0;mantener;encabezado de seccion
+equal opportunity;termino;S;0;499;169;40;6;4;0.667;0.3;0.903;166;2;0;0;0;revisar;indice GRI 405
+tax compliance;termino;G;0;333;144;36;6;3;0.5;0.188;0.812;166;1;2;0;0;revisar;nombre de ley FATCA | servicios no auditoria | encabezado de seccion
+resource efficiency;termino;E;0;330;93;30;6;3;0.5;0.188;0.812;165;3;0;0;0;revisar;tabla SASB | tabla de correspondencia TCFD
+iso 14001;termino;E;0;967;207;39;6;5;0.833;0.436;0.97;161;0;0;0;1;mantener;pie de imprenta
+green energy;termino;E;0;303;108;32;6;3;0.5;0.188;0.812;152;0;0;2;1;revisar;tendencias de mercado de clientes | nombre de empresa Adani Green Energy | contexto macro de politicas
+accessibility;termino;S;0;909;195;44;6;5;0.833;0.436;0.97;151;1;0;0;0;mantener;tabla de correspondencia GRI
+product safety;termino;S;0;909;155;32;6;5;0.833;0.436;0.97;151;1;0;0;0;mantener;tabla SASB
+habitat;termino;E;0;907;169;41;6;5;0.833;0.436;0.97;151;0;0;0;1;mantener;UN Habitat nombre de organismo
+child labor;termino;S;0;890;166;35;6;5;0.833;0.436;0.97;148;1;0;0;0;mantener;tabla GRI
+geothermal;termino;E;0;296;97;28;6;3;0.5;0.188;0.812;148;2;1;0;0;revisar;deterioro de activos | glosario | fila plantilla taxonomia al 0%
+responsible business;termino;G;0;836;194;42;6;5;0.833;0.436;0.97;139;1;0;0;0;mantener;indice ESRS
+biomass;termino;E;0;803;175;45;6;5;0.833;0.436;0.97;134;0;0;1;0;mantener;descripcion de segmento de negocio
+executive compensation;termino;G;1;264;95;25;6;3;0.5;0.188;0.812;132;1;1;0;1;revisar;titulo de informe de la AMF | referencia cruzada a capitulo | marco regulatorio Solvencia II
+social performance;termino;S;0;385;116;25;6;4;0.667;0.3;0.903;128;1;0;1;0;revisar;referencia a secciones del informe | boilerplate de alcance del informe
+natural disaster;termino;E;0;760;283;47;6;5;0.833;0.436;0.97;127;0;0;1;0;mantener;continuidad de sistemas IT
+fatalit\w+;patron;S;0;750;179;47;6;5;0.833;0.436;0.97;125;1;0;0;0;mantener;tabla GRI
+compliance violation;termino;G;0;242;51;13;6;3;0.5;0.188;0.812;121;0;3;0;0;revisar;cuestion clave de auditoria provisiones
+community engagement;termino;S;0;241;93;30;6;3;0.5;0.188;0.812;120;3;0;0;0;revisar;indice GRI 413-1 | titulo de indicador GRI 413-1 | tabla GRI 413-1
+ifrs\s*s[12]\b;patron;TRANS;0;231;11;9;6;3;0.5;0.188;0.812;116;3;0;0;0;revisar;tabla de correspondencia ESRS-ISSB | nota al pie
+proxy advisor;termino;G;0;325;97;25;6;4;0.667;0.3;0.903;108;1;0;1;0;revisar;logistica de junta covid | referencia cruzada a seccion
+training and development;termino;S;0;315;162;40;6;4;0.667;0.3;0.903;105;1;0;1;0;revisar;I+D de componentes no formacion | encabezado entre tablas
+wind turbine;termino;E;0;157;79;24;6;2;0.333;0.097;0.7;105;0;0;4;0;revisar;demanda de semiconductores para turbinas | contrato de construccion y volumen de negocio | proyecto de I+D de mantenimiento | ampliacion de capital de cliente
+wind energy;termino;E;0;153;72;25;6;2;0.333;0.097;0.7;102;1;0;1;2;revisar;nombre de filial en listado societario | nombre de unidad de negocio | ingresos por generacion | glosario
+ftse4good;termino;TRANS;0;296;141;32;6;4;0.667;0.3;0.903;99;0;0;2;0;revisar;lista de indices bursatiles de la accion
+nox;termino;E;0;527;145;27;6;5;0.833;0.436;0.97;88;1;0;0;0;mantener;tabla GRI
+social audit;termino;S;0;481;61;15;6;5;0.833;0.436;0.97;80;1;0;0;0;mantener;tabla de correspondencia
+data security;termino;G;0;472;169;40;6;5;0.833;0.436;0.97;79;0;1;0;0;mantener;litigios
+affordability;termino;S;0;238;88;27;6;4;0.667;0.3;0.903;79;0;0;2;0;revisar;politica comercial de precios y rebates | ventaja competitiva de precio
+wind power;termino;E;0;464;97;31;6;5;0.833;0.436;0.97;77;0;0;0;1;mantener;nombre de filial en listado societario
+air quality;termino;E;0;449;142;31;6;5;0.833;0.436;0.97;75;0;0;1;0;mantener;condiciones de sala limpia
+tax transparency;termino;G;0;224;83;21;6;4;0.667;0.3;0.903;75;2;0;0;0;revisar;referencia cruzada a informe | cabecera de pagina continued
+effluent;termino;E;0;442;103;28;6;5;0.833;0.436;0.97;74;1;0;0;0;mantener;nombre de estandar GRI 303
+compliance programme;termino;G;0;430;85;19;6;5;0.833;0.436;0.97;72;0;1;0;0;mantener;cumplimiento de retenciones FATCA
+insider trading;termino;G;0;429;162;34;6;5;0.833;0.436;0.97;71;1;0;0;0;mantener;encabezado mezclado con indice
+tax avoidance;termino;G;0;107;61;21;6;2;0.333;0.097;0.7;71;1;2;0;1;revisar;normativa fiscal de regimenes privilegiados | factor de riesgo fiscal propio | informe del verificador boilerplate | descripcion de contenido y referencia cruzada
+talent development;termino;S;0;400;170;42;6;5;0.833;0.436;0.97;67;0;0;0;1;mantener;responsabilidades de consejero tipo biografia
+lca;termino;E;0;399;82;28;6;5;0.833;0.436;0.97;66;0;1;0;0;mantener;letras de credito agroindustrial Brasil
+compliance training;termino;G;0;396;122;31;6;5;0.833;0.436;0.97;66;1;0;0;0;mantener;encabezado de seccion
+supplier assessment;termino;G;0;192;91;26;6;4;0.667;0.3;0.903;64;2;0;0;0;revisar;tabla de indicadores | encabezado de seccion
+social standard;termino;S;0;361;75;24;6;5;0.833;0.436;0.97;60;1;0;0;0;mantener;referencia a estandares ESRS sociales
+tax strategy;termino;G;0;354;108;30;6;5;0.833;0.436;0.97;59;0;0;1;0;mantener;agenda del consejo estrategia financiera
+say on pay;termino;G;0;331;87;21;6;5;0.833;0.436;0.97;55;1;0;0;0;mantener;cabecera de tabla y pie de pagina
+reforestation;termino;E;0;309;121;35;6;5;0.833;0.436;0.97;51;1;0;0;0;mantener;texto de meta ODS en tabla
+minimum wage;termino;S;0;307;106;36;6;5;0.833;0.436;0.97;51;1;0;0;0;mantener;indice GRI 202-1
+social commitment;termino;S;0;305;126;30;6;5;0.833;0.436;0.97;51;1;0;0;0;mantener;listado de enlaces web
+social norm;termino;S;0;99;28;9;6;3;0.5;0.188;0.812;50;1;0;2;0;revisar;riesgo conductual interno | encabezado de infografia
+responsible marketing;termino;S;0;292;59;18;6;5;0.833;0.436;0.97;49;1;0;0;0;mantener;referencia cruzada y tabla correspondencia
+human trafficking;termino;S;0;289;97;41;6;5;0.833;0.436;0.97;48;1;0;0;0;mantener;tabla de correspondencia
+iso 50001;termino;E;0;277;116;27;6;5;0.833;0.436;0.97;46;0;0;0;1;mantener;certificaciones del papel impreso
+msci esg;termino;TRANS;0;135;86;28;6;4;0.667;0.3;0.903;45;1;0;0;1;revisar;nota al pie de fuentes | disclaimer legal de MSCI
+political contribution;termino;G;0;90;53;17;6;3;0.5;0.188;0.812;45;3;0;0;0;revisar;etiqueta GRI 415-1 | encabezado de seccion
+tnfd;termino;TRANS;0;243;60;27;6;5;0.833;0.436;0.97;40;1;0;0;0;mantener;tabla de contenidos ESRS
+social partner;termino;S;0;241;76;24;6;5;0.833;0.436;0.97;40;0;1;0;0;mantener;nota de litigios
+social compliance;termino;S;0;222;37;10;6;5;0.833;0.436;0.97;37;1;0;0;0;mantener;referencia cruzada a capitulo
+fair competition;termino;G;0;219;114;33;6;5;0.833;0.436;0.97;36;0;0;1;0;mantener;regulacion de mercados MiFID
+proxy statement;termino;G;0;25;17;5;6;0;0.0;0.0;0.39;25;0;0;1;5;retirar;texto legal NYSE repetido | fuentes de datos de producto de rating
+data breach;termino;G;0;139;69;24;6;5;0.833;0.436;0.97;23;1;0;0;0;mantener;glosario
+smeta;termino;S;1;139;34;7;6;5;0.833;0.436;0.97;23;1;0;0;0;mantener;tabla de correspondencia de KPIs
+green investment;termino;E;0;131;33;12;6;5;0.833;0.436;0.97;22;0;0;0;1;mantener;nombre de filial en listado societario
+b corp;termino;G;1;67;12;3;6;4;0.667;0.3;0.903;22;0;0;0;2;revisar;certificacion de la agencia de rating
+microplastic;termino;E;0;129;39;19;6;5;0.833;0.436;0.97;21;1;0;0;0;mantener;tabla ESRS no publicado
+fatality;termino;S;0;124;58;19;6;5;0.833;0.436;0.97;21;1;0;0;0;mantener;indice SASB
+labor practices;termino;S;0;115;52;17;6;5;0.833;0.436;0.97;19;0;1;0;0;mantener;cargo juridico unfair labor practices NLRB
+racism;termino;S;0;115;51;18;6;5;0.833;0.436;0.97;19;0;0;0;1;mantener;exposicion cientifica sobre la piel
+supply chain risk;termino;G;0;112;75;26;6;5;0.833;0.436;0.97;19;0;0;1;0;mantener;continuidad operativa y referencia a factor de riesgo
+fair trade;termino;S;0;112;47;14;6;5;0.833;0.436;0.97;19;0;0;0;1;mantener;Korea Fair Trade Commission antimonopolio
+sedex;termino;S;1;108;21;6;6;5;0.833;0.436;0.97;18;0;1;0;0;mantener;mercado bursatil italiano SeDeX
+raw material consumption;termino;E;0;32;26;12;6;3;0.5;0.188;0.812;16;2;0;1;0;revisar;tabla de correspondencia NFPS | tendencias de mercado de digitalizacion
+supply chain worker;termino;S;0;84;19;11;6;5;0.833;0.436;0.97;14;1;0;0;0;mantener;referencia cruzada a seccion
+issb;termino;TRANS;0;83;29;15;6;5;0.833;0.436;0.97;14;1;0;0;0;mantener;fila de tabla de correspondencia
+customer privacy;termino;S;0;80;38;14;6;5;0.833;0.436;0.97;13;1;0;0;0;mantener;indice GRI
+microfiber;termino;E;1;77;14;4;6;5;0.833;0.436;0.97;13;0;0;1;0;mantener;material textil de tapiceria no contaminacion
+community relations;termino;S;1;40;17;7;6;4;0.667;0.3;0.903;13;2;0;0;0;revisar;encabezado de tabla SASB
+compliance and ethics;termino;G;0;68;51;14;6;5;0.833;0.436;0.97;11;0;0;1;0;mantener;politica de credito formula generica
+better cotton;termino;S;1;68;15;3;6;5;0.833;0.436;0.97;11;1;0;0;0;mantener;glosario
+supply chain transparency;termino;G;0;32;20;9;6;4;0.667;0.3;0.903;11;2;0;0;0;revisar;etiquetas de grafico | referencia cruzada a secciones
+board oversight;termino;G;1;17;13;8;6;2;0.333;0.097;0.7;11;4;0;0;0;revisar;encabezado de seccion | encabezado de tabla TNFD
+supply chain audit;termino;S;0;59;16;3;6;5;0.833;0.436;0.97;10;0;0;1;0;mantener;control interno del origen Made in France
+supply chain human right;termino;S;0;13;11;7;6;3;0.5;0.188;0.812;6;3;0;0;0;revisar;encabezado de tabla | tabla de correspondencia SASB
+supply chain footprint;termino;E;0;10;5;3;6;3;0.5;0.188;0.812;5;0;0;3;0;revisar;huella geografica industrial | huella geografica por geopolitica
+scope\s+(?:one|two|three);patron;E;0;3;3;3;3;0;0.0;0.0;0.562;3;0;0;0;3;retirar;ciclo de control interno | perimetro de reporte one year | perimetro de reporte two years
+fair condition;termino;S;0;9;7;6;6;5;0.833;0.436;0.97;1;0;0;1;0;mantener;condiciones para inversion en telecom
+supply chain labour;termino;S;0;1;1;1;1;0;0.0;0.0;0.793;1;0;0;0;1;revisar;artefacto entre dos temas de lista
+co2e?;patron;E;0;19825;326;49;20;20;1.0;0.839;1.0;0;0;0;0;0;mantener;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);patron;E;0;14228;331;49;20;20;1.0;0.839;1.0;0;0;0;0;0;mantener;
+gender;termino;S;0;9961;333;49;12;12;1.0;0.757;1.0;0;0;0;0;0;mantener;
+inclusive;termino;S;0;5381;302;47;12;12;1.0;0.757;1.0;0;0;0;0;0;mantener;
+low carbon;termino;E;0;4857;275;48;12;12;1.0;0.757;1.0;0;0;0;0;0;mantener;
+data protection;termino;G;0;4517;317;49;12;12;1.0;0.757;1.0;0;0;0;0;0;mantener;
+net zero;termino;E;0;4381;226;49;12;12;1.0;0.757;1.0;0;0;0;0;0;mantener;
+energy efficiency;termino;E;0;4221;300;49;12;12;1.0;0.757;1.0;0;0;0;0;0;mantener;
+decarbonization;termino;E;0;3614;172;42;12;12;1.0;0.757;1.0;0;0;0;0;0;mantener;
+energy transition;termino;E;0;3205;189;42;12;12;1.0;0.757;1.0;0;0;0;0;0;mantener;
+electrification;termino;E;0;2195;160;45;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+employee engagement;termino;S;0;1912;228;47;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+harassment;termino;S;0;1838;225;46;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+paris\s+agreement;patron;E;0;1642;235;46;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+information security;termino;G;0;1631;242;44;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+data privacy;termino;G;0;1619;186;41;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+wastewater;termino;E;0;1579;170;36;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+ilo;termino;S;0;1567;244;45;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+conflict of interest;termino;G;0;1498;265;47;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+social impact;termino;S;0;1439;245;48;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+double materiality;termino;TRANS;0;1437;101;47;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+compliance program;termino;G;0;1432;196;39;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+money laundering;termino;G;0;1430;207;37;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+iso\s*14001\b;patron;E;0;1262;240;41;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+biofuel;termino;E;0;1221;134;37;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+succession planning;termino;G;0;1105;231;41;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+landfill;termino;E;0;1036;176;39;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+regenerative agriculture;termino;E;0;1017;62;21;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+wellbeing;termino;S;0;971;187;48;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+gdpr;termino;G;0;930;222;42;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+compliance management system;termino;G;0;920;118;21;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+volunteer;termino;S;0;904;197;43;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+compliance function;termino;G;0;895;178;36;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+forced labor;termino;S;0;893;136;33;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+living wage;termino;S;0;888;105;32;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+green bond;termino;E;0;868;112;23;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+mental health;termino;S;0;856;188;43;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+speak up;termino;G;0;841;152;33;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+social risk;termino;S;0;831;154;38;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+compliance department;termino;G;0;766;153;37;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+training hour;termino;S;0;766;181;40;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+regulatory compliance;termino;G;0;761;189;41;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+philanthrop\w+;patron;S;0;746;145;32;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+equal pay;termino;S;0;700;188;45;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+oecd guidelines;termino;S;0;685;212;46;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+ecovadis;termino;TRANS;0;679;123;25;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+ergonomic;termino;S;0;608;170;37;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+social issue;termino;S;0;605;164;42;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+un global compact;termino;TRANS;0;596;204;43;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+responsible sourcing;termino;G;0;594;128;33;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+iso\s*45001\b;patron;S;0;593;159;32;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+anti-money laundering;termino;G;0;582;126;26;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+global reporting initiative;termino;TRANS;0;570;235;45;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+maternity;termino;S;0;565;154;35;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+natural capital;termino;E;0;562;78;31;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+drought;termino;E;0;514;190;44;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+modern slavery;termino;S;0;508;135;37;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+decarbonize;termino;E;0;502;80;27;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+refrigerant;termino;E;0;496;96;25;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+upskilling;termino;S;0;494;124;37;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+iso 45001;termino;S;0;476;142;31;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+sf6;termino;E;1;469;48;17;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+zdhc;termino;E;0;457;30;5;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+philanthropy;termino;S;0;454;93;23;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+flooding;termino;E;0;447;165;43;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+leed;termino;E;0;447;118;26;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+road safety;termino;S;0;415;81;24;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+green hydrogen;termino;E;0;399;71;27;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+ungp;termino;S;0;396;114;43;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+pay equity;termino;S;0;354;74;24;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+ecodesign;termino;E;1;349;44;19;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+social enterprise;termino;S;0;331;73;21;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+social inclusion;termino;S;0;327;106;33;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+iso\s*50001\b;patron;E;0;325;126;28;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+sustainalytics;termino;TRANS;0;314;145;38;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+sapin;termino;G;0;308;88;17;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+wetland;termino;E;0;293;84;25;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+just\s+transition;patron;S;0;283;66;27;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+local community;termino;S;0;272;134;36;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+labor right;termino;S;0;260;87;25;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+employee\s+well\w*;patron;S;0;247;97;34;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+tonne\w*\s+(?:co2|carbon);patron;E;0;245;46;15;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+female representation;termino;S;0;244;81;25;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+taxonomy alignment;termino;TRANS;0;244;68;28;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+heat wave;termino;E;0;223;83;29;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+volatile organic;termino;E;0;220;100;25;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+nature-based solution;termino;E;0;202;69;25;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+reskilling;termino;S;0;192;81;26;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+life cycle assessment;termino;E;0;190;82;29;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+soil health;termino;E;0;165;46;15;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+first aid;termino;S;0;157;99;30;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+agroforestry;termino;E;0;153;46;14;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+supply chain due diligence;termino;G;0;147;58;21;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+fair wage;termino;S;0;145;55;25;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+fair compensation;termino;S;0;131;69;25;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+decarbonise;termino;E;0;122;47;17;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+fair labor;termino;S;0;120;41;13;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+recycled raw material;termino;E;0;117;34;14;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+air pollutant;termino;E;0;116;53;17;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+hydropower;termino;E;0;110;45;20;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+chemical management;termino;E;0;84;28;10;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+particulate matter;termino;E;0;81;45;18;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+iso\s*37001\b;patron;G;1;77;36;8;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+cop28;termino;G;1;75;25;18;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+iso 37001;termino;G;1;68;34;8;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+leather working group;termino;S;1;65;31;8;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+employee wellbeing;termino;S;0;64;29;17;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+fairtrade;termino;S;1;60;27;6;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+supply chain emission;termino;E;0;57;29;17;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+compost;termino;E;0;42;30;11;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+raw material sourcing;termino;E;0;39;29;11;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+peatland;termino;E;1;33;28;7;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+cover crop;termino;E;1;32;19;7;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+virgin polyester;termino;E;1;17;8;2;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+cop 28;termino;G;1;10;8;8;6;6;1.0;0.61;1.0;0;0;0;0;0;mantener;
+supply chain ethics;termino;G;0;3;3;2;3;3;1.0;0.438;1.0;0;0;0;0;0;mantener;
+living income;termino;S;1;2;2;1;2;2;1.0;0.342;1.0;0;0;0;0;0;mantener;
+supply chain decarbonisation;termino;E;0;1;1;1;1;1;1.0;0.207;1.0;0;0;0;0;0;mantener;
+raw material efficiency;termino;E;0;0;;;;;;;;;;;;;retirar (no dispara);

@@ -1,0 +1,17 @@
+bloque;termino;n
+2;stakeholder;9
+2;stakeholder;16
+2;stakeholder;18
+2;scope\s*[123]\b;9
+2;energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);7
+2;energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);8
+3;gender;11
+3;ecosystem;2
+3;esrs;6
+3;materiality;8
+3;decarboni\w+;2
+3;circular economy;7
+3;inclusive;8
+3;energy consumption;1
+4;net zero;7
+4;energy transition;2

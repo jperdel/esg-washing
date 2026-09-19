@@ -1,0 +1,401 @@
+termino;n;veredicto;categoria;nota
+carbon;1;1;ok;
+carbon;2;1;ok;carbon markets product
+carbon;3;1;ok;carbon taxes risk
+carbon;4;1;ok;
+carbon;5;1;ok;
+carbon;6;1;ok;
+carbon;7;1;ok;taxonomy table row with data
+carbon;8;1;ok;printing colophon offset claim
+carbon;9;0;financiero;carbon spot VaR trading
+carbon;10;1;ok;
+carbon;11;1;ok;
+carbon;12;1;ok;CDP rating
+carbon;13;1;ok;
+carbon;14;1;ok;
+carbon;15;1;ok;
+carbon;16;1;ok;
+carbon;17;1;ok;
+carbon;18;1;ok;
+carbon;19;1;ok;
+carbon;20;1;ok;
+human right;1;1;ok;
+human right;2;1;ok;
+human right;3;1;ok;
+human right;4;0;indice;ESRS index
+human right;5;1;ok;
+human right;6;1;ok;
+human right;7;0;otro;director bio Human Rights Watch
+human right;8;1;ok;
+human right;9;0;indice;DPEF cross-reference table
+human right;10;1;ok;
+human right;11;1;ok;
+human right;12;1;ok;
+human right;13;1;ok;
+human right;14;1;ok;
+human right;15;1;ok;
+human right;16;0;indice;indicator cross-reference
+human right;17;1;ok;
+human right;18;1;ok;assurance report scope
+human right;19;1;ok;policy list
+human right;20;1;ok;
+stakeholder;1;0;generico;dealer distribution model
+stakeholder;2;1;ok;
+stakeholder;3;1;ok;
+stakeholder;4;1;ok;materiality
+stakeholder;5;1;ok;
+stakeholder;6;0;generico;governance recommendations boilerplate
+stakeholder;7;1;ok;
+stakeholder;8;0;generico;confidence of stakeholders
+stakeholder;9;1;ok;corporate governance statement
+stakeholder;10;0;indice;glossary entry
+stakeholder;11;1;ok;
+stakeholder;12;1;ok;remuneration policy
+stakeholder;13;1;ok;
+stakeholder;14;1;ok;
+stakeholder;15;1;ok;
+stakeholder;16;1;ok;
+stakeholder;17;1;ok;
+stakeholder;18;1;ok;
+stakeholder;19;1;ok;
+stakeholder;20;1;ok;
+climate change;1;1;ok;
+climate change;2;0;indice;ESRS cross-reference
+climate change;3;1;ok;
+climate change;4;1;ok;
+climate change;5;1;ok;
+climate change;6;1;ok;
+climate change;7;1;ok;
+climate change;8;1;ok;
+climate change;9;1;ok;
+climate change;10;1;ok;
+climate change;11;0;indice;taxonomy table headers
+climate change;12;1;ok;
+climate change;13;1;ok;materiality risk list
+climate change;14;0;indice;section heading
+climate change;15;1;ok;
+climate change;16;1;ok;
+climate change;17;1;ok;auditor KAM on climate
+climate change;18;0;indice;ESRS datapoint table
+climate change;19;1;ok;
+climate change;20;1;ok;
+co2e?;1;1;ok;
+co2e?;2;1;ok;
+co2e?;3;1;ok;
+co2e?;4;1;ok;
+co2e?;5;1;ok;
+co2e?;6;1;ok;
+co2e?;7;1;ok;
+co2e?;8;1;ok;
+co2e?;9;1;ok;
+co2e?;10;1;ok;
+co2e?;11;1;ok;
+co2e?;12;1;ok;fleet CO2 regulation
+co2e?;13;1;ok;
+co2e?;14;1;ok;
+co2e?;15;1;ok;
+co2e?;16;1;ok;
+co2e?;17;1;ok;
+co2e?;18;1;ok;CO2 as feedstock
+co2e?;19;1;ok;
+co2e?;20;1;ok;
+internal control;1;0;financiero;auditor report ESEF boilerplate
+internal control;2;1;ok;
+internal control;3;1;ok;
+internal control;4;1;ok;
+internal control;5;1;ok;
+internal control;6;1;ok;
+internal control;7;0;financiero;audit fees note
+internal control;8;1;ok;
+internal control;9;1;ok;
+internal control;10;1;ok;
+internal control;11;1;ok;
+internal control;12;0;financiero;auditor report boilerplate
+internal control;13;1;ok;
+internal control;14;0;financiero;auditor report boilerplate
+internal control;15;1;ok;
+internal control;16;1;ok;
+internal control;17;1;ok;
+internal control;18;1;ok;
+internal control;19;1;ok;
+internal control;20;1;ok;
+waste;1;0;generico;coverage waste in advertising
+waste;2;1;ok;
+waste;3;1;ok;nuclear taxonomy template
+waste;4;0;generico;coverage waste in advertising
+waste;5;1;ok;
+waste;6;0;indice;GRI index
+waste;7;1;ok;
+waste;8;1;ok;
+waste;9;1;ok;
+waste;10;1;ok;
+waste;11;1;ok;
+waste;12;1;ok;
+waste;13;1;ok;
+waste;14;1;ok;
+waste;15;0;generico;coverage waste in advertising
+waste;16;1;ok;
+waste;17;1;ok;
+waste;18;1;ok;
+waste;19;1;ok;
+waste;20;1;ok;
+renewable;1;1;ok;energy table
+renewable;2;1;ok;
+renewable;3;1;ok;
+renewable;4;1;ok;
+renewable;5;0;otro;Siemens Gamesa Renewable Energy in audit
+renewable;6;1;ok;
+renewable;7;1;ok;
+renewable;8;1;ok;
+renewable;9;1;ok;
+renewable;10;1;ok;
+renewable;11;0;generico;market demand context
+renewable;12;1;ok;
+renewable;13;1;ok;
+renewable;14;1;ok;
+renewable;15;1;ok;
+renewable;16;1;ok;
+renewable;17;1;ok;
+renewable;18;1;ok;
+renewable;19;0;financiero;cash flow acquisitions
+renewable;20;1;ok;
+esg;1;1;ok;
+esg;2;1;ok;
+esg;3;1;ok;rating agency description
+esg;4;1;ok;
+esg;5;1;ok;
+esg;6;1;ok;
+esg;7;1;ok;ESG index derivatives product
+esg;8;1;ok;
+esg;9;0;otro;index membership list in share data
+esg;10;1;ok;
+esg;11;1;ok;
+esg;12;0;indice;20-F cross-reference
+esg;13;1;ok;
+esg;14;1;ok;
+esg;15;1;ok;
+esg;16;1;ok;
+esg;17;1;ok;
+esg;18;1;ok;
+esg;19;1;ok;
+esg;20;1;ok;assurance report
+electricity;1;1;ok;
+electricity;2;0;generico;power price outlook
+electricity;3;0;generico;customer sectors list
+electricity;4;0;generico;utility customer counts
+electricity;5;1;ok;
+electricity;6;1;ok;
+electricity;7;1;ok;
+electricity;8;1;ok;
+electricity;9;1;ok;
+electricity;10;1;ok;
+electricity;11;1;ok;
+electricity;12;1;ok;
+electricity;13;1;ok;
+electricity;14;1;ok;
+electricity;15;0;otro;director interests register company name
+electricity;16;0;financiero;IFRS 16 PPA accounting
+electricity;17;1;ok;
+electricity;18;1;ok;
+electricity;19;1;ok;
+electricity;20;1;ok;
+diversity;1;0;indice;glossary entry
+diversity;2;1;ok;
+diversity;3;1;ok;
+diversity;4;1;ok;
+diversity;5;0;indice;section heading
+diversity;6;1;ok;board diversity concept
+diversity;7;0;indice;section heading
+diversity;8;1;ok;
+diversity;9;1;ok;
+diversity;10;1;ok;
+diversity;11;1;ok;
+diversity;12;0;generico;business scale and diversity
+diversity;13;1;ok;
+diversity;14;1;ok;
+diversity;15;1;ok;
+diversity;16;1;ok;
+diversity;17;1;ok;
+diversity;18;1;ok;KPI table
+diversity;19;1;ok;
+diversity;20;1;ok;
+scope\s*[123]\b;1;1;ok;
+scope\s*[123]\b;2;1;ok;
+scope\s*[123]\b;3;1;ok;
+scope\s*[123]\b;4;1;ok;
+scope\s*[123]\b;5;1;ok;
+scope\s*[123]\b;6;1;ok;
+scope\s*[123]\b;7;1;ok;
+scope\s*[123]\b;8;1;ok;
+scope\s*[123]\b;9;1;ok;
+scope\s*[123]\b;10;0;indice;TCFD correspondence table
+scope\s*[123]\b;11;1;ok;
+scope\s*[123]\b;12;1;ok;
+scope\s*[123]\b;13;1;ok;
+scope\s*[123]\b;14;1;ok;
+scope\s*[123]\b;15;1;ok;
+scope\s*[123]\b;16;1;ok;
+scope\s*[123]\b;17;1;ok;
+scope\s*[123]\b;18;1;ok;
+scope\s*[123]\b;19;1;ok;
+scope\s*[123]\b;20;0;indice;TCFD correspondence table
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);1;1;ok;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);2;1;ok;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);3;1;ok;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);4;1;ok;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);5;1;ok;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);6;1;ok;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);7;1;ok;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);8;1;ok;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);9;1;ok;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);10;1;ok;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);11;1;ok;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);12;1;ok;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);13;1;ok;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);14;1;ok;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);15;1;ok;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);16;1;ok;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);17;1;ok;vehicle consumption regulation
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);18;1;ok;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);19;1;ok;
+energy\s+(?:consumption|efficiency|transition|mix|intensity|storage);20;1;ok;
+non-financial;1;0;financiero;taxonomy legal category undertakings
+non-financial;2;1;ok;
+non-financial;3;1;ok;
+non-financial;4;0;financiero;statutory auditor boilerplate
+non-financial;5;1;ok;remuneration ESG criteria
+non-financial;6;0;financiero;non-financial investee undertakings
+non-financial;7;0;financiero;non-financial risk means operational risk
+non-financial;8;0;indice;assurance report title
+non-financial;9;0;indice;cross-reference table
+non-financial;10;0;indice;cross-reference table
+non-financial;11;0;indice;cross-reference table
+non-financial;12;1;ok;
+non-financial;13;0;indice;cross-reference table
+non-financial;14;0;indice;garbled heading
+non-financial;15;0;indice;cross-reference
+non-financial;16;0;financiero;non-financial assets liabilities
+non-financial;17;0;financiero;auditor report boilerplate
+non-financial;18;0;indice;cross-reference
+non-financial;19;1;ok;assurance methodology
+non-financial;20;1;ok;
+co2;1;1;ok;
+co2;2;1;ok;
+co2;3;1;ok;
+co2;4;0;indice;footnote reference to legal info
+co2;5;1;ok;
+co2;6;1;ok;
+co2;7;1;ok;
+co2;8;1;ok;
+co2;9;1;ok;
+co2;10;1;ok;
+co2;11;1;ok;
+co2;12;1;ok;
+co2;13;1;ok;
+co2;14;1;ok;
+co2;15;1;ok;
+co2;16;1;ok;
+co2;17;1;ok;
+co2;18;1;ok;GRI table with data
+co2;19;1;ok;
+co2;20;1;ok;
+recycl\w+;1;1;ok;
+recycl\w+;2;1;ok;
+recycl\w+;3;1;ok;
+recycl\w+;4;1;ok;
+recycl\w+;5;0;indice;GRI correspondence table
+recycl\w+;6;1;ok;
+recycl\w+;7;1;ok;
+recycl\w+;8;0;financiero;hedge reserve recycled to income
+recycl\w+;9;1;ok;
+recycl\w+;10;1;ok;
+recycl\w+;11;1;ok;
+recycl\w+;12;1;ok;
+recycl\w+;13;0;financiero;OCI not recycled to income
+recycl\w+;14;1;ok;
+recycl\w+;15;1;ok;
+recycl\w+;16;1;ok;
+recycl\w+;17;1;ok;
+recycl\w+;18;1;ok;
+recycl\w+;19;1;ok;
+recycl\w+;20;1;ok;
+audit committee;1;1;ok;
+audit committee;2;1;ok;
+audit committee;3;0;otro;director biography
+audit committee;4;0;financiero;auditor report boilerplate
+audit committee;5;1;ok;
+audit committee;6;0;otro;director biography
+audit committee;7;0;financiero;auditor report boilerplate
+audit committee;8;1;ok;
+audit committee;9;1;ok;
+audit committee;10;1;ok;committee structure list
+audit committee;11;1;ok;
+audit committee;12;1;ok;
+audit committee;13;0;financiero;auditor report boilerplate
+audit committee;14;1;ok;
+audit committee;15;0;otro;director biography
+audit committee;16;0;otro;director biography
+audit committee;17;1;ok;
+audit committee;18;0;indice;abbreviations list
+audit committee;19;1;ok;
+audit committee;20;1;ok;
+biodiversity;1;1;ok;
+biodiversity;2;1;ok;
+biodiversity;3;1;ok;
+biodiversity;4;1;ok;
+biodiversity;5;1;ok;
+biodiversity;6;0;indice;taxonomy table header
+biodiversity;7;1;ok;
+biodiversity;8;1;ok;
+biodiversity;9;1;ok;
+biodiversity;10;1;ok;
+biodiversity;11;0;indice;taxonomy table header
+biodiversity;12;1;ok;DMA sources
+biodiversity;13;1;ok;
+biodiversity;14;1;ok;
+biodiversity;15;1;ok;
+biodiversity;16;0;indice;GAR template header
+biodiversity;17;0;indice;GRI correspondence table
+biodiversity;18;1;ok;
+biodiversity;19;1;ok;
+biodiversity;20;1;ok;
+ghg;1;1;ok;
+ghg;2;1;ok;
+ghg;3;1;ok;
+ghg;4;1;ok;
+ghg;5;1;ok;
+ghg;6;1;ok;
+ghg;7;1;ok;
+ghg;8;1;ok;
+ghg;9;0;indice;footnote definition
+ghg;10;1;ok;
+ghg;11;1;ok;
+ghg;12;0;indice;correspondence table
+ghg;13;1;ok;
+ghg;14;1;ok;
+ghg;15;1;ok;
+ghg;16;1;ok;
+ghg;17;1;ok;
+ghg;18;1;ok;
+ghg;19;1;ok;
+ghg;20;1;ok;
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);1;1;ok;
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);2;1;ok;ILO Tripartite Declaration reference
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);3;1;ok;
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);4;1;ok;
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);5;1;ok;
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);6;0;indice;KPI table heading
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);7;0;financiero;auditor fees for CSR services
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);8;0;indice;SDG correspondence table
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);9;1;ok;
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);10;1;ok;
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);11;1;ok;
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);12;1;ok;
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);13;1;ok;
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);14;1;ok;CSR directive reporting
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);15;1;ok;tax as social impact
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);16;1;ok;
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);17;1;ok;
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);18;0;indice;section heading
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);19;0;indice;DPEF cross-reference table
+social\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance);20;1;ok;

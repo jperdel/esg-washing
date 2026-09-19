@@ -8,7 +8,10 @@ from loguru import logger
 # que además desvía todas las salidas a rutas con sufijo '_sec' para que las
 # dos ejecuciones puedan convivir y compararse.
 INCLUDE_SECTORAL = os.getenv("ESG_INCLUDE_SECTORAL", "0") == "1"
-_SUF = "_sec" if INCLUDE_SECTORAL else ""
+# ESG_RUN_TAG (p. ej. 'v3') separa las salidas de ejecuciones con vocabularios
+# distintos. Debe coincidir con lexical_document_filter.run_suffix().
+RUN_TAG = os.getenv("ESG_RUN_TAG", "").strip()
+_SUF = (f"_{RUN_TAG}" if RUN_TAG else "") + ("_sec" if INCLUDE_SECTORAL else "")
 
 # PATHS
 BASE_DIR = Path(__file__).resolve().parent.parent

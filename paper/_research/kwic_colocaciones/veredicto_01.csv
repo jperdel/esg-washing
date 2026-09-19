@@ -1,0 +1,277 @@
+termino;n;veredicto;categoria;nota
+environmental\w*;1;1;ok;gasto ambiental con datos
+environmental\w*;2;1;ok;
+environmental\w*;3;1;ok;litigio por desastre ambiental
+environmental\w*;4;1;ok;
+environmental\w*;5;1;ok;
+environmental\w*;6;0;indice;tabla de correspondencia Ley 11/2018
+environmentally;1;1;ok;tabla taxonomia con datos
+environmentally;2;0;otro;texto de meta ODS citado
+environmentally;3;1;ok;tabla taxonomia con datos
+environmentally;4;0;indice;cabecera de plantilla taxonomia sin dato
+environmentally;5;1;ok;tabla taxonomia con datos
+environmentally;6;1;ok;
+carbon footprint;1;1;ok;
+carbon footprint;2;1;ok;
+carbon footprint;3;1;ok;
+carbon footprint;4;1;ok;
+carbon footprint;5;1;ok;
+carbon footprint;6;1;ok;
+materiality assessment;1;1;ok;
+materiality assessment;2;1;ok;
+materiality assessment;3;1;ok;
+materiality assessment;4;1;ok;
+materiality assessment;5;1;ok;
+materiality assessment;6;1;ok;
+non-financial information;1;0;financiero;informe de verificacion
+non-financial information;2;0;generico;metadatos del informe
+non-financial information;3;0;generico;metadatos del informe
+non-financial information;4;0;indice;nombre de informe previo en nota
+non-financial information;5;0;indice;referencia cruzada
+non-financial information;6;1;ok;control interno de la informacion no financiera
+environmental footprint;1;0;indice;indice GRI
+environmental footprint;2;1;ok;
+environmental footprint;3;1;ok;
+environmental footprint;4;1;ok;
+environmental footprint;5;1;ok;tabla con datos
+environmental footprint;6;1;ok;
+non-financial statement;1;0;generico;nota al pie sobre marco de reporte
+non-financial statement;2;0;financiero;informe de auditoria
+non-financial statement;3;0;otro;texto legal del reglamento
+non-financial statement;4;0;otro;obligacion legal de reporte
+non-financial statement;5;0;indice;referencia cruzada
+non-financial statement;6;0;financiero;informe de auditoria
+fossil fuel;1;1;ok;
+fossil fuel;2;1;ok;
+fossil fuel;3;1;ok;
+fossil fuel;4;1;ok;
+fossil fuel;5;1;ok;
+fossil fuel;6;1;ok;
+people with disabilities;1;1;ok;
+people with disabilities;2;0;indice;tabla de correspondencia
+people with disabilities;3;0;indice;tabla de correspondencia
+people with disabilities;4;1;ok;
+people with disabilities;5;1;ok;
+people with disabilities;6;1;ok;
+non-financial performance;1;1;ok;
+non-financial performance;2;0;indice;tabla de correspondencia
+non-financial performance;3;0;financiero;informe de verificacion
+non-financial performance;4;1;ok;remuneracion ligada a desempeno no financiero
+non-financial performance;5;0;indice;nombre de declaracion en evaluacion del consejo
+non-financial performance;6;0;indice;glosario
+materiality analysis;1;0;indice;referencia cruzada a web
+materiality analysis;2;1;ok;
+materiality analysis;3;1;ok;
+materiality analysis;4;1;ok;
+materiality analysis;5;0;financiero;informe de verificacion
+materiality analysis;6;1;ok;
+fuel consumption;1;1;ok;riesgo regulatorio CO2 flota
+fuel consumption;2;1;ok;
+fuel consumption;3;0;otro;aviso legal repetido
+fuel consumption;4;0;indice;glosario
+fuel consumption;5;1;ok;indice GRI pero con datos
+fuel consumption;6;1;ok;
+enterprise risk management;1;1;ok;
+enterprise risk management;2;1;ok;
+enterprise risk management;3;1;ok;
+enterprise risk management;4;1;ok;
+enterprise risk management;5;0;otro;caso de cliente
+enterprise risk management;6;1;ok;
+plastic packaging;1;1;ok;
+plastic packaging;2;1;ok;
+plastic packaging;3;1;ok;
+plastic packaging;4;1;ok;
+plastic packaging;5;1;ok;
+plastic packaging;6;1;ok;
+non-financial reporting;1;0;otro;nombre de directiva
+non-financial reporting;2;1;ok;
+non-financial reporting;3;0;otro;nombre de directiva
+non-financial reporting;4;1;ok;
+non-financial reporting;5;1;ok;
+non-financial reporting;6;1;ok;
+solar power;1;1;ok;
+solar power;2;1;ok;
+solar power;3;1;ok;
+solar power;4;1;ok;
+solar power;5;1;ok;
+solar power;6;1;ok;
+solar panel;1;1;ok;
+solar panel;2;1;ok;
+solar panel;3;1;ok;
+solar panel;4;1;ok;
+solar panel;5;1;ok;
+solar panel;6;1;ok;
+ecosystem service;1;1;ok;
+ecosystem service;2;1;ok;
+ecosystem service;3;1;ok;
+ecosystem service;4;1;ok;tabla con datos
+ecosystem service;5;1;ok;
+ecosystem service;6;1;ok;
+materiality matrix;1;1;ok;
+materiality matrix;2;1;ok;
+materiality matrix;3;1;ok;
+materiality matrix;4;1;ok;
+materiality matrix;5;1;ok;
+materiality matrix;6;1;ok;
+employees with disabilities;1;0;otro;biografia de consejera
+employees with disabilities;2;1;ok;nota metodologica del indicador
+employees with disabilities;3;1;ok;
+employees with disabilities;4;1;ok;
+employees with disabilities;5;1;ok;
+employees with disabilities;6;1;ok;
+sustainable aviation fuel;1;1;ok;
+sustainable aviation fuel;2;1;ok;
+sustainable aviation fuel;3;1;ok;
+sustainable aviation fuel;4;1;ok;
+sustainable aviation fuel;5;1;ok;criterio ESG en remuneracion
+sustainable aviation fuel;6;1;ok;
+business integrity;1;1;ok;
+business integrity;2;1;ok;
+business integrity;3;1;ok;
+business integrity;4;1;ok;tema en matriz de materialidad
+business integrity;5;1;ok;
+business integrity;6;1;ok;
+nonfinancial statement;1;0;indice;referencia cruzada
+nonfinancial statement;2;0;indice;referencia cruzada a paginas
+nonfinancial statement;3;0;financiero;informe de auditoria
+nonfinancial statement;4;0;generico;metadatos del informe
+nonfinancial statement;5;0;financiero;informe de verificacion
+nonfinancial statement;6;1;ok;supervision de la verificacion
+natural ecosystem;1;0;indice;glosario
+natural ecosystem;2;1;ok;
+natural ecosystem;3;1;ok;
+natural ecosystem;4;1;ok;
+natural ecosystem;5;1;ok;
+natural ecosystem;6;1;ok;
+anti-fraud;1;1;ok;
+anti-fraud;2;0;generico;fraude a clientes operativo
+anti-fraud;3;1;ok;
+anti-fraud;4;1;ok;
+anti-fraud;5;1;ok;
+anti-fraud;6;1;ok;
+carbon offset;1;1;ok;
+carbon offset;2;1;ok;
+carbon offset;3;1;ok;
+carbon offset;4;0;indice;glosario
+carbon offset;5;1;ok;
+carbon offset;6;1;ok;
+persons with disabilities;1;0;otro;texto de meta ODS citado
+persons with disabilities;2;0;indice;indice ESRS
+persons with disabilities;3;0;otro;texto de meta ODS citado
+persons with disabilities;4;1;ok;
+persons with disabilities;5;1;ok;
+persons with disabilities;6;1;ok;
+solar energy;1;1;ok;
+solar energy;2;1;ok;
+solar energy;3;1;ok;
+solar energy;4;1;ok;
+solar energy;5;1;ok;
+solar energy;6;1;ok;
+water footprint;1;1;ok;
+water footprint;2;1;ok;
+water footprint;3;1;ok;
+water footprint;4;1;ok;
+water footprint;5;1;ok;
+water footprint;6;1;ok;
+sustainable packaging;1;1;ok;
+sustainable packaging;2;1;ok;
+sustainable packaging;3;1;ok;
+sustainable packaging;4;1;ok;
+sustainable packaging;5;1;ok;
+sustainable packaging;6;1;ok;
+alternative fuel;1;1;ok;
+alternative fuel;2;1;ok;
+alternative fuel;3;0;otro;nombre de reglamento
+alternative fuel;4;0;generico;seguridad energetica sin contenido ESG
+alternative fuel;5;1;ok;
+alternative fuel;6;1;ok;
+fraud prevention;1;1;ok;control interno
+fraud prevention;2;1;ok;
+fraud prevention;3;1;ok;
+fraud prevention;4;1;ok;
+fraud prevention;5;1;ok;
+fraud prevention;6;0;generico;fraude a clientes y ciberseguridad
+packaging waste;1;1;ok;
+packaging waste;2;1;ok;
+packaging waste;3;1;ok;
+packaging waste;4;1;ok;
+packaging waste;5;1;ok;
+packaging waste;6;1;ok;
+esg risk management;1;1;ok;
+esg risk management;2;1;ok;
+esg risk management;3;1;ok;
+esg risk management;4;1;ok;
+esg risk management;5;0;indice;tabla de stakeholders con referencias
+esg risk management;6;1;ok;
+solar farm;1;0;financiero;contabilidad de PPA como derivados
+solar farm;2;1;ok;
+solar farm;3;1;ok;
+solar farm;4;0;financiero;prestamo en notas financieras
+solar farm;5;1;ok;
+solar farm;6;1;ok;
+solar plant;1;1;ok;
+solar plant;2;1;ok;
+solar plant;3;1;ok;
+solar plant;4;0;generico;impacto regulatorio comercial
+solar plant;5;1;ok;
+solar plant;6;1;ok;
+disability inclusion;1;1;ok;
+disability inclusion;2;1;ok;
+disability inclusion;3;1;ok;
+disability inclusion;4;1;ok;
+disability inclusion;5;1;ok;
+disability inclusion;6;1;ok;
+nonfinancial information;1;1;ok;funcion del comite de auditoria
+nonfinancial information;2;0;generico;metadatos del informe
+nonfinancial information;3;0;generico;metadatos del informe
+nonfinancial information;4;0;financiero;honorarios de auditoria
+nonfinancial information;5;0;otro;texto legal de directiva
+nonfinancial information;6;1;ok;control interno no financiero
+climate scenario analysis;1;1;ok;
+climate scenario analysis;2;1;ok;
+climate scenario analysis;3;1;ok;
+climate scenario analysis;4;1;ok;
+climate scenario analysis;5;1;ok;
+climate scenario analysis;6;1;ok;
+offsett?ing\s+(?:of\s+)?(?:\w+\s+)?emission;1;1;ok;
+offsett?ing\s+(?:of\s+)?(?:\w+\s+)?emission;2;1;ok;
+offsett?ing\s+(?:of\s+)?(?:\w+\s+)?emission;3;1;ok;
+offsett?ing\s+(?:of\s+)?(?:\w+\s+)?emission;4;1;ok;
+offsett?ing\s+(?:of\s+)?(?:\w+\s+)?emission;5;1;ok;
+offsett?ing\s+(?:of\s+)?(?:\w+\s+)?emission;6;1;ok;
+climate risk management;1;0;otro;nombre de guia del BCE
+climate risk management;2;1;ok;
+climate risk management;3;0;indice;encabezado de seccion
+climate risk management;4;1;ok;
+climate risk management;5;0;indice;referencia cruzada
+climate risk management;6;1;ok;supervision del organo de control
+ecological footprint;1;1;ok;
+ecological footprint;2;1;ok;
+ecological footprint;3;1;ok;
+ecological footprint;4;1;ok;
+ecological footprint;5;0;otro;nombre propio de herramienta
+ecological footprint;6;1;ok;
+nonfinancial reporting;1;1;ok;supervision de la verificacion
+nonfinancial reporting;2;1;ok;
+nonfinancial reporting;3;1;ok;comite de auditoria
+nonfinancial reporting;4;0;otro;nombre de directiva
+nonfinancial reporting;5;0;indice;glosario
+nonfinancial reporting;6;1;ok;funcion del comite de auditoria
+low-carbon fuel;1;1;ok;
+low-carbon fuel;2;1;ok;
+low-carbon fuel;3;0;otro;nombre de alianza industrial
+low-carbon fuel;4;1;ok;
+low-carbon fuel;5;0;otro;nombre de normativa estadounidense
+low-carbon fuel;6;1;ok;
+recyclable packaging;1;1;ok;tabla de objetivos con datos
+recyclable packaging;2;1;ok;
+recyclable packaging;3;1;ok;
+recyclable packaging;4;1;ok;
+recyclable packaging;5;1;ok;
+recyclable packaging;6;1;ok;
+ecosystem restoration;1;1;ok;
+ecosystem restoration;2;1;ok;
+ecosystem restoration;3;1;ok;
+ecosystem restoration;4;1;ok;
+ecosystem restoration;5;1;ok;
+ecosystem restoration;6;1;ok;

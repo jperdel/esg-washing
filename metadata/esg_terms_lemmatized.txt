@@ -2,11 +2,14 @@
 # Fuente: esg_terms.txt | Vocabulario TF-IDF del SUS (formas lematizadas).
 absenteeism
 accessibility
+accident rate
 affordability
 agroforestry
 air pollutant
 air quality
+alternative fuel
 animal welfare
+anti fraud
 anti money laundering
 antitrust
 apprentice
@@ -14,24 +17,32 @@ audit committee
 biodiversity
 biofuel
 biomass
+board committee
+board composition
+board director
+board evaluation
 bribery
 business ethic
+business integrity
 carbon
+carbon footprint
 carbon neutrality
+carbon offset
 cdp
 chemical management
 child labor
-circular
+childcare
 circular economy
 circularity
 clean energy
 climate
 climate change
+climate risk management
+climate scenario analysis
 co2
 co2e
 coal
 code conduct
-code ethic
 collective bargaining
 community engagement
 compliance committee
@@ -43,16 +54,16 @@ compliance officer
 compliance program
 compliance programme
 compliance risk
+compliance system
 compliance training
 compliance violation
 compost
 conflict interest
-consumer protection
+corporate volunteering
 corruption
 csr
 csrd
 customer privacy
-customer satisfaction
 cybersecurity
 data privacy
 data protection
@@ -63,36 +74,46 @@ decarbonise
 decarbonization
 decarbonize
 deforestation
-dei
 diligence
-disability
+disability inclusion
 discrimination
 diversity
 donation
 double materiality
 drought
-duty vigilance
-ecosystem
+eco design
+ecological footprint
+ecosystem restoration
+ecosystem service
 ecovadi
 effluent
 electricity
 electrification
 emission
+employee commuting
+employee disability
 employee engagement
+employee representative
 employee wellbee
+energy attribute certificate
 energy consumption
 energy efficiency
-energy management
 energy mix
 energy transition
+enterprise risk management
+environmental footprint
 equal opportunity
 equal pay
 equality
 ergonomic
 esg
+esg risk management
 esr
 ethic compliance
 ethical
+ethisphere
+executive committee
+extreme weather event
 fair compensation
 fair competition
 fair condition
@@ -103,12 +124,12 @@ fatality
 female representation
 flood
 flooding
-footprint
 force labor
-fraud
+fossil fuel
+fraud prevention
 freedom association
 ftse4good
-fuel
+fuel consumption
 gdpr
 gender
 geothermal
@@ -118,23 +139,30 @@ global reporting initiative
 global warming
 governance
 green bond
+green building
+green deal
 green energy
+green financing
 green hydrogen
 green investment
 greenhouse
-gri
 grievance
+groundwater
+groundwater contamination
+guide principle
 habitat
 harassment
 hazardous
 health safety
 heat wave
+hse
 human capital
 human right
 human trafficking
 hydroelectric
 hydrogen
 hydropower
+iirc
 ilo
 inclusion
 inclusive
@@ -143,7 +171,6 @@ indigenous
 information security
 injury
 insider trading
-integrity
 internal audit
 internal control
 issb
@@ -154,55 +181,75 @@ landfill
 lca
 leed
 life cycle assessment
+limit assurance
+line defence
+line defense
 live wage
 lobby
 local community
 low carbon
-marine
+low carbon fuel
+malus
 material topic
-materiality
+materiality analysis
+materiality assessment
+materiality matrix
 maternity
 mental health
 methane
 microplastic
 minimum wage
+mitigation hierarchy
 modern slavery
 money laundering
 msci esg
+musculoskeletal disorder
 natural capital
 natural disaster
+natural ecosystem
+natural resource
 nature base solution
 net zero
-non compliance
-non financial
-nonfinancial
+nomination committee
 nox
 occupational health
+occupational illness
 ocean
 oecd guideline
-offset
-packaging
+packaging waste
+parental leave
 particulate matter
 pay equity
+people disability
+person disability
+personal datum
 philanthropy
 photovoltaic
+physical risk
 plastic
+plastic packaging
 political contribution
 pollution
-product quality
+power purchase agreement
 product safety
+product stewardship
 proxy advisor
-proxy statement
+psychological safety
+psychosocial risk
 racism
-raw material
+raw material consumption
+raw material sourcing
+re100
 recyclable
+recyclable packaging
 recycle
+recycle packaging
+recycle raw material
 recycling
 reforestation
 refrigerant
 regenerative agriculture
 regulatory compliance
-relate party
 remuneration
 renewable
 reskille
@@ -211,17 +258,19 @@ responsible business
 responsible investment
 responsible marketing
 responsible sourcing
-risk appetite
-risk management
+responsible tax
+reuse
+risk committee
 road safety
 sanction
 sapin
 sasb
 sbti
-scenario analysis
 science base target
 sdg
 sfdr
+short term incentive
+skill development
 social audit
 social commitment
 social compliance
@@ -229,7 +278,6 @@ social dialogue
 social enterprise
 social impact
 social inclusion
-social indicator
 social issue
 social norm
 social partner
@@ -239,18 +287,32 @@ social responsibility
 social risk
 social standard
 soil health
-solar
+solar energy
+solar farm
+solar panel
+solar plant
+solar power
 specie
 stakeholder
 succession planning
 supplier assessment
-supply chain
+supplier audit
+supply chain audit
+supply chain decarbonisation
 supply chain diligence
-supply chain management
+supply chain emission
+supply chain ethic
+supply chain footprint
+supply chain human right
+supply chain labour
 supply chain risk
 supply chain transparency
+supply chain worker
 sustainability
+sustainability risk management
 sustainable
+sustainable aviation fuel
+sustainable packaging
 sustainalytic
 talent development
 tax avoidance
@@ -259,7 +321,6 @@ tax policy
 tax strategy
 tax transparency
 taxonomy
-taxonomy align
 taxonomy alignment
 taxonomy eligible
 tcfd
@@ -269,15 +330,18 @@ training development
 training hour
 training program
 transition plan
-transparency
+transition risk
 ungp
 upskille
 vigilance plan
 volatile organic
 volunteer
+vulnerable group
+vulnerable population
 waste
 wastewater
 water
+water footprint
 wellbee
 wetland
 whistleblowe
@@ -286,6 +350,11 @@ wind energy
 wind farm
 wind power
 wind turbine
+woman management
+woman management position
+work condition
+work hour
 work life balance
 works council
 zdhc
+zero accident

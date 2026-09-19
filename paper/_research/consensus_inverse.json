@@ -1,0 +1,952 @@
+{
+ "exacto": [
+  "air quality",
+  "animal welfare",
+  "antitrust",
+  "audit committee",
+  "biodiversity",
+  "biofuel",
+  "bribery",
+  "business ethics",
+  "carbon neutrality",
+  "cdp",
+  "child labor",
+  "circular economy",
+  "circularity",
+  "clean energy",
+  "climate change",
+  "code of conduct",
+  "code of ethics",
+  "collective bargaining",
+  "community engagement",
+  "compliance program",
+  "compliance programme",
+  "compliance risk",
+  "conflict of interest",
+  "conflicts of interest",
+  "corruption",
+  "csrd",
+  "customer satisfaction",
+  "cybersecurity",
+  "data privacy",
+  "data protection",
+  "decarbonisation",
+  "decarbonization",
+  "deforestation",
+  "disability",
+  "double materiality",
+  "ecodesign",
+  "ecosystem",
+  "ecovadis",
+  "electrification",
+  "emission",
+  "employee engagement",
+  "energy consumption",
+  "energy efficiency",
+  "energy mix",
+  "energy transition",
+  "equal pay",
+  "esg",
+  "esrs",
+  "ethics and compliance",
+  "eu taxonomy",
+  "executive compensation",
+  "female representation",
+  "forced labor",
+  "ftse4good",
+  "geothermal",
+  "global reporting initiative",
+  "global warming",
+  "green bond",
+  "green energy",
+  "green hydrogen",
+  "green investment",
+  "health and safety",
+  "human capital",
+  "human right",
+  "hydroelectric",
+  "inclusion",
+  "independent director",
+  "information security",
+  "internal audit",
+  "internal control",
+  "iso 14001",
+  "iso 50001",
+  "landfill",
+  "leed",
+  "life cycle assessment",
+  "living wage",
+  "lobbying",
+  "local community",
+  "material topic",
+  "materiality",
+  "minimum wage",
+  "natural capital",
+  "net zero",
+  "nutrition",
+  "philanthropy",
+  "pollution",
+  "product quality",
+  "product safety",
+  "recycling",
+  "reforestation",
+  "refrigerant",
+  "regulatory compliance",
+  "responsible sourcing",
+  "risk appetite",
+  "risk management",
+  "road safety",
+  "sasb",
+  "sbti",
+  "scenario analysis",
+  "science based target",
+  "sfdr",
+  "social commitment",
+  "social dialogue",
+  "speak up",
+  "stakeholder",
+  "succession planning",
+  "supplier assessment",
+  "supply chain emission",
+  "supply chain human right",
+  "sustainability",
+  "talent development",
+  "tax policy",
+  "tax transparency",
+  "taxonomy aligned",
+  "taxonomy eligible",
+  "tcfd",
+  "trade union",
+  "training hour",
+  "transparency",
+  "un global compact",
+  "waste",
+  "wastewater",
+  "whistleblowing",
+  "wind farm",
+  "work-life balance",
+  "works council"
+ ],
+ "absorbido": [
+  [
+   "carbon",
+   [
+    "carbon credit",
+    "carbon emission",
+    "carbon footprint",
+    "carbon literacy"
+   ]
+  ],
+  [
+   "circular",
+   [
+    "circular economy"
+   ]
+  ],
+  [
+   "circulari\\w+",
+   [
+    "circularity"
+   ]
+  ],
+  [
+   "climate",
+   [
+    "climate action",
+    "climate change",
+    "climate change adaptation",
+    "climate change mitigation"
+   ]
+  ],
+  [
+   "co2",
+   [
+    "co2 emission"
+   ]
+  ],
+  [
+   "co2e?",
+   [
+    "co2 emission"
+   ]
+  ],
+  [
+   "coal",
+   [
+    "coal fired plant",
+    "coal fired power plant"
+   ]
+  ],
+  [
+   "compliance and ethics",
+   [
+    "ethics and compliance"
+   ]
+  ],
+  [
+   "csr",
+   [
+    "csr policy",
+    "csr reporting scope"
+   ]
+  ],
+  [
+   "cybersecuri\\w+",
+   [
+    "cybersecurity"
+   ]
+  ],
+  [
+   "decarboni\\w+",
+   [
+    "decarbonization"
+   ]
+  ],
+  [
+   "disabilit\\w+",
+   [
+    "disability",
+    "disability employment"
+   ]
+  ],
+  [
+   "discrimination",
+   [
+    "anti discrimination policy",
+    "non discrimination"
+   ]
+  ],
+  [
+   "diversity",
+   [
+    "board diversity",
+    "board diversity policy",
+    "diversity and inclusion",
+    "diversity equity and inclusion"
+   ]
+  ],
+  [
+   "due diligence",
+   [
+    "human right due diligence",
+    "sustainability due diligence"
+   ]
+  ],
+  [
+   "electricity",
+   [
+    "green electricity",
+    "renewable electricity",
+    "renewable electricity certificate"
+   ]
+  ],
+  [
+   "electrif\\w+",
+   [
+    "electrification"
+   ]
+  ],
+  [
+   "employee\\s+well\\w*",
+   [
+    "employee well being",
+    "employee wellness",
+    "employee wellness program"
+   ]
+  ],
+  [
+   "energy management",
+   [
+    "energy management system"
+   ]
+  ],
+  [
+   "energy\\s+(?:consumption|efficiency|transition|mix|intensity|storage)",
+   [
+    "energy consumption",
+    "energy efficiency",
+    "energy mix",
+    "energy transition"
+   ]
+  ],
+  [
+   "environ\\w+",
+   [
+    "environmental compliance",
+    "environmental damage",
+    "environmental footprint",
+    "environmental impact"
+   ]
+  ],
+  [
+   "equality",
+   [
+    "gender equality"
+   ]
+  ],
+  [
+   "ethical",
+   [
+    "ethical culture",
+    "ethical principle",
+    "world most ethical company"
+   ]
+  ],
+  [
+   "fair condition",
+   [
+    "fair labor condition"
+   ]
+  ],
+  [
+   "fair labor",
+   [
+    "fair labor condition"
+   ]
+  ],
+  [
+   "footprint",
+   [
+    "carbon footprint",
+    "environmental footprint",
+    "water footprint"
+   ]
+  ],
+  [
+   "fraud",
+   [
+    "fraud prevention"
+   ]
+  ],
+  [
+   "fuel",
+   [
+    "corporate average fuel economy",
+    "fossil fuel",
+    "sustainable aviation fuel"
+   ]
+  ],
+  [
+   "gender",
+   [
+    "gender balance",
+    "gender diversity",
+    "gender equality"
+   ]
+  ],
+  [
+   "ghg",
+   [
+    "ghg emission",
+    "ghg neutrality",
+    "ghg protocol"
+   ]
+  ],
+  [
+   "governance",
+   [
+    "annual corporate governance report",
+    "corporate governance",
+    "corporate governance code",
+    "corporate governance statement"
+   ]
+  ],
+  [
+   "greenhouse",
+   [
+    "greenhouse gas emission"
+   ]
+  ],
+  [
+   "gri",
+   [
+    "gri indicator",
+    "gri standard"
+   ]
+  ],
+  [
+   "hydrogen",
+   [
+    "green hydrogen"
+   ]
+  ],
+  [
+   "ilo",
+   [
+    "ilo convention"
+   ]
+  ],
+  [
+   "inclusiv\\w+",
+   [
+    "inclusive insurance",
+    "inclusive workplace"
+   ]
+  ],
+  [
+   "inclusive",
+   [
+    "inclusive insurance",
+    "inclusive workplace"
+   ]
+  ],
+  [
+   "injur\\w+",
+   [
+    "injury rate"
+   ]
+  ],
+  [
+   "injury",
+   [
+    "injury rate"
+   ]
+  ],
+  [
+   "integrity",
+   [
+    "business integrity"
+   ]
+  ],
+  [
+   "iso\\s*14001\\b",
+   [
+    "iso 14001"
+   ]
+  ],
+  [
+   "iso\\s*50001\\b",
+   [
+    "iso 50001"
+   ]
+  ],
+  [
+   "local\\s+communit\\w+",
+   [
+    "local community"
+   ]
+  ],
+  [
+   "low carbon",
+   [
+    "low carbon energy"
+   ]
+  ],
+  [
+   "maternity",
+   [
+    "maternity and paternity leave"
+   ]
+  ],
+  [
+   "methane",
+   [
+    "methane emission"
+   ]
+  ],
+  [
+   "msci esg",
+   [
+    "msci esg rating"
+   ]
+  ],
+  [
+   "non-financial",
+   [
+    "non financial information",
+    "non financial performance",
+    "non financial rating agency",
+    "non financial reporting"
+   ]
+  ],
+  [
+   "nox",
+   [
+    "nox emission"
+   ]
+  ],
+  [
+   "occupational health",
+   [
+    "occupational health and safety"
+   ]
+  ],
+  [
+   "ocean",
+   [
+    "ocean freight"
+   ]
+  ],
+  [
+   "oecd guidelines",
+   [
+    "oecd guideline for multinational enterpris"
+   ]
+  ],
+  [
+   "offset",
+   [
+    "carbon offset"
+   ]
+  ],
+  [
+   "packaging",
+   [
+    "sustainable packaging"
+   ]
+  ],
+  [
+   "paris\\s+agreement",
+   [
+    "paris agreement"
+   ]
+  ],
+  [
+   "philanthrop\\w+",
+   [
+    "philanthropy"
+   ]
+  ],
+  [
+   "photovoltaic",
+   [
+    "photovoltaic plant"
+   ]
+  ],
+  [
+   "plastic",
+   [
+    "plastic waste"
+   ]
+  ],
+  [
+   "recycl\\w+",
+   [
+    "recycled content",
+    "recycling",
+    "waste recycled"
+   ]
+  ],
+  [
+   "related party",
+   [
+    "related party transaction"
+   ]
+  ],
+  [
+   "remuneration",
+   [
+    "executive remuneration",
+    "fixed remuneration",
+    "remuneration committee",
+    "remuneration policy"
+   ]
+  ],
+  [
+   "renewable",
+   [
+    "installed renewable capacity",
+    "renewable electricity",
+    "renewable electricity certificate",
+    "renewable energy"
+   ]
+  ],
+  [
+   "sanction",
+   [
+    "economic sanction",
+    "trade sanction"
+   ]
+  ],
+  [
+   "scope\\s*[123]\\b",
+   [
+    "scope 1",
+    "scope 1 emission",
+    "scope 2",
+    "scope 2 emission"
+   ]
+  ],
+  [
+   "social responsibility",
+   [
+    "corporate social responsibility"
+   ]
+  ],
+  [
+   "social\\s+(?:responsibility|impact|policy|pillar|report|performance|value|welfare|audit|capital|sustainability|license|licence|dialogue|protection|partner|standard|norm|commitment|compliance)",
+   [
+    "corporate social responsibility",
+    "social commitment",
+    "social dialogue"
+   ]
+  ],
+  [
+   "solar",
+   [
+    "solar panel"
+   ]
+  ],
+  [
+   "supply chain management",
+   [
+    "responsible supply chain management",
+    "supply chain responsible management"
+   ]
+  ],
+  [
+   "sustainab\\w+",
+   [
+    "board sustainability expertise",
+    "chief sustainability officer",
+    "corporate sustainability assessment",
+    "dow jone sustainability index"
+   ]
+  ],
+  [
+   "sustainable",
+   [
+    "sustainable aviation fuel",
+    "sustainable development",
+    "sustainable development goal",
+    "sustainable event"
+   ]
+  ],
+  [
+   "transition plan",
+   [
+    "climate transition plan"
+   ]
+  ],
+  [
+   "water",
+   [
+    "water consumption",
+    "water discharge",
+    "water footprint",
+    "water management"
+   ]
+  ],
+  [
+   "water\\s+(?:usage|consumption|stewardship|management|withdrawal|scarcity|stress)",
+   [
+    "water consumption",
+    "water management",
+    "water management plan",
+    "water stress"
+   ]
+  ],
+  [
+   "whistleblow\\w+",
+   [
+    "whistleblowing",
+    "whistleblowing hotline"
+   ]
+  ]
+ ],
+ "huerfano_pres": [
+  [
+   "accessibility",
+   "S",
+   "auditoria"
+  ],
+  [
+   "affordability",
+   "S",
+   "auditoria"
+  ],
+  [
+   "apprentice",
+   "S",
+   "auditoria"
+  ],
+  [
+   "article\\s*[689]\\b",
+   "TRANS",
+   "manual"
+  ],
+  [
+   "co2e",
+   "E",
+   "bloque"
+  ],
+  [
+   "compliance committee",
+   "G",
+   "manual"
+  ],
+  [
+   "compliance management system",
+   "G",
+   "manual"
+  ],
+  [
+   "consumer protection",
+   "S",
+   "auditoria"
+  ],
+  [
+   "donation",
+   "S",
+   "auditoria"
+  ],
+  [
+   "drought",
+   "E",
+   "bloque"
+  ],
+  [
+   "energy storage",
+   "E",
+   "auditoria"
+  ],
+  [
+   "equal\\s+opportunit\\w+",
+   "S",
+   "manual"
+  ],
+  [
+   "ergonomic",
+   "S",
+   "auditoria"
+  ],
+  [
+   "ergonomic\\w*",
+   "S",
+   "manual"
+  ],
+  [
+   "flood",
+   "E",
+   "bloque"
+  ],
+  [
+   "flooding",
+   "E",
+   "bloque"
+  ],
+  [
+   "habitat",
+   "E",
+   "auditoria"
+  ],
+  [
+   "heat wave",
+   "E",
+   "bloque"
+  ],
+  [
+   "iso 37001",
+   "G",
+   "auditoria"
+  ],
+  [
+   "iso\\s*37001\\b",
+   "G",
+   "manual"
+  ],
+  [
+   "land use",
+   "E",
+   "auditoria"
+  ],
+  [
+   "lca",
+   "E",
+   "auditoria"
+  ],
+  [
+   "marine",
+   "E",
+   "auditoria"
+  ],
+  [
+   "natural disaster",
+   "E",
+   "bloque"
+  ],
+  [
+   "non-compliance",
+   "G",
+   "manual"
+  ],
+  [
+   "offset\\w+",
+   "E",
+   "manual"
+  ],
+  [
+   "recycle",
+   "E",
+   "manual"
+  ],
+  [
+   "sdg",
+   "TRANS",
+   "bloque"
+  ],
+  [
+   "social impact",
+   "S",
+   "bloque"
+  ],
+  [
+   "social partner",
+   "S",
+   "manual"
+  ],
+  [
+   "tonne\\w*\\s+(?:co2|carbon)",
+   "E",
+   "manual"
+  ],
+  [
+   "training program",
+   "S",
+   "bloque"
+  ],
+  [
+   "ungp",
+   "S",
+   "bloque"
+  ],
+  [
+   "upskilling",
+   "S",
+   "auditoria"
+  ],
+  [
+   "volunteer",
+   "S",
+   "auditoria"
+  ]
+ ],
+ "huerfano_aus": [
+  "absenteeism",
+  "agroforestry",
+  "air pollutant",
+  "anti-money laundering",
+  "b corp",
+  "better cotton",
+  "biomass",
+  "board oversight",
+  "chemical management",
+  "community relations",
+  "compliance department",
+  "compliance function",
+  "compliance officer",
+  "compliance training",
+  "compliance violation",
+  "compost",
+  "cop 28",
+  "cop28",
+  "cover crop",
+  "customer privacy",
+  "data breach",
+  "data security",
+  "decarbonise",
+  "decarbonize",
+  "dei",
+  "duty of vigilance",
+  "effluent",
+  "employee wellbeing",
+  "equal opportunity",
+  "fair compensation",
+  "fair competition",
+  "fair trade",
+  "fair wage",
+  "fairtrade",
+  "fatalit\\w+",
+  "fatality",
+  "first aid",
+  "food safety",
+  "freedom of association",
+  "gdpr",
+  "grievance",
+  "harassment",
+  "hazardous",
+  "human trafficking",
+  "hydropower",
+  "ifrs\\s*s[12]\\b",
+  "indigenous",
+  "insider trading",
+  "iso 45001",
+  "iso\\s*45001\\b",
+  "issb",
+  "just\\s+transition",
+  "labor practices",
+  "labor right",
+  "leather working group",
+  "living income",
+  "mental health",
+  "microfiber",
+  "microplastic",
+  "modern slavery",
+  "money laundering",
+  "nature-based solution",
+  "nonfinancial",
+  "particulate matter",
+  "pay equity",
+  "peatland",
+  "political contribution",
+  "proxy advisor",
+  "proxy statement",
+  "racism",
+  "raw material consumption",
+  "raw material efficiency",
+  "raw material sourcing",
+  "recyclable",
+  "recycled raw material",
+  "regenerative agriculture",
+  "reskilling",
+  "resource efficiency",
+  "responsible business",
+  "responsible investment",
+  "responsible marketing",
+  "sapin",
+  "say on pay",
+  "scope\\s+(?:one|two|three)",
+  "sedex",
+  "sf6",
+  "smeta",
+  "social audit",
+  "social compliance",
+  "social enterprise",
+  "social inclusion",
+  "social indicator",
+  "social issue",
+  "social norm",
+  "social performance",
+  "social protection",
+  "social risk",
+  "social standard",
+  "soil health",
+  "species",
+  "supply chain audit",
+  "supply chain decarbonisation",
+  "supply chain due diligence",
+  "supply chain ethics",
+  "supply chain footprint",
+  "supply chain labour",
+  "supply chain risk",
+  "supply chain transparency",
+  "supply chain worker",
+  "sustainalytics",
+  "tax avoidance",
+  "tax compliance",
+  "tax strategy",
+  "taxonomy alignment",
+  "tnfd",
+  "training and development",
+  "vigilance plan",
+  "virgin polyester",
+  "volatile organic",
+  "wellbeing",
+  "wetland",
+  "whistleblower",
+  "wind energy",
+  "wind power",
+  "wind turbine",
+  "zdhc"
+ ]
+}

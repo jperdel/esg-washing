@@ -1,0 +1,403 @@
+termino;n;veredicto;categoria;nota
+bribery;1;1;ok;
+bribery;2;0;indice;tabla de correspondencia BMW
+bribery;3;0;indice;glosario UK Bribery Act
+bribery;4;1;ok;
+bribery;5;1;ok;
+bribery;6;1;ok;
+bribery;7;1;ok;
+bribery;8;1;ok;
+bribery;9;0;indice;tabla de referencias
+bribery;10;1;ok;
+bribery;11;1;ok;
+bribery;12;1;ok;salvaguardas minimas taxonomia
+whistleblowing;1;1;ok;
+whistleblowing;2;1;ok;
+whistleblowing;3;0;indice;lista de temas
+whistleblowing;4;1;ok;
+whistleblowing;5;0;indice;encabezado de seccion
+whistleblowing;6;0;financiero;procedimientos del auditor
+whistleblowing;7;1;ok;
+whistleblowing;8;1;ok;
+whistleblowing;9;1;ok;
+whistleblowing;10;1;ok;
+whistleblowing;11;1;ok;
+whistleblowing;12;1;ok;
+marine;1;0;indice;cabecera tabla taxonomia
+marine;2;0;otro;categoria de premio
+marine;3;1;ok;
+marine;4;1;ok;
+marine;5;0;generico;obras maritimas de construccion
+marine;6;0;indice;leyenda de abreviaturas taxonomia
+donation;1;1;ok;
+donation;2;1;ok;
+donation;3;1;ok;
+donation;4;1;ok;
+donation;5;0;indice;cabecera de tabla
+donation;6;1;ok;
+electrification;1;1;ok;
+electrification;2;1;ok;
+electrification;3;1;ok;
+electrification;4;1;ok;
+electrification;5;1;ok;
+electrification;6;1;ok;
+collective bargaining;1;1;ok;
+collective bargaining;2;1;ok;
+collective bargaining;3;0;indice;encabezado de tabla
+collective bargaining;4;1;ok;
+collective bargaining;5;0;generico;definicion de ejecutivos para remuneracion
+collective bargaining;6;1;ok;indice GRI con contenido
+employee engagement;1;1;ok;
+employee engagement;2;1;ok;
+employee engagement;3;1;ok;
+employee engagement;4;1;ok;
+employee engagement;5;1;ok;
+employee engagement;6;1;ok;
+compliance risk;1;1;ok;
+compliance risk;2;1;ok;
+compliance risk;3;1;ok;
+compliance risk;4;0;indice;encabezado de seccion
+compliance risk;5;1;ok;
+compliance risk;6;1;ok;
+harassment;1;1;ok;
+harassment;2;1;ok;
+harassment;3;1;ok;
+harassment;4;1;ok;
+harassment;5;1;ok;
+harassment;6;1;ok;
+compliance officer;1;1;ok;
+compliance officer;2;0;otro;organigrama con nombres
+compliance officer;3;1;ok;
+compliance officer;4;1;ok;
+compliance officer;5;0;indice;navegacion y organigrama
+compliance officer;6;1;ok;
+trade union;1;1;ok;
+trade union;2;1;ok;
+trade union;3;1;ok;
+trade union;4;1;ok;
+trade union;5;1;ok;
+trade union;6;0;generico;retribucion variable
+social dialogue;1;0;indice;tabla ESRS de referencias
+social dialogue;2;1;ok;
+social dialogue;3;0;indice;tabla de correspondencia
+social dialogue;4;1;ok;
+social dialogue;5;1;ok;
+social dialogue;6;1;ok;
+nonfinancial;1;0;financiero;activos no financieros IFRS
+nonfinancial;2;1;ok;criterios RSC en remuneracion
+nonfinancial;3;0;indice;tabla de correspondencia
+nonfinancial;4;1;ok;
+nonfinancial;5;1;ok;
+nonfinancial;6;0;financiero;informe de auditoria
+article\s*[689]\b;1;1;ok;fondos articulo 8 y 9 SFDR
+article\s*[689]\b;2;0;financiero;estatutos sociales
+article\s*[689]\b;3;1;ok;verificacion taxonomia
+article\s*[689]\b;4;1;ok;KPIs taxonomia
+article\s*[689]\b;5;0;financiero;estatutos sociales
+article\s*[689]\b;6;0;financiero;reglamento de auditoria
+occupational health;1;1;ok;
+occupational health;2;1;ok;
+occupational health;3;0;indice;indice GRI
+occupational health;4;1;ok;
+occupational health;5;1;ok;
+occupational health;6;1;ok;
+paris\s+agreement;1;1;ok;
+paris\s+agreement;2;1;ok;
+paris\s+agreement;3;1;ok;
+paris\s+agreement;4;1;ok;
+paris\s+agreement;5;1;ok;
+paris\s+agreement;6;1;ok;
+tcfd;1;1;ok;
+tcfd;2;0;indice;tabla de correspondencia TCFD
+tcfd;3;1;ok;
+tcfd;4;0;indice;indice de contenidos
+tcfd;5;0;indice;encabezado de seccion
+tcfd;6;0;indice;tabla de correspondencia
+sbti;1;1;ok;
+sbti;2;1;ok;
+sbti;3;1;ok;
+sbti;4;1;ok;
+sbti;5;1;ok;
+sbti;6;0;generico;contexto comercial de mercado
+information security;1;1;ok;tabla de grupos de interes
+information security;2;1;ok;
+information security;3;1;ok;
+information security;4;1;ok;
+information security;5;1;ok;
+information security;6;1;ok;
+vigilance plan;1;1;ok;
+vigilance plan;2;0;indice;indice GRI
+vigilance plan;3;1;ok;
+vigilance plan;4;0;indice;indice de contenidos
+vigilance plan;5;1;ok;
+vigilance plan;6;0;indice;encabezado de seccion
+data privacy;1;1;ok;
+data privacy;2;1;ok;
+data privacy;3;1;ok;
+data privacy;4;1;ok;
+data privacy;5;1;ok;
+data privacy;6;1;ok;
+circulari\w+;1;1;ok;
+circulari\w+;2;0;indice;columna de tabla
+circulari\w+;3;1;ok;
+circulari\w+;4;1;ok;
+circulari\w+;5;1;ok;
+circulari\w+;6;0;indice;encabezado de seccion
+species;1;1;ok;
+species;2;0;indice;glosario
+species;3;0;indice;glosario
+species;4;1;ok;
+species;5;1;ok;
+species;6;1;ok;
+wastewater;1;1;ok;
+wastewater;2;1;ok;lista de indicadores
+wastewater;3;1;ok;
+wastewater;4;1;ok;
+wastewater;5;1;ok;
+wastewater;6;1;ok;
+ilo;1;1;ok;
+ilo;2;1;ok;
+ilo;3;1;ok;
+ilo;4;1;ok;
+ilo;5;1;ok;
+ilo;6;1;ok;
+material topic;1;0;indice;indice GRI
+material topic;2;1;ok;
+material topic;3;1;ok;
+material topic;4;0;indice;indice GRI
+material topic;5;0;indice;cabecera de tabla
+material topic;6;1;ok;
+carbon neutrality;1;0;indice;glosario
+carbon neutrality;2;1;ok;
+carbon neutrality;3;1;ok;
+carbon neutrality;4;1;ok;
+carbon neutrality;5;1;ok;
+carbon neutrality;6;1;ok;
+circularity;1;1;ok;
+circularity;2;0;otro;nombre de empresa socia
+circularity;3;0;indice;tabla de indicadores
+circularity;4;1;ok;
+circularity;5;1;ok;
+circularity;6;0;generico;nombre de linea de negocio logistica
+deforestation;1;1;ok;
+deforestation;2;1;ok;
+deforestation;3;1;ok;
+deforestation;4;0;indice;tabla ESRS no material
+deforestation;5;1;ok;
+deforestation;6;1;ok;
+methane;1;1;ok;
+methane;2;0;generico;proceso tecnico reformado de metano
+methane;3;1;ok;
+methane;4;1;ok;
+methane;5;1;ok;
+methane;6;1;ok;
+conflict of interest;1;1;ok;
+conflict of interest;2;1;ok;
+conflict of interest;3;1;ok;
+conflict of interest;4;1;ok;
+conflict of interest;5;1;ok;
+conflict of interest;6;1;ok;
+equal\s+opportunit\w+;1;0;otro;nombre de ministerio
+equal\s+opportunit\w+;2;1;ok;
+equal\s+opportunit\w+;3;1;ok;
+equal\s+opportunit\w+;4;1;ok;
+equal\s+opportunit\w+;5;1;ok;
+equal\s+opportunit\w+;6;1;ok;
+social impact;1;1;ok;
+social impact;2;1;ok;
+social impact;3;1;ok;
+social impact;4;1;ok;
+social impact;5;1;ok;
+social impact;6;1;ok;
+double materiality;1;1;ok;
+double materiality;2;1;ok;
+double materiality;3;1;ok;
+double materiality;4;1;ok;
+double materiality;5;1;ok;
+double materiality;6;1;ok;
+training program;1;1;ok;
+training program;2;1;ok;
+training program;3;1;ok;
+training program;4;0;indice;encabezado de seccion
+training program;5;1;ok;
+training program;6;1;ok;
+compliance program;1;1;ok;
+compliance program;2;1;ok;
+compliance program;3;1;ok;
+compliance program;4;1;ok;
+compliance program;5;1;ok;
+compliance program;6;1;ok;
+money laundering;1;1;ok;
+money laundering;2;1;ok;
+money laundering;3;1;ok;
+money laundering;4;1;ok;
+money laundering;5;1;ok;
+money laundering;6;1;ok;
+csrd;1;1;ok;
+csrd;2;1;ok;
+csrd;3;1;ok;
+csrd;4;1;ok;
+csrd;5;0;indice;glosario
+csrd;6;1;ok;
+transition plan;1;1;ok;
+transition plan;2;1;ok;planes de transicion justa
+transition plan;3;1;ok;
+transition plan;4;0;generico;relevo del socio auditor
+transition plan;5;1;ok;
+transition plan;6;0;indice;tabla de correspondencia
+decarbonisation;1;1;ok;
+decarbonisation;2;1;ok;
+decarbonisation;3;1;ok;
+decarbonisation;4;0;otro;biografia de consejera
+decarbonisation;5;1;ok;
+decarbonisation;6;1;ok;
+injury;1;1;ok;seguridad de producto
+injury;2;0;indice;glosario
+injury;3;0;financiero;seguro de lesiones personales
+injury;4;0;indice;tabla GRI
+injury;5;1;ok;
+injury;6;1;ok;
+nutrition;1;1;ok;
+nutrition;2;1;ok;
+nutrition;3;1;ok;
+nutrition;4;0;otro;nombre de empresa cliente
+nutrition;5;1;ok;
+nutrition;6;1;ok;
+animal welfare;1;0;otro;exclusion legal boilerplate
+animal welfare;2;1;ok;
+animal welfare;3;1;ok;
+animal welfare;4;0;otro;exclusion legal boilerplate
+animal welfare;5;0;indice;tabla de correspondencia
+animal welfare;6;1;ok;
+iso\s*14001\b;1;1;ok;
+iso\s*14001\b;2;1;ok;
+iso\s*14001\b;3;1;ok;
+iso\s*14001\b;4;1;ok;
+iso\s*14001\b;5;1;ok;
+iso\s*14001\b;6;1;ok;
+energy management;1;0;generico;funcionalidad de producto
+energy management;2;0;financiero;politica de compra de energia
+energy management;3;0;otro;nombre de agencia ADEME
+energy management;4;1;ok;
+energy management;5;0;indice;referencia cruzada
+energy management;6;1;ok;
+customer satisfaction;1;1;ok;
+customer satisfaction;2;1;ok;
+customer satisfaction;3;0;generico;metrica de plan de incentivos
+customer satisfaction;4;0;generico;prosa comercial
+customer satisfaction;5;1;ok;
+customer satisfaction;6;1;ok;
+antitrust;1;0;indice;encabezado repetido
+antitrust;2;1;ok;
+antitrust;3;1;ok;
+antitrust;4;1;ok;
+antitrust;5;0;indice;tabla SASB
+antitrust;6;1;ok;
+science based target;1;1;ok;
+science based target;2;1;ok;
+science based target;3;1;ok;
+science based target;4;0;indice;glosario
+science based target;5;1;ok;
+science based target;6;1;ok;
+biofuel;1;1;ok;
+biofuel;2;1;ok;
+biofuel;3;1;ok;
+biofuel;4;1;ok;
+biofuel;5;1;ok;
+biofuel;6;1;ok;
+photovoltaic;1;1;ok;
+photovoltaic;2;1;ok;
+photovoltaic;3;0;generico;mercado de producto aislante
+photovoltaic;4;1;ok;
+photovoltaic;5;1;ok;
+photovoltaic;6;1;ok;
+whistleblower;1;1;ok;
+whistleblower;2;1;ok;
+whistleblower;3;0;indice;tabla SASB
+whistleblower;4;1;ok;
+whistleblower;5;1;ok;
+whistleblower;6;1;ok;
+business ethics;1;1;ok;
+business ethics;2;0;indice;referencia cruzada
+business ethics;3;0;indice;referencia cruzada a paginas
+business ethics;4;1;ok;
+business ethics;5;0;indice;encabezado de seccion
+business ethics;6;1;ok;
+global warming;1;1;ok;
+global warming;2;1;ok;
+global warming;3;0;indice;glosario
+global warming;4;1;ok;
+global warming;5;1;ok;
+global warming;6;0;indice;glosario
+succession planning;1;1;ok;
+succession planning;2;1;ok;
+succession planning;3;1;ok;
+succession planning;4;1;ok;
+succession planning;5;1;ok;
+succession planning;6;1;ok;
+freedom of association;1;1;ok;
+freedom of association;2;1;ok;
+freedom of association;3;0;indice;tabla GRI
+freedom of association;4;1;ok;
+freedom of association;5;1;ok;
+freedom of association;6;0;indice;referencia cruzada
+landfill;1;1;ok;
+landfill;2;1;ok;
+landfill;3;1;ok;
+landfill;4;1;ok;
+landfill;5;1;ok;
+landfill;6;1;ok;
+ocean;1;1;ok;
+ocean;2;1;ok;
+ocean;3;1;ok;
+ocean;4;1;ok;transporte maritimo como descarbonizacion
+ocean;5;1;ok;
+ocean;6;0;otro;toponimo Oceano Indico
+regenerative agriculture;1;1;ok;
+regenerative agriculture;2;1;ok;
+regenerative agriculture;3;1;ok;
+regenerative agriculture;4;1;ok;
+regenerative agriculture;5;1;ok;
+regenerative agriculture;6;1;ok;
+ethics and compliance;1;1;ok;
+ethics and compliance;2;1;ok;
+ethics and compliance;3;1;ok;
+ethics and compliance;4;1;ok;
+ethics and compliance;5;0;indice;referencia cruzada
+ethics and compliance;6;1;ok;
+grievance;1;1;ok;
+grievance;2;1;ok;
+grievance;3;0;indice;encabezado de seccion
+grievance;4;1;ok;
+grievance;5;1;ok;
+grievance;6;1;ok;
+dei;1;1;ok;
+dei;2;1;ok;
+dei;3;1;ok;
+dei;4;0;otro;preposicion italiana dei
+dei;5;0;otro;preposicion italiana dei
+dei;6;0;otro;preposicion italiana dei
+wellbeing;1;1;ok;
+wellbeing;2;1;ok;
+wellbeing;3;1;ok;
+wellbeing;4;1;ok;
+wellbeing;5;1;ok;
+wellbeing;6;1;ok;
+iso 14001;1;0;otro;pie de imprenta
+iso 14001;2;1;ok;
+iso 14001;3;1;ok;
+iso 14001;4;1;ok;
+iso 14001;5;1;ok;
+iso 14001;6;1;ok;
+duty of vigilance;1;0;otro;lista de referencias legales
+duty of vigilance;2;0;financiero;salvedad del verificador
+duty of vigilance;3;1;ok;
+duty of vigilance;4;0;financiero;salvedad del verificador
+duty of vigilance;5;0;financiero;salvedad del verificador
+duty of vigilance;6;0;indice;referencia cruzada
+gdpr;1;1;ok;
+gdpr;2;1;ok;
+gdpr;3;1;ok;
+gdpr;4;1;ok;
+gdpr;5;1;ok;
+gdpr;6;1;ok;

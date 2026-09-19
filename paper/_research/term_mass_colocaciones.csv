@@ -1,0 +1,50 @@
+termino;tipo;pilar;sectorial;ocurrencias;documentos;empresas
+environmental\w*;patron;E;0;46144;342;49
+environmentally;patron;E;0;3762;300;49
+carbon footprint;termino;E;0;3425;281;49
+materiality assessment;termino;TRANS;0;2236;157;47
+non-financial information;termino;TRANS;0;1970;246;45
+environmental footprint;termino;E;0;1962;239;44
+non-financial statement;termino;TRANS;0;1816;189;39
+fossil fuel;termino;E;0;1409;233;47
+people with disabilities;termino;S;0;1365;191;40
+non-financial performance;termino;TRANS;0;1160;187;36
+materiality analysis;termino;TRANS;0;990;200;42
+fuel consumption;termino;E;0;951;155;43
+enterprise risk management;termino;G;0;778;176;33
+plastic packaging;termino;E;0;565;62;18
+non-financial reporting;termino;TRANS;0;526;169;46
+solar power;termino;E;0;472;108;33
+solar panel;termino;E;0;445;147;36
+ecosystem service;termino;E;0;383;105;35
+materiality matrix;termino;TRANS;0;350;120;31
+employees with disabilities;termino;S;0;344;136;32
+sustainable aviation fuel;termino;E;0;339;64;26
+business integrity;termino;G;0;337;83;20
+nonfinancial statement;termino;TRANS;0;333;70;20
+natural ecosystem;termino;E;0;292;80;29
+anti-fraud;termino;G;0;259;87;22
+carbon offset;termino;E;0;239;79;27
+persons with disabilities;termino;S;0;238;95;38
+solar energy;termino;E;0;225;98;34
+water footprint;termino;E;0;219;75;23
+sustainable packaging;termino;E;0;219;61;19
+alternative fuel;termino;E;0;192;85;26
+fraud prevention;termino;G;0;177;84;23
+packaging waste;termino;E;0;145;59;16
+esg risk management;termino;G;0;137;31;17
+solar farm;termino;E;0;135;35;11
+solar plant;termino;E;0;130;36;10
+disability inclusion;termino;S;0;123;41;19
+nonfinancial information;termino;TRANS;0;123;74;26
+climate scenario analysis;termino;G;0;96;40;22
+offsett?ing\s+(?:of\s+)?(?:\w+\s+)?emission;patron;E;0;72;45;19
+climate risk management;termino;G;0;71;36;12
+ecological footprint;termino;E;0;70;46;19
+nonfinancial reporting;termino;TRANS;0;63;46;24
+low-carbon fuel;termino;E;0;53;32;13
+recyclable packaging;termino;E;0;40;18;8
+ecosystem restoration;termino;E;0;34;24;12
+sustainability risk management;termino;G;0;16;14;8
+offsett?ing\s+(?:of\s+)?(?:\w+\s+)?carbon;patron;E;0;15;14;7
+recycled packaging;termino;E;0;15;13;6

@@ -1,32 +1,49 @@
-# Vocabulario ESG SECTORIAL — se activa con INCLUDE_SECTORAL en config.py.
+# GENERADO POR scripts/export_vocab_v3.py a partir de metadata/ESG_terms_v3.csv.
+# Para cambiar el vocabulario, edita las decisiones (ESG_terms_v3_decisiones.csv),
+# ejecuta build_vocab_v3.py y despues este script. No editar a mano.
 #
-# Terminos concentrados en un sector o en pocas empresas, medidos sobre los
-# 343 informes: aparecen en 12 empresas o menos, o mas del 50 % de sus
-# ocurrencias estan en una sola empresa. Suman el 2,0 % de la masa candidata.
+# Terminos sectoriales: entran con ESG_INCLUDE_SECTORAL=1.
 #
-# Se separan porque premian a la empresa por su sector y no por cuanto
-# divulga, lo que sesga cualquier comparacion entre companias. Se conservan
-# para poder medir cuanto cambian los resultados al incluirlos.
+# >>> DESPUES DE REGENERAR, EJECUTA:  python scripts/build_lexicons.py
 
-b corp
-better cotton
-board oversight
-community relations
-cop 28
-cop28
+
+# --- E: Ambiental (14) ---
+breeam
+charging point
 cover crop
 ecodesign
 energy storage
-executive compensation
+flaring
+microfiber
+oil spill
+palm oil
+peatland
+sf6
+smart grid
+smart meter
+virgin polyester
+
+# --- S: Social (14) ---
+access to energy
+access to healthcare
+better cotton
+community relations
+conflict mineral
 fairtrade
+food bank
 food safety
-iso 37001
 leather working group
 living income
-microfiber
 nutrition
-peatland
+safety data sheet
 sedex
-sf6
 smeta
-virgin polyester
+
+# --- G: Gobernanza (7) ---
+b corp
+board oversight
+cop 28
+cop28
+executive compensation
+export control
+iso 37001

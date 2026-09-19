@@ -1,0 +1,533 @@
+termino;clave;r1_detecciones;r2_aprobaciones;consenso_r1;consenso_r2;estable;pilar_r1;pilar_r2;pilar_coincide;pilar_disenso_r2;sectorial_r2;colocacion_r2;estado_vocabulario;cubierto_por
+accidental pollution;accidental pollution;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;pollution
+air quality;air quality;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+animal welfare;animal welfare;3;3;máximo;máximo;1;E;E;1;E/S;1;0;en vocabulario;
+avoided emission;avoided emission;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;emission
+biodiversity;biodiversity;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+biodiversity action plan;biodiversity action plan;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;biodiversity
+biofuel;biofuel;3;3;máximo;máximo;1;E;E;1;;1;0;en vocabulario;
+carbon credit;carbon credit;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;carbon
+carbon footprint;carbon footprint;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;footprint
+carbon neutrality;carbon neutrality;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+carbon offset;carbon offset;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;carbon
+carbon sink;carbon sink;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;carbon
+cdp;cdp;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+charging point;charging point;3;3;máximo;máximo;1;E;E;1;;1;0;HUECO;
+circular economy;circular economy;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+climate action;climate action;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;climate
+climate change;climate change;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+climate change adaptation;climate change adaptation;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;climate change
+climate change mitigation;climate change mitigation;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;climate change
+climate resilience;climate resilience;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;climate
+climate risk;climate risk;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;climate
+climate scenario;climate scenario;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;climate
+climate transition plan;climate transition plan;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;transition plan
+co2 emission;co2 emission;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;emission
+corporate average fuel economy;corporate average fuel economy;3;3;máximo;máximo;1;E;E;1;;1;0;cubierto;fuel
+decarbonisation;decarbonization;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+deforestation;deforestation;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+electric vehicle;electric vehicle;3;3;máximo;máximo;1;E;E;1;;1;0;HUECO;
+electrification;electrification;3;3;máximo;máximo;1;E;E;1;;1;0;en vocabulario;
+emission;emission;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+emission factor;emission factor;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;emission
+emission intensity;emission intensity;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;emission
+energy attribute certificate;energy attribute certificate;3;3;máximo;máximo;1;E;E;1;;0;0;HUECO;
+energy consumption;energy consumption;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+energy efficiency;energy efficiency;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+energy mix;energy mix;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+energy saving;energy saving;3;3;máximo;máximo;1;E;E;1;;0;0;HUECO;
+energy transition;energy transition;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+environmental compliance;environmental compliance;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;environ\w+
+environmental footprint;environmental footprint;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;footprint
+environmental impact;environmental impact;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;environ\w+
+environmental impact assessment;environmental impact assessment;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;environ\w+
+environmental management system;environmental management system;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;environ\w+
+environmental performance;environmental performance;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;environ\w+
+environmental policy;environmental policy;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;environ\w+
+environmental protection;environmental protection;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;environ\w+
+environmental risk;environmental risk;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;environ\w+
+eu taxonomy;eu taxonomy;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+food waste;food waste;3;3;máximo;máximo;1;E;E;1;;1;0;cubierto;waste
+ghg neutrality;ghg neutrality;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;ghg
+ghg protocol;ghg protocol;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;ghg
+global warming;global warming;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+green bond;green bond;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+green building;green building;3;3;máximo;máximo;1;E;E;1;;0;0;HUECO;
+green deal;green deal;3;3;máximo;máximo;1;E;E;1;;0;0;HUECO;
+green electricity;green electricity;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;electricity
+green financing;green financing;3;3;máximo;máximo;1;E;E;1;;0;0;HUECO;
+green hydrogen;green hydrogen;3;3;máximo;máximo;1;E;E;1;;1;0;en vocabulario;
+greenhouse gas emission;greenhouse gas emission;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;greenhouse
+hydroelectric;hydroelectric;3;3;máximo;máximo;1;E;E;1;;1;0;en vocabulario;
+internal carbon price;internal carbon price;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;carbon
+iso 14001;iso 14001;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+iso 50001;iso 50001;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+landfill;landfill;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+life cycle assessment;life cycle assessment;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+locked-in emission;locked in emission;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;emission
+low-carbon energy;low carbon energy;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;low carbon
+natural capital;natural capital;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+net zero;net zero;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+nox emission;nox emission;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;emission
+oil spill;oil spill;3;3;máximo;máximo;1;E;E;1;;1;0;HUECO;
+paris agreement;paris agreement;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;paris\s+agreement
+photovoltaic plant;photovoltaic plant;3;3;máximo;máximo;1;E;E;1;;1;0;cubierto;photovoltaic
+physical risk;physical risk;3;3;máximo;máximo;1;E;E;1;;0;1;HUECO;
+pollution;pollution;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+power purchase agreement;power purchase agreement;3;3;máximo;máximo;1;E;E;1;;0;0;HUECO;
+protected area;protected area;3;3;máximo;máximo;1;E;E;1;;0;0;HUECO;
+recycling;recycling;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+reforestation;reforestation;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+refrigerant;refrigerant;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+renewable electricity;renewable electricity;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;electricity
+renewable energy;renewable energy;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;renewable
+residual emission;residual emission;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;emission
+science based target;science based target;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+site remediation;site remediation;3;3;máximo;máximo;1;E;E;1;;0;0;HUECO;
+smart grid;smart grid;3;3;máximo;máximo;1;E;E;1;;1;0;HUECO;
+smart meter;smart meter;3;3;máximo;máximo;1;E;E;1;;1;0;HUECO;
+soil contamination;soil contamination;3;3;máximo;máximo;1;E;E;1;;0;0;HUECO;
+solar panel;solar panel;3;3;máximo;máximo;1;E;E;1;;1;0;cubierto;solar
+sulfur dioxide emission;sulfur dioxide emission;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;emission
+supply chain emission;supply chain emission;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+sustainable aviation fuel;sustainable aviation fuel;3;3;máximo;máximo;1;E;E;1;;1;0;cubierto;sustainable
+sustainable mobility;sustainable mobility;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;sustainable
+sustainable packaging;sustainable packaging;3;3;máximo;máximo;1;E;E;1;;1;0;cubierto;sustainable
+taxonomy-aligned;taxonomy aligned;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+taxonomy-eligible;taxonomy eligible;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+tcfd;tcfd;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+transition risk;transition risk;3;3;máximo;máximo;1;E;E;1;;0;0;HUECO;
+waste generated;waste generated;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;waste
+waste management;waste management;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;waste
+waste recycled;waste recycled;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;waste
+wastewater;wastewater;3;3;máximo;máximo;1;E;E;1;;0;0;en vocabulario;
+water consumption;water consumption;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;water
+water discharge;water discharge;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;water
+water footprint;water footprint;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;footprint
+water stress;water stress;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;water
+water withdrawal;water withdrawal;3;3;máximo;máximo;1;E;E;1;;0;0;cubierto;water
+wind farm;wind farm;3;3;máximo;máximo;1;E;E;1;;1;0;en vocabulario;
+anti-corruption;anti corruption;3;3;máximo;máximo;1;G;G;1;;0;0;cubierto;corruption
+antitrust;antitrust;3;3;máximo;máximo;1;G;G;1;;0;0;en vocabulario;
+audit committee;audit committee;3;3;máximo;máximo;1;G;G;1;;0;0;en vocabulario;
+auditor independence;auditor independence;3;3;máximo;máximo;1;G;G;1;;0;0;HUECO;
+board attendance;board attendance;3;3;máximo;máximo;1;G;G;1;;0;0;HUECO;
+board committee;board committee;3;3;máximo;máximo;1;G;G;1;;0;0;HUECO;
+board diversity;board diversity;3;3;máximo;máximo;1;G;G;1;;0;0;cubierto;diversity
+board evaluation;board evaluation;3;3;máximo;máximo;1;G;G;1;;0;0;HUECO;
+board of directors;board of director;3;3;máximo;máximo;1;G;G;1;;0;0;HUECO;
+business ethics;business ethics;3;3;máximo;máximo;1;G;G;1;;0;0;en vocabulario;
+business integrity;business integrity;3;3;máximo;máximo;1;G;G;1;;0;0;cubierto;integrity
+code of conduct;code of conduct;3;3;máximo;máximo;1;G;G;1;;0;0;en vocabulario;
+code of ethics;code of ethics;3;3;máximo;máximo;1;G;G;1;;0;0;en vocabulario;
+compliance risk;compliance risk;3;3;máximo;máximo;1;G;G;1;;0;0;en vocabulario;
+conflict of interest;conflict of interest;3;3;máximo;máximo;1;G;G;1;;0;0;en vocabulario;
+corporate governance;corporate governance;3;3;máximo;máximo;1;G;G;1;;0;0;cubierto;governance
+corporate governance code;corporate governance code;3;3;máximo;máximo;1;G;G;1;;0;0;cubierto;governance
+cybersecurity;cybersecurity;3;3;máximo;máximo;1;G;G;1;;0;0;en vocabulario;
+enterprise risk management;enterprise risk management;3;3;máximo;máximo;1;G;G;1;;0;0;cubierto;risk management
+esg committee;esg committee;3;3;máximo;máximo;1;G;G;1;;0;0;cubierto;esg
+executive committee;executive committee;3;3;máximo;máximo;1;G;G;1;;0;0;HUECO;
+export control;export control;3;3;máximo;máximo;1;G;G;1;;1;0;HUECO;
+external auditor;external auditor;3;3;máximo;máximo;1;G;G;1;;0;0;HUECO;
+general meeting of shareholders;general meeting of shareholder;3;3;máximo;máximo;1;G;G;1;;0;0;HUECO;
+independent director;independent director;3;3;máximo;máximo;1;G;G;1;;0;0;en vocabulario;
+information security;information security;3;3;máximo;máximo;1;G;G;1;;0;0;en vocabulario;
+internal audit;internal audit;3;3;máximo;máximo;1;G;G;1;;0;0;en vocabulario;
+internal control;internal control;3;3;máximo;máximo;1;G;G;1;;0;1;en vocabulario;
+lobbying;lobbying;3;3;máximo;máximo;1;G;G;1;;0;0;en vocabulario;
+malus;malus;3;3;máximo;máximo;1;G;G;1;;0;1;HUECO;
+management board;management board;3;3;máximo;máximo;1;G;G;1;;0;0;HUECO;
+nomination committee;nomination committee;3;3;máximo;máximo;1;G;G;1;;0;0;HUECO;
+pay ratio;pay ratio;3;3;máximo;máximo;1;G;G;1;;0;0;HUECO;
+related party transaction;related party transaction;3;3;máximo;máximo;1;G;G;1;;0;0;cubierto;related party
+remuneration committee;remuneration committee;3;3;máximo;máximo;1;G;G;1;;0;0;cubierto;remuneration
+remuneration policy;remuneration policy;3;3;máximo;máximo;1;G;G;1;;0;0;cubierto;remuneration
+shareholder rights;shareholder right;3;3;máximo;máximo;1;G;G;1;;0;0;HUECO;
+short-term incentive;short term incentive;3;3;máximo;máximo;1;G;G;1;;0;0;HUECO;
+succession planning;succession planning;3;3;máximo;máximo;1;G;G;1;;0;0;en vocabulario;
+supervisory board;supervisory board;3;3;máximo;máximo;1;G;G;1;;0;0;HUECO;
+sustainability committee;sustainability committee;3;3;máximo;máximo;1;G;G;1;;0;0;cubierto;sustainability
+tax transparency;tax transparency;3;3;máximo;máximo;1;G;G;1;;0;0;en vocabulario;
+variable remuneration;variable remuneration;3;3;máximo;máximo;1;G;G;1;;0;0;cubierto;remuneration
+access to energy;access to energy;3;3;máximo;máximo;1;S;S;1;;1;0;HUECO;
+access to healthcare;access to healthcare;3;3;máximo;máximo;1;S;S;1;;1;0;HUECO;
+accident rate;accident rate;3;3;máximo;máximo;1;S;S;1;;0;0;HUECO;
+bioethics;bioethic;3;3;máximo;máximo;1;S;S;1;;1;0;HUECO;
+child labour;child labor;3;3;máximo;máximo;1;S;S;1;;0;0;en vocabulario;
+childcare;childcare;3;3;máximo;máximo;1;S;S;1;;0;0;HUECO;
+collective bargaining agreement;collective bargaining agreement;3;3;máximo;máximo;1;S;S;1;;0;0;cubierto;collective bargaining
+community engagement;community engagement;3;3;máximo;máximo;1;S;S;1;;0;0;en vocabulario;
+conflict mineral;conflict mineral;3;3;máximo;máximo;1;S;S;1;;1;0;HUECO;
+corporate volunteering;corporate volunteering;3;3;máximo;máximo;1;S;S;1;;0;0;HUECO;
+counterfeiting;counterfeiting;3;3;máximo;máximo;1;S;S;1;;1;0;HUECO;
+data privacy;data privacy;3;3;máximo;máximo;1;G;S;0;;0;0;en vocabulario;
+data protection;data protection;3;3;máximo;máximo;1;G;S;0;;0;0;en vocabulario;
+diversity equity and inclusion;diversity equity and inclusion;3;3;máximo;máximo;1;S;S;1;;0;0;cubierto;diversity
+employee engagement;employee engagement;3;3;máximo;máximo;1;S;S;1;;0;0;en vocabulario;
+employee training;employee training;3;3;máximo;máximo;1;S;S;1;;0;0;HUECO;
+employee turnover;employee turnover;3;3;máximo;máximo;1;S;S;1;;0;0;HUECO;
+equal pay;equal pay;3;3;máximo;máximo;1;S;S;1;;0;0;en vocabulario;
+fair labour condition;fair labor condition;3;3;máximo;máximo;1;S;S;1;;0;0;cubierto;fair labor
+female representation;female representation;3;3;máximo;máximo;1;S;S;1;;0;0;en vocabulario;
+forced labour;forced labor;3;3;máximo;máximo;1;S;S;1;;0;0;en vocabulario;
+gender balance;gender balance;3;3;máximo;máximo;1;S;S;1;;0;0;cubierto;gender
+gender diversity;gender diversity;3;3;máximo;máximo;1;S;S;1;;0;0;cubierto;diversity
+gender equality;gender equality;3;3;máximo;máximo;1;S;S;1;;0;0;cubierto;equality
+harmful consumption;harmful consumption;3;3;máximo;máximo;1;S;S;1;;1;0;HUECO;
+healthy eating;healthy eating;3;3;máximo;máximo;1;S;S;1;;1;0;HUECO;
+human rights;human right;3;3;máximo;máximo;1;S;S;1;;0;0;en vocabulario;
+human rights due diligence;human right due diligence;3;3;máximo;máximo;1;S;S;1;;0;0;cubierto;due diligence
+ilo convention;ilo convention;3;3;máximo;máximo;1;S;S;1;;0;0;cubierto;ilo
+inclusive insurance;inclusive insurance;3;3;máximo;máximo;1;S;S;1;;1;0;cubierto;inclusive
+labour law;labor law;3;3;máximo;máximo;1;S;S;1;;0;0;HUECO;
+living wage;living wage;3;3;máximo;máximo;1;S;S;1;;0;0;en vocabulario;
+local community;local community;3;3;máximo;máximo;1;S;S;1;;0;0;en vocabulario;
+medical ethics;medical ethics;3;3;máximo;máximo;1;S;S;1;;1;0;HUECO;
+minimum wage;minimum wage;3;3;máximo;máximo;1;S;S;1;;0;0;en vocabulario;
+musculoskeletal disorder;musculoskeletal disorder;3;3;máximo;máximo;1;S;S;1;;0;0;HUECO;
+non-discrimination;non discrimination;3;3;máximo;máximo;1;S;S;1;;0;0;cubierto;discrimination
+occupational health and safety;occupational health and safety;3;3;máximo;máximo;1;S;S;1;;0;0;cubierto;occupational health
+occupational illness;occupational illness;3;3;máximo;máximo;1;S;S;1;;0;0;HUECO;
+patient safety;patient safety;3;3;máximo;máximo;1;S;S;1;;1;0;HUECO;
+pay transparency;pay transparency;3;3;máximo;máximo;1;S;S;1;;0;0;cubierto;transparency
+philanthropy;philanthropy;3;3;máximo;máximo;1;S;S;1;;0;0;en vocabulario;
+product safety;product safety;3;3;máximo;máximo;1;S;S;1;;0;0;en vocabulario;
+psychological safety;psychological safety;3;3;máximo;máximo;1;S;S;1;;0;0;HUECO;
+psychosocial risk;psychosocial risk;3;3;máximo;máximo;1;S;S;1;;0;0;HUECO;
+responsible sourcing;responsible sourcing;3;3;máximo;máximo;1;S;S;1;;0;0;en vocabulario;
+road safety;road safety;3;3;máximo;máximo;1;S;S;1;;1;0;en vocabulario;
+social dialogue;social dialogue;3;3;máximo;máximo;1;S;S;1;;0;0;en vocabulario;
+supplier code of conduct;supplier code of conduct;3;3;máximo;máximo;1;G;S;0;;0;0;cubierto;code of conduct
+talent attraction and retention;talent attraction and retention;3;3;máximo;máximo;1;S;S;1;;0;0;HUECO;
+talent development;talent development;3;3;máximo;máximo;1;S;S;1;;0;0;en vocabulario;
+trade union;trade union;3;3;máximo;máximo;1;S;S;1;;0;0;en vocabulario;
+training hour;training hour;3;3;máximo;máximo;1;S;S;1;;0;0;en vocabulario;
+voluntary principles on security and human rights;voluntary principle on security and human right;3;3;máximo;máximo;1;S;S;1;;1;0;cubierto;human right
+work-life balance;work life balance;3;3;máximo;máximo;1;S;S;1;;0;0;en vocabulario;
+working condition;working condition;3;3;máximo;máximo;1;S;S;1;;0;0;HUECO;
+works council;works council;3;3;máximo;máximo;1;S;S;1;;0;0;en vocabulario;
+2030 agenda;2030 agenda;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;HUECO;
+corporate social responsibility;corporate social responsibility;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;social responsibility
+csrd;csrd;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;en vocabulario;
+double materiality;double materiality;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;en vocabulario;
+dow jones sustainability index;dow jone sustainability index;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;sustainability
+ecovadis;ecovadis;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;en vocabulario;
+esg;esg;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;en vocabulario;
+esg data;esg data;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;esg
+esg rating;esg rating;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;esg
+esg reporting;esg reporting;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;esg
+esg risk;esg risk;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;esg
+esg topic;esg topic;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;esg
+esrs;esr;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;en vocabulario;
+external assurance;external assurance;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;HUECO;
+ftse4good;ftse4good;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;en vocabulario;
+global reporting initiative;global reporting initiative;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;en vocabulario;
+gri standard;gri standard;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;gri
+integrated report;integrated report;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;HUECO;
+limited assurance;limited assurance;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;HUECO;
+material topic;material topic;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;en vocabulario;
+materiality assessment;materiality assessment;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;materiality
+materiality matrix;materiality matrix;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;materiality
+non-financial information;non financial information;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;non financial
+non-financial rating agency;non financial rating agency;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;non financial
+non-financial reporting;non financial reporting;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;non financial
+oecd guidelines for multinational enterprises;oecd guideline for multinational enterpris;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;oecd guideline
+sasb;sasb;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;en vocabulario;
+sfdr;sfdr;3;3;máximo;máximo;1;TRANS;TRANS;1;;1;0;en vocabulario;
+stakeholder engagement;stakeholder engagement;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;stakeholder
+sustainability;sustainability;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;en vocabulario;
+sustainability due diligence;sustainability due diligence;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;sustainability
+sustainability-linked bond;sustainability linked bond;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;sustainability
+sustainability report;sustainability report;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;sustainability
+sustainability strategy;sustainability strategy;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;sustainability
+sustainability target;sustainability target;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;sustainability
+sustainable development;sustainable development;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;sustainable
+sustainable development goal;sustainable development goal;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;cubierto;sustainable
+un global compact;un global compact;3;3;máximo;máximo;1;TRANS;TRANS;1;;0;0;en vocabulario;
+breeam;breeam;2;3;alto;máximo;0;E;E;1;;1;0;HUECO;
+cage-free egg;cage free egg;2;3;alto;máximo;0;E;E;1;E/S;1;0;HUECO;
+carbon emission;carbon emission;2;3;alto;máximo;0;E;E;1;;0;0;cubierto;emission
+carbon neutral;carbon neutral;2;3;alto;máximo;0;E;E;1;;0;0;cubierto;carbon
+carbon removal;carbon removal;2;3;alto;máximo;0;E;E;1;;0;0;cubierto;carbon
+circularity;circularity;2;3;alto;máximo;0;E;E;1;;0;0;en vocabulario;
+climate hazard;climate hazard;2;3;alto;máximo;0;E;E;1;;0;0;cubierto;climate
+climate-related risk;climate related risk;2;3;alto;máximo;0;E;E;1;;0;0;cubierto;climate
+climate scenario analysis;climate scenario analysis;2;3;alto;máximo;0;E;E;1;;0;0;cubierto;scenario analysis
+coal-fired power plant;coal fired power plant;2;3;alto;máximo;0;E;E;1;;1;0;cubierto;coal
+corsia;corsia;2;3;alto;máximo;0;E;E;1;;1;0;HUECO;
+diesel emission;diesel emission;2;3;alto;máximo;0;E;E;1;;1;0;cubierto;emission
+ecodesign;ecodesign;2;3;alto;máximo;0;E;E;1;;0;0;en vocabulario;
+emission reduction target;emission reduction target;2;3;alto;máximo;0;E;E;1;;0;0;cubierto;emission
+environmental indicator;environmental indicator;2;3;alto;máximo;0;E;E;1;;0;0;cubierto;environ\w+
+environmental product declaration;environmental product declaration;2;3;alto;máximo;0;E;E;1;;0;0;cubierto;environ\w+
+extreme weather event;extreme weather event;2;3;alto;máximo;0;E;E;1;;0;0;HUECO;
+flaring;flaring;2;3;alto;máximo;0;E;E;1;;1;0;HUECO;
+fossil fuel;fossil fuel;2;3;alto;máximo;0;E;E;1;;0;0;cubierto;fuel
+ghg emission;ghg emission;2;3;alto;máximo;0;E;E;1;;0;0;cubierto;emission
+groundwater contamination;groundwater contamination;2;3;alto;máximo;0;E;E;1;;0;0;HUECO;
+installed renewable capacity;installed renewable capacity;2;3;alto;máximo;0;E;E;1;;1;0;cubierto;renewable
+leed;leed;2;3;alto;máximo;0;E;E;1;;1;0;en vocabulario;
+natural resource;natural resource;2;3;alto;máximo;0;E;E;1;;0;0;HUECO;
+offshore wind;offshore wind;2;3;alto;máximo;0;E;E;1;;1;0;HUECO;
+ozone layer;ozone layer;2;3;alto;máximo;0;E;E;1;;0;0;HUECO;
+palm oil;palm oil;2;3;alto;máximo;0;E;E;1;;1;0;HUECO;
+pharmaceutical residue;pharmaceutical residue;2;3;alto;máximo;0;E;E;1;;1;0;HUECO;
+plastic waste;plastic waste;2;3;alto;máximo;0;E;E;1;;0;0;cubierto;plastic
+product stewardship;product stewardship;2;3;alto;máximo;0;S;E;0;;0;0;HUECO;
+re100;re100;2;3;alto;máximo;0;E;E;1;;0;0;HUECO;
+recycled content;recycled content;2;3;alto;máximo;0;E;E;1;;0;0;cubierto;recycl\w+
+sbti;sbti;2;3;alto;máximo;0;E;E;1;;0;0;en vocabulario;
+scope 1 emission;scope 1 emission;2;3;alto;máximo;0;E;E;1;;0;0;cubierto;emission
+scope 2 emission;scope 2 emission;2;3;alto;máximo;0;E;E;1;;0;0;cubierto;emission
+scope 3 emission;scope 3 emission;2;3;alto;máximo;0;E;E;1;;0;0;cubierto;emission
+voluntary emission reduction certificate;voluntary emission reduction certificate;2;3;alto;máximo;0;E;E;1;;0;0;cubierto;emission
+waste;waste;2;3;alto;máximo;0;E;E;1;;0;0;en vocabulario;
+anti-bribery;anti bribery;2;3;alto;máximo;0;G;G;1;;0;0;cubierto;bribery
+board composition;board composition;2;3;alto;máximo;0;G;G;1;;0;0;HUECO;
+board independence;board independence;2;3;alto;máximo;0;G;G;1;;0;0;HUECO;
+board tenure;board tenure;2;3;alto;máximo;0;G;G;1;;0;0;HUECO;
+bribery;bribery;2;3;alto;máximo;0;G;G;1;;0;0;en vocabulario;
+chief sustainability officer;chief sustainability officer;2;3;alto;máximo;0;TRANS;G;0;;0;0;cubierto;sustainability
+compliance programme;compliance program;2;3;alto;máximo;0;G;G;1;;0;0;en vocabulario;
+corporate governance statement;corporate governance statement;2;3;alto;máximo;0;G;G;1;;0;0;cubierto;governance
+corruption;corruption;2;3;alto;máximo;0;G;G;1;;0;0;en vocabulario;
+deferred prosecution agreement;deferred prosecution agreement;2;3;alto;máximo;0;G;G;1;;0;0;HUECO;
+ethical culture;ethical culture;2;3;alto;máximo;0;G;G;1;;0;0;cubierto;ethical
+ethics training;ethics training;2;3;alto;máximo;0;G;G;1;;0;0;HUECO;
+executive remuneration;executive remuneration;2;3;alto;máximo;0;G;G;1;;0;0;cubierto;remuneration
+fraud prevention;fraud prevention;2;3;alto;máximo;0;G;G;1;;0;0;cubierto;fraud
+governance risk and compliance;governance risk and compliance;2;3;alto;máximo;0;G;G;1;;0;0;cubierto;governance
+governance structure;governance structure;2;3;alto;máximo;0;G;G;1;;0;0;cubierto;governance
+long-term incentive;long term incentive;2;3;alto;máximo;0;G;G;1;;0;0;HUECO;
+remuneration report;remuneration report;2;3;alto;máximo;0;G;G;1;;0;0;cubierto;remuneration
+responsible lobbying;responsible lobbying;2;3;alto;máximo;0;G;G;1;;0;0;cubierto;lobbying
+responsible tax;responsible tax;2;3;alto;máximo;0;G;G;1;;0;0;HUECO;
+senior independent director;senior independent director;2;3;alto;máximo;0;G;G;1;;0;0;cubierto;independent director
+three lines of defense;three line of defense;2;3;alto;máximo;0;G;G;1;;0;0;HUECO;
+voting right;voting right;2;3;alto;máximo;0;G;G;1;;0;0;HUECO;
+collective labour agreement;collective labor agreement;2;3;alto;máximo;0;S;S;1;;0;0;HUECO;
+corporate human rights benchmark;corporate human right benchmark;2;3;alto;máximo;0;S;S;1;;0;0;cubierto;human right
+disability;disability;2;3;alto;máximo;0;S;S;1;;0;1;en vocabulario;
+employee engagement survey;employee engagement survey;2;3;alto;máximo;0;S;S;1;;0;0;cubierto;employee engagement
+employee share ownership;employee share ownership;2;3;alto;máximo;0;S;S;1;;0;0;HUECO;
+employee wellness programme;employee wellness program;2;3;alto;máximo;0;S;S;1;;0;0;cubierto;employee\s+well\w*
+food bank;food bank;2;3;alto;máximo;0;S;S;1;;1;0;HUECO;
+inclusion;inclusion;2;3;alto;máximo;0;S;S;1;;0;1;en vocabulario;
+inclusive workplace;inclusive workplace;2;3;alto;máximo;0;S;S;1;;0;0;cubierto;inclusive
+injury rate;injury rate;2;3;alto;máximo;0;S;S;1;;0;0;cubierto;injury
+nutrition;nutrition;2;3;alto;máximo;0;S;S;1;;1;0;en vocabulario;
+parental leave;parental leave;2;3;alto;máximo;0;S;S;1;;0;0;HUECO;
+skills development;skill development;2;3;alto;máximo;0;S;S;1;;0;0;HUECO;
+supplier sustainability score;supplier sustainability score;2;3;alto;máximo;0;S;S;1;;0;0;cubierto;sustainability
+un guiding principles;un guiding principle;2;3;alto;máximo;0;S;S;1;;0;0;HUECO;
+vulnerable group;vulnerable group;2;3;alto;máximo;0;S;S;1;;0;0;HUECO;
+well-being;well being;2;3;alto;máximo;0;S;S;1;;0;1;HUECO;
+zero accident;zero accident;2;3;alto;máximo;0;S;S;1;;0;0;HUECO;
+corporate responsibility;corporate responsibility;2;3;alto;máximo;0;TRANS;TRANS;1;;0;0;HUECO;
+corporate sustainability assessment;corporate sustainability assessment;2;3;alto;máximo;0;TRANS;TRANS;1;;0;0;cubierto;sustainability
+esg objective;esg objective;2;3;alto;máximo;0;TRANS;TRANS;1;;0;0;cubierto;esg
+esg target;esg target;2;3;alto;máximo;0;TRANS;TRANS;1;;0;0;cubierto;esg
+gri indicator;gri indicator;2;3;alto;máximo;0;TRANS;TRANS;1;;0;0;cubierto;gri
+iirc;iirc;2;3;alto;máximo;0;TRANS;TRANS;1;;0;0;HUECO;
+non-financial statement;non financial statement;2;3;alto;máximo;0;TRANS;TRANS;1;;0;0;cubierto;non financial
+sustainability performance;sustainability performance;2;3;alto;máximo;0;TRANS;TRANS;1;;0;0;cubierto;sustainability
+afforestation;afforestation;1;3;bajo;máximo;0;E;E;1;;0;0;HUECO;
+air emission;air emission;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;emission
+business travel emission;business travel emission;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;emission
+cage free;cage free;1;3;bajo;máximo;0;E;E;1;E/S;1;0;HUECO;
+carbon literacy;carbon literacy;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;carbon
+clean energy;clean energy;1;3;bajo;máximo;0;E;E;1;;0;0;en vocabulario;
+climate impact;climate impact;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;climate
+climate objective;climate objective;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;climate
+climate-related health impact;climate related health impact;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;climate
+coal-fired plant;coal fired plant;1;3;bajo;máximo;0;E;E;1;;1;0;cubierto;coal
+direct emission;direct emission;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;emission
+eco-design;eco design;1;3;bajo;máximo;0;E;E;1;;0;0;HUECO;
+eligible green project;eligible green project;1;3;bajo;máximo;0;E;E;1;;0;0;HUECO;
+emission reduction;emission reduction;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;emission
+emissions trading system;emission trading system;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;emission
+employee commuting;employee commuting;1;3;bajo;máximo;0;E;E;1;;0;0;HUECO;
+employee commuting emission;employee commuting emission;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;emission
+energy management system;energy management system;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;energy management
+environmental damage;environmental damage;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;environ\w+
+geothermal;geothermal;1;3;bajo;máximo;0;E;E;1;;1;0;en vocabulario;
+green bond principles;green bond principle;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;green bond
+green energy;green energy;1;3;bajo;máximo;0;E;E;1;;0;0;en vocabulario;
+green investment;green investment;1;3;bajo;máximo;0;E;E;1;;0;0;en vocabulario;
+green project;green project;1;3;bajo;máximo;0;E;E;1;;0;0;HUECO;
+groundwater;groundwater;1;3;bajo;máximo;0;E;E;1;;0;0;HUECO;
+hard-to-abate emission;hard to abate emission;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;emission
+hydrocarbon spill;hydrocarbon spill;1;3;bajo;máximo;0;E;E;1;;1;0;HUECO;
+indirect emission;indirect emission;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;emission
+logistics emission;logistic emission;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;emission
+methane emission;methane emission;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;emission
+mitigation hierarchy;mitigation hierarchy;1;3;bajo;máximo;0;E;E;1;;0;0;HUECO;
+pollutant;pollutant;1;3;bajo;máximo;0;E;E;1;;0;0;HUECO;
+product use emission;product use emission;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;emission
+reach registration;reach registration;1;3;bajo;máximo;0;S;E;0;;1;0;HUECO;
+renewable electricity certificate;renewable electricity certificate;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;electricity
+renewable installed capacity;renewable installed capacity;1;3;bajo;máximo;0;E;E;1;;1;0;cubierto;renewable
+renewable source;renewable source;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;renewable
+reuse;reuse;1;3;bajo;máximo;0;E;E;1;;0;0;HUECO;
+Science Based Targets initiative;science based target initiative;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;science based target
+scope 1;scope 1;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;scope\s*[123]\b
+scope 2;scope 2;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;scope\s*[123]\b
+scope 3;scope 3;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;scope\s*[123]\b
+value chain emission;value chain emission;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;emission
+waste heat;waste heat;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;waste
+waste-to-energy;waste to energy;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;waste
+water management;water management;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;water
+water management plan;water management plan;1;3;bajo;máximo;0;E;E;1;;0;0;cubierto;water
+annual corporate governance report;annual corporate governance report;1;3;bajo;máximo;0;G;G;1;;0;0;cubierto;governance
+anti-bribery management system;anti bribery management system;1;3;bajo;máximo;0;G;G;1;;0;0;cubierto;bribery
+board diversity policy;board diversity policy;1;3;bajo;máximo;0;G;G;1;;0;0;cubierto;diversity
+board sustainability expertise;board sustainability expertise;1;3;bajo;máximo;0;G;G;1;;0;0;cubierto;sustainability
+competition law;competition law;1;3;bajo;máximo;0;G;G;1;;0;0;HUECO;
+compliance system;compliance system;1;3;bajo;máximo;0;G;G;1;;0;0;HUECO;
+controlling shareholder;controlling shareholder;1;3;bajo;máximo;0;G;G;1;;0;0;HUECO;
+coso framework;coso framework;1;3;bajo;máximo;0;G;G;1;;0;0;HUECO;
+director independence;director independence;1;3;bajo;máximo;0;G;G;1;;0;0;HUECO;
+economic sanction;economic sanction;1;3;bajo;máximo;0;G;G;1;;0;0;cubierto;sanction
+ethical principle;ethical principle;1;3;bajo;máximo;0;G;G;1;;0;0;cubierto;ethical
+ethics and compliance;ethics and compliance;1;3;bajo;máximo;0;G;G;1;;0;0;en vocabulario;
+Ethisphere;ethisphere;1;3;bajo;máximo;0;G;G;1;;0;0;HUECO;
+executive compensation;executive compensation;1;3;bajo;máximo;0;G;G;1;;0;0;en vocabulario;
+fixed remuneration;fixed remuneration;1;3;bajo;máximo;0;G;G;1;;0;0;cubierto;remuneration
+governance body;governance body;1;3;bajo;máximo;0;G;G;1;;0;0;cubierto;governance
+governance risk and compliance framework;governance risk and compliance framework;1;3;bajo;máximo;0;G;G;1;;0;0;cubierto;governance
+long-term incentive plan;long term incentive plan;1;3;bajo;máximo;0;G;G;1;;0;0;HUECO;
+loyalty voting structure;loyalty voting structure;1;3;bajo;máximo;0;G;G;1;;0;0;HUECO;
+non-audit service;non audit service;1;3;bajo;máximo;0;G;G;1;;0;0;HUECO;
+qualification matrix;qualification matrix;1;3;bajo;máximo;0;G;G;1;;0;1;HUECO;
+risk committee;risk committee;1;3;bajo;máximo;0;G;G;1;;0;0;HUECO;
+speak-up;speak up;1;3;bajo;máximo;0;G;G;1;;0;1;en vocabulario;
+speak-up culture;speak up culture;1;3;bajo;máximo;0;G;G;1;;0;0;cubierto;speak up
+speak-up line;speak up line;1;3;bajo;máximo;0;G;G;1;;0;0;cubierto;speak up
+special voting share;special voting share;1;3;bajo;máximo;0;G;G;1;;0;0;HUECO;
+sustainable taxation;sustainable taxation;1;3;bajo;máximo;0;G;G;1;;0;0;cubierto;sustainable
+tax policy;tax policy;1;3;bajo;máximo;0;G;G;1;;0;1;en vocabulario;
+three lines of defence;three line of defence;1;3;bajo;máximo;0;G;G;1;;0;0;HUECO;
+trade sanction;trade sanction;1;3;bajo;máximo;0;G;G;1;;0;0;cubierto;sanction
+whistle-blowing hotline;whistle blowing hotline;1;3;bajo;máximo;0;G;G;1;;0;0;HUECO;
+whistleblowing;whistleblowing;1;3;bajo;máximo;0;G;G;1;;0;0;en vocabulario;
+whistleblowing hotline;whistleblowing hotline;1;3;bajo;máximo;0;G;G;1;;0;0;cubierto;whistleblowing
+worlds most ethical companies;world most ethical company;1;3;bajo;máximo;0;TRANS;G;0;;0;0;cubierto;ethical
+access to land;access to land;1;3;bajo;máximo;0;S;S;1;;1;0;HUECO;
+anti-discrimination policy;anti discrimination policy;1;3;bajo;máximo;0;S;S;1;;0;0;cubierto;discrimination
+collective bargaining;collective bargaining;1;3;bajo;máximo;0;S;S;1;;0;0;en vocabulario;
+consumer health;consumer health;1;3;bajo;máximo;0;S;S;1;;0;0;HUECO;
+consumer health and safety;consumer health and safety;1;3;bajo;máximo;0;S;S;1;;0;0;cubierto;health and safety
+consumer safety;consumer safety;1;3;bajo;máximo;0;S;S;1;;0;0;HUECO;
+customer health and nutrition;customer health and nutrition;1;3;bajo;máximo;0;S;S;1;;1;0;cubierto;nutrition
+disability employment;disability employment;1;3;bajo;máximo;0;S;S;1;;0;0;cubierto;disability
+diversity and inclusion;diversity and inclusion;1;3;bajo;máximo;0;S;S;1;;0;0;cubierto;diversity
+diversity policy;diversity policy;1;3;bajo;máximo;0;G;S;0;;0;0;cubierto;diversity
+employee representative;employee representative;1;3;bajo;máximo;0;S;S;1;;0;0;HUECO;
+employee share ownership plan;employee share ownership plan;1;3;bajo;máximo;0;S;S;1;;0;0;HUECO;
+employee well-being;employee well being;1;3;bajo;máximo;0;S;S;1;;0;0;cubierto;employee\s+well\w*
+employee wellness;employee wellness;1;3;bajo;máximo;0;S;S;1;;0;0;cubierto;employee\s+well\w*
+health and safety;health and safety;1;3;bajo;máximo;0;S;S;1;;0;0;en vocabulario;
+hse;hse;1;3;bajo;máximo;0;TRANS;S;0;S/TRANS;0;0;HUECO;
+human capital;human capital;1;3;bajo;máximo;0;S;S;1;;0;0;en vocabulario;
+low-alcohol beer;low alcohol beer;1;3;bajo;máximo;0;S;S;1;;1;0;HUECO;
+material safety data sheet;material safety data sheet;1;3;bajo;máximo;0;S;S;1;;1;0;HUECO;
+maternity and paternity leave;maternity and paternity leave;1;3;bajo;máximo;0;S;S;1;;0;0;cubierto;maternity
+personal data;personal data;1;3;bajo;máximo;0;G;S;0;;0;0;HUECO;
+pharmacovigilance;pharmacovigilance;1;3;bajo;máximo;0;S;S;1;;1;0;HUECO;
+private security provider;private security provider;1;3;bajo;máximo;0;S;S;1;;1;0;HUECO;
+product recall;product recall;1;3;bajo;máximo;0;S;S;1;;0;0;HUECO;
+product responsibility;product responsibility;1;3;bajo;máximo;0;S;S;1;;0;0;HUECO;
+product traceability;product traceability;1;3;bajo;máximo;0;S;S;1;;0;0;HUECO;
+rba code of conduct;rba code of conduct;1;3;bajo;máximo;0;S;S;1;;1;0;cubierto;code of conduct
+responsible supply chain management;responsible supply chain management;1;3;bajo;máximo;0;S;S;1;;0;0;cubierto;supply chain management
+safety at work;safety at work;1;3;bajo;máximo;0;S;S;1;;0;0;HUECO;
+safety data sheet;safety data sheet;1;3;bajo;máximo;0;S;S;1;;1;0;HUECO;
+supplier assessment;supplier assessment;1;3;bajo;máximo;0;S;S;1;;0;1;en vocabulario;
+supplier audit;supplier audit;1;3;bajo;máximo;0;S;S;1;;0;0;HUECO;
+supplier sustainability assessment;supplier sustainability assessment;1;3;bajo;máximo;0;S;S;1;;0;0;cubierto;sustainability
+supply chain human rights;supply chain human right;1;3;bajo;máximo;0;S;S;1;;0;0;en vocabulario;
+supply chain responsibility;supply chain responsibility;1;3;bajo;máximo;0;S;S;1;;0;0;HUECO;
+traceability;traceability;1;3;bajo;máximo;0;S;S;1;;0;1;HUECO;
+un guiding principles on business and human rights;un guiding principle on business and human right;1;3;bajo;máximo;0;S;S;1;;0;0;cubierto;human right
+vehicle recall;vehicle recall;1;3;bajo;máximo;0;S;S;1;;1;0;HUECO;
+vehicle safety;vehicle safety;1;3;bajo;máximo;0;S;S;1;;1;0;HUECO;
+vulnerable population;vulnerable population;1;3;bajo;máximo;0;S;S;1;;0;0;HUECO;
+women in management;woman in management;1;3;bajo;máximo;0;S;S;1;;0;0;HUECO;
+women in management position;woman in management position;1;3;bajo;máximo;0;S;S;1;;0;0;HUECO;
+working hours;working hour;1;3;bajo;máximo;0;S;S;1;;0;0;HUECO;
+workplace safety;workplace safety;1;3;bajo;máximo;0;S;S;1;;0;0;HUECO;
+csr policy;csr policy;1;3;bajo;máximo;0;TRANS;TRANS;1;;0;0;cubierto;csr
+esg factor;esg factor;1;3;bajo;máximo;0;TRANS;TRANS;1;;0;0;cubierto;esg
+esg performance measure;esg performance measure;1;3;bajo;máximo;0;G;TRANS;0;;0;0;cubierto;esg
+esg score;esg score;1;3;bajo;máximo;0;TRANS;TRANS;1;;0;0;cubierto;esg
+iss esg;iss esg;1;3;bajo;máximo;0;TRANS;TRANS;1;;0;0;cubierto;esg
+materiality;materiality;1;3;bajo;máximo;0;TRANS;TRANS;1;;0;1;en vocabulario;
+msci esg rating;msci esg rating;1;3;bajo;máximo;0;TRANS;TRANS;1;;0;0;cubierto;msci esg
+non-financial performance;non financial performance;1;3;bajo;máximo;0;TRANS;TRANS;1;;0;0;cubierto;non financial
+s&p global corporate sustainability assessment;s p global corporate sustainability assessment;1;3;bajo;máximo;0;TRANS;TRANS;1;;0;0;cubierto;sustainability
+socially responsible investor;socially responsible investor;1;3;bajo;máximo;0;TRANS;TRANS;1;;0;0;HUECO;
+stakeholder dialogue;stakeholder dialogue;1;3;bajo;máximo;0;TRANS;TRANS;1;;0;0;cubierto;stakeholder
+stakeholder expectation;stakeholder expectation;1;3;bajo;máximo;0;TRANS;TRANS;1;;0;0;cubierto;stakeholder
+sustainability index;sustainability index;1;3;bajo;máximo;0;TRANS;TRANS;1;;0;0;cubierto;sustainability
+sustainability policy;sustainability policy;1;3;bajo;máximo;0;TRANS;TRANS;1;;0;0;cubierto;sustainability
+sustainability reporting;sustainability reporting;1;3;bajo;máximo;0;TRANS;TRANS;1;;0;0;cubierto;sustainability
+sustainability statements;sustainability statement;1;3;bajo;máximo;0;TRANS;TRANS;1;;0;0;cubierto;sustainability
+sustainable finance;sustainable finance;1;3;bajo;máximo;0;TRANS;TRANS;1;;0;0;cubierto;sustainable
+sustainable financing;sustainable financing;1;3;bajo;máximo;0;TRANS;TRANS;1;;0;0;cubierto;sustainable
+ecosystem;ecosystem;3;2;máximo;alto;0;E;E;1;;0;1;en vocabulario;
+articles of association;article of association;3;2;máximo;alto;0;G;G;1;;0;0;HUECO;
+regulatory compliance;regulatory compliance;3;2;máximo;alto;0;G;G;1;;0;0;en vocabulario;
+societal impact;societal impact;3;2;máximo;alto;0;S;S;1;;0;0;HUECO;
+workforce;workforce;3;2;máximo;alto;0;S;S;1;;0;0;HUECO;
+stakeholder;stakeholder;3;2;máximo;alto;0;TRANS;TRANS;1;;0;0;en vocabulario;
+green recovery;green recovery;2;2;alto;alto;1;E;E;1;;0;0;HUECO;
+performance share;performance share;2;2;alto;alto;1;G;G;1;;0;1;HUECO;
+shared value;shared value;2;2;alto;alto;1;S;TRANS;0;;0;1;HUECO;
+business travel;business travel;1;2;bajo;alto;0;E;E;1;;0;1;HUECO;
+corporate culture;corporate culture;1;2;bajo;alto;0;G;G;1;;0;0;HUECO;
+esg-related control;esg related control;1;2;bajo;alto;0;G;G;1;;0;0;cubierto;esg
+esg agenda;esg agenda;1;2;bajo;alto;0;TRANS;TRANS;1;;0;0;cubierto;esg
+esg ambition;esg ambition;1;2;bajo;alto;0;TRANS;TRANS;1;;0;0;cubierto;esg
+sustainability ambition;sustainability ambition;1;2;bajo;alto;0;TRANS;TRANS;1;;0;0;cubierto;sustainability
+risk appetite;risk appetite;3;1;máximo;bajo;0;G;G;1;;0;0;en vocabulario;
+risk management;risk management;3;1;máximo;bajo;0;G;G;1;;0;1;en vocabulario;
+clinical trial;clinical trial;3;1;máximo;bajo;0;S;S;1;;1;0;HUECO;
+social commitment;social commitment;3;1;máximo;bajo;0;S;S;1;;0;0;en vocabulario;
+remote working;remote working;2;1;alto;bajo;0;S;S;1;;0;0;HUECO;
+transparency;transparency;2;1;alto;bajo;0;TRANS;TRANS;1;;0;1;en vocabulario;
+alert system;alert system;1;1;bajo;bajo;1;G;G;1;;0;1;HUECO;
+supply chain responsible management;supply chain responsible management;1;1;bajo;bajo;1;TRANS;S;0;;0;0;HUECO;
+business continuity;business continuity;3;0;máximo;nulo;0;G;;0;;0;0;HUECO;
+crisis management;crisis management;3;0;máximo;nulo;0;G;;0;;0;0;HUECO;
+customer satisfaction;customer satisfaction;3;0;máximo;nulo;0;S;;0;;0;0;en vocabulario;
+internal control over financial reporting;internal control over financial reporting;3;0;máximo;nulo;0;G;;0;;0;0;cubierto;internal control
+product quality;product quality;3;0;máximo;nulo;0;S;;0;;0;0;en vocabulario;
+change of control;change of control;2;0;alto;nulo;0;G;;0;;0;0;HUECO;
+employee;employee;2;0;alto;nulo;0;S;;0;;0;0;HUECO;
+employee benefit;employee benefit;2;0;alto;nulo;0;S;;0;;0;0;HUECO;
+independent third party;independent third party;2;0;alto;nulo;0;TRANS;;0;;0;0;HUECO;
+it control;it control;2;0;alto;nulo;0;G;;0;;0;0;HUECO;
+key audit matter;key audit matter;2;0;alto;nulo;0;G;;0;;0;0;HUECO;
+reputation risk;reputation risk;2;0;alto;nulo;0;G;;0;;0;0;HUECO;
+social dividend;social dividend;2;0;alto;nulo;0;S;;0;;0;0;HUECO;
+sustainable value creation;sustainable value creation;2;0;alto;nulo;0;TRANS;;0;;0;0;cubierto;sustainable
+accountability;accountability;1;0;bajo;nulo;0;G;;0;;0;0;HUECO;
+csr reporting scope;csr reporting scope;1;0;bajo;nulo;0;TRANS;;0;;0;0;cubierto;csr
+energy use per wafer;energy use per wafer;1;0;bajo;nulo;0;E;;0;;0;0;HUECO;
+esg+f;esg f;1;0;bajo;nulo;0;TRANS;;0;;0;0;cubierto;esg
+global minimum tax;global minimum tax;1;0;bajo;nulo;0;G;;0;;0;0;HUECO;
+Good Manufacturing Practice;good manufacturing practice;1;0;bajo;nulo;0;S;;0;;0;0;HUECO;
+healthy sales;healthy sale;1;0;bajo;nulo;0;S;;0;;0;0;HUECO;
+incident response;incident response;1;0;bajo;nulo;0;G;;0;;0;0;HUECO;
+litigation;litigation;1;0;bajo;nulo;0;G;;0;;0;0;HUECO;
+ocean freight;ocean freight;1;0;bajo;nulo;0;E;;0;;0;0;cubierto;ocean
+quality management system;quality management system;1;0;bajo;nulo;0;S;;0;;0;0;HUECO;
+quality of supply;quality of supply;1;0;bajo;nulo;0;S;;0;;0;0;HUECO;
+reputational risk;reputational risk;1;0;bajo;nulo;0;G;;0;;0;0;HUECO;
+scenario analysis;scenario analysis;1;0;bajo;nulo;0;E;;0;;0;0;en vocabulario;
+sustainable event;sustainable event;1;0;bajo;nulo;0;E;;0;;0;0;cubierto;sustainable
+sustainable growth;sustainable growth;1;0;bajo;nulo;0;TRANS;;0;;0;0;cubierto;sustainable
+sustainable long-term value creation;sustainable long term value creation;1;0;bajo;nulo;0;TRANS;;0;;0;0;cubierto;sustainable
+sustainable retailing;sustainable retailing;1;0;bajo;nulo;0;TRANS;;0;;0;0;cubierto;sustainable
+takeover;takeover;1;0;bajo;nulo;0;G;;0;;0;0;HUECO;

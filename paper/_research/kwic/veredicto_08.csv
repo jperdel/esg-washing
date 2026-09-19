@@ -1,0 +1,359 @@
+termino;n;veredicto;categoria;nota
+soil health;1;1;ok;
+soil health;2;1;ok;
+soil health;3;1;ok;
+soil health;4;1;ok;
+soil health;5;1;ok;
+soil health;6;1;ok;
+wind turbine;1;1;ok;
+wind turbine;2;0;generico;demanda de semiconductores para turbinas
+wind turbine;3;0;generico;contrato de construccion y volumen de negocio
+wind turbine;4;0;generico;proyecto de I+D de mantenimiento
+wind turbine;5;1;ok;financiacion de eolica marina
+wind turbine;6;0;generico;ampliacion de capital de cliente
+first aid;1;1;ok;
+first aid;2;1;ok;
+first aid;3;1;ok;
+first aid;4;1;ok;
+first aid;5;1;ok;
+first aid;6;1;ok;
+agroforestry;1;1;ok;
+agroforestry;2;1;ok;
+agroforestry;3;1;ok;
+agroforestry;4;1;ok;
+agroforestry;5;1;ok;
+agroforestry;6;1;ok;
+wind energy;1;0;otro;nombre de filial en listado societario
+wind energy;2;1;ok;
+wind energy;3;0;otro;nombre de unidad de negocio
+wind energy;4;0;generico;ingresos por generacion
+wind energy;5;0;indice;glosario
+wind energy;6;1;ok;
+supply chain due diligence;1;1;ok;
+supply chain due diligence;2;1;ok;
+supply chain due diligence;3;1;ok;
+supply chain due diligence;4;1;ok;
+supply chain due diligence;5;1;ok;
+supply chain due diligence;6;1;ok;
+fair wage;1;1;ok;
+fair wage;2;1;ok;
+fair wage;3;1;ok;nombre de ONG en contexto ESG
+fair wage;4;1;ok;nombre de ONG en contexto ESG
+fair wage;5;1;ok;
+fair wage;6;1;ok;nombre de ONG en contexto ESG
+data breach;1;1;ok;
+data breach;2;1;ok;
+data breach;3;1;ok;
+data breach;4;0;indice;glosario
+data breach;5;1;ok;
+data breach;6;1;ok;
+smeta;1;1;ok;
+smeta;2;0;indice;tabla de correspondencia de KPIs
+smeta;3;1;ok;
+smeta;4;1;ok;
+smeta;5;1;ok;
+smeta;6;1;ok;
+msci esg;1;1;ok;
+msci esg;2;0;indice;nota al pie de fuentes
+msci esg;3;0;otro;disclaimer legal de MSCI
+msci esg;4;1;ok;
+msci esg;5;1;ok;
+msci esg;6;1;ok;
+green investment;1;0;otro;nombre de filial en listado societario
+green investment;2;1;ok;
+green investment;3;1;ok;
+green investment;4;1;ok;
+green investment;5;1;ok;
+green investment;6;1;ok;
+fair compensation;1;1;ok;
+fair compensation;2;1;ok;
+fair compensation;3;1;ok;
+fair compensation;4;1;ok;
+fair compensation;5;1;ok;
+fair compensation;6;1;ok;
+microplastic;1;1;ok;
+microplastic;2;1;ok;
+microplastic;3;0;indice;tabla ESRS no publicado
+microplastic;4;1;ok;
+microplastic;5;1;ok;
+microplastic;6;1;ok;
+fatality;1;1;ok;
+fatality;2;1;ok;
+fatality;3;1;ok;
+fatality;4;1;ok;
+fatality;5;0;indice;indice SASB
+fatality;6;1;ok;
+decarbonise;1;1;ok;
+decarbonise;2;1;ok;
+decarbonise;3;1;ok;
+decarbonise;4;1;ok;
+decarbonise;5;1;ok;
+decarbonise;6;1;ok;
+fair labor;1;1;ok;
+fair labor;2;1;ok;
+fair labor;3;1;ok;
+fair labor;4;1;ok;
+fair labor;5;1;ok;
+fair labor;6;1;ok;
+recycled raw material;1;1;ok;
+recycled raw material;2;1;ok;
+recycled raw material;3;1;ok;
+recycled raw material;4;1;ok;
+recycled raw material;5;1;ok;
+recycled raw material;6;1;ok;
+air pollutant;1;1;ok;
+air pollutant;2;1;ok;
+air pollutant;3;1;ok;contexto regulatorio de emisiones
+air pollutant;4;1;ok;riesgo regulatorio HSE
+air pollutant;5;1;ok;
+air pollutant;6;1;ok;
+labor practices;1;1;ok;
+labor practices;2;1;ok;
+labor practices;3;1;ok;
+labor practices;4;1;ok;
+labor practices;5;0;financiero;cargo juridico unfair labor practices NLRB
+labor practices;6;1;ok;
+racism;1;1;ok;
+racism;2;1;ok;
+racism;3;1;ok;
+racism;4;0;otro;exposicion cientifica sobre la piel
+racism;5;1;ok;
+racism;6;1;ok;
+supply chain risk;1;1;ok;
+supply chain risk;2;0;generico;continuidad operativa y referencia a factor de riesgo
+supply chain risk;3;1;ok;
+supply chain risk;4;1;ok;etiqueta de analisis de materialidad
+supply chain risk;5;1;ok;
+supply chain risk;6;1;ok;
+fair trade;1;1;ok;
+fair trade;2;1;ok;
+fair trade;3;1;ok;
+fair trade;4;1;ok;
+fair trade;5;1;ok;
+fair trade;6;0;otro;Korea Fair Trade Commission antimonopolio
+hydropower;1;1;ok;
+hydropower;2;1;ok;
+hydropower;3;1;ok;
+hydropower;4;1;ok;
+hydropower;5;1;ok;
+hydropower;6;1;ok;
+sedex;1;1;ok;
+sedex;2;1;ok;
+sedex;3;1;ok;
+sedex;4;1;ok;
+sedex;5;0;financiero;mercado bursatil italiano SeDeX
+sedex;6;1;ok;
+tax avoidance;1;0;financiero;normativa fiscal de regimenes privilegiados
+tax avoidance;2;0;financiero;factor de riesgo fiscal propio
+tax avoidance;3;0;otro;informe del verificador boilerplate
+tax avoidance;4;0;indice;descripcion de contenido y referencia cruzada
+tax avoidance;5;1;ok;
+tax avoidance;6;1;ok;
+social norm;1;1;ok;
+social norm;2;1;ok;
+social norm;3;0;generico;riesgo conductual interno
+social norm;4;0;indice;encabezado de infografia
+social norm;5;0;generico;riesgo conductual interno
+social norm;6;1;ok;
+political contribution;1;1;ok;
+political contribution;2;1;ok;
+political contribution;3;0;indice;etiqueta GRI 415-1
+political contribution;4;0;indice;encabezado de seccion
+political contribution;5;0;indice;etiqueta GRI 415-1
+political contribution;6;1;ok;
+chemical management;1;1;ok;
+chemical management;2;1;ok;
+chemical management;3;1;ok;
+chemical management;4;1;ok;
+chemical management;5;1;ok;
+chemical management;6;1;ok;
+supply chain worker;1;0;indice;referencia cruzada a seccion
+supply chain worker;2;1;ok;
+supply chain worker;3;1;ok;
+supply chain worker;4;1;ok;
+supply chain worker;5;1;ok;
+supply chain worker;6;1;ok;
+issb;1;1;ok;tabla de emisiones financiadas
+issb;2;1;ok;
+issb;3;0;indice;fila de tabla de correspondencia
+issb;4;1;ok;
+issb;5;1;ok;
+issb;6;1;ok;
+particulate matter;1;1;ok;
+particulate matter;2;1;ok;
+particulate matter;3;1;ok;
+particulate matter;4;1;ok;
+particulate matter;5;1;ok;
+particulate matter;6;1;ok;
+customer privacy;1;1;ok;
+customer privacy;2;1;ok;
+customer privacy;3;1;ok;
+customer privacy;4;1;ok;
+customer privacy;5;1;ok;
+customer privacy;6;0;indice;indice GRI
+microfiber;1;1;ok;
+microfiber;2;1;ok;
+microfiber;3;1;ok;
+microfiber;4;0;generico;material textil de tapiceria no contaminacion
+microfiber;5;1;ok;
+microfiber;6;1;ok;
+iso\s*37001\b;1;1;ok;
+iso\s*37001\b;2;1;ok;
+iso\s*37001\b;3;1;ok;
+iso\s*37001\b;4;1;ok;
+iso\s*37001\b;5;1;ok;
+iso\s*37001\b;6;1;ok;
+cop28;1;1;ok;
+cop28;2;1;ok;
+cop28;3;1;ok;
+cop28;4;1;ok;
+cop28;5;1;ok;
+cop28;6;1;ok;
+compliance and ethics;1;1;ok;
+compliance and ethics;2;1;ok;
+compliance and ethics;3;1;ok;
+compliance and ethics;4;1;ok;
+compliance and ethics;5;1;ok;
+compliance and ethics;6;0;generico;politica de credito formula generica
+iso 37001;1;1;ok;
+iso 37001;2;1;ok;
+iso 37001;3;1;ok;
+iso 37001;4;1;ok;
+iso 37001;5;1;ok;
+iso 37001;6;1;ok;
+better cotton;1;0;indice;glosario
+better cotton;2;1;ok;
+better cotton;3;1;ok;
+better cotton;4;1;ok;
+better cotton;5;1;ok;
+better cotton;6;1;ok;
+b corp;1;1;ok;
+b corp;2;1;ok;
+b corp;3;0;otro;certificacion de la agencia de rating
+b corp;4;1;ok;
+b corp;5;0;otro;certificacion de la agencia de rating
+b corp;6;1;ok;
+leather working group;1;1;ok;
+leather working group;2;1;ok;
+leather working group;3;1;ok;
+leather working group;4;1;ok;
+leather working group;5;1;ok;
+leather working group;6;1;ok;
+employee wellbeing;1;1;ok;
+employee wellbeing;2;1;ok;
+employee wellbeing;3;1;ok;
+employee wellbeing;4;1;ok;
+employee wellbeing;5;1;ok;
+employee wellbeing;6;1;ok;
+fairtrade;1;1;ok;
+fairtrade;2;1;ok;
+fairtrade;3;1;ok;
+fairtrade;4;1;ok;
+fairtrade;5;1;ok;
+fairtrade;6;1;ok;
+supply chain audit;1;1;ok;
+supply chain audit;2;1;ok;
+supply chain audit;3;0;generico;control interno del origen Made in France
+supply chain audit;4;1;ok;
+supply chain audit;5;1;ok;
+supply chain audit;6;1;ok;
+supply chain emission;1;1;ok;leyenda de grafico de alcance 3
+supply chain emission;2;1;ok;
+supply chain emission;3;1;ok;
+supply chain emission;4;1;ok;
+supply chain emission;5;1;ok;
+supply chain emission;6;1;ok;
+compost;1;1;ok;
+compost;2;1;ok;
+compost;3;1;ok;
+compost;4;1;ok;
+compost;5;1;ok;
+compost;6;1;ok;
+community relations;1;0;indice;encabezado de tabla SASB
+community relations;2;1;ok;
+community relations;3;1;ok;
+community relations;4;1;ok;
+community relations;5;1;ok;lista de temas materiales
+community relations;6;0;indice;encabezado de tabla SASB
+raw material sourcing;1;1;ok;
+raw material sourcing;2;1;ok;
+raw material sourcing;3;1;ok;
+raw material sourcing;4;1;ok;
+raw material sourcing;5;1;ok;
+raw material sourcing;6;1;ok;
+peatland;1;1;ok;
+peatland;2;1;ok;
+peatland;3;1;ok;
+peatland;4;1;ok;
+peatland;5;1;ok;
+peatland;6;1;ok;
+cover crop;1;1;ok;
+cover crop;2;1;ok;
+cover crop;3;1;ok;
+cover crop;4;1;ok;
+cover crop;5;1;ok;
+cover crop;6;1;ok;
+raw material consumption;1;0;indice;tabla de correspondencia NFPS
+raw material consumption;2;1;ok;
+raw material consumption;3;1;ok;
+raw material consumption;4;0;indice;tabla de correspondencia NFPS
+raw material consumption;5;1;ok;
+raw material consumption;6;0;generico;tendencias de mercado de digitalizacion
+supply chain transparency;1;0;indice;etiquetas de grafico
+supply chain transparency;2;1;ok;
+supply chain transparency;3;1;ok;
+supply chain transparency;4;1;ok;
+supply chain transparency;5;0;indice;referencia cruzada a secciones
+supply chain transparency;6;1;ok;
+proxy statement;1;0;otro;texto legal NYSE repetido
+proxy statement;2;0;otro;texto legal NYSE repetido
+proxy statement;3;0;otro;texto legal NYSE repetido
+proxy statement;4;0;otro;texto legal NYSE repetido
+proxy statement;5;0;otro;texto legal NYSE repetido
+proxy statement;6;0;generico;fuentes de datos de producto de rating
+virgin polyester;1;1;ok;
+virgin polyester;2;1;ok;
+virgin polyester;3;1;ok;
+virgin polyester;4;1;ok;
+virgin polyester;5;1;ok;
+virgin polyester;6;1;ok;
+board oversight;1;0;indice;encabezado de seccion
+board oversight;2;0;indice;encabezado de seccion
+board oversight;3;1;ok;
+board oversight;4;1;ok;
+board oversight;5;0;indice;encabezado de tabla TNFD
+board oversight;6;0;indice;encabezado de seccion
+supply chain human right;1;0;indice;encabezado de tabla
+supply chain human right;2;0;indice;tabla de correspondencia SASB
+supply chain human right;3;0;indice;tabla de correspondencia SASB
+supply chain human right;4;1;ok;tabla de riesgos
+supply chain human right;5;1;ok;nombre de riesgo con descripcion
+supply chain human right;6;1;ok;nombre de riesgo con descripcion
+supply chain footprint;1;1;ok;riesgo climatico
+supply chain footprint;2;1;ok;
+supply chain footprint;3;0;generico;huella geografica industrial
+supply chain footprint;4;0;generico;huella geografica por geopolitica
+supply chain footprint;5;0;generico;huella geografica industrial
+supply chain footprint;6;1;ok;riesgo de transicion
+cop 28;1;1;ok;
+cop 28;2;1;ok;
+cop 28;3;1;ok;
+cop 28;4;1;ok;
+cop 28;5;1;ok;
+cop 28;6;1;ok;
+fair condition;1;1;ok;
+fair condition;2;1;ok;lista de temas materiales
+fair condition;3;1;ok;
+fair condition;4;1;ok;
+fair condition;5;1;ok;lista de temas materiales
+fair condition;6;0;generico;condiciones para inversion en telecom
+scope\s+(?:one|two|three);1;0;otro;ciclo de control interno
+scope\s+(?:one|two|three);2;0;otro;perimetro de reporte one year
+scope\s+(?:one|two|three);3;0;otro;perimetro de reporte two years
+supply chain ethics;1;1;ok;
+supply chain ethics;2;1;ok;
+supply chain ethics;3;1;ok;
+living income;1;1;ok;
+living income;2;1;ok;
+supply chain decarbonisation;1;1;ok;
+supply chain labour;1;0;otro;artefacto entre dos temas de lista

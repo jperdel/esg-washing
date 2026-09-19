@@ -1,0 +1,533 @@
+termino;valido;pilar;sectorial;colocacion;justificacion
+energy saving;1;E;0;0;clear environmental efficiency concept
+senior independent director;1;G;0;0;board role standard governance disclosure
+climate-related health impact;1;E;0;0;absent from sample but valid climate impact term
+social dialogue;1;S;0;0;labour relations concept widely used
+customer health and nutrition;1;S;1;0;food retail material topic
+esg+f;0;;0;0;Iberdrola specific branding not generalizable
+supplier assessment;1;S;0;1;needs sustainability qualifier otherwise commercial vetting
+access to land;1;S;1;0;land rights topic in extractives
+short-term incentive;1;G;0;0;remuneration structure governance disclosure
+board attendance;1;G;0;0;board functioning indicator
+inclusion;1;S;0;1;frequent accounting use inclusion of
+crisis management;0;;0;0;generic business continuity prose no ESG charge
+health and safety;1;S;0;0;core occupational safety term
+reuse;1;E;0;0;circularity vocabulary environmental
+data protection;1;S;0;0;privacy topic social pillar
+vulnerable group;1;S;0;0;social vulnerability standard term
+board committee;1;G;0;0;board structure disclosure
+employee training;1;S;0;0;human capital development
+sustainability due diligence;1;TRANS;0;0;covers environmental and social value chain duties
+energy transition;1;E;0;0;decarbonisation vocabulary
+employee well-being;1;S;0;0;workforce wellbeing standard topic
+takeover;0;;0;0;M and A finance term without ESG content
+working condition;1;S;0;0;labour conditions core social term
+waste recycled;1;E;0;0;waste metric environmental
+tax policy;1;G;0;1;ambiguous with fiscal policy needs corporate qualifier
+patient safety;1;S;1;0;pharma and healthcare specific social topic
+three lines of defence;1;G;0;0;risk governance model
+carbon neutrality;1;E;0;0;climate claim central to greenwashing
+product traceability;1;S;0;0;supply chain transparency topic
+green recovery;0;;0;0;political slogan too vague to measure
+science based target;1;E;0;0;climate target methodology
+performance share;0;;0;0;share-based payment accounting item
+climate change adaptation;1;E;0;0;standard climate pillar term
+plastic waste;1;E;0;0;waste and materials topic
+export control;1;G;1;0;compliance concentrated in defence and semiconductors
+air emission;1;E;0;0;pollutant emission term
+voluntary emission reduction certificate;1;E;0;0;carbon offset instrument
+energy mix;1;E;0;0;energy sourcing composition
+antitrust;1;G;0;0;competition compliance governance
+emission reduction target;1;E;0;0;climate target term
+talent development;1;S;0;0;human capital topic
+road safety;1;S;1;0;transport and distribution focused safety topic
+corporate volunteering;1;S;0;0;community involvement standard
+double materiality;1;TRANS;0;0;CSRD reporting concept spanning pillars
+dow jones sustainability index;1;TRANS;0;0;ESG index reference
+change of control;0;;0;0;contract and M and A clause not ESG
+product quality;0;;0;0;generic operational quality prose
+diesel emission;1;E;1;0;automotive specific emission term
+whistleblowing hotline;1;G;0;0;ethics channel governance
+sustainable event;0;;0;0;marginal marketing phrase measures nothing
+sustainable financing;1;TRANS;0;0;ESG linked funding vocabulary
+residual emission;1;E;0;0;net zero accounting concept
+sustainable mobility;1;E;0;0;transport decarbonisation
+transition risk;1;E;0;0;climate risk taxonomy term
+oil spill;1;E;1;0;oil and gas environmental incident
+food bank;1;S;1;0;food donation community topic in retail
+tcfd;1;E;0;0;climate disclosure framework
+inclusive workplace;1;S;0;0;diversity and inclusion term
+protected area;1;E;0;0;biodiversity conservation term
+executive compensation;1;G;0;0;remuneration governance
+whistle-blowing hotline;1;G;0;0;ethics channel spelling variant
+loyalty voting structure;1;G;0;0;shareholder rights structure
+special voting share;1;G;0;0;dual class voting governance
+energy efficiency;1;E;0;0;core environmental efficiency term
+consumer health and safety;1;S;0;0;product responsibility social topic
+esg ambition;1;TRANS;0;0;commitment claim relevant for washing detection
+childcare;1;S;0;0;work life benefit
+sustainable packaging;1;E;1;0;consumer goods packaging topic
+net zero;1;E;0;0;flagship climate claim
+information security;1;G;0;0;IT governance and controls
+governance body;1;G;0;0;governance structure term
+global warming;1;E;0;0;climate vocabulary
+waste management;1;E;0;0;waste topic
+photovoltaic plant;1;E;1;0;utility generation asset
+renewable electricity;1;E;0;0;renewable sourcing
+sustainable taxation;1;G;0;0;responsible tax governance
+ftse4good;1;TRANS;0;0;ESG index membership claim
+ozone layer;1;E;0;0;atmospheric environmental topic
+supply chain responsibility;1;S;0;0;value chain social responsibility
+offshore wind;1;E;1;0;renewable generation in utilities
+locked-in emission;1;E;0;0;climate transition concept
+climate impact;1;E;0;0;climate vocabulary
+materiality matrix;1;TRANS;0;0;reporting tool spanning pillars
+carbon credit;1;E;0;0;offsetting instrument
+circular economy;1;E;0;0;core circularity term
+emission reduction;1;E;0;0;climate mitigation term
+material topic;1;TRANS;0;0;materiality reporting vocabulary
+governance structure;1;G;0;0;governance disclosure
+corporate governance;1;G;0;0;pillar defining term
+smart grid;1;E;1;0;utility network technology
+power purchase agreement;1;E;0;0;renewable procurement instrument
+sustainable long-term value creation;0;;0;0;corporate slogan too vague
+ilo convention;1;S;0;0;labour standards reference
+animal welfare;1;S;1;0;food and consumer supply chain topic
+breeam;1;E;1;0;green building certification in real estate
+esg target;1;TRANS;0;0;ESG commitment vocabulary
+business integrity;1;G;0;0;ethics and compliance term
+nox emission;1;E;0;0;air pollutant
+safety data sheet;1;S;1;0;chemical hazard communication industrial
+supplier sustainability score;1;S;0;0;supply chain ESG assessment
+environmental performance;1;E;0;0;environmental disclosure term
+living wage;1;S;0;0;fair pay social topic
+natural resource;1;E;0;0;resource use environmental
+stakeholder engagement;1;TRANS;0;0;cross pillar engagement practice
+compliance system;1;G;0;0;compliance governance
+employee engagement survey;1;S;0;0;workforce practice indicator
+non-discrimination;1;S;0;0;equal treatment social
+sasb;1;TRANS;0;0;reporting standard setter
+non-financial performance;1;TRANS;0;0;ESG reporting umbrella
+corporate responsibility;1;TRANS;0;0;CSR umbrella term
+zero accident;1;S;0;0;safety target
+anti-discrimination policy;1;S;0;0;social policy term
+governance risk and compliance;1;G;0;0;governance framework
+renewable electricity certificate;1;E;0;0;renewable attribute instrument
+executive remuneration;1;G;0;0;pay governance
+internal control;1;G;0;1;heavy accounting use needs ESG qualifier
+annual corporate governance report;1;G;0;0;governance reporting document
+natural capital;1;E;0;0;nature valuation term
+corporate culture;0;;0;0;vague business prose without ESG charge
+human rights due diligence;1;S;0;0;core human rights process
+remuneration policy;1;G;0;0;pay governance
+counterfeiting;1;S;1;0;product integrity in pharma and luxury
+air quality;1;E;0;0;pollution topic
+compliance risk;1;G;0;0;compliance governance
+sustainable growth;0;;0;0;financial growth slogan classic false positive
+reach registration;1;E;1;0;chemicals regulation compliance
+equal pay;1;S;0;0;pay equity social
+long-term incentive plan;1;G;0;0;remuneration governance
+sustainability reporting;1;TRANS;0;0;reporting umbrella
+responsible lobbying;1;G;0;0;political influence governance
+supervisory board;1;G;0;0;two tier board structure
+corporate governance code;1;G;0;0;governance compliance reference
+business travel;0;;0;1;generic travel expense unless emission qualifier
+mitigation hierarchy;1;E;0;0;biodiversity management concept
+healthy eating;1;S;1;0;food sector nutrition topic
+avoided emission;1;E;0;0;climate accounting concept
+green project;1;E;0;0;green finance use of proceeds
+speak-up culture;1;G;0;0;ethics culture term
+pollutant;1;E;0;0;pollution vocabulary
+board diversity policy;1;G;0;0;board composition governance
+climate change;1;E;0;0;core climate term
+waste-to-energy;1;E;0;0;waste recovery
+access to healthcare;1;S;1;0;pharma access topic
+litigation;0;;0;0;legal and financial prose not ESG
+talent attraction and retention;1;S;0;0;human capital topic
+conflict of interest;1;G;0;0;governance ethics
+general meeting of shareholders;1;G;0;0;shareholder rights body
+esg committee;1;G;0;0;ESG governance body
+emission;1;E;0;0;no share issuance homograph found in corpus
+greenhouse gas emission;1;E;0;0;core climate metric
+green bond principles;1;E;0;0;green finance standard
+limited assurance;1;TRANS;0;0;sustainability assurance level
+energy consumption;1;E;0;0;energy metric
+traceability;1;S;0;1;alone ambiguous needs product or supply qualifier
+internal control over financial reporting;0;;0;0;pure financial reporting control
+csr reporting scope;0;;0;0;ad hoc boundary phrase not a lexicon entry
+women in management;1;S;0;0;gender diversity metric
+pay ratio;1;G;0;0;CEO pay ratio remuneration disclosure
+esg rating;1;TRANS;0;0;external ESG assessment
+external assurance;1;TRANS;0;0;report verification
+scope 3;1;E;0;0;GHG accounting scope
+sustainable finance;1;TRANS;0;0;ESG finance umbrella
+director independence;1;G;0;0;board independence
+diversity and inclusion;1;S;0;0;DEI standard term
+sustainable retailing;0;;1;0;Ahold program name single company
+esg-related control;1;G;0;0;internal control over ESG reporting
+biodiversity;1;E;0;0;nature pillar core term
+sustainability ambition;1;TRANS;0;0;commitment claim
+sustainability performance;1;TRANS;0;0;ESG performance umbrella
+external auditor;1;G;0;0;audit governance
+shareholder rights;1;G;0;0;governance rights
+ecovadis;1;TRANS;0;0;supplier ESG rating provider
+anti-bribery management system;1;G;0;0;anticorruption system
+speak-up line;1;G;0;0;whistleblowing channel
+workplace safety;1;S;0;0;occupational safety
+business continuity;0;;0;0;operational resilience without ESG charge
+direct emission;1;E;0;0;scope 1 concept
+harmful consumption;1;S;1;0;alcohol sector responsible drinking
+refrigerant;1;E;0;0;fluorinated gas emission source
+gri standard;1;TRANS;0;0;reporting standard
+consumer health;1;S;0;0;product health social topic
+sustainability report;1;TRANS;0;0;reporting vehicle
+conflict mineral;1;S;1;0;responsible minerals in electronics manufacturing
+environmental policy;1;E;0;0;environmental management commitment
+energy use per wafer;0;;1;0;single company KPI not generalizable
+esg risk;1;TRANS;0;0;ESG risk umbrella
+work-life balance;1;S;0;0;employee wellbeing
+board diversity;1;G;0;0;board composition
+s&p global corporate sustainability assessment;1;TRANS;0;0;ESG assessment reference
+anti-bribery;1;G;0;0;anticorruption
+scope 1 emission;1;E;0;0;GHG accounting
+customer satisfaction;0;;0;0;commercial performance metric not ESG
+bribery;1;G;0;0;corruption topic
+consumer safety;1;S;0;0;product safety
+supplier code of conduct;1;S;0;0;supply chain standards
+succession planning;1;G;0;0;board and executive continuity
+electrification;1;E;1;0;energy and mobility transition vocabulary
+un guiding principles on business and human rights;1;S;0;0;human rights framework
+scope 3 emission;1;E;0;0;value chain emissions
+global minimum tax;0;;0;0;tax accounting item not ESG disclosure
+esg objective;1;TRANS;0;0;ESG commitment
+non-audit service;1;G;0;0;auditor independence disclosure
+renewable source;1;E;0;0;renewable energy sourcing
+board composition;1;G;0;0;board governance
+emission factor;1;E;0;0;GHG calculation parameter
+articles of association;0;;0;0;legal boilerplate in every report
+disability;1;S;0;1;insurance product homograph needs qualifier
+gender equality;1;S;0;0;diversity topic
+indirect emission;1;E;0;0;scope 2 and 3 concept
+electric vehicle;1;E;1;0;automotive and mobility transition
+carbon neutral;1;E;0;0;climate claim
+green energy;1;E;0;0;renewable energy claim
+sulfur dioxide emission;1;E;0;0;air pollutant
+climate scenario;1;E;0;0;climate risk analysis
+hard-to-abate emission;1;E;0;0;decarbonisation concept
+logistics emission;1;E;0;0;transport scope 3 emissions
+accidental pollution;1;E;0;0;environmental incident
+internal carbon price;1;E;0;0;carbon pricing management tool
+fair labour condition;1;S;0;0;labour standards
+emissions trading system;1;E;0;0;carbon market mechanism
+anti-corruption;1;G;0;0;integrity governance
+code of ethics;1;G;0;0;ethics governance
+wind farm;1;E;1;0;renewable generation asset
+wastewater;1;E;0;0;water pollution topic
+green financing;1;E;0;0;environmental use of proceeds funding
+sustainability;1;TRANS;0;0;umbrella term cannot be assigned one pillar
+social dividend;0;;1;0;Iberdrola bylaw wording single company
+non-financial information;1;TRANS;0;0;ESG reporting umbrella
+iirc;1;TRANS;0;0;integrated reporting body
+whistleblowing;1;G;0;0;ethics channel
+green building;1;E;0;0;buildings environmental performance
+inclusive insurance;1;S;1;0;insurance sector inclusion product
+employee engagement;1;S;0;0;workforce topic
+stakeholder dialogue;1;TRANS;0;0;engagement practice
+water management;1;E;0;0;water stewardship
+water management plan;1;E;0;0;water stewardship instrument
+collective labour agreement;1;S;0;0;labour relations
+hse;1;TRANS;0;0;covers health safety and environment jointly
+transparency;0;;0;1;rhetorical value word measures nothing alone
+sustainable development goal;1;TRANS;0;0;SDG framework spanning pillars
+Science Based Targets initiative;1;E;0;0;climate target validation body
+afforestation;1;E;0;0;carbon and nature action
+collective bargaining agreement;1;S;0;0;labour relations
+renewable installed capacity;1;E;1;0;utility capacity metric
+audit committee;1;G;0;0;board committee
+nomination committee;1;G;0;0;board committee
+climate hazard;1;E;0;0;physical climate risk
+well-being;1;S;0;1;needs employee qualifier otherwise generic
+fixed remuneration;1;G;0;0;pay structure disclosure
+forced labour;1;S;0;0;human rights abuse
+social commitment;0;;0;0;vague CSR prose without measurable content
+reforestation;1;E;0;0;nature restoration
+environmental indicator;1;E;0;0;environmental reporting metric
+corruption;1;G;0;0;integrity topic
+human rights;1;S;0;0;core social term
+women in management position;1;S;0;0;gender metric
+sustainability index;1;TRANS;0;0;ESG index reference
+gender diversity;1;S;0;0;diversity metric
+taxonomy-aligned;1;E;0;0;EU taxonomy environmental classification
+hydroelectric;1;E;1;0;utility generation technology
+deferred prosecution agreement;1;G;0;0;corruption settlement governance
+remuneration committee;1;G;0;0;board committee
+palm oil;1;E;1;0;deforestation commodity in food sector
+worlds most ethical companies;1;G;0;0;ethics recognition claim
+iss esg;1;TRANS;0;0;ESG rating provider
+skills development;1;S;0;0;training and employability
+fraud prevention;1;G;0;0;integrity controls
+landfill;1;E;0;0;waste disposal
+product use emission;1;E;0;0;downstream scope 3
+access to energy;1;S;1;0;energy poverty topic in utilities
+life cycle assessment;1;E;0;0;environmental footprint method
+economic sanction;1;G;0;0;sanctions compliance
+carbon sink;1;E;0;0;nature carbon storage
+carbon literacy;1;E;0;0;climate training and awareness
+business travel emission;1;E;0;0;scope 3 category
+esg;1;TRANS;0;0;umbrella acronym
+musculoskeletal disorder;1;S;1;0;occupational health in industrial settings
+sustainability target;1;TRANS;0;0;commitment vocabulary
+integrated report;1;TRANS;0;0;reporting format
+accident rate;1;S;0;0;safety metric
+environmental impact;1;E;0;0;environmental disclosure
+gri indicator;1;TRANS;0;0;reporting standard reference
+working hours;1;S;0;0;labour conditions
+child labour;1;S;0;0;human rights abuse
+employee commuting;1;E;0;0;scope 3 emission category
+product responsibility;1;S;0;0;product stewardship social
+accountability;0;;0;0;abstract value word not measurable
+healthy sales;0;;1;0;Ahold KPI name single company
+employee turnover;1;S;0;0;workforce retention metric
+key audit matter;0;;0;0;financial audit reporting item
+ecodesign;1;E;0;0;product environmental design
+non-financial statement;1;TRANS;0;0;ESG reporting document
+climate transition plan;1;E;0;0;decarbonisation planning
+independent third party;0;;0;0;vague phrase used across audit contexts
+ghg emission;1;E;0;0;core climate metric
+human capital;1;S;0;0;workforce topic
+incident response;0;;0;0;generic IT operations term
+executive committee;1;G;0;0;management body governance
+ghg neutrality;1;E;0;0;climate neutrality claim
+vulnerable population;1;S;0;0;social vulnerability
+supplier sustainability assessment;1;S;0;0;supply chain ESG due diligence
+ethical culture;1;G;0;0;ethics governance
+esrs;1;TRANS;0;0;CSRD reporting standards
+oecd guidelines for multinational enterprises;1;TRANS;0;0;responsible business framework spanning pillars
+esg reporting;1;TRANS;0;0;reporting umbrella
+sustainable development;1;TRANS;0;0;umbrella concept
+Good Manufacturing Practice;0;;1;0;manufacturing quality regulation not ESG disclosure
+maternity and paternity leave;1;S;0;0;family benefits
+occupational illness;1;S;0;0;worker health metric
+employee commuting emission;1;E;0;0;scope 3 category
+reputational risk;0;;0;0;generic corporate risk language
+ethics training;1;G;0;0;compliance training
+employee share ownership;1;S;0;0;employee participation scheme
+risk management;1;G;0;1;pervasive financial use needs ESG qualifier
+geothermal;1;E;1;0;renewable generation technology
+trade sanction;1;G;0;0;sanctions compliance
+supply chain emission;1;E;0;0;scope 3 emissions
+labour law;1;S;0;0;labour compliance
+eco-design;1;E;0;0;product environmental design
+employee wellness programme;1;S;0;0;wellbeing practice
+corporate sustainability assessment;1;TRANS;0;0;ESG assessment reference
+board of directors;1;G;0;0;core governance body
+three lines of defense;1;G;0;0;risk governance model spelling variant
+low-alcohol beer;1;S;1;0;beverage sector responsible drinking
+carbon emission;1;E;0;0;climate metric
+socially responsible investor;1;TRANS;0;0;ESG investor audience
+corporate human rights benchmark;1;S;0;0;human rights benchmark
+workforce;1;S;0;1;generic headcount use needs qualifier
+long-term incentive;1;G;0;0;remuneration structure
+stakeholder;1;TRANS;0;0;cross pillar actor concept
+physical risk;1;E;0;1;climate meaning only with climate context
+employee share ownership plan;1;S;0;0;employee participation scheme
+recycled content;1;E;0;0;circular materials metric
+recycling;1;E;0;0;waste circularity
+supply chain human rights;1;S;0;0;value chain human rights
+environmental damage;1;E;0;0;environmental harm
+scenario analysis;0;;0;1;generic stress testing without climate qualifier
+groundwater;1;E;0;0;water resource topic
+internal audit;1;G;0;0;assurance governance function
+vehicle recall;1;S;1;0;automotive product safety
+injury rate;1;S;0;0;safety metric
+scope 2 emission;1;E;0;0;GHG accounting
+diversity equity and inclusion;1;S;0;0;DEI standard term
+female representation;1;S;0;0;gender metric
+ghg protocol;1;E;0;0;GHG accounting standard
+supplier audit;1;S;0;0;supply chain verification
+materiality assessment;1;TRANS;0;0;reporting process spanning pillars
+works council;1;S;0;0;worker representation
+un guiding principles;1;S;0;0;human rights framework
+shared value;1;TRANS;0;1;CSR concept but ambiguous as plain words
+code of conduct;1;G;0;0;ethics governance document
+corporate governance statement;1;G;0;0;governance reporting
+vehicle safety;1;S;1;0;automotive product safety
+alert system;0;;0;1;generic IT alerting unless whistleblowing qualifier
+employee representative;1;S;0;0;worker representation
+biodiversity action plan;1;E;0;0;nature management plan
+water stress;1;E;0;0;water risk
+materiality;1;TRANS;0;1;audit materiality homograph very frequent
+non-financial reporting;1;TRANS;0;0;ESG reporting umbrella
+psychological safety;1;S;0;0;workplace wellbeing
+it control;0;;0;0;IT general controls belong to financial audit
+Ethisphere;1;G;0;0;ethics ranking provider
+low-carbon energy;1;E;0;0;energy transition
+qualification matrix;1;G;0;0;board skills matrix disclosure
+emission intensity;1;E;0;0;normalised climate metric
+gender balance;1;S;0;0;gender diversity
+smart meter;1;E;1;0;utility metering technology
+decarbonisation;1;E;0;0;climate mitigation
+food waste;1;E;1;0;food and retail waste topic
+stakeholder expectation;1;TRANS;0;0;engagement vocabulary
+esg performance measure;1;TRANS;0;0;ESG metric vocabulary
+cdp;1;E;0;0;climate and environment disclosure platform
+coal-fired power plant;1;E;1;0;utility generation asset
+soil contamination;1;E;0;0;pollution topic
+auditor independence;1;G;0;0;audit governance
+waste heat;1;E;0;0;energy recovery
+business ethics;1;G;0;0;ethics governance
+community engagement;1;S;0;0;community relations
+hydrocarbon spill;1;E;1;0;oil and gas incident
+risk committee;1;G;0;0;board committee
+quality management system;0;;0;0;operational quality standard without ESG charge
+un global compact;1;TRANS;0;0;responsible business initiative
+chief sustainability officer;1;G;0;0;sustainability governance role
+pollution;1;E;0;0;environmental impact
+2030 agenda;1;TRANS;0;0;SDG framework
+esg score;1;TRANS;0;0;external ESG assessment
+extreme weather event;1;E;0;0;physical climate risk
+cage free;1;S;1;0;animal welfare in food sector
+remuneration report;1;G;0;0;pay disclosure
+product safety;1;S;0;0;consumer protection
+management board;1;G;0;0;two tier governance body
+scope 2;1;E;0;0;GHG accounting scope
+controlling shareholder;1;G;0;0;ownership structure governance
+climate-related risk;1;E;0;0;climate risk term
+cybersecurity;1;G;0;0;IT risk governance
+green deal;1;E;0;0;EU environmental policy reference
+carbon removal;1;E;0;0;climate mitigation lever
+tax transparency;1;G;0;0;responsible tax governance
+risk appetite;0;;0;0;financial risk jargon without ESG content
+fossil fuel;1;E;0;0;energy transition vocabulary
+employee;0;;0;0;bare headcount noun too generic to measure
+supply chain responsible management;0;;0;0;malformed one off phrasing
+iso 14001;1;E;0;0;environmental management certification
+malus;1;G;0;0;remuneration clawback mechanism
+carbon footprint;1;E;0;0;climate metric
+quality of supply;0;;1;0;operational service metric of utilities
+csr policy;1;TRANS;0;0;CSR commitment document
+clean energy;1;E;0;0;renewable energy
+deforestation;1;E;0;0;nature impact
+green electricity;1;E;0;0;renewable sourcing
+pharmacovigilance;1;S;1;0;pharma patient safety system
+water footprint;1;E;0;0;water metric
+material safety data sheet;1;S;1;0;chemical hazard communication
+paris agreement;1;E;0;0;climate treaty reference
+flaring;1;E;1;0;oil and gas emission practice
+co2 emission;1;E;0;0;climate metric
+trade union;1;S;0;0;labour relations
+voting right;1;G;0;1;also appears in share capital notes
+sustainability committee;1;G;0;0;ESG governance body
+taxonomy-eligible;1;E;0;0;EU taxonomy classification
+responsible sourcing;1;S;0;0;supply chain responsibility
+sbti;1;E;0;0;climate target validation
+nutrition;1;S;1;1;food sector term also used as product category
+regulatory compliance;1;G;0;0;compliance governance
+collective bargaining;1;S;0;0;labour relations
+re100;1;E;0;0;renewable electricity initiative
+global reporting initiative;1;TRANS;0;0;reporting standard setter
+disability employment;1;S;0;0;inclusion metric
+remote working;0;;0;0;generic work arrangement without ESG charge
+governance risk and compliance framework;1;G;0;0;governance framework
+environmental protection;1;E;0;0;environmental commitment
+methane emission;1;E;0;0;GHG species
+local community;1;S;0;0;community relations
+scope 1;1;E;0;0;GHG accounting scope
+minimum wage;1;S;0;0;fair pay
+waste;1;E;0;0;environmental use dominant in corpus
+rba code of conduct;1;S;1;0;electronics industry labour standard
+carbon offset;1;E;0;0;offsetting instrument
+coso framework;1;G;0;0;internal control and risk framework
+environmental footprint;1;E;0;0;environmental metric
+charging point;1;E;1;0;electric mobility infrastructure
+medical ethics;1;S;1;0;healthcare sector ethics
+esg factor;1;TRANS;0;0;ESG umbrella vocabulary
+diversity policy;1;S;0;0;diversity governance document
+sfdr;1;TRANS;1;0;financial sector ESG disclosure regulation
+ethics and compliance;1;G;0;0;integrity governance
+sustainability policy;1;TRANS;0;0;ESG commitment document
+csrd;1;TRANS;0;0;EU sustainability reporting directive
+ethical principle;1;G;0;0;ethics vocabulary
+non-financial rating agency;1;TRANS;0;0;ESG rating ecosystem
+renewable energy;1;E;0;0;core environmental term
+sustainability-linked bond;1;TRANS;0;0;ESG linked financing instrument
+lobbying;1;G;0;0;political influence governance
+employee wellness;1;S;0;0;wellbeing practice
+sustainability strategy;1;TRANS;0;0;ESG strategy umbrella
+board sustainability expertise;1;G;0;0;board competence on ESG
+climate scenario analysis;1;E;0;0;climate risk method
+product recall;1;S;0;0;product safety event
+circularity;1;E;0;0;circular economy
+sustainable value creation;0;;0;0;corporate slogan too vague to measure
+employee benefit;0;;0;0;IAS 19 accounting line fires in statements
+enterprise risk management;1;G;0;0;risk governance system
+eu taxonomy;1;E;0;0;environmental classification system
+solar panel;1;E;1;0;renewable technology asset
+climate change mitigation;1;E;0;0;climate term
+philanthropy;1;S;0;0;community giving
+private security provider;1;S;1;0;security and human rights in extractives
+eligible green project;1;E;0;0;green bond use of proceeds
+energy management system;1;E;0;0;energy governance certification
+bioethics;1;S;1;0;pharma research ethics
+personal data;1;S;0;0;privacy topic
+variable remuneration;1;G;0;0;pay structure
+ocean freight;0;;1;0;logistics mode not an ESG concept alone
+groundwater contamination;1;E;0;0;pollution topic
+speak-up;1;G;0;1;fragment needs culture or line qualifier
+psychosocial risk;1;S;0;0;occupational health
+board evaluation;1;G;0;0;board effectiveness review
+climate risk;1;E;0;0;climate risk term
+energy attribute certificate;1;E;0;0;renewable attribute instrument
+safety at work;1;S;0;0;occupational safety
+water discharge;1;E;0;0;water metric
+installed renewable capacity;1;E;1;0;utility capacity metric
+voluntary principles on security and human rights;1;S;1;0;extractives human rights framework
+independent director;1;G;0;0;board independence
+environmental risk;1;E;0;0;environmental risk term
+leed;1;E;1;0;green building certification
+board tenure;1;G;0;0;board composition
+water consumption;1;E;0;0;water metric
+cage-free egg;1;S;1;0;animal welfare in food sector
+sustainable aviation fuel;1;E;1;0;aviation decarbonisation
+ecosystem;1;E;0;1;digital and business ecosystem homograph frequent
+climate objective;1;E;0;0;climate target
+green bond;1;E;0;0;green finance instrument
+occupational health and safety;1;S;0;0;core safety term
+corsia;1;E;1;0;aviation carbon offsetting scheme
+esg agenda;1;TRANS;0;0;ESG commitment vocabulary
+climate resilience;1;E;0;0;adaptation term
+pharmaceutical residue;1;E;1;0;pharma environmental discharge
+climate action;1;E;0;0;climate commitment
+board independence;1;G;0;0;board governance
+msci esg rating;1;TRANS;0;0;ESG rating reference
+iso 50001;1;E;0;0;energy management certification
+related party transaction;1;G;0;0;conflicts and minority protection disclosure
+product stewardship;1;E;0;0;product lifecycle responsibility
+value chain emission;1;E;0;0;scope 3 emissions
+coal-fired plant;1;E;1;0;utility generation asset
+corporate average fuel economy;1;E;1;0;automotive fuel efficiency regulation
+reputation risk;0;;0;0;generic corporate risk language
+competition law;1;G;0;0;antitrust compliance
+pay transparency;1;S;0;0;pay equity disclosure
+green investment;1;E;0;0;environmental capital allocation
+waste generated;1;E;0;0;waste metric
+environmental management system;1;E;0;0;environmental governance
+parental leave;1;S;0;0;family benefits
+training hour;1;S;0;0;training metric
+clinical trial;1;S;1;0;pharma ethics and transparency topic
+corporate social responsibility;1;TRANS;0;0;CSR umbrella
+biofuel;1;E;1;0;energy and transport fuel transition
+environmental compliance;1;E;0;0;environmental regulation adherence
+esg data;1;TRANS;0;0;ESG reporting vocabulary
+green hydrogen;1;E;1;0;energy transition technology
+data privacy;1;S;0;0;privacy topic
+societal impact;0;;0;0;vague umbrella phrase without measurable content
+compliance programme;1;G;0;0;compliance governance
+environmental impact assessment;1;E;0;0;permitting and impact process
+esg topic;1;TRANS;0;0;ESG reporting vocabulary
+water withdrawal;1;E;0;0;water metric
+responsible supply chain management;1;S;0;0;supply chain due diligence
+responsible tax;1;G;0;0;tax governance
+sustainability statements;1;TRANS;0;0;CSRD sustainability section of report
+site remediation;1;E;0;0;contaminated land management
+environmental product declaration;1;E;0;0;product environmental disclosure

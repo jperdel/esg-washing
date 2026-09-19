@@ -1,0 +1,394 @@
+termino;pilar;sectorial;colocacion;justificacion
+sustainability;TRANS;0;0;omnipresente en estrategia comites y objetivos de los 17 informes
+sustainable development;TRANS;0;0;planes y comites de desarrollo sostenible en Iberdrola y Ferrari
+ESG;TRANS;0;0;etiqueta general para asuntos ambientales sociales y de gobernanza
+ESG reporting;TRANS;0;1;reporte ESG supervisado por el comite de auditoria
+ESG risk;TRANS;0;1;categoria de riesgo definida como ambiental social y de gobernanza
+ESG rating;TRANS;0;1;puntuaciones de agencias externas en Nokia y Deutsche Boerse
+ESG data;TRANS;0;1;demanda de datos ESG de alta calidad en Deutsche Boerse
+ESG target;TRANS;0;1;objetivos ESG del plan de sostenibilidad y de la retribucion
+ESG topic;TRANS;0;1;encabezado recurrente de las tablas de indicadores GRI
+ESG objective;TRANS;0;1;las tareas del plan constituyen los objetivos ESG de Iberdrola
+corporate social responsibility;TRANS;0;0;politica RSC de PSA y criterio retributivo de Total
+corporate responsibility;TRANS;0;0;estrategia de responsabilidad corporativa revisada por el consejo de AXA
+non-financial information;TRANS;0;1;estado de informacion no financiera de Iberdrola y PSA
+non-financial statement;TRANS;0;1;declaracion no financiera verificada por tercero independiente
+non-financial reporting;TRANS;0;1;procesos de reporte financiero y no financiero en el comite de auditoria
+materiality;TRANS;0;0;analisis de materialidad de asuntos de sostenibilidad
+materiality assessment;TRANS;0;1;evaluacion de materialidad citada en las notas GRI
+double materiality;TRANS;0;1;doble materialidad tratada por el comite de auditoria de Ahold
+material topic;TRANS;0;1;temas materiales priorizados en la matriz de materialidad
+materiality matrix;TRANS;0;1;matriz de materialidad del grupo Ferrari
+sustainability report;TRANS;0;1;informe de sostenibilidad elaborado segun GRI
+integrated report;TRANS;0;1;informe integrado segun las recomendaciones del IIRC
+Global Reporting Initiative;TRANS;0;0;marco GRI usado por Ahold Iberdrola y Sanofi
+GRI standard;TRANS;0;1;opcion esencial de los estandares GRI
+GRI indicator;TRANS;0;1;columna de indicador GRI en las tablas ESG de Ahold
+SASB;TRANS;0;0;marco citado en la tabla de integridad de negocio de Airbus
+IIRC;TRANS;0;0;guias del consejo internacional de reporte integrado
+CSRD;TRANS;0;0;directiva europea de reporte de sostenibilidad en implantacion
+ESRS;TRANS;0;0;estandares europeos de reporte de sostenibilidad aplicados por ASML
+SFDR;TRANS;0;0;regulacion de divulgacion citada por Deutsche Boerse
+Sustainable Development Goal;TRANS;0;0;ODS referenciados por casi todas las empresas de la muestra
+2030 Agenda;TRANS;0;1;Agenda 2030 de Naciones Unidas invocada por Iberdrola
+UN Global Compact;TRANS;0;1;Total renovado como empresa LEAD del Pacto Mundial
+OECD Guidelines for Multinational Enterprises;TRANS;0;0;marco global considerado en la estrategia de Ahold
+stakeholder;TRANS;0;0;grupos de interes citados de forma sistematica en la muestra
+stakeholder engagement;TRANS;0;1;dialogo continuado con multiples grupos de interes sobre ESG
+stakeholder expectation;TRANS;0;1;expectativas de los grupos de interes sobre asuntos ESG
+sustainable long-term value creation;TRANS;0;1;creacion de valor sostenible a largo plazo en Ahold y AXA
+sustainability strategy;TRANS;0;1;estrategia de sostenibilidad usada como criterio retributivo en AXA
+sustainability target;TRANS;0;1;objetivos de sostenibilidad monitorizados por el consejo
+sustainability performance;TRANS;0;1;desempeno en sostenibilidad evaluado interna y externamente
+sustainability due diligence;TRANS;0;1;diligencia debida en sostenibilidad tratada por el comite de auditoria
+sustainable financing;TRANS;0;1;financiacion sostenible como objetivo de gobernanza de Iberdrola
+sustainability-linked bond;TRANS;0;1;bono ligado a sostenibilidad aprobado por el consejo de Ahold
+Dow Jones Sustainability Index;TRANS;0;0;indice DJSI usado como referencia por AXA y Total
+FTSE4Good;TRANS;0;0;indice de sostenibilidad mencionado por Iberdrola y Total
+Corporate Sustainability Assessment;TRANS;0;1;evaluacion de S&P Global incorporada a la retribucion de AXA
+EcoVadis;TRANS;0;0;calificacion extrafinanciera de proveedores en Nokia y Total
+non-financial rating agency;TRANS;0;1;agencias de rating extrafinanciero MSCI e ISS ESG en Total
+external assurance;TRANS;0;1;informacion no financiera verificada o asegurada externamente
+limited assurance;TRANS;0;1;conclusion de aseguramiento limitado del tercero independiente
+independent third party;TRANS;0;1;tercero independiente que verifica la informacion no financiera
+supplier sustainability score;TRANS;0;1;porcentaje de proveedores con puntuacion satisfactoria en Nokia
+responsible sourcing;TRANS;0;1;exigencia de politicas de sostenibilidad a los proveedores
+supply chain responsible management;TRANS;0;1;tema material de gestion responsable de la cadena de suministro
+sustainable retailing;TRANS;1;1;estrategia de venta minorista sostenible propia de Ahold
+socially responsible investor;TRANS;0;1;inversores socialmente responsables citados en el rating de Total
+emission;E;0;0;nucleo del reporte ambiental en practicamente todos los informes
+greenhouse gas emission;E;0;1;emisiones de gases de efecto invernadero con objetivos de reduccion
+GHG emission;E;0;1;abreviatura usada en objetivos y tablas de ASML Nokia y Sanofi
+CO2 emission;E;0;1;emisiones de CO2 con objetivos y precio interno del carbono
+carbon emission;E;0;1;reduccion de emisiones de carbono en Ahold y AXA
+emission reduction;E;0;1;objetivos de reduccion de emisiones validados por SBTi
+emission intensity;E;0;1;intensidad de emisiones por unidad de beneficio bruto en ASML
+emission factor;E;0;1;factores de emision de red y bases de datos DEFRA
+scope 1 emission;E;0;1;emisiones directas de las operaciones propias
+scope 2 emission;E;0;1;emisiones indirectas por energia comprada
+scope 3 emission;E;0;1;emisiones de la cadena de valor por categorias del GHG Protocol
+carbon footprint;E;0;0;huella de carbono de operaciones productos y activos
+carbon neutrality;E;0;0;compromiso de neutralidad en carbono para 2050 en Sanofi y AXA
+carbon neutral;E;0;0;flota y productos declarados neutros en carbono
+GHG neutrality;E;0;1;terminologia elegida por ASML frente a net zero
+net zero;E;0;0;objetivos cero neto alineados con la guia SBTi
+decarbonisation;E;0;0;descarbonizacion de la generacion y de la economia
+climate change;E;0;0;lucha contra el cambio climatico en todo el pilar ambiental
+climate action;E;0;1;eficiencia energetica y accion climatica como capitulo de ASML
+climate risk;E;0;1;riesgos climaticos integrados en el proceso de gestion de riesgos
+climate-related risk;E;0;1;riesgos y oportunidades relacionados con el clima segun TCFD
+physical risk;E;0;1;riesgos fisicos agudos y cronicos del cambio climatico
+transition risk;E;0;1;riesgos de transicion regulatorios y de mercado
+climate scenario;E;0;1;escenarios climaticos de largo plazo usados por Enel
+climate scenario analysis;E;0;1;analisis de escenarios del comite TCFD de Sanofi
+climate resilience;E;0;1;resiliencia climatica del portafolio de activos
+climate transition plan;E;0;1;plan de transicion climatica de ASML aprobado por el consejo
+TCFD;E;0;0;recomendaciones del grupo de trabajo sobre divulgacion climatica
+CDP;E;0;0;cuestionarios de clima y agua del Carbon Disclosure Project
+Science Based Targets initiative;E;0;0;validacion cientifica de los objetivos de emisiones
+science-based target;E;0;1;objetivos basados en la ciencia para 1.5 grados
+Paris Agreement;E;0;0;alineacion de las trayectorias de emisiones con el Acuerdo de Paris
+global warming;E;0;1;limitar el calentamiento global a 1.5 grados
+GHG Protocol;E;0;0;metodologia de calculo de las quince categorias de alcance 3
+internal carbon price;E;0;1;precio interno del carbono de 200 euros por tonelada en ASML
+carbon credit;E;0;1;creditos de carbono para compensar emisiones residuales
+carbon offset;E;0;1;compensacion de emisiones distinguida del offsetting contable
+residual emission;E;0;1;emisiones residuales que se compensan tras reducir
+avoided emission;E;0;1;emisiones evitadas frente al escenario de intensidad constante
+locked-in emission;E;0;1;emisiones bloqueadas por activos y productos vendidos
+carbon sink;E;0;1;sumideros naturales de carbono para compensar emisiones
+carbon removal;E;0;1;solo se admiten offsets de remocion en la cartera de ASML
+voluntary emission reduction certificate;E;0;1;certificados voluntarios de reduccion adquiridos desde 2025
+energy consumption;E;0;1;consumo energetico controlado y reducido en todos los sectores
+energy efficiency;E;0;0;eficiencia energetica de edificios procesos y productos
+energy saving;E;0;1;planes maestros de ahorro energetico de ASML y Sanofi
+renewable energy;E;0;0;transicion a energia renovable en operaciones y cadena de valor
+renewable electricity;E;0;1;compra de electricidad renovable certificada al cien por cien
+green electricity;E;0;1;compras directas de electricidad verde cercana a las instalaciones
+renewable source;E;0;1;fuentes renovables en el mix de generacion
+power purchase agreement;E;0;1;contratos PPA de electricidad renovable en Taiwan y Paises Bajos
+energy attribute certificate;E;0;1;certificados de atributos energeticos para el alcance 2 de mercado
+solar panel;E;0;1;instalacion de paneles solares en cubiertas propias
+photovoltaic plant;E;1;1;planta fotovoltaica solo tiene sentido en generacion electrica
+wind farm;E;1;1;parques eolicos terrestres y marinos del negocio de renovables
+offshore wind;E;1;1;parque eolico marino East Anglia ONE de Iberdrola
+hydroelectric;E;1;0;generacion hidroelectrica del mix de Enel e Iberdrola
+geothermal;E;1;0;fuente geotermica del mix de generacion de Enel
+installed renewable capacity;E;1;1;capacidad renovable instalada en GW propia de utilities
+energy mix;E;0;1;evolucion del mix energetico y peso de las renovables
+electrification;E;1;0;electrificacion de la demanda energetica y del transporte
+green hydrogen;E;1;1;proyectos de hidrogeno verde de Iberdrola y Total
+smart grid;E;1;1;redes inteligentes para liderar la transicion energetica
+smart meter;E;1;1;contadores inteligentes desplegados por Iberdrola
+electric vehicle;E;0;1;vehiculo electrico y flota electrificada en varios sectores
+sustainable mobility;E;0;1;plan de movilidad sostenible y bicicletas de campus
+charging point;E;0;1;puntos de recarga desplegados por Iberdrola Total y ASML
+biofuel;E;1;0;biocarburantes certificados sostenibles de la biorrefineria de Total
+sustainable aviation fuel;E;1;1;SAF comprado para vuelos y promovido en la industria aerea
+low-carbon energy;E;0;1;politica de energias bajas en carbono de Sanofi
+fossil fuel;E;0;1;reduccion significativa del uso de combustibles fosiles
+coal-fired power plant;E;1;1;cierre de centrales de carbon en Italia y Espana
+energy transition;E;0;1;transicion energetica como eje estrategico y categoria de riesgo
+Green Deal;E;0;0;Pacto Verde europeo citado por Iberdrola
+green recovery;E;0;1;recuperacion verde tras la crisis sanitaria
+green bond;E;0;1;marco de bonos verdes de ASML e Iberdrola
+green financing;E;0;1;instrumentos de financiacion verde de Iberdrola
+eligible green project;E;0;1;proyectos verdes elegibles segun los Green Bond Principles
+EU Taxonomy;E;0;0;actividades elegibles y alineadas con la taxonomia europea
+taxonomy-eligible;E;0;1;actividades elegibles bajo taxonomia en Deutsche Boerse y Airbus
+taxonomy-aligned;E;0;1;actividades ambientalmente sostenibles alineadas con la taxonomia
+climate change mitigation;E;0;1;objetivo bajo el que se clasifican inversiones en la taxonomia
+climate change adaptation;E;0;1;planes de adaptacion al cambio climatico de Enel y Sanofi
+waste;E;0;0;residuos generados reciclados y enviados a vertedero
+waste generated;E;0;1;indicador GRI 306-3 de residuos generados
+waste management;E;0;1;gestion de residuos con objetivos de reciclaje
+waste recycled;E;0;1;porcentaje de residuos reciclados en las tablas ESG
+recycling;E;0;0;reciclaje y recuperacion de residuos y materiales
+recycled content;E;0;1;uso de contenido reciclado en materias primas
+reuse;E;0;0;reutilizacion de piezas embalajes y materiales
+circular economy;E;0;0;economia circular como eje ambiental de Iberdrola Total y ASML
+circularity;E;0;0;informe de circularidad basado en indicadores WBCSD
+landfill;E;0;0;objetivo de eliminar el envio a vertedero
+food waste;E;1;1;desperdicio alimentario como KPI material de Ahold
+sustainable packaging;E;0;1;envases sostenibles como KPI del comite de sostenibilidad
+plastic waste;E;0;1;alianza para acabar con los residuos plasticos
+water consumption;E;0;1;consumo de agua reportado por tiendas centros y oficinas
+water withdrawal;E;0;1;captaciones de agua dulce excluyendo agua de refrigeracion
+water footprint;E;0;1;verificacion de la huella hidrica del grupo Iberdrola
+water stress;E;0;1;zonas de estres hidrico identificadas con la herramienta Aqueduct
+water management plan;E;0;1;planes de gestion del agua en emplazamientos prioritarios
+wastewater;E;0;0;vertidos y depuradoras de aguas residuales
+water discharge;E;0;1;calidad de los vertidos de agua y contenido de hidrocarburos
+biodiversity;E;0;0;proteccion de la biodiversidad y compromisos Act4Nature
+biodiversity action plan;E;0;1;planes de accion de biodiversidad en emplazamientos protegidos
+ecosystem;E;0;0;impactos sobre ecosistemas en proyectos y operaciones
+protected area;E;0;1;areas protegidas IUCN y Ramsar evitadas o gestionadas
+reforestation;E;0;0;programa de reforestacion de ocho millones de arboles
+deforestation;E;0;0;criterio de no deforestacion en los aceites para biocarburantes
+natural capital;E;0;1;capital natural como categoria de activos del informe integrado
+pollution;E;0;0;prevencion de la contaminacion accidental y cronica
+accidental pollution;E;0;1;prevencion de riesgos de contaminacion accidental
+pollutant;E;0;0;naturaleza y concentracion de contaminantes en suelos
+soil contamination;E;0;1;evaluacion de contaminacion de suelos y aguas subterraneas
+groundwater contamination;E;0;1;identificacion de impactos sobre aguas subterraneas
+site remediation;E;0;1;remediacion de emplazamientos industriales fuera de servicio
+oil spill;E;1;1;derrames de hidrocarburos y planes de contingencia de Total
+sulfur dioxide emission;E;1;1;objetivo de reduccion del cincuenta por ciento de SO2 en refino
+NOx emission;E;1;1;emisiones de NOx de actividades de exploracion y produccion
+air quality;E;0;1;campanas de sensibilizacion sobre la calidad del aire
+ozone layer;E;0;1;sustitucion de equipos con sustancias que agotan el ozono
+refrigerant;E;0;0;gestion de refrigerantes con menor potencial de calentamiento
+environmental management system;E;0;1;sistemas de gestion ambiental certificados en los emplazamientos
+ISO 14001;E;0;0;certificacion ambiental exigida a los emplazamientos de Total
+ISO 50001;E;0;0;certificacion de sistemas de gestion energetica en Sanofi
+environmental footprint;E;0;1;huella ambiental corporativa e informe CEF de Iberdrola
+environmental impact;E;0;1;impacto ambiental evaluado en proyectos y productos
+environmental impact assessment;E;0;1;evaluaciones de impacto ambiental voluntarias sobre medicamentos
+environmental performance;E;0;1;desempeno ambiental revisado anualmente por el comite de auditoria
+environmental policy;E;0;1;politica ambiental revisada por el consejero independiente de AXA
+environmental protection;E;0;1;proteccion del medio ambiente como prioridad declarada de Total
+environmental risk;E;0;1;riesgos ambientales inherentes a la actividad del grupo
+environmental compliance;E;0;1;cumplimiento ambiental exigido tambien a los proveedores
+life cycle assessment;E;0;1;analisis de ciclo de vida de productos y materiales
+ecodesign;E;0;0;ecodiseno integrado en el diseno de infraestructuras y productos
+Environmental Product Declaration;E;0;1;declaraciones ambientales de producto desarrolladas por Iberdrola
+green building;E;0;1;nuevos edificios segun estandares de construccion verde
+LEED;E;0;0;certificacion de edificios en Sanofi y ASML
+BREEAM;E;0;0;certificacion de edificios europeos en Sanofi y ASML
+extreme weather event;E;0;1;eventos meteorologicos extremos como riesgo fisico
+climate hazard;E;0;1;peligros climaticos analizados a resolucion de emplazamiento
+animal welfare;E;1;0;bienestar animal como tema ESG declarado por Ahold
+cage-free egg;E;1;1;porcentaje de huevos de gallinas libres de jaula
+palm oil;E;1;1;proveedores de aceite de palma con control reforzado de sostenibilidad
+supply chain emission;E;0;1;emisiones de la cadena de suministro a reducir con proveedores
+product use emission;E;0;1;emisiones por el uso de los sistemas vendidos a clientes
+business travel emission;E;0;1;emisiones de viajes de negocio de la categoria seis
+employee commuting emission;E;0;1;emisiones de desplazamientos al trabajo de la categoria siete
+logistics emission;E;0;1;emisiones de transporte y distribucion aguas arriba
+corporate average fuel economy;E;1;1;cumplimiento CAFE como disparador del bono de Stellantis
+diesel emission;E;1;1;investigaciones penales sobre emisiones diesel en Estados Unidos
+RE100;E;0;0;iniciativa de electricidad cien por cien renovable suscrita por Sanofi
+green investment;E;0;1;cartera de inversion verde de AXA de 26.000 millones
+employee;S;0;0;sujeto basico del pilar social en toda la muestra
+workforce;S;0;0;plantilla diversa e inclusiva y desarrollo de la fuerza laboral
+employee turnover;S;0;1;rotacion de asociados y rotacion voluntaria como indicador social
+employee engagement;S;0;1;compromiso de los empleados medido y gestionado
+employee engagement survey;S;0;1;encuesta anual de compromiso de asociados y People Survey
+collective bargaining;S;0;0;negociacion colectiva y cobertura de los convenios
+collective bargaining agreement;S;0;1;convenios colectivos aplicados en los paises de origen
+collective labour agreement;S;0;1;renovacion del convenio Metalektro en ASML
+trade union;S;0;0;acuerdos firmados con sindicatos y representantes de los trabajadores
+works council;S;0;0;comites de empresa consultados sobre condiciones de empleo
+social dialogue;S;0;1;organizacion del dialogo social y procedimientos de consulta
+labour law;S;0;1;cumplimiento de la legislacion laboral local
+fair labour condition;S;0;1;condiciones laborales justas como subtema social de ASML
+working condition;S;0;1;condiciones de trabajo evaluadas por un tercero independiente
+working hours;S;0;1;regulacion de jornada descansos y horas extraordinarias
+living wage;S;0;1;compromiso de salario digno referenciado a benchmarks externos
+minimum wage;S;0;1;revision anual de los salarios minimos por pais
+pay transparency;S;0;1;preparacion para la directiva europea de transparencia salarial
+equal pay;S;0;1;mantenimiento de la igualdad retributiva en Iberdrola
+gender equality;S;0;1;promocion de la igualdad de genero en la plantilla
+gender balance;S;0;1;aspiracion de equilibrio de genero cien por cien en Ahold
+gender diversity;S;0;1;diversidad de genero reportada por declaracion voluntaria
+female representation;S;0;1;representacion femenina en niveles de vicepresidencia senior
+women in management position;S;0;1;objetivo de mujeres en puestos directivos en Iberdrola y Total
+diversity equity and inclusion;S;0;1;marco DE&I con pilares de personas cultura y comunidades
+inclusion;S;0;0;ambicion de ser una empresa cien por cien inclusiva
+inclusive workplace;S;0;1;entorno de trabajo inclusivo como prioridad de personas en Airbus
+non-discrimination;S;0;1;diversidad inclusion y no discriminacion como tema material
+disability;S;0;0;empleo de personas con discapacidad y red ILO Business and Disability
+human rights;S;0;0;respeto de los derechos humanos en operaciones y cadena de valor
+human rights due diligence;S;0;1;proceso de diligencia debida en derechos humanos segun UNGP
+forced labour;S;0;1;prevencion del trabajo forzoso en la cadena de suministro
+child labour;S;0;1;prevencion del trabajo infantil en la seleccion de proveedores
+UN Guiding Principles;S;0;1;principios rectores sobre empresas y derechos humanos
+ILO convention;S;0;1;convenios fundamentales de la OIT exigidos a concesionarios
+Voluntary Principles on Security and Human Rights;S;0;0;principios aplicados a fuerzas y empresas de seguridad
+Corporate Human Rights Benchmark;S;0;0;posicion de Total en el ranking del sector extractivo
+local community;S;0;1;impactos y dialogo con las comunidades locales
+community engagement;S;0;1;compromiso con comunidades y gobiernos del entorno
+philanthropy;S;0;0;iniciativas de mecenazgo y alianzas locales de PSA
+corporate volunteering;S;0;1;voluntariado corporativo y dia internacional del voluntario
+social commitment;S;0;1;compromiso social recogido como capitulo del informe
+social dividend;S;0;1;dividendo social creciente para el conjunto de la sociedad
+societal impact;S;0;1;modelo Total Societal Impact de indicadores sociales y ambientales
+occupational health and safety;S;0;1;salud y seguridad laboral supervisada por el comite de auditoria
+health and safety;S;0;1;compromiso con la salud y la seguridad de los empleados
+accident rate;S;0;1;mejora de los ratios de accidentalidad en Iberdrola
+injury rate;S;0;1;accidentes con baja sobre el numero medio de empleados
+occupational illness;S;0;1;enfermedades profesionales registradas en el grupo
+musculoskeletal disorder;S;0;0;trastornos musculoesqueleticos como principal enfermedad profesional
+psychosocial risk;S;0;1;programa global de prevencion de riesgos psicosociales de Total
+psychological safety;S;0;1;formacion en seguridad psicologica desplegada por las marcas
+well-being;S;0;0;bienestar de los empleados y de la sociedad
+employee wellness programme;S;0;1;programa de bienestar de Sanofi en sesenta y dos paises
+work-life balance;S;0;1;conciliacion y flexibilidad horaria en Airbus y Ferrari
+maternity and paternity leave;S;0;1;permisos por encima del minimo legal en Airbus
+childcare;S;0;0;guarderias en el centro de trabajo o servicios subvencionados
+remote working;S;0;1;teletrabajo y trabajo hibrido como medida de conciliacion
+employee training;S;0;1;horas de formacion por empleado como objetivo social
+training hour;S;0;1;incremento de las horas de formacion por empleado hasta 55
+skills development;S;0;1;desarrollo de competencias criticas y organizacion agil de aprendizaje
+talent attraction and retention;S;0;1;atraccion desarrollo y retencion del talento como riesgo material
+talent development;S;0;1;cultivar el mejor talento como palanca estrategica
+employee share ownership plan;S;0;1;planes de accionariado y compra de acciones para empleados
+product safety;S;0;1;seguridad del producto como area de desempeno de Ahold
+product quality;S;0;1;calidad y seguridad de los productos como tema material de Ferrari
+consumer safety;S;0;1;limitacion de riesgos para la salud y seguridad de los consumidores
+customer satisfaction;S;0;1;satisfaccion del cliente medida con KPI y encuestas
+customer health and nutrition;S;1;1;tema ESG de salud y nutricion del cliente en Ahold
+healthy eating;S;1;1;facilitar la alimentacion saludable asequible y accesible
+harmful consumption;S;1;1;reducir el consumo nocivo de alcohol en AB InBev
+road safety;S;0;1;programas de seguridad vial de AB InBev y Total
+patient safety;S;1;1;seguridad del paciente en los ensayos clinicos
+clinical trial;S;1;0;transparencia sobre ensayos clinicos del comite de bioetica
+bioethics;S;1;0;comite de bioetica y consejo asesor independiente de Sanofi
+medical ethics;S;1;1;etica medica y bioetica como apartado del informe
+pharmacovigilance;S;1;0;buenas practicas de farmacovigilancia exigidas por el regulador
+Good Manufacturing Practice;S;1;0;buenas practicas de fabricacion del sistema de calidad
+quality management system;S;0;1;sistema de gestion de calidad auditado internamente
+product traceability;S;0;1;serializacion y trazabilidad frente a la falsificacion
+counterfeiting;S;1;0;proteccion de productos frente a falsificacion y manipulacion
+vehicle recall;S;1;1;campanas de llamada a revision obligatorias en Mexico
+access to energy;S;1;1;programa Electricidad para todos de Iberdrola
+access to healthcare;S;1;1;acceso de los pacientes a la asistencia sanitaria
+inclusive insurance;S;1;1;seguros inclusivos para poblaciones vulnerables de AXA
+vulnerable group;S;0;1;apoyo a los colectivos mas vulnerables ante la pandemia
+conflict mineral;S;1;1;minerales de conflicto en los programas de auditoria de Nokia
+access to land;S;1;1;acceso a la tierra de las comunidades locales como asunto saliente
+private security provider;S;1;1;empresas de seguridad privada formadas en los VPSHR
+corporate governance;G;0;0;seccion de gobierno corporativo presente en todos los informes
+corporate governance code;G;0;1;codigo holandes belga o de buen gobierno como referencia
+governance structure;G;0;1;estructura de gobierno descrita con diagrama en Ahold
+governance body;G;0;1;organos de gobierno y su diversidad segun GRI 405-1
+board of directors;G;0;1;organo de administracion en Iberdrola Ferrari AXA y Airbus
+supervisory board;G;0;1;consejo de supervision de las estructuras duales holandesa y alemana
+management board;G;0;1;consejo de direccion supervisado por el consejo de supervision
+executive committee;G;0;1;comite ejecutivo con responsabilidad sobre la estrategia ESG
+board committee;G;0;1;comites del consejo con poderes consultivos
+audit committee;G;0;1;comite de auditoria finanzas y riesgos
+remuneration committee;G;0;1;comite de retribuciones que propone la politica retributiva
+nomination committee;G;0;1;comite de gobierno y nombramientos
+sustainability committee;G;0;1;comite de salud y sostenibilidad y de desarrollo sostenible
+ESG committee;G;0;1;comite ESG del consejo de supervision de ASML
+board attendance;G;0;1;asistencia de los consejeros a las reuniones del consejo
+board composition;G;0;1;composicion y evaluacion periodica de los organos
+board evaluation;G;0;1;evaluacion periodica del consejo bajo supervision de experto externo
+board tenure;G;0;1;mandatos y calendario de reeleccion de los consejeros
+board diversity;G;0;1;diversidad de los organos de gobierno segun el codigo holandes
+board diversity policy;G;0;1;politica de diversidad del consejo en Ferrari e Iberdrola
+director independence;G;0;1;independencia de los consejeros segun la provision 2.1.8
+independent director;G;0;1;consejero independiente en AXA Ferrari y Airbus
+senior independent director;G;0;1;consejero independiente coordinador en AXA y Stellantis
+succession planning;G;0;1;planes de sucesion del consejo y de la alta direccion
+conflict of interest;G;0;0;deber de comunicar conflictos de interes al presidente
+articles of association;G;0;1;estatutos sociales y principios basicos de gobierno
+general meeting of shareholders;G;0;1;junta general que aprueba politica retributiva y nombramientos
+shareholder rights;G;0;1;derechos de los accionistas segun el decreto holandes
+voting rights;G;0;1;derechos de voto y umbral de oferta publica obligatoria
+special voting share;G;0;1;acciones de voto especial del registro de lealtad de Ferrari
+loyalty voting structure;G;0;1;estructura de voto de lealtad en Ferrari y Stellantis
+change of control;G;0;1;cambio de control definido en los terminos de las acciones especiales
+controlling shareholder;G;0;1;accionista de control del Estado italiano en Enel
+related party transaction;G;0;1;revision y aprobacion de operaciones con partes vinculadas
+remuneration policy;G;0;1;politica de remuneracion aprobada por la junta general
+remuneration report;G;0;1;informe anual de remuneraciones de los consejeros
+variable remuneration;G;0;1;componentes variables de la retribucion de los ejecutivos
+fixed remuneration;G;0;1;retribucion fija y prima de asistencia de los consejeros
+executive compensation;G;0;1;compensacion de la direccion ejecutiva revisada por el comite
+pay ratio;G;0;1;ratio entre la retribucion del consejero delegado y la media
+long-term incentive plan;G;0;1;plan de incentivos a largo plazo ligado a metricas ESG
+short-term incentive;G;0;1;multiplicador del incentivo anual aprobado por el consejo
+malus;G;0;0;mecanismo de malus sobre la retribucion variable diferida de AXA
+internal control;G;0;0;sistema de control interno evaluado por el comite de auditoria
+internal control over financial reporting;G;0;1;marco COSO de control interno sobre la informacion financiera
+internal audit;G;0;1;funcion de auditoria interna evaluada por un tercero independiente
+external auditor;G;0;1;auditor externo independiente nombrado por la junta
+auditor independence;G;0;1;declaracion de independencia del auditor externo
+non-audit service;G;0;1;prohibicion y aprobacion de servicios distintos de la auditoria
+key audit matter;G;0;1;cuestiones clave de auditoria comunicadas al comite
+risk management;G;0;0;sistema de gestion de riesgos supervisado por el consejo
+enterprise risk management;G;0;1;programa ERM con revision semestral incluidos los riesgos ESG
+risk appetite;G;0;1;apetito de riesgo definido por el consejo para cada categoria
+three lines of defense;G;0;1;modelo de tres lineas de defensa en Ahold e Iberdrola
+compliance risk;G;0;1;riesgo de incumplimiento de leyes politicas y procedimientos
+compliance system;G;0;1;sistema de cumplimiento certificado UNE 19601 en Iberdrola
+regulatory compliance;G;0;1;obligaciones de cumplimiento regulatorio de la actividad
+code of ethics;G;0;1;codigo etico aprobado por el consejo y actualizado periodicamente
+code of conduct;G;0;1;codigo de conducta y sus principios difundidos a terceros
+supplier code of conduct;G;0;1;codigo de conducta de proveedores en Airbus y ASML
+business ethics;G;0;1;etica empresarial y anticorrupcion como area de riesgo
+business integrity;G;0;1;programa de integridad de negocio de Airbus y Sanofi
+ethical principle;G;0;1;principios eticos que fundamentan el marco GRC
+anti-corruption;G;0;0;politica anticorrupcion y adhesion a la iniciativa PACI
+anti-bribery;G;0;1;sistema de gestion antisoborno certificado ISO 37001
+corruption;G;0;0;prohibicion de pagos indebidos a funcionarios extranjeros
+whistle-blowing hotline;G;0;1;canal de denuncias con cifras de uso en Sanofi
+speak-up culture;G;0;1;linea Speak Up y cultura de hablar sin temor
+ethics training;G;0;1;modulos de formacion en etica e integridad seguidos por empleados
+fraud prevention;G;0;1;politicas de prevencion y deteccion del fraude
+deferred prosecution agreement;G;0;1;acuerdos de enjuiciamiento diferido cerrados por Airbus
+antitrust;G;0;0;leyes de competencia y escrutinio regulatorio en AB InBev
+export control;G;0;1;cumplimiento de control de exportaciones en Airbus y ASML
+economic sanction;G;0;1;sanciones economicas y comerciales como riesgo reputacional
+litigation;G;0;0;litigios reportados periodicamente al comite de auditoria
+data privacy;G;0;1;privacidad de datos actualizada trimestralmente al comite
+data protection;G;0;1;proteccion de datos en la lista de normativa aplicable de ASML
+cybersecurity;G;0;0;analisis de ciberseguridad como objetivo de gobernanza de Iberdrola
+information security;G;0;1;informacion y ciberseguridad revisadas por el comite de auditoria
+IT control;G;0;1;controles generales de tecnologia dentro del marco de control interno
+business continuity;G;0;1;continuidad del negocio y proteccion de activos
+crisis management;G;0;1;plan de gestion de crisis ante catastrofes naturales
+incident response;G;0;1;tendencias incidentes y respuesta discutidos por el comite
+tax transparency;G;0;1;informe de transparencia fiscal del grupo Iberdrola
+responsible tax;G;0;1;adhesion a los principios B-Team de fiscalidad sostenible
+global minimum tax;G;0;1;tipo minimo global del pilar II de la OCDE
+lobbying;G;0;0;posicionamiento publico y lobby sobre politica climatica
+responsible lobbying;G;0;1;carta de lobby responsable de Airbus
+reputation risk;G;0;1;riesgo de danar la imagen publica en el catalogo de Enel
+corporate culture;G;0;1;cultura corporativa y etica como categoria de riesgo de Enel
+governance risk and compliance framework;G;0;1;marco GRC con comite global presidido por el CLO
+Chief Sustainability Officer;G;0;1;creacion de un rol dedicado a sostenibilidad en el comite ejecutivo
+board sustainability expertise;G;0;1;matriz de cualificacion con experiencia en sostenibilidad
+Ethisphere;G;0;0;reconocimiento como una de las empresas mas eticas del mundo

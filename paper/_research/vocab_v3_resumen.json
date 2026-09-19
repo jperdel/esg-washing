@@ -1,0 +1,716 @@
+{
+ "entradas_antes": 361,
+ "entradas_despues": 434,
+ "retiradas_o_sustituidas": 38,
+ "colocaciones_nuevas": 42,
+ "colocaciones_descartadas": 0,
+ "candidatos_incorporados": 69,
+ "precision_antes": 0.759,
+ "masa_auditada_antes": 1339337,
+ "precision_tras_depurar": 0.812,
+ "masa_tras_depurar": 1161970,
+ "precision_tras_depurar_y_ampliar": 0.821,
+ "masa_tras_ampliar": 1241962,
+ "pilares": {
+  "E": {
+   "antes": 130,
+   "despues": 168
+  },
+  "S": {
+   "antes": 115,
+   "despues": 139
+  },
+  "G": {
+   "antes": 84,
+   "despues": 95
+  },
+  "TRANS": {
+   "antes": 32,
+   "despues": 32
+  }
+ },
+ "retirados": [
+  {
+   "termino": "circular",
+   "accion": "retirar",
+   "motivo": "p=0,67: circulares de junta y Assonime, cabeceras de taxonomia, circular economy y circularity se mantienen",
+   "precision": "0.667",
+   "ocurrencias": "8404"
+  },
+  {
+   "termino": "ecosystem",
+   "accion": "sustituir",
+   "motivo": "p=0,42: ecosistema de negocio, digital o de innovacion",
+   "precision": "0.417",
+   "ocurrencias": "7317"
+  },
+  {
+   "termino": "energy management",
+   "accion": "retirar",
+   "motivo": "p=0,33: lineas de negocio y funcionalidades de producto",
+   "precision": "0.333",
+   "ocurrencias": "1256"
+  },
+  {
+   "termino": "environ\\w+",
+   "accion": "restringir",
+   "motivo": "p=0,62, environmental* 0,83 frente a environment suelto 0,31 (entorno economico, regulatorio)",
+   "precision": "0.625",
+   "ocurrencias": "73941"
+  },
+  {
+   "termino": "footprint",
+   "accion": "sustituir",
+   "motivo": "p=0,67: huella industrial o geografica, los aciertos llevan carbon o environmental",
+   "precision": "0.667",
+   "ocurrencias": "8666"
+  },
+  {
+   "termino": "fuel",
+   "accion": "sustituir",
+   "motivo": "p=0,58: verbo to fuel, sistemas de combustible, costes",
+   "precision": "0.583",
+   "ocurrencias": "9890"
+  },
+  {
+   "termino": "marine",
+   "accion": "retirar",
+   "motivo": "p=0,33: cabeceras de taxonomia, obras maritimas, aplicaciones de producto",
+   "precision": "0.333",
+   "ocurrencias": "2273"
+  },
+  {
+   "termino": "offset",
+   "accion": "sustituir",
+   "motivo": "p=0,17: compensacion contable de activos y pasivos, coberturas, bases imponibles, partially offset by",
+   "precision": "0.167",
+   "ocurrencias": "7971"
+  },
+  {
+   "termino": "offset\\w+",
+   "accion": "retirar",
+   "motivo": "p=0,08: contrapartidas contables, netting de derivados, sustituido junto con offset",
+   "precision": "0.083",
+   "ocurrencias": "3361"
+  },
+  {
+   "termino": "packaging",
+   "accion": "sustituir",
+   "motivo": "p=0,50: encapsulado de chips, envases como negocio",
+   "precision": "0.5",
+   "ocurrencias": "6829"
+  },
+  {
+   "termino": "raw material efficiency",
+   "accion": "retirar",
+   "motivo": "no dispara nunca en el corpus",
+   "precision": "",
+   "ocurrencias": "0"
+  },
+  {
+   "termino": "scope\\s+(?:one|two|three)",
+   "accion": "retirar",
+   "motivo": "p=0,00: captura reporting scope one year, nunca emisiones",
+   "precision": "0.0",
+   "ocurrencias": "3"
+  },
+  {
+   "termino": "solar",
+   "accion": "sustituir",
+   "motivo": "p=0,33: glosario (sistema solar), nombres de filiales, litigios",
+   "precision": "0.333",
+   "ocurrencias": "7118"
+  },
+  {
+   "termino": "code of ethics",
+   "accion": "retirar",
+   "motivo": "p=0,42: codigo deontologico del auditor, code of conduct se mantiene",
+   "precision": "0.417",
+   "ocurrencias": "2713"
+  },
+  {
+   "termino": "duty of vigilance",
+   "accion": "retirar",
+   "motivo": "p=0,17: listas de referencias legales, vigilance plan se mantiene",
+   "precision": "0.167",
+   "ocurrencias": "966"
+  },
+  {
+   "termino": "fraud",
+   "accion": "sustituir",
+   "motivo": "p=0,42: formula del informe de auditoria (whether due to fraud or error)",
+   "precision": "0.417",
+   "ocurrencias": "6651"
+  },
+  {
+   "termino": "integrity",
+   "accion": "sustituir",
+   "motivo": "p=0,67: triada confidencialidad-integridad-disponibilidad de ciberseguridad",
+   "precision": "0.667",
+   "ocurrencias": "6376"
+  },
+  {
+   "termino": "non-compliance",
+   "accion": "retirar",
+   "motivo": "p=0,42: boilerplate ESEF del auditor (free from material non-compliance)",
+   "precision": "0.417",
+   "ocurrencias": "2807"
+  },
+  {
+   "termino": "proxy statement",
+   "accion": "retirar",
+   "motivo": "p=0,00: texto legal NYSE repetido",
+   "precision": "0.0",
+   "ocurrencias": "25"
+  },
+  {
+   "termino": "related party",
+   "accion": "retirar",
+   "motivo": "p=0,08: notas contables de operaciones vinculadas e informe especial del auditor",
+   "precision": "0.083",
+   "ocurrencias": "2590"
+  },
+  {
+   "termino": "risk appetite",
+   "accion": "retirar",
+   "motivo": "marco prudencial bancario, la ronda 2 lo rechazo 2 de 3",
+   "precision": "0.75",
+   "ocurrencias": "4936"
+  },
+  {
+   "termino": "risk management",
+   "accion": "sustituir",
+   "motivo": "p=0,62 con mitad de fallos financieros (coberturas, notas de riesgo), la ronda 2 lo rechazo 2 de 3",
+   "precision": "0.625",
+   "ocurrencias": "25793"
+  },
+  {
+   "termino": "scenario analysis",
+   "accion": "sustituir",
+   "motivo": "la ronda 2 lo rechazo 3 de 3: escenarios de retribucion variable",
+   "precision": "0.667",
+   "ocurrencias": "768"
+  },
+  {
+   "termino": "supply chain management",
+   "accion": "retirar",
+   "motivo": "p=0,50: nombres de servicios, productos bancarios y sociedades",
+   "precision": "0.5",
+   "ocurrencias": "454"
+  },
+  {
+   "termino": "transparency",
+   "accion": "retirar",
+   "motivo": "p=0,67 y la ronda 2 lo rechazo 2 de 3, tax transparency y supply chain transparency se mantienen",
+   "precision": "0.667",
+   "ocurrencias": "6717"
+  },
+  {
+   "termino": "consumer protection",
+   "accion": "retirar",
+   "motivo": "p=0,17: nombres de leyes y ministerios",
+   "precision": "0.167",
+   "ocurrencias": "471"
+  },
+  {
+   "termino": "customer satisfaction",
+   "accion": "retirar",
+   "motivo": "la ronda 2 lo rechazo 3 de 3, p=0,67",
+   "precision": "0.667",
+   "ocurrencias": "1245"
+  },
+  {
+   "termino": "dei",
+   "accion": "retirar",
+   "motivo": "p=0,50: preposicion italiana (Monte dei Paschi), diversity equity and inclusion cubre el concepto",
+   "precision": "0.5",
+   "ocurrencias": "972"
+  },
+  {
+   "termino": "disabilit\\w+",
+   "accion": "retirar",
+   "motivo": "p=0,67: mismos homografos actuariales, sustituido junto con disability",
+   "precision": "0.667",
+   "ocurrencias": "6482"
+  },
+  {
+   "termino": "disability",
+   "accion": "sustituir",
+   "motivo": "p=0,58: seguro y prestaciones de invalidez",
+   "precision": "0.583",
+   "ocurrencias": "3825"
+  },
+  {
+   "termino": "product quality",
+   "accion": "retirar",
+   "motivo": "p=0,33 y la ronda 2 lo rechazo 3 de 3",
+   "precision": "0.333",
+   "ocurrencias": "581"
+  },
+  {
+   "termino": "social indicator",
+   "accion": "retirar",
+   "motivo": "p=0,17: encabezados y tablas de datapoints",
+   "precision": "0.167",
+   "ocurrencias": "229"
+  },
+  {
+   "termino": "article\\s*[689]\\b",
+   "accion": "retirar",
+   "motivo": "p=0,50: estatutos sociales, Reglamento de folletos, codigos AFEP",
+   "precision": "0.5",
+   "ocurrencias": "1671"
+  },
+  {
+   "termino": "gri",
+   "accion": "retirar",
+   "motivo": "p=0,42: casi todo en indices y tablas de correspondencia, global reporting initiative se mantiene",
+   "precision": "0.417",
+   "ocurrencias": "5733"
+  },
+  {
+   "termino": "materiality",
+   "accion": "sustituir",
+   "motivo": "p=0,42: materialidad contable y de auditoria, double materiality y material topic ya estan",
+   "precision": "0.417",
+   "ocurrencias": "7076"
+  },
+  {
+   "termino": "non-financial",
+   "accion": "retirar",
+   "motivo": "p=0,30: categoria juridica de la taxonomia, activos no financieros IFRS, boilerplate del auditor. Se probaron colocaciones (statement, information, reporting, performance) y tampoco sirven: 12 aciertos de 36, nombran el documento y no su contenido",
+   "precision": "0.3",
+   "ocurrencias": "13715"
+  },
+  {
+   "termino": "nonfinancial",
+   "accion": "retirar",
+   "motivo": "p=0,50: mismos homografos que non-financial, sus colocaciones tampoco sirven",
+   "precision": "0.5",
+   "ocurrencias": "1686"
+  },
+  {
+   "termino": "taxonomy aligned",
+   "accion": "retirar",
+   "motivo": "p=0,42: cabeceras y plantillas de tablas regulatorias, eu taxonomy y taxonomy alignment se mantienen",
+   "precision": "0.417",
+   "ocurrencias": "5279"
+  }
+ ],
+ "candidatos": [
+  {
+   "termino": "executive committee",
+   "pilar": "G",
+   "precision": "0.833",
+   "ocurrencias": "5561"
+  },
+  {
+   "termino": "risk committee",
+   "pilar": "G",
+   "precision": "0.833",
+   "ocurrencias": "3547"
+  },
+  {
+   "termino": "well-being",
+   "pilar": "S",
+   "precision": "0.833",
+   "ocurrencias": "3005"
+  },
+  {
+   "termino": "nomination committee",
+   "pilar": "G",
+   "precision": "0.833",
+   "ocurrencias": "1882"
+  },
+  {
+   "termino": "transition risk",
+   "pilar": "E",
+   "precision": "0.833",
+   "ocurrencias": "1626"
+  },
+  {
+   "termino": "limited assurance",
+   "pilar": "TRANS",
+   "precision": "0.833",
+   "ocurrencias": "1273"
+  },
+  {
+   "termino": "working hours",
+   "pilar": "S",
+   "precision": "0.833",
+   "ocurrencias": "944"
+  },
+  {
+   "termino": "export control",
+   "pilar": "G",
+   "precision": "0.833",
+   "ocurrencias": "856"
+  },
+  {
+   "termino": "extreme weather event",
+   "pilar": "E",
+   "precision": "0.833",
+   "ocurrencias": "532"
+  },
+  {
+   "termino": "groundwater",
+   "pilar": "E",
+   "precision": "0.833",
+   "ocurrencias": "463"
+  },
+  {
+   "termino": "skills development",
+   "pilar": "S",
+   "precision": "0.833",
+   "ocurrencias": "351"
+  },
+  {
+   "termino": "compliance system",
+   "pilar": "G",
+   "precision": "0.833",
+   "ocurrencias": "346"
+  },
+  {
+   "termino": "employee commuting",
+   "pilar": "E",
+   "precision": "0.833",
+   "ocurrencias": "313"
+  },
+  {
+   "termino": "smart grid",
+   "pilar": "E",
+   "precision": "0.833",
+   "ocurrencias": "258"
+  },
+  {
+   "termino": "vulnerable group",
+   "pilar": "S",
+   "precision": "0.833",
+   "ocurrencias": "245"
+  },
+  {
+   "termino": "three lines of defence",
+   "pilar": "G",
+   "precision": "0.833",
+   "ocurrencias": "215"
+  },
+  {
+   "termino": "breeam",
+   "pilar": "E",
+   "precision": "0.833",
+   "ocurrencias": "201"
+  },
+  {
+   "termino": "supplier audit",
+   "pilar": "S",
+   "precision": "0.833",
+   "ocurrencias": "185"
+  },
+  {
+   "termino": "access to healthcare",
+   "pilar": "S",
+   "precision": "0.833",
+   "ocurrencias": "182"
+  },
+  {
+   "termino": "vulnerable population",
+   "pilar": "S",
+   "precision": "0.833",
+   "ocurrencias": "172"
+  },
+  {
+   "termino": "2030 agenda",
+   "pilar": "TRANS",
+   "precision": "0.833",
+   "ocurrencias": "158"
+  },
+  {
+   "termino": "green building",
+   "pilar": "E",
+   "precision": "0.833",
+   "ocurrencias": "135"
+  },
+  {
+   "termino": "childcare",
+   "pilar": "S",
+   "precision": "0.833",
+   "ocurrencias": "127"
+  },
+  {
+   "termino": "accident rate",
+   "pilar": "S",
+   "precision": "0.833",
+   "ocurrencias": "120"
+  },
+  {
+   "termino": "food bank",
+   "pilar": "S",
+   "precision": "0.833",
+   "ocurrencias": "102"
+  },
+  {
+   "termino": "green financing",
+   "pilar": "E",
+   "precision": "0.833",
+   "ocurrencias": "96"
+  },
+  {
+   "termino": "corporate volunteering",
+   "pilar": "S",
+   "precision": "0.833",
+   "ocurrencias": "80"
+  },
+  {
+   "termino": "smart meter",
+   "pilar": "E",
+   "precision": "0.833",
+   "ocurrencias": "68"
+  },
+  {
+   "termino": "board evaluation",
+   "pilar": "G",
+   "precision": "0.833",
+   "ocurrencias": "60"
+  },
+  {
+   "termino": "groundwater contamination",
+   "pilar": "E",
+   "precision": "0.833",
+   "ocurrencias": "54"
+  },
+  {
+   "termino": "board of directors",
+   "pilar": "G",
+   "precision": "1.0",
+   "ocurrencias": "32446"
+  },
+  {
+   "termino": "personal data",
+   "pilar": "S",
+   "precision": "1.0",
+   "ocurrencias": "2702"
+  },
+  {
+   "termino": "working condition",
+   "pilar": "S",
+   "precision": "1.0",
+   "ocurrencias": "2638"
+  },
+  {
+   "termino": "employee representative",
+   "pilar": "S",
+   "precision": "1.0",
+   "ocurrencias": "2116"
+  },
+  {
+   "termino": "reuse",
+   "pilar": "E",
+   "precision": "1.0",
+   "ocurrencias": "1943"
+  },
+  {
+   "termino": "hse",
+   "pilar": "S",
+   "precision": "1.0",
+   "ocurrencias": "1889"
+  },
+  {
+   "termino": "physical risk",
+   "pilar": "E",
+   "precision": "1.0",
+   "ocurrencias": "1802"
+  },
+  {
+   "termino": "natural resource",
+   "pilar": "E",
+   "precision": "1.0",
+   "ocurrencias": "1557"
+  },
+  {
+   "termino": "board committee",
+   "pilar": "G",
+   "precision": "1.0",
+   "ocurrencias": "1544"
+  },
+  {
+   "termino": "palm oil",
+   "pilar": "E",
+   "precision": "1.0",
+   "ocurrencias": "878"
+  },
+  {
+   "termino": "flaring",
+   "pilar": "E",
+   "precision": "1.0",
+   "ocurrencias": "612"
+  },
+  {
+   "termino": "eco-design",
+   "pilar": "E",
+   "precision": "1.0",
+   "ocurrencias": "594"
+  },
+  {
+   "termino": "malus",
+   "pilar": "G",
+   "precision": "1.0",
+   "ocurrencias": "518"
+  },
+  {
+   "termino": "power purchase agreement",
+   "pilar": "E",
+   "precision": "1.0",
+   "ocurrencias": "448"
+  },
+  {
+   "termino": "short-term incentive",
+   "pilar": "G",
+   "precision": "1.0",
+   "ocurrencias": "442"
+  },
+  {
+   "termino": "conflict mineral",
+   "pilar": "S",
+   "precision": "1.0",
+   "ocurrencias": "389"
+  },
+  {
+   "termino": "women in management",
+   "pilar": "S",
+   "precision": "1.0",
+   "ocurrencias": "378"
+  },
+  {
+   "termino": "access to energy",
+   "pilar": "S",
+   "precision": "1.0",
+   "ocurrencias": "368"
+  },
+  {
+   "termino": "un guiding principles",
+   "pilar": "S",
+   "precision": "1.0",
+   "ocurrencias": "341"
+  },
+  {
+   "termino": "charging point",
+   "pilar": "E",
+   "precision": "1.0",
+   "ocurrencias": "303"
+  },
+  {
+   "termino": "parental leave",
+   "pilar": "S",
+   "precision": "1.0",
+   "ocurrencias": "302"
+  },
+  {
+   "termino": "psychosocial risk",
+   "pilar": "S",
+   "precision": "1.0",
+   "ocurrencias": "229"
+  },
+  {
+   "termino": "green deal",
+   "pilar": "E",
+   "precision": "1.0",
+   "ocurrencias": "228"
+  },
+  {
+   "termino": "oil spill",
+   "pilar": "E",
+   "precision": "1.0",
+   "ocurrencias": "212"
+  },
+  {
+   "termino": "product stewardship",
+   "pilar": "E",
+   "precision": "1.0",
+   "ocurrencias": "210"
+  },
+  {
+   "termino": "board composition",
+   "pilar": "G",
+   "precision": "1.0",
+   "ocurrencias": "210"
+  },
+  {
+   "termino": "re100",
+   "pilar": "E",
+   "precision": "1.0",
+   "ocurrencias": "208"
+  },
+  {
+   "termino": "women in management position",
+   "pilar": "S",
+   "precision": "1.0",
+   "ocurrencias": "184"
+  },
+  {
+   "termino": "zero accident",
+   "pilar": "S",
+   "precision": "1.0",
+   "ocurrencias": "156"
+  },
+  {
+   "termino": "three lines of defense",
+   "pilar": "G",
+   "precision": "1.0",
+   "ocurrencias": "130"
+  },
+  {
+   "termino": "occupational illness",
+   "pilar": "S",
+   "precision": "1.0",
+   "ocurrencias": "128"
+  },
+  {
+   "termino": "energy attribute certificate",
+   "pilar": "E",
+   "precision": "1.0",
+   "ocurrencias": "117"
+  },
+  {
+   "termino": "Ethisphere",
+   "pilar": "G",
+   "precision": "1.0",
+   "ocurrencias": "117"
+  },
+  {
+   "termino": "responsible tax",
+   "pilar": "G",
+   "precision": "1.0",
+   "ocurrencias": "101"
+  },
+  {
+   "termino": "iirc",
+   "pilar": "TRANS",
+   "precision": "1.0",
+   "ocurrencias": "92"
+  },
+  {
+   "termino": "mitigation hierarchy",
+   "pilar": "E",
+   "precision": "1.0",
+   "ocurrencias": "89"
+  },
+  {
+   "termino": "musculoskeletal disorder",
+   "pilar": "S",
+   "precision": "1.0",
+   "ocurrencias": "82"
+  },
+  {
+   "termino": "psychological safety",
+   "pilar": "S",
+   "precision": "1.0",
+   "ocurrencias": "70"
+  },
+  {
+   "termino": "safety data sheet",
+   "pilar": "S",
+   "precision": "1.0",
+   "ocurrencias": "62"
+  }
+ ]
+}
