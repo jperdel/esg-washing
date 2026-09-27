@@ -1,0 +1,14 @@
+# GENERADO POR scripts/build_lexicons.py — NO EDITAR A MANO.
+# Frases que el preprocesado destruiría; TextProcessor las sustituye por un
+# único token antes de tokenizar. Formato: regex<TAB>token.
+say[\s\-]*on[\s\-]*pays?	sayonpay
+2030[\s\-]*agendas?	agenda2030
+well[\s\-]*beings?	wellbeing
+iso[\s\-]*14001s?	iso14001
+iso[\s\-]*50001s?	iso50001
+first[\s\-]*aids?	firstaid
+iso[\s\-]*45001s?	iso45001
+iso[\s\-]*37001s?	iso37001
+speak[\s\-]*ups?	speakup
+b[\s\-]*corps?	bcorp
+cop[\s\-]*28s?	cop28

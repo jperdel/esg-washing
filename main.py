@@ -140,7 +140,9 @@ def main(
                         # Texto crudo (solo colapsando espacios) para el QUANT:
                         # los patrones de cifras y porcentajes necesitan los
                         # dígitos, que el preprocesado elimina.
-                        "raw_text":       re.sub(r"\s+", " ", raw_text).strip(),
+                        # Sin caracteres NUL: pandas corta el campo en el primero
+                        # al releer el CSV (pasaba en dos informes).
+                        "raw_text":       re.sub(r"\s+", " ", raw_text.replace("\x00", "")).strip(),
                     })
 
             if not corpus_data:
@@ -246,7 +248,8 @@ def main(
 
             sen_scores   = analyzer.calculate_sen_scores(texts_list)
             quant_scores = analyzer.calculate_quant_scores(raw_texts_list)
-            hedge_scores = analyzer.calculate_hedge_scores(texts_list)
+            # HEDGE también sobre el crudo: el preprocesado elimina los modales.
+            hedge_scores = analyzer.calculate_hedge_scores(raw_texts_list)
 
             esgsi_scores     = analyzer.compute_index(sus_scores, sen_scores)
             esgsi_ext_scores = analyzer.compute_extended_index(

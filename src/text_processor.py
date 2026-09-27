@@ -1,14 +1,34 @@
 import re
 import json
 from pathlib import Path
+from typing import Iterable
 
 from loguru import logger
 
 import spacy
 
+#: Frases del vocabulario que el preprocesado destruiría (sus palabras son
+#: stopwords o se quedan en una sola genérica: "well-being" -> "", "iso 14001"
+#: -> "iso"). Las genera scripts/build_lexicons.py; aquí solo se leen.
+PROTECTED_PHRASES_FILE = Path(__file__).resolve().parent.parent / "metadata" / "esg_protected_phrases.txt"
+
+
+def load_protected_phrases(path: Path = PROTECTED_PHRASES_FILE) -> list[tuple[str, str]]:
+    """Lee pares (regex, token) separados por tabulador; lista vacía si no existe."""
+    if not path.exists():
+        return []
+    pairs = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.strip() and not line.startswith("#"):
+            regex, token = line.split("\t")
+            pairs.append((regex, token))
+    return pairs
+
+
 class TextProcessor:
 
-    def __init__(self, extra_sw:list=[], spacy_model:str="en_core_web_md"):
+    def __init__(self, extra_sw:list=[], spacy_model:str="en_core_web_md",
+                 protected_phrases: Iterable[tuple[str, str]] | None = None):
         
         model_name = spacy_model
         try:
@@ -21,8 +41,16 @@ class TextProcessor:
             self.nlp = spacy.load(model_name, disable=["ner", "parser"])
             logger.success(f"Modelo {model_name} descargado e instalado.")
 
-        self.custom_stopwords = extra_sw 
-        logger.debug("TextProcessor con spaCy inicializado.")
+        self.custom_stopwords = extra_sw
+
+        # Protección de frases: se sustituyen por un único token ANTES de
+        # tokenizar, para que sobrevivan al filtro de stopwords. Por defecto se
+        # leen de metadata/ (así todos los scripts preprocesan igual); una lista
+        # vacía la desactiva, que es lo que necesita build_lexicons para
+        # detectar qué frases colapsan.
+        pairs = load_protected_phrases() if protected_phrases is None else list(protected_phrases)
+        self.protected = [(re.compile(rf"\b(?:{rx})\b"), tok) for rx, tok in pairs]
+        logger.debug(f"TextProcessor con spaCy inicializado ({len(self.protected)} frases protegidas).")
 
     # def extract_from_pdf(self, pdf_path: Path) -> str:
     #     """Extrae texto bruto de un PDF."""
@@ -45,28 +73,32 @@ class TextProcessor:
             logger.error(f"Error extrayendo {json_path.name}: {e}")
             return ""
 
-    def preprocess(self, text: str) -> str:
-        if not text: return ""
-        
-        url_pattern = r'https?://\S+|www\.\S+'
-        text = re.sub(url_pattern, '', text)
-        
-        text = text.lower()
-        
-        doc = self.nlp(text)
-        
-        tokens = []
-        for token in doc:
+    def protect(self, text: str) -> str:
+        """Sustituye las frases protegidas por su token (el texto ya en minúsculas)."""
+        for rx, tok in self.protected:
+            text = rx.sub(f" {tok} ", text)
+        return text
+
+    def lemmas_from_doc(self, doc) -> list[str]:
+        """Filtro de tokens del preprocesado, aplicado a un Doc de spaCy."""
+        return [
+            token.lemma_ for token in doc
             if (not token.is_stop and
                 not token.is_punct and
                 not token.is_space and
                 self._is_content_token(token.text) and
                 len(token.text) > 2 and
-                token.lemma_ not in self.custom_stopwords):
+                token.lemma_ not in self.custom_stopwords)
+        ]
 
-                tokens.append(token.lemma_)
+    def prepare(self, text: str) -> str:
+        """URLs fuera, minúsculas y frases protegidas: la entrada de spaCy."""
+        url_pattern = r'https?://\S+|www\.\S+'
+        return self.protect(re.sub(url_pattern, '', text).lower())
 
-        return " ".join(tokens)
+    def preprocess(self, text: str) -> str:
+        if not text: return ""
+        return " ".join(self.lemmas_from_doc(self.nlp(self.prepare(text))))
 
     @staticmethod
     def _is_content_token(text: str) -> bool:

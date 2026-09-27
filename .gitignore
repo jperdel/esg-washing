@@ -45,3 +45,7 @@ paper/*.toc
 
 # --- Informes de trabajo (no se versionan) ---
 informes/
+
+# --- Intermedios de latexmk ---
+paper/*.fdb_latexmk
+paper/*.fls

@@ -191,17 +191,25 @@ class ESGSIAnalyzer:
             scores.append(hits / n_tokens)
         return np.array(scores)
 
-    def calculate_hedge_scores(self, texts: List[str]) -> np.ndarray:
+    #: Palabras del texto crudo: letras, con guiones internos ("ill-defined").
+    _WORD_RE = re.compile(r"[a-z]+(?:-[a-z]+)*")
+
+    def calculate_hedge_scores(self, raw_texts: List[str]) -> np.ndarray:
         """
-        Densidad de lenguaje especulativo/impreciso: proporción de tokens del
+        Densidad de lenguaje especulativo/impreciso: proporción de palabras del
         documento que pertenecen a las categorías Uncertainty, WeakModal,
         StrongModal y Constraining del diccionario L&M.
-        El texto de entrada debe estar ya lematizado (pipeline TextProcessor).
+
+        ATENCIÓN: recibe el texto CRUDO, no el lematizado. El preprocesado quita
+        las stopwords, y entre ellas están los modales que definen la categoría
+        (may, might, could, must, will) y always, never o perhaps: sobre el texto
+        lematizado esas entradas no podían contar nunca. El léxico conserva las
+        formas flexionadas originales de L&M, que son las que aparecen en crudo.
         """
         logger.info("Calculando HEDGE scores (palabras L&M de incertidumbre)...")
         scores = []
-        for text in texts:
-            tokens = text.split()
+        for text in raw_texts:
+            tokens = self._WORD_RE.findall(text.lower())
             n_tokens = max(len(tokens), 1)
             hedge_count = sum(1 for t in tokens if t in self.hedge_words)
             scores.append(hedge_count / n_tokens)

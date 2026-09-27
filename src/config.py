@@ -94,12 +94,12 @@ if INCLUDE_SECTORAL:
     logger.info(f"Vocabulario SECTORIAL activo: +{len(_sec)} términos "
                 f"({len(ESG_KEYWORDS)} en total).")
 
-# HEDGE — categorías L&M indicativas de lenguaje impreciso/especulativo,
-# lematizadas para poder cruzarse con el corpus (el diccionario original
-# viene en formas flexionadas y solo cruzaba el 46 % de sus entradas).
+# HEDGE — categorías L&M de lenguaje impreciso/especulativo (Uncertainty,
+# Constraining, WeakModal, StrongModal) del diccionario maestro que distribuye
+# pysentiment2, en su forma original: el HEDGE se calcula sobre texto crudo.
 HEDGE_KEYWORDS = set(_load_generated_lexicon(
-    METADATA_DIR / "lm_hedge_lemmatized.txt",
-    METADATA_DIR / "RAW_LM_dictionary.csv",
+    METADATA_DIR / "lm_hedge.txt",
+    METADATA_DIR / "lm_hedge.txt",
 ))
 
 with open(METADATA_DIR / 'personal_stopwords.txt', 'r', encoding='utf-8') as f:

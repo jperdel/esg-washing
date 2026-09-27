@@ -13,10 +13,10 @@ Produce dos ficheros en metadata/:
         corpus quedan en la misma representación. Sin esto, términos como
         "co2" o "human rights" nunca podrían puntuar.
 
-  · lm_hedge_lemmatized.txt    ← RAW_LM_dictionary.csv
+  · lm_hedge.txt               ← pysentiment2/static/LM.csv
         Palabras de las categorías Uncertainty, WeakModal, StrongModal y
-        Constraining de Loughran-McDonald, lematizadas para poder cruzarse
-        con el corpus. El diccionario original está en formas flexionadas.
+        Constraining del diccionario maestro de Loughran-McDonald, en su forma
+        original: el HEDGE se calcula sobre el texto crudo.
 
 Este script NO importa config.py a propósito: config.py lee los ficheros que
 este script genera, así que importarlo crearía una dependencia circular.
@@ -32,9 +32,11 @@ BASE_DIR     = Path(__file__).resolve().parent.parent
 METADATA_DIR = BASE_DIR / "metadata"
 sys.path.insert(0, str(BASE_DIR / "src"))
 
+import re
+
 import pandas as pd
 from loguru import logger
-from text_processor import TextProcessor
+from text_processor import TextProcessor, PROTECTED_PHRASES_FILE
 
 # --- Sincronizar con config.py -------------------------------------------
 SPACY_MODEL    = "en_core_web_md"
@@ -63,6 +65,7 @@ def build_esg_vocabulary(
     processor: TextProcessor,
     source: str = "esg_terms.txt",
     target: str = "esg_terms_lemmatized.txt",
+    protected_tokens: frozenset[str] = frozenset(),
 ) -> list[str]:
     """
     Lematiza el vocabulario con el pipeline real y avisa de los términos que no
@@ -94,7 +97,9 @@ def build_esg_vocabulary(
         # Como entrada de TF-IDF dispararía con cualquier uso genérico, así que
         # se EXCLUYE del vocabulario salvo que esté revisada en COLLAPSE_ALLOWED.
         # Sigue activa en el regex sobre texto crudo, que no lematiza.
-        if len(term.split()) > 1 and len(lemma.split()) == 1:
+        if lemma in protected_tokens:
+            pass                          # frase protegida: un token a propósito
+        elif len(term.split()) > 1 and len(lemma.split()) == 1:
             collapsed.append((term, lemma))
             if term not in COLLAPSE_ALLOWED:
                 continue
@@ -134,40 +139,82 @@ def build_esg_vocabulary(
     return vocab
 
 
-def build_hedge_lexicon(processor: TextProcessor) -> list[str]:
+def _protected_token(term: str) -> str:
+    """'well-being' -> 'wellbeing', '2030 agenda' -> 'agenda2030'."""
+    token = re.sub(r"[^a-z0-9]", "", term.lower())
+    lead = re.match(r"\d+", token)
+    return token[lead.end():] + lead.group() if lead else token
+
+
+def _protected_regex(term: str) -> str:
+    """Como el regex del extractor, pero admite también la forma soldada."""
+    parts = re.split(r"[\s\-]+", term.strip().lower())
+    return r"[\s\-]*".join(re.escape(p) for p in parts) + "s?"
+
+
+def build_protected_phrases(plain: TextProcessor, sources: list[str]) -> list[tuple[str, str]]:
     """
-    Lematiza las categorías de incertidumbre/modalidad de Loughran-McDonald.
+    Frases del vocabulario que el preprocesado destruiría: las que se quedan
+    vacías ("well-being": sus dos palabras son stopwords) o colapsan a una sola
+    palabra genérica ("iso 14001" -> "iso", "say on pay" -> "pay"). Antes se
+    excluían del TF-IDF; ahora se protegen como un único token en el propio
+    corpus, de modo que puntúan con su sentido completo y sin generar falsos
+    positivos con la palabra superviviente. COLLAPSE_ALLOWED queda como está.
 
-    Se guarda la unión de la forma original y su lema: las originales que ya
-    son lemas siguen cruzando, y las flexionadas aportan su lema. Las formas
-    que no aparecen en el corpus simplemente nunca hacen match.
+    `plain` debe ser un TextProcessor SIN protección: es el que revela el colapso.
     """
-    src = METADATA_DIR / "RAW_LM_dictionary.csv"
-    df  = pd.read_csv(src)
-    words = (
-        df[df["sentiment"].isin(HEDGE_CATEGORIES)]["word"]
-        .astype(str).str.lower().str.strip().tolist()
-    )
-    logger.info(f"RAW_LM_dictionary.csv: {len(words)} palabras en {HEDGE_CATEGORIES}.")
-
-    hedge: set[str] = set(words)
-    for token in processor.nlp.pipe(words, batch_size=500):
-        for tok in token:
-            if tok.lemma_.strip():
-                hedge.add(tok.lemma_.lower().strip())
-
-    vocab = sorted(w for w in hedge if w)
-    logger.success(
-        f"Léxico HEDGE: {len(vocab)} formas "
-        f"({len(vocab) - len(set(words))} añadidas por lematización)."
-    )
-
-    out = METADATA_DIR / "lm_hedge_lemmatized.txt"
+    pairs: dict[str, str] = {}
+    for source in sources:
+        for term in _read_terms(METADATA_DIR / source):
+            lemma = plain.preprocess(term).strip()
+            empty = not lemma
+            collapsed = (len(re.split(r"[\s\-]+", term)) > 1 and len(lemma.split()) == 1
+                         and term not in COLLAPSE_ALLOWED)
+            if empty or collapsed:
+                pairs.setdefault(_protected_regex(term), _protected_token(term))
+    ordered = sorted(pairs.items(), key=lambda kv: -len(kv[0]))   # las largas primero
     header = (
         "# GENERADO POR scripts/build_lexicons.py — NO EDITAR A MANO.\n"
-        "# Fuente: RAW_LM_dictionary.csv | Categorias: "
-        + ", ".join(HEDGE_CATEGORIES) + "\n"
-        "# Union de la forma original y su lema, para cruzar con corpus lematizado.\n"
+        "# Frases que el preprocesado destruiría; TextProcessor las sustituye por un\n"
+        "# único token antes de tokenizar. Formato: regex<TAB>token.\n"
+    )
+    PROTECTED_PHRASES_FILE.write_text(
+        header + "".join(f"{rx}\t{tok}\n" for rx, tok in ordered), encoding="utf-8")
+    logger.success(f"{len(ordered)} frases protegidas: {[t for _, t in ordered]}")
+    return ordered
+
+
+def build_hedge_lexicon() -> list[str]:
+    """
+    Léxico HEDGE: las formas del diccionario maestro de Loughran-McDonald en
+    las categorías Uncertainty (297), Constraining (184), WeakModal (27) y
+    StrongModal (19), tal como las distribuye pysentiment2 (el mismo
+    diccionario que usa el SEN). En el maestro, Modal = 3 es WeakModal y
+    Modal = 1 StrongModal; Modal = 2 (moderados) no entra.
+
+    Se guardan las formas originales, sin lematizar: el HEDGE se calcula sobre
+    el texto CRUDO, donde aparecen flexionadas. La versión anterior lematizaba
+    y unía formas y lemas, lo que metía palabras que no son de L&M ("and",
+    "for", "time" salen de partir expresiones), y partía de
+    RAW_LM_dictionary.csv, que no es el maestro de L&M sino una versión
+    ampliada con sinónimos (767 Uncertainty frente a 297).
+    """
+    import pysentiment2
+    src = Path(pysentiment2.__file__).parent / "static" / "LM.csv"
+    df = pd.read_csv(src)
+    mask = (df["Uncertainty"] != 0) | (df["Constraining"] != 0) | df["Modal"].isin([1, 3])
+    counts = {"Uncertainty": int((df["Uncertainty"] != 0).sum()),
+              "Constraining": int((df["Constraining"] != 0).sum()),
+              "WeakModal": int((df["Modal"] == 3).sum()),
+              "StrongModal": int((df["Modal"] == 1).sum())}
+    vocab = sorted(set(df.loc[mask, "Word"].astype(str).str.lower().str.strip()))
+    logger.success(f"Léxico HEDGE: {len(vocab)} formas únicas de L&M {counts}.")
+
+    out = METADATA_DIR / "lm_hedge.txt"
+    header = (
+        "# GENERADO POR scripts/build_lexicons.py — NO EDITAR A MANO.\n"
+        "# Fuente: diccionario maestro Loughran-McDonald (pysentiment2/static/LM.csv).\n"
+        f"# Categorias: {counts}. Formas originales, para cruzar con texto crudo.\n"
     )
     out.write_text(header + "\n".join(vocab) + "\n", encoding="utf-8")
     logger.success(f"Escrito: {out}")
@@ -182,12 +229,23 @@ def main():
     personal_sw = _read_terms(sw_path)
     logger.info(f"personal_stopwords.txt: {len(personal_sw)} stopwords.")
 
-    processor = TextProcessor(extra_sw=personal_sw, spacy_model=SPACY_MODEL)
+    plain = TextProcessor(extra_sw=personal_sw, spacy_model=SPACY_MODEL, protected_phrases=[])
+    sources = ["esg_terms.txt", "esg_terms_sectorial.txt"]
+    pairs = build_protected_phrases(plain, sources)
 
-    build_esg_vocabulary(processor)
+    processor = TextProcessor(extra_sw=personal_sw, spacy_model=SPACY_MODEL, protected_phrases=pairs)
+    # Cada token debe llegar al TF-IDF como UNA palabra. spaCy puede
+    # lematizarlo ("wellbeing" -> "wellbee"), y da igual: el corpus pasa por la
+    # misma lematización, así que término y texto siguen coincidiendo.
+    tokens = frozenset(processor.preprocess(tok) for _, tok in pairs)
+    for (_, tok), lemma in zip(pairs, (processor.preprocess(t) for _, t in pairs)):
+        if len(lemma.split()) != 1:
+            raise ValueError(f"el token protegido '{tok}' no sobrevive como una palabra: '{lemma}'")
+
+    build_esg_vocabulary(processor, protected_tokens=tokens)
     build_esg_vocabulary(processor, source="esg_terms_sectorial.txt",
-                         target="esg_terms_sectorial_lemmatized.txt")
-    build_hedge_lexicon(processor)
+                         target="esg_terms_sectorial_lemmatized.txt", protected_tokens=tokens)
+    build_hedge_lexicon()
 
     logger.success("Léxicos regenerados. Recuerda re-ejecutar el pipeline con "
                    "run_preproc=True si has cambiado el preprocesado.")

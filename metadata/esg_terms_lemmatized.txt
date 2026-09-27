@@ -4,6 +4,7 @@ absenteeism
 accessibility
 accident rate
 affordability
+agenda2030
 agroforestry
 air pollutant
 air quality
@@ -122,6 +123,7 @@ fair trade
 fair wage
 fatality
 female representation
+firstaid
 flood
 flooding
 force labor
@@ -173,6 +175,9 @@ injury
 insider trading
 internal audit
 internal control
+iso14001
+iso45001
+iso50001
 issb
 labor practice
 labor right
@@ -265,6 +270,7 @@ road safety
 sanction
 sapin
 sasb
+sayonpay
 sbti
 science base target
 sdg
@@ -292,6 +298,7 @@ solar farm
 solar panel
 solar plant
 solar power
+speakup
 specie
 stakeholder
 succession planning
