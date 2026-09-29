@@ -62,3 +62,26 @@ cosa, manda este fichero.
   bootstrap. Todas las cifras, de scripts versionados.
 - Marca en §5 para identificar a los revisores del consenso de vocabulario
   (si se sigue describiendo el consenso).
+
+## 9. Versión condensada (2026-09-29) — prevalece sobre lo anterior
+
+- **Nada de código en el texto.** Ni nombres de scripts, ni rutas, ni
+  variables de entorno, ni nombres de ficheros, ni ajustes de librerías
+  (`norm='l2'`, `ngram_range`…): todo se describe en palabras. El runbook va
+  aparte en el repositorio. Sin apéndice de reproducibilidad: solo una nota de
+  disponibilidad de 2–3 líneas.
+- **Sin historia de versiones** del vocabulario, del pipeline ni del paper
+  ("an earlier version…", "we replaced…", "v3").
+- **Cada etapa del pipeline se explica una sola vez** (en la sección de
+  método); el resto del paper remite con `\ref`, sin volver a definir el
+  vocabulario ni la fórmula del Extended ESGSI.
+- **Vocabulario, rápido:** fuentes, criterios de admisión y composición en
+  pocas líneas. Solo se mencionan dos pruebas: precisión (una frase: los
+  términos se admitieron tras revisar en contexto una muestra de sus
+  apariciones; la precisión ponderada por frecuencia del vocabulario
+  resultante se estima en torno al 82 %, estimación y no medición directa
+  sobre la extracción final) y estabilidad (remite a robustez).
+- **Extensión:** el paper completo ≤ 20 páginas, incluyendo lo que escribirá
+  el autor (resumen, introducción, literatura, discusión). El contenido
+  técnico ≤ 15 páginas con figuras, tablas y referencias. Presupuesto:
+  alcance 1, datos 1, método 5, resultados 5, robustez 2, limitaciones 0,75.

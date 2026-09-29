@@ -1,403 +1,128 @@
-\section{Robustness: substance specification, weights and vocabulary}
+\section{Robustness}
 \label{sec:robustness}
 
-This section measures how far the two scores move when the substance specification
-(\S\ref{sec:robustness-spec}), the weights of the Extended ESGSI (\S\ref{sec:robustness-weights})
-and the ESG vocabulary (\S\ref{sec:robustness-lexicon}) are varied, and closes with what these
-checks do and do not establish (\S\ref{sec:robustness-limits}). Every comparison is between a
-perturbed and a reference score over the same 343 reports, and uses three measures. The first is the Spearman rank correlation $\rho$,
-with the Pearson correlation $r$ as a secondary figure. The second is the overlap of the
-extreme deciles: of the 34 reports with the highest reference score, how many are also among
-the 34 highest under the perturbed score, and likewise for the 34 lowest; we write it as
-top/bottom counts out of 34. The third is the within-firm trend, the fixed-effects slope of
-\eqref{eq:trend-fe} with firm-clustered standard errors and, where stated, the wild cluster
-bootstrap $p$-value of \eqref{eq:wild-p} (\S\ref{sec:index-inference}). For the adopted scores
-the slope is $-0.181$ per year for $\ESGSI$ (SE 0.035, $p_{\mathrm{cl}} = 3.7\times10^{-6}$,
-$p_{\mathrm{wild}} < 0.0001$) and $-0.260$ for $\ESGSIext$ (SE 0.040,
-$p_{\mathrm{cl}} = 3.7\times10^{-8}$, $p_{\mathrm{wild}} < 0.0001$; Table~\ref{tab:temporal-trend}). The section does not choose
-the specification, which \S\ref{sec:justification} does on other grounds, and agreement between
-two variants is not evidence that either measures substance well.
-
-\subsection{The substance specification}
-\label{sec:robustness-spec}
-
-The three specifications of \S\ref{sec:index-sus} vary one factor at a time. $\susdens$ and
-$\sustfidf$ share the length denominator and differ in term weighting (uniform or idf);
-$\sustfidf$ and $\suslag$ share idf weights and differ in vector normalisation (division by
-document length or scaling to unit L2 norm). $\BREADTH$ is reported as a diagnostic, not as a
-component. Table~\ref{tab:robustness-components} gives the component correlations and
-Figure~\ref{fig:robustness-specs} the three scatters that matter.
-
-\begin{table}[tbp]
-\centering
-\caption{Pearson correlations among the three substance specifications and $\BREADTH$
-($n = 343$). Spearman correlations, same cells: $\susdens$--$\sustfidf$ 0.9886,
-$\susdens$--$\suslag$ 0.4524, $\susdens$--$\BREADTH$ 0.4763, $\sustfidf$--$\suslag$ 0.5234,
-$\sustfidf$--$\BREADTH$ 0.5522, $\suslag$--$\BREADTH$ 0.9515. Source:
-\nolinkurl{scripts/analysis_v3.py}.}
-\label{tab:robustness-components}
-\begin{tabular}{lrrrr}
-\toprule
- & $\susdens$ & $\sustfidf$ & $\suslag$ & $\BREADTH$ \\
-\midrule
-$\susdens$  & 1.0000 & 0.9876 & 0.4052 & 0.4173 \\
-$\sustfidf$ & 0.9876 & 1.0000 & 0.4823 & 0.4985 \\
-$\suslag$   & 0.4052 & 0.4823 & 1.0000 & 0.9546 \\
-$\BREADTH$  & 0.4173 & 0.4985 & 0.9546 & 1.0000 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=\textwidth]{figures/fig_sus_specs.pdf}
-\caption{The substance specifications, one point per report ($n = 343$). (a) $\sustfidf$
-against $\susdens$: the term-weighting contrast. (b) $\suslag$ against $\susdens$: both factors
-varied. (c) $\suslag$ against $\BREADTH$. Panel correlations are the Pearson coefficients of
-Table~\ref{tab:robustness-components}, rounded. Source: \nolinkurl{scripts/figures_v3.py}.}
-\label{fig:robustness-specs}
-\end{figure}
-
-The components correlate at $0.9876$ across the weighting contrast, at $0.4823$ across the
-vector-normalisation contrast and at $0.4052$ when both change. $\suslag$ correlates more closely with
-$\BREADTH$ ($0.9546$) than with either other substance measure, as \S\ref{sec:measurement}
-derives from \eqref{eq:unit-sum-bounds}. Table~\ref{tab:robustness-index} carries the
-comparison through to the score.
-
-\begin{table}[tbp]
-\centering
-\caption{$\ESGSI$ under each substance specification against the adopted $\ESGSI(\susdens)$
-($n = 343$, components standardised by $z$-scores throughout). Extreme deciles: reports of the adopted top
-(bottom) 34 that are also in the top (bottom) 34 under the alternative. Source:
-\nolinkurl{scripts/analysis_v3.py}.}
-\label{tab:robustness-index}
-\begin{tabular}{@{}llrrr@{}}
-\toprule
-Specification & Factors varied & Spearman $\rho$ & Pearson $r$ & Top/bottom decile \\
-\midrule
-$\susdens$ (adopted) & --- & 1.0000 & 1.0000 & 34/34 \\
-$\sustfidf$          & weighting & 0.9926 & 0.9933 & 33/32 \\
-$\suslag$            & weighting, vector norm. & 0.6421 & 0.6764 & 18/21 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Idf weighting leaves the score's ranking almost unchanged ($\rho = 0.9926$) and keeps 33 and 32
-of the 34 reports in each extreme decile. L2 vector normalisation reorders it: $\rho = 0.6421$,
-and only 18 of the top 34 and 21 of the bottom 34 remain. The trend survives the substitution
-but is weaker: under $\suslag$ the within-firm slope is $-0.143$ per year (SE 0.035,
-$p_{\mathrm{cl}} = 1.9\times10^{-4}$, $p_{\mathrm{wild}} = 0.0004$), against $-0.181$. We did
-not estimate the slope under $\sustfidf$. Each index-level correlation exceeds its
-component-level counterpart ($r$ of 0.9933 against 0.9876; 0.6764 against 0.4052), because the
-compared scores share the $\Z(\SEN)$ term; the component correlations are the stricter measure
-of how far the substance measurements agree. Term weighting is thus a second-order choice and
-vector normalisation a first-order one. The specifications are varied in $\ESGSI$ only;
-$\ESGSIext$ is computed with $\susdens$ throughout.
-
-\subsection{The weights of the Extended ESGSI}
-\label{sec:robustness-weights}
-
-Over the grid $w_q, w_h \in \{0, 0.25, 0.5, 0.75, 1\}$ (\S\ref{sec:index-composite}),
-Figure~\ref{fig:robustness-weights} gives $\rho$ with the adopted score and the within-firm
-slope, and Table~\ref{tab:robustness-weights} the extreme-decile overlaps.
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=\textwidth]{figures/fig_ext_weights.pdf}
-\caption{$\ESGSIext$ over the weight grid ($n = 343$). (a) Spearman $\rho$ with the score at
-the adopted weights $w_q = w_h = 0.5$ (framed); the cell $w_q = w_h = 0$ is $\ESGSI$. (b)
-Within-firm (fixed-effects) slope per year, standard errors clustered by firm. Source:
-\nolinkurl{scripts/figures_v3.py}.}
-\label{fig:robustness-weights}
-\end{figure}
-
-\begin{table}[tbp]
-\centering
-\caption{Extreme-decile overlap of $\ESGSIext(w_q, w_h)$ with the adopted
-$\ESGSIext(0.5, 0.5)$: reports of the adopted top/bottom 34 that remain in the top/bottom 34
-($n = 343$). The cell $(0, 0)$ is $\ESGSI$. Source: \nolinkurl{scripts/analysis_v3.py}.}
-\label{tab:robustness-weights}
-\begin{tabular}{@{}lccccc@{}}
-\toprule
- & \multicolumn{5}{c}{$w_h$} \\
-\cmidrule(l){2-6}
-$w_q$ & 0 & 0.25 & 0.5 & 0.75 & 1 \\
-\midrule
-0    & 22/26 & 25/28 & 30/29 & 27/28 & 24/28 \\
-0.25 & 23/28 & 28/30 & 32/31 & 30/30 & 23/28 \\
-0.5  & 26/29 & 31/32 & 34/34 & 30/30 & 24/29 \\
-0.75 & 28/28 & 31/31 & 33/32 & 31/29 & 25/27 \\
-1    & 29/28 & 30/29 & 31/28 & 30/29 & 26/27 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Two things vary, and they depend on different weights. The \emph{ranking} depends mostly on
-$w_h$. Holding $w_q = 0.5$, $\rho$ with the adopted score is 0.938 at $w_h = 0$ and 0.960 at
-$w_h = 1$; holding $w_h = 0.5$, it is 0.967 at $w_q = 0$ and 0.986 at $w_q = 1$. The lowest
-value, 0.865, is at $w_q = w_h = 0$, where the score is $\ESGSI$; the extreme deciles are
-least preserved there too (22/26); every other cell keeps at least 23 of the top and 27 of the
-bottom 34. Within 0.25 of the adopted weights on each axis $\rho \geq 0.973$ and at least 28
-of the top and 29 of the bottom 34 remain. The Spearman correlation with $\ESGSI$ falls from 1
-at $(0,0)$ to 0.701 at $(1,1)$: at the far corner of the grid $\ESGSIext$ orders the reports
-markedly differently from $\ESGSI$.
-
-The \emph{trend} depends almost only on $w_q$. At $w_h = 0.5$ the slope runs from $-0.185$
-($w_q = 0$) to $-0.335$ ($w_q = 1$), about $-0.037$ per step of 0.25; at $w_q = 0.5$ it runs
-from $-0.255$ ($w_h = 0$) to $-0.265$ ($w_h = 1$). $\QUANT$ rises over the panel and $\HEDGE$
-does not (\S\ref{sec:temporal}), so subtracting more of $\Z(\QUANT)$ steepens the decline and
-adding more of $\Z(\HEDGE)$ barely moves it. The slope is negative in all 25 cells, with
-firm-clustered standard errors between 0.032 and 0.052; the largest $p_{\mathrm{cl}}$,
-$3.7\times10^{-6}$, is that of $\ESGSI$ itself, and every 95\,\% interval excludes zero. The
-sign of the trend is therefore not a product of the weights; its magnitude in $\ESGSIext$ is,
-roughly in proportion to $w_q$.
-
-\subsection{Stability of the vocabulary}
-\label{sec:robustness-lexicon}
-
-The standing objection to a dictionary measure is that the result belongs to the word list. We
-perturb our vocabulary of \S\ref{sec:lexicon} in designed ways and at random, and read
-every designed deletion against random deletions of the same size.
-
-\paragraph{Frozen extraction and simulated re-extraction.} The vocabulary selects the text as
-well as scoring it (\S\ref{sec:lexicon-one}), so deleting entries changes both. Every
-perturbation is therefore run in two modes. In the \emph{frozen} mode the extracted text is that
-of the adopted run and only the list that $\susdens$ counts changes. This isolates the scoring
-effect, but paragraphs that were extracted only because of the deleted entries stay in the
-text, now unscored, and dilute the density of the reports that discuss those topics most. In
-the \emph{re-extraction} mode the extraction rule of \S\ref{sec:extraction} is re-applied
-without the deleted entries, paragraphs that no longer qualify drop out, and $\SUS$, $\SEN$,
-$\QUANT$ and $\HEDGE$ are recomputed on what remains, as a real change of vocabulary would do.
-
-Re-extraction is simulated from the extracted paragraphs, not from the PDFs. A subset of the
-vocabulary can only make fewer paragraphs hot, so the text it would extract is a subset of the
-adopted extraction, and re-applying the rule (hot paragraphs, one context paragraph on each
-side, merging, the 150-character minimum) to the extracted paragraphs reproduces it. Three
-approximations remain: each paragraph is lemmatised on its own rather than within its
-document; a shorter entry nested in a deleted one (\emph{carbon} in \emph{carbon footprint}) is
-not re-checked as a trigger, which slightly overstates the text lost; and $\QUANT$ and
-$\HEDGE$ are counted per paragraph. With the full vocabulary the simulation re-selects every
-extracted paragraph and reproduces the pipeline's components at $r = 0.99995$ ($\SUS$),
-$0.999999$ ($\SEN$), $0.99994$ ($\QUANT$) and $0.99997$ ($\HEDGE$); $\ESGSI$ at $r = 0.99997$
-and $\rho = 0.99991$ (largest absolute difference 0.091), $\ESGSIext$ at $r = 0.99998$ and
-$\rho = 0.99995$; its slopes are $-0.180$ and $-0.260$. In both modes each perturbed score is
-compared with the simulation's own full-vocabulary score.
-
-\nolinkurl{scripts/stability_v3_e2e.py} runs both modes over the 434 source entries (402 terms,
-32 patterns; deleting a pattern changes nothing in the frozen mode).
-\nolinkurl{scripts/stability_v3.py} runs the frozen mode over the 399 lemmatised entries against
-the pipeline's own scores and adds single-entry deletion; where the two overlap they agree
-(without pillar E, frozen $\rho$ 0.7785 against 0.7761). \nolinkurl{scripts/robustness_v3.py}
-adds firm-clustered and wild-bootstrap inference for the designed deletions.
-
-\paragraph{Designed deletions.} Table~\ref{tab:robustness-deletions} removes, in turn, the 36
-sectoral entries, six entries admitted with a caveat, each pillar, and the single entry
-\emph{board of directors}. The six are \texttt{sustainab\textbackslash w+}, \emph{sustainable},
-\emph{governance}, \emph{audit committee}, \emph{tcfd} and \emph{hydrogen}: they meet the
-criteria of \S\ref{sec:lexicon-criteria}, but a visible part of their occurrences is navigation
-text the filter misses, legal templates, or the non-ESG sense of \emph{sustainable}
-(\emph{sustainable growth}). The null percentile is the share of the 1,000 matched random
-deletions whose $\rho$ is no higher than the designed deletion's: a low value means the
-designed deletion moves the score more than a random one of its size.
+We vary three choices of the method---the substance specification, the
+weights of the Extended ESGSI and the vocabulary---and compare each variant
+with a reference score over the same 343 reports. Every comparison uses three
+measures: the Spearman correlation $\rho$ with the reference; the overlap of
+the extreme deciles, that is, how many of the 34 reports with the highest
+(lowest) reference score remain among the 34 highest (lowest), written
+top/bottom; and the within-firm slope per year, estimated with firm fixed
+effects and firm-clustered standard errors (\S\ref{sec:method-inference}).
+The reference slopes are $-0.181$ for $\ESGSI$ and $-0.260$ for $\ESGSIext$
+(\S\ref{sec:results-time}).
 
 \begin{table}[tbp]
 \centering
 \small
-\setlength{\tabcolsep}{2.8pt}
-\caption{Designed deletions from the vocabulary (434 entries), against the full-vocabulary
-score of each mode. Text kept: share of extracted words that survive re-extraction. Top/bot:
-reports of the reference top/bottom 34 that remain. Slope: within-firm slope per year (full
-vocabulary: $-0.180$ for $\ESGSI$, $-0.260$ for $\ESGSIext$). Null: median $\rho$ over 1,000
-random deletions of the same number of entries, and the percentile of the designed deletion's
-$\rho$ among them (re-extraction). Source: \nolinkurl{scripts/stability_v3_e2e.py}.}
-\label{tab:robustness-deletions}
-\begin{tabular}{@{}lrrrrrrrrrr@{}}
+\setlength{\tabcolsep}{4pt}
+\caption{Deletions from the vocabulary under simulated re-extraction
+($n = 343$), against the full-vocabulary score as recomputed by the simulation
+(slope $-0.180$ for $\ESGSI$, against $-0.181$ for the adopted score;
+$-0.260$ for $\ESGSIext$). Entries: of the 434. Text: share of extracted words
+in paragraphs that still qualify (\%). Top/bot: reports of the reference
+top/bottom 34 that remain. Slope: within-firm slope per year. Random rows:
+medians over 1{,}000 draws (text: mean). With caveat: six frequent entries
+admitted although part of their occurrences is navigation text, legal
+boilerplate or a non-ESG sense.}
+\label{tab:robustness-summary}
+\begin{tabular}{@{}lrrrrrrrr@{}}
 \toprule
- & & & \multicolumn{3}{c}{Re-extraction} & \multicolumn{2}{c}{Null} & \multicolumn{3}{c}{Frozen} \\
-\cmidrule(lr){4-6}\cmidrule(lr){7-8}\cmidrule(l){9-11}
-Deleted & Entries & Text kept & $\rho$ & Top/bot & Slope & $\rho$ & Pct. & $\rho$ & Top/bot & Slope \\
+ & & & \multicolumn{3}{c}{$\ESGSI$} & \multicolumn{3}{c}{$\ESGSIext$} \\
+\cmidrule(lr){4-6}\cmidrule(l){7-9}
+Deleted & Entries & Text & $\rho$ & Top/bot & Slope & $\rho$ & Top/bot & Slope \\
 \midrule
-\multicolumn{11}{@{}l}{\emph{Panel A: $\ESGSI$}} \\
-Sectoral           & 36  & 99.6 & 0.9995 & 33/33 & $-0.176$ & 0.9945 & 100.0 & 0.9987 & 34/34 & $-0.184$ \\
-With caveat        & 6   & 95.2 & 0.9912 & 32/32 & $-0.180$ & 0.9996 & 0.7   & 0.9908 & 33/34 & $-0.195$ \\
-Pillar E           & 168 & 81.1 & 0.8844 & 28/23 & $-0.105$ & 0.9513 & 0.2   & 0.7761 & 28/12 & $-0.080$ \\
-Pillar S           & 139 & 90.1 & 0.9836 & 32/30 & $-0.168$ & 0.9638 & 97.0  & 0.9839 & 32/30 & $-0.190$ \\
-Pillar G           & 95  & 68.6 & 0.9439 & 28/30 & $-0.206$ & 0.9804 & 0.4   & 0.9353 & 27/30 & $-0.214$ \\
-Pillar TRANS       & 32  & 94.8 & 0.9822 & 31/32 & $-0.132$ & 0.9952 & 3.1   & 0.9739 & 33/32 & $-0.117$ \\
-\emph{Board of directors} & 1 & 93.6 & 0.9953 & 33/31 & $-0.188$ & 1.0000 & 0.5 & 0.9846 & 33/32 & $-0.194$ \\
+Sectoral entries   & 36  & 99.6 & 0.9995 & 33/33 & $-0.176$ & 0.9994 & 33/32 & $-0.256$ \\
+Pillar E           & 168 & 81.1 & 0.8844 & 28/23 & $-0.105$ & 0.9088 & 30/26 & $-0.211$ \\
+Pillar S           & 139 & 90.1 & 0.9836 & 32/30 & $-0.168$ & 0.9886 & 31/31 & $-0.253$ \\
+Pillar G           & 95  & 68.6 & 0.9439 & 28/30 & $-0.206$ & 0.9622 & 27/29 & $-0.250$ \\
+Pillar TRANS       & 32  & 94.8 & 0.9822 & 31/32 & $-0.132$ & 0.9832 & 32/32 & $-0.205$ \\
+\emph{Board of directors} & 1 & 93.6 & 0.9953 & 33/31 & $-0.188$ & 0.9965 & 33/33 & $-0.268$ \\
+With caveat        & 6   & 95.2 & 0.9912 & 32/32 & $-0.180$ & 0.9940 & 30/31 & $-0.255$ \\
 \addlinespace
-\multicolumn{11}{@{}l}{\emph{Panel B: $\ESGSIext$}} \\
-Sectoral           & 36  & 99.6 & 0.9994 & 33/32 & $-0.256$ & 0.9964 & 99.5  & 0.9991 & 34/33 & $-0.264$ \\
-With caveat        & 6   & 95.2 & 0.9940 & 30/31 & $-0.255$ & 0.9997 & 0.6   & 0.9950 & 33/31 & $-0.275$ \\
-Pillar E           & 168 & 81.1 & 0.9088 & 30/26 & $-0.211$ & 0.9633 & 0.5   & 0.8559 & 29/21 & $-0.159$ \\
-Pillar S           & 139 & 90.1 & 0.9886 & 31/31 & $-0.253$ & 0.9734 & 97.3  & 0.9866 & 31/31 & $-0.269$ \\
-Pillar G           & 95  & 68.6 & 0.9622 & 27/29 & $-0.250$ & 0.9860 & 0.3   & 0.9633 & 27/27 & $-0.294$ \\
-Pillar TRANS       & 32  & 94.8 & 0.9832 & 32/32 & $-0.205$ & 0.9969 & 0.6   & 0.9824 & 32/31 & $-0.197$ \\
-\emph{Board of directors} & 1 & 93.6 & 0.9965 & 33/33 & $-0.268$ & 1.0000 & 0.6 & 0.9903 & 34/30 & $-0.274$ \\
+Random 10\,\%      & 43  & 96.3 & 0.9931 & 33/32 & $-0.174$ & 0.9954 & 33/32 & $-0.253$ \\
+Random 20\,\%      & 87  & 91.8 & 0.9820 & 31/31 & $-0.165$ & 0.9873 & 31/31 & $-0.242$ \\
+Random 30\,\%      & 130 & 86.6 & 0.9674 & 30/30 & $-0.154$ & 0.9764 & 30/30 & $-0.231$ \\
+Random 40\,\%      & 174 & 80.8 & 0.9497 & 29/28 & $-0.139$ & 0.9611 & 29/29 & $-0.214$ \\
+Random 50\,\%      & 217 & 74.0 & 0.9242 & 27/26 & $-0.118$ & 0.9396 & 28/28 & $-0.192$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\emph{Sectoral entries.} Excluding them, the sensitivity that \S\ref{sec:lexicon} announces,
-leaves $\ESGSI$ at $\rho = 0.9995$ under re-extraction (0.9987 frozen), keeps 33 of each
-extreme decile (all 34 frozen) and the slope at $-0.176$ ($-0.184$ frozen). No random deletion
-of 36 entries moves the score as little. That is a matter of mass, not of harmlessness: in the
-frozen programme the 34 sectoral lemmas hold 1.0\,\% of vocabulary hits, against 8.5\,\% on
-average for 34 lemmas drawn at random.
+\paragraph{Substance specification.} Computing $\ESGSI$ with the
+length-normalised TF-IDF measure $\sustfidf$ instead of $\susdens$ leaves its
+ranking almost unchanged ($\rho = 0.993$; 33/32 of the extreme deciles kept).
+With the L2 vector-normalised measure $\suslag$ the ranking changes markedly
+($\rho = 0.642$; 18/21) and the slope weakens to $-0.143$. Term weighting is
+thus a second-order choice and vector normalisation a first-order one
+(\S\ref{sec:method-choices}).
 
-\emph{Entries admitted with a caveat.} Removing the six gives $\rho = 0.9912$, keeps 32 of each
-extreme decile and leaves the slope at $-0.180$ ($-0.195$ frozen). They move the score more
-than 99\,\% of random six-entry deletions for the mirror reason: the five lemmatised ones hold
-9.3\,\% of vocabulary hits, against 1.3\,\% for five random lemmas.
+\paragraph{Weights of the Extended ESGSI.} Over the grid
+$w_q, w_h \in \{0, 0.25, 0.5, 0.75, 1\}$ of Eq.~\eqref{eq:esgsiext}, $\rho$
+with the score at the default weights is at least 0.865, the minimum being at
+$w_q = w_h = 0$, where the score is $\ESGSI$, and at least 0.973 within 0.25
+of the default on each axis, where at least 28 of the top and 29 of the
+bottom 34 reports remain. The ranking depends mostly on $w_h$ and the slope
+mostly on $w_q$ (from $-0.185$ at $w_q = 0$ to $-0.335$ at $w_q = 1$, with
+$w_h = 0.5$); the slope is negative in all 25 pairs, and every firm-clustered
+95\,\% interval excludes zero.
 
-\emph{Pillars.} The environmental pillar matters most. Without it $\rho = 0.8844$ under
-re-extraction, 28 of the top 34 remain but only 23 of the bottom 34, and the slope falls to
-$-0.105$ per year (SE 0.039, $p_{\mathrm{cl}} = 0.009$, $p_{\mathrm{wild}} = 0.011$), about 58\,\%
-of its full-vocabulary value; frozen, $-0.080$ ($p_{\mathrm{cl}} = 0.027$,
-$p_{\mathrm{wild}} = 0.031$). Unlike the two previous sets, E is not heavy for its size (its
-lemmas hold 38.2\,\% of hits, against 38.0\,\% for 152 random lemmas), yet its $\rho$ lies below
-all but 0.2\,\% of matched random deletions: the environmental entries order the reports
-differently from the rest of the vocabulary, and the reports they order are chiefly those at the
-bottom of the score, the ones whose substance is high relative to their tone. Without TRANS the
-slope is $-0.132$ (SE 0.036, $p_{\mathrm{cl}} = 5.5\times10^{-4}$, $p_{\mathrm{wild}} = 0.0006$) at
-$\rho = 0.9822$; these two pillars are the ones that change the trend's magnitude. Pillar G
-removes the most text (31.4\,\% of extracted words) and lowers $\rho$ to 0.9439, below all but
-0.4\,\% of the null, while steepening the slope to $-0.206$; its lemmas hold 30.0\,\% of hits
-against 22.6\,\% for a random set of the same size. Pillar S is the exception in the other
-direction: $\rho = 0.9836$, above 97\,\% of the null, because it holds 17.6\,\% of hits against
-31.7\,\%.
-
-\emph{Board of directors.} The heaviest entry (\S\ref{sec:lexicon-represent},
-Table~\ref{tab:lexicon-mass}) is also an extraction trigger: removing it cuts the extracted text
-by 6.4\,\%. Under re-extraction $\rho = 0.9953$, with 33 and 31 of the extreme deciles kept, and
-the slope steepens slightly to $-0.188$; frozen, $\rho = 0.9846$ and the slope is $-0.194$ (SE
-0.034, $p_{\mathrm{cl}} = 7.4\times10^{-7}$, $p_{\mathrm{wild}} < 0.0001$). One random entry
-holds 0.24\,\% of hits on average against its 5.7\,\%, so its percentile (0.5) says only that it
-is heavy.
-
-Apart from pillars E and TRANS, every designed deletion leaves the $\ESGSI$ slope with
-$p_{\mathrm{cl}} < 10^{-4}$ in both modes; every designed deletion, E and TRANS included, leaves
-the $\ESGSIext$ slope so. $\ESGSIext$ moves less than $\ESGSI$ under
-each pillar deletion, as $\Z(\QUANT)$ and $\Z(\HEDGE)$ depend on the vocabulary only through the
-extracted text: without E its $\rho$ is 0.9088 and its slope $-0.211$
-($p_{\mathrm{cl}} = 6.5\times10^{-7}$).
-
-\emph{Frozen against re-extracted.} The modes agree except for pillar E, where freezing the
-text exaggerates the effect ($\rho$ 0.7761 against 0.8844; 12 of the bottom 34 kept against 23)
-through the dilution described above, and \emph{board of directors}, where re-extraction also
-removes the governance text the entry brought into the zones.
-
-\paragraph{Random deletion.} Table~\ref{tab:robustness-random} and
-Figure~\ref{fig:robustness-stability} give 1,000 random deletions each of 10--50\,\% of the 434
-entries, in both modes.
-
-\begin{table}[tbp]
-\centering
-\footnotesize
-\setlength{\tabcolsep}{3pt}
-\caption{Random deletion of vocabulary entries, 1,000 draws per size, against the
-full-vocabulary score of each mode. $\rho$: median and 5th--95th percentiles. Top/bot: mean
-number of the reference top/bottom 34 that remain. Slope: median within-firm slope per year and
-5th--95th percentiles (full vocabulary $-0.180$ for $\ESGSI$, $-0.260$ for $\ESGSIext$). Text
-kept: mean share of extracted words surviving re-extraction (\%). Source:
-\nolinkurl{scripts/stability_v3_e2e.py}.}
-\label{tab:robustness-random}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}rrrrlrrlrlrrl@{}}
-\toprule
- & & & \multicolumn{5}{c}{Re-extraction} & \multicolumn{5}{c}{Frozen} \\
-\cmidrule(lr){4-8}\cmidrule(l){9-13}
-Deleted & Entries & Text kept & \multicolumn{2}{c}{$\rho$} & Top/bot & \multicolumn{2}{c}{Slope} & \multicolumn{2}{c}{$\rho$} & Top/bot & \multicolumn{2}{c}{Slope} \\
-\midrule
-\multicolumn{13}{@{}l}{\emph{Panel A: $\ESGSI$}} \\
-10\,\% & 43 & 96.3 & 0.993 & [0.982, 0.998] & 32.4/31.8 & $-0.174$ & [$-0.192$, $-0.150$] & 0.994 & [0.971, 0.999] & 32.9/32.0 & $-0.179$ & [$-0.200$, $-0.152$] \\
-20\,\% & 87 & 91.8 & 0.982 & [0.964, 0.993] & 31.2/30.8 & $-0.165$ & [$-0.194$, $-0.132$] & 0.981 & [0.955, 0.994] & 31.9/30.7 & $-0.175$ & [$-0.208$, $-0.137$] \\
-30\,\% & 130 & 86.6 & 0.967 & [0.942, 0.985] & 29.8/29.7 & $-0.154$ & [$-0.192$, $-0.107$] & 0.966 & [0.939, 0.988] & 31.0/29.5 & $-0.172$ & [$-0.217$, $-0.121$] \\
-40\,\% & 174 & 80.8 & 0.950 & [0.912, 0.971] & 28.5/28.1 & $-0.139$ & [$-0.181$, $-0.082$] & 0.950 & [0.912, 0.977] & 30.0/28.0 & $-0.167$ & [$-0.218$, $-0.102$] \\
-50\,\% & 217 & 74.0 & 0.924 & [0.872, 0.956] & 27.0/26.0 & $-0.118$ & [$-0.172$, $-0.057$] & 0.932 & [0.878, 0.962] & 29.1/26.4 & $-0.160$ & [$-0.222$, $-0.083$] \\
-\addlinespace
-\multicolumn{13}{@{}l}{\emph{Panel B: $\ESGSIext$}} \\
-10\,\% & 43 & 96.3 & 0.995 & [0.988, 0.999] & 32.4/31.8 & $-0.253$ & [$-0.272$, $-0.226$] & 0.996 & [0.985, 0.999] & 32.8/31.5 & $-0.258$ & [$-0.279$, $-0.232$] \\
-20\,\% & 87 & 91.8 & 0.987 & [0.974, 0.995] & 31.3/30.9 & $-0.242$ & [$-0.273$, $-0.206$] & 0.988 & [0.974, 0.996] & 31.9/30.4 & $-0.255$ & [$-0.287$, $-0.216$] \\
-30\,\% & 130 & 86.6 & 0.976 & [0.956, 0.989] & 30.2/30.0 & $-0.231$ & [$-0.273$, $-0.180$] & 0.979 & [0.962, 0.992] & 30.9/29.5 & $-0.252$ & [$-0.297$, $-0.200$] \\
-40\,\% & 174 & 80.8 & 0.961 & [0.932, 0.979] & 29.2/29.1 & $-0.214$ & [$-0.264$, $-0.155$] & 0.969 & [0.942, 0.984] & 30.1/29.0 & $-0.246$ & [$-0.298$, $-0.182$] \\
-50\,\% & 217 & 74.0 & 0.940 & [0.897, 0.967] & 27.9/28.0 & $-0.192$ & [$-0.254$, $-0.122$] & 0.957 & [0.914, 0.975] & 29.2/28.3 & $-0.240$ & [$-0.302$, $-0.163$] \\
-\bottomrule
-\end{tabular}}
-\end{table}
+\paragraph{Vocabulary.} The vocabulary selects the text as well as scoring it
+(\S\ref{sec:method-vocab}), so each deletion of entries is run in two ways:
+with the extraction held fixed, so that only the list counted by $\SUS$
+changes, and with a simulated re-extraction, in which the extraction rule of
+\S\ref{sec:method-extraction} is re-applied without the deleted entries and
+all components are recomputed on the paragraphs that still qualify. A smaller
+vocabulary can only select part of the adopted extraction, so the simulation
+starts from the extracted paragraphs; with the full vocabulary it reproduces
+the adopted scores ($\rho > 0.9999$). We delete designed sets of entries and,
+1{,}000 times at each size, random sets of 10--50\,\% of the 434 entries, and
+read each designed deletion against 1{,}000 random deletions of the same size.
+Table~\ref{tab:robustness-summary} gives the re-extraction results for both
+scores, and Figure~\ref{fig:robustness-stability} those for $\ESGSI$ in both
+modes.
 
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=\textwidth]{figures/fig_stability.pdf}
-\caption{Stability of $\ESGSI$ under deletion of vocabulary entries ($n = 343$). Lines: median
-over 1,000 random deletions at each size, simulated re-extraction (blue) and frozen extracted
-text (grey), both starting from the full vocabulary at 0\,\%; bands: 5th--95th percentiles.
-Diamonds: the designed deletions of Table~\ref{tab:robustness-deletions} under re-extraction,
-placed at the share of the 434 entries they remove (Warn: entries admitted with a caveat; BD:
-\emph{board of directors}). (a) Spearman $\rho$ with the full-vocabulary score. (b) Mean of the
-top- and bottom-decile overlaps, as a percentage of the 34 reports in each. (c) Within-firm
-slope per year; the horizontal line is the full-vocabulary slope. Source:
-\nolinkurl{scripts/figures_v3.py}.}
+\caption{Stability of $\ESGSI$ under deletion of vocabulary entries
+($n = 343$): random deletions in both modes, and the designed deletions of
+Table~\ref{tab:robustness-summary} under re-extraction, placed at the share of
+the 434 entries they remove (T: pillar TRANS; Warn: entries with a caveat).
+(a) Spearman $\rho$ with the full-vocabulary score. (b) Mean of the top- and
+bottom-decile overlaps. (c) Within-firm slope per year; the horizontal line
+is the full-vocabulary slope.}
 \label{fig:robustness-stability}
 \end{figure}
 
-The ranking degrades smoothly and slowly (Figure~\ref{fig:robustness-stability}a). A random
-tenth of the entries costs a median $\rho$ of about 0.007; half of them, about 0.08 under
-re-extraction (median 0.924) and 0.07 frozen (0.932), and even then the 5th percentile is 0.872. The extreme deciles degrade faster
-(panel b): at half the vocabulary about 27 of the top 34 and 26 of the bottom 34 remain under
-re-extraction, and for $\ESGSI$ the bottom decile is the less stable of the two at every size in
-both modes. Against the 5th--95th range of their matched nulls the designed deletions fall into
-three groups: the sectoral entries and pillar S above it; the entries with a caveat,
-\emph{board of directors} and TRANS just below it; G and above all E well below it, E being the only designed deletion whose $\rho$ and mean decile overlap are
-lower than the median for a random half of the vocabulary.
+Removing the 36 sectoral entries barely moves either score ($\rho \geq 0.998$
+in both modes): they carry about 1\,\% of the vocabulary's matches. The
+environmental pillar moves the score most. Without it $\rho = 0.884$, only 23
+of the bottom 34 reports remain, and the slope falls to $-0.105$ (SE 0.039,
+firm-clustered $p = 0.009$, wild cluster bootstrap $p = 0.011$). Its $\rho$ is
+lower than in 998 of the 1{,}000 random deletions of the same size, although
+its entries carry no more of the matches than random sets of that size
+(38.2\,\% against 38.0\,\%): the environmental entries order the reports
+differently from the rest of the vocabulary. It is the only designed deletion
+whose $\rho$ falls below the median for a random half of the vocabulary
+(Figure~\ref{fig:robustness-stability}a). With the extraction held fixed its
+effect is larger ($\rho = 0.776$, 12 of the bottom 34 kept, slope $-0.080$
+with firm-clustered $p = 0.027$), because the paragraphs extracted for
+environmental entries stay in the text, unscored, and dilute density. Without the transversal pillar the
+slope is $-0.132$; the remaining designed deletions leave it between $-0.168$
+and $-0.206$, the steepest being without pillar G, which also removes nearly a
+third of the extracted text. $\ESGSIext$ moves less than $\ESGSI$, in $\rho$,
+under every pillar deletion.
 
-The slope is the least stable of the three measures (panel c), and its bands are wide. Under
-re-extraction the median drifts towards zero as more is deleted, from $-0.174$ at 10\,\% to
-$-0.118$ at 50\,\%, because the remaining text is less and less the text on which the full score
-was computed; frozen, the median stays between $-0.179$ and $-0.160$. The 5th--95th band is
-already $[-0.192, -0.150]$ for a random tenth and $[-0.172, -0.057]$ for a random half under
-re-extraction ($[-0.222, -0.083]$ frozen), a spread of a factor of three in magnitude. The
-designed deletions sit inside or near these bands, with TRANS above (less negative) and G below
-(more negative) the re-extraction band at their sizes. The sign is nonetheless stable: of the
-5,000 random draws in each mode, the $\ESGSI$ slope is negative in all but one (a 50\,\% deletion
-under re-extraction), and the $\ESGSIext$ slope in all. $\ESGSIext$ keeps its ranking better at every
-size (Table~\ref{tab:robustness-random}, Panel B): at half the vocabulary its median
-$\rho$ is 0.940 and its median slope $-0.192$.
+Under random deletion the ranking degrades smoothly: with half of the entries
+removed the median $\rho$ is 0.924 for $\ESGSI$ and 0.940 for $\ESGSIext$,
+and 27 of the top and 26 of the bottom 34 reports remain. The slope is the
+least stable measure. Under re-extraction its median drifts towards zero as
+more is deleted, from $-0.174$ at 10\,\% to $-0.118$ at 50\,\%, because less
+of the original text remains; with the extraction held fixed it stays between
+$-0.179$ and $-0.160$. Its sign does not change: over the 5{,}000 random
+draws the $\ESGSI$ slope is negative in all but one (a 50\,\% deletion under
+re-extraction), and the $\ESGSIext$ slope in all, in both modes.
 
-\paragraph{Single entries.} Deleting each of the 399 lemmatised entries in turn, frozen, gives
-$\rho \geq 0.9756$ for $\ESGSI$ and $\geq 0.9884$ for $\ESGSIext$, keeps at least 31 of each extreme decile of $\ESGSI$ (29 of the top and 30 of the
-bottom of $\ESGSIext$), and leaves both extreme deciles of $\ESGSI$ unchanged for 366 of the 399
-entries (319 for $\ESGSIext$). The within-firm slope of $\ESGSI$ stays between $-0.194$ and
-$-0.162$, and that of $\ESGSIext$ between $-0.274$ and $-0.241$. The largest movers by $\rho$ are
-the heaviest entries: \emph{remuneration} ($\rho = 0.9756$; 31/33 of the extreme deciles kept;
-5.6\,\% of hits), \emph{board director}, the lemma of \emph{board of directors} (0.9847; 33/31;
-5.7\,\%), \emph{sustainability} (0.9948; 34/34), \emph{governance} (0.9955; 33/34) and
-\emph{emission} (0.9961; 34/31). The slope moves most without \emph{taxonomy} ($-0.162$) and
-\emph{sustainability} ($-0.164$), and steepens most without \emph{board director} ($-0.194$).
-
-\subsection{What the checks establish}
-\label{sec:robustness-limits}
-
-\begin{enumerate}
-\item \emph{The vocabulary was built on this corpus.} Candidates, admission criteria and the
-  sectoral designation were all applied to the 343 reports (\S\ref{sec:lexicon-limits}). The
-  perturbations are of a vocabulary fitted to the sample, not of an independent one, and the
-  stability they show is stability around that fit.
-\item \emph{High correlations are partly structural.} A deletion leaves the retained entries
-  common to both scores, so the correlation has a floor. With $t$ the ratio of the standard
-  deviations of the per-report densities of the deleted and the retained entries, the
-  component-level floor is $\sqrt{\max(0, 1-t^2)}$, carried to the index through the common
-  $\Z(\SEN)$ term (frozen text). The sectoral deletion ($t = 0.053$) gives $r = 0.9993$ against
-  a floor of 0.9992, \emph{board of directors} ($t = 0.192$) 0.9902 against 0.9900, pillar G
-  0.9456 against 0.9449; pillar E ($t = 1.261$) 0.8064 against 0.4446. A high correlation after
-  a small deletion records how little the deleted entries weigh, which is why each deletion is
-  read against random deletions of the same size.
-\item \emph{Stability is not validity.} The checks bound how far the scores depend on the
-  choices varied. Every designed deletion except pillar E leaves $\rho \geq 0.935$ and at least
-  27 of each extreme decile; the sign of the within-firm trend survives every designed
-  deletion, every weight pair and all but one of the 10,000 random draws. The trend's magnitude
-  is less secure: it depends on the environmental and TRANS entries, on how
-  much of the vocabulary is kept, and in $\ESGSIext$ on $w_q$. None of this shows that the
-  vocabulary measures substance; that question belongs to \S\ref{sec:lexicon-limits} and
-  \S\ref{sec:validity}.
-\end{enumerate}
+These checks bound how far the scores depend on the choices varied; they do
+not validate the scores (\S\ref{sec:limitations}).

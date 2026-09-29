@@ -1,209 +1,67 @@
-\section{Data and corpus construction}
+\section{Data}
 \label{sec:data}
 
-The corpus comprises 343 unique corporate reports from 49 listed companies
-headquartered in seven European countries (Belgium, Finland, France,
-Germany, Italy, the Netherlands, Spain), one report per company per year
-from 2018 to 2024. The panel is exactly balanced: every year contributes 49
-documents, and each country contributes the same number of documents in every
-year (its firm count in Table~\ref{tab:data-country}). Balance is temporal,
-not cross-national: countries are represented in very unequal numbers, but no
-year departs compositionally from any other. Firms enter the paper only
-through their country, their industry and anonymous positions; no firm is
-named.
+The corpus consists of 343 reports of 49 listed firms from seven euro-area
+countries, one report per firm and year from 2018 to 2024. The panel is
+balanced: every firm contributes seven reports and every year 49. Of the 344
+files collected, one 2019 report was present twice, as a re-issue with
+identical text, and the copy was removed by comparing document contents. For
+each firm-year we take one recurring annual document: an annual report
+(235 reports), a universal registration document (URD, 101) or, for one firm,
+a standalone sustainability report (7). Table~\ref{tab:data-composition} gives
+the corpus by country and document type. The document-type mix barely moves
+over time (12 URDs in 2018, 14 or 15 in every later year). Every measure is
+computed on the ESG zones extracted from each report, not on whole documents
+(\S\ref{sec:method-extraction}). Firms enter the paper only through their
+country, their industry and anonymous positions.
 
-Three document types are represented: annual reports, the Universal
-Registration Document (URD; French \emph{document d'enregistrement
-universel}), and standalone sustainability reports. Document type was
-assigned per report from an external metadata file
-(\nolinkurl{metadata/muestras_informes.xlsx}), joined to each PDF by country,
-publication year and a normalised company name --- Unicode-folded,
-punctuation-stripped, and reconciled through a manual company-name map
-covering divergences between the directory tree and the metadata source. The
-join resolved all 343 documents; no case was left unmatched.
+Each firm carries one supersector of the Industry Classification Benchmark
+(ICB), assigned at firm level and not derived from the reports. The 49 firms
+fall into 16 supersectors and 10 of the 11 ICB industries: Financials (11
+firms), Consumer Discretionary (10), Industrials (9), Consumer Staples (5),
+Health Care and Technology (3 each), and Basic Materials, Energy,
+Telecommunications and Utilities (2 each); Real Estate is absent.
 
-\subsection{The country/type confound is a structural property of the corpus}
-
-Table~\ref{tab:data-country} reports the corpus by country and document
-type. Document type is confounded with country almost completely: 99 of the
-corpus's 101 URD filings are French, and all 98 German documents are annual
-reports. Both are properties of national reporting practice rather than
-sampling accidents --- the URD is the standard annual regulatory filing for
-French listed companies and routinely carries the extended sustainability
-disclosure, whereas the German issuers in this sample report ESG content
-inside the ordinary annual report. We state this here as a design property
-of the corpus: within the pooled panel, a country effect and an
-annual-report/URD effect can be told apart only through 15 documents (the 13
-French annual reports and the 2 Dutch URDs), and the seven standalone
-sustainability reports all come from one French firm. Germany, Italy, Spain,
-Finland and Belgium are each a single country and a single document type (all
-annual reports); Germany, with 14 firms and 98 documents, is the largest such
-slice, and \S\ref{sec:temporal} reports a within-Germany regression for that
-reason.
-
-\begin{table}[tbp]
-\centering
-\caption{Corpus composition by country and document type.}
-\label{tab:data-country}
-\begin{tabular}{lrrrrr}
-\toprule
-Country & Companies & Annual report & URD & Sustainability report & Total \\
-\midrule
-France           & 17 & 13  & 99  & 7 & 119 \\
-Germany          & 14 & 98  & 0   & 0 & 98  \\
-Netherlands      & 6  & 40  & 2   & 0 & 42  \\
-Italy            & 5  & 35  & 0   & 0 & 35  \\
-Spain            & 4  & 28  & 0   & 0 & 28  \\
-Finland          & 2  & 14  & 0   & 0 & 14  \\
-Belgium          & 1  & 7   & 0   & 0 & 7   \\
-\midrule
-Total            & 49 & 235 & 101 & 7 & 343 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-By year (Table~\ref{tab:data-year}), the document-type mix is nearly
-constant, so the temporal series (\S\ref{sec:temporal}) is read against a
-fixed compositional backdrop. The small shifts come from six firms that
-file more than one document type over the panel (five French firms and one Dutch firm, each filing both annual reports and
-URDs).
-
-\begin{table}[tbp]
-\centering
-\caption{Corpus composition by year.}
-\label{tab:data-year}
-\begin{tabular}{lrrrr}
-\toprule
-Year & Annual report & URD & Sustainability report & Total \\
-\midrule
-2018 & 36  & 12  & 1 & 49  \\
-2019 & 33  & 15  & 1 & 49  \\
-2020 & 33  & 15  & 1 & 49  \\
-2021 & 33  & 15  & 1 & 49  \\
-2022 & 34  & 14  & 1 & 49  \\
-2023 & 33  & 15  & 1 & 49  \\
-2024 & 33  & 15  & 1 & 49  \\
-\midrule
-Total & 235 & 101 & 7 & 343 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Industry composition}
-\label{sec:data-industry}
-
-Each firm carries one STOXX supersector of the Industry Classification
-Benchmark (ICB). The classification was supplied by the authors as a
-firm-level metadata file (\nolinkurl{metadata/empresas_supersector.csv}), keyed
-on the same company names as the directory tree; it is not derived from the
-reports. The 49 firms fall into 16 supersectors. For analysis we also group
-supersectors into their ICB industries, the level above in the ICB hierarchy:
-10 of ICB's 11 industries are represented, Real Estate being the exception.
-Table~\ref{tab:data-industry} gives both levels. The counts in
-Tables~\ref{tab:data-country}, \ref{tab:data-year}
-and~\ref{tab:data-industry}, and those quoted around them, are produced by
-\nolinkurl{scripts/corpus_composition.py} from the document list of the
-adopted run; they do not depend on the vocabulary.
-
-\begin{table}[tbp]
+\begin{table}[htbp]
 \centering
 \small
-\caption{Corpus composition by ICB industry and, indented, STOXX/ICB
-supersector. Industries with a single supersector are shown on one row.
-AR: annual report; SR: standalone sustainability report. Countries: BE
-Belgium, DE Germany, ES Spain, FI Finland, FR France, IT Italy, NL
-Netherlands. Every firm contributes seven documents.}
-\label{tab:data-industry}
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{lrrrrrl}
+\caption{Corpus composition by country and document type. Industries: number
+of ICB industries represented among the country's firms. Every firm
+contributes one report in each year from 2018 to 2024.}
+\label{tab:data-composition}
+\begin{tabular}{@{}lrrrrrr@{}}
 \toprule
-Industry / supersector & Firms & Docs & AR & URD & SR & Countries \\
+Country & Firms & Industries & Annual report & URD & Sustainability report & Total \\
 \midrule
-Financials                              & 11 & 77 & 70 & 7  & 0 & FI FR DE IT NL ES \\
-\quad Banks                             & 7  & 49 & 42 & 7  & 0 & FI FR IT NL ES \\
-\quad Insurance                         & 3  & 21 & 21 & 0  & 0 & FR DE \\
-\quad Financial Services                & 1  & 7  & 7  & 0  & 0 & DE \\
-Consumer Discretionary                  & 10 & 70 & 48 & 22 & 0 & FR DE IT NL ES \\
-\quad Automobiles and Parts             & 5  & 35 & 33 & 2  & 0 & DE IT NL \\
-\quad Consumer Products and Services    & 4  & 28 & 8  & 20 & 0 & FR DE \\
-\quad Retail                            & 1  & 7  & 7  & 0  & 0 & ES \\
-Industrials                             & 9  & 63 & 32 & 31 & 0 & FR DE NL \\
-\quad Industrial Goods and Services     & 7  & 49 & 30 & 19 & 0 & FR DE NL \\
-\quad Construction and Materials        & 2  & 14 & 2  & 12 & 0 & FR \\
-Consumer Staples                        & 5  & 35 & 14 & 21 & 0 & BE FR NL \\
-\quad Food, Beverage and Tobacco        & 3  & 21 & 7  & 14 & 0 & BE FR \\
-\quad Personal Care, Drug and Grocery Stores & 2 & 14 & 7 & 7 & 0 & FR NL \\
-Health Care                             & 3  & 21 & 7  & 7  & 7 & FR DE \\
-Technology                              & 3  & 21 & 21 & 0  & 0 & DE NL \\
-Basic Materials (Chemicals)             & 2  & 14 & 8  & 6  & 0 & FR DE \\
-Energy                                  & 2  & 14 & 7  & 7  & 0 & FR IT \\
-Telecommunications                      & 2  & 14 & 14 & 0  & 0 & FI DE \\
-Utilities                               & 2  & 14 & 14 & 0  & 0 & IT ES \\
+France      & 17 & 7  & 13  & 99  & 7 & 119 \\
+Germany     & 14 & 7  & 98  & 0   & 0 & 98  \\
+Netherlands & 6  & 5  & 40  & 2   & 0 & 42  \\
+Italy       & 5  & 4  & 35  & 0   & 0 & 35  \\
+Spain       & 4  & 3  & 28  & 0   & 0 & 28  \\
+Finland     & 2  & 2  & 14  & 0   & 0 & 14  \\
+Belgium     & 1  & 1  & 7   & 0   & 0 & 7   \\
 \midrule
-Total                                   & 49 & 343 & 235 & 101 & 7 & 7 countries \\
+Total       & 49 & 10 & 235 & 101 & 7 & 343 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\paragraph{What the sector dimension can identify.} Sector cuts across
-countries: every industry has firms in at least two countries, 13 of the 16
-supersectors do as well, and the two countries with most firms each span
-seven industries (France's 17 firms and Germany's 14). Industry contrasts can
-therefore be drawn within a single country and document regime, which a
-country contrast cannot, and \S\ref{sec:temporal-sectors} draws them within
-France and within Germany for that reason.
+\paragraph{Country and document type.} Document type is almost entirely
+determined by country: 99 of the 101 URDs are French and all 98 German reports
+are annual reports, which reflects national reporting practice rather than
+sampling. Within the pooled panel a country effect and a document-type effect
+can be told apart only through 15 documents (13 French annual reports and 2
+Dutch URDs), and the seven standalone sustainability reports belong to a
+single French firm. We treat this as a property of the design: no
+document-type effect on either score is identified, and since type is constant
+within 43 of the 49 firms, firm fixed effects absorb nearly all of it
+(\S\ref{sec:method-inference}).
 
-\paragraph{What it cannot identify.} Three limits bound it. First, cells are
-small: industries hold 2 to 11 firms and supersectors 1 to 7, and 8 of the 16
-supersectors hold one or two firms, so a group-level interval rests on very
-few degrees of freedom, or none (\S\ref{sec:index-inference}). Second, sector
-is constant within a firm, so it is identified only from the 49 firms, never
-from within-firm variation, and it is absorbed by firm fixed effects. Third,
-sector does not break the country/type confound where the confound is
-sharpest: the 16 firms that file any URD are 15 of the 17 French firms and one
-Dutch firm, so an industry's URD share is essentially its French share, and
-the seven standalone sustainability reports belong to a single Health Care
-firm. Some industries sit in a narrow set of countries (Utilities in Italy and
-Spain, Technology in Germany and the Netherlands), and a contrast between them
-is also a contrast between those countries.
-
-Firms are assigned to countries as in the directory tree and in the metadata
-workbook. One assignment is open to argument: one firm is incorporated in the
-Netherlands but formed from predecessors headquartered elsewhere, and is
-classified under the Netherlands, consistently with both sources. It is also
-the Dutch firm whose filings include the two non-French URDs (5 annual reports
-and 2 URDs). Reclassifying it would move seven documents out of the
-Netherlands and would leave its industry unchanged.
-
-\subsection{Comparability across document types}
-
-The panel spans three document types with different structure and
-different length: annual reports in which ESG disclosure is one section
-among many financial and operational ones, URD filings that combine
-regulatory financial, governance and non-financial statements, and
-standalone sustainability reports that are ESG content throughout. Raw
-comparability across types cannot be assumed. Every measurement from
-\S\ref{sec:extraction} onward accordingly operates not on whole documents but
-on the ESG-relevant zones the lexical filter identifies within each one,
-which is what lets a single score construction (\S\ref{sec:index}) be applied
-uniformly across all three types. It does not make the types equivalent: the
-extraction is applied uniformly, not validated separately by type, and
-because type is sorted by country, no document-type effect on either score
-is identified (\S\ref{sec:temporal-sectors}).
-
-\subsection{Deduplication}
-
-Corpus assembly began from 344 collected PDF filings, one more than the
-final corpus size. The extra file is one 2019 report present twice, the
-second time as a \texttt{\_repaired} re-issue of the same filing under a
-different file name. A content-hash comparison identified this single
-duplicate pair. The hash is taken over the preprocessed (lemmatised)
-representation of \S\ref{sec:lexicon} rather than the raw extraction, so the
-criterion is that two documents are indistinguishable to every downstream
-measure; here the two files are in fact identical at the extraction stage as
-well. The \texttt{\_repaired} copy was removed as a data-quality control,
-leaving 343 unique reports. The balanced panel reported above --- 49
-documents in every year, and a fixed per-country count within every year ---
-holds only after this step: before deduplication, 2019 carried 50 documents,
-with the Netherlands contributing 7 rather than 6, while every other year
-already stood at 49.
+\paragraph{Industry.} Industry cuts across countries: every industry has firms
+in at least two countries, and France and Germany each span seven of the ten,
+so industry contrasts can be drawn within a single country and document regime
+(\S\ref{sec:results-groups}). Industry cannot, however, be separated from the
+firm: industries hold 2 to 11 firms, industry is constant within each firm and
+so absorbed by firm fixed effects, and because the URD filers are 15 French
+firms and one Dutch firm, an industry's URD share is essentially its French
+share.

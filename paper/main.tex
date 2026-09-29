@@ -11,6 +11,13 @@
 \usepackage{natbib}
 \usepackage{geometry}
 \geometry{margin=2.5cm}
+\usepackage{flafter}   % a float never appears before the text that defines it
+% Allow large floats on text pages, so that a tall figure does not get a page
+% of its own with most of it left blank.
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.5}
+\renewcommand{\textfraction}{0.12}
+\renewcommand{\floatpagefraction}{0.8}
 
 % ---------------------------------------------------------------------------
 % Shared macros — see _research/conventions.md. Do not redefine in sections.
@@ -50,18 +57,13 @@ A Continuous Corpus-Relative Score, 2018--2024}
 % ===========================================================================
 \input{sections/01_scope}
 \input{sections/03_data}
-\input{sections/04_extraction}
-\input{sections/05_lexicon}
-\input{sections/06_index_specification}
-\input{sections/10_robustness}
+\input{sections/04_method}
 \input{sections/11_temporal_results}
+\input{sections/10_robustness}
 \input{sections/12_limitations}
 
 % \input{sections/P4_discussion}
 % \input{sections/P5_conclusion}
-
-\appendix
-\input{sections/13_reproducibility}
 
 \bibliographystyle{elsarticle-harv}
 \bibliography{references}

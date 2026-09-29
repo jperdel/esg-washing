@@ -1,289 +1,50 @@
 \section{Limitations}
 \label{sec:limitations}
 
-Most limitations of this paper are stated where the choice concerned is made,
-with their magnitudes. This section collects them, ranks them by how much of
-what we claim they constrain, points to where each is treated, and states in
-full the few that no earlier section owns. Table~\ref{tab:limitations-summary}
-is the index.
+\begin{itemize}
+\setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}
+\item \emph{No external criterion.} Both scores are positions within this
+  corpus and would move if the panel changed. Neither is tested against an
+  external criterion (regulatory findings, controversy data, hand-coded
+  cases), so no value is evidence about a firm's conduct; the one empirical
+  check on substance, convergent validity with $\QUANT$
+  (\S\ref{sec:method-choices}), is internal and reads the same extracted text.
+\item \emph{A vocabulary built on this corpus.} Candidates, admission
+  decisions, pillars and sectoral entries were settled on the 343 reports
+  that are scored, with no part held out, and admission rests on the
+  judgement of the reviewers of the candidate lists
+  \textbf{[Author: identify the reviewers.]}. Its precision is estimated
+  rather than measured on the final extraction (\S\ref{sec:method-vocab}),
+  and its recall is unknown. The stability of \S\ref{sec:robustness} is
+  stability around this fit; it covers deletions of entries, not additions,
+  and the size of the trend depends on the environmental and transversal
+  entries.
+\item \emph{Country, document type and industry.} Document type is almost
+  determined by country (\S\ref{sec:data}), so neither effect is identified
+  on its own. Industries hold 2 to 11 firms and supersectors 1 to 7, both
+  constant within firm, so group contrasts rest on few firms
+  (\S\ref{sec:results-groups}).
+\item \emph{Inference.} Standard errors are clustered on 49 firms and checked
+  with a wild cluster bootstrap, but they do not cover shocks common to all
+  firms in a year, and seven years are too few to cluster on
+  (\S\ref{sec:method-inference}).
+\item \emph{Mandate.} European sustainability reporting became progressively
+  mandated over the window, an exposure common to all firms and collinear
+  with calendar time, so the rise in substance cannot be split into changed
+  conduct and compliance, and compliance itself lowers both scores
+  (\S\ref{sec:results-mandate}).
+\item \emph{Weights.} The weights of the Extended ESGSI are a choice. Its
+  ranking is stable near them, but the size of its trend scales with $w_q$
+  (\S\ref{sec:robustness}).
+\item \emph{Dictionaries.} $\SEN$ applies a finance dictionary to
+  non-financial narrative, without negation handling, and as a bounded ratio
+  it ignores how many sentiment words a text contains. $\HEDGE$ matches by
+  form (\S\ref{sec:method-index}): \emph{risk} and \emph{risks} are
+  147{,}099 of its 498{,}477 matches, and at least 6{,}632 of the 38{,}628
+  matches of \emph{may} are the month.
+\end{itemize}
 
-\begin{table}[tbp]
-\centering
-\caption{Limitations, ranked by how much of what we claim they constrain,
-with the sections that treat each and their status.}
-\label{tab:limitations-summary}
-\small
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{@{}r>{\raggedright\arraybackslash}p{7.4cm}>{\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{2.6cm}@{}}
-\toprule
- & Limitation & Treated in & Status \\
-\midrule
-1 & Scores corpus-relative; no cardinal meaning; sign is position only & \S\ref{sec:index-composite}, \S\ref{sec:artefact}, \S\ref{sec:temporal} & Inherent to the design \\
-2 & No external criterion; $\QUANT$ is internal and reads the same zones & \S\ref{sec:validity} & Conceded \\
-3 & Mandate/chronology confound in the trend & \S\ref{sec:temporal-mandate} & Bounded, unresolved \\
-4 & Vocabulary built on this corpus; admission by the authors; error rate not reported; reviewers not yet identified & \S\ref{sec:lexicon-sources}--\ref{sec:lexicon-criteria}, \S\ref{sec:lexicon-limits}, \S\ref{sec:robustness-limits} & Conceded \\
-5 & Extraction--scoring coupling; additions not testable & \S\ref{sec:lexicon-one}, \S\ref{sec:robustness-lexicon} & Measured for deletions \\
-6 & Trend magnitude depends on the E and TRANS entries and on vocabulary size & \S\ref{sec:robustness-lexicon}, \S\ref{sec:robustness-limits} & Measured \\
-7 & Extended ESGSI weights are a choice; slope scales with $w_q$ & \S\ref{sec:index-composite}, \S\ref{sec:robustness-weights} & Grid reported \\
-8 & Country/document-type confound; small sector cells & \S\ref{sec:data}, \S\ref{sec:temporal-sectors} & Conceded \\
-9 & 49 clusters; year-common shocks not covered & \S\ref{sec:index-inference} & Partly addressed \\
-10 & Recall bounded by the lexicon; patterns extract but never score & \S\ref{sec:extraction}, \S\ref{sec:lexicon-criteria} & Unmeasured \\
-11 & Extraction parameters never varied; navigation filter unmeasured & \S\ref{sec:extraction}, \S\ref{sec:extraction-nav} & Untested \\
-12 & $\QUANT$: overlap with the vocabulary, \texttt{large\_numbers} noise, regime names & \S\ref{sec:validity}, here & Overlap removed; noise unvalidated \\
-13 & $\HEDGE$ dominated by \emph{risk}; \emph{may} as a month & \S\ref{sec:lexicon-hedge}, \S\ref{sec:index-components} & Conceded \\
-14 & $\SEN$: finance dictionary, no negation, volume-insensitive & \S\ref{sec:index-components} & Conceded \\
-15 & Protected phrases cover collapses only; lemma artefacts & \S\ref{sec:lexicon-represent} & Partly repaired \\
-16 & PDF text-layer artefacts (non-ASCII deletion, NUL characters) & \S\ref{sec:extraction}, \S\ref{sec:repro} & Partly repaired \\
-17 & Adopted run and navigation-filter calibration not committed & \S\ref{sec:repro-provenance} & Open \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{What bounds every result}
-
-\paragraph{The scores are corpus-relative and have no cardinal meaning.} Every
-component of $\ESGSI$ and $\ESGSIext$ is a $z$-score over the 343 pooled
-reports \eqref{eq:zscore}, so a score is a position within this corpus, in
-corpus standard deviations, and a slope is in pooled standard deviations of
-this sample. The sign says only on which side of the corpus mean a report
-lies. No level is comparable across corpora, vocabularies or studies, and
-every score, including the yearly series, would move if the panel were
-extended or reduced (\S\ref{sec:index-composite}, \S\ref{sec:temporal}). The
-adopted $\susdens$ estimates nothing on the sample, but the score
-normalisation is cross-sectional under every specification, and the two
-TF-IDF alternatives also estimate their idf weights on it
-(\S\ref{sec:index-sus}). We use no threshold and classify no report
-(\S\ref{sec:artefact}); this limitation is the reason, and no calibration
-could remove it without an external criterion.
-
-\paragraph{No external criterion.} Neither score is tested against an
-external benchmark --- regulatory findings, controversy data or hand-coded
-cases --- and no figure in this paper is evidence about any firm's conduct.
-The one empirical check on the substance component is convergent validity
-with $\QUANT$ (\S\ref{sec:validity}), and $\QUANT$ is internal: our regular
-expressions over our own extracted zones. \S\ref{sec:validity} removes the
-strings the two instruments share, after which the correlations fall by more
-than a third and the firm-bootstrap interval of the difference between
-$\susdens$ and $\suslag$ no longer excludes zero. The shared extraction cannot
-be removed within this design, since both instruments see only the text that
-\S\ref{sec:extraction} admits, so the test is conditional on that stage. The
-rejection of $\suslag$ rests first on the algebra of \S\ref{sec:measurement},
-which uses no criterion, and the choice of $\susdens$ over $\sustfidf$ on a
-structural argument, not on evidence (\S\ref{sec:validity-adopted}).
-
-\paragraph{The mandate and chronology confound is unresolved.} The 2018--2024
-window is the one over which European non-financial reporting became
-prescribed, and a firm that adds mandated tables adds ESG vocabulary without
-necessarily changing anything it does. \S\ref{sec:temporal-mandate} bounds the
-purely definitional part --- with the extraction held fixed, striking 22
-regime names leaves an $\ESGSI$ slope of $-0.149$ and striking the transversal
-pillar $-0.117$, against $-0.181$ ---
-and states why no design here does better: exposure is common to all 49 firms
-and collinear with calendar time. Whether the rise in substance reflects
-changed conduct, compliance or unchanged conduct described in a prescribed
-vocabulary is not identified. The architecture adds a further property: both
-scores fall when substance rises, so a firm that complies with a new
-disclosure regime moves down the scale for having complied.
-
-\paragraph{The vocabulary was built on this corpus, and its error rate is not
-reported.} Candidate terms came in part from a reading of 17 of the 343
-reports, in which Germany, 98 of the reports, is represented by one firm; the
-admission criteria, the collocation choices, the pillar assignment and the
-sectoral designation were applied by the authors to occurrences in the same
-corpus on which the scores are computed, and no part of the corpus was held
-out (\S\ref{sec:lexicon-sources}, \S\ref{sec:lexicon-criteria}). The
-admission criteria are judgements under stated rules, not measurements: the
-paper reports no error rate for the vocabulary's matches, and the concentration
-thresholds behind the sectoral designation are not in a committed script
-(\S\ref{sec:lexicon-limits}). The reviewers and evaluators of the candidate
-lists are not yet identified in the text; \S\ref{sec:lexicon-sources} carries
-a marker for that information. The extraction parameters, the $\QUANT$
-families and the set of specifications were likewise fixed with the corpus
-visible. The stability checks of \S\ref{sec:robustness-lexicon} perturb this
-fitted vocabulary, so the stability they show is stability around the fit
-(\S\ref{sec:robustness-limits}). Every choice is disclosed
-(\S\ref{sec:repro}); disclosure is not pre-commitment, and we claim only the
-first.
-
-\subsection{The vocabulary and the extraction}
-
-\paragraph{One vocabulary selects the text and scores it.} The regular
-expression that decides which paragraphs are extracted is built from the same
-terms whose lemmas $\SUS$ counts (\S\ref{sec:lexicon-one}), so admitting a term
-changes the text it is then counted on, and changes the text on which $\SEN$,
-$\QUANT$ and $\HEDGE$ are computed. \emph{Board of directors} is the measured
-case: the heaviest scoring entry, it also brings governance text into the
-zones, and removing it cuts the extracted text by 6.4\,\%
-(\S\ref{sec:lexicon-represent}, \S\ref{sec:robustness-lexicon}). The coupling
-also limits the stability programme. Re-extraction is simulated from the
-paragraphs the adopted vocabulary already extracted, which is exact in
-principle for deletions only; an addition to the vocabulary, which would pull
-in text that was never extracted, cannot be simulated at all, and the
-single-entry deletions were run with the extraction frozen
-(\S\ref{sec:robustness-lexicon}).
-
-\paragraph{The magnitude of the trend depends on parts of the vocabulary.}
-The sign of the within-firm trend survives every designed deletion, every
-weight pair and all but one of 10,000 random deletions; its magnitude does
-not. Without the environmental pillar the $\ESGSI$ slope falls to $-0.105$
-under re-extraction, and without the transversal pillar to $-0.132$. The
-environmental pillar is also the designed deletion that falls furthest
-outside its matched random null: its $\rho$ lies below all but 0.2\,\% of
-random deletions of the same size, because its entries order the reports
-differently from the rest of the vocabulary. Under
-random deletion of half the vocabulary the 5th--95th band of the slope spans
-a factor of three (\S\ref{sec:robustness-lexicon},
-\S\ref{sec:robustness-limits}). A statement about the size of the decline is
-therefore a statement about this vocabulary.
-
-\paragraph{Recall is bounded by the lexicon.} A term outside the extraction
-regex triggers no hot paragraph and enters no zone, so it is invisible to
-every component, not under-weighted (\S\ref{sec:extraction}). The 32 patterns
-pull text into zones, where it feeds $\SEN$, $\QUANT$, $\HEDGE$ and the length
-denominators, without ever being counted by $\SUS$. A count vocabulary cannot
-carry a negative lookahead, so a polysemous head is admitted bare or only
-inside enumerated collocations, losing its other valid uses
-(\S\ref{sec:lexicon-criteria}); paraphrase is invisible throughout. No recall
-figure exists for the vocabulary.
-
-\paragraph{The extraction stage is untested at its free parameters.} The
-density threshold (1.0 keyword per 100 words), the $\pm 1$-paragraph window
-and the 150-character minimum zone were set by judgement and never varied
-(\S\ref{sec:extraction}). The stage keeps under two fifths of the corpus's
-full text layer (Table~\ref{tab:extraction-yield}) and sits upstream of every
-number here. The navigation filter is documented by a calibration whose script
-is not committed, and the pipeline does not log what the filter removes, so
-its effect on the adopted extraction is unmeasured
-(\S\ref{sec:extraction-nav}). Neither the sense of the vocabulary's matches nor
-the filter's error rates were measured by year, so a drift in extraction
-accuracy over the window is not excluded (\S\ref{sec:extraction-yield}).
-
-\paragraph{Protected phrases are a narrow repair.} Protection covers exactly
-the terms that preprocessing would empty or collapse to one word, eleven
-phrases in all (\S\ref{sec:lexicon-represent}). It does not cover the other
-ways preprocessing reshapes the vocabulary: two collapses (\emph{due
-diligence}, \emph{eu taxonomy}) are allowed by judgement; stopword removal
-lets a lemmatised n-gram match across removed words (\emph{board director} in
-\emph{board and directors}, 0.3\,\% of that entry's count); and some entries
-are lemmatisation artefacts rather than words (\emph{esr}, \emph{ecovadi},
-\emph{sustainalytic}). The shared representation makes these harmless for
-matching, since corpus and vocabulary pass through the same transformation,
-but not for weighting: under $\sustfidf$ and $\suslag$ an artefact entry
-carries the idf of its artefactual form. The adopted $\susdens$ weights every
-entry equally and is insensitive to that.
-
-\paragraph{PDF text-layer artefacts.} Cleaning deletes non-ASCII characters
-rather than transliterating them, so a term written with a typographic hyphen
-fuses (\emph{netzero}) and a word set with a ligature loses letters; the
-matches lost this way are not counted, and the yield of
-\S\ref{sec:extraction-yield} is biased downward by an unmeasured amount
-(\S\ref{sec:extraction}). Two extracted texts carried NUL characters that
-truncated them whenever the stored text was read back; the defect is repaired
-and the adopted run is unaffected (Table~\ref{tab:repro-defects}), but it
-shows that the text layer can carry characters no stage was designed for.
-
-\subsection{The components and the Extended ESGSI}
-
-\paragraph{The weights of the Extended ESGSI are a choice.} $w_q = w_h = 0.5$
-is stated, not estimated, and no external criterion exists to calibrate it
-(\S\ref{sec:index-composite}). Over the grid
-$w_q, w_h \in \{0, 0.25, 0.5, 0.75, 1\}$ the Spearman correlation with the
-adopted score is at least $0.865$, and at least $0.973$ within $0.25$ of the
-adopted weights on each axis; the within-firm slope is negative in all 25
-cells, but its magnitude grows roughly in proportion to $w_q$, from $-0.185$
-at $w_q = 0$ to $-0.335$ at $w_q = 1$ with $w_h = 0.5$
-(\S\ref{sec:robustness-weights}). The level and the rate of decline of
-$\ESGSIext$ are therefore properties of the chosen weights as well as of the
-reports.
-
-\paragraph{$\QUANT$ is crude.} Seventeen vocabulary entries are also matched
-by a $\QUANT$ pattern; the overlap is measured and removed in
-\S\ref{sec:validity}, but it matters for $\ESGSIext$ too, which subtracts both
-$\Z(\QUANT)$ and $\Z(\susdens)$, so the shared strings reinforce rather than
-cancel, and their share of $\QUANT$ hits rises from 16.29\,\% in 2018 to
-37.62\,\% in 2024. The \texttt{frameworks} family names reporting regimes, so
-the rise of $\QUANT$ carries the chronology objection of
-\S\ref{sec:temporal-mandate}. The \texttt{large\_numbers} family matches any
-run of four or more digits other than a calendar year, so it counts page
-numbers, note references, identifiers, share counts and monetary figures
-alongside quantified ESG disclosure; it is 13{,}380 of the 186{,}984 $\QUANT$
-hits (7.2\,\%), and no family was validated against ESG content. No two
-components share a token base ($\SUS$ and $\SEN$ on lemmatised tokens,
-$\QUANT$ on raw whitespace tokens, $\HEDGE$ on raw words;
-\S\ref{sec:index-notation}), so it is score normalisation, not anything about
-the quantities, that makes them addable.
-
-\paragraph{$\HEDGE$ largely counts risk.} The Loughran--McDonald categories
-are matched by form, not sense: \emph{risk} and \emph{risks} alone are
-147{,}099 of the 498{,}477 hits, so in these reports $\HEDGE$ largely registers
-how often risk is discussed, and at least 6{,}632 of the 38{,}628 matches of
-\emph{may} are the month (\S\ref{sec:lexicon-hedge},
-\S\ref{sec:index-components}). The lexicon is used as published, without
-removing these. $\HEDGE$ enters only $\ESGSIext$, and it has no detectable
-trend (\S\ref{sec:temporal}).
-
-\paragraph{$\SEN$ inherits the limits of its dictionary.} Loughran--McDonald
-polarity is a finance word list applied to non-financial narrative: it has no
-negation or intensifier handling, an asymmetric list of 140 positive and 893
-negative stems, and a bounded ratio insensitive to the volume of matched
-terms --- a report with 4 positive and 2 negative matches scores exactly as
-one with 400 and 200 (\S\ref{sec:index-components}). Its input is lemmatised
-text that the package's tokeniser stems again. The dictionary replaces the
-antecedent's TextBlob by design (\S\ref{sec:scope}), which is one of the
-reasons our scores and the antecedent's are different measurements. The
-absence of a trend in $\SEN$ answers only the objection that a fixed
-dictionary scores later language differently (\S\ref{sec:temporal}).
-
-\subsection{Design and inference}
-
-\paragraph{Country and document type are confounded, and sector cells are
-small.} 99 of the 101 URDs are French and all 98 German documents are annual
-reports; the two effects can be separated only through 15 documents, and the
-seven standalone sustainability reports belong to one firm (\S\ref{sec:data}).
-No country or document-type contrast is interpretable as such, and one score
-construction is applied across three document types whose comparability rests
-on the extraction stage. The German subsample holds both fixed but establishes
-only that a trend of the same sign exists there (\S\ref{sec:temporal}). Sector
-cuts across countries and is partly informative, but industries hold 2 to 11
-firms and supersectors 1 to 7, 8 of the 16 supersectors hold one or two, and
-sector is identified only between firms (\S\ref{sec:data-industry}); no group
-of one to three firms supports a statement about its slope
-(\S\ref{sec:temporal-sectors}).
-
-\paragraph{Inference rests on 49 clusters and seven years.} Every panel
-regression clusters by firm, with $t_{48}$ references and a restricted wild
-cluster bootstrap for the fixed-effects slopes (\S\ref{sec:index-inference});
-with 49 clusters, and 14 in the German subsample, the asymptotic approximation
-is not relied on alone. Firm clustering does not cover a shock common to all
-firms in one year, and seven years cannot be clustered on, so a trend standard
-error measures dispersion across firms around seven yearly means, not
-uncertainty about which years were drawn. Group-slope intervals clustered by
-firm are too narrow for small groups and the Wald test of equal slopes is
-anti-conservative when a one-firm group is present; we read group slopes
-through firm-slope intervals instead (\S\ref{sec:index-inference}). The panel
-requires seven consecutive reports, so it selects large, continuously
-reporting European issuers; that restricts external validity without
-generating an internal trend (\S\ref{sec:temporal-mandate}).
-
-\paragraph{The adopted run is not yet committed.} Every number is regenerated
-by a script, but the adopted run depends on pipeline changes that exist only
-in the working tree (rows 5--8 of Table~\ref{tab:repro-defects}), and most
-analysis scripts are not yet in the repository history; the last commit does
-not reproduce the adopted run (\S\ref{sec:repro-provenance}). The navigation
-filter's calibration script is not committed at all
-(\S\ref{sec:repro-determinism}). Until the working tree is committed, the
-commit hash is a necessary, not a sufficient, condition for reproduction.
-
-\subsection{Checks not run}
-
-Several checks that would bear on the results were not run, and the sections
-that raise them say so: variation of the extraction parameters
-(\S\ref{sec:extraction}); the effect of the navigation filter on the adopted
-extraction, and the accuracy of extraction by year
-(\S\ref{sec:extraction-yield}); re-extraction from the PDFs rather than
-simulated from extracted paragraphs, single-entry deletions under
-re-extraction, and additions to the vocabulary
-(\S\ref{sec:robustness-lexicon}); a clustered trend test for
-$\ESGSI(\sustfidf)$ (\S\ref{sec:robustness-spec}); pillar-level trend
-regressions (\S\ref{sec:temporal-pillars}); and any comparison with an
-external criterion (above).
+\paragraph{Data and code availability.} The code, the derived data and a
+runbook that regenerates every number, table and figure are available in the
+project repository. The source reports are public documents published by the
+firms.

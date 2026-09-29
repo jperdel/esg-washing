@@ -1,144 +1,62 @@
-\section{Introduction and scope}
+\section{Scope and contribution}
 \label{sec:scope}
 
-This paper measures one quantity: how the tone of a report's ESG disclosure
-stands relative to the substance of that disclosure, within a defined corpus.
-The corpus is 343 reports of 49 listed firms in seven European countries over
-2018--2024 (\S\ref{sec:data}). For each report we compute a tone score, the
-Loughran--McDonald polarity of its ESG text \citep{loughran2011}, and a
-substance score, the density of mentions of a published ESG vocabulary, and we
-combine them as the difference of their standardised values,
-$\ESGSI = \Z(\SEN) - \Z(\SUS)$ (\S\ref{sec:index}). A report scores high when
-its tone ranks higher in the corpus than its substance does, and low in the
-opposite case.
+This paper measures how the tone of a report's ESG disclosure stands relative
+to the substance of that disclosure. We compute the measure for 343 reports of
+49 listed firms from seven euro-area countries, one report per firm and year
+over 2018--2024 (\S\ref{sec:data}). Tone is the polarity of the extracted ESG
+text under the finance dictionary of \citet{loughran2011}; substance is the
+density, in the same text, of mentions of a documented ESG vocabulary
+(\S\ref{sec:method}).
 
-\paragraph{What the score is, and what it is not.} The score is continuous and
-corpus-relative. Both components are standardised over the pooled 343 reports,
-so a value is a position within this corpus and has no meaning outside it. Its
-sign says only on which side of the corpus mean a report falls. We use no
-threshold and we classify no report: the score does not separate reports into
-ESG-washing and genuine disclosure, and nothing in the paper should be read as
-such a classification. The reason is not caution for its own sake. A cut-off
-on a standardised difference is a statement about the location of two
-distributions, not about firm conduct (\S\ref{sec:artefact}), and no external
-benchmark of ESG-washing exists against which a cut-off for these reports could
-be calibrated (\S\ref{sec:limitations}). The motivating idea --- positive
-language in excess of the substance behind it --- tells us which direction of
-the score is of interest. It does not turn the score into a detector.
+The measure is a continuous score, and it is relative to the corpus. Each
+component is standardised over the 343 reports, so a value locates a report
+within this corpus and has no meaning outside it; its sign says only whether
+the report lies above or below the corpus mean (\S\ref{sec:method-choices}).
+The idea behind the score, positive language in excess of the substance that
+supports it, fixes which direction of the score is of interest.
 
-\paragraph{The two scores.} The paper reports two scores. The first, $\ESGSI$,
-takes its architecture and its name from \citet{lagasio2024}: a tone component
-minus a substance component, each rescaled across the sample. We keep that
-architecture and change how its parts are specified, for reasons given in
-\S\ref{sec:justification}. $\ESGSI$ is the main score of the paper. The second,
-the Extended ESGSI ($\ESGSIext$), is a new metric that we propose. It adds two
-components, both computed on the raw extracted text: $\QUANT$, the density of
-quantitative expressions, which counts as further evidence of substance, and
-$\HEDGE$, the share of hedging and modal words, which counts on the side of
-tone. The two enter with weights of $0.5$. That weighting is our choice and is
-not estimated, so we report how far the score moves over a grid of alternative
-weights (\S\ref{sec:robustness}).
+\paragraph{Two scores.} The main score, $\ESGSI$~\eqref{eq:esgsi}, follows the
+architecture of \citet{lagasio2024}, a tone component minus a substance
+component, each rescaled across the sample; we keep that architecture and
+correct the specification of its parts, as listed below. The second score, the
+Extended ESGSI $\ESGSIext$~\eqref{eq:esgsiext}, is the new metric this paper
+proposes. It adds quantification on the side of substance and hedging on the
+side of tone, with weights that are a choice rather than an estimate; we report
+how far the score moves when they change (\S\ref{sec:robustness}).
 
-\paragraph{Relation to the antecedent.} \citet{lagasio2024} introduced the
-ESGSI as a cross-section of 749 standalone English-language ESG reports for
-2023. We depart from it at six points (Table~\ref{tab:scope-divergence}).
+\paragraph{Departures from the antecedent.} \citet{lagasio2024} computed the
+index for a 2023 cross-section of 749 standalone English-language
+sustainability reports. Our specification departs from it in four respects.
 \begin{itemize}
-  \item \emph{Corpus.} The original retains only standalone ESG reports;
-        ``companies that integrated their ESG disclosure within their annual
-        financial reports were excluded'' \citep[p.~3]{lagasio2024}. Our
-        corpus is a balanced panel, and a balanced panel requires one
-        disclosure that every firm publishes every year. The annual report,
-        and in France the universal registration document (URD), is such a
-        filing. A standalone sustainability report is issued at the firm's
-        discretion. Of our 49 firms, one is represented by standalone
-        sustainability reports, in all seven years; a panel restricted to that
-        document type would have held a single firm. The corpus therefore
-        consists of 235 annual reports, 101 URD and 7 standalone sustainability
-        reports, largely the population the original excludes.
-  \item \emph{Extraction.} The original vectorises whole reports. An annual
-        report or URD embeds its ESG disclosure in a much larger financial and
-        legal document, so we score lexically extracted ESG zones
-        (\S\ref{sec:extraction}).
-  \item \emph{Substance measure.} The original derives its substance score
-        from TF-IDF values and states neither how per-term values are
-        aggregated nor whether document vectors are normalised
-        (\S\ref{sec:original}). We measure substance as mentions per 100
-        tokens. Under L2 vector normalisation, which is the library default, a
-        TF-IDF score cannot distinguish a report from the same report with
-        twenty times the ESG content, and it tracks the breadth of the
-        vocabulary a report uses rather than the amount of disclosure
-        (\S\ref{sec:measurement}). Density also agrees more closely with
-        independently counted quantitative content, although on fully disjoint
-        bases the difference is not significant once firms are resampled
-        (\S\ref{sec:validity}).
-  \item \emph{Sentiment dictionary.} The original uses TextBlob polarity, a
-        general-purpose tool. We use the Loughran--McDonald finance dictionary,
-        which was built on disclosure language. The original's own conclusion
-        names ``refining sentiment analysis techniques''
-        \citep[p.~10]{lagasio2024} as an extension.
-  \item \emph{Score normalisation.} The original prints a difference of
-        $z$-scores but describes, and on the evidence of its own tables
-        computes, a difference of min--max-rescaled scores
-        (\S\ref{sec:original}). We use $z$-scores (\S\ref{sec:artefact}).
-  \item \emph{No threshold.} The original labels every report ``Potential
-        ESGwashing'' if its index exceeds zero and ``Likely Genuine''
-        otherwise \citep[pp.~4--5]{lagasio2024}. We do not use this rule or
-        any other.
+  \item \emph{Corpus and extraction.} The antecedent excluded firms that
+        disclose ESG information inside the annual report. A balanced panel
+        needs a document that every firm publishes every year, for all but
+        one of our firms the annual report or the universal registration
+        document.
+        Because these filings embed ESG disclosure in a much larger document,
+        we score extracted ESG passages rather than whole reports
+        (\S\ref{sec:method-extraction}).
+  \item \emph{Substance as density.} The antecedent derives substance from
+        TF-IDF weights and states neither how they are aggregated over the
+        vocabulary nor whether document vectors are normalised. We count
+        vocabulary mentions per 100 tokens, because under L2 vector
+        normalisation, the usual default, a TF-IDF substance score does not
+        register the amount of ESG content (\S\ref{sec:method-choices}).
+  \item \emph{Dictionary sentiment.} Tone is measured with the
+        Loughran--McDonald finance dictionary instead of the general-purpose
+        TextBlob polarity used by the antecedent.
+  \item \emph{$z$-scores.} The antecedent prints a difference of $z$-scores
+        but describes a min--max rescaling. We use $z$-scores as the score
+        normalisation of every component (\S\ref{sec:method-choices}).
 \end{itemize}
-Because corpus, vocabulary and sentiment dictionary all differ, our scores and
-those of the original are different measurements. No numerical comparison
-between them is attempted.
+Because corpus, vocabulary and sentiment dictionary all differ, our scores are
+not numerically comparable with those of the antecedent, and no such comparison
+is attempted.
 
-\paragraph{Contributions.} The paper makes four contributions. First, it
-specifies $\ESGSI$ so that each of its parts is fully determined and
-justified: a density substance measure, chosen over TF-IDF with L2 vector
-normalisation on algebraic grounds and corroborated by a convergent-validity
-test with firm-clustered intervals; $z$-score normalisation; and no threshold
-(\S\ref{sec:index}). Second, it proposes the Extended ESGSI and reports its
-sensitivity to its weights (\S\ref{sec:index-composite},
-\S\ref{sec:robustness}). Third, it documents and publishes the ESG vocabulary,
-its sources, admission criteria and composition, and the hedge lexicon
-(\S\ref{sec:lexicon}, \S\ref{sec:repro}), and it shows how far the score moves
-when that vocabulary is perturbed (\S\ref{sec:robustness}). Fourth, it
-describes a seven-year balanced panel of European listed firms by year,
-industry, country and ESG pillar, with inference that treats the firm, not the
-report, as the independent unit (\S\ref{sec:temporal}). The original itself
-calls for ``longitudinal studies to examine how changes in corporate
-characteristics and regulatory environments affect ESGSI over time''
-\citep[p.~10]{lagasio2024}.
-
-\paragraph{Roadmap.} \S\ref{sec:data} describes the corpus,
-\S\ref{sec:extraction} the extraction of ESG zones, and \S\ref{sec:lexicon}
-the vocabulary and the hedge lexicon. \S\ref{sec:index} defines every
-component, both scores and the panel inference, and explains why substance is
-measured by density and why the scores are $z$-standardised and not
-thresholded. \S\ref{sec:robustness} reports the sensitivity of the scores to
-the substance specification, to the weights of the Extended ESGSI and to the
-vocabulary. \S\ref{sec:temporal} gives the results by year, industry, country
-and pillar, \S\ref{sec:limitations} the limitations, and
-Appendix~\ref{sec:repro} the parameters, files and scripts that reproduce every
-reported number.
-
-\begin{table}[htbp]
-\centering
-\caption{Design of this study against its antecedent, \citet{lagasio2024}.}
-\label{tab:scope-divergence}
-\small
-\begin{tabular}{@{}lp{4.6cm}p{5.2cm}@{}}
-\toprule
- & \citet{lagasio2024} & This study \\
-\midrule
-Design & Cross-sectional, 2023 only & Balanced panel, 2018--2024 \\
-Documents & 749 standalone ESG reports, one per firm & 343 unique reports: 235 annual reports, 101 URD, 7 standalone sustainability reports \\
-Firms & 749, worldwide, from a Refinitiv top-2{,}000 starting sample & 49, seven European countries, each present in all seven years \\
-Inclusion rule & English only; firms reporting ESG inside the annual report excluded & One annually recurring filing per firm-year, chiefly the annual report or URD \\
-Text scored & Whole report & Lexically extracted ESG zones (\S\ref{sec:extraction}) \\
-ESG vocabulary & GRI/SASB-derived; size not stated, list not published & 434 source entries (402 terms, 32 patterns); 399 lemmatised scoring entries; all files published (\S\ref{sec:lexicon}, \S\ref{sec:repro}) \\
-Tone & TextBlob polarity & Loughran--McDonald polarity \\
-Substance & TF-IDF; aggregation and vector normalisation not stated & Mentions per 100 tokens; two TF-IDF variants as sensitivity (\S\ref{sec:index-sus}) \\
-Score normalisation & Prose says min--max; printed formula is a $z$-score difference & $z$-score (\S\ref{sec:artefact}) \\
-Further components & None & $\QUANT$ and $\HEDGE$, in the Extended ESGSI only \\
-Threshold & Index $> 0$ labelled ``Potential ESGwashing'' & None; continuous score \\
-\bottomrule
-\end{tabular}
-\end{table}
+\paragraph{Roadmap.} \S\ref{sec:data} describes the corpus and
+\S\ref{sec:method} the extraction, vocabulary, scores and inference.
+\S\ref{sec:results} reports the scores over time, against the confound of
+reporting mandates, by firm group and by pillar; \S\ref{sec:robustness} tests
+their sensitivity to the choices of the method, and \S\ref{sec:limitations}
+states the limitations.
