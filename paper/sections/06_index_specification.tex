@@ -1,41 +1,54 @@
-\section{Index specification}
+\section{Specification of the ESGSI and the Extended ESGSI}
 \label{sec:index}
 
-This section defines every quantity the paper computes. It is the reference
-definition: later sections select among the specifications given here
-(\S\ref{sec:validity}), test sensitivity to that selection
-(\S\ref{sec:robustness}) and report the resulting series (\S\ref{sec:temporal}),
-but none of them redefines anything.
+This section defines every quantity the paper computes and then explains the
+three choices on which the specification rests: substance measured by density
+rather than by TF-IDF with vector normalisation, standardisation by $z$-scores,
+and no threshold (\S\ref{sec:justification}). Later sections test sensitivity
+to these choices (\S\ref{sec:robustness}) and report the resulting scores
+(\S\ref{sec:temporal}); none of them redefines anything.
 
 \subsection{Notation and the two text representations}
 \label{sec:index-notation}
 
 Let $d = 1,\dots,n$ index the $n = 343$ reports of \S\ref{sec:data} and $j = 1,\dots,V$
 the entries of the lemmatised ESG vocabulary of \S\ref{sec:lexicon}, with
-$V = 154$. Preprocessing emits two representations of each document, and the
-components are not all computed on the same one:
+$V = 399$: the 365 lemmas of the base terms and the 34 further lemmas
+contributed by the sectoral terms (Table~\ref{tab:lexicon-lemma}). The union
+removes any sectoral lemma already among the base lemmas; here none is. The 32
+regular-expression patterns of the vocabulary act at extraction only and
+are not among the $V$ entries. Preprocessing emits two representations of each
+document, and the components are not all computed on the same one:
 
 \begin{itemize}
   \item \emph{lemmatised text} --- lowercased, stopword-filtered,
         punctuation- and numeral-stripped, lemmatised (\S\ref{sec:lexicon});
         whitespace token count $\ell_d$, with $L_d = \max(\ell_d, 1)$;
   \item \emph{raw extracted text} --- the ESG zones of \S\ref{sec:extraction}
-        with whitespace collapsed and nothing else removed, digits intact;
-        whitespace token count $r_d$, with $R_d = \max(r_d, 1)$.
+        with NUL characters dropped, whitespace collapsed and nothing else
+        removed, digits and stopwords intact; whitespace token count $r_d$, with
+        $R_d = \max(r_d, 1)$.
 \end{itemize}
 
-$\QUANT$ is computed on the raw extracted text; $\SUS$, $\SEN$, $\HEDGE$ and
-$\BREADTH$ are computed on the lemmatised text. The split is not incidental.
-Preprocessing discards numeric tokens, so on lemmatised text the
+$\QUANT$ and $\HEDGE$ are computed on the raw extracted text; $\SUS$, $\SEN$
+and $\BREADTH$ are computed on the lemmatised text. The split is not
+incidental. Preprocessing discards numeric tokens, so on lemmatised text the
 \texttt{percentages} and \texttt{large\_numbers} families of $\QUANT$ match
-nothing and return exactly zero for every document, without error. Every
-length-normalised component is divided by the token count of the
-representation it is computed on --- $R_d$ for $\QUANT$, $L_d$ for the
-others --- and the two counts are not interchangeable.
+nothing and return exactly zero for every document, without error; it also
+discards stopwords, among them the modal verbs that $\HEDGE$ counts. Every
+length-normalised component is divided by a token count of the
+representation it is computed on --- $R_d$ for $\QUANT$, a word count $W_d$
+of the same raw text for $\HEDGE$ (below), $L_d$ for the others --- and the
+counts are not interchangeable.
 
 Let $c_{dj}$ be the raw count of vocabulary entry $j$ in the lemmatised text
-of $d$, obtained with a fixed-vocabulary count vectoriser over token sequences
-of length $1$ to $3$; let $df_j = |\{d : c_{dj} > 0\}|$ and
+of $d$, obtained with a fixed-vocabulary count vectoriser (scikit-learn's
+default tokeniser, lowercased) over token sequences of length $1$ to
+$n_{\max}$, where $n_{\max}$ is the token length of the
+longest entry, derived from the vocabulary at run time; here
+$n_{\max} = 4$ (\emph{supply chain human right}). Entries are counted
+independently, so an occurrence of a multi-word entry also counts for any
+shorter vocabulary entry it contains. Let $df_j = |\{d : c_{dj} > 0\}|$ and
 
 \begin{equation}
 \label{eq:idf}
@@ -55,17 +68,18 @@ Cross-sectional rescaling of a finished component score $x$ is
 \qquad \sigma_x = \sqrt{\tfrac{1}{n}\textstyle\sum_d (x_d-\bar{x})^2},
 \end{equation}
 with $\Z(x) \equiv 0$ when $\sigma_x = 0$. Both $\bar{x}$ and $\sigma_x$ are
-taken over the $n$ documents analysed, so every index value below is a
-position within this corpus, not an absolute quantity.
+taken over the $n$ documents analysed, pooled across the seven years, so every
+score below is a position within this corpus, not an absolute quantity, and
+yearly means of a score are comparable with one another.
 
 \subsection{The substance component: three specifications}
 \label{sec:index-sus}
 
-The original does not determine a single construction of $\SUS$: it discloses
-\texttt{TfidfVectorizer} settings but neither the vector normalisation nor
-the aggregation from per-term weights to a document score (\S\ref{sec:original}).
-We therefore compute three, differing in term weighting and in vector
-normalisation:
+We compute three substance specifications, differing in term weighting and in
+vector normalisation. The first is the one $\ESGSI$ uses; the other two are
+TF-IDF constructions, reported as alternatives because the antecedent derives
+its substance score from TF-IDF without determining which construction
+(\S\ref{sec:original}):
 
 \begin{align}
 \label{eq:susdens}
@@ -86,28 +100,35 @@ vector normalisation, that is scaling the term vector to unit $L_2$ norm.
 Equation~\eqref{eq:susdens} is ESG mentions
 per 100 lemmatised tokens under uniform term weights.
 Equation~\eqref{eq:sustfidf} applies idf weights to the same
-length-normalised construction. Equation~\eqref{eq:suslag} is our reading of
-the original: idf weights, L2 vector normalisation of the document's term
-vector, mean over the vocabulary. The factors $100$ and $1/V$ are positive
+length-normalised construction. Equation~\eqref{eq:suslag} is the closest
+reading of the antecedent that its description allows: idf weights, L2
+vector normalisation of the document's term vector (the library default),
+mean over the vocabulary. The factors $100$ and $1/V$ are positive
 affine rescalings and are annihilated by \eqref{eq:zscore}; the sum-versus-mean
 choice in \eqref{eq:suslag} is therefore immaterial, and the specifications
 differ only in weighting and in vector normalisation. Both idf specifications
 estimate $df_j$ on the analysed sample and are corpus-dependent;
-\eqref{eq:susdens} is not.
+\eqref{eq:susdens} is not. We adopt $\susdens$ as the substance component of
+both scores; \S\ref{sec:justification} gives the reasons and
+\S\ref{sec:robustness} the consequences of the alternatives.
 
 \subsection{Tone, quantification, hedging and breadth}
 \label{sec:index-components}
 
 \paragraph{Sentiment.} $\SEN$ is Loughran--McDonald polarity
-\citep{loughran2011}. Let $s^{+}_d$ and $s^{-}_d$ count the tokens of the
-lemmatised text whose Porter stem belongs to the positive (140 stems) and
-negative (893 stems) lists respectively:
+\citep{loughran2011} as implemented in \texttt{pysentiment2}. Its tokeniser
+splits the lowercased lemmatised text into maximal runs of letters and
+reduces each to its NLTK Porter stem; the dictionary words are stemmed the
+same way, giving 140 positive and 893 negative stems, disjoint. Let
+$s^{+}_d$ and $s^{-}_d$ count the tokens of $d$ whose stem is positive and
+negative respectively:
 \begin{equation}
 \label{eq:sen}
 \SEN_d \;=\; \frac{s^{+}_d - s^{-}_d}{s^{+}_d + s^{-}_d + \varepsilon},
 \qquad \varepsilon = 10^{-6}.
 \end{equation}
-Here $\varepsilon$ only prevents division by zero. This is a bounded ratio on
+Here $\varepsilon$ is the package's constant and only prevents division by
+zero. This is a bounded ratio on
 $[-1,1]$, not a density: up to $\varepsilon$ it depends only on the balance of
 $s^{+}_d$ and $s^{-}_d$, not on how many sentiment-bearing tokens the document
 contains, and it is $0$ when there are none.
@@ -119,11 +140,10 @@ extracted text, matched case-insensitively:
 \label{eq:quant}
 \QUANT_d \;=\; \frac{1}{R_d}\sum_{g \in G} m_g(\mathrm{raw}_d),
 \end{equation}
-with $m_g$ the number of matches of family $g$ and
-$G = \{\textit{percentages}, \textit{large\_numbers}, \textit{units},
-\textit{frameworks}\}$.
+with $G$ the four families and $m_g$ the number of non-overlapping matches
+of family $g$; a string matched by two families counts twice.
 
-\begin{table}[ht]
+\begin{table}[tbp]
 \centering
 \caption{The four $\QUANT$ regular-expression families.}
 \label{tab:index-quant}
@@ -145,14 +165,27 @@ The \texttt{large\_numbers} family excludes four-digit strings of the form
 \texttt{19xx} and \texttt{20xx}, so that citing dates does not register as
 quantification.
 
-\paragraph{Hedging.} $\HEDGE$ is the share of lemmatised tokens belonging to
-the hedge lexicon $H$ of \S\ref{sec:lexicon} ($|H| = 1{,}263$ forms, the
-Uncertainty, WeakModal, StrongModal and Constraining categories of
-\citealp{loughran2011}, lemmatised):
+\paragraph{Hedging.} $\HEDGE$ is the share of words of the raw extracted
+text that belong to the hedge lexicon $H$ of \S\ref{sec:lexicon}
+($|H| = 495$ forms: the Uncertainty, WeakModal, StrongModal and
+Constraining words of the master dictionary of \citealp{loughran2011}, as written).
+The raw text is lowercased and split into words, the maximal runs of letters
+with internal hyphens allowed (\texttt{[a-z]+(?:-[a-z]+)*}), so digits and
+punctuation separate words and \emph{ill-defined} is one word. With
+$\mathrm{words}(\mathrm{raw}_d)$ that sequence and
+$W_d = \max(|\mathrm{words}(\mathrm{raw}_d)|, 1)$,
 \begin{equation}
 \label{eq:hedge}
-\HEDGE_d \;=\; \frac{\bigl|\{t \in \mathrm{tokens}(\mathrm{lem}_d) : t \in H\}\bigr|}{L_d}.
+\HEDGE_d \;=\; \frac{\bigl|\{t \in \mathrm{words}(\mathrm{raw}_d) : t \in H\}\bigr|}{W_d}.
 \end{equation}
+On the lemmatised text, which is stopword-filtered, the modals \emph{may},
+\emph{might}, \emph{could}, \emph{must} and \emph{will}, and \emph{always},
+\emph{never} and \emph{perhaps}, could never match; on the raw text every
+form of $H$ can. Matching is by form, not by sense: the count is dominated by
+\emph{risk} and \emph{risks}, so in these reports $\HEDGE$ largely registers
+how often risk is discussed, and \emph{May} the month also counts as a modal
+(\S\ref{sec:lexicon-hedge} gives the counts). $\HEDGE$ enters only
+$\ESGSIext$.
 
 \paragraph{Breadth.} $\BREADTH$ is the effective number of distinct ESG terms
 in a document: the exponential of the Shannon entropy of the term-share
@@ -167,47 +200,195 @@ It equals $1$ when all mentions fall on one term --- and, by the
 $\max(\cdot,1)$ convention in $p_{dj}$, also when a document contains no
 vocabulary entry at all --- and $V$ when mentions are spread uniformly across
 the vocabulary. \textbf{$\BREADTH$ is not a component of
-either index.} It is reported alongside them because it is the quantity
+either score.} It is reported alongside them because it is the quantity
 $\suslag$ turns out to measure (\S\ref{sec:measurement}); reporting it as a
 separate column is what allows that claim to be checked against the published
 results rather than taken on assertion.
 
-\subsection{The composite indices}
+\subsection{The two scores}
 \label{sec:index-composite}
 
 \begin{align}
 \label{eq:esgsi}
-\ESGSI_d    &= \Z(\SEN)_d - \Z(\SUS)_d, \\[2pt]
+\ESGSI_d    &= \Z(\SEN)_d - \Z(\susdens)_d, \\[2pt]
 \label{eq:esgsiext}
-\ESGSIext_d &= \Z(\SEN)_d - \Z(\SUS)_d - w_q\,\Z(\QUANT)_d + w_h\,\Z(\HEDGE)_d,
+\ESGSIext_d &= \Z(\SEN)_d - \Z(\susdens)_d - w_q\,\Z(\QUANT)_d + w_h\,\Z(\HEDGE)_d,
+\qquad w_q = w_h = 0.5 .
 \end{align}
 
-with $w_q = w_h = 0.5$. The signs follow the construction: quantified
-disclosure counts against a washing reading and is subtracted, hedged
-disclosure counts towards one and is added. The weights are set by fiat and
-are not calibrated (\S\ref{sec:limitations}). Equation~\eqref{eq:esgsi} takes
-$\SUS$ from one of \eqref{eq:susdens}--\eqref{eq:suslag}; we write
-$\ESGSI(\susdens)$ and so on where the choice matters. The labelling rule is
-the original's, and is definitional rather than estimated: $\ESGSI_d > 0$
-yields \emph{Potential ESGwashing}, $\ESGSI_d \leq 0$ yields \emph{Likely
-Genuine} \citep[pp.~4--5]{lagasio2024}. The unhyphenated spelling is the
-original's and is used wherever its rule is quoted; our pipeline writes the
-same label as \emph{Potential ESG-washing}, which is the string that appears
-in our output file (\S\ref{sec:repro}).
+\paragraph{ESGSI.} Equation~\eqref{eq:esgsi} is the main score of the paper.
+It keeps the architecture of \citet{lagasio2024} --- a tone component minus a
+substance component, each rescaled across the sample --- and reproduces the
+formula printed there \citep[p.~4]{lagasio2024}, with our substance and tone
+components in place of the original's. Where the substance specification is
+varied (\S\ref{sec:robustness}) we write $\ESGSI(\sustfidf)$ and
+$\ESGSI(\suslag)$ for the score with \eqref{eq:sustfidf} or
+\eqref{eq:suslag} in place of $\susdens$; unqualified, $\ESGSI$ always means
+$\ESGSI(\susdens)$.
 
-Equation~\eqref{eq:esgsi} reproduces the formula printed by
-\citet[p.~4]{lagasio2024},
-\[
-\ESGSI_i = \frac{\SEN_i - \overline{\SEN}}{\sigma_{\SEN}}
-       - \frac{\SUS_i - \overline{\SUS}}{\sigma_{\SUS}},
-\]
-while the prose of the same subsection states that ``both sentiment and
-sustainability scores are normalized to a uniform scale using min-max
-normalization'' \citep[p.~4]{lagasio2024}. A difference of z-scores and a
-difference of min--max-rescaled scores are not monotone transforms of one
-another. We adopt the printed formula throughout; the contradiction is
-recorded here at the point of definition and adjudicated in
-\S\ref{sec:artefact}.
+\paragraph{Extended ESGSI.} Equation~\eqref{eq:esgsiext} is a new metric that
+this paper proposes. It adds to $\ESGSI$ two components that the tone and
+substance scores do not capture. Quantified disclosure --- percentages,
+absolute figures, physical units, named reporting frameworks --- is further
+evidence of substance, so $\Z(\QUANT)$ is subtracted, on the same side as
+$\Z(\susdens)$. Hedging and modal language qualifies whatever a report
+asserts, so $\Z(\HEDGE)$ is added, on the side of tone. Both directions are
+part of the proposal rather than findings: $\HEDGE$ counts word forms, and in
+these reports it largely registers how often risk is discussed
+(\S\ref{sec:index-components}). The weights of $0.5$ give each added
+component half the weight of each original one, so that together they weigh
+as much as one of the two original components and the tone--substance
+contrast remains the core of the score. They are a stated choice, not an
+estimate: no external criterion is available against which to calibrate them
+(\S\ref{sec:limitations}). \S\ref{sec:robustness-weights} therefore reports
+the score over the grid $w_q, w_h \in \{0, 0.25, 0.5, 0.75, 1\}$, whose corner
+$w_q = w_h = 0$ is $\ESGSI$ itself: the ranking depends mostly on $w_h$, the
+within-firm trend of \S\ref{sec:index-inference} almost only on $w_q$. The two
+scores are related but not interchangeable (\S\ref{sec:temporal}).
+
+\paragraph{Reading the scores.} Both scores are continuous. Every term is a
+$z$-score over the pooled corpus, so each score has mean zero by construction,
+and its sign says only whether a report lies above or below the corpus mean
+of the combination. No threshold is applied and no report is assigned to a
+class. \S\ref{sec:artefact} explains why. The comparisons we report --- across
+years, industries, countries and specifications --- are comparisons of positions
+within the corpus: differences of means, trends, rank correlations and the
+overlap of the top and bottom deciles.
+
+\subsection{Pillar decomposition}
+\label{sec:index-pillars}
+
+The results decompose $\susdens$ by pillar. The decomposition is descriptive:
+it is not a component of either score, it enters neither \eqref{eq:esgsi}
+nor \eqref{eq:esgsiext}, and it changes no score. Let $\pi(j) \in
+\{\mathrm{E}, \mathrm{S}, \mathrm{G}, \mathrm{TRANS}\}$ be the pillar of entry
+$j$ (\S\ref{sec:lexicon}). An entry takes the pillar of the natural-form term
+that lemmatises to it; where several terms share one lemma the first in
+\texttt{ESG\_terms\_v3.csv} is used, and no two such terms carry different pillars.
+The map partitions the $V = 399$ entries into E 152, S 127, G 90 and TRANS 30.
+These are not the counts of Table~\ref{tab:lexicon-blocks} (E 168, S 139,
+G 95, TRANS 32), which are over the 434 source entries: patterns are not
+among the $V$ entries, and some terms collide at lemmatisation. For pillar $p$,
+\begin{equation}
+\label{eq:pillar-density}
+\mathrm{dens}^{p}_d \;=\; 100 \cdot \frac{\sum_{j:\,\pi(j)=p} c_{dj}}{L_d},
+\qquad \sum_{p} \mathrm{dens}^{p}_d \;=\; \susdens_d ,
+\end{equation}
+is the number of mentions of pillar-$p$ entries per 100 lemmatised tokens.
+For a set $A$ of documents (a year, an industry, a country, or the corpus),
+the pillar share of mentions pools counts over the set,
+\begin{equation}
+\label{eq:pillar-share}
+s^{p}_A \;=\; \frac{\sum_{d \in A} \sum_{j:\,\pi(j)=p} c_{dj}}
+                   {\sum_{d \in A} \sum_{j} c_{dj}},
+\end{equation}
+so that a document weighs in proportion to its number of mentions, while the
+pillar density of the set is the unweighted mean of
+$\mathrm{dens}^{p}_d$ over $d \in A$. The same two quantities are computed
+for the 34 entries contributed only by sectoral terms, a set that cuts across
+the pillars. Because entries are counted independently (\S\ref{sec:index-notation}),
+the shares partition vocabulary hits, not text: one occurrence of a
+multi-word entry adds to every contained entry, possibly in different
+pillars.
+
+\subsection{Inference on the panel}
+\label{sec:index-inference}
+
+The regressions of \S\ref{sec:temporal} are estimated on the panel of
+\S\ref{sec:data}. Write $d = (i, t)$ for the report of firm $i = 1, \dots, M$
+in year $t$, with $M = 49$, $N = n = 343$ and $\tau_t$ the calendar year. The
+panel is balanced, so every firm is observed in all seven years.
+For an outcome $y$ (a score, a component or a density), the pooled
+regression is
+\begin{equation}
+\label{eq:trend-pooled}
+y_{it} \;=\; \alpha + \beta\,\tau_t + u_{it}.
+\end{equation}
+The firm fixed-effects regression removes firm means,
+$\ddot y_{it} = y_{it} - \bar y_{i}$ and
+$\ddot\tau_{it} = \tau_t - \bar\tau_i$, and estimates
+\begin{equation}
+\label{eq:trend-fe}
+\ddot y_{it} \;=\; \beta\,\ddot\tau_{it} + \ddot u_{it}
+\end{equation}
+by least squares. In the balanced panel $\bar\tau_i = 2021$ for every firm,
+and $\hat\beta_{\mathrm{FE}}$ equals the mean of the 49 firm-level OLS slopes.
+
+Every panel regression is reported with standard errors clustered by firm.
+For a regressor matrix $X$ with $K$ columns and residuals $\hat u$, the
+variance is
+\begin{equation}
+\label{eq:cluster-vcov}
+\widehat{\mathrm{Var}}(\hat\beta) \;=\; \frac{M}{M-1}\,\frac{N-1}{N-K}\,
+(X^{\top}X)^{-1}\Bigl(\sum_{i=1}^{M} X_i^{\top}\hat u_i \hat u_i^{\top} X_i\Bigr)
+(X^{\top}X)^{-1},
+\end{equation}
+with $X_i$ and $\hat u_i$ the rows of firm $i$ (CR1), and $t$ statistics
+are referred to a $t$ distribution with $M-1$ degrees of freedom (48 on the
+full panel, 13 on the German subsample). In the fixed-effects regression
+\eqref{eq:trend-fe} the firm means are removed before estimation, so $K$
+counts the slope only. The conventional (homoskedastic, independent) OLS
+standard error of \eqref{eq:trend-pooled} is shown alongside where it is
+reported at all, and is labelled as such: seven reports of one firm are not
+independent observations. Clustering by firm allows any correlation among a
+firm's seven reports but assumes independence across firms within a year. A
+shock common to all firms in one year, such as a new reporting mandate, is
+not covered, and with seven years it cannot be clustered on. The slope
+therefore summarises the seven yearly means, and its standard error
+reflects dispersion across firms around them, not uncertainty about which
+years were drawn.
+
+With $M = 49$ clusters, and with fewer in the subsamples, the asymptotic cluster
+approximation can mislead, so the fixed-effects slope is also tested with a
+restricted wild cluster bootstrap \citep{cameron2008}. Under
+$H_0\!: \beta = 0$ the restricted model of \eqref{eq:trend-fe} contains only
+the firm effects, so its residuals are $\ddot y_{it}$ itself. For each
+replication $b = 1, \dots, B$ we draw one Rademacher weight per firm,
+$v^{*}_{ib} \in \{-1, +1\}$ with equal probability, form
+$\ddot y^{*}_{itb} = v^{*}_{ib}\,\ddot y_{it}$, re-estimate
+\eqref{eq:trend-fe} and compute its cluster-robust $t^{*}_b$. The $p$-value is
+\begin{equation}
+\label{eq:wild-p}
+p_{\mathrm{wild}} \;=\; \frac{1}{B}\sum_{b=1}^{B}
+\mathbf{1}\bigl\{\lvert t^{*}_b\rvert \geq \lvert \hat t\,\rvert\bigr\},
+\end{equation}
+with $\hat t$ the observed statistic. The small-sample factor of
+\eqref{eq:cluster-vcov} multiplies $\hat t$ and every $t^{*}_b$ alike and
+is omitted. We use $B = 9{,}999$ and seed $20260925$ (NumPy
+\texttt{default\_rng}); when no $t^{*}_b$ reaches $\lvert\hat t\rvert$ we
+report $p_{\mathrm{wild}} < 1/(B+1) = 0.0001$.
+
+Group-specific slopes interact the detrended year with indicators of a
+time-invariant firm attribute $\gamma(i)$ (industry, supersector or country),
+\begin{equation}
+\label{eq:trend-group}
+\ddot y_{it} \;=\; \sum_{k} \beta_k\,\mathbf{1}\{\gamma(i) = k\}\,\ddot\tau_{it}
++ \ddot u_{it},
+\end{equation}
+with firm-clustered standard errors as in \eqref{eq:cluster-vcov}. In the
+balanced panel $\hat\beta_k$ is the mean of the firm-level OLS slopes of the
+$M_k$ firms in group $k$, and we also report the $t$ interval on those firm
+slopes, with $M_k - 1$ degrees of freedom. The two intervals differ in
+their effective degrees of freedom. The normal equation for $\beta_k$ makes
+the $M_k$ firm scores of group $k$ sum to zero, so the clustered variance of
+$\hat\beta_k$ rests on $M_k - 1$ free contributions. Up to the CR1 factor it
+is $(M_k-1)/M_k$ times the squared standard error of the firm-slope mean,
+yet it is referred to $t_{M-1}$. For $M_k = 1$ it is exactly zero; for
+$M_k = 2$ the firm-slope interval has one degree of freedom
+(\S\ref{sec:data-industry}). We therefore read group slopes through the
+firm-slope interval and treat the clustered one as too narrow for small
+groups. Equality of the $\beta_k$ is tested by a Wald $F$ test on the
+clustered variance (denominator degrees of freedom $M-1$). It treats the
+slope of a one-firm group as known without error, and is therefore
+anti-conservative whenever such a group exists (Belgium among countries, two
+supersectors). With two such groups the variance of the restrictions is also
+singular, and the test uses its rank. Document type is not used as a grouping because it varies within
+six firms. Yearly means are
+reported with 95\% intervals from a regression of $y$ on a full set of year
+indicators, without constant, again clustered by firm.
+
+\subsection{Parameters}
+\label{sec:index-parameters}
 
 Table~\ref{tab:index-parameters} collects every constant and every
 representation choice on which the definitions above depend; the full
@@ -219,18 +400,23 @@ appendix table is a consolidation of this one together with
 \S\ref{sec:extraction} and \S\ref{sec:lexicon}. Any disagreement between them
 would be an error in the appendix.
 
-\begin{table}[ht]
+\begin{table}[tbp]
 \centering
-\caption{Parameters of the index specification.}
+\small
+\caption{Parameters of the index specification and of the panel inference.}
 \label{tab:index-parameters}
 \begin{tabular}{lll}
 \toprule
 Parameter & Value & Applies to \\
 \midrule
-Text representation              & lemmatised & $\SUS$, $\SEN$, $\HEDGE$, $\BREADTH$ \\
-                                 & raw extracted & $\QUANT$ \\
-Vocabulary size $V$              & 154 lemmatised entries & $\SUS$, $\BREADTH$ \\
-$n$-gram range                   & $(1,3)$, from the longest entry & $\SUS$, $\BREADTH$ \\
+Text representation              & lemmatised & $\SUS$, $\SEN$, $\BREADTH$ \\
+                                 & raw extracted & $\QUANT$, $\HEDGE$ \\
+Vocabulary size $V$              & 399 lemmatised entries & $\SUS$, $\BREADTH$ \\
+                                 & (365 base + 34 sectoral) & \\
+$n$-gram range                   & $(1,4)$, from the longest entry & $\SUS$, $\BREADTH$ \\
+Count tokenisation               & scikit-learn default & $\SUS$, $\BREADTH$ \\
+$\SEN$ tokenisation              & letter runs, Porter stems & $\SEN$ \\
+$\HEDGE$ tokenisation            & hyphenated letter runs & $\HEDGE$ \\
 Document-frequency filtering     & none; vocabulary fixed in advance & all $\SUS$, $\BREADTH$ \\
 Term-frequency transform         & raw counts, no sublinear damping & all $\SUS$ \\
 idf weights                      & smoothed, Eq.~\eqref{eq:idf} & $\sustfidf$, $\suslag$ \\
@@ -238,14 +424,311 @@ Vector normalisation             & none & $\susdens$, $\sustfidf$ \\
                                  & L2, within document & $\suslag$ \\
 Aggregation over $j$             & sum & $\susdens$, $\sustfidf$ \\
                                  & mean over $V$ & $\suslag$ \\
-Length denominator               & $L_d$ (lemmatised tokens) & $\susdens$, $\sustfidf$, $\HEDGE$ \\
+Length denominator               & $L_d$ (lemmatised tokens) & $\susdens$, $\sustfidf$ \\
                                  & $R_d$ (raw tokens) & $\QUANT$ \\
+                                 & $W_d$ (raw words) & $\HEDGE$ \\
                                  & none & $\suslag$, $\SEN$, $\BREADTH$ \\
-Hedge lexicon size               & 1{,}263 forms & $\HEDGE$ \\
+Hedge lexicon size               & 495 forms (L--M master) & $\HEDGE$ \\
 Polarity smoothing $\varepsilon$ & $10^{-6}$ & $\SEN$ \\
 Score normalisation              & z-score, population $\sigma$ & $\ESGSI$, $\ESGSIext$ \\
-Extended-index weights           & $w_q = w_h = 0.5$ & $\ESGSIext$ \\
-Label threshold                  & $\ESGSI > 0$ & both indices \\
+Substance component              & $\susdens$ & $\ESGSI$, $\ESGSIext$ \\
+Extended-score weights           & $w_q = w_h = 0.5$ & $\ESGSIext$ \\
+Threshold                        & none; continuous score & $\ESGSI$, $\ESGSIext$ \\
+\midrule
+Pillar partition of $V$          & E 152, S 127, G 90, TRANS 30 & pillar shares only \\
+Clusters                         & firm, $M = 49$ & panel regressions \\
+Cluster variance                 & CR1, Eq.~\eqref{eq:cluster-vcov} & panel regressions \\
+Reference distribution           & $t$ with $M-1$ df (48 full panel) & panel regressions \\
+Wild cluster bootstrap           & restricted, Rademacher weights & fixed-effects slopes \\
+                                 & $B = 9{,}999$, seed $20260925$ & \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\subsection{Why density, \texorpdfstring{$z$}{z}-scores and no threshold}
+\label{sec:justification}
+
+Three choices distinguish our specification from its antecedent: substance is
+measured by density rather than by TF-IDF with vector normalisation, the
+components are standardised by $z$-scores rather than rescaled by min--max,
+and no threshold is applied. This subsection gives the reasons. It begins with
+what \citet{lagasio2024} specifies, because the first choice answers a gap in
+that specification rather than a stated alternative.
+
+\subsubsection{What the antecedent discloses and leaves unstated}
+\label{sec:original}
+
+\citet{lagasio2024} computes its sentiment component with TextBlob polarity
+and its substance component with scikit-learn's \texttt{TfidfVectorizer},
+version 0.24.2, over an author-constructed keyword list ``based on
+established ESG reporting frameworks such as Global Reporting Initiative (GRI)
+Standards \ldots\ and Sustainable Accounting Standards Board (SASB) Standards''
+(pp.~3--4). Four vectoriser settings are disclosed in prose --- terms in more
+than 95\,\% of documents ignored, terms in fewer than two ignored, the
+vocabulary limited to 10{,}000 terms, unigrams and bigrams --- that is,
+\texttt{max\_df=0.95}, \texttt{min\_df=2}, \texttt{max\_features=10000} and
+\texttt{ngram\_range=(1,2)} (p.~4). The index is labelled definitionally: a
+positive value is ``Potential ESGwashing'', a non-positive one ``Likely
+Genuine'' (pp.~4--5).
+
+Four things are not stated. The article never gives the \texttt{norm}
+setting, and never describes a rescaling of document vectors under any
+wording. It never states how per-term TF-IDF values become a document-level
+$\SUS_i$, which is glossed only as ``sustainability score for company i''
+(p.~4). It never publishes the keyword list or gives its size; three example
+terms appear. And it never says whether the raw or the preprocessed text
+reached TextBlob. The Cohen's Kappa, five-fold cross-validation and TF-IDF
+sensitivity analyses announced on p.~5 are not reported, and the data
+availability statement reads ``No'' (p.~10). One further point is stated
+twice, inconsistently: the article prints the index as a difference of
+$z$-scores and says in the same subsection that ``both sentiment and
+sustainability scores are normalized to a uniform scale using min-max
+normalization'' (p.~4).
+
+Of these, the vector normalisation can be supplied by convention. The four
+disclosed settings are exactly four non-default arguments, so a reader who
+assumes that only departures from library defaults are reported would infer
+that \texttt{norm='l2'}, the default, was in force. We make that inference,
+and label it as one: $\suslag$ in \eqref{eq:suslag} is the construction it
+implies. The aggregation rule has no default to fall back on, but on a
+$z$-standardised score it is immaterial, since a sum and a mean over the
+vocabulary differ by the factor $1/V$ (\S\ref{sec:index-sus}). What matters,
+then, is the vector normalisation, and the next subsection shows why.
+
+\subsubsection{Vector normalisation discards the amount of disclosure}
+\label{sec:measurement}
+
+L2 vector normalisation scales a document's term vector to unit length. For
+any $\mathbf{v} \neq \mathbf{0}$ and scalar $c > 0$,
+\begin{equation}
+\label{eq:l2-invariance}
+\frac{c\,\mathbf{v}}{\lVert c\,\mathbf{v}\rVert_2}
+= \frac{\mathbf{v}}{\lVert \mathbf{v}\rVert_2},
+\end{equation}
+so two documents whose ESG term counts are proportional receive identical
+unit vectors, and any aggregation of those vectors returns identical scores.
+The normalised vector keeps the mix of terms and discards how much there is.
+That suits retrieval, where TF-IDF originated
+\citep{sparckjones1972,manning2008} and a document's scale is a nuisance. It
+does not suit a score whose purpose is to set tone against the amount of
+substance behind it.
+
+We verified the identity with the pipeline's own substance code, starting
+from the report at the median of $\susdens$ (60{,}951 lemmatised tokens,
+3{,}984 vocabulary hits on 214 distinct entries, $\susdens = 6.5364$), and
+re-vectorising all 343 documents in every run
+(Table~\ref{tab:measurement-demos}). \emph{Amplification}: we synthesised a
+document from the report's observed counts, writing out each vocabulary entry
+as many times as it occurs, separated by a filler token that belongs to no
+entry and padded with the same filler, and multiplied the written-out block by
+$k \in \{1, 2, 5, 20\}$. The count vector is exactly $k$ times the $k=1$
+vector, every $df_j$ is unchanged, and $\suslag$ does not move: its largest
+absolute deviation across the four runs is $3.5 \times 10^{-18}$. The
+synthetic document registers 4{,}131 hits rather than 3{,}984 because entries
+are counted independently (\S\ref{sec:index-notation}). \emph{Dilution}: we
+appended 152{,}378 filler tokens, cycled from the report's 50 most frequent
+tokens outside the vocabulary, to the real report. Density falls 3.50-fold;
+$\suslag$ is bit-for-bit unchanged.
+
+\begin{table}[tbp]
+\centering
+\small
+\caption{Behaviour of the substance specifications when a report's ESG content
+is multiplied or diluted, all 343 documents re-vectorised in every run.
+Amplification: a synthetic document built from the counts of the
+median-$\susdens$ report, with its ESG counts multiplied by $k$; $\suslag$ is
+shown relative to its value at $k = 1$. Dilution: the real report with
+152{,}378 non-ESG tokens appended. Source: \nolinkurl{scripts/critique_v3.py}.}
+\label{tab:measurement-demos}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+ & Tokens & ESG hits & $\susdens$ & $\sustfidf$ & $\suslag$ \\
+\midrule
+\multicolumn{6}{@{}l}{\emph{Amplification}} \\
+$k = 1$  & 60{,}951  & 4{,}131  & 6.7776  & 8.2286  & 1.000000 \\
+$k = 2$  & 70{,}612  & 8{,}262  & 11.7006 & 14.2055 & 1.000000 \\
+$k = 5$  & 99{,}595  & 20{,}655 & 20.7390 & 25.1789 & 1.000000 \\
+$k = 20$ & 244{,}510 & 82{,}620 & 33.7900 & 41.0240 & 1.000000 \\
+\midrule
+\multicolumn{6}{@{}l}{\emph{Dilution}} \\
+Original report     & 60{,}951  & 3{,}984 & 6.5364 & 7.9703 & 0.0141953042 \\
+With filler         & 213{,}329 & 3{,}984 & 1.8675 & 2.2772 & 0.0141953042 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+If magnitude is discarded, what remains is dispersion across terms. For a
+non-negative unit vector $\mathbf{u} \in \mathbb{R}^V$,
+\begin{equation}
+\label{eq:unit-sum-bounds}
+1 \;\leq\; \textstyle\sum_{j=1}^{V} u_j \;\leq\; \sqrt{V},
+\end{equation}
+with the lower bound attained when all mass sits on one term and the upper
+bound when it is spread evenly over all $V$; mass spread evenly over $m$ terms
+gives $\sqrt{m}$. Aggregating an L2-normalised vector therefore rewards
+spreading mentions over many terms, not mentioning them more. On our corpus
+the unit sums $V \cdot \suslag_d$ run from $1.93$ to $8.62$ (mean $5.73$) and
+correlate $0.9575$ with $\sqrt{\BREADTH_d}$. $\suslag$ itself correlates
+$0.9546$ with $\BREADTH$ (Spearman $0.951$) and $0.4052$ with $\susdens$
+(Spearman $0.4524$); Figure~\ref{fig:robustness-specs} plots both
+relationships. Under L2 vector normalisation the substance component is, to a
+correlation of $0.95$, a measure of topical breadth.
+
+The idf weighting is a smaller matter. In a corpus of ESG disclosure the terms
+present everywhere are the ones the genre is about, so idf moves weight away
+from them: the 49 entries with $\mathrm{idf} < 1.2$ (document frequency above
+280) hold 69.26\,\% of the 1{,}047{,}951 ESG occurrences, while the 207
+entries with $\mathrm{idf} > 2$ hold 6.70\,\%. One mention of \emph{living
+income} (two occurrences in the corpus, $\mathrm{idf} = 5.7420$) weighs as much
+as $5.545$ mentions of \emph{board of directors}, the most frequent entry
+(59{,}912 occurrences, $\mathrm{idf} = 1.0355$). Because the promoted entries
+carry so little mass, the effect on the score is small: holding the length
+denominator fixed and varying only the weighting, $\susdens$ and $\sustfidf$
+correlate $0.9876$ and the resulting scores have Spearman correlation
+$0.9926$; varying the vector normalisation instead lowers it to $0.6421$
+(Table~\ref{tab:robustness-index}). We keep uniform weights because they need no
+document frequencies: a report's density does not change when the corpus
+does.
+
+\subsubsection{Convergent validity with quantitative content}
+\label{sec:validity}
+
+The argument above is algebraic. An empirical check needs a yardstick built
+by different means, and $\QUANT$ (\S\ref{sec:index-components}) is one: a
+density of regular-expression matches over the raw text, with no vectoriser,
+no lemmatised vocabulary and no document-frequency weighting. A report that
+discloses substance should also quantify it, so a substance measure ought to
+covary with $\QUANT$ \citep{campbell1959}. Agreement does not establish
+validity, but a substance measure that does not covary with independently
+counted quantitative content is hard to defend.
+
+The two instruments are not fully independent. Seventeen of the 399
+vocabulary entries are also matched by a $\QUANT$ pattern (reporting-framework
+acronyms, the \emph{taxonomy} family, \emph{co2}, \emph{co2e}, \emph{ghg} and
+four ISO standards); they carry 5.39\,\% of the vocabulary's occurrences, and
+strings of theirs make up 27.31\,\% of $\QUANT$'s 186{,}984 hits. Both
+instruments also read the same extracted zones, so the test is conditional on
+the extraction stage (\S\ref{sec:extraction}). We therefore report the
+comparison twice (Table~\ref{tab:validity-disjoint}): on the full bases, and on
+disjoint bases, with the 17 entries removed from the vocabulary (399 to 382)
+and $\QUANT$ restricted to its two purely numeric families,
+\texttt{percentages} and \texttt{large\_numbers}. The restricted $\QUANT$
+correlates $0.8697$ with the full one. Because the 343 reports are seven
+reports each of 49 firms, every interval resamples firms, not reports.
+
+\begin{table}[tbp]
+\centering
+\small
+\caption{Pearson correlation of each substance specification with $\QUANT$
+($n = 343$ reports, 49 firms). Disjoint bases: vocabulary reduced from 399 to
+382 entries, $\QUANT$ restricted to \texttt{percentages} and
+\texttt{large\_numbers}. Intervals: 95\,\% percentile intervals from 9{,}999
+bootstrap samples of firms drawn with replacement, each with its seven reports
+(seed 20260925). Last row: bootstrap samples in which $\susdens$ does not
+correlate more strongly than $\suslag$. Source:
+\nolinkurl{scripts/validity_v3.py}.}
+\label{tab:validity-disjoint}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+ & \multicolumn{2}{c}{Full bases} & \multicolumn{2}{c}{Disjoint bases} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+ & $r$ & 95\,\% interval & $r$ & 95\,\% interval \\
+\midrule
+$\susdens$  & 0.6305 & $[0.523,\ 0.732]$ & 0.3992 & $[0.227,\ 0.539]$ \\
+$\sustfidf$ & 0.6392 & $[0.550,\ 0.736]$ & 0.4007 & $[0.256,\ 0.535]$ \\
+$\suslag$   & 0.2984 & $[0.041,\ 0.551]$ & 0.1850 & $[-0.072,\ 0.483]$ \\
+\addlinespace
+$\susdens - \suslag$  & 0.3321 & $[0.075,\ 0.589]$ & 0.2142 & $[-0.143,\ 0.519]$ \\
+$\sustfidf - \suslag$ & 0.3407 & $[0.112,\ 0.578]$ & 0.2157 & $[-0.103,\ 0.500]$ \\
+Samples with $\susdens \le \suslag$ & \multicolumn{2}{r}{30/9{,}999} & \multicolumn{2}{r}{1{,}654/9{,}999} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+On the full bases the two length-normalised specifications correlate with
+$\QUANT$ about twice as strongly as $\suslag$ does ($0.6305$ against $0.2984$,
+a ratio of $2.11$; Spearman $0.6804$ against $0.4521$), and the firm-bootstrap
+interval of the difference excludes zero. $\suslag$ behaves like $\BREADTH$,
+which correlates $0.3080$ with $\QUANT$. Length does not explain the ordering:
+$\log L_d$ and $\log R_d$ correlate $0.9992$, but with both partialled out of
+both sides the correlations are $0.5904$ for $\susdens$ and $0.1894$ for
+$\suslag$.
+
+\paragraph{Disjoint bases.}
+\label{sec:validity-disjoint}
+Every correlation falls, by 37--38\,\%, so the full-basis levels are upper
+bounds and convergent validity on clean bases is moderate. The ratio does not
+fall: $2.16$ for $\susdens$ against $\suslag$, against $2.11$ on the full
+bases, so the shared strings did not produce the ordering. What changes is
+the width of the intervals. The difference is $0.2142$ with an interval from $-0.143$ to
+$0.519$, and one bootstrap sample in six reverses it; under Spearman the gap
+is $0.0821$, interval $[-0.117,\ 0.272]$. The uncertainty sits on the
+$\suslag$ side. Across the 49 firm means $\susdens$ correlates $0.5265$ with
+the restricted $\QUANT$ and $\suslag$ $0.3400$; within firms, over time,
+$0.2071$ against $-0.0716$. On clean bases the direction is the same in every
+cut, but a firm-clustered interval does not exclude equality: convergent
+validity corroborates the choice of a length-normalised specification without
+carrying it on its own. The case against $\suslag$ rests first on
+\eqref{eq:l2-invariance} and its demonstrations, which use no yardstick.
+
+\paragraph{Density rather than length-normalised TF-IDF.}
+\label{sec:validity-adopted}
+Of the two length-normalised specifications, $\sustfidf$ correlates slightly
+more strongly with $\QUANT$, by $0.0087$ on the full bases. The firm bootstrap does not distinguish that
+gap from zero (interval $[-0.018,\ 0.044]$; 2{,}748 of 9{,}999 samples reverse
+it), and on disjoint bases it shrinks to $0.0014$. The criterion separates the
+length-normalised pair from $\suslag$, not the two members of the pair. We
+adopt $\susdens$ on a structural ground: it estimates nothing on the sample, so
+a report's substance score does not depend on which other reports are in the
+corpus. A further variant, sublinear term frequency divided by length, fails
+the test outright ($r = 0.0500$ with $\QUANT$), because once each term's
+contribution is damped towards presence the length denominator dominates the
+ratio.
+
+\subsubsection{\texorpdfstring{$z$}{z}-scores rather than min--max, and no threshold}
+\label{sec:artefact}
+
+\paragraph{What the antecedent computed.}
+\label{sec:artefact-which}
+The printed formula of \citet[p.~4]{lagasio2024} is a difference of
+$z$-scores, but its published numbers are min--max. Its Table~2 reports both
+components on $[0,1]$ and a mean index of $-0.2179$, which is exactly the
+difference of the two component means, $0.3727 - 0.5906$
+\citep[p.~6]{lagasio2024}; a difference of $z$-scores would have mean zero by
+construction. The article's stated reason for min--max is to ``address
+potential biases due to variations in document length and linguistic style''
+(p.~4). A min--max rescaling is monotone within each component, so any
+dependence on length present before it is present, in the same rank order,
+after it.
+
+\paragraph{What the choice changes.} $\Z(\cdot)$ and the min--max map
+$M(\cdot)$ are both increasing affine maps, so within a component they
+preserve ranks. Once two components are differenced they are no longer
+equivalent, because they equalise the components' spreads differently. On our
+corpus, with the adopted substance component, the difference is small in
+ranks: the $z$-score and min--max versions of $\ESGSI$ have Spearman
+correlation $0.9971$ ($0.9957$ with $\sustfidf$, $0.9888$ with $\suslag$). The
+difference is in location. Under $\Z$ the mean of the score is zero by
+construction. Under $M$ it is $\overline{M(\SEN)} - \overline{M(\SUS)}$, which
+is set by where each component's mass sits inside its own observed range. With
+$\susdens$ the two rescaled means are almost equal ($0.3645$ and $0.3610$) and
+the score has mean $+0.0035$. With $\suslag$ the rescaled substance mean rises
+to $0.5678$ and the score's mean shifts to $-0.2034$, although nothing about
+the reports has changed. The antecedent's published mean, $-0.2179$, has the
+same structure: a substance distribution sitting high in its range. The
+resemblance of the two figures is consistent with that mechanism; on a
+different corpus with a different vocabulary it is not evidence of what the
+antecedent ran.
+
+\paragraph{Consequences for our specification.} We standardise by $z$-scores
+because they fix the location of every component at the corpus mean and
+express each in units of its own standard deviation, so that the sign and size
+of a score describe a report's position relative to the corpus and nothing
+else. Under min--max the location of zero would depend on the extremes of each
+component's distribution, which a single outlying report can move. For the
+same reason we apply no threshold. Zero is the corpus mean of the combination,
+a property of the rescaling and of the corpus; it is not a calibrated boundary
+between kinds of disclosure, and there is no external benchmark against which
+a boundary could be calibrated (\S\ref{sec:limitations}). The antecedent's
+threshold at zero inherits its location from the rescaling, and we neither use
+it nor replace it with another.

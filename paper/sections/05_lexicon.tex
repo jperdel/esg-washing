@@ -1,230 +1,380 @@
-\section{Preprocessing and lexicon architecture}
+\section{The ESG vocabulary}
 \label{sec:lexicon}
 
-Every zone identified in \S\ref{sec:extraction} passes through a single
-\texttt{TextProcessor}: spaCy's \texttt{en\_core\_web\_md} model, with
-named-entity recognition and dependency parsing disabled. URLs are stripped,
-text is lowercased, tokenised and lemmatised. A token survives only if it is
-not a stopword, not punctuation, not whitespace, longer than two characters,
-its lemma is not one of 189 corpus-specific stopwords, and it passes a
-content-token test: alphanumeric, with at least two alphabetic characters.
-That last condition replaced an earlier, purely-alphabetic filter that had
-been silently deleting \texttt{co2}, \texttt{co2e} and \texttt{sf6}; it still
-excludes bare numerals (\texttt{2023}, \texttt{14001}) and page references
-(\texttt{p12}, \texttt{q1}), so digits survive only when attached to
-letters. Two representations are carried forward: a lemmatised,
-stopword-filtered token string (\texttt{clean\_text}), feeding \SUS, \HEDGE\
-and \BREADTH; and a whitespace-collapsed copy of the extracted text with
-digits and case intact (\texttt{raw\_text}), the sole input to \QUANT.
+This section presents the ESG vocabulary, how it was built and how it is
+brought into the same representation as the corpus, together with the hedge
+lexicon used by \HEDGE. The vocabulary has 434 entries: 402 natural-form terms
+and 32 regular-expression patterns. Of these, 36 (35 terms and one pattern)
+are designated sectoral; they are part of the vocabulary used throughout the
+paper, and excluding them is a sensitivity check
+(\S\ref{sec:robustness-lexicon}). The source of truth is
+\nolinkurl{metadata/ESG_terms_v3.csv}, one row per entry with its type,
+pillar and sectoral flag; every count below is recomputed from committed files
+by \nolinkurl{scripts/vocab_v3_stats.py}. \citet{lagasio2024} does not publish
+its keyword list or its size; ours is published in full so that every
+inclusion can be inspected.
 
-\subsection{Vocabulary and corpus in one representation, by construction}
+\subsection{Sources of candidate terms}
+\label{sec:lexicon-sources}
 
-The vocabulary that scores \SUS\ and the lexicon that scores \HEDGE\ are
-generated artefacts, not hand-written lists — the generation step is the
-methodological point of this section. Each is authored once, in natural
-surface form, in a single source file; a build script
-(\texttt{scripts/build\_lexicons.py}) passes every entry through the
-identical \texttt{TextProcessor} instance applied to the corpus, so that
-vocabulary and text are guaranteed to share a representation. The
-alternative — a second, hand-lemmatised list kept alongside the raw one —
-invites drift: when the corpus pipeline changes, a hand-maintained list
-stops tracking it silently. A term whose surface form does not survive
-preprocessing becomes a dictionary entry that can never match anything, and
-it fails without warning, because a zero count is indistinguishable from the
-term's genuine absence.
+Candidates came from three sources.
+\begin{enumerate}
+\item \emph{Reporting frameworks and standards.} The disclosure topics and
+  terminology of GRI, SASB, TCFD and the ESRS, including the names of the
+  frameworks and regulatory regimes themselves (\emph{csrd}, \emph{tcfd},
+  \emph{eu taxonomy}), which firms use to organise and label their ESG
+  disclosure.
+\item \emph{Prior literature.} ESG terminology from dictionary-based studies of
+  corporate disclosure, which supplied the general environmental, social and
+  governance vocabulary (\emph{emission}, \emph{human rights},
+  \emph{remuneration}).
+\item \emph{A structured review of sample reports.} The extracted zones of 17
+  reports from the corpus (13 firms, 7 countries) were read by three
+  reviewers, working independently and without sight of the vocabulary, each
+  of whom listed every ESG term found. After normalising case, plurals,
+  hyphenation and spelling (\nolinkurl{scripts/build_consensus.py}), the pooled
+  list was given in random order to three further evaluators, also working
+  independently and without knowing how many reviewers had listed each term
+  (\nolinkurl{scripts/build_consensus_v2.py}). Each evaluator judged, for every
+  term, whether it is an ESG term, its pillar, whether it is sector-specific,
+  and whether it needs a collocation to fix its sense. A term entered the
+  candidate pool from this source only if all three evaluators approved it.
+  Germany, 98 of the 343 reports, is represented in the sample by a single
+  firm. \textbf{[Author: identify the reviewers of the candidate lists.]}
+\end{enumerate}
+The review supplements the first two sources with the vocabulary firms
+actually use; its reading sample is small, and absence from it says nothing
+against a term.
 
-Two checks in the build step guard against this. A staleness check compares
-each source file's modification time against its generated counterpart,
-raising an error if the generated file is missing and a warning if the
-source has since been edited. A collapse check flags any multi-word term
-that reduces to a single word once preprocessed, rather than adding it
-silently. The documented case is \emph{paris agreement}, which loses
-\emph{paris} to the stopword filter and lemmatises to the bare unigram
-\emph{agreement} — a token occurring 15,459 times in the corpus in senses
-unrelated to the climate accord (refinancing agreements, employment
-terminations, sponsorship deals).
+\subsection{Admission criteria}
+\label{sec:lexicon-criteria}
 
-The check is advisory, and the distinction matters in a paper about
-undisclosed methodological choices, so we state it exactly rather than
-advertise a safeguard the code does not provide. The build script emits a
-warning naming each collapsed term and then adds it to the generated
-vocabulary regardless; nothing is withheld automatically. Removal is a
-separate human decision taken on reading the warning, and it was taken twice:
-\emph{paris agreement} and \emph{just transition} were deleted by hand from
-\texttt{esg\_terms.txt} and re-entered as literal patterns matched against raw
-text at the extraction stage (\S\ref{sec:extraction}), which is why
-\emph{agreement} and \emph{transition} are not bare vocabulary entries. A
-third collapse was allowed to stand: \emph{due diligence} lemmatises to
-\emph{diligence}, which is one of the 154 entries, on the judgement that its
-4,330 occurrences in the corpus derive almost entirely from the source phrase.
-An automatic rule would have discarded that one too. What the build step
-guarantees is that no collapse passes unnoticed; what it does not guarantee is
-that a collapsed term stays out of the vocabulary.
+A candidate, from any source, was admitted only if it met the following
+criteria.
+\begin{enumerate}
+\item \emph{ESG sense in context.} Its occurrences in the extracted text of
+  this corpus, read in context, predominantly carry the ESG sense: a
+  disclosure, target, data point or policy on an environmental, social or
+  governance matter. A word whose occurrences are dominated by a non-ESG use
+  in these reports is not admitted as a bare term: \emph{materiality}
+  (accounting and audit materiality), \emph{fuel} (the verb), \emph{ecosystem}
+  (business or digital ecosystems), \emph{footprint} (industrial or
+  geographic footprint), \emph{offset} (netting, \emph{partially offset by}).
+\item \emph{Dispersion across firms.} A candidate from the review of sample
+  reports had to occur at least 50 times in the corpus and in the reports of
+  at least 5 of the 49 firms (constants \texttt{MIN\_OCC\_CANDIDATE} and
+  \texttt{MIN\_COMPANIES\_CANDIDATE} in
+  \nolinkurl{scripts/build_kwic_sample.py}). The cut keeps out terms that are
+  idiosyncratic to one or two firms; it is a practical choice, not a
+  statistical test.
+\item \emph{Collocations for polysemous heads.} A head that carries the ESG
+  sense only in some combinations is admitted only inside enumerated
+  collocations: \emph{carbon footprint} rather than \emph{footprint}, the
+  collocations of \emph{social} and \emph{water}, and
+  \texttt{environmental\textbackslash w*} and \emph{environmentally} rather
+  than every word beginning \emph{environ-}. A count vocabulary cannot carry
+  a negative lookahead (``\emph{social}, except \emph{social security}''), so
+  a polysemous head is either admitted bare or admitted only in the
+  collocations listed; the second option gives up the head's other valid uses
+  in exchange for excluding its invalid ones. A collocation inherits the
+  pillar and sectoral designation of its head. The vocabulary holds 82
+  collocations.
+\item \emph{Patterns for morphological families and digit-bearing forms.}
+  Where a family of forms shares a stem (\texttt{sustainab\textbackslash w+},
+  \texttt{recycl\textbackslash w+}), a term carries digits that preprocessing
+  removes (\texttt{co2e?}, \texttt{scope\textbackslash s*[123]}, ISO standard
+  numbers), or a phrase does not survive lemmatisation
+  (\texttt{paris\textbackslash s+agreement}, \emph{just transition}), the entry
+  is written as a regular expression. Patterns act at extraction only
+  (\S\ref{sec:lexicon-one}). There are 32.
+\item \emph{Sectoral designation.} An entry whose occurrences are concentrated
+  in one industry is admitted but designated sectoral, because counting it
+  would reward a firm for belonging to that industry rather than for what it
+  discloses. The designation rests on two criteria: concentration of the
+  entry's occurrences across all 343 reports, including the share held by the
+  single largest firm, and, for candidates from the review of sample reports,
+  a majority of the evaluators who approved the term judging it
+  sector-specific. The exact concentration thresholds of the first criterion
+  are not in a committed script. Collocations inherit the designation of their
+  head.
+\end{enumerate}
 
-\subsection{The ESG vocabulary}
+\subsection{Pillar assignment}
+\label{sec:lexicon-pillars}
 
-\texttt{esg\_terms.txt} is 154 canonical terms in natural singular form,
-organised into seven thematic blocks (Table~\ref{tab:lexicon-blocks}). Run
-through the build step, the 154 terms yield 154 distinct lemmatised entries
-with no collisions: 85 unigrams, 62 bigrams, 7 trigrams. The resulting
-maximum n-gram length, 3, is derived at runtime and supplied as the
-vectoriser's \texttt{ngram\_range} upper bound; scikit-learn's
-unigrams-only default would otherwise score every multi-word entry — 45\%
-of the list — as zero, with no error raised.
+Every entry has exactly one pillar: E (environmental), S (social), G
+(governance), or TRANS (transversal) for umbrella terms that name ESG as a
+whole or its reporting regimes (\emph{sustainability}, \emph{esg},
+\emph{csrd}). Candidates from the review of sample reports take the pillar most
+often given by the evaluators who approved them; collocations take their
+head's. The index pools the pillars (\S\ref{sec:index}); the assignment matters
+only for the leave-one-pillar-out stability tests
+(\S\ref{sec:robustness-lexicon}) and the pillar breakdowns of
+\S\ref{sec:temporal}. The EU taxonomy family (\emph{eu taxonomy},
+\emph{taxonomy eligible}, \emph{taxonomy alignment}) is assigned to TRANS, as a
+reporting regime, although the regulation's six objectives are all
+environmental; that assignment is a choice and could reasonably be E.
 
-\begin{table}[htbp]
+\subsection{One vocabulary for extraction and scoring}
+\label{sec:lexicon-one}
+
+The vocabulary does two jobs. Matched as regular expressions on raw text, its
+entries decide which paragraphs are extracted (\S\ref{sec:extraction});
+lemmatised, its terms are what \SUS\ counts (\S\ref{sec:index}). The 32
+patterns act only at the first stage. Changing the vocabulary therefore
+changes the corpus as well as the score: because the same entries select the
+zones, even \SEN, which never consults the ESG vocabulary, is computed on
+different text when the vocabulary changes.
+
+We use one vocabulary for both jobs rather than a broad extraction list paired
+with a narrower scoring list, because every component is computed on the
+extracted text. A zone selected by a term that fails the admission criteria
+adds non-disclosure prose to \SEN, inflates the denominator of \susdens, and
+adds accounting figures to \QUANT\ and modal verbs to \HEDGE. The criteria of
+\S\ref{sec:lexicon-criteria} therefore apply to extraction and scoring alike.
+The consequence for evaluation is that every stability test either freezes the
+extraction or simulates re-extraction (\S\ref{sec:robustness-lexicon}).
+
+\subsection{Section-naming terms and navigation text}
+\label{sec:lexicon-nav}
+
+Tables of contents and GRI/ESRS correspondence tables are lists of section
+names, and many section names are vocabulary entries (\emph{governance},
+\emph{esrs}, \emph{tcfd}); they are dense in ESG keywords without being
+disclosure. Removing the section-naming terms would lose their valid uses in
+prose, so the vocabulary keeps them and the navigation text is removed instead
+by a filter in the extractor (\S\ref{sec:extraction-nav}). The noise that
+comes from the kind of text selected is handled at extraction; the vocabulary
+is judged on the sense of its terms in running text.
+
+\subsection{Preprocessing}
+
+Every zone identified in \S\ref{sec:extraction} passes through one
+\texttt{TextProcessor}: spaCy's \texttt{en\_core\_web\_md}, with named-entity
+recognition and parsing disabled. URLs are stripped; text is lowercased;
+eleven protected vocabulary phrases are replaced by single tokens
+(\S\ref{sec:lexicon-represent}); the text is then tokenised and lemmatised. A
+token survives if it is not a stopword, punctuation or whitespace, is longer
+than two characters, its lemma is not one of 189 corpus-specific stopwords,
+and it is alphanumeric with at least two letters (keeping \texttt{co2} and
+\texttt{sf6}, dropping \texttt{2023} and \texttt{p12}). The lemmatised string
+(\texttt{clean\_text}) feeds \SUS, \SEN\ and \BREADTH; a whitespace-collapsed
+copy of the extracted text with digits and case intact (\texttt{raw\_text}) is
+the input to \QUANT\ and \HEDGE, which need the numerals and the stopwords
+respectively.
+
+\subsection{Vocabulary and corpus in one representation}
+\label{sec:lexicon-represent}
+
+The scoring vocabulary is generated, not written by hand.
+\nolinkurl{scripts/export_vocab_v3.py} writes the 434 entries of
+\nolinkurl{metadata/ESG_terms_v3.csv} into four source files (terms or
+patterns, sectoral or not: 367, 35, 31 and 1 entries), and
+\nolinkurl{scripts/build_lexicons.py} passes every term through the same
+\texttt{TextProcessor} as the corpus. A vocabulary entry and its occurrences in
+the corpus are therefore in one representation by construction: no entry can
+fail to match for want of a shared tokenisation or lemmatisation. The loader
+warns when a source file is newer than its generated file and stops when the
+generated file is missing.
+
+\paragraph{Protected phrases.} Preprocessing would destroy some phrases.
+\emph{Well-being} would be emptied, as both of its words are spaCy stopwords;
+\emph{iso 14001} would become \emph{iso} and \emph{say on pay} would become
+\emph{pay}, a generic word that would count every unrelated use. The build
+therefore first lemmatises every term with a processor that has no protection;
+each term that comes out empty, and each multi-word term that comes out as a
+single word and is not on a reviewed allow-list, is written to
+\nolinkurl{metadata/esg_protected_phrases.txt} as a pair: a regular expression
+and a single token. The regular expression accepts the words separated by
+spaces, hyphens or nothing, plus an optional final \emph{s}. The token is the
+term with its non-alphanumeric characters removed and any leading digits moved
+to the end (\emph{well-being} $\to$ \emph{wellbeing}, \emph{2030 agenda}
+$\to$ \emph{agenda2030}). \texttt{TextProcessor} applies the substitutions to
+the lowercased text before tokenising, for the corpus and for the vocabulary
+alike, so a protected term and its occurrences meet in the same token. Eleven
+phrases qualify (Table~\ref{tab:lexicon-lemma}), and thirteen vocabulary terms
+are represented by the eleven protected tokens: the unhyphenated
+\emph{wellbeing} and the fused \emph{cop28} share the token of their spaced
+variants. spaCy may lemmatise the token itself (\emph{wellbeing} $\to$
+\emph{wellbee}), which is harmless because both sides are lemmatised alike;
+the build stops if a token does not survive as one word. Two collapses are on
+the allow-list and stand without protection, \emph{due diligence} $\to$
+\emph{diligence} and \emph{eu taxonomy} $\to$ \emph{taxonomy}, on the judgement
+that the surviving word occurs almost only inside the phrase in these reports.
+
+\begin{table}[tbp]
 \centering
-\caption{The 154-term ESG vocabulary, by thematic block.}
-\label{tab:lexicon-blocks}
-\begin{tabular}{lr}
+\caption{From natural-form terms to the lemmatised \SUS\ vocabulary,
+recomputed with the pipeline's \texttt{TextProcessor}; it matches the committed
+generated files.}
+\label{tab:lexicon-lemma}
+\begin{tabular}{p{4.2cm}p{9.4cm}}
 \toprule
-Thematic block & Terms \\
+Step & Result \\
 \midrule
-Environment: climate and emissions & 14 \\
-Environment: energy & 18 \\
-Environment: resources and nature & 17 \\
-Sustainability and circular economy & 12 \\
-Social: people and equity & 34 \\
-Governance and ethics & 25 \\
-Reporting frameworks and ratings & 34 \\
-\midrule
-Total & 154 \\
+Base terms & 367 $\to$ 365 lemmas \\
+\quad protected, empty without it & \emph{well-being} (both words are stopwords) \\
+\quad protected, collapsed without it & \emph{iso 14001}, \emph{iso 45001}, \emph{iso 50001} $\to$ \emph{iso};
+  \emph{first aid} $\to$ \emph{aid}; \emph{say on pay} $\to$ \emph{pay};
+  \emph{speak up} $\to$ \emph{speak}; \emph{2030 agenda} $\to$ \emph{agenda} \\
+\quad collisions & \emph{conflict of interest}, \emph{conflicts of interest} $\to$ \emph{conflict interest};
+  \emph{well-being}, \emph{wellbeing} $\to$ \emph{wellbee} \\
+\quad allowed collapses & \emph{due diligence} $\to$ \emph{diligence}; \emph{eu taxonomy} $\to$ \emph{taxonomy} \\
+Sectoral terms & 35 $\to$ 34 lemmas; \emph{b corp}, \emph{cop 28}, \emph{iso 37001} protected, collapsed without it;
+  \emph{cop 28} and \emph{cop28} collide \\
+Union (scoring vocabulary) & 399 entries: 140 unigrams, 224 bigrams, 34 trigrams, 1 four-gram \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Because \citep{lagasio2024} never states the size of its GRI/SASB-derived
-keyword list and publishes only three illustrative terms (\S\ref{sec:original}),
-our vocabulary cannot be checked against the original's term for term. This
-is where strict replication becomes impossible at the lexicon stage, not
-merely inconvenient: any divergence between our \ESGSI\ and the original's
-cannot be attributed to a single design choice, since the vocabulary is one
-of several elements differing at once and the original's is unknown.
+\paragraph{N-gram structure.} Every one of the 402 terms reaches \SUS, as one
+of $V = 399$ lemmatised entries. Multi-word entries are 259 of the 399
+(64.9\%); the longest has four tokens, so the vectoriser's
+\texttt{ngram\_range} is (1,4), derived at run time from the vocabulary.
+Under scikit-learn's unigram default every multi-word entry would score zero,
+without an error.
+
+\paragraph{Extraction and scoring, one entry.} Stopword and punctuation
+removal makes tokens adjacent that were not, so a lemmatised multi-word entry
+can match more than its phrase: \emph{board director}, the lemma of
+\emph{board of directors}, also matches \emph{board and directors}. The excess
+is small. On the extracted text the lemma counts 59,912 occurrences in
+\texttt{clean\_text} and the exact phrase, \emph{board(s) of director(s)} in
+\texttt{raw\_text}, 59,749, a difference of 0.3\%. The same entry illustrates
+the coupling of \S\ref{sec:lexicon-one} from the other side. Because the phrase
+is in the extraction regex, paragraphs that mention it are made hot, and the
+zones built around them bring further occurrences of it, and of the governance
+text around it, into the extracted text on which it is then counted. It is the
+heaviest entry of the scoring vocabulary (Table~\ref{tab:lexicon-mass}); part
+of that weight is a product of its own role in extraction. The sensitivity
+of the index to single entries is reported in \S\ref{sec:robustness-lexicon}.
+
+\subsection{Composition}
+\label{sec:lexicon-composition}
+
+Table~\ref{tab:lexicon-blocks} gives the composition of the 434 entries by
+pillar and type, and, for the 399 lemmatised scoring entries, their number and
+share of all vocabulary occurrences in the extracted text by pillar. E is the
+largest pillar on both counts; TRANS has 30 scoring entries and 14.2\% of the
+occurrences, most of them from \emph{sustainability}, \emph{sustainable},
+\emph{esg} and \emph{taxonomy}. The 34 sectoral scoring entries hold 1.0\% of
+the occurrences.
+
+\begin{table}[tbp]
+\centering
+\caption{Composition of the vocabulary by pillar and entry type. Terms and
+collocations are natural-form literals; a collocation is a literal admitted in
+place of a polysemous bare head. Sectoral cuts across the three type columns.
+The last two columns refer to the $V = 399$ lemmatised scoring entries (terms
+only; patterns act at extraction) and their share of the 1,047,951 vocabulary
+occurrences in the extracted text of the 343 reports.}
+\label{tab:lexicon-blocks}
+\begin{tabular}{lrrrrrrr}
+\toprule
+ & \multicolumn{5}{c}{Entries (434)} & \multicolumn{2}{c}{Scoring (399)} \\
+\cmidrule(lr){2-6}\cmidrule(lr){7-8}
+Pillar & Terms & Colloc. & Patterns & Total & Sectoral & Entries & Occ.\ (\%) \\
+\midrule
+E (environmental) & 123 & 29 & 16 & 168 & 14 & 152 & 38.2 \\
+S (social) & 105 & 23 & 11 & 139 & 14 & 127 & 17.6 \\
+G (governance) & 65 & 27 & 3 & 95 & 8 & 90 & 30.0 \\
+TRANS (transversal) & 27 & 3 & 2 & 32 & 0 & 30 & 14.2 \\
+\midrule
+Total & 320 & 82 & 32 & 434 & 36 & 399 & 100.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Occurrence mass is concentrated. Every one of the 399 entries occurs at least
+once; the ten heaviest hold 39.2\% of all occurrences and the fifty heaviest
+75.0\% (Table~\ref{tab:lexicon-mass}). The two heaviest entries are
+governance terms (\emph{board director}, \emph{remuneration}), consistent with
+a corpus of annual reports and URDs that carry a corporate-governance report
+(\S\ref{sec:data}). The concentration means that a handful of entries carry
+most of \SUS; \S\ref{sec:robustness-lexicon} removes entries one at a time for
+that reason.
+
+\begin{table}[tbp]
+\centering
+\caption{The ten heaviest scoring entries: occurrences in the lemmatised
+extracted text (\texttt{clean\_text}) of the 343 reports, share of all
+1,047,951 vocabulary occurrences, and number of reports in which the entry
+occurs.}
+\label{tab:lexicon-mass}
+\begin{tabular}{llrrr}
+\toprule
+Entry (lemma) & Pillar & Occurrences & Share (\%) & Reports \\
+\midrule
+board director & G & 59,912 & 5.72 & 331 \\
+remuneration & G & 59,209 & 5.65 & 335 \\
+emission & E & 53,307 & 5.09 & 339 \\
+sustainability & TRANS & 45,050 & 4.30 & 342 \\
+governance & G & 44,174 & 4.22 & 342 \\
+climate & E & 44,026 & 4.20 & 340 \\
+sustainable & TRANS & 34,395 & 3.28 & 343 \\
+water & E & 26,449 & 2.52 & 320 \\
+carbon & E & 23,940 & 2.28 & 338 \\
+human right & S & 20,624 & 1.97 & 330 \\
+\midrule
+Ten heaviest & & & 39.2 & \\
+Fifty heaviest & & & 75.0 & \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{The hedge lexicon}
+\label{sec:lexicon-hedge}
 
-The \HEDGE\ lexicon is built the same way, from a different source.
-\texttt{RAW\_LM\_dictionary.csv} supplies the Loughran--McDonald word lists
-\citep{loughran2011}, 9,752 rows across seven categories; we keep the four
-bearing on hedging and evasive language — Uncertainty, WeakModal,
-StrongModal, Constraining, the category names as the source file spells them —
-1,245 rows, 1,196 unique lowercase forms.
-Loughran--McDonald forms are inflected, and crossing them directly against a
-lemmatised corpus recovered only about 46\% of entries. The generated file
-is instead the union of each entry's original form and its spaCy lemma,
-raising the usable lexicon to 1,263 forms, 67 more than the 1,196 that
-entered lemmatisation.
+The \HEDGE\ lexicon is generated by the same script from the Loughran--McDonald
+master dictionary \citep{loughran2011}, in the copy distributed with
+\texttt{pysentiment2}, the package that computes \SEN. It keeps four
+categories, Uncertainty (297 words), Constraining (184), WeakModal (27) and
+StrongModal (19), for 495 unique forms (\nolinkurl{metadata/lm_hedge.txt}).
+The forms are kept as written, without lemmatisation, because \HEDGE\ is
+matched against the raw extracted text (\S\ref{sec:index-components}). The
+lemmatised text is stopword-filtered, and the modals that define two of the
+four categories (\emph{may}, \emph{might}, \emph{could}, \emph{must},
+\emph{will}), together with \emph{always}, \emph{never} and \emph{perhaps}, are
+spaCy stopwords, so on lemmatised text they could never be counted.
 
-\subsection{External audit of vocabulary coverage}
+On the raw extracted text of the 343 reports, tokenised as \HEDGE\ tokenises
+it (lowercase alphabetic words, hyphenated compounds kept whole), the lexicon matches 498,477 of 27,252,597 words (1.83 per
+100), and 429 of its 495 forms occur at least once. The count is dominated by
+a few forms: \emph{risk} (87,687), \emph{risks} (59,412), \emph{will}
+(40,489), \emph{may} (38,628) and \emph{requirements} (20,237), the five most
+frequent, are 49.4\% of all hits, and \emph{risk} and \emph{risks} alone
+outnumber the next three together. \HEDGE\ is therefore to a large extent a
+measure of how often a report names risk. The
+lexicon also counts the month: an occurrence of \emph{May} capitalised and next
+to a number (\emph{31 May}, \emph{May 2023}) is at least 6,632 of the 38,628
+hits on \emph{may} (17.2\%) and 1.3\% of all hits. This is a lower bound, as
+it misses the month where no number is adjacent; the lexicon is used as
+published, without removing these.
 
-The vocabulary's coverage was independently audited on 880 zones from four
-FY2023 reports (Stellantis, adidas, Danone, Enel). The auditor searched the
-zone text with an extended reference lexicon — GRI, SASB, TCFD and ESRS
-terminology plus prior literature — by word-boundary regex, excluding any
-candidate already in our vocabulary. It identified 147 ESG terms present in
-the zone text and absent from ours, 2,970 occurrences in total;
-Table~\ref{tab:lexicon-audit} lists the four largest. Because matching was
-lexical, with no paraphrase or synonym detection, and the audit covers only
-text the extraction stage had already judged ESG-relevant, 147 is a measured
-lower bound on the vocabulary's recall, not a full accounting of what it
-misses.
+\subsection{What the construction does and does not establish}
+\label{sec:lexicon-limits}
 
-\begin{table}[htbp]
-\centering
-\caption{Largest ESG terms omitted from the vocabulary, external audit.}
-\label{tab:lexicon-audit}
-\begin{tabular}{llr}
-\toprule
-Term & Category & Occurrences \\
-\midrule
-compliance & Governance & 436 \\
-social & Social & 275 \\
-supply chain & Governance & 241 \\
-raw material & Environment & 136 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Two readings of the shortfall point in opposite directions, and the one that
-flatters us is wrong. By term count it looks sector-specific: 64 of the 147
-appear in only one of the four audited firms. Weighted by occurrence the
-impression reverses. Those 64 single-firm terms account for 450 of the 2,970
-occurrences (15\%), while the 22 terms present in \emph{all four} firms —
-including every row of Table~\ref{tab:lexicon-audit} — account for 1,573
-(53\%). The gap is dominated by general ESG vocabulary missing everywhere the
-vocabulary was built to look, not by sector idiosyncrasy, so single-firm
-concentration is not a basis for discounting it.
-
-The sector concern was in any case an artefact of the sample that measured it.
-The 147 collapse to 143 distinct candidate strings once near-duplicate surface
-forms are merged, and every one of them has since been re-measured over all 343
-reports — occurrences, documents, companies, countries, and the share held by
-the largest single company. On that base 103 are broadly dispersed — 102 of
-which reached the vocabulary, \emph{power purchase agreement} having been lost
-to a generation-script bug after the audit rejected the bare \emph{ppa} in its
-favour — 18 are frequent but polysemous, and 22 are concentrated enough in one
-industry to be called sectoral, carrying 2.0\% of the candidates' occurrence
-mass. Four companies were too few to tell a sectoral term from a common one.
-The dispersed and the polysemous classes were incorporated into an expanded
-289-entry vocabulary; the 22 sectoral terms were not, a
-choice \S\ref{sec:limitations} records together with its measured effect. The
-specification reported throughout this paper remains the 154 terms of
-Table~\ref{tab:lexicon-blocks}, and the expansion is a robustness check on it
-(\S\ref{sec:robustness-lexicon}).
-
-Two candidates carry roughly a third of the occurrence mass between them.
-Counted as whole words over the full text of all 343 reports rather than inside
-the four audited ones, \emph{compliance} occurs 55,780 times and \emph{social}
-48,198. Neither is admissible as a bare term, and they fail differently
-(Table~\ref{tab:lexicon-context}). Of \emph{social}'s
-occurrences 60.3\% sit in unambiguously ESG context and only 8.7\%
-unambiguously outside it, concentrated in three enumerable strings —
-\emph{social security}, \emph{social media}, \emph{social network} — so on the
-evidence the right treatment of \emph{social} is an exception list. The
-vocabulary architecture supplies none: a bare entry in a TF-IDF vocabulary
-cannot carry a negative lookahead, and no exclusion mechanism exists at any
-stage. What shipped for \emph{social} is therefore the opposite of what its own
-analysis recommends — an inclusion list of eight collocations, admitting only
-the uses they name and discarding the long tail of valid ones the analysis
-identified as the majority of its mass. \emph{Compliance} inverts the evidence:
-41.8\% are unambiguously ESG, 8.7\% are accounting or audit usage sitting
-almost entirely in the auditor's report and the notes to the financial
-statements, and the largest block, 44.5\%, carries no marker either way, so for
-that term an inclusion list of fifteen collocations is what the evidence
-supports as well as what was built. \emph{Proxy} was adjudicated on the same
-evidence, against \emph{proxy hedging}.
-
-These shares are measured over the full text of each report, not over the
-extracted zones, and the two bases differ in exactly the direction that
-matters: extraction has already discarded most of the notes and the auditor's
-report, which is where the accounting sense of \emph{compliance} lives. The
-false-positive rate inside the pipeline is therefore lower than
-Table~\ref{tab:lexicon-context} shows, which bounds the problem from above and
-does not estimate it.
-
-What the dispersion analysis retires is the sector-bias objection, which is now
-measured, and not the recall bound, which is unchanged: the adopted vocabulary
-incorporates none of the 147, and every figure in this paper is computed on the
-154 entries. The bound stands exactly where \S\ref{sec:limitations} leaves it.
-
-\begin{table}[htbp]
-\centering
-\caption{Context of the two largest audit candidates, classified by surrounding
-vocabulary over the full text of all 343 reports. Shares of all occurrences of
-each term, per cent.}
-\label{tab:lexicon-context}
-\begin{tabular}{lrr}
-\toprule
-Context & \emph{social} & \emph{compliance} \\
-\midrule
-Unambiguously ESG & 60.3 & 41.8 \\
-Mixed & 10.6 & 3.8 \\
-No marker either way & 20.4 & 44.5 \\
-Not ESG: payroll, tax, communications & 7.1 & --- \\
-Not ESG: accounting or audit & 1.6 & 8.7 \\
-Not ESG: other & --- & 1.2 \\
-\midrule
-Total & 100.0 & 100.0 \\
-\bottomrule
-\end{tabular}
-\end{table}
+The construction makes each entry traceable to a source, a criterion, a type,
+a pillar and a sectoral flag, and it guarantees that every term is counted in
+the same representation as the text it is counted on. It does not validate the
+vocabulary, for three reasons.
+\begin{enumerate}
+\item \emph{Built on the evaluation corpus.} The review sample is drawn from
+  the 343 reports, and the sense criterion and the dispersion cut were applied
+  to occurrences in the same corpus the index is computed on. There is no
+  hold-out, and the stability results of \S\ref{sec:robustness-lexicon} inherit
+  this dependence.
+\item \emph{Judgements, not measurements.} Admission, the choice between a
+  bare head and its collocations, the pillar and the sectoral designation are
+  judgements under stated criteria; the paper reports no error rate for the
+  vocabulary's matches, and the concentration thresholds behind the sectoral
+  designation are not in a committed script.
+\item \emph{Extraction and scoring match differently.} Patterns select text but
+  never enter \SUS; the extraction regex and the lemmatised n-grams match
+  slightly different strings for the same term
+  (\S\ref{sec:extraction-regex}); and an entry's count depends in part on the
+  zones it helped select (\S\ref{sec:lexicon-represent}).
+\end{enumerate}
+The TRANS assignment of the taxonomy family and the sectoral criteria are open
+choices; \S\ref{sec:robustness-lexicon} reports how much the index depends on
+them.
