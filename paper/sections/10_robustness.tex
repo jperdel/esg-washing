@@ -1,14 +1,15 @@
 \section{Robustness}
 \label{sec:robustness}
 
-We vary three choices of the method---the substance specification, the
-weights of the Extended ESGSI and the vocabulary---and compare each variant
-with a reference score over the same 343 reports. Every comparison uses three
-measures: the Spearman correlation $\rho$ with the reference; the overlap of
-the extreme deciles, that is, how many of the 34 reports with the highest
-(lowest) reference score remain among the 34 highest (lowest), written
-top/bottom; and the within-firm slope per year, estimated with firm fixed
-effects and firm-clustered standard errors (\S\ref{sec:method-inference}).
+A score built on a hand-made vocabulary and chosen weights is useful only if
+its conclusions do not hinge on those choices. We vary three of them---the substance specification, the weights of the Extended
+ESGSI and the vocabulary---and compare each variant with a reference score
+over the same 343 reports. Every comparison asks three questions. Is the
+ranking of reports preserved (Spearman rank correlation $\rho$ with the
+reference)? Are the same reports at the extremes (how many of the 34 reports
+with the highest, or lowest, reference score remain among the 34 highest, or
+lowest, written top/bottom)? And does the trend survive (the within-firm slope
+per year, \S\ref{sec:method-inference})?
 The reference slopes are $-0.181$ for $\ESGSI$ and $-0.260$ for $\ESGSIext$
 (\S\ref{sec:results-time}).
 
@@ -49,12 +50,14 @@ Random 50\,\%      & 217 & 74.0 & 0.9242 & 27/26 & $-0.118$ & 0.9396 & 28/28 & $
 \end{tabular}
 \end{table}
 
-\paragraph{Substance specification.} Computing $\ESGSI$ with the
-length-normalised TF-IDF measure $\sustfidf$ instead of $\susdens$ leaves its
-ranking almost unchanged ($\rho = 0.993$; 33/32 of the extreme deciles kept).
-With the L2 vector-normalised measure $\suslag$ the ranking changes markedly
-($\rho = 0.642$; 18/21) and the slope weakens to $-0.143$. Term weighting is
-thus a second-order choice and vector normalisation a first-order one
+\paragraph{Substance specification.} We recompute $\ESGSI$ with two TF-IDF
+versions of substance, in which each entry's count is weighted by how few
+reports use it. If the weighted count is divided by the length of the text, as
+density is, the ranking is almost unchanged ($\rho = 0.993$; 33/32 of the
+extreme deciles kept): how entries are weighted matters little. If instead
+each report's vector of weighted counts is scaled to unit length, the ranking
+changes markedly ($\rho = 0.642$; 18/21)
+and the slope weakens to $-0.143$: how the count is scaled matters much more
 (\S\ref{sec:method-choices}).
 
 \paragraph{Weights of the Extended ESGSI.} Over the grid
@@ -72,10 +75,9 @@ $w_h = 0.5$); the slope is negative in all 25 pairs, and every firm-clustered
 with the extraction held fixed, so that only the list counted by $\SUS$
 changes, and with a simulated re-extraction, in which the extraction rule of
 \S\ref{sec:method-extraction} is re-applied without the deleted entries and
-all components are recomputed on the paragraphs that still qualify. A smaller
-vocabulary can only select part of the adopted extraction, so the simulation
-starts from the extracted paragraphs; with the full vocabulary it reproduces
-the adopted scores ($\rho > 0.9999$). We delete designed sets of entries and,
+all components are recomputed on the paragraphs that still qualify; with the
+full vocabulary the simulation reproduces the adopted scores
+($\rho > 0.9999$). We delete designed sets of entries and,
 1{,}000 times at each size, random sets of 10--50\,\% of the 434 entries, and
 read each designed deletion against 1{,}000 random deletions of the same size.
 Table~\ref{tab:robustness-summary} gives the re-extraction results for both
@@ -88,7 +90,8 @@ modes.
 \caption{Stability of $\ESGSI$ under deletion of vocabulary entries
 ($n = 343$): random deletions in both modes, and the designed deletions of
 Table~\ref{tab:robustness-summary} under re-extraction, placed at the share of
-the 434 entries they remove (T: pillar TRANS; Warn: entries with a caveat).
+the 434 entries they remove (Sect: sectoral entries; T: pillar TRANS; Warn:
+entries with a caveat; BD: \emph{board of directors}).
 (a) Spearman $\rho$ with the full-vocabulary score. (b) Mean of the top- and
 bottom-decile overlaps. (c) Within-firm slope per year; the horizontal line
 is the full-vocabulary slope.}
@@ -99,7 +102,7 @@ Removing the 36 sectoral entries barely moves either score ($\rho \geq 0.998$
 in both modes): they carry about 1\,\% of the vocabulary's matches. The
 environmental pillar moves the score most. Without it $\rho = 0.884$, only 23
 of the bottom 34 reports remain, and the slope falls to $-0.105$ (SE 0.039,
-firm-clustered $p = 0.009$, wild cluster bootstrap $p = 0.011$). Its $\rho$ is
+$p = 0.009$; bootstrap $0.011$), still clearly negative. Its $\rho$ is
 lower than in 998 of the 1{,}000 random deletions of the same size, although
 its entries carry no more of the matches than random sets of that size
 (38.2\,\% against 38.0\,\%): the environmental entries order the reports
@@ -107,7 +110,7 @@ differently from the rest of the vocabulary. It is the only designed deletion
 whose $\rho$ falls below the median for a random half of the vocabulary
 (Figure~\ref{fig:robustness-stability}a). With the extraction held fixed its
 effect is larger ($\rho = 0.776$, 12 of the bottom 34 kept, slope $-0.080$
-with firm-clustered $p = 0.027$), because the paragraphs extracted for
+with $p = 0.027$), because the paragraphs extracted for
 environmental entries stay in the text, unscored, and dilute density. Without the transversal pillar the
 slope is $-0.132$; the remaining designed deletions leave it between $-0.168$
 and $-0.206$, the steepest being without pillar G, which also removes nearly a
@@ -124,5 +127,8 @@ $-0.179$ and $-0.160$. Its sign does not change: over the 5{,}000 random
 draws the $\ESGSI$ slope is negative in all but one (a 50\,\% deletion under
 re-extraction), and the $\ESGSIext$ slope in all, in both modes.
 
-These checks bound how far the scores depend on the choices varied; they do
-not validate the scores (\S\ref{sec:limitations}).
+Except under unit-length scaling of substance, the ranking of reports is
+largely preserved and the trend stays negative; its size depends on the
+environmental and transversal vocabulary. These checks bound how far
+the scores depend on the choices varied; they do not validate the scores
+(\S\ref{sec:limitations}).

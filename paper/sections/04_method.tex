@@ -1,9 +1,11 @@
 \section{Method}
 \label{sec:method}
 
-This section defines every quantity used later in the paper: extraction, the
-vocabulary, the components and scores, the reasons for three design choices,
-and panel inference (\S\ref{sec:method-extraction}--\ref{sec:method-inference}).
+We extract the ESG passages of each report (\S\ref{sec:method-extraction}),
+count in them the mentions of a documented ESG vocabulary
+(\S\ref{sec:method-vocab}) and combine tone, substance, quantification and
+hedging into two scores (\S\ref{sec:method-index}); \S\ref{sec:method-choices}
+explains the design and \S\ref{sec:method-inference} the panel inference.
 
 \subsection{Extraction of ESG passages}
 \label{sec:method-extraction}
@@ -14,20 +16,20 @@ legal document. Scored whole, such a document would let financial-statement
 bulk and document length dominate every component. We therefore first extract
 its ESG passages; every later measure is computed on them alone.
 
-Each PDF is read as text blocks in reading order, and a block becomes a
-paragraph only after five filters: blocks entirely within the top or bottom
-8\,\% of the page are dropped; short margin blocks that recur, digits aside, on
-more than 30\,\% of a document's pages are dropped as running headers or
-footers; tabular blocks (a high share of digits in a few lines, or short
-lines of which the first lacks terminal punctuation) are dropped unless they
-contain a vocabulary match; short all-capital blocks are taken as section
-headings, which label the paragraphs that follow instead of entering the text;
-and navigation text (tables of contents, GRI and
-ESRS correspondence tables, stray page references), recognised by dotted
-leaders, trailing page numbers, multi-level section numbers and disclosure
-codes, is dropped, because such lists of ESG section names would otherwise
-pass the density rule below. Paragraphs are then stripped of web addresses,
-rejoined across line-break hyphenation and collapsed to single spaces.
+Each PDF is read as text blocks in reading order, and filters keep only running
+prose. Page furniture is dropped: blocks entirely within the top or bottom
+8\,\% of the page, and short margin blocks that recur, digits aside, on more
+than 30\,\% of a document's pages (running headers and footers). Tabular blocks
+(a high share of digits in a few lines, or short lines of which the first lacks
+terminal punctuation) are dropped unless they contain a vocabulary match. Short
+all-capital blocks are taken as section headings, which label the paragraphs
+that follow instead of entering the text. Navigation text (tables of contents,
+GRI and ESRS correspondence tables, stray page references), recognised by
+dotted leaders, trailing page numbers, multi-level section numbers and
+disclosure codes, is dropped, because such lists of ESG section names would
+otherwise pass the density rule below. Paragraphs are then stripped of web
+addresses, rejoined across line-break hyphenation and collapsed to single
+spaces.
 
 Each paragraph is matched against the vocabulary of \S\ref{sec:method-vocab}
 on its unlemmatised text, ignoring case, with spaces and hyphens
@@ -46,13 +48,15 @@ entries is never selected.
 \subsection{ESG vocabulary}
 \label{sec:method-vocab}
 
-Candidate entries came from three sources: the disclosure topics and
-terminology of reporting frameworks and standards (GRI, SASB, TCFD and the
-ESRS), including the names of the frameworks and regulatory regimes under
-which firms label their disclosure; the ESG vocabulary of dictionary-based
-studies of corporate disclosure; and a structured review of sample reports from
-the corpus, in which independent readers listed the ESG terms they found and
-independent evaluators judged the pooled list.
+The vocabulary defines what counts as an ESG mention, both for selecting
+passages and for measuring substance, so it is documented in full. Candidate
+entries came from three sources: the disclosure topics and terminology of
+reporting frameworks and standards (GRI, SASB, TCFD and the ESRS), including
+the names of the frameworks and regulatory regimes under which firms label
+their disclosure; the ESG vocabulary of dictionary-based studies of corporate
+disclosure; and a structured review of sample reports from the corpus, in which
+independent readers listed the ESG terms they found and independent evaluators
+judged the pooled list.
 \textbf{[Author: identify the reviewers of the candidate lists.]}
 A candidate was admitted if its occurrences in the extracted text, read in
 context, predominantly carry an ESG sense (a disclosure, target, data point or
@@ -105,8 +109,8 @@ One vocabulary drives both extraction and scoring: all 434 entries select the
 passages, and the 402 terms, lemmatised, are what the substance component
 counts. Changing the vocabulary therefore changes the text on which every
 component is computed, not only the substance count. For scoring, the extracted
-text is lowercased, tokenised and lemmatised with a general-purpose English
-language model; stopwords (the standard list and 189 corpus-specific words),
+text is lowercased, tokenised and lemmatised with a standard English language
+model; stopwords (the standard list and 189 corpus-specific words),
 punctuation, numerals and tokens shorter than three characters are removed, and
 the vocabulary passes through the same processing, so that each entry is
 matched in the representation of the text it is counted on. Eleven phrases that
@@ -119,23 +123,25 @@ lemmatised scoring entries.
 \subsection{Components and scores}
 \label{sec:method-index}
 
-Let $d = 1, \dots, n$ index the $n = 343$ reports and $j = 1, \dots, V$ the
-scoring entries. Each report has two representations of its extracted text:
-the \emph{lemmatised text} of \S\ref{sec:method-vocab}, with $L_d$ tokens, and
-the \emph{raw text}, with case, digits and stopwords intact, with $R_d$
-tokens. Let $c_{dj}$ be the number of occurrences of entry $j$ in the
-lemmatised text of $d$, counted over word sequences of one to four tokens (the
-length of the longest entry). Entries are counted independently, so an
-occurrence of a multi-word entry also counts for any shorter entry it contains.
+Each score combines a measure of how positively a report speaks about ESG
+matters with measures of how much ESG content it provides. Let $d = 1, \dots,
+n$ index the $n = 343$ reports and $j = 1, \dots, V$ the scoring entries. Each
+report has two versions of its extracted text: the \emph{lemmatised text} of
+\S\ref{sec:method-vocab}, with $L_d$ tokens, and the \emph{raw text}, with
+case, digits and stopwords intact, with $R_d$ tokens. Let $c_{dj}$ be the
+number of occurrences of entry $j$ in the lemmatised text of $d$, counted over
+word sequences of one to four tokens (the length of the longest entry). Entries
+are counted independently, so an occurrence of a multi-word entry also counts
+for any shorter entry it contains.
 
 \paragraph{Substance.} $\SUS$ is the density of ESG mentions, the number of
-vocabulary occurrences per 100 lemmatised tokens, with uniform term weights:
+vocabulary occurrences per 100 lemmatised tokens, with every entry weighted
+equally:
 \[
-\SUS_d \;=\; \susdens_d \;=\; 100 \cdot \frac{\sum_{j} c_{dj}}{L_d},
+\SUS_d \;=\; \susdens_d \;=\; 100 \cdot \frac{\sum_{j} c_{dj}}{L_d}.
 \]
-written $\susdens$ where it is compared with the alternatives of
-\S\ref{sec:method-choices}. It uses no document frequencies, so a report's
-value does not depend on the other reports in the corpus.
+The superscript, used in tables and figures, marks the density specification
+as distinct from the alternatives examined in \S\ref{sec:robustness}.
 
 \paragraph{Tone.} $\SEN$ is the Loughran--McDonald polarity
 \citep{loughran2011} of the lemmatised text,
@@ -145,34 +151,41 @@ value does not depend on the other reports in the corpus.
 \]
 where $s^{+}_d$ and $s^{-}_d$ count the tokens whose stem is in the
 dictionary's positive and negative lists, and $\varepsilon$ only prevents
-division by zero. It is a bounded ratio on $[-1, 1]$ that depends on the
-balance of positive and negative words, not on how many there are.
+division by zero. It ranges from $-1$ (only negative words) to $1$ (only
+positive words) and depends on the balance of positive and negative words, not
+on how many there are.
 
-\paragraph{Quantification.} $\QUANT$ is the number of pattern matches per raw
-token, summed over four families: percentages; numbers of four or more digits
-other than years; physical units (tonnes, CO$_2$e, GHG, energy, power and
-volume units); and the names of reporting frameworks (GRI, TCFD,
-SASB, CSRD, SDG, the taxonomy and others). It is computed on the raw text
-because preprocessing removes numerals.
+\paragraph{Quantification.} A report that discloses substance can also put
+numbers on it. $\QUANT$ counts such evidence on the raw text, because
+preprocessing removes numerals:
+\[
+\QUANT_d \;=\; m_d / R_d,
+\]
+where $m_d$ is the number of matches of four pattern families: percentages;
+numbers of four or more digits other than years; physical units (tonnes,
+CO$_2$e, GHG, energy, power and volume units); and the names of reporting
+frameworks (GRI, TCFD, SASB, CSRD, SDG, the taxonomy and others).
 
-\paragraph{Hedging.} $\HEDGE$ is the share of the words of the raw text
-(letter runs, hyphenated compounds kept whole) that belong to the Uncertainty,
-Weak Modal, Strong Modal and Constraining lists of the Loughran--McDonald master
-dictionary, 495 word forms taken as written. It is computed on the raw text
-because the modal verbs (\emph{may}, \emph{might}, \emph{could}, \emph{must},
-\emph{will}) are stopwords. Matching is by form, not by sense: the five most
-frequent forms (\emph{risk}, \emph{risks}, \emph{will}, \emph{may},
-\emph{requirements}) make up 49.4\,\% of all matches, so $\HEDGE$ registers to
-a large extent how often a report names risk.
+\paragraph{Hedging.} Qualified language (\emph{may}, \emph{could},
+\emph{uncertain}) weakens whatever a report asserts. The hedging component is
+the share of hedging words in the raw text,
+\[
+\HEDGE_d \;=\; h_d / W_d,
+\]
+where $W_d$ is the number of words (letter runs, hyphenated compounds kept
+whole) and $h_d$ the number of them in the Uncertainty, Weak Modal, Strong
+Modal and Constraining lists of the Loughran--McDonald master dictionary, 495
+word forms taken as written. It is computed on the raw text because the modal
+verbs (\emph{may}, \emph{might}, \emph{could}, \emph{must}, \emph{will}) are
+stopwords. Matching is by form, not by sense: the five most frequent forms
+(\emph{risk}, \emph{risks}, \emph{will}, \emph{may}, \emph{requirements}) make
+up 49.4\,\% of all matches, so $\HEDGE$ registers to a large extent how often a
+report names risk.
 
-\paragraph{Breadth and pillars.} $\BREADTH_d = \exp\bigl(-\sum_j p_{dj}\ln
-p_{dj}\bigr)$, with $p_{dj} = c_{dj} / \sum_k c_{dk}$, is the effective number
-of distinct entries a report uses, a Hill number of order one
-\citep{hill1973}; it is a diagnostic, not a component of either score. The
-pillar density $100 \sum_{j \in p} c_{dj} / L_d$ counts the mentions of
-pillar-$p$ entries per 100 lemmatised tokens, and the four pillar densities sum
-to $\SUS_d$; for a set of reports, the pillar share pools the mentions of the
-set. Both are descriptive and enter neither score.
+\paragraph{Pillars.} For description only, the pillar density counts the
+mentions of a pillar's entries per 100 lemmatised tokens, so that the four
+pillar densities sum to $\SUS_d$; for a set of reports, the pillar share pools
+the mentions of the set. Neither enters a score.
 
 \paragraph{Scores.} Each component $x$ is rescaled across the corpus by a
 $z$-score, $\Z(x)_d = (x_d - \bar{x}) / \sigma_x$, with $\bar x$ the mean and
@@ -186,165 +199,83 @@ scores are
 \ESGSIext_d &= \Z(\SEN)_d - \Z(\SUS)_d - w_q\,\Z(\QUANT)_d + w_h\,\Z(\HEDGE)_d,
 \qquad w_q = w_h = 0.5 .
 \end{align}
-$\ESGSI$~\eqref{eq:esgsi} is the main score of the paper. It keeps the
+$\ESGSI$~\eqref{eq:esgsi} is the main score of the paper: it follows the
 architecture of \citet{lagasio2024}, tone minus substance with each rescaled
-across the sample, with substance measured by density and tone by a
-finance-specific dictionary in place of a general-purpose polarity score. The
-Extended ESGSI~\eqref{eq:esgsiext} is the new metric this paper proposes. Quantified disclosure is further evidence of
-substance, so $\Z(\QUANT)$ is subtracted, on the same side as $\Z(\SUS)$;
-hedging qualifies whatever a report asserts, so $\Z(\HEDGE)$ is added, on the
-side of tone. The weights give each added component half the weight of an
-original one, so that together they weigh as much as one of them and the
-tone--substance contrast remains the core of the score. They are a stated
-choice, not an estimate, since no external criterion is available to calibrate
-them; \S\ref{sec:robustness} reports the scores over a grid of weights.
+across the sample, with the components defined above. A higher value means
+more positive tone relative to the ESG content of the text. The Extended
+ESGSI~\eqref{eq:esgsiext} is the new metric this paper proposes. Quantified
+disclosure is further evidence of substance, so $\Z(\QUANT)$ is subtracted, on
+the same side as $\Z(\SUS)$; hedging qualifies whatever a report asserts, so
+$\Z(\HEDGE)$ is added, on the side of tone. The weights give each added
+component half the weight of an original one, so that together they weigh as
+much as one of them and the tone--substance contrast remains the core of the
+score. They are a stated choice, not an estimate, since no external criterion
+is available to calibrate them; \S\ref{sec:robustness} reports the scores over
+a grid of weights.
 
-Both scores are continuous and corpus-relative: each has mean zero by
-construction, and its sign says only whether a report lies above or below the
-corpus mean of the combination. We compare positions within the corpus:
-differences of means, trends, rank correlations and the overlap of the top and
-bottom deciles.
-
-\subsection{Why density, \texorpdfstring{$z$}{z}-scores and no threshold}
+\subsection{Design choices}
 \label{sec:method-choices}
 
-\citet{lagasio2024} computes substance with a TF-IDF vectoriser
-\citep{pedregosa2011} over an author-built keyword list and discloses four of
-its settings: two document-frequency bounds, a vocabulary cap and the range of
-word sequences. It does not state whether each document's term vector is
-scaled to unit Euclidean length (vector normalisation), nor how the per-term
-values become a document score. The aggregation is immaterial once scores are
-standardised, since a sum and a mean over the vocabulary differ by the factor
-$1/V$. Vector normalisation is the vectoriser's default and all four disclosed
-settings depart from defaults; inferring, as a reading and not a finding, that
-only departures were reported, the closest reading of the antecedent is
-$\suslag$ below. We also compute $\sustfidf$, which differs from $\susdens$
-only in the idf weights:
-\[
-\suslag_d = \frac{1}{V}\sum_j \frac{c_{dj}\,\mathrm{idf}_j}
-{\lVert \mathbf{c}_d \odot \mathbf{idf} \rVert_2},
-\qquad
-\sustfidf_d = 100 \cdot \frac{\sum_j c_{dj}\,\mathrm{idf}_j}{L_d},
-\]
-where $\mathrm{idf}_j = \ln[(1+n)/(1+\mathit{df}_j)] + 1$ and $\mathit{df}_j$
-is the number of reports containing entry $j$.
+The question the scores answer is whether a report's ESG text sounds more
+positive than the amount of ESG content in it would lead one to expect,
+compared with the other reports of the corpus. Each component is chosen for
+that question.
 
-A term vector and any positive multiple of it have the same unit vector, so
-$\suslag$ keeps the mix of terms and discards their amount, a property suited
-to retrieval \citep{sparckjones1972,manning2008} but not to a score that sets
-tone against the amount of substance behind it. Panel~A of
-Table~\ref{tab:method-choices} shows this on the report at the median of
-$\susdens$: multiplying its ESG counts by up to 20 raises its density from 6.78
-to 33.79 and leaves $\suslag$ unchanged, and diluting it with 152,378 non-ESG
-tokens divides its density by 3.5 and leaves $\suslag$ identical. What remains
-after vector normalisation is dispersion over terms: the sum of a non-negative
-unit vector lies between 1 and $\sqrt{V}$ and grows as mentions spread over more
-entries. On our corpus $\suslag$ correlates 0.955 with $\BREADTH$ and 0.405
-with $\susdens$; under vector normalisation, the substance component measures
-topical breadth, not the amount of disclosure.
+Substance is an amount per unit of text. Counting ESG mentions per 100 words
+means that a long report does not score more substance merely for being long,
+so reports of very different length are comparable; and since the count uses
+no statistics of the other reports, a report's substance does not change when
+the sample does. As a check of convergent validity in the sense of
+\citet{campbell1959}, substance should move with quantification, which is
+counted with patterns on the raw text rather than with the vocabulary. Measures
+that keep the amount of disclosure agree with it to a similar degree (0.63 for
+density, 0.64 for a TF-IDF count divided by length), while a TF-IDF
+specification that scales each report's term vector to unit length, and so
+discards the amount, agrees much less (0.30); the ordering holds, with wider
+uncertainty, when the shared terms are removed from both measures.
+\S\ref{sec:robustness} reports the scores under these alternative
+specifications. Tone is read with the
+Loughran--McDonald dictionary because it was built from corporate filings and
+classifies words by the sense they carry in that register \citep{loughran2011}.
 
-\begin{table}[tbp]
-\centering
-\small
-\caption{Why density. Panel~A: a synthetic document written out from the ESG
-counts of the report at the median of $\susdens$, with every count multiplied
-by $k$, and the real report with 152,378 non-ESG tokens appended; all 343
-reports re-vectorised in every run; $\suslag$ relative to the first row of each
-block (maximum absolute deviation $3.5\times10^{-18}$). Panel~B: Pearson
-correlation with $\QUANT$ ($n = 343$, 49 firms); disjoint bases remove from the
-vocabulary the 17 entries also matched by a $\QUANT$ pattern (399 to 382
-entries) and restrict $\QUANT$ to percentages and large numbers; 95\,\%
-percentile intervals from 9,999 bootstrap samples of firms, each with its
-seven reports.}
-\label{tab:method-choices}
-\begin{tabular}{@{}lrrrr@{}}
-\toprule
-\multicolumn{5}{@{}l}{\emph{A. Amount of ESG content and the substance specifications}} \\
- & Tokens & ESG mentions & $\susdens$ & $\suslag$ (rel.) \\
-\midrule
-Amplified, $k = 1$  &  60,951 &  4,131 &  6.78 & 1.000000 \\
-Amplified, $k = 2$  &  70,612 &  8,262 & 11.70 & 1.000000 \\
-Amplified, $k = 5$  &  99,595 & 20,655 & 20.74 & 1.000000 \\
-Amplified, $k = 20$ & 244,510 & 82,620 & 33.79 & 1.000000 \\
-\addlinespace
-Real report         &  60,951 &  3,984 &  6.54 & 1.000000 \\
-Diluted             & 213,329 &  3,984 &  1.87 & 1.000000 \\
-\midrule
-\multicolumn{5}{@{}l}{\emph{B. Convergent validity: correlation with $\QUANT$}} \\
- & \multicolumn{2}{c}{Full bases} & \multicolumn{2}{c}{Disjoint bases} \\
-\cmidrule(lr){2-3}\cmidrule(l){4-5}
- & $r$ & 95\,\% interval & $r$ & 95\,\% interval \\
-\midrule
-$\susdens$           & 0.6305 & $[0.523,\ 0.732]$ & 0.3992 & $[0.227,\ 0.539]$ \\
-$\sustfidf$          & 0.6392 & $[0.550,\ 0.736]$ & 0.4007 & $[0.256,\ 0.535]$ \\
-$\suslag$            & 0.2984 & $[0.041,\ 0.551]$ & 0.1850 & $[-0.072,\ 0.483]$ \\
-$\susdens - \suslag$ & 0.3321 & $[0.075,\ 0.589]$ & 0.2142 & $[-0.143,\ 0.519]$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-An empirical check needs a yardstick built by other means. $\QUANT$ counts
-pattern matches on the raw text, with no vocabulary, vectoriser or document
-frequencies. A report that discloses substance should also quantify it, so a
-valid substance measure should converge with $\QUANT$, a test of convergent
-validity in the sense of \citet{campbell1959}. On the full bases (Table~\ref{tab:method-choices},
-panel~B) density correlates 0.63 with $\QUANT$ and $\suslag$ 0.30, and the
-firm-bootstrap interval of the difference excludes zero. The two instruments
-share 17 entries (framework acronyms, the taxonomy family, CO$_2$, GHG, ISO
-standards) and read the same zones, so we repeat the test on disjoint bases.
-Every correlation falls, by 37--38\,\%, and the ratio between the two
-specifications does not (2.16 against 2.11), but the interval of the
-difference now includes zero: convergent validity corroborates a density
-specification without carrying the choice on its own, which rests on the
-invariance above. The two density specifications are not separated by this
-test (difference 0.009, interval $[-0.018, 0.044]$ on the full bases); we
-adopt $\susdens$ because it estimates nothing on the sample.
-
-The antecedent prints its index as a difference of $z$-scores but states that
-the components are min--max rescaled, and its published statistics are
-min--max: its mean index, $-0.2179$, is the difference of its component means,
-$0.3727 - 0.5906$ \citep[p.~6]{lagasio2024}, whereas a difference of
-$z$-scores has mean zero. Both score normalisations are increasing affine maps
-and preserve ranks within a component; once two components are differenced,
-they differ in how they equalise spreads and where they put zero. On our corpus
-ranks barely move (Spearman correlation 0.997 between the $z$-score and
-min--max versions of $\ESGSI$), but location does: under min--max the mean of
-the score depends on where each component's mass sits within its observed
-range ($+0.004$ with $\susdens$, $-0.203$ with $\suslag$, on the same
-reports), and a single extreme report can shift it. A $z$-score puts each
-component's zero at its corpus mean and measures it in its own standard
-deviations, so a score's sign and size describe a position in the corpus and
-nothing else. The antecedent also assigns every report to one of two classes by
-the sign of its index. We apply no threshold of any kind. Zero is the corpus
-mean of the combination, so a cut-off on a difference of standardised
-components describes the relative location of two distributions, not the
-conduct of a firm, and no external benchmark exists against which a boundary
-could be calibrated for these reports (\S\ref{sec:limitations}).
+Tone and substance come in different units, a bounded ratio and mentions per
+100 words, so each is standardised before they are combined: a $z$-score
+expresses a report's value in standard deviations from the corpus mean, and
+the difference in \eqref{eq:esgsi} is then a difference of relative positions
+on a common scale. The scale has no natural zero. Zero is the corpus mean of
+the combination, and no external benchmark exists against which a boundary
+could be calibrated for these reports (\S\ref{sec:limitations}). We therefore
+read each score as a relative position and apply no threshold: we compare
+positions within the corpus through differences of means, trends, rank
+correlations and the overlap of the top and bottom deciles. The Extended ESGSI
+adds the two features of disclosure that the tone--substance contrast leaves
+out, whether substance is quantified and whether claims are qualified.
 
 \subsection{Inference on the panel}
 \label{sec:method-inference}
 
-Write $d = (i, t)$ for the report of firm $i = 1, \dots, M$ in year $t$, with
-$M = 49$ in the balanced panel of \S\ref{sec:data}. Trends are estimated with
-firm fixed effects, regressing the firm-demeaned outcome on the firm-demeaned
-year; in the balanced panel the slope equals the mean of the firm-level
-least-squares slopes. Standard errors are clustered by firm with the usual
-small-sample correction, and $t$ statistics are referred to a $t$ distribution
-with $M - 1$ degrees of freedom, $M$ being the number of firms in the sample
-or subsample. Clustering allows any correlation among a firm's seven reports
-but not a shock common to all firms in one year, which with seven years cannot
-be clustered on; the slope summarises the yearly means. Because 49 clusters
-are few, the fixed-effects slope is also tested with a restricted wild cluster
-bootstrap \citep{cameron2008}: under a zero slope the residuals are the
-demeaned outcomes, each of $B = 9{,}999$ replications multiplies all residuals
-of a firm by one Rademacher weight ($\pm 1$ with equal probability), and the
-$p$-value is the share of replications whose cluster-robust $t$ is at least as
-large in absolute value as the observed one. Slopes by industry or country
-interact the demeaned year with group indicators. Each equals the
-mean firm slope of its group, but for a group of $M_k$ firms its clustered
-variance rests on $M_k - 1$ free contributions and is too narrow for small
-groups, so we read group slopes through the $t$ interval on the $M_k$ firm
-slopes ($M_k - 1$ degrees of freedom). Equality across groups is tested with a
-Wald test on the clustered variance, anti-conservative when a group has a
-single firm. Yearly means carry 95\,\% intervals from a regression on year
-indicators, clustered by firm.
+A firm's seven reports resemble each other from year to year, so treating them
+as 343 independent observations would overstate precision. We therefore
+estimate trends within firms and measure their uncertainty at the level of the
+firm. Write $d = (i, t)$ for the report of firm $i = 1, \dots, M$ in year $t$,
+with $M = 49$. The trend is the slope of a score on calendar year with firm
+fixed effects, which compares each firm only with itself; in the balanced
+panel it equals the average of the firms' own slopes. Standard errors are
+clustered by firm, with the usual small-sample correction and a $t$
+distribution with $M - 1$ degrees of freedom: they allow any correlation among
+a firm's reports, but not a shock common to all firms in one year, which seven
+years are too few to account for, so the slope summarises the yearly means.
+Because 49 firms are a modest number of clusters, we also compute $p$-values
+by a wild cluster bootstrap \citep{cameron2008}, which rebuilds the data under
+a zero trend by flipping the sign of all of a firm's residuals together ($+1$
+or $-1$ with equal probability, $B = 9{,}999$ replications); the $p$-value is
+the share of replications whose clustered $t$ statistic is at least as large
+in absolute value as the observed one.
+
+For an industry or country, the slope is the average of its firms' slopes.
+With few firms, the clustered standard error of a group slope is too narrow,
+so we read it through the $t$ interval on the group's $M_k$ firm-level slopes
+($M_k - 1$ degrees of freedom). Equality of slopes across groups is tested
+with a Wald test on the clustered variance, which overstates significance when
+a group has a single firm. Yearly means carry 95\,\% intervals from a
+regression on year indicators, clustered by firm.
