@@ -1,0 +1,10 @@
+columna;tipo;obligatoria;definicion;fuente_prevista
+firm_id;texto;si;identificador anonimo '<Industria>-NN' (cruce interno con firm_ids_internal.csv);results/analysis_v3
+year;entero;si;ejercicio t del informe (2018-2024), no el ano de publicacion;corpus
+disp_prev;real;H1;dispersion del consenso de BPA del ejercicio t+1 medida en el primer mes de consenso tras la publicacion del informe de t: log(desv. tipica de las previsiones / |media|) o desv. tipica / precio; empresa-ano con al menos 3 previsiones;I/B/E/S Summary (WRDS) o LSEG/Refinitiv I/B/E/S o FactSet Estimates
+log_n_analistas;real;control;log(numero de previsiones del consenso) en la misma fecha;I/B/E/S NUMEST
+controv_t1;0/1;H2;al menos una controversia ESG de severidad media o alta en el ano natural t+1 (umbral fijado ex ante sobre la fuente, no sobre el score);RepRisk (incidentes; severidad/alcance/novedad) o LSEG ESG Controversies o MSCI ESG Controversies
+controv_t2;0/1;H2;igual en el ano natural t+2;idem
+n_controv_t1;entero;H2 (recuento);numero de incidentes en t+1;RepRisk incidentes
+log_mcap;real;control;log de la capitalizacion a cierre del ejercicio t (EUR);Datastream/Compustat Global/LSEG
+rating_esg_lag;real;control;rating o score ESG del proveedor a cierre de t-1 (estandarizado);LSEG ESG score, MSCI, Sustainalytics o S&P Global CSA
