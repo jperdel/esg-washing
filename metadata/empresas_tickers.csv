@@ -1,0 +1,50 @@
+Empresa;ticker_yahoo;mercado;sector_financiero
+Siemens AG;SIE.DE;Xetra;0
+Deutsche Post AG (DHL);DHL.DE;Xetra;0
+BMW GROUP;BMW.DE;Xetra;0
+Infineon Technologies AG;IFX.DE;Xetra;0
+Volkswagen AG Vz;VOW3.DE;Xetra;0
+BASF;BAS.DE;Xetra;0
+Múnich Re AG;MUV2.DE;Xetra;1
+BAYER;BAYN.DE;Xetra;0
+Deutsche Telekom AG;DTE.DE;Xetra;0
+DEUTSCHE BÖRSE;DB1.DE;Xetra;1
+SAP SE;SAP.DE;Xetra;0
+Mercedes Benz Group AG (antiguo Daimler);MBG.DE;Xetra;0
+adidas;ADS.DE;Xetra;0
+ALLIANZ;ALV.DE;Xetra;1
+ANHEUSER-BUSCH INBEV;ABI.BR;Euronext Brussels;0
+BBVA;BBVA.MC;BME;1
+Inditex;ITX.MC;BME;0
+IBERDROLA S.A;IBE.MC;BME;0
+Banco Santander S.A;SAN.MC;BME;1
+NORDEA BANK;NDA-FI.HE;Nasdaq Helsinki;1
+NOKIA;NOKIA.HE;Nasdaq Helsinki;0
+Pernod-Ricard S.A;RI.PA;Euronext Paris;0
+TOTAL S.A;TTE.PA;Euronext Paris;0
+Airbus SE;AIR.PA;Euronext Paris;0
+SAFRAN;SAF.PA;Euronext Paris;0
+Hermes International S.A;RMS.PA;Euronext Paris;0
+BNP Paribas S.A;BNP.PA;Euronext Paris;1
+SANOFI-AVENTIS S.A;SAN.PA;Euronext Paris;0
+AIR LIQUIDE;AI.PA;Euronext Paris;0
+LVMH SA;MC.PA;Euronext Paris;0
+Kering S.A;KER.PA;Euronext Paris;0
+Danone;BN.PA;Euronext Paris;0
+EssilorLuxottica;EL.PA;Euronext Paris;0
+VINCI S.A;DG.PA;Euronext Paris;0
+SCHNEIDER ELECTRIC;SU.PA;Euronext Paris;0
+AXA S.A;CS.PA;Euronext Paris;1
+Compagnie de Saint-Gobain S.A;SGO.PA;Euronext Paris;0
+L'Oréal S.A;OR.PA;Euronext Paris;0
+Unicredit SpA o Unicredit Group;UCG.MI;Borsa Italiana;1
+ENI SpA;ENI.MI;Borsa Italiana;0
+ENEL;ENEL.MI;Borsa Italiana;0
+FERRARI NV;RACE.MI;Borsa Italiana;0
+Intesa Sanpaolo S.p.A;ISP.MI;Borsa Italiana;1
+Adyen;ADYEN.AS;Euronext Amsterdam;1
+Wolters Kluwer NV;WKL.AS;Euronext Amsterdam;0
+AHOLD DELHAIZE,KON.EO-,01;AD.AS;Euronext Amsterdam;0
+STELLANTIS NV;STLAM.MI;Borsa Italiana;0
+ASML Holding NV;ASML.AS;Euronext Amsterdam;0
+Grupo ING NV;INGA.AS;Euronext Amsterdam;1
