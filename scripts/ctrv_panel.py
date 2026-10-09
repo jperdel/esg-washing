@@ -23,6 +23,9 @@ categoria; una alegacion puede tener varias categorias):
     n_bhrrc        noticias/demandas con alegaciones (BHRRC)
     m_bhrrc        meses distintos con >=1 alegacion BHRRC (robusto a
                    coberturas repetidas del mismo incidente)
+    n_bhrrcf       alegaciones BHRRC "focales": la empresa o una de sus marcas
+                   figura en el titulo (excluye informes sobre muchas empresas)
+    n_poolf        n_bhrrcf + n_oecd + n_ads
     n_oecd         quejas ante PNC de la OCDE (OECD Watch)
     n_ads          resoluciones publicitarias (JDP + RCC)
     n_pool         n_bhrrc + n_oecd + n_ads
@@ -112,6 +115,11 @@ def main() -> None:
     p = pd.concat([count(b, "bhrrc", idx), count(o, "oecd", idx), count(a, "ads", idx)], axis=1)
     b["ym"] = b["date"].dt.to_period("M")
     p["m_bhrrc"] = b.groupby(["firm_id", "year"])["ym"].nunique().reindex(idx).fillna(0).astype(int)
+    bf = b[b["focal"] == 1]
+    p["n_bhrrcf"] = bf.groupby(["firm_id", "year"]).size().reindex(idx).fillna(0).astype(int)
+    p["n_bhrrcf_E"] = bf[bf["category"].str.contains(r"\bE\b|GW")].groupby(
+        ["firm_id", "year"]).size().reindex(idx).fillna(0).astype(int)
+    p["n_poolf"] = p["n_bhrrcf"] + p["n_oecd"] + p["n_ads"]
     for suf in ["", "_sev2", "_E", "_S", "_G", "_GW"]:
         p[f"n_pool{suf}"] = p[f"n_bhrrc{suf}"] + p[f"n_oecd{suf}"] + p[f"n_ads{suf}"]
     g = gdelt(idx)
@@ -137,8 +145,8 @@ def main() -> None:
                                             / x.var()) if x.var() > 0 else np.nan})
     fr = pd.DataFrame(rows)
     fr.to_csv(RESULTS / "frecuencias_fuente.csv", sep=";", index=False)
-    key = ["n_bhrrc", "n_bhrrc_sev2", "n_bhrrc_E", "n_bhrrc_GW", "m_bhrrc", "n_oecd", "n_ads",
-           "n_ads_GW", "n_pool", "gd_neg", "gd_all"]
+    key = ["n_bhrrc", "n_bhrrc_sev2", "n_bhrrc_E", "n_bhrrc_GW", "m_bhrrc", "n_bhrrcf", "n_oecd",
+           "n_ads", "n_ads_GW", "n_pool", "n_poolf", "gd_neg", "gd_all"]
     key = [k for k in key if k in p.columns]
     for by, fn in [("industry", "frecuencias_sector.csv"), ("country", "frecuencias_pais.csv")]:
         t = win.groupby(by)[key].mean()

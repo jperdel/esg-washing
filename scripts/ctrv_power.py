@@ -38,7 +38,8 @@ from ctrv_common import RESULTS, firm_panel  # noqa: E402
 from fin_econ import dummies, poisson_cl  # noqa: E402
 from fin_power import ALPHA, SEED, mde  # noqa: E402
 
-DEFAULT_OUT = ["n_bhrrc", "m_bhrrc", "n_bhrrc_E", "n_bhrrc_sev2", "n_pool", "n_oecd", "n_ads", "gd_neg"]
+DEFAULT_OUT = ["n_bhrrc", "m_bhrrc", "n_bhrrcf", "n_bhrrc_E", "n_bhrrc_sev2", "n_pool", "n_oecd", "n_ads",
+               "gd_neg"]
 
 
 def calibrate(p: pd.DataFrame, col: str) -> dict:

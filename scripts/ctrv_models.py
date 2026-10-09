@@ -45,7 +45,8 @@ from ctrv_common import DATA, RESULTS, firm_panel  # noqa: E402
 from fin_econ import dummies, poisson_cl  # noqa: E402
 
 warnings.filterwarnings("ignore")
-DEFAULT_OUT = ["n_bhrrc", "m_bhrrc", "n_bhrrc_E", "n_bhrrc_sev2", "n_pool", "gd_neg", "gd_E", "gd_GW"]
+DEFAULT_OUT = ["n_bhrrc", "m_bhrrc", "n_bhrrcf", "n_bhrrc_E", "n_bhrrc_sev2", "n_pool", "n_poolf",
+               "gd_neg", "gd_E", "gd_GW"]
 REGS = {"ESGSI": ["ESGSI"], "ESGSI_ext": ["ESGSI_ext"], "componentes": ["Z_SEN", "Z_SUS"]}
 LEADS = [1, 2, -1]
 
@@ -88,7 +89,20 @@ def nb_cl(y, X, codes, ks):
     return out, float(m.params[-1])
 
 
+def drop_separated(d: pd.DataFrame, fes: list[str]) -> pd.DataFrame:
+    """Quita observaciones de celdas de efectos fijos sin ningun evento (separacion:
+    su coeficiente tenderia a -inf y no aportan informacion), como ppmlhdfe."""
+    while True:
+        bad = np.zeros(len(d), bool)
+        for fe in fes:
+            bad |= (d.groupby(fe)["y"].transform("sum") == 0).to_numpy()
+        if not bad.any():
+            return d.reset_index(drop=True)
+        d = d[~bad]
+
+
 def fit(d: pd.DataFrame, regs: list[str], spec: str):
+    d = drop_separated(d, ["year", "industry", "country"] if spec in ("A", "NB") else ["year", "firm_id"])
     y = d["y"].to_numpy(float)
     fc = pd.factorize(d["firm_id"])[0]
     xs = [zs(d[r]) for r in regs]
@@ -106,8 +120,8 @@ def fit(d: pd.DataFrame, regs: list[str], spec: str):
     X = X[:, keep]
     if spec == "NB":
         res, alpha = nb_cl(y, X, fc, list(range(len(xs))))
-        return res, alpha
-    return [poisson_cl(y, X, fc, j=k) for k in range(len(xs))], np.nan
+        return res, alpha, len(d)
+    return [poisson_cl(y, X, fc, j=k, max_iter=300) for k in range(len(xs))], np.nan, len(d)
 
 
 def main() -> None:
@@ -126,10 +140,10 @@ def main() -> None:
                     pos = d.groupby("firm_id")["y"].transform("sum") > 0
                     d = d[pos].reset_index(drop=True)
                 for rname, regs in REGS.items():
-                    res, alpha = fit(d, regs, spec)
+                    res, alpha, n_eff = fit(d, regs, spec)
                     for r, (b, se, p) in zip(regs, res):
                         rows.append({"resultado": oc, "h": h, "especificacion": spec, "regresor": rname,
-                                     "variable": r, "n_obs": len(d), "n_empresas": d["firm_id"].nunique(),
+                                     "variable": r, "n_obs": n_eff, "n_empresas": d["firm_id"].nunique(),
                                      "media_y": d["y"].mean(), "beta": b, "se": se, "p": p,
                                      "irr_por_dt": np.exp(b) if np.isfinite(b) else np.nan,
                                      "irr_ic95_inf": np.exp(b - 1.96 * se) if np.isfinite(se) else np.nan,

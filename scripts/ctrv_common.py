@@ -18,7 +18,8 @@ Esquema comun de eventos (interno, un fichero por fuente):
     firm_id;date;year;source;category;severity;title;url
 category en {E, S, G, GW} (GW = alegacion de greenwashing / comunicacion
 enganosa, que tambien cuenta como E). severity es especifica de cada fuente
-(documentada en el README).
+(documentada en el README). Columna opcional focal = 1 si la empresa aparece
+en el titulo (evento dirigido a ella y no mencion en una lista).
 """
 
 from __future__ import annotations
@@ -107,7 +108,7 @@ def html_text(html: str) -> str:
 
 
 def save_events(df: pd.DataFrame, source: str) -> Path:
-    df = df.reindex(columns=EVENT_COLS)
+    df = df.reindex(columns=EVENT_COLS + [c for c in ("focal",) if c in df.columns])
     out = DATA / f"events_{source}_internal.csv"
     df.to_csv(out, sep=";", index=False)
     return out

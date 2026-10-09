@@ -21,8 +21,11 @@ company response...) y la marca `contains_allegations`.
 Eventos (internos): items de tipo noticia/demanda que contienen alegaciones o
 cuyo titulo/resumen describe un incidente (regex), excluidas respuestas de la
 empresa, benchmarks y encuestas. Categoria E/S/G/GW por palabras clave del
-titulo y el resumen. Severidad: 1 = alegacion en prensa; 2 = demanda judicial
-(content type Lawsuit) o sancion/condena/multa en el titulo.
+titulo y el resumen. Severidad: 1 = alegacion en prensa; 2 = accion legal o
+regulatoria (content type Lawsuit, o demanda/denuncia/multa/condena/sancion/
+tribunal en el titulo). focal = 1 si el nombre de la empresa o de una de sus
+marcas figura en el titulo (el item va dirigido a ella; si no, suele ser un
+informe o noticia sobre muchas empresas).
 """
 
 from __future__ import annotations
@@ -57,8 +60,9 @@ INCIDENT = re.compile(r"alleg|accus|lawsuit|sue[sd]?\b|court|fine[sd]?\b|penalt|
                       r"investigat|probe|protest|report (finds|reveals|alleges)|exposes|"
                       r"criticis|condemn|violat|abuse|scandal|raid|charged|convicted|ruling|"
                       r"misleading|greenwash|linked to|risk of", re.I)
-SEVERE = re.compile(r"\bfined?\b|penalt|convicted|court rules|ruled|guilty|settle|"
-                    r"sanction|ordered to pay|damages", re.I)
+SEVERE = re.compile(r"\bfine[sd]?\b|penalt|convicted|court|ruled|ruling|guilty|settle|"
+                    r"sanction|ordered to pay|damages|lawsuit|\bsues?\b|\bsued\b|charged|"
+                    r"indict|prosecut|legal action|complaint filed|files? (a )?complaint", re.I)
 SKIP_TYPES = {"Company response", "Company non-response", "Briefing", "Benchmark", "Survey",
               "Event", "Report", "Guidance", "Blog", "Opinion", "Resource"}
 
@@ -111,6 +115,7 @@ def main() -> None:
     args = ap.parse_args()
     f = Fetcher(DATA / "bhrrc_raw", pause=args.pause)
     terms = load_terms()
+    terms["brands"] = terms["brands"].fillna("")
     allrows, ids = [], []
     for r in terms.itertuples():
         # ids revisados a mano (columna bhrrc_ids del fichero interno) a partir de
@@ -151,6 +156,9 @@ def main() -> None:
     ev["category"] = [classify(t) for t in (ev["title"] + " " + ev["abstract"])]
     ev["severity"] = [2 if (ty == "Lawsuit" or SEVERE.search(t)) else 1
                       for ty, t in zip(ev["type"], ev["title"])]
+    rx = {r.firm_id: re.compile(r.regex + (f"|{r.brands}" if r.brands else ""), re.I)
+          for r in terms.itertuples()}
+    ev["focal"] = [int(bool(rx[f].search(t))) for f, t in zip(ev["firm_id"], ev["title"])]
     ev["date"] = ev["date"].dt.date
     p = save_events(ev, "bhrrc")
     print(f"{len(a)} items, {len(ev)} eventos -> {p}")
