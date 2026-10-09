@@ -1,0 +1,324 @@
+{
+ "generado": "2026-10-09 15:00:10",
+ "semilla": 20261009,
+ "reps": 1000,
+ "alfa": 0.05,
+ "potencia_objetivo": 0.8,
+ "segundos": 383.4,
+ "varianza_regresor": {
+  "ESGSI": {
+   "cuota_varianza_intra_empresa_tras_EF_ano": 0.2612246235721873,
+   "cuota_entre_empresas": 0.6665468378548054
+  },
+  "ESGSI_ext": {
+   "cuota_varianza_intra_empresa_tras_EF_ano": 0.2211654370477347,
+   "cuota_entre_empresas": 0.6845868405235933
+  }
+ },
+ "h1": [
+  {
+   "regresor": "ESGSI",
+   "rho_empresa": 0.3,
+   "mde_A_pooled_sd": 0.28885135135135137,
+   "mde_B_ef_empresa_sd": 0.27633928571428573
+  },
+  {
+   "regresor": "ESGSI",
+   "rho_empresa": 0.6,
+   "mde_A_pooled_sd": 0.3147260273972603,
+   "mde_B_ef_empresa_sd": 0.21352459016393444
+  },
+  {
+   "regresor": "ESGSI_ext",
+   "rho_empresa": 0.3,
+   "mde_A_pooled_sd": 0.3071969696969697,
+   "mde_B_ef_empresa_sd": 0.29735576923076923
+  },
+  {
+   "regresor": "ESGSI_ext",
+   "rho_empresa": 0.6,
+   "mde_A_pooled_sd": 0.3447761194029851,
+   "mde_B_ef_empresa_sd": 0.2325
+  }
+ ],
+ "h2": [
+  {
+   "regresor": "ESGSI",
+   "n_obs": 245,
+   "tasa_base": 0.05,
+   "sigma_u": 0.0,
+   "mde_A_logit_OR": 2.043888014230582,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI",
+   "n_obs": 245,
+   "tasa_base": 0.05,
+   "sigma_u": 1.0,
+   "mde_A_logit_OR": 2.3789558939908013,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI",
+   "n_obs": 245,
+   "tasa_base": 0.1,
+   "sigma_u": 0.0,
+   "mde_A_logit_OR": 1.7996799365571285,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI",
+   "n_obs": 245,
+   "tasa_base": 0.1,
+   "sigma_u": 1.0,
+   "mde_A_logit_OR": 2.0992752516060484,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI",
+   "n_obs": 245,
+   "tasa_base": 0.2,
+   "sigma_u": 0.0,
+   "mde_A_logit_OR": 1.5952843929319158,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI",
+   "n_obs": 245,
+   "tasa_base": 0.2,
+   "sigma_u": 1.0,
+   "mde_A_logit_OR": 1.9258301910669895,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI",
+   "n_obs": 245,
+   "tasa_base": 0.4,
+   "sigma_u": 0.0,
+   "mde_A_logit_OR": 1.4894107423469802,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI",
+   "n_obs": 245,
+   "tasa_base": 0.4,
+   "sigma_u": 1.0,
+   "mde_A_logit_OR": 1.793942271406326,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI",
+   "n_obs": 294,
+   "tasa_base": 0.05,
+   "sigma_u": 0.0,
+   "mde_A_logit_OR": 1.953047301449641,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI",
+   "n_obs": 294,
+   "tasa_base": 0.05,
+   "sigma_u": 1.0,
+   "mde_A_logit_OR": 2.2604151002194937,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI",
+   "n_obs": 294,
+   "tasa_base": 0.1,
+   "sigma_u": 0.0,
+   "mde_A_logit_OR": 1.7286002179958508,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI",
+   "n_obs": 294,
+   "tasa_base": 0.1,
+   "sigma_u": 1.0,
+   "mde_A_logit_OR": 2.008450031276522,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI",
+   "n_obs": 294,
+   "tasa_base": 0.2,
+   "sigma_u": 0.0,
+   "mde_A_logit_OR": 1.5331890954853635,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI",
+   "n_obs": 294,
+   "tasa_base": 0.2,
+   "sigma_u": 1.0,
+   "mde_A_logit_OR": 1.8416826025203297,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI",
+   "n_obs": 294,
+   "tasa_base": 0.4,
+   "sigma_u": 0.0,
+   "mde_A_logit_OR": 1.4453237332647921,
+   "mde_B_lpm_ef_OR": 2.5632342532392007
+  },
+  {
+   "regresor": "ESGSI",
+   "n_obs": 294,
+   "tasa_base": 0.4,
+   "sigma_u": 1.0,
+   "mde_A_logit_OR": 1.7506725002961012,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI_ext",
+   "n_obs": 245,
+   "tasa_base": 0.05,
+   "sigma_u": 0.0,
+   "mde_A_logit_OR": 2.260642214466985,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI_ext",
+   "n_obs": 245,
+   "tasa_base": 0.05,
+   "sigma_u": 1.0,
+   "mde_A_logit_OR": 2.4547166233698223,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI_ext",
+   "n_obs": 245,
+   "tasa_base": 0.1,
+   "sigma_u": 0.0,
+   "mde_A_logit_OR": 1.8946452090404298,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI_ext",
+   "n_obs": 245,
+   "tasa_base": 0.1,
+   "sigma_u": 1.0,
+   "mde_A_logit_OR": 2.2616468749739562,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI_ext",
+   "n_obs": 245,
+   "tasa_base": 0.2,
+   "sigma_u": 0.0,
+   "mde_A_logit_OR": 1.640055646643531,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI_ext",
+   "n_obs": 245,
+   "tasa_base": 0.2,
+   "sigma_u": 1.0,
+   "mde_A_logit_OR": 2.010533279367817,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI_ext",
+   "n_obs": 245,
+   "tasa_base": 0.4,
+   "sigma_u": 0.0,
+   "mde_A_logit_OR": 1.4818681738934423,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI_ext",
+   "n_obs": 245,
+   "tasa_base": 0.4,
+   "sigma_u": 1.0,
+   "mde_A_logit_OR": 1.8395552115100295,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI_ext",
+   "n_obs": 294,
+   "tasa_base": 0.05,
+   "sigma_u": 0.0,
+   "mde_A_logit_OR": 2.0939413902587467,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI_ext",
+   "n_obs": 294,
+   "tasa_base": 0.05,
+   "sigma_u": 1.0,
+   "mde_A_logit_OR": 2.4390995784573093,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI_ext",
+   "n_obs": 294,
+   "tasa_base": 0.1,
+   "sigma_u": 0.0,
+   "mde_A_logit_OR": 1.8023856308952975,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI_ext",
+   "n_obs": 294,
+   "tasa_base": 0.1,
+   "sigma_u": 1.0,
+   "mde_A_logit_OR": 2.1519858543320947,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI_ext",
+   "n_obs": 294,
+   "tasa_base": 0.2,
+   "sigma_u": 0.0,
+   "mde_A_logit_OR": 1.564450269841995,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI_ext",
+   "n_obs": 294,
+   "tasa_base": 0.2,
+   "sigma_u": 1.0,
+   "mde_A_logit_OR": 1.9347923344020317,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI_ext",
+   "n_obs": 294,
+   "tasa_base": 0.4,
+   "sigma_u": 0.0,
+   "mde_A_logit_OR": 1.4516239958321973,
+   "mde_B_lpm_ef_OR": null
+  },
+  {
+   "regresor": "ESGSI_ext",
+   "n_obs": 294,
+   "tasa_base": 0.4,
+   "sigma_u": 1.0,
+   "mde_A_logit_OR": 1.7791511412808014,
+   "mde_B_lpm_ef_OR": null
+  }
+ ],
+ "h2_recuento": [
+  {
+   "media_recuento": 0.5,
+   "sigma_u": 0.0,
+   "mde_IRR": 1.268353113907006
+  },
+  {
+   "media_recuento": 0.5,
+   "sigma_u": 1.0,
+   "mde_IRR": 1.588290416209448
+  },
+  {
+   "media_recuento": 2.0,
+   "sigma_u": 0.0,
+   "mde_IRR": 1.1330483560346873
+  },
+  {
+   "media_recuento": 2.0,
+   "sigma_u": 1.0,
+   "mde_IRR": 1.522552723432379
+  }
+ ]
+}
