@@ -1,0 +1,50 @@
+firm_id,consulta,urls_consenso,capturas,capturas_pdf_xls,urls_2018,urls_2019,urls_2020,urls_2021,urls_2022,urls_2023,urls_2024,urls_2025,cubre_2018,cubre_2019,cubre_2020,cubre_2021,cubre_2022,cubre_2023,cubre_2024,informes_cubiertos
+Basic Materials-01,rutas_ir,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Basic Materials-02,rutas_ir_parcial,1,162,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,7
+Consumer Discretionary-01,rutas_ir,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Consumer Discretionary-02,rutas_ir,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Consumer Discretionary-03,rutas_ir,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Consumer Discretionary-04,dominio,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Consumer Discretionary-05,dominio,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Consumer Discretionary-06,rutas_ir,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Consumer Discretionary-07,dominio,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Consumer Discretionary-08,rutas_ir,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Consumer Discretionary-09,rutas_ir,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Consumer Discretionary-10,dominio,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Consumer Staples-01,dominio,20,155,35,0,3,4,5,5,6,8,2,0,1,1,1,1,1,1,6
+Consumer Staples-02,dominio,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Consumer Staples-03,dominio,32,168,24,3,3,3,5,5,6,10,5,1,1,1,1,1,1,1,7
+Consumer Staples-04,dominio,5,50,0,0,0,0,0,0,0,3,5,0,0,0,0,0,0,1,1
+Consumer Staples-05,dominio,117,699,539,0,3,4,12,28,23,32,15,1,1,1,1,1,1,1,7
+Energy-01,rutas_ir,5,60,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Energy-02,dominio,2,2,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1
+Financials-01,dominio,31,44,37,0,0,1,2,3,4,6,7,0,0,1,0,1,1,1,4
+Financials-02,dominio,100,310,53,3,12,13,9,5,3,8,6,1,1,1,1,1,1,1,7
+Financials-03,dominio,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Financials-04,rutas_ir,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Financials-05,dominio,13,21,5,0,0,0,0,2,2,3,3,0,0,0,0,1,1,0,2
+Financials-06,dominio,5,23,4,0,0,0,0,0,0,3,2,0,0,0,0,0,0,1,1
+Financials-07,rutas_ir,16,184,0,0,1,1,2,1,1,1,1,0,1,1,1,1,1,1,6
+Financials-08,rutas_ir,4,28,0,0,1,1,1,1,1,1,1,0,1,1,0,1,1,1,5
+Financials-09,dominio,29,144,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+Financials-10,dominio,14,15,0,0,0,0,0,0,0,2,7,0,0,0,0,0,0,1,1
+Financials-11,dominio,5,71,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Health Care-01,dominio,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Health Care-02,dominio,25,226,1,0,2,5,5,2,3,2,2,0,1,1,1,1,1,1,6
+Health Care-03,dominio,22,218,9,2,5,8,5,6,3,2,2,0,1,1,1,1,1,1,6
+Industrials-01,dominio,19,122,12,0,0,0,2,2,6,2,12,0,0,1,1,1,1,1,5
+Industrials-02,dominio,14,137,0,0,3,3,3,3,3,5,2,1,1,1,1,1,1,1,7
+Industrials-03,rutas_ir,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Industrials-04,rutas_ir,12,16,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Industrials-05,rutas_ir,2,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Industrials-06,rutas_ir,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Industrials-07,rutas_ir,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Industrials-08,dominio,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Industrials-09,dominio,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Technology-01,rutas_ir,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Technology-02,rutas_ir,4,26,0,0,0,0,0,0,3,1,1,0,0,0,0,1,1,0,2
+Technology-03,dominio,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Telecommunications-01,rutas_ir,5,1147,0,2,3,3,2,2,3,2,3,1,1,1,1,1,1,1,7
+Telecommunications-02,rutas_ir,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Utilities-01,dominio,1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+Utilities-02,rutas_ir,5,80,0,0,2,3,2,2,2,2,2,1,1,1,1,1,1,1,7

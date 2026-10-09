@@ -1,11 +1,11 @@
 """Issue #2 groundwork: pilot on company-compiled analyst consensus archived in the Wayback Machine.
 
 For a few pilot firms (anonymous firm_id), reads the raw CDX listings saved by gw_wayback_cdx.py,
-tags each consensus document with the (quarter, year) in its URL, and for each report year t picks
-the best document for the t+1 EPS forecast after publication of report t:
-    strict window : consensus before Q1 or Q2 results of t+1 (collected ~Apr-Jul of t+1)
-    lenient window: also the Q4-t consensus (collected ~Jan-Feb of t+1, before publication)
-HTML consensus pages without a quarter tag are used when captured in Feb-Jun of t+1.
+dates each consensus PDF/XLS (quarter tag or date in its file name, else the archive capture date;
+see doc_date) and for each report year t picks the best document for the t+1 EPS forecast after
+publication of report t:
+    strict window : collected Mar-Jul of t+1 (pre-Q1 / pre-Q2 consensus)
+    lenient window: collected Jan-Jul of t+1 (adds the pre-Q4 consensus, just before publication)
 The chosen document is downloaded from the archive (raw `id_` capture, one request every few
 seconds), stored outside the repo and parsed as data only (run this script with `python -I`).
 It records whether the document contains EPS with min/max (or high/low) and the number of
@@ -24,24 +24,66 @@ import urllib.request
 from pathlib import Path
 
 UA = {"User-Agent": "esg-research-groundwork/0.1 (academic; low rate)"}
-TAG1 = re.compile(r"(?:^|[^a-z0-9])(?:pre[-_]?)?q([1-4])[-_ ]?(?:fy[-_ ]?)?(20\d{2}|\d{2})(?!\d)")
-TAG2 = re.compile(r"(?<![0-9])(20\d{2}|\d{2})[-_ ]?q([1-4])(?![0-9])")
-YEAR_PAGE = re.compile(r"/(20\d{2})/?$")
+# quarter tags in file names: q1-24, q1-fy-2020, q423fy23 | 1q21, pre-1q22, 4q2025 | 22q1, 2022-q1 |
+# q1h1fy2024, q3andfy2024 | firstquarter2022, fullyear2022
+TAGS = [
+    (re.compile(r"(?:^|[^a-z0-9])(?:pre[-_ ]?)?q([1-4])[-_ ]?(?:fy[-_ ]?)?(20\d{2}|\d{2})(?!\d)"), "qy"),
+    (re.compile(r"(?:^|[^0-9])([1-4])q[-_ ]?(20\d{2}|\d{2})(?!\d)"), "qy"),
+    (re.compile(r"(?<![0-9])(20\d{2}|\d{2})[-_ ]?q([1-4])(?![0-9])"), "yq"),
+    (re.compile(r"q([1-4])[a-z0-9]{0,6}?fy[-_ ]?(20\d{2}|\d{2})(?!\d)"), "qy"),
+]
+WORDQ = re.compile(r"(first|second|third|fourth)quarter[-_ ]?(20\d{2})|(fullyear|full-year)[-_ ]?(20\d{2})")
+DATE_ISO = re.compile(r"(?<!\d)(20[12]\d)[-_.](\d{2})[-_.](\d{2})(?!\d)")
+DATE_DOT = re.compile(r"(?<!\d)(\d{1,2})\.(\d{1,2})\.(20[12]\d|[12]\d)(?!\d)")
+OFF_TOPIC = re.compile(r"management-unplugged|press|news|blog|career|job|scientific|consensus-statement|"
+                       r"gu%c3%adas|clinic", re.I)
+Q_MONTH = {1: 4, 2: 7, 3: 10}  # consensus before Qq results is collected ~1 month after quarter end
 
 
-def tag_of(url: str):
-    b = url.lower().split("?")[0]
-    base = b.rstrip("/").rsplit("/", 1)[-1]
-    m = TAG1.search(base)
-    if m:
-        q, y = int(m.group(1)), int(m.group(2))
-    else:
-        m = TAG2.search(base)
-        if not m:
-            return None
-        y, q = int(m.group(1)), int(m.group(2))
+def _ym(y: int, q: int, post: bool) -> tuple[int, int]:
     y = y + 2000 if y < 100 else y
-    return (y, q) if 2015 <= y <= 2027 else None
+    y2, m = (y + 1, 1) if q == 4 else (y, Q_MONTH[q])
+    return (y2, m + 2) if post else (y2, m)
+
+
+def doc_date(url: str, ts: str | None = None):
+    """Approximate collection date (year, month, origin) of a consensus document.
+    origin: 'trimestre' (quarter tag in the name), 'fecha' (date in the name), 'captura' (archive date)."""
+    from urllib.parse import unquote
+    base = unquote(url.lower().split("?")[0]).rstrip("/").rsplit("/", 1)[-1]
+    post = "post" in base
+    for rx, order in TAGS:
+        m = rx.search(base)
+        if m:
+            a, b = int(m.group(1)), int(m.group(2))
+            q, y = (a, b) if order == "qy" else (b, a)
+            y2, mo = _ym(y, q, post)
+            return (y2, mo, "trimestre") if 2016 <= y2 <= 2027 else None
+    m = WORDQ.search(base)
+    if m:
+        if m.group(1):
+            q = ["first", "second", "third", "fourth"].index(m.group(1)) + 1
+            return (*_ym(int(m.group(2)), q, post), "trimestre")
+        return (*_ym(int(m.group(4)), 4, post), "trimestre")
+    m = DATE_ISO.search(base)
+    if m:
+        return int(m.group(1)), int(m.group(2)), "fecha"
+    m = DATE_DOT.search(base)
+    if m:
+        a, b, y = int(m.group(1)), int(m.group(2)), int(m.group(3))
+        mo = b if a > 12 else a  # DD.MM if the first field cannot be a month, else US-style MM.DD
+        y = y + 2000 if y < 100 else y
+        if 1 <= mo <= 12:
+            return y, mo, "fecha"
+    if ts:
+        return int(ts[:4]), int(ts[4:6]), "captura"
+    return None
+
+
+def in_window(d, t: int, strict: bool) -> bool:
+    """report t: forecasts of FY t+1 collected after publication (strict: Mar-Jul of t+1;
+    lenient: Jan-Jul of t+1, i.e. also the pre-Q4 consensus collected just before publication)."""
+    return bool(d) and d[0] == t + 1 and (3 if strict else 1) <= d[1] <= 7
 
 
 def load_listing(raw: Path, fid: str):
@@ -92,9 +134,10 @@ def xlsx_eps(rows, fy: int):
         cells = [str(c).strip().lower() if c is not None else "" for c in r]
         if any("of estimate" in c for c in cells) and "high" in cells:
             hdr = cells
-        if hdr and cells and re.search(r"\beps\b|earnings per share", cells[0] or ""):
+        label = next((c for c in cells if c and not re.fullmatch(r"[-\d.,e+ ]+", c)), "")
+        if hdr and re.search(r"\beps\b|earnings per share", label):
             for i, c in enumerate(hdr):
-                if re.fullmatch(rf"fy ?({fy}|{fy % 100})", c):
+                if re.fullmatch(rf"fy\s*({fy}|{fy % 100})", c):
                     try:
                         j = i + 1  # block: value at i, then '# of estimate', 'High', 'Low', 'Average'
                         assert "of estimate" in hdr[j] and hdr[j + 1] == "high" and hdr[j + 2] == "low"
@@ -117,29 +160,22 @@ def main() -> None:
 
     res = []
     for fid in a.firms.split(","):
-        rows = load_listing(raw, fid)
-        docs = {}
-        pages = []
+        rows = [r for r in load_listing(raw, fid) if not OFF_TOPIC.search(r["url"])]
+        files = []
         for r in rows:
-            tg = tag_of(r["url"])
-            is_file = bool(re.search(r"\.(pdf|xlsx?)($|\?)", r["url"], re.I))
-            if tg and is_file:
-                prev = docs.get(tg)
-                # prefer spreadsheets (parseable) over PDFs for the same quarter
-                if prev is None or (".xls" in r["url"].lower() and ".xls" not in prev["url"].lower()):
-                    docs[tg] = r
-            elif not is_file and "text/html" in r["mime"]:
-                pages.append(r)
+            if re.search(r"\.(pdf|xlsx?)($|\?)", r["url"], re.I):
+                d = doc_date(r["url"], r["ts"])
+                if d:
+                    files.append((d, r))
         for t in range(2018, 2025):
             choice, kind = None, ""
-            for tg, k in (((t + 1, 1), "estricta"), ((t + 1, 2), "estricta"), ((t, 4), "laxa")):
-                if tg in docs:
-                    choice, kind = docs[tg], k
+            for strict in (True, False):
+                cand = [(d, r) for d, r in files if in_window(d, t, strict)]
+                if cand:
+                    # dated by name first, then by capture; nearest to April; spreadsheets first
+                    cand.sort(key=lambda x: (x[0][2] == "captura", abs(x[0][1] - 4), ".xls" not in x[1]["url"].lower()))
+                    (d, choice), kind = cand[0], ("estricta" if strict else "laxa") + "_" + cand[0][0][2]
                     break
-            if choice is None:
-                win = [p for p in pages if p["ts"][:4] == str(t + 1) and 2 <= int(p["ts"][4:6]) <= 6]
-                if win:
-                    choice, kind = sorted(win, key=lambda p: p["ts"])[0], "pagina_html"
             rec = {"firm_id": fid, "year": t, "fuente": kind or "ninguna", "captura": choice["ts"][:8] if choice else "",
                    "tiene_bpa": "", "tiene_rango": "", "tiene_n": "", "n_est": "", "alto": "", "bajo": "", "media": ""}
             if choice:
@@ -148,10 +184,10 @@ def main() -> None:
                 data = dest.read_bytes() if dest.exists() else fetch(choice["url"], choice["ts"], dest, a.pause)
                 if data:
                     txt, xrows = text_of(data, choice["mime"], choice["url"])
-                    low = txt.lower()
+                    low = re.sub(r"\s+", " ", txt.lower())
                     rec["tiene_bpa"] = int(bool(re.search(r"\beps\b|earnings per share|ergebnis je aktie|bpa\b", low)))
                     rec["tiene_rango"] = int(bool(re.search(r"\bmin\b|\bminimum\b|\blow\b", low) and re.search(r"\bmax\b|\bmaximum\b|\bhigh\b", low)))
-                    rec["tiene_n"] = int(bool(re.search(r"# ?(of )?estimates?|number of (estimates|analysts|contributors)|no\. of analysts|# ?contributors|n\.? ?of brokers", low)))
+                    rec["tiene_n"] = int(bool(re.search(r"# ?(of )?estimates?|number of (estimates|analysts|contributors)|no\. of analysts|# ?contributors|n\.? ?of brokers|contributors with|\d+ institutions|\d+ analysts|analysts having", low)))
                     if xrows:
                         v = xlsx_eps(xrows, t + 1)
                         if v:
