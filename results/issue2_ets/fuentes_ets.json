@@ -1,0 +1,58 @@
+[
+  {
+    "file": "raw/verified_emissions_2025_en.xlsx",
+    "url": "https://climate.ec.europa.eu/document/download/53018483-62b3-499e-9ab9-b4a831cc44f4_en?filename=verified_emissions_2025_en.xlsx",
+    "bytes": 8228376,
+    "sha256": "8f4e628d9d8d7decb0a9bae4cde067442dec9a25c12ec2a561f52687cfb6b99a",
+    "downloaded": "2026-10-09T15:14:10"
+  },
+  {
+    "file": "raw/compliance_2025_code_en.xlsx",
+    "url": "https://climate.ec.europa.eu/document/download/f7de3320-ca3d-43d1-afd4-bf0b5d3d355f_en?filename=compliance_2025_code_en.xlsx",
+    "bytes": 1415672,
+    "sha256": "2ab43fc5d8675d0c22c4f9688a6f8a246a11d30bc5ee058e7fb0bc79b2b1d2ed",
+    "downloaded": "2026-10-09T15:14:11"
+  },
+  {
+    "file": "raw/policy_ets_registry_operators_ets_en.xlsx",
+    "url": "https://climate.ec.europa.eu/document/download/ab2c1214-decb-40bc-bb0d-d37f080bdebd_en?filename=policy_ets_registry_operators_ets_en.xlsx",
+    "bytes": 1790735,
+    "sha256": "fb28c0603e742791562fdb3cd422870f57bf80be53e212210cc9759bb1fd23cd",
+    "downloaded": "2026-10-09T15:14:12"
+  },
+  {
+    "file": "raw/eutl_2024_202410.zip",
+    "url": "https://euets-info-public.s3.eu-central-1.amazonaws.com/eutl_2024_202410.zip",
+    "bytes": 58945566,
+    "sha256": "74c3de5205a730439d51c2edc20e477a6c8cadfaf6a17224c98c0c829ac883a3",
+    "downloaded": "2026-10-09T15:16:13"
+  },
+  {
+    "file": "raw/Description_EUTL_database.pdf",
+    "url": "https://euets-info-public.s3.eu-central-1.amazonaws.com/Description_EUTL_database.pdf",
+    "bytes": 308503,
+    "sha256": "b02eb5423382c80810d580f80e076f5ced72506a548ad0d1f1d093359129bc5c",
+    "downloaded": "2026-10-09T15:16:14"
+  },
+  {
+    "file": "gleif/parents_internal.csv + children_internal.csv",
+    "url": "https://api.gleif.org/api/v1/lei-records/{lei}/ultimate-children",
+    "golden_copy": "2026-10-09T00:00:00Z",
+    "downloaded": "2026-10-09T15:24:16",
+    "n_parents_found": 49,
+    "n_children": 5414
+  },
+  {
+    "file": "revenue/wikidata_revenue_internal.csv",
+    "url": "https://query.wikidata.org/sparql (P2139 por ISIN P946)",
+    "licence": "CC0",
+    "downloaded": "2026-10-09T15:31:03",
+    "bytes": 59786
+  },
+  {
+    "file": "revenue/ecb_usd_eur_annual.csv",
+    "url": "https://data-api.ecb.europa.eu/service/data/EXR/A.USD.EUR.SP00.A?format=csvdata",
+    "downloaded": "2026-10-09T15:31:03",
+    "bytes": 5799
+  }
+]

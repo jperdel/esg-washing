@@ -1,0 +1,19 @@
+{
+  "n_firmas_cubiertas": 23,
+  "n_firmas_material": 19,
+  "umbral_material_kt": 25.0,
+  "N_dlog1_material": 133,
+  "N_dlog2_material": 114,
+  "firm_years_con_ingresos_material": 101,
+  "share_var_intra_empresa_ano": {
+    "ESGSI": 0.284335316598132,
+    "ESGSI_ext": 0.3076031619023147
+  },
+  "min_p_cluster_ESGSI_y_ext": 0.1098593007393115,
+  "min_p_wild_ESGSI_y_ext": 0.3323332333233323,
+  "mde80_dlog1_rango": [
+    0.057889866177542035,
+    0.1342170293344809
+  ],
+  "n_boot": 9999
+}

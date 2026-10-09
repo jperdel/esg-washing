@@ -1,0 +1,24 @@
+firm_id;industry;country;mean_kt_2018_2024;dlog1_media;dlog1_dt;n_dlog1;n_ingresos;ESGSI_media;material
+Basic Materials-01;Basic Materials;Germany;10054.0157;-0.0446;0.0867;7;6;1.1389;True
+Basic Materials-02;Basic Materials;France;3577.2446;-0.0086;0.1131;7;7;-1.5179;True
+Consumer Discretionary-03;Consumer Discretionary;Germany;328.9441;0.0393;0.0989;7;6;0.8149;True
+Consumer Discretionary-04;Consumer Discretionary;Germany;2760.6387;-0.1101;0.0982;7;7;0.5028;True
+Consumer Discretionary-06;Consumer Discretionary;Germany;345.8187;-0.0682;0.0662;7;7;0.0458;True
+Consumer Discretionary-09;Consumer Discretionary;Netherlands;457.9951;-0.136;0.1451;7;3;-0.8839;True
+Consumer Discretionary-10;Consumer Discretionary;Italy;69.9239;-0.1338;0.2268;7;0;-1.9292;True
+Consumer Staples-01;Consumer Staples;Belgium;68.9473;-0.0443;0.0638;7;4;-0.2034;True
+Consumer Staples-03;Consumer Staples;France;63.3844;-0.1126;0.2259;7;3;-0.3914;True
+Consumer Staples-04;Consumer Staples;France;41.0464;-0.0816;0.2151;7;7;-0.7919;True
+Energy-01;Energy;France;16352.302;-0.035;0.1018;7;7;-1.2371;True
+Energy-02;Energy;Italy;17445.3894;-0.0438;0.0415;7;5;-2.6009;True
+Financials-08;Financials;Spain;1.302;0.7541;1.8355;6;0;-0.5909;False
+Financials-10;Financials;France;0.333;0.0931;0.2298;7;7;-0.8375;False
+Health Care-02;Health Care;Germany;300.0416;-0.0406;0.0451;7;6;0.5246;True
+Health Care-03;Health Care;France;57.849;-0.1034;0.1605;7;7;-1.7924;True
+Industrials-02;Industrials;France;3.714;-0.7758;0.6739;7;6;0.6646;False
+Industrials-04;Industrials;Germany;8.463;-0.0257;0.1524;7;6;0.4613;False
+Industrials-07;Industrials;France;93.1717;-0.0013;0.1396;7;7;-0.1666;True
+Industrials-08;Industrials;France;31.297;-0.1641;0.2159;7;6;-0.334;True
+Industrials-09;Industrials;France;2409.9107;-0.0497;0.0849;7;6;-0.3631;True
+Utilities-01;Utilities;Spain;3960.047;-0.0523;0.16;7;2;-0.3486;True
+Utilities-02;Utilities;Italy;29610.7177;-0.1931;0.3195;7;5;-1.9936;True

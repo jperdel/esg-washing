@@ -1,0 +1,50 @@
+firm_id;country;industry;supersector;n_inst_aviacion;n_inst_fija;via_lei_aviacion;via_lei_fija;via_nombre_aviacion;via_nombre_fija;em_fixed_2018_kt;em_fixed_2024_kt;cubierta
+Basic Materials-01;Germany;Basic Materials;Chemicals;1.0;74.0;0.0;8.0;1.0;66.0;11366.7;8612.9;True
+Basic Materials-02;France;Basic Materials;Chemicals;0.0;25.0;0.0;9.0;0.0;16.0;3189.6;3720.5;True
+Consumer Discretionary-01;Germany;Consumer Discretionary;Consumer Products and Services;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Consumer Discretionary-02;France;Consumer Discretionary;Consumer Products and Services;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Consumer Discretionary-03;Germany;Consumer Discretionary;Automobiles and Parts;1.0;13.0;0.0;0.0;1.0;13.0;255.4;341.6;True
+Consumer Discretionary-04;Germany;Consumer Discretionary;Automobiles and Parts;1.0;27.0;0.0;5.0;1.0;22.0;3365.8;1697.4;True
+Consumer Discretionary-05;France;Consumer Discretionary;Consumer Products and Services;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Consumer Discretionary-06;Germany;Consumer Discretionary;Automobiles and Parts;0.0;7.0;0.0;1.0;0.0;6.0;407.1;269.4;True
+Consumer Discretionary-07;Spain;Consumer Discretionary;Retail;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Consumer Discretionary-08;France;Consumer Discretionary;Consumer Products and Services;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Consumer Discretionary-09;Netherlands;Consumer Discretionary;Automobiles and Parts;0.0;20.0;0.0;0.0;0.0;20.0;622.8;244.2;True
+Consumer Discretionary-10;Italy;Consumer Discretionary;Automobiles and Parts;0.0;1.0;0.0;0.0;0.0;1.0;74.5;52.8;True
+Consumer Staples-01;Belgium;Consumer Staples;Food, Beverage and Tobacco;0.0;4.0;0.0;2.0;0.0;2.0;76.4;57.2;True
+Consumer Staples-02;France;Consumer Staples;Personal Care, Drug and Grocery Stores;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Consumer Staples-03;France;Consumer Staples;Food, Beverage and Tobacco;0.0;7.0;0.0;0.0;0.0;7.0;88.3;37.3;True
+Consumer Staples-04;France;Consumer Staples;Food, Beverage and Tobacco;0.0;1.0;0.0;0.0;0.0;1.0;41.5;33.5;True
+Consumer Staples-05;Netherlands;Consumer Staples;Personal Care, Drug and Grocery Stores;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Energy-01;France;Energy;Energy;0.0;37.0;0.0;10.0;0.0;27.0;17036.9;13747.1;True
+Energy-02;Italy;Energy;Energy;0.0;45.0;0.0;4.0;0.0;41.0;20024.3;15293.3;True
+Financials-01;Germany;Financials;Financial Services;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Financials-02;Italy;Financials;Banks;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Financials-03;Italy;Financials;Banks;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Financials-04;Germany;Financials;Insurance;1.0;0.0;0.0;0.0;1.0;0.0;;;False
+Financials-05;Netherlands;Financials;Banks;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Financials-06;Spain;Financials;Banks;0.0;1.0;0.0;0.0;0.0;1.0;;;False
+Financials-07;Finland;Financials;Banks;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Financials-08;Spain;Financials;Banks;0.0;4.0;0.0;0.0;0.0;4.0;;1.5;True
+Financials-09;Germany;Financials;Insurance;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Financials-10;France;Financials;Banks;0.0;2.0;0.0;0.0;0.0;2.0;0.3;0.4;True
+Financials-11;France;Financials;Insurance;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Health Care-01;France;Health Care;Healthcare;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Health Care-02;Germany;Health Care;Healthcare;0.0;4.0;0.0;1.0;0.0;3.0;341.2;272.1;True
+Health Care-03;France;Health Care;Healthcare;0.0;6.0;0.0;0.0;0.0;6.0;66.0;45.4;True
+Industrials-01;Germany;Industrials;Industrial Goods and Services;2.0;0.0;0.0;0.0;2.0;0.0;;;False
+Industrials-02;France;Industrials;Construction and Materials;0.0;7.0;0.0;0.0;0.0;7.0;14.2;0.2;True
+Industrials-03;France;Industrials;Industrial Goods and Services;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Industrials-04;Germany;Industrials;Industrial Goods and Services;0.0;1.0;0.0;0.0;0.0;1.0;8.7;7.0;True
+Industrials-05;Netherlands;Industrials;Industrial Goods and Services;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Industrials-06;Netherlands;Industrials;Industrial Goods and Services;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Industrials-07;France;Industrials;Industrial Goods and Services;2.0;11.0;0.0;0.0;2.0;11.0;86.2;80.4;True
+Industrials-08;France;Industrials;Industrial Goods and Services;0.0;3.0;0.0;0.0;0.0;3.0;44.6;19.5;True
+Industrials-09;France;Industrials;Construction and Materials;0.0;57.0;0.0;0.0;0.0;57.0;2645.5;2013.0;True
+Technology-01;Germany;Technology;Technology;0.0;2.0;0.0;0.0;0.0;2.0;;;False
+Technology-02;Germany;Technology;Technology;1.0;0.0;0.0;0.0;1.0;0.0;;;False
+Technology-03;Netherlands;Technology;Technology;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Telecommunications-01;Germany;Telecommunications;Telecommunications;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Telecommunications-02;Finland;Telecommunications;Telecommunications;0.0;0.0;0.0;0.0;0.0;0.0;;;False
+Utilities-01;Spain;Utilities;Utilities;0.0;14.0;0.0;5.0;0.0;9.0;4467.5;2681.3;True
+Utilities-02;Italy;Utilities;Utilities;0.0;70.0;0.0;68.0;0.0;2.0;53176.5;14034.7;True

@@ -1,0 +1,74 @@
+{
+  "n_firms": 49,
+  "n_cubiertas_fijas": 23,
+  "n_con_aviacion": 7,
+  "n_instalaciones_fijas": 443,
+  "instalaciones_por_via": {
+    "nombre_titular": 324,
+    "lei": 113,
+    "nombre_instalacion": 6
+  },
+  "instalaciones_multi_empresa": 0,
+  "por_industria": [
+    {
+      "industry": "Basic Materials",
+      "n_firms": 2,
+      "n_cubiertas": 2,
+      "inst_fijas": 99.0
+    },
+    {
+      "industry": "Consumer Discretionary",
+      "n_firms": 10,
+      "n_cubiertas": 5,
+      "inst_fijas": 68.0
+    },
+    {
+      "industry": "Consumer Staples",
+      "n_firms": 5,
+      "n_cubiertas": 3,
+      "inst_fijas": 12.0
+    },
+    {
+      "industry": "Energy",
+      "n_firms": 2,
+      "n_cubiertas": 2,
+      "inst_fijas": 82.0
+    },
+    {
+      "industry": "Financials",
+      "n_firms": 11,
+      "n_cubiertas": 2,
+      "inst_fijas": 7.0
+    },
+    {
+      "industry": "Health Care",
+      "n_firms": 3,
+      "n_cubiertas": 2,
+      "inst_fijas": 10.0
+    },
+    {
+      "industry": "Industrials",
+      "n_firms": 9,
+      "n_cubiertas": 5,
+      "inst_fijas": 79.0
+    },
+    {
+      "industry": "Technology",
+      "n_firms": 3,
+      "n_cubiertas": 0,
+      "inst_fijas": 2.0
+    },
+    {
+      "industry": "Telecommunications",
+      "n_firms": 2,
+      "n_cubiertas": 0,
+      "inst_fijas": 0.0
+    },
+    {
+      "industry": "Utilities",
+      "n_firms": 2,
+      "n_cubiertas": 2,
+      "inst_fijas": 84.0
+    }
+  ]
+}
