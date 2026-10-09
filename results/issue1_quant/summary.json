@@ -1,0 +1,545 @@
+{
+ "reproduccion": {
+  "dif_max_vs_doc_level": 9.974659986866641e-17,
+  "subtipos_suman_familias": true,
+  "n_docs": 343,
+  "n_firmas": 49
+ },
+ "pendiente_ESGSI_ext": {
+  "slope": -0.2602000728862973,
+  "se": 0.03978531247909101,
+  "p": 3.732613554494912e-08,
+  "ci_lo": -0.34019380488321593,
+  "ci_hi": -0.18020634088937873,
+  "r2_within": 0.2952243494987894
+ },
+ "pendiente_ESGSI": {
+  "slope": -0.18052740524781336,
+  "se": 0.03453725808153683,
+  "p": 3.7050688044128276e-06,
+  "ci_lo": -0.249969216678472,
+  "ci_hi": -0.11108559381715473,
+  "r2_within": 0.2108399440753399
+ },
+ "pendiente_QUANT_x1e4": 4.672637935791066,
+ "suma_familias_x1e4": 4.672637935791066,
+ "crecimiento_2018_2024": {
+  "aciertos_pct": 213.45802278160596,
+  "tokens_extraidos_pct": 112.27519650828577,
+  "paginas_pdf_pct": 33.63035524607578,
+  "palabras_pdf_pct": 40.181248413917416,
+  "rendimiento_extraccion_2018_2024": [
+   0.31587777937251477,
+   0.4836925483206706
+  ]
+ },
+ "ESGSI_ext_reproducido_dif_max": 0.00043457363392457315,
+ "V3_partes": {
+  "c_pct": {
+   "media_x1e4": 35.42534130666441,
+   "pendiente_x1e4": 0.553694755585131,
+   "p": 0.3957079283190861,
+   "total_2018": 9507,
+   "total_2024": 21720
+  },
+  "c_pct_cero": {
+   "media_x1e4": 1.2355341065105077,
+   "pendiente_x1e4": 0.5099805470179398,
+   "p": 2.9743013645477376e-06,
+   "total_2018": 85,
+   "total_2024": 1777
+  },
+  "c_unidad": {
+   "media_x1e4": 2.8146626327838966,
+   "pendiente_x1e4": 0.22543560171235347,
+   "p": 0.025208322885549646,
+   "total_2018": 803,
+   "total_2024": 2225
+  },
+  "c_grande": {
+   "media_x1e4": 23.965578232389863,
+   "pendiente_x1e4": -2.1250335483184024,
+   "p": 0.015710223603227127,
+   "total_2018": 7881,
+   "total_2024": 10703
+  }
+ },
+ "robustez": {
+  "V0_actual": {
+   "pendiente_x1e4": 4.672637935791066,
+   "firmas_pendiente_positiva": 40,
+   "firmas": 49,
+   "cuota_pendiente_top5_firmas": 0.3275144781738246,
+   "cuota_pendiente_top10_firmas": 0.5483014929256528,
+   "dejando_una_firma_fuera_min_max_x1e4": [
+    4.410179092146467,
+    5.219340071760309
+   ],
+   "sin_1pct_superior_x1e4": 4.999624041357597,
+   "winsorizada_1_99_x1e4": 5.043199179484294,
+   "log_pendiente_pct_por_ano": 8.784540194711422,
+   "mediana_anual_x1e4": {
+    "2018": 44.48970840480275,
+    "2019": 43.791336538678586,
+    "2020": 50.98324836125273,
+    "2021": 60.39612754241051,
+    "2022": 64.08405187232697,
+    "2023": 78.32582332839388,
+    "2024": 72.94706127553148
+   },
+   "spearman_ano_dentro_de_firma_media": 0.5758017492711371,
+   "control_log_tokens_x1e4": 4.396530320837881,
+   "corr_con_log_tokens_pooled": 0.35444775917011323,
+   "corr_con_log_tokens_within": 0.2854395850115331
+  },
+  "V2b_sin_marcos_temas_ni_codigos": {
+   "pendiente_x1e4": 0.6422580587353107,
+   "firmas_pendiente_positiva": 32,
+   "firmas": 49,
+   "cuota_pendiente_top5_firmas": 1.1830720239193442,
+   "cuota_pendiente_top10_firmas": 1.898095803382569,
+   "dejando_una_firma_fuera_min_max_x1e4": [
+    0.43441732234823943,
+    1.1323707178573907
+   ],
+   "sin_1pct_superior_x1e4": 1.2728441713501344,
+   "winsorizada_1_99_x1e4": 1.0670613671748042,
+   "log_pendiente_pct_por_ano": 5.431565381291566,
+   "mediana_anual_x1e4": {
+    "2018": 35.3491927008694,
+    "2019": 32.27918105686102,
+    "2020": 37.144938091769845,
+    "2021": 39.524184734260224,
+    "2022": 41.14860205965435,
+    "2023": 46.49260208917401,
+    "2024": 36.12229354803612
+   },
+   "spearman_ano_dentro_de_firma_media": 0.242468968095519,
+   "control_log_tokens_x1e4": 0.7714506735045854,
+   "corr_con_log_tokens_pooled": 0.34860528372168087,
+   "corr_con_log_tokens_within": 0.026108646676926636
+  },
+  "V3_solo_cifras": {
+   "pendiente_x1e4": -1.3459031910209176,
+   "firmas_pendiente_positiva": 23,
+   "firmas": 49,
+   "cuota_pendiente_top5_firmas": -0.6723670547216737,
+   "cuota_pendiente_top10_firmas": -1.0655105713259592,
+   "dejando_una_firma_fuera_min_max_x1e4": [
+    -1.622014183844405,
+    -0.47559285086744907
+   ],
+   "sin_1pct_superior_x1e4": -0.07086739243643354,
+   "winsorizada_1_99_x1e4": -0.7402369101209365,
+   "log_pendiente_pct_por_ano": -1.021365614742728,
+   "mediana_anual_x1e4": {
+    "2018": 54.42281158975931,
+    "2019": 53.87460874513896,
+    "2020": 59.75861548016719,
+    "2021": 58.634598147594865,
+    "2022": 56.21474030797647,
+    "2023": 67.17724413624778,
+    "2024": 52.67162170070814
+   },
+   "spearman_ano_dentro_de_firma_media": 0.0007288629737609289,
+   "control_log_tokens_x1e4": -1.3776621557808728,
+   "corr_con_log_tokens_pooled": 0.3185140116546706,
+   "corr_con_log_tokens_within": -0.05582507026830803
+  }
+ },
+ "tipo_documento_por_ano": {
+  "Annual report": {
+   "2018": 36,
+   "2019": 33,
+   "2020": 33,
+   "2021": 33,
+   "2022": 34,
+   "2023": 33,
+   "2024": 33
+  },
+  "Sustainability report": {
+   "2018": 1,
+   "2019": 1,
+   "2020": 1,
+   "2021": 1,
+   "2022": 1,
+   "2023": 1,
+   "2024": 1
+  },
+  "URD": {
+   "2018": 12,
+   "2019": 15,
+   "2020": 15,
+   "2021": 15,
+   "2022": 14,
+   "2023": 15,
+   "2024": 15
+  }
+ },
+ "componentes": [
+  {
+   "componente": "SUS (densidad)",
+   "pendiente_unidades_propias": 0.36584961370262375,
+   "se": 0.04127682644633242,
+   "p": 1.1278544057046156e-11,
+   "r2_within": 0.3644341121074728,
+   "media_corpus": 6.591623376093297,
+   "dt_corpus": 1.8698678343950261,
+   "pendiente_en_DT_por_ano": 0.19565533294549137,
+   "pendiente_pct_media_2018_por_ano": 6.361674561568461,
+   "cambio_pct_media_2018_2024": 39.96241839796526,
+   "aporte_a_pendiente_ESGSI_ext": -0.19565533294549137
+  },
+  {
+   "componente": "SEN",
+   "pendiente_unidades_propias": 0.0020392857142857135,
+   "se": 0.0036655988753266345,
+   "p": 0.5805691625077154,
+   "r2_within": 0.0028630228533226276,
+   "media_corpus": -0.003965889212827981,
+   "dt_corpus": 0.13479306752276846,
+   "pendiente_en_DT_por_ano": 0.01512901035464045,
+   "pendiente_pct_media_2018_por_ano": 66.48369926813022,
+   "cambio_pct_media_2018_2024": 515.0365934797057,
+   "aporte_a_pendiente_ESGSI_ext": 0.01512901035464045
+  },
+  {
+   "componente": "QUANT",
+   "pendiente_unidades_propias": 0.00046726379357910655,
+   "se": 8.89194872315052e-05,
+   "p": 3.3659830363108093e-06,
+   "r2_within": 0.206238617156002,
+   "media_corpus": 0.00608560350897189,
+   "dt_corpus": 0.003123546010435779,
+   "pendiente_en_DT_por_ano": 0.14959401654977275,
+   "pendiente_pct_media_2018_por_ano": 9.67160289189294,
+   "cambio_pct_media_2018_2024": 48.62299425944572,
+   "aporte_a_pendiente_ESGSI_ext": -0.07479700827488638
+  },
+  {
+   "componente": "HEDGE",
+   "pendiente_unidades_propias": -3.688203294404824e-05,
+   "se": 7.66370887914937e-05,
+   "p": 0.6325215152992882,
+   "r2_within": 0.0018983648970833933,
+   "media_corpus": 0.01865366988437379,
+   "dt_corpus": 0.0037819656783106667,
+   "pendiente_en_DT_por_ano": -0.009752080288714507,
+   "pendiente_pct_media_2018_por_ano": -0.198219620184392,
+   "cambio_pct_media_2018_2024": -0.4463821730739337,
+   "aporte_a_pendiente_ESGSI_ext": -0.0048760401443572535
+  }
+ ],
+ "familias": [
+  {
+   "familia": "percentages",
+   "slope_x1e4": 0.545796419400174,
+   "p": 0.4031373204728905,
+   "cuota_de_la_pendiente": 0.11680691440257548,
+   "aciertos_2018": 9542,
+   "aciertos_2024": 21758,
+   "cuota_aciertos_2018": 0.6709323583180987,
+   "cuota_aciertos_2024": 0.4880663974876626
+  },
+  {
+   "familia": "large_numbers",
+   "slope_x1e4": 0.2652492680075065,
+   "p": 0.02771949286549982,
+   "cuota_de_la_pendiente": 0.05676649285744423,
+   "aciertos_2018": 1069,
+   "aciertos_2024": 3742,
+   "cuota_aciertos_2018": 0.07516523695682745,
+   "cuota_aciertos_2024": 0.08393898609241812
+  },
+  {
+   "familia": "units",
+   "slope_x1e4": 1.3401239202156485,
+   "p": 2.126248793959278e-06,
+   "cuota_de_la_pendiente": 0.2868024312242735,
+   "aciertos_2018": 2629,
+   "aciertos_2024": 9956,
+   "cuota_aciertos_2018": 0.18485445085079455,
+   "cuota_aciertos_2024": 0.22332884701659939
+  },
+  {
+   "familia": "frameworks",
+   "slope_x1e4": 2.521468328167737,
+   "p": 2.9515142584677454e-11,
+   "cuota_de_la_pendiente": 0.5396241615157068,
+   "aciertos_2018": 982,
+   "aciertos_2024": 9124,
+   "cuota_aciertos_2018": 0.06904795387427928,
+   "cuota_aciertos_2024": 0.20466576940331987
+  }
+ ],
+ "grupos_de_subtipos": [
+  {
+   "label": "Marco: 'taxonomy'",
+   "slope_x1e4": 2.2909239584899788,
+   "aciertos_2018": 7,
+   "aciertos_2024": 6462,
+   "cuota_de_la_pendiente": 0.49028492897815995
+  },
+  {
+   "label": "Marco: CSRD/SFDR/ISSB",
+   "slope_x1e4": 0.3520917005246091,
+   "aciertos_2018": 0,
+   "aciertos_2024": 1655,
+   "cuota_de_la_pendiente": 0.0753518045615492
+  },
+  {
+   "label": "Marco: GRI/SASB/TCFD",
+   "slope_x1e4": 0.00014674982924024575,
+   "aciertos_2018": 551,
+   "aciertos_2024": 403,
+   "cuota_de_la_pendiente": 3.140620592838665e-05
+  },
+  {
+   "label": "Marco: SDG/UNGC/Paris",
+   "slope_x1e4": -0.12169408067609169,
+   "aciertos_2018": 424,
+   "aciertos_2024": 604,
+   "cuota_de_la_pendiente": -0.026043978229930882
+  },
+  {
+   "label": "Unidad-tema: CO2/CO2e/GHG",
+   "slope_x1e4": 1.2098921356903023,
+   "aciertos_2018": 1679,
+   "aciertos_2024": 7805,
+   "cuota_de_la_pendiente": 0.2589312829960301
+  },
+  {
+   "label": "Unidad fisica tras cifra",
+   "slope_x1e4": 0.055058221990575945,
+   "aciertos_2018": 507,
+   "aciertos_2024": 1134,
+   "cuota_de_la_pendiente": 0.01178311325361757
+  },
+  {
+   "label": "Unidad fisica suelta",
+   "slope_x1e4": 0.07517356253477034,
+   "aciertos_2018": 443,
+   "aciertos_2024": 1017,
+   "cuota_de_la_pendiente": 0.016088034974625878
+  },
+  {
+   "label": "% = 0 (celdas vacias)",
+   "slope_x1e4": 0.5075835762989435,
+   "aciertos_2018": 87,
+   "aciertos_2024": 1777,
+   "cuota_de_la_pendiente": 0.10862891224911712
+  },
+  {
+   "label": "% en entorno taxonomia",
+   "slope_x1e4": 0.506986432730513,
+   "aciertos_2018": 65,
+   "aciertos_2024": 1769,
+   "cuota_de_la_pendiente": 0.1085011164351388
+  },
+  {
+   "label": "% resto",
+   "slope_x1e4": -0.4687735896292825,
+   "aciertos_2018": 9390,
+   "aciertos_2024": 18212,
+   "cuota_de_la_pendiente": -0.10032311428168045
+  },
+  {
+   "label": "Num.: cifra",
+   "slope_x1e4": -0.033770145190209475,
+   "aciertos_2018": 411,
+   "aciertos_2024": 871,
+   "cuota_de_la_pendiente": -0.007227212049009801
+  },
+  {
+   "label": "Num.: codigo de norma (ISO...)",
+   "slope_x1e4": -0.019054582964202312,
+   "aciertos_2018": 333,
+   "aciertos_2024": 623,
+   "cuota_de_la_pendiente": -0.004077907003718322
+  },
+  {
+   "label": "Num.: acto legal (2021/2139...)",
+   "slope_x1e4": 0.27072800893323734,
+   "aciertos_2018": 194,
+   "aciertos_2024": 1662,
+   "cuota_de_la_pendiente": 0.05793900846875776
+  },
+  {
+   "label": "Num.: rango de anos / 2100",
+   "slope_x1e4": 0.047345987228680914,
+   "aciertos_2018": 131,
+   "aciertos_2024": 586,
+   "cuota_de_la_pendiente": 0.01013260344141459
+  }
+ ],
+ "variantes": [
+  {
+   "variante": "V0_actual",
+   "media_x1e4": 60.8560350897189,
+   "pendiente_x1e4": 4.672637935791066,
+   "p": 3.3659830363108093e-06,
+   "r2_within": 0.206238617156002,
+   "pendiente_DT_por_ano": 0.14959401654977275,
+   "pendiente_pct_media2018_por_ano": 9.67160289189294,
+   "firmas_pendiente_positiva": 40,
+   "spearman_vs_QUANT_actual": 0.9999999999999999,
+   "solape_top10_vs_QUANT": 1.0,
+   "solape_bottom10_vs_QUANT": 1.0,
+   "ESGSI_ext_pendiente": -0.26019937101009444,
+   "ESGSI_ext_ci_lo": -0.34019442925625765,
+   "ESGSI_ext_ci_hi": -0.18020431276393123,
+   "ESGSI_ext_spearman_vs_actual": 0.9999999999999999,
+   "ESGSI_ext_solape_top10": 1.0,
+   "ESGSI_ext_solape_bottom10": 1.0,
+   "corr_spearman_con_SUS": 0.680407413883546,
+   "corr_within_con_SUS": 0.5753673755304562
+  },
+  {
+   "variante": "V1_sin_marcos",
+   "media_x1e4": 51.66731657277834,
+   "pendiente_x1e4": 2.151169607623329,
+   "p": 0.007203521093196415,
+   "r2_within": 0.06635900569582864,
+   "pendiente_DT_por_ano": 0.07605177650037712,
+   "pendiente_pct_media2018_por_ano": 4.779537125272918,
+   "firmas_pendiente_positiva": 38,
+   "spearman_vs_QUANT_actual": 0.9316754154013415,
+   "solape_top10_vs_QUANT": 0.7647058823529411,
+   "solape_bottom10_vs_QUANT": 0.8529411764705882,
+   "ESGSI_ext_pendiente": -0.22342825098539673,
+   "ESGSI_ext_ci_lo": -0.30256525519984234,
+   "ESGSI_ext_ci_hi": -0.14429124677095112,
+   "ESGSI_ext_spearman_vs_actual": 0.9929055552978315,
+   "ESGSI_ext_solape_top10": 0.9705882352941176,
+   "ESGSI_ext_solape_bottom10": 0.9411764705882353,
+   "corr_spearman_con_SUS": 0.5913085989772723,
+   "corr_within_con_SUS": 0.4468859503035083
+  },
+  {
+   "variante": "V2_sin_marcos_ni_temas",
+   "media_x1e4": 43.08314889487375,
+   "pendiente_x1e4": 0.9412774719330264,
+   "p": 0.19180993456719755,
+   "r2_within": 0.015332721008791683,
+   "pendiente_DT_por_ano": 0.03664048711866123,
+   "pendiente_pct_media2018_por_ano": 2.4144418750945094,
+   "firmas_pendiente_positiva": 32,
+   "spearman_vs_QUANT_actual": 0.8424285083853439,
+   "solape_top10_vs_QUANT": 0.7941176470588235,
+   "solape_bottom10_vs_QUANT": 0.7352941176470589,
+   "ESGSI_ext_pendiente": -0.20372260629453878,
+   "ESGSI_ext_ci_lo": -0.281196094544379,
+   "ESGSI_ext_ci_hi": -0.12624911804469857,
+   "ESGSI_ext_spearman_vs_actual": 0.9866146143717146,
+   "ESGSI_ext_solape_top10": 0.9705882352941176,
+   "ESGSI_ext_solape_bottom10": 0.9411764705882353,
+   "corr_spearman_con_SUS": 0.4827648142663255,
+   "corr_within_con_SUS": 0.26337819418620784
+  },
+  {
+   "variante": "V2b_sin_marcos_temas_ni_codigos",
+   "media_x1e4": 40.02768596378191,
+   "pendiente_x1e4": 0.6422580587353107,
+   "p": 0.36080655533196637,
+   "r2_within": 0.0073829882294610405,
+   "pendiente_DT_por_ano": 0.025428954365307024,
+   "pendiente_pct_media2018_por_ano": 1.7507735256805534,
+   "firmas_pendiente_positiva": 32,
+   "spearman_vs_QUANT_actual": 0.8197741937138634,
+   "solape_top10_vs_QUANT": 0.7352941176470589,
+   "solape_bottom10_vs_QUANT": 0.7058823529411765,
+   "ESGSI_ext_pendiente": -0.1981168399178617,
+   "ESGSI_ext_ci_lo": -0.2752929227545324,
+   "ESGSI_ext_ci_hi": -0.120940757081191,
+   "ESGSI_ext_spearman_vs_actual": 0.9843513030321412,
+   "ESGSI_ext_solape_top10": 0.9705882352941176,
+   "ESGSI_ext_solape_bottom10": 0.9411764705882353,
+   "corr_spearman_con_SUS": 0.47022251807604964,
+   "corr_within_con_SUS": 0.22751602168117183
+  },
+  {
+   "variante": "V3_solo_cifras",
+   "media_x1e4": 62.205582171838266,
+   "pendiente_x1e4": -1.3459031910209176,
+   "p": 0.30963923876968413,
+   "r2_within": 0.011290674340442952,
+   "pendiente_DT_por_ano": -0.03494355985578503,
+   "pendiente_pct_media2018_por_ano": -2.148577935670258,
+   "firmas_pendiente_positiva": 23,
+   "spearman_vs_QUANT_actual": 0.6801552409738155,
+   "solape_top10_vs_QUANT": 0.5588235294117647,
+   "solape_bottom10_vs_QUANT": 0.5294117647058824,
+   "ESGSI_ext_pendiente": -0.16793058280731568,
+   "ESGSI_ext_ci_lo": -0.24684126979444393,
+   "ESGSI_ext_ci_hi": -0.08901989582018743,
+   "ESGSI_ext_spearman_vs_actual": 0.9661392446469758,
+   "ESGSI_ext_solape_top10": 0.9117647058823529,
+   "ESGSI_ext_solape_bottom10": 0.8823529411764706,
+   "corr_spearman_con_SUS": 0.36983149615852634,
+   "corr_within_con_SUS": 0.057024628062512545
+  },
+  {
+   "variante": "V3b_solo_cifras_sin_pct_cero",
+   "media_x1e4": 60.97004806532771,
+   "pendiente_x1e4": -1.8558837380388573,
+   "p": 0.15217104598928208,
+   "r2_within": 0.022192469677737026,
+   "pendiente_DT_por_ano": -0.048437822253244354,
+   "pendiente_pct_media2018_por_ano": -2.974233953171548,
+   "firmas_pendiente_positiva": 19,
+   "spearman_vs_QUANT_actual": 0.6574959586912226,
+   "solape_top10_vs_QUANT": 0.5588235294117647,
+   "solape_bottom10_vs_QUANT": 0.5,
+   "ESGSI_ext_pendiente": -0.161183451608586,
+   "ESGSI_ext_ci_lo": -0.23980615585100898,
+   "ESGSI_ext_ci_hi": -0.082560747366163,
+   "ESGSI_ext_spearman_vs_actual": 0.9639478977462639,
+   "ESGSI_ext_solape_top10": 0.9117647058823529,
+   "ESGSI_ext_solape_bottom10": 0.8823529411764706,
+   "corr_spearman_con_SUS": 0.35526196839987956,
+   "corr_within_con_SUS": 0.02642130511745006
+  },
+  {
+   "variante": "V3c_solo_cifras_por_palabra",
+   "media_x1e4": 64.36856957964298,
+   "pendiente_x1e4": -1.472622856823925,
+   "p": 0.3019154457070847,
+   "r2_within": 0.011619547826862142,
+   "pendiente_DT_por_ano": -0.035663771471947395,
+   "pendiente_pct_media2018_por_ano": -2.2658686238470587,
+   "firmas_pendiente_positiva": 24,
+   "spearman_vs_QUANT_actual": 0.681076802114446,
+   "solape_top10_vs_QUANT": 0.5588235294117647,
+   "solape_bottom10_vs_QUANT": 0.5294117647058824,
+   "ESGSI_ext_pendiente": -0.16757047699923447,
+   "ESGSI_ext_ci_lo": -0.24684364511171925,
+   "ESGSI_ext_ci_hi": -0.08829730888674969,
+   "ESGSI_ext_spearman_vs_actual": 0.9668579969144502,
+   "ESGSI_ext_solape_top10": 0.9117647058823529,
+   "ESGSI_ext_solape_bottom10": 0.9117647058823529,
+   "corr_spearman_con_SUS": 0.3700827769471138,
+   "corr_within_con_SUS": 0.06012897007247617
+  },
+  {
+   "variante": "V_solo_porcentajes",
+   "media_x1e4": 35.507296001885166,
+   "pendiente_x1e4": 0.545796419400174,
+   "p": 0.4031373204728905,
+   "r2_within": 0.005515545912201603,
+   "pendiente_DT_por_ano": 0.0241783022425342,
+   "pendiente_pct_media2018_por_ano": 1.6710117156583366,
+   "firmas_pendiente_positiva": 32,
+   "spearman_vs_QUANT_actual": 0.7737921849736031,
+   "solape_top10_vs_QUANT": 0.6764705882352942,
+   "solape_bottom10_vs_QUANT": 0.6764705882352942,
+   "ESGSI_ext_pendiente": -0.19749151385647526,
+   "ESGSI_ext_ci_lo": -0.27457812605036797,
+   "ESGSI_ext_ci_hi": -0.12040490166258257,
+   "ESGSI_ext_spearman_vs_actual": 0.9803798770776014,
+   "ESGSI_ext_solape_top10": 0.9411764705882353,
+   "ESGSI_ext_solape_bottom10": 0.8529411764705882,
+   "corr_spearman_con_SUS": 0.41912865480685796,
+   "corr_within_con_SUS": 0.1756269673972217
+  }
+ ]
+}
