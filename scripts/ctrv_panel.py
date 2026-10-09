@@ -26,6 +26,8 @@ categoria; una alegacion puede tener varias categorias):
     n_bhrrcf       alegaciones BHRRC "focales": la empresa o una de sus marcas
                    figura en el titulo (excluye informes sobre muchas empresas)
     n_poolf        n_bhrrcf + n_oecd + n_ads
+    n_bhrrc_w, n_bhrrc_sev2_w, n_bhrrcf_w   igual, pero en ventanas abr-Y a mar-(Y+1)
+                   (ano Y; con h = +1, posterior a la publicacion del informe de t)
     n_oecd         quejas ante PNC de la OCDE (OECD Watch)
     n_ads          resoluciones publicitarias (JDP + RCC)
     n_pool         n_bhrrc + n_oecd + n_ads
@@ -122,6 +124,12 @@ def main() -> None:
     p["n_poolf"] = p["n_bhrrcf"] + p["n_oecd"] + p["n_ads"]
     for suf in ["", "_sev2", "_E", "_S", "_G", "_GW"]:
         p[f"n_pool{suf}"] = p[f"n_bhrrc{suf}"] + p[f"n_oecd{suf}"] + p[f"n_ads{suf}"]
+    # ventana posterior a la publicacion: el "ano" Y agrupa 1-abr-Y a 31-mar-(Y+1); con
+    # h = +1 el informe del ejercicio t se compara con abr-(t+1) a mar-(t+2), como en issue2_finance
+    bw = b.assign(year=(b["date"] - pd.DateOffset(months=3)).dt.year)
+    p["n_bhrrc_w"] = bw.groupby(["firm_id", "year"]).size().reindex(idx).fillna(0).astype(int)
+    p["n_bhrrc_sev2_w"] = bw[bw["severity"] >= 2].groupby(["firm_id", "year"]).size().reindex(idx).fillna(0).astype(int)
+    p["n_bhrrcf_w"] = bw[bw["focal"] == 1].groupby(["firm_id", "year"]).size().reindex(idx).fillna(0).astype(int)
     g = gdelt(idx)
     p = p.join(g)
     p["meses_obs"] = np.where(p.index.get_level_values("year") == 2026, 9, 12)
