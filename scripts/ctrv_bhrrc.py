@@ -63,8 +63,8 @@ INCIDENT = re.compile(r"alleg|accus|lawsuit|sue[sd]?\b|court|fine[sd]?\b|penalt|
 SEVERE = re.compile(r"\bfine[sd]?\b|penalt|convicted|court|ruled|ruling|guilty|settle|"
                     r"sanction|ordered to pay|damages|lawsuit|\bsues?\b|\bsued\b|charged|"
                     r"indict|prosecut|legal action|complaint filed|files? (a )?complaint", re.I)
-SKIP_TYPES = {"Company response", "Company non-response", "Briefing", "Benchmark", "Survey",
-              "Event", "Report", "Guidance", "Blog", "Opinion", "Resource"}
+SKIP_TYPES = {"company response", "company non-response", "briefing", "benchmark", "survey",
+              "event", "report", "guidance", "blog", "opinion", "resource", "disclosure"}
 
 
 def api(f: Fetcher, path: str, **params) -> dict:
@@ -150,7 +150,7 @@ def main() -> None:
     a["date"] = pd.to_datetime(a["date"], errors="coerce")
     txt = a["title"] + " " + a["abstract"]
     is_inc = (a["allegations"] == True) | txt.str.contains(INCIDENT) | (a["type"] == "Lawsuit")  # noqa: E712
-    ev = a[is_inc & ~a["type"].isin(SKIP_TYPES) & a["date"].notna()].copy()
+    ev = a[is_inc & ~a["type"].fillna("").str.lower().isin(SKIP_TYPES) & a["date"].notna()].copy()
     ev["year"] = ev["date"].dt.year
     ev["source"] = "bhrrc"
     ev["category"] = [classify(t) for t in (ev["title"] + " " + ev["abstract"])]

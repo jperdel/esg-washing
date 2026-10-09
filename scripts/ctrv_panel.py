@@ -154,6 +154,19 @@ def main() -> None:
         t["pct_con_bhrrc"] = 100 * win.assign(_x=win["n_bhrrc"] > 0).groupby(by)["_x"].mean()
         t.to_csv(RESULTS / fn, sep=";")
     p.groupby("year")[key].mean().to_csv(RESULTS / "frecuencias_ano.csv", sep=";")
+    # validez convergente entre fuentes: Spearman a nivel empresa-ano (2018-2025),
+    # intra-empresa (log1p sin EF de empresa y ano, Pearson) y entre empresas (totales)
+    cc = [c for c in ["n_bhrrc", "n_bhrrcf", "n_bhrrc_sev2", "n_oecd", "n_ads", "gd_neg", "gd_all"]
+          if c in win.columns and win[c].notna().sum() > 100]
+    w = win.dropna(subset=cc)
+    lw = np.log1p(w[cc])
+    within = (lw - lw.groupby(w["firm_id"]).transform("mean") - lw.groupby(w["year"]).transform("mean")
+              + lw.mean())
+    corr = pd.concat({"empresa_ano": w[cc].corr("spearman"),
+                      "intra_empresa_ef_empresa_ano": within.corr("pearson"),
+                      "entre_empresas_totales": w.groupby("firm_id")[cc].sum().corr("spearman")})
+    corr.to_csv(RESULTS / "correlaciones_fuentes.csv", sep=";")
+    print(corr.round(2).to_string())
     pd.set_option("display.width", 200)
     print(fr.round(2).to_string(index=False))
     print(p.groupby("year")[key].mean().round(2).to_string())
