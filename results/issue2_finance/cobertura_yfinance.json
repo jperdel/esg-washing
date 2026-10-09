@@ -1,0 +1,25 @@
+{
+ "generado": "2026-10-09 14:49:55",
+ "empresas": 49,
+ "precios": {
+  "rango_pedido": [
+   "2017-01-01",
+   "2026-07-01"
+  ],
+  "empresas_con_precio_desde_2017": 48,
+  "empresas_con_precio": 49,
+  "indice_dias": 2381
+ },
+ "yahoo_foto_actual": {
+  "con_recomendaciones": 49,
+  "n_analistas_mediana": 21.0,
+  "n_analistas_min": 8.0,
+  "n_analistas_max": 35.0,
+  "con_rango_bpa_anual": 49,
+  "rango_bpa_relativo_mediana": 0.1273915701214376,
+  "con_esg_sustainalytics": 0,
+  "con_historial_cambios_recomendacion": 5,
+  "trimestres_sorpresa_bpa_max": 4,
+  "nota": "Yahoo da el consenso vigente (hoy), no el historico 2018-2024."
+ }
+}

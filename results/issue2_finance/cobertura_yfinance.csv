@@ -1,0 +1,50 @@
+firm_id;sector_financiero;primer_ejercicio_ticker;country;industry;supersector;precio_desde;dias_con_precio;n_analistas_recomendacion;tiene_precio_objetivo;n_analistas_bpa_anual;rango_bpa_relativo;esg_sustainalytics_disponible;historial_cambios_recomendacion;trimestres_sorpresa_bpa
+Basic Materials-01;0;2018;Germany;Basic Materials;Chemicals;2017-01-02;2411;19;True;16.0;0.4144032102941665;False;0;4
+Basic Materials-02;0;2018;France;Basic Materials;Chemicals;2017-01-02;2429;20;True;16.0;0.10294811210259523;False;0;2
+Consumer Discretionary-01;0;2018;Germany;Consumer Discretionary;Consumer Products and Services;2017-01-02;2411;29;True;25.0;0.11817925166271623;False;0;4
+Consumer Discretionary-02;0;2018;France;Consumer Discretionary;Consumer Products and Services;2017-01-02;2429;27;True;15.0;0.06711491975048352;False;0;0
+Consumer Discretionary-03;0;2018;Germany;Consumer Discretionary;Automobiles and Parts;2017-01-02;2411;18;True;14.0;0.21046755142647744;False;0;4
+Consumer Discretionary-04;0;2018;Germany;Consumer Discretionary;Automobiles and Parts;2017-01-02;2411;18;True;10.0;0.6183474955277279;False;0;4
+Consumer Discretionary-05;0;2018;France;Consumer Discretionary;Consumer Products and Services;2017-01-02;2429;23;True;22.0;0.09972577032137926;False;0;0
+Consumer Discretionary-06;0;2018;Germany;Consumer Discretionary;Automobiles and Parts;2017-01-02;2411;20;True;12.0;0.3619852203266125;False;0;4
+Consumer Discretionary-07;0;2018;Spain;Consumer Discretionary;Retail;2017-01-02;2426;24;True;23.0;0.06926135078103714;False;0;4
+Consumer Discretionary-08;0;2018;France;Consumer Discretionary;Consumer Products and Services;2017-01-02;2429;25;True;23.0;0.44145372922687576;False;0;0
+Consumer Discretionary-09;0;2020;Netherlands;Consumer Discretionary;Automobiles and Parts;2017-01-02;2409;20;True;8.0;0.6912734419484599;False;24;2
+Consumer Discretionary-10;0;2018;Italy;Consumer Discretionary;Automobiles and Parts;2017-01-02;2409;18;True;18.0;0.047719272595837116;False;141;4
+Consumer Staples-01;0;2018;Belgium;Consumer Staples;Food, Beverage and Tobacco;2017-01-02;2428;24;True;23.0;0.17263663849206434;False;0;4
+Consumer Staples-02;0;2018;France;Consumer Staples;Personal Care, Drug and Grocery Stores;2017-01-02;2429;24;True;21.0;0.08221981770499012;False;0;0
+Consumer Staples-03;0;2018;France;Consumer Staples;Food, Beverage and Tobacco;2017-01-02;2429;22;True;19.0;0.07213698462666943;False;0;0
+Consumer Staples-04;0;2018;France;Consumer Staples;Food, Beverage and Tobacco;2017-01-02;2429;19;True;18.0;0.22860014693230826;False;0;1
+Consumer Staples-05;0;2018;Netherlands;Consumer Staples;Personal Care, Drug and Grocery Stores;2017-01-02;2428;18;True;17.0;0.05509196685667271;False;0;4
+Energy-01;0;2018;France;Energy;Energy;2017-01-02;2429;22;True;21.0;0.40387284583925737;False;12;4
+Energy-02;0;2018;Italy;Energy;Energy;2017-01-02;2409;22;True;20.0;0.2592192595233352;False;0;4
+Financials-01;1;2018;Germany;Financials;Financial Services;2017-01-02;2411;14;True;10.0;0.10651576670048868;False;0;4
+Financials-02;1;2018;Italy;Financials;Banks;2017-01-02;2409;18;True;18.0;0.2274197365307249;False;0;4
+Financials-03;1;2018;Italy;Financials;Banks;2017-01-02;2409;13;True;13.0;0.07154834166135683;False;0;4
+Financials-04;1;2018;Germany;Financials;Insurance;2017-01-02;2411;16;True;9.0;0.11214134064639268;False;0;4
+Financials-05;1;2018;Netherlands;Financials;Banks;2017-01-02;2428;20;True;15.0;0.09200515228852815;False;0;4
+Financials-06;1;2018;Spain;Financials;Banks;2017-01-02;2426;21;True;18.0;0.2803693140619713;False;1;4
+Financials-07;1;2018;Finland;Financials;Banks;2017-01-02;2382;8;True;8.0;0.043697502306257185;False;0;4
+Financials-08;1;2018;Spain;Financials;Banks;2017-01-02;2426;22;True;15.0;0.1017151105062023;False;0;4
+Financials-09;1;2018;Germany;Financials;Insurance;2017-01-02;2411;17;True;12.0;0.09371466060577491;False;0;4
+Financials-10;1;2018;France;Financials;Banks;2017-01-02;2429;19;True;12.0;0.10709400139713943;False;0;4
+Financials-11;1;2018;France;Financials;Insurance;2017-01-02;2429;18;True;13.0;0.055746961431715876;False;0;0
+Health Care-01;0;2018;France;Health Care;Healthcare;2017-01-02;2429;23;True;21.0;0.10952751777738744;False;0;0
+Health Care-02;0;2018;Germany;Health Care;Healthcare;2017-01-02;2411;18;True;15.0;0.08101098039733765;False;0;4
+Health Care-03;0;2018;France;Health Care;Healthcare;2017-01-02;2429;24;True;21.0;0.09452544442211479;False;0;4
+Industrials-01;0;2018;Germany;Industrials;Industrial Goods and Services;2017-01-02;2411;18;True;15.0;0.13992510890932053;False;0;4
+Industrials-02;0;2018;France;Industrials;Construction and Materials;2017-01-02;2429;20;True;14.0;0.13682765626265658;False;0;0
+Industrials-03;0;2018;France;Industrials;Industrial Goods and Services;2017-01-02;2429;21;True;19.0;0.16645918959745604;False;1;0
+Industrials-04;0;2018;Germany;Industrials;Industrial Goods and Services;2017-01-02;2411;22;True;16.0;0.1310336634216908;False;0;4
+Industrials-05;0;2018;Netherlands;Industrials;Industrial Goods and Services;2017-01-02;2428;16;True;14.0;0.13385041234850364;False;0;0
+Industrials-06;1;2018;Netherlands;Industrials;Industrial Goods and Services;2018-06-13;2060;35;True;27.0;0.10173988777784894;False;0;2
+Industrials-07;0;2018;France;Industrials;Industrial Goods and Services;2017-01-02;2429;23;True;19.0;0.1391918575231558;False;0;4
+Industrials-08;0;2018;France;Industrials;Industrial Goods and Services;2017-01-02;2429;22;True;19.0;0.1561002350158213;False;0;0
+Industrials-09;0;2018;France;Industrials;Construction and Materials;2017-01-02;2429;17;True;11.0;0.20292260248402375;False;0;0
+Technology-01;0;2018;Germany;Technology;Technology;2017-01-02;2411;23;True;22.0;0.14914585317164394;False;0;4
+Technology-02;0;2018;Germany;Technology;Technology;2017-01-02;2411;26;True;23.0;0.19482998039663538;False;0;4
+Technology-03;0;2018;Netherlands;Technology;Technology;2017-01-02;2428;32;True;31.0;0.23284471578082255;False;0;4
+Telecommunications-01;0;2018;Germany;Telecommunications;Telecommunications;2017-01-02;2411;18;True;7.0;0.1273915701214376;False;0;4
+Telecommunications-02;0;2018;Finland;Telecommunications;Telecommunications;2017-01-02;2382;22;True;19.0;0.19817455457381977;False;0;4
+Utilities-01;0;2018;Spain;Utilities;Utilities;2017-01-02;2426;23;True;10.0;0.06537773913383298;False;0;4
+Utilities-02;0;2018;Italy;Utilities;Utilities;2017-01-02;2409;22;True;18.0;0.06918404339223208;False;0;4
