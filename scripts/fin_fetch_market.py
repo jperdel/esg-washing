@@ -77,6 +77,7 @@ def probe(ticker: str) -> dict:
         info = {}
     out["n_analistas_recomendacion"] = info.get("numberOfAnalystOpinions")
     out["tiene_precio_objetivo"] = info.get("targetMeanPrice") is not None
+    out["acciones_en_circulacion"] = info.get("sharesOutstanding")  # solo interno (tamano)
     try:
         ee = t.earnings_estimate
         row = ee.loc["0y"] if ee is not None and "0y" in ee.index else None
@@ -168,7 +169,13 @@ def main() -> None:
             "nota": "Yahoo da el consenso vigente (hoy), no el historico 2018-2024.",
         }
 
-    pub = fm.drop(columns=["ticker_yahoo"]).sort_values("firm_id")
+    fm.to_csv(data_dir / "firm_map_internal.csv", sep=";", index=False)
+    # Salida citable: sin ticker, sin fechas de cotizacion ni tamano (identificarian a la empresa)
+    if "precio_desde" in fm:
+        fm["precio_cubre_ventanas"] = [
+            bool(d) and d <= f"{int(y) + 1}-04-01" for d, y in zip(fm["precio_desde"], fm["primer_ejercicio_ticker"])]
+    drop = [c for c in ["ticker_yahoo", "precio_desde", "dias_con_precio", "acciones_en_circulacion"] if c in fm]
+    pub = fm.drop(columns=drop).sort_values("firm_id")
     pub.to_csv(out_dir / "cobertura_yfinance.csv", sep=";", index=False)
     (out_dir / "cobertura_yfinance.json").write_text(json.dumps(summary, indent=1, ensure_ascii=False),
                                                     encoding="utf-8")
