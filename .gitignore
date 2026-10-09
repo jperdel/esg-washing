@@ -49,3 +49,7 @@ informes/
 # --- Intermedios de latexmk ---
 paper/*.fdb_latexmk
 paper/*.fls
+
+# --- Identificadores con nombres de empresa (issue #2; no se versionan) ---
+metadata/*_internal.csv
+metadata/*_internal.json

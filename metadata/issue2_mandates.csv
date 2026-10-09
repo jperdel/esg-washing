@@ -1,0 +1,344 @@
+firm_id,year,pais_muestra,sede_legal,plantilla_art8,inicio_ejercicio,publicacion_aprox,nfrd,taxonomy_eligibility,taxonomy_alignment,csrd,regimen,nota,sources
+Basic Materials-01,2018,Alemania,DE,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Basic Materials-01,2019,Alemania,DE,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Basic Materials-01,2020,Alemania,DE,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Basic Materials-01,2021,Alemania,DE,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Basic Materials-01,2022,Alemania,DE,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Basic Materials-01,2023,Alemania,DE,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Basic Materials-01,2024,Alemania,DE,no_financiera,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA;CSRD-DIR;CSRD-DE;STC-DIR
+Basic Materials-02,2018,Francia,FR,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Basic Materials-02,2019,Francia,FR,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Basic Materials-02,2020,Francia,FR,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Basic Materials-02,2021,Francia,FR,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Basic Materials-02,2022,Francia,FR,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Basic Materials-02,2023,Francia,FR,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Basic Materials-02,2024,Francia,FR,no_financiera,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-FR;STC-DIR
+Consumer Discretionary-01,2018,Alemania,DE,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Consumer Discretionary-01,2019,Alemania,DE,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Consumer Discretionary-01,2020,Alemania,DE,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Consumer Discretionary-01,2021,Alemania,DE,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Consumer Discretionary-01,2022,Alemania,DE,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Consumer Discretionary-01,2023,Alemania,DE,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Consumer Discretionary-01,2024,Alemania,DE,no_financiera,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA;CSRD-DIR;CSRD-DE;STC-DIR
+Consumer Discretionary-02,2018,Francia,FR,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Consumer Discretionary-02,2019,Francia,FR,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Consumer Discretionary-02,2020,Francia,FR,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Consumer Discretionary-02,2021,Francia,FR,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Consumer Discretionary-02,2022,Francia,FR,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Consumer Discretionary-02,2023,Francia,FR,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Consumer Discretionary-02,2024,Francia,FR,no_financiera,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-FR;STC-DIR
+Consumer Discretionary-03,2018,Alemania,DE,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Consumer Discretionary-03,2019,Alemania,DE,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Consumer Discretionary-03,2020,Alemania,DE,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Consumer Discretionary-03,2021,Alemania,DE,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Consumer Discretionary-03,2022,Alemania,DE,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Consumer Discretionary-03,2023,Alemania,DE,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Consumer Discretionary-03,2024,Alemania,DE,no_financiera,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA;CSRD-DIR;CSRD-DE;STC-DIR
+Consumer Discretionary-04,2018,Alemania,DE,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Consumer Discretionary-04,2019,Alemania,DE,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Consumer Discretionary-04,2020,Alemania,DE,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Consumer Discretionary-04,2021,Alemania,DE,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Consumer Discretionary-04,2022,Alemania,DE,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Consumer Discretionary-04,2023,Alemania,DE,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Consumer Discretionary-04,2024,Alemania,DE,no_financiera,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA;CSRD-DIR;CSRD-DE;STC-DIR
+Consumer Discretionary-05,2018,Francia,FR,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Consumer Discretionary-05,2019,Francia,FR,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Consumer Discretionary-05,2020,Francia,FR,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Consumer Discretionary-05,2021,Francia,FR,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Consumer Discretionary-05,2022,Francia,FR,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Consumer Discretionary-05,2023,Francia,FR,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Consumer Discretionary-05,2024,Francia,FR,no_financiera,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-FR;STC-DIR
+Consumer Discretionary-06,2018,Alemania,DE,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Consumer Discretionary-06,2019,Alemania,DE,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Consumer Discretionary-06,2020,Alemania,DE,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Consumer Discretionary-06,2021,Alemania,DE,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Consumer Discretionary-06,2022,Alemania,DE,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Consumer Discretionary-06,2023,Alemania,DE,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Consumer Discretionary-06,2024,Alemania,DE,no_financiera,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA;CSRD-DIR;CSRD-DE;STC-DIR
+Consumer Discretionary-07,2018,España,ES,no_financiera,2018-02-01,2019-03-15,1,0,0,0,NFRD,,NFRD-DIR;NFRD-ES
+Consumer Discretionary-07,2019,España,ES,no_financiera,2019-02-01,2020-03-15,1,0,0,0,NFRD,,NFRD-DIR;NFRD-ES
+Consumer Discretionary-07,2020,España,ES,no_financiera,2020-02-01,2021-03-15,1,0,0,0,NFRD,,NFRD-DIR;NFRD-ES
+Consumer Discretionary-07,2021,España,ES,no_financiera,2021-02-01,2022-03-15,1,1,0,0,NFRD,,NFRD-DIR;NFRD-ES;TAX-REG;TAX-DA
+Consumer Discretionary-07,2022,España,ES,no_financiera,2022-02-01,2023-03-15,1,1,1,0,NFRD,,NFRD-DIR;NFRD-ES;TAX-REG;TAX-DA
+Consumer Discretionary-07,2023,España,ES,no_financiera,2023-02-01,2024-03-15,1,1,1,0,NFRD,,NFRD-DIR;NFRD-ES;TAX-REG;TAX-DA
+Consumer Discretionary-07,2024,España,ES,no_financiera,2024-02-01,2025-03-15,1,1,1,0,NFRD,,NFRD-DIR;NFRD-ES;TAX-REG;TAX-DA;CSRD-DIR;CSRD-ES;STC-DIR
+Consumer Discretionary-08,2018,Francia,FR,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Consumer Discretionary-08,2019,Francia,FR,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Consumer Discretionary-08,2020,Francia,FR,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Consumer Discretionary-08,2021,Francia,FR,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Consumer Discretionary-08,2022,Francia,FR,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Consumer Discretionary-08,2023,Francia,FR,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Consumer Discretionary-08,2024,Francia,FR,no_financiera,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-FR;STC-DIR
+Consumer Discretionary-09,2018,Países Bajos,FR,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,informe del predecesor (SA francesa): NFRD vía ley francesa (DPEF),NFRD-DIR;NFRD-FR
+Consumer Discretionary-09,2019,Países Bajos,FR,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,informe del predecesor (SA francesa): NFRD vía ley francesa (DPEF),NFRD-DIR;NFRD-FR
+Consumer Discretionary-09,2020,Países Bajos,NL,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Consumer Discretionary-09,2021,Países Bajos,NL,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Consumer Discretionary-09,2022,Países Bajos,NL,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Consumer Discretionary-09,2023,Países Bajos,NL,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Consumer Discretionary-09,2024,Países Bajos,NL,no_financiera,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA;CSRD-DIR;CSRD-NL;STC-DIR
+Consumer Discretionary-10,2018,Italia,NL,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Consumer Discretionary-10,2019,Italia,NL,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Consumer Discretionary-10,2020,Italia,NL,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Consumer Discretionary-10,2021,Italia,NL,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Consumer Discretionary-10,2022,Italia,NL,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Consumer Discretionary-10,2023,Italia,NL,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Consumer Discretionary-10,2024,Italia,NL,no_financiera,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA;CSRD-DIR;CSRD-NL;STC-DIR
+Consumer Staples-01,2018,Bélgica,BE,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-BE
+Consumer Staples-01,2019,Bélgica,BE,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-BE
+Consumer Staples-01,2020,Bélgica,BE,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-BE
+Consumer Staples-01,2021,Bélgica,BE,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-BE;TAX-REG;TAX-DA
+Consumer Staples-01,2022,Bélgica,BE,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-BE;TAX-REG;TAX-DA
+Consumer Staples-01,2023,Bélgica,BE,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-BE;TAX-REG;TAX-DA
+Consumer Staples-01,2024,Bélgica,BE,no_financiera,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-BE;STC-DIR
+Consumer Staples-02,2018,Francia,FR,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Consumer Staples-02,2019,Francia,FR,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Consumer Staples-02,2020,Francia,FR,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Consumer Staples-02,2021,Francia,FR,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Consumer Staples-02,2022,Francia,FR,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Consumer Staples-02,2023,Francia,FR,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Consumer Staples-02,2024,Francia,FR,no_financiera,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-FR;STC-DIR
+Consumer Staples-03,2018,Francia,FR,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Consumer Staples-03,2019,Francia,FR,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Consumer Staples-03,2020,Francia,FR,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Consumer Staples-03,2021,Francia,FR,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Consumer Staples-03,2022,Francia,FR,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Consumer Staples-03,2023,Francia,FR,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Consumer Staples-03,2024,Francia,FR,no_financiera,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-FR;STC-DIR
+Consumer Staples-04,2018,Francia,FR,no_financiera,2017-07-01,2018-09-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Consumer Staples-04,2019,Francia,FR,no_financiera,2018-07-01,2019-09-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Consumer Staples-04,2020,Francia,FR,no_financiera,2019-07-01,2020-09-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Consumer Staples-04,2021,Francia,FR,no_financiera,2020-07-01,2021-09-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Consumer Staples-04,2022,Francia,FR,no_financiera,2021-07-01,2022-09-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Consumer Staples-04,2023,Francia,FR,no_financiera,2022-07-01,2023-09-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Consumer Staples-04,2024,Francia,FR,no_financiera,2024-07-01,2025-09-01,0,1,1,1,CSRD-ESRS,etiqueta 2024 = ejercicio cerrado en jun-2025 (salta el cerrado en jun-2024): revisar corpus,TAX-REG;TAX-DA;CSRD-DIR;CSRD-FR;STC-DIR
+Consumer Staples-05,2018,Países Bajos,NL,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Consumer Staples-05,2019,Países Bajos,NL,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Consumer Staples-05,2020,Países Bajos,NL,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Consumer Staples-05,2021,Países Bajos,NL,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Consumer Staples-05,2022,Países Bajos,NL,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Consumer Staples-05,2023,Países Bajos,NL,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Consumer Staples-05,2024,Países Bajos,NL,no_financiera,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA;CSRD-DIR;CSRD-NL;STC-DIR
+Energy-01,2018,Francia,FR,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Energy-01,2019,Francia,FR,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Energy-01,2020,Francia,FR,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Energy-01,2021,Francia,FR,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Energy-01,2022,Francia,FR,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Energy-01,2023,Francia,FR,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Energy-01,2024,Francia,FR,no_financiera,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-FR;STC-DIR
+Energy-02,2018,Italia,IT,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-IT
+Energy-02,2019,Italia,IT,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-IT
+Energy-02,2020,Italia,IT,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-IT
+Energy-02,2021,Italia,IT,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-IT;TAX-REG;TAX-DA
+Energy-02,2022,Italia,IT,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-IT;TAX-REG;TAX-DA
+Energy-02,2023,Italia,IT,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-IT;TAX-REG;TAX-DA
+Energy-02,2024,Italia,IT,no_financiera,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-IT;STC-DIR
+Financials-01,2018,Alemania,DE,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Financials-01,2019,Alemania,DE,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Financials-01,2020,Alemania,DE,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Financials-01,2021,Alemania,DE,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Financials-01,2022,Alemania,DE,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Financials-01,2023,Alemania,DE,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Financials-01,2024,Alemania,DE,no_financiera,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA;CSRD-DIR;CSRD-DE;STC-DIR
+Financials-02,2018,Italia,IT,entidad_credito,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-IT
+Financials-02,2019,Italia,IT,entidad_credito,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-IT
+Financials-02,2020,Italia,IT,entidad_credito,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-IT
+Financials-02,2021,Italia,IT,entidad_credito,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-IT;TAX-REG;TAX-DA
+Financials-02,2022,Italia,IT,entidad_credito,2022-01-01,2023-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-IT;TAX-REG;TAX-DA
+Financials-02,2023,Italia,IT,entidad_credito,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-IT;TAX-REG;TAX-DA
+Financials-02,2024,Italia,IT,entidad_credito,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-IT;STC-DIR
+Financials-03,2018,Italia,IT,entidad_credito,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-IT
+Financials-03,2019,Italia,IT,entidad_credito,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-IT
+Financials-03,2020,Italia,IT,entidad_credito,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-IT
+Financials-03,2021,Italia,IT,entidad_credito,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-IT;TAX-REG;TAX-DA
+Financials-03,2022,Italia,IT,entidad_credito,2022-01-01,2023-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-IT;TAX-REG;TAX-DA
+Financials-03,2023,Italia,IT,entidad_credito,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-IT;TAX-REG;TAX-DA
+Financials-03,2024,Italia,IT,entidad_credito,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-IT;STC-DIR
+Financials-04,2018,Alemania,DE,aseguradora,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Financials-04,2019,Alemania,DE,aseguradora,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Financials-04,2020,Alemania,DE,aseguradora,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Financials-04,2021,Alemania,DE,aseguradora,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Financials-04,2022,Alemania,DE,aseguradora,2022-01-01,2023-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Financials-04,2023,Alemania,DE,aseguradora,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Financials-04,2024,Alemania,DE,aseguradora,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA;CSRD-DIR;CSRD-DE;STC-DIR
+Financials-05,2018,Países Bajos,NL,entidad_credito,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Financials-05,2019,Países Bajos,NL,entidad_credito,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Financials-05,2020,Países Bajos,NL,entidad_credito,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Financials-05,2021,Países Bajos,NL,entidad_credito,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Financials-05,2022,Países Bajos,NL,entidad_credito,2022-01-01,2023-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Financials-05,2023,Países Bajos,NL,entidad_credito,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Financials-05,2024,Países Bajos,NL,entidad_credito,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA;CSRD-DIR;CSRD-NL;STC-DIR
+Financials-06,2018,España,ES,entidad_credito,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-ES
+Financials-06,2019,España,ES,entidad_credito,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-ES
+Financials-06,2020,España,ES,entidad_credito,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-ES
+Financials-06,2021,España,ES,entidad_credito,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-ES;TAX-REG;TAX-DA
+Financials-06,2022,España,ES,entidad_credito,2022-01-01,2023-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-ES;TAX-REG;TAX-DA
+Financials-06,2023,España,ES,entidad_credito,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-ES;TAX-REG;TAX-DA
+Financials-06,2024,España,ES,entidad_credito,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-ES;TAX-REG;TAX-DA;CSRD-DIR;CSRD-ES;STC-DIR
+Financials-07,2018,Finlandia,FI,entidad_credito,2018-01-01,2019-03-01,1,0,0,0,NFRD,redomiciliada en FI el 1-10-2018; ejercicio 2018 ya bajo ley finlandesa,NFRD-DIR;NFRD-FI
+Financials-07,2019,Finlandia,FI,entidad_credito,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FI
+Financials-07,2020,Finlandia,FI,entidad_credito,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FI
+Financials-07,2021,Finlandia,FI,entidad_credito,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FI;TAX-REG;TAX-DA
+Financials-07,2022,Finlandia,FI,entidad_credito,2022-01-01,2023-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FI;TAX-REG;TAX-DA
+Financials-07,2023,Finlandia,FI,entidad_credito,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FI;TAX-REG;TAX-DA
+Financials-07,2024,Finlandia,FI,entidad_credito,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-FI;STC-DIR
+Financials-08,2018,España,ES,entidad_credito,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-ES
+Financials-08,2019,España,ES,entidad_credito,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-ES
+Financials-08,2020,España,ES,entidad_credito,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-ES
+Financials-08,2021,España,ES,entidad_credito,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-ES;TAX-REG;TAX-DA
+Financials-08,2022,España,ES,entidad_credito,2022-01-01,2023-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-ES;TAX-REG;TAX-DA
+Financials-08,2023,España,ES,entidad_credito,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-ES;TAX-REG;TAX-DA
+Financials-08,2024,España,ES,entidad_credito,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-ES;TAX-REG;TAX-DA;CSRD-DIR;CSRD-ES;STC-DIR
+Financials-09,2018,Alemania,DE,aseguradora,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Financials-09,2019,Alemania,DE,aseguradora,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Financials-09,2020,Alemania,DE,aseguradora,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Financials-09,2021,Alemania,DE,aseguradora,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Financials-09,2022,Alemania,DE,aseguradora,2022-01-01,2023-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Financials-09,2023,Alemania,DE,aseguradora,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Financials-09,2024,Alemania,DE,aseguradora,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA;CSRD-DIR;CSRD-DE;STC-DIR
+Financials-10,2018,Francia,FR,entidad_credito,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Financials-10,2019,Francia,FR,entidad_credito,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Financials-10,2020,Francia,FR,entidad_credito,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Financials-10,2021,Francia,FR,entidad_credito,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Financials-10,2022,Francia,FR,entidad_credito,2022-01-01,2023-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Financials-10,2023,Francia,FR,entidad_credito,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Financials-10,2024,Francia,FR,entidad_credito,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-FR;STC-DIR
+Financials-11,2018,Francia,FR,aseguradora,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Financials-11,2019,Francia,FR,aseguradora,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Financials-11,2020,Francia,FR,aseguradora,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Financials-11,2021,Francia,FR,aseguradora,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Financials-11,2022,Francia,FR,aseguradora,2022-01-01,2023-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Financials-11,2023,Francia,FR,aseguradora,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Financials-11,2024,Francia,FR,aseguradora,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-FR;STC-DIR
+Health Care-01,2018,Francia,FR,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Health Care-01,2019,Francia,FR,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Health Care-01,2020,Francia,FR,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Health Care-01,2021,Francia,FR,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Health Care-01,2022,Francia,FR,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Health Care-01,2023,Francia,FR,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Health Care-01,2024,Francia,FR,no_financiera,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-FR;STC-DIR
+Health Care-02,2018,Alemania,DE,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Health Care-02,2019,Alemania,DE,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Health Care-02,2020,Alemania,DE,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Health Care-02,2021,Alemania,DE,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Health Care-02,2022,Alemania,DE,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Health Care-02,2023,Alemania,DE,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Health Care-02,2024,Alemania,DE,no_financiera,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA;CSRD-DIR;CSRD-DE;STC-DIR
+Health Care-03,2018,Francia,FR,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Health Care-03,2019,Francia,FR,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Health Care-03,2020,Francia,FR,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Health Care-03,2021,Francia,FR,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Health Care-03,2022,Francia,FR,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Health Care-03,2023,Francia,FR,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Health Care-03,2024,Francia,FR,no_financiera,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-FR;STC-DIR
+Industrials-01,2018,Alemania,DE,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Industrials-01,2019,Alemania,DE,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Industrials-01,2020,Alemania,DE,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Industrials-01,2021,Alemania,DE,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Industrials-01,2022,Alemania,DE,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Industrials-01,2023,Alemania,DE,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Industrials-01,2024,Alemania,DE,no_financiera,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA;CSRD-DIR;CSRD-DE;STC-DIR
+Industrials-02,2018,Francia,FR,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Industrials-02,2019,Francia,FR,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Industrials-02,2020,Francia,FR,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Industrials-02,2021,Francia,FR,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Industrials-02,2022,Francia,FR,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Industrials-02,2023,Francia,FR,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Industrials-02,2024,Francia,FR,no_financiera,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-FR;STC-DIR
+Industrials-03,2018,Francia,FR,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Industrials-03,2019,Francia,FR,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Industrials-03,2020,Francia,FR,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Industrials-03,2021,Francia,FR,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Industrials-03,2022,Francia,FR,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Industrials-03,2023,Francia,FR,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Industrials-03,2024,Francia,FR,no_financiera,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-FR;STC-DIR
+Industrials-04,2018,Alemania,DE,no_financiera,2017-10-01,2018-12-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Industrials-04,2019,Alemania,DE,no_financiera,2018-10-01,2019-12-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Industrials-04,2020,Alemania,DE,no_financiera,2019-10-01,2020-12-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Industrials-04,2021,Alemania,DE,no_financiera,2020-10-01,2021-12-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Industrials-04,2022,Alemania,DE,no_financiera,2021-10-01,2022-12-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Industrials-04,2023,Alemania,DE,no_financiera,2022-10-01,2023-12-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Industrials-04,2024,Alemania,DE,no_financiera,2023-10-01,2024-12-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA;CSRD-DIR;CSRD-DE;STC-DIR
+Industrials-05,2018,Países Bajos,NL,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Industrials-05,2019,Países Bajos,NL,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Industrials-05,2020,Países Bajos,NL,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Industrials-05,2021,Países Bajos,NL,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Industrials-05,2022,Países Bajos,NL,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Industrials-05,2023,Países Bajos,NL,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Industrials-05,2024,Países Bajos,NL,no_financiera,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA;CSRD-DIR;CSRD-NL;STC-DIR
+Industrials-06,2018,Países Bajos,NL,entidad_credito,2018-01-01,2019-03-01,1,0,0,0,NFRD,EIP desde 2017 (licencia bancaria); ~770 ETC medios en 2018 (> 500); el informe no rotula el estado no financiero,NFRD-DIR;NFRD-NL
+Industrials-06,2019,Países Bajos,NL,entidad_credito,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Industrials-06,2020,Países Bajos,NL,entidad_credito,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Industrials-06,2021,Países Bajos,NL,entidad_credito,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Industrials-06,2022,Países Bajos,NL,entidad_credito,2022-01-01,2023-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Industrials-06,2023,Países Bajos,NL,entidad_credito,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Industrials-06,2024,Países Bajos,NL,entidad_credito,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA;CSRD-DIR;CSRD-NL;STC-DIR
+Industrials-07,2018,Francia,NL,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Industrials-07,2019,Francia,NL,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Industrials-07,2020,Francia,NL,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Industrials-07,2021,Francia,NL,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Industrials-07,2022,Francia,NL,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Industrials-07,2023,Francia,NL,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Industrials-07,2024,Francia,NL,no_financiera,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA;CSRD-DIR;CSRD-NL;STC-DIR
+Industrials-08,2018,Francia,FR,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Industrials-08,2019,Francia,FR,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Industrials-08,2020,Francia,FR,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Industrials-08,2021,Francia,FR,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Industrials-08,2022,Francia,FR,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Industrials-08,2023,Francia,FR,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Industrials-08,2024,Francia,FR,no_financiera,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-FR;STC-DIR
+Industrials-09,2018,Francia,FR,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Industrials-09,2019,Francia,FR,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Industrials-09,2020,Francia,FR,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FR
+Industrials-09,2021,Francia,FR,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Industrials-09,2022,Francia,FR,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Industrials-09,2023,Francia,FR,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FR;TAX-REG;TAX-DA
+Industrials-09,2024,Francia,FR,no_financiera,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-FR;STC-DIR
+Technology-01,2018,Alemania,DE,no_financiera,2017-10-01,2018-12-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Technology-01,2019,Alemania,DE,no_financiera,2018-10-01,2019-12-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Technology-01,2020,Alemania,DE,no_financiera,2019-10-01,2020-12-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Technology-01,2021,Alemania,DE,no_financiera,2020-10-01,2021-12-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Technology-01,2022,Alemania,DE,no_financiera,2021-10-01,2022-12-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Technology-01,2023,Alemania,DE,no_financiera,2022-10-01,2023-12-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Technology-01,2024,Alemania,DE,no_financiera,2023-10-01,2024-12-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA;CSRD-DIR;CSRD-DE;STC-DIR
+Technology-02,2018,Alemania,DE,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Technology-02,2019,Alemania,DE,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Technology-02,2020,Alemania,DE,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Technology-02,2021,Alemania,DE,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Technology-02,2022,Alemania,DE,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Technology-02,2023,Alemania,DE,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Technology-02,2024,Alemania,DE,no_financiera,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA;CSRD-DIR;CSRD-DE;STC-DIR
+Technology-03,2018,Países Bajos,NL,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Technology-03,2019,Países Bajos,NL,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Technology-03,2020,Países Bajos,NL,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-NL
+Technology-03,2021,Países Bajos,NL,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Technology-03,2022,Países Bajos,NL,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Technology-03,2023,Países Bajos,NL,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA
+Technology-03,2024,Países Bajos,NL,no_financiera,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-NL;TAX-REG;TAX-DA;CSRD-DIR;CSRD-NL;STC-DIR
+Telecommunications-01,2018,Alemania,DE,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Telecommunications-01,2019,Alemania,DE,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Telecommunications-01,2020,Alemania,DE,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-DE
+Telecommunications-01,2021,Alemania,DE,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Telecommunications-01,2022,Alemania,DE,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Telecommunications-01,2023,Alemania,DE,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA
+Telecommunications-01,2024,Alemania,DE,no_financiera,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-DE;TAX-REG;TAX-DA;CSRD-DIR;CSRD-DE;STC-DIR
+Telecommunications-02,2018,Finlandia,FI,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FI
+Telecommunications-02,2019,Finlandia,FI,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FI
+Telecommunications-02,2020,Finlandia,FI,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-FI
+Telecommunications-02,2021,Finlandia,FI,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-FI;TAX-REG;TAX-DA
+Telecommunications-02,2022,Finlandia,FI,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FI;TAX-REG;TAX-DA
+Telecommunications-02,2023,Finlandia,FI,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-FI;TAX-REG;TAX-DA
+Telecommunications-02,2024,Finlandia,FI,no_financiera,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-FI;STC-DIR
+Utilities-01,2018,España,ES,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-ES
+Utilities-01,2019,España,ES,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-ES
+Utilities-01,2020,España,ES,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-ES
+Utilities-01,2021,España,ES,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-ES;TAX-REG;TAX-DA
+Utilities-01,2022,España,ES,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-ES;TAX-REG;TAX-DA
+Utilities-01,2023,España,ES,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-ES;TAX-REG;TAX-DA
+Utilities-01,2024,España,ES,no_financiera,2024-01-01,2025-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-ES;TAX-REG;TAX-DA;CSRD-DIR;CSRD-ES;STC-DIR
+Utilities-02,2018,Italia,IT,no_financiera,2018-01-01,2019-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-IT
+Utilities-02,2019,Italia,IT,no_financiera,2019-01-01,2020-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-IT
+Utilities-02,2020,Italia,IT,no_financiera,2020-01-01,2021-03-01,1,0,0,0,NFRD,,NFRD-DIR;NFRD-IT
+Utilities-02,2021,Italia,IT,no_financiera,2021-01-01,2022-03-01,1,1,0,0,NFRD,,NFRD-DIR;NFRD-IT;TAX-REG;TAX-DA
+Utilities-02,2022,Italia,IT,no_financiera,2022-01-01,2023-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-IT;TAX-REG;TAX-DA
+Utilities-02,2023,Italia,IT,no_financiera,2023-01-01,2024-03-01,1,1,1,0,NFRD,,NFRD-DIR;NFRD-IT;TAX-REG;TAX-DA
+Utilities-02,2024,Italia,IT,no_financiera,2024-01-01,2025-03-01,0,1,1,1,CSRD-ESRS,,TAX-REG;TAX-DA;CSRD-DIR;CSRD-IT;STC-DIR
