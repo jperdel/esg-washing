@@ -39,11 +39,13 @@ paragraph with at least one match per 100 words is retained together with one
 paragraph on each side; overlapping or adjacent windows are merged into a
 single zone, and zones shorter than 150 characters are discarded. The zones of
 a report, in document order, form its extracted text. Across the 343 reports,
-extraction kept 66,171 zones holding 28.1 million of the 71.0 million words of
-the PDF text layers, 39.6\,\% (per report, median 38.3\,\%, range
-7.1--75.6\,\%). The procedure depends only on the PDF and the vocabulary, and
-its recall is bounded by the vocabulary: a passage that uses none of its
-entries is never selected.
+extraction kept 66,591 zones holding 28.3 million of the 71.4 million words of
+the PDF text layers, 39.7\,\% (per report, median 38.6\,\%, range
+7.1--75.6\,\%). The share rises over the window, from a mean of 31.6\,\% of a
+report in 2018 to 49.6\,\% in 2024: ESG disclosure takes a growing part of the
+documents. The procedure depends only on the PDF and the vocabulary, and its
+recall is bounded by the vocabulary: a passage that uses none of its entries
+is never selected.
 
 \subsection{ESG vocabulary}
 \label{sec:method-vocab}
@@ -76,8 +78,8 @@ part of the vocabulary, and excluding them is a sensitivity check
 
 Terms were admitted after reviewing a sample of their occurrences in context,
 and the frequency-weighted precision of the resulting vocabulary is estimated
-from those samples, not measured directly on the final extraction, at about
-82\,\%. The stability of the scores under perturbations of the vocabulary is
+from those samples (3,401 occurrences of 430 entries), not measured directly
+on the final extraction, at about 82\,\% (95\,\% interval 80--84\,\%). The stability of the scores under perturbations of the vocabulary is
 reported in \S\ref{sec:robustness}.
 
 \begin{table}[tbp]
@@ -87,7 +89,7 @@ reported in \S\ref{sec:robustness}.
 phrases; a collocation stands in for a polysemous head. Sectoral entries cut
 across the three type columns. Scoring entries are the distinct lemmatised
 terms (patterns act at extraction only); the last column is their share of the
-1,047,951 vocabulary occurrences in the extracted text of the 343 reports.}
+1,059,412 vocabulary occurrences in the extracted text of the 343 reports.}
 \label{tab:method-vocab}
 \begin{tabular}{@{}lrrrrrrr@{}}
 \toprule
@@ -97,8 +99,8 @@ Pillar & Terms & Colloc. & Patterns & Total & Sectoral & Entries & Occ.\ (\%) \\
 \midrule
 E (environmental)   & 123 & 29 & 16 & 168 & 14 & 152 & 38.2 \\
 S (social)          & 105 & 23 & 11 & 139 & 14 & 127 & 17.6 \\
-G (governance)      &  65 & 27 &  3 &  95 &  8 &  90 & 30.0 \\
-TRANS (transversal) &  27 &  3 &  2 &  32 &  0 &  30 & 14.2 \\
+G (governance)      &  65 & 27 &  3 &  95 &  8 &  90 & 29.9 \\
+TRANS (transversal) &  27 &  3 &  2 &  32 &  0 &  30 & 14.3 \\
 \midrule
 Total               & 320 & 82 & 32 & 434 & 36 & 399 & 100.0 \\
 \bottomrule
@@ -144,16 +146,20 @@ The superscript, used in tables and figures, marks the density specification
 as distinct from the alternatives examined in \S\ref{sec:robustness}.
 
 \paragraph{Tone.} $\SEN$ is the Loughran--McDonald polarity
-\citep{loughran2011} of the lemmatised text,
+\citep{loughran2011} of the raw text,
 \[
-\SEN_d \;=\; \frac{s^{+}_d - s^{-}_d}{s^{+}_d + s^{-}_d + \varepsilon},
-\qquad \varepsilon = 10^{-6},
+\SEN_d \;=\; \frac{s^{+}_d - s^{-}_d}{s^{+}_d + s^{-}_d},
 \]
-where $s^{+}_d$ and $s^{-}_d$ count the tokens whose stem is in the
-dictionary's positive and negative lists, and $\varepsilon$ only prevents
-division by zero. It ranges from $-1$ (only negative words) to $1$ (only
-positive words) and depends on the balance of positive and negative words, not
-on how many there are.
+where $s^{+}_d$ and $s^{-}_d$ count the words of the text, lowercased, that
+appear as written in the dictionary's positive (354 forms) and negative (2,355
+forms) lists. The lists are lists of inflected forms and are matched as such,
+without stemming either side, which would admit words the dictionary does not
+contain (\emph{objectives} or \emph{diversity} as negative, \emph{information}
+as positive). Following \citet{loughran2011}, a positive word preceded within
+three words by a negation (\emph{no}, \emph{not}, \emph{none},
+\emph{neither}, \emph{never}, \emph{nobody}) is not counted. $\SEN$ ranges from
+$-1$ (only negative words) to $1$ (only positive words) and depends on the
+balance of positive and negative words, not on how many there are.
 
 \paragraph{Quantification.} A report that discloses substance can also put
 numbers on it. $\QUANT$ counts such evidence on the raw text, because
@@ -161,10 +167,13 @@ preprocessing removes numerals:
 \[
 \QUANT_d \;=\; m_d / R_d,
 \]
-where $m_d$ is the number of matches of four pattern families: percentages;
-numbers of four or more digits other than years; physical units (tonnes,
-CO$_2$e, GHG, energy, power and volume units); and the names of reporting
-frameworks (GRI, TCFD, SASB, CSRD, SDG, the taxonomy and others).
+where $m_d$ is the number of matches of three pattern families: percentages;
+numbers of four or more digits that are magnitudes, excluding years, year
+ranges, standard codes (ISO 14001) and the numbers of legal acts; and physical
+units of mass, energy, power and volume. Only figures count: the names of
+reporting frameworks are not quantification and grow with reporting mandates,
+and \emph{CO$_2$} or \emph{GHG} without a figure are topic words that the
+substance component already counts.
 
 \paragraph{Hedging.} Qualified language (\emph{may}, \emph{could},
 \emph{uncertain}) weakens whatever a report asserts. The hedging component is
@@ -173,14 +182,15 @@ the share of hedging words in the raw text,
 \HEDGE_d \;=\; h_d / W_d,
 \]
 where $W_d$ is the number of words (letter runs, hyphenated compounds kept
-whole) and $h_d$ the number of them in the Uncertainty, Weak Modal, Strong
-Modal and Constraining lists of the Loughran--McDonald master dictionary, 495
-word forms taken as written. It is computed on the raw text because the modal
-verbs (\emph{may}, \emph{might}, \emph{could}, \emph{must}, \emph{will}) are
-stopwords. Matching is by form, not by sense: the five most frequent forms
-(\emph{risk}, \emph{risks}, \emph{will}, \emph{may}, \emph{requirements}) make
-up 49.4\,\% of all matches, so $\HEDGE$ registers to a large extent how often a
-report names risk.
+whole) and $h_d$ the number of them in the Uncertainty and Weak Modal lists of
+the Loughran--McDonald master dictionary, 295 word forms taken as written. The
+Strong Modal and Constraining lists (\emph{must}, \emph{will},
+\emph{required}) express commitment or obligation rather than qualification,
+and \emph{risk} and \emph{risks}, although in the Uncertainty list, are left
+out: naming a risk is disclosure that frameworks require, not a qualification
+of a claim. \emph{May} is not counted where it names the month. $\HEDGE$ is
+computed on the raw text because the modal verbs (\emph{may}, \emph{might},
+\emph{could}) are stopwords.
 
 \paragraph{Pillars.} For description only, the pillar density counts the
 mentions of a pillar's entries per 100 lemmatised tokens, so that the four
@@ -216,10 +226,14 @@ a grid of weights.
 \subsection{Design choices}
 \label{sec:method-choices}
 
-The question the scores answer is whether a report's ESG text sounds more
-positive than the amount of ESG content in it would lead one to expect,
-compared with the other reports of the corpus. Each component is chosen for
-that question.
+The score contrasts two positions in the corpus: where a report stands on
+tone and where it stands on the density of its ESG content. It is a contrast of
+relative positions, not a residual. It does not model the tone that a report's
+substance would predict, and could not usefully do so here: the two components
+are only weakly correlated (0.20 pooled, 95\,\% interval $-0.03$ to $0.41$
+from resampling firms; 0.11 within firms and 0.25 between firm means), so tone
+net of substance is almost tone itself. Each component is chosen for that
+contrast.
 
 Substance is an amount per unit of text. Counting ESG mentions per 100 words
 means that a long report does not score more substance merely for being long,
@@ -228,11 +242,14 @@ no statistics of the other reports, a report's substance does not change when
 the sample does. As a check of convergent validity in the sense of
 \citet{campbell1959}, substance should move with quantification, which is
 counted with patterns on the raw text rather than with the vocabulary. Measures
-that keep the amount of disclosure agree with it to a similar degree (0.63 for
-density, 0.64 for a TF-IDF count divided by length), while a TF-IDF
-specification that scales each report's term vector to unit length, and so
-discards the amount, agrees much less (0.30); the ordering holds, with wider
-uncertainty, when the shared terms are removed from both measures.
+that keep the amount of disclosure agree with it to a similar degree (0.45 for
+density, 95\,\% interval 0.27--0.60 from resampling firms; 0.46 for a TF-IDF
+count divided by length), while a TF-IDF specification that scales each
+report's term vector to unit length, and so discards the amount, agrees much
+less (0.22). The agreement is mainly between firms (0.60 across firm means,
+0.23 within firms), and it holds when the entries that both measures count are
+removed from the vocabulary (0.38). Since $\QUANT$ is also a component of
+$\ESGSIext$, this is a check on substance, not on the score.
 \S\ref{sec:robustness} reports the scores under these alternative
 specifications. Tone is read with the
 Loughran--McDonald dictionary because it was built from corporate filings and
@@ -242,7 +259,10 @@ Tone and substance come in different units, a bounded ratio and mentions per
 100 words, so each is standardised before they are combined: a $z$-score
 expresses a report's value in standard deviations from the corpus mean, and
 the difference in \eqref{eq:esgsi} is then a difference of relative positions
-on a common scale. The scale has no natural zero. Zero is the corpus mean of
+on a common scale. A score is measured in standard deviations of its
+components, not of itself: its own standard deviation is 1.27 for $\ESGSI$
+and 1.53 for $\ESGSIext$, and slopes are reported on the component scale. The
+scale has no natural zero. Zero is the corpus mean of
 the combination, and no external benchmark exists against which a boundary
 could be calibrated for these reports (\S\ref{sec:limitations}). We therefore
 read each score as a relative position and apply no threshold: we compare

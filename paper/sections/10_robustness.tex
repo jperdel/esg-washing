@@ -2,15 +2,15 @@
 \label{sec:robustness}
 
 A score built on a hand-made vocabulary and chosen weights is useful only if
-its conclusions do not hinge on those choices. We vary three of them---the substance specification, the weights of the Extended
-ESGSI and the vocabulary---and compare each variant with a reference score
+its conclusions do not hinge on those choices. We vary four of them---the substance specification, the weights of the Extended
+ESGSI, the vocabulary and the extraction rule---and compare each variant with a reference score
 over the same 343 reports. Every comparison asks three questions. Is the
 ranking of reports preserved (Spearman rank correlation $\rho$ with the
 reference)? Are the same reports at the extremes (how many of the 34 reports
 with the highest, or lowest, reference score remain among the 34 highest, or
 lowest, written top/bottom)? And does the trend survive (the within-firm slope
 per year, \S\ref{sec:method-inference})?
-The reference slopes are $-0.181$ for $\ESGSI$ and $-0.260$ for $\ESGSIext$
+The reference slopes are $-0.239$ for $\ESGSI$ and $-0.255$ for $\ESGSIext$
 (\S\ref{sec:results-time}).
 
 \begin{table}[tbp]
@@ -19,13 +19,16 @@ The reference slopes are $-0.181$ for $\ESGSI$ and $-0.260$ for $\ESGSIext$
 \setlength{\tabcolsep}{4pt}
 \caption{Deletions from the vocabulary under simulated re-extraction
 ($n = 343$), against the full-vocabulary score as recomputed by the simulation
-(slope $-0.180$ for $\ESGSI$, against $-0.181$ for the adopted score;
-$-0.260$ for $\ESGSIext$). Entries: of the 434. Text: share of extracted words
+(slope $-0.239$ for $\ESGSI$ and $-0.255$ for $\ESGSIext$, as for the adopted
+scores). Entries: of the 434. Text: share of extracted words
 in paragraphs that still qualify (\%). Top/bot: reports of the reference
 top/bottom 34 that remain. Slope: within-firm slope per year. Random rows:
 medians over 1{,}000 draws (text: mean). With caveat: six frequent entries
 admitted although part of their occurrences is navigation text, legal
-boilerplate or a non-ESG sense.}
+boilerplate or a non-ESG sense. Late admission: entries that would not pass
+the dispersion rule of \S\ref{sec:method-vocab} on the 2018--2019 reports
+alone. Late mass: entries with at least three quarters of their occurrences in
+2022--2024.}
 \label{tab:robustness-summary}
 \begin{tabular}{@{}lrrrrrrrr@{}}
 \toprule
@@ -33,19 +36,21 @@ boilerplate or a non-ESG sense.}
 \cmidrule(lr){4-6}\cmidrule(l){7-9}
 Deleted & Entries & Text & $\rho$ & Top/bot & Slope & $\rho$ & Top/bot & Slope \\
 \midrule
-Sectoral entries   & 36  & 99.6 & 0.9995 & 33/33 & $-0.176$ & 0.9994 & 33/32 & $-0.256$ \\
-Pillar E           & 168 & 81.1 & 0.8844 & 28/23 & $-0.105$ & 0.9088 & 30/26 & $-0.211$ \\
-Pillar S           & 139 & 90.1 & 0.9836 & 32/30 & $-0.168$ & 0.9886 & 31/31 & $-0.253$ \\
-Pillar G           & 95  & 68.6 & 0.9439 & 28/30 & $-0.206$ & 0.9622 & 27/29 & $-0.250$ \\
-Pillar TRANS       & 32  & 94.8 & 0.9822 & 31/32 & $-0.132$ & 0.9832 & 32/32 & $-0.205$ \\
-\emph{Board of directors} & 1 & 93.6 & 0.9953 & 33/31 & $-0.188$ & 0.9965 & 33/33 & $-0.268$ \\
-With caveat        & 6   & 95.2 & 0.9912 & 32/32 & $-0.180$ & 0.9940 & 30/31 & $-0.255$ \\
+Sectoral entries   & 36  & 99.6 & 0.9983 & 33/32 & $-0.235$ & 0.9988 & 33/33 & $-0.250$ \\
+Pillar E           & 168 & 81.1 & 0.8883 & 27/25 & $-0.172$ & 0.9034 & 26/28 & $-0.200$ \\
+Pillar S           & 139 & 90.1 & 0.9718 & 31/29 & $-0.222$ & 0.9785 & 32/31 & $-0.243$ \\
+Pillar G           & 95  & 68.7 & 0.9048 & 21/28 & $-0.295$ & 0.9461 & 25/28 & $-0.269$ \\
+Pillar TRANS       & 32  & 94.8 & 0.9830 & 29/31 & $-0.183$ & 0.9865 & 30/32 & $-0.205$ \\
+\emph{Board of directors} & 1 & 93.6 & 0.9936 & 31/31 & $-0.248$ & 0.9906 & 32/33 & $-0.262$ \\
+With caveat        & 6   & 95.3 & 0.9902 & 30/31 & $-0.244$ & 0.9927 & 30/33 & $-0.258$ \\
+Late admission     & 100 & 99.5 & 0.9950 & 32/32 & $-0.202$ & 0.9955 & 33/33 & $-0.217$ \\
+Late mass          & 51  & 99.4 & 0.9879 & 31/31 & $-0.177$ & 0.9891 & 33/33 & $-0.192$ \\
 \addlinespace
-Random 10\,\%      & 43  & 96.3 & 0.9931 & 33/32 & $-0.174$ & 0.9954 & 33/32 & $-0.253$ \\
-Random 20\,\%      & 87  & 91.8 & 0.9820 & 31/31 & $-0.165$ & 0.9873 & 31/31 & $-0.242$ \\
-Random 30\,\%      & 130 & 86.6 & 0.9674 & 30/30 & $-0.154$ & 0.9764 & 30/30 & $-0.231$ \\
-Random 40\,\%      & 174 & 80.8 & 0.9497 & 29/28 & $-0.139$ & 0.9611 & 29/29 & $-0.214$ \\
-Random 50\,\%      & 217 & 74.0 & 0.9242 & 27/26 & $-0.118$ & 0.9396 & 28/28 & $-0.192$ \\
+Random 10\,\%      & 43  & 96.2 & 0.9915 & 32/31 & $-0.234$ & 0.9937 & 32/33 & $-0.249$ \\
+Random 20\,\%      & 87  & 92.0 & 0.9804 & 30/30 & $-0.224$ & 0.9849 & 31/32 & $-0.239$ \\
+Random 30\,\%      & 130 & 86.8 & 0.9640 & 29/28 & $-0.212$ & 0.9708 & 29/31 & $-0.225$ \\
+Random 40\,\%      & 174 & 80.9 & 0.9434 & 27/27 & $-0.199$ & 0.9526 & 28/30 & $-0.211$ \\
+Random 50\,\%      & 217 & 73.8 & 0.9145 & 26/25 & $-0.176$ & 0.9245 & 27/28 & $-0.186$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -53,22 +58,22 @@ Random 50\,\%      & 217 & 74.0 & 0.9242 & 27/26 & $-0.118$ & 0.9396 & 28/28 & $
 \paragraph{Substance specification.} We recompute $\ESGSI$ with two TF-IDF
 versions of substance, in which each entry's count is weighted by how few
 reports use it. If the weighted count is divided by the length of the text, as
-density is, the ranking is almost unchanged ($\rho = 0.993$; 33/32 of the
+density is, the ranking is almost unchanged ($\rho = 0.992$; 33/31 of the
 extreme deciles kept): how entries are weighted matters little. If instead
 each report's vector of weighted counts is scaled to unit length, the ranking
-changes markedly ($\rho = 0.642$; 18/21)
-and the slope weakens to $-0.143$: how the count is scaled matters much more
+changes markedly ($\rho = 0.626$; 13/19)
+and the slope weakens to $-0.198$: how the count is scaled matters much more
 (\S\ref{sec:method-choices}).
 
 \paragraph{Weights of the Extended ESGSI.} Over the grid
 $w_q, w_h \in \{0, 0.25, 0.5, 0.75, 1\}$ of Eq.~\eqref{eq:esgsiext}, $\rho$
-with the score at the default weights is at least 0.865, the minimum being at
-$w_q = w_h = 0$, where the score is $\ESGSI$, and at least 0.973 within 0.25
-of the default on each axis, where at least 28 of the top and 29 of the
-bottom 34 reports remain. The ranking depends mostly on $w_h$ and the slope
-mostly on $w_q$ (from $-0.185$ at $w_q = 0$ to $-0.335$ at $w_q = 1$, with
-$w_h = 0.5$); the slope is negative in all 25 pairs, and every firm-clustered
-95\,\% interval excludes zero.
+with the score at the default weights is at least 0.826, the minimum being at
+$w_q = w_h = 0$, where the score is $\ESGSI$, and at least 0.960 within 0.25
+of the default on each axis, where at least 27 of the top and 29 of the
+bottom 34 reports remain. The ranking depends mostly on $w_h$; the slope
+barely depends on either weight (from $-0.239$ at $w_q = 0$ to $-0.272$ at
+$w_q = 1$), is negative in all 25 pairs, and every firm-clustered 95\,\%
+interval excludes zero.
 
 \paragraph{Vocabulary.} The vocabulary selects the text as well as scoring it
 (\S\ref{sec:method-vocab}), so each deletion of entries is run in two ways:
@@ -77,7 +82,7 @@ changes, and with a simulated re-extraction, in which the extraction rule of
 \S\ref{sec:method-extraction} is re-applied without the deleted entries and
 all components are recomputed on the paragraphs that still qualify; with the
 full vocabulary the simulation reproduces the adopted scores
-($\rho > 0.9999$). We delete designed sets of entries and,
+($\rho = 0.9999$). We delete designed sets of entries and,
 1{,}000 times at each size, random sets of 10--50\,\% of the 434 entries, and
 read each designed deletion against 1{,}000 random deletions of the same size.
 Table~\ref{tab:robustness-summary} gives the re-extraction results for both
@@ -100,32 +105,45 @@ is the full-vocabulary slope.}
 
 Removing the 36 sectoral entries barely moves either score ($\rho \geq 0.998$
 in both modes): they carry about 1\,\% of the vocabulary's matches. The
-environmental pillar moves the score most. Without it $\rho = 0.884$, only 23
-of the bottom 34 reports remain, and the slope falls to $-0.105$ (SE 0.039,
-$p = 0.009$; bootstrap $0.011$), still clearly negative. Its $\rho$ is
-lower than in 998 of the 1{,}000 random deletions of the same size, although
-its entries carry no more of the matches than random sets of that size
-(38.2\,\% against 38.0\,\%): the environmental entries order the reports
-differently from the rest of the vocabulary. It is the only designed deletion
-whose $\rho$ falls below the median for a random half of the vocabulary
+environmental pillar moves the score most. Without it $\rho = 0.888$, only 25
+of the bottom 34 reports remain, and the slope falls to $-0.172$ (SE 0.036,
+$p < 0.001$; bootstrap $< 10^{-4}$), still clearly negative. Its $\rho$ is
+lower than in 989 of the 1{,}000 random deletions of the same size: the
+environmental entries order the reports differently from the rest of the
+vocabulary. With pillar G, it is one of the two designed deletions whose
+$\rho$ falls below the median for a random half of the vocabulary
 (Figure~\ref{fig:robustness-stability}a). With the extraction held fixed its
-effect is larger ($\rho = 0.776$, 12 of the bottom 34 kept, slope $-0.080$
-with $p = 0.027$), because the paragraphs extracted for
+effect is larger ($\rho = 0.760$, 18 of the bottom 34 kept, slope $-0.135$
+with $p < 0.001$), because the paragraphs extracted for
 environmental entries stay in the text, unscored, and dilute density. Without the transversal pillar the
-slope is $-0.132$; the remaining designed deletions leave it between $-0.168$
-and $-0.206$, the steepest being without pillar G, which also removes nearly a
+slope is $-0.183$; the remaining pillar and entry deletions leave it between $-0.222$
+and $-0.295$, the steepest being without pillar G, which also removes nearly a
 third of the extracted text. $\ESGSIext$ moves less than $\ESGSI$, in $\rho$,
 under every pillar deletion.
 
+Two deletions target the concern that a vocabulary settled on the whole
+window favours the language of its last years. Deleting the 100 entries that
+would not have passed the dispersion rule on the 2018--2019 reports alone, or
+the 51 entries with at least three quarters of their occurrences in 2022--2024
+(against 58\,\% of all occurrences), leaves $\rho$ of 0.995 and 0.988 and
+slopes of $-0.202$ and $-0.177$: the trend does not rest on entries that only
+the later reports qualify.
+
 Under random deletion the ranking degrades smoothly: with half of the entries
-removed the median $\rho$ is 0.924 for $\ESGSI$ and 0.940 for $\ESGSIext$,
-and 27 of the top and 26 of the bottom 34 reports remain. The slope is the
+removed the median $\rho$ is 0.915 for $\ESGSI$ and 0.925 for $\ESGSIext$,
+and 26 of the top and 25 of the bottom 34 reports remain. The slope is the
 least stable measure. Under re-extraction its median drifts towards zero as
-more is deleted, from $-0.174$ at 10\,\% to $-0.118$ at 50\,\%, because less
+more is deleted, from $-0.234$ at 10\,\% to $-0.176$ at 50\,\%, because less
 of the original text remains; with the extraction held fixed it stays between
-$-0.179$ and $-0.160$. Its sign does not change: over the 5{,}000 random
-draws the $\ESGSI$ slope is negative in all but one (a 50\,\% deletion under
-re-extraction), and the $\ESGSIext$ slope in all, in both modes.
+$-0.238$ and $-0.212$. Its sign does not change: over the 5{,}000 random
+draws the slope of both scores is negative in every draw, in both modes.
+
+\paragraph{Extraction rule.} The same simulation tightens the rule that
+selects the text, with the full vocabulary. A threshold of 1.5 or 2 matches
+per 100 words, or retaining hot paragraphs without their neighbours, keeps
+70--93\,\% of the extracted text and gives $\rho$ between 0.937 and 0.988 and
+slopes between $-0.203$ and $-0.260$. A looser rule than the adopted one
+cannot be simulated from the extracted text.
 
 Except under unit-length scaling of substance, the ranking of reports is
 largely preserved and the trend stays negative; its size depends on the

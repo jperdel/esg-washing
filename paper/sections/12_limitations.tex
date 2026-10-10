@@ -9,6 +9,11 @@
   cases), so no value is evidence about a firm's conduct; the one empirical
   check on substance, convergent validity with $\QUANT$
   (\S\ref{sec:method-choices}), is internal and reads the same extracted text.
+  The free external criteria that could be assembled for these firms
+  (verified emissions under the EU Emissions Trading System, counts of
+  reported controversies, market reactions) showed no detectable association
+  and had power only for large effects; a test of consequences would need
+  analyst forecasts and commercial controversy data.
 \item \emph{A vocabulary built on this corpus.} Candidates, admission
   decisions, pillars and sectoral entries were settled on the 343 reports
   that are scored, with no part held out, and admission rests on the
@@ -16,9 +21,9 @@
   \textbf{[Author: identify the reviewers.]}. Its precision is estimated
   rather than measured on the final extraction (\S\ref{sec:method-vocab}),
   and its recall is unknown. The stability of \S\ref{sec:robustness} is
-  stability around this fit; it covers deletions of entries, not additions,
-  and the size of the trend depends on the environmental and transversal
-  entries.
+  stability around this fit; it covers deletions of entries, including those
+  that qualify only on the later reports, not additions, and the size of the
+  trend depends on the environmental and transversal entries.
 \item \emph{Country, document type and industry.} Document type is almost
   determined by country (\S\ref{sec:data}), so neither effect is identified
   on its own. Industries hold 2 to 11 firms and supersectors 1 to 7, both
@@ -28,20 +33,21 @@
   with a wild cluster bootstrap, but they do not cover shocks common to all
   firms in a year, and seven years are too few to cluster on
   (\S\ref{sec:method-inference}).
-\item \emph{Mandate.} European sustainability reporting became progressively
-  mandated over the window, an exposure common to all firms and collinear
-  with calendar time, so the rise in substance cannot be split into changed
-  conduct and compliance, and compliance itself lowers both scores
-  (\S\ref{sec:results-mandate}).
+\item \emph{Mandate.} The content of the mandatory sustainability statement
+  became progressively prescribed over the window. The staggered entry of
+  taxonomy alignment and of the ESRS gives only weak variation in exposure,
+  and it detects no jump (\S\ref{sec:results-mandate}), so the rise in
+  substance cannot be split into changed conduct and compliance, and
+  compliance itself lowers both scores.
 \item \emph{Weights.} The weights of the Extended ESGSI are a choice. Its
-  ranking is stable near them, but the size of its trend scales with $w_q$
-  (\S\ref{sec:robustness}).
+  ranking is stable near them but depends on $w_h$ further away, and its
+  trend barely depends on either (\S\ref{sec:robustness}).
 \item \emph{Dictionaries.} $\SEN$ applies a finance dictionary to
-  non-financial narrative, without negation handling, and as a bounded ratio
-  it ignores how many sentiment words a text contains. $\HEDGE$ matches by
-  form (\S\ref{sec:method-index}): \emph{risk} and \emph{risks} are
-  147{,}099 of its 498{,}477 matches, and at least 6{,}632 of the 38{,}628
-  matches of \emph{may} are the month.
+  non-financial narrative, and as a bounded ratio it ignores how many
+  sentiment words a text contains. Some negative words of the dictionary
+  name ESG topics (\emph{corruption}, \emph{injury}), so a report that covers
+  them more reads as more negative. $\HEDGE$ matches by form, not by sense
+  (\S\ref{sec:method-index}).
 \end{itemize}
 
 \paragraph{Data and code availability.} The code, the derived data and a
