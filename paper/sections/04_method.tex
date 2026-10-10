@@ -45,7 +45,13 @@ the PDF text layers, 39.7\,\% (per report, median 38.6\,\%, range
 report in 2018 to 49.6\,\% in 2024: ESG disclosure takes a growing part of the
 documents. The procedure depends only on the PDF and the vocabulary, and its
 recall is bounded by the vocabulary: a passage that uses none of its entries
-is never selected.
+is never selected. To size what is lost, we re-read 98 reports, two per firm
+and 14 per year, and classified passages of the retained and the discarded
+text with independent ESG classifiers \citep{schimanski2024esgbert}. At most
+8.1\,\% of the text that ESGBERT labels as ESG lies outside the extraction
+($[6.7, 9.8]$; 13.0\,\% with FinBERT-ESG), with no trend over the window. This
+is an upper bound: in a reading of 40 discarded passages labelled as ESG,
+about half were audit reports, director biographies or product descriptions.
 
 \subsection{ESG vocabulary}
 \label{sec:method-vocab}

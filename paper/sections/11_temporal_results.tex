@@ -87,13 +87,18 @@ negative impacts, incidents and grievance mechanisms on which the ESRS require f
 (\S\ref{sec:results-mandate}). With firm fixed effects the 2024 step of $\Z(\SEN)$ is $-0.30$
 ($[-0.50, -0.09]$) against 2018--2023; recomputing $\SEN$ without 24 negative words that name
 ESRS disclosure topics reduces it to $-0.02$ ($p = 0.87$), and a broader list of 48 such words
-gives the same result. Over the full window $\SEN$ has no detectable trend ($p = 0.18$);
-a failure to reject is not a demonstrated null. $\ESGSIext$ falls at about the same rate as
-$\ESGSI$: $\QUANT$, counted as figures only, and $\HEDGE$ have no trend. In terms of disclosure
-practice, the reports devote a growing part of their ESG text to identifiable ESG content without
-putting more figures on it, and in 2024 they also report more adverse events: the scores fall
-because ESG disclosure became denser and, in the last year, more prescribed, not because firms
-came to describe their ESG performance less favourably.
+gives the same result. The step sits mostly in fragments shorter than 30 words, the rows and
+labels of the ESRS data tables. This is not the whole of the change in tone in 2024: two
+independent classifiers also find the environmental and social narrative less positive, with
+fewer positive statements rather than more negative ones, a change that remains without those
+words and that the dictionary does not register (\S\ref{sec:robustness}). Over the full window
+$\SEN$ has no detectable trend ($p = 0.18$); a failure to reject is not a demonstrated null.
+$\ESGSIext$ falls at about the same rate as $\ESGSI$: $\QUANT$, counted as figures only, and
+$\HEDGE$ have no trend. In terms of disclosure practice, the reports devote a growing part of
+their ESG text to identifiable ESG content without putting more figures on it, and in 2024 they
+also report more adverse events: the scores fall because ESG disclosure became denser and, in the
+last year, more prescribed. The narrative of 2024 is also less positive, but the scores do not
+measure that change.
 
 The panel is balanced, so the series is not a change in the set of firms or in the country mix,
 and the document-type mix barely moves (\S\ref{sec:data}). Within Germany, fourteen firms with
@@ -146,8 +151,8 @@ confound is left unresolved. Neither step moves $\ESGSI$ detectably either ($-0.
 $-0.07$, SE $0.28$). One consequence belongs to the architecture: since both scores fall when
 substance rises, a firm that adds a mandated disclosure moves down the scale for having complied.
 In 2024 the same holds on the side of tone, since reporting the negative impacts, incidents and
-grievances that the ESRS require adds words of the negative list (\S
-ef{sec:results-time}). A user of the scores should
+grievances that the ESRS require adds words of the negative list
+(\S\ref{sec:results-time}). A user of the scores should
 therefore read the decline over this window as denser disclosure, whatever its cause, and not as
 evidence that firms became more candid.
 
@@ -261,7 +266,8 @@ The rise in mentions is not spread evenly across the pillars of \S\ref{sec:metho
 to 23\% and the social share stays between 16\% and 20\%. In density, environmental mentions rise
 in every year, from $1.73$ to $3.35$ per 100 tokens, and transversal ones from $0.63$ to $1.57$,
 while governance mentions fall from $2.34$ to $1.90$: governance loses ground absolutely, not only
-by dilution. The rise in substance is, in other words, environmental and regulatory
+by dilution. Two supervised classifiers reproduce the fall of the governance share
+(\S\ref{sec:robustness}). The rise in substance is, in other words, environmental and regulatory
 (\S\ref{sec:results-mandate}).
 
 \begin{figure}[tbp]
@@ -290,6 +296,6 @@ entries, without each pillar and without the most frequent entry is examined in
 (\S\ref{sec:method-choices}): a yearly mean of $-1.109$ is a position within this corpus, and no
 level here is comparable with another application of the architecture. What is interpretable is
 the ordering within the sample and the direction of change: denser ESG disclosure, at unchanged
-tone until the prescribed statements of 2024, and firms differing far more than years. None of this is
+dictionary tone until the prescribed statements of 2024, and firms differing far more than years. None of this is
 evidence about conduct: the reporting mandates of the same window could move the scores with
 conduct held fixed, and this design cannot exclude them (\S\ref{sec:results-mandate}).

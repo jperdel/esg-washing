@@ -164,9 +164,33 @@ one: fewer passages framed as opportunities and fewer commitments, not more
 framed as risks (net sentiment $-0.69$ standard deviations against 2018--2023).
 The check shares the text with the scores and covers climate passages only.
 
+\paragraph{Classifiers of the whole text.} Open classifiers that read all of the
+extracted text, applied to a random sample of 200 passages per report (67{,}448
+passages), point the same way. Sentence-level tone from FinBERT
+\citep{huang2023finbert} correlates with $\Z(\SEN)$ at $\rho = 0.77$
+($[0.68, 0.84]$; within firms $r = 0.73$, between them $0.86$), in environmental,
+social and governance passages alike ($0.66$, $0.69$ and $0.41$), and less with
+every other component (with $\Z(\HEDGE)$, $-0.44$). Pillar shares from FinBERT-ESG
+and ESGBERT \citep{schimanski2024esgbert} track ours ($\rho = 0.83$ for
+governance with both, $0.85$--$0.88$ for the environmental and $0.69$--$0.70$
+for the social pillar), and both reproduce the fall of the governance share
+(from $0.45$ to $0.29$ and from $0.33$ to $0.21$ of ESG passages between 2018
+and 2024). Substance again tracks how much ESG text a report holds (with the
+share of passages ESGBERT labels as ESG, $\rho = 0.72$), not how much of it
+describes concrete action ($-0.03$ with the share of environmental passages
+classified as actions). The classifiers also split the change in tone in 2024
+into two parts. The fall of $\Z(\SEN)$ is largest in fragments shorter than 30
+words, the rows and labels of the ESRS tables ($-0.47$ standard deviations, and
+$-0.10$ without the ESRS topic words of \S\ref{sec:results-time}). Separately,
+FinBERT's net tone falls by $0.27$ standard deviations ($[-0.49, -0.06]$), in
+environmental and social passages, through fewer positive sentences and not more
+negative ones, and by as much without the passages dominated by those words. On
+the same passages without those words $\SEN$ does not move ($+0.01$): the
+dictionary misses a narrative that became less positive.
+
 Except under unit-length scaling of substance, the ranking of reports is
 largely preserved and the trend stays negative; its size depends on the
 environmental and transversal vocabulary. These checks bound how far
-the scores depend on the choices varied, and the independent instrument
-supports the tone component; they do not validate the scores as measures of
-conduct (\S\ref{sec:limitations}).
+the scores depend on the choices varied, and the independent classifiers
+support the tone component and the pillar composition; they do not validate
+the scores as measures of conduct (\S\ref{sec:limitations}).

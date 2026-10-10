@@ -35,12 +35,16 @@ Los identificadores anónimos (`Financials-04`, etc.) son los del análisis **an
   - ¿Deben contar las cifras con separador de miles (`14,918`)? Ahora no cuentan.
 - [ ] **Validación con codificación humana:** ¿se hace? Serían unos 300 pasajes, 2 codificadores, 4–5 días-persona y como mucho una página de apéndice.
 - [ ] **Diccionario ESG externo** como validez convergente de SUS: ¿se incluye? Roza la directriz 2.
-- [x] **Límite de páginas:** el límite de 15 páginas del núcleo técnico es blando. Con ClimateBERT ocupa unas 15,5–16 (la bibliografía empieza en la 16), y no hay que recortar mientras no crezca mucho más.
+- [x] **Límite de páginas:** el límite de 15 páginas del núcleo técnico es blando. Con ClimateBERT y los modelos del #5 ocupa unas 16,5 (limitaciones en la 16, bibliografía en la 17). No hay que recortar mientras no crezca mucho más.
 - [ ] **Título:** ¿se acota el alcance? Por ejemplo, grandes emisores cotizados, o "densidad de contenido ESG" en lugar de "sustancia".
 - [x] **ClimateBERT:** integrado en §5, con el contraste de 2024 en §4.1 y el matiz sobre HEDGE en §3.3 (issue #4, rama `climatebert`).
-- [ ] **Lecturas antes del envío** (issue #4):
+- [x] **Otros modelos ESG** (FinBERT, ESGBERT, NetZero): integrados en §5, con el recall de la extracción en §3.1, la lectura de 2024 matizada en §4.1 y el ajuste de §6 (issue #5, rama `esg-models`).
+- [ ] **Lectura de 2024:** ahora el paper dice que la caída de SEN es vocabulario de las tablas ESRS, pero que FinBERT y ClimateBERT ven además un texto narrativo menos positivo que SEN no capta. Revisa que la introducción y las conclusiones que escribas no digan que el tono no cambió.
+- [ ] **Licencia de FinBERT:** los modelos de FinBERT no declaran licencia en Hugging Face (el código es Apache-2.0 y la ficha pide citar a Huang et al., 2023). ¿Se menciona en la disponibilidad de datos y código?
+- [ ] **Lecturas antes del envío** (issues #4 y #5):
   - Bingler et al. (2022, 2024) completo, para confirmar la definición del índice de *cheap talk*.
   - Bax, Paterlini y Valentini (2026, *Economics Letters*), que parece encontrar el mismo salto del *cheap talk* con la CSRD en el EURO STOXX 50. Si se confirma, conviene citarlo.
+  - Huang, Wang y Yang (2023, FinBERT) y Schimanski et al. (2024, ESGBERT), citados en §3.1 y §5.
 - [ ] **Sesgo del extractor** hacia `taxonomy`, CO2 y GHG (issue #1, pregunta 5): ¿se menciona en limitaciones?
 
 ## 4. Corpus: anomalías que quedan por decidir

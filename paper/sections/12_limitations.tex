@@ -8,7 +8,7 @@
   external criterion (regulatory findings, controversy data, hand-coded
   cases), so no value is evidence about a firm's conduct; the empirical
   checks, convergent validity with $\QUANT$ (\S\ref{sec:method-choices}) and
-  with an independent classifier (\S\ref{sec:robustness}), read the same
+  with independent classifiers (\S\ref{sec:robustness}), read the same
   extracted text.
   The free external criteria that could be assembled for these firms
   (verified emissions under the EU Emissions Trading System, counts of
@@ -21,7 +21,9 @@
   judgement of the reviewers of the candidate lists
   \textbf{[Author: identify the reviewers.]}. Its precision is estimated
   rather than measured on the final extraction (\S\ref{sec:method-vocab}),
-  and its recall is unknown. The stability of \S\ref{sec:robustness} is
+  and its recall is bounded only indirectly, by the share of the text that
+  independent classifiers label as ESG and the extraction misses
+  (\S\ref{sec:method-extraction}). The stability of \S\ref{sec:robustness} is
   stability around this fit; it covers deletions of entries, including those
   that qualify only on the later reports, not additions, and the size of the
   trend depends on the environmental and transversal entries.
@@ -47,7 +49,9 @@
   non-financial narrative, and as a bounded ratio it ignores how many
   sentiment words a text contains. Some negative words of the dictionary
   name ESG topics (\emph{corruption}, \emph{injury}), so a report that covers
-  them more reads as more negative. $\HEDGE$ matches by form, not by sense
+  them more reads as more negative, and in 2024 it misses a fall in positive
+  narrative tone that two classifiers find (\S\ref{sec:robustness}).
+  $\HEDGE$ matches by form, not by sense
   (\S\ref{sec:method-index}).
 \end{itemize}
 
