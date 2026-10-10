@@ -1,0 +1,22 @@
+{
+  "detector": {
+    "n": 299,
+    "max_abs_dif": 8.344650268554688e-07,
+    "argmax_igual": 1.0
+  },
+  "specificity": {
+    "n": 298,
+    "max_abs_dif": 2.980232238769531e-07,
+    "argmax_igual": 1.0
+  },
+  "sentiment": {
+    "n": 298,
+    "max_abs_dif": 3.5762786865234375e-07,
+    "argmax_igual": 1.0
+  },
+  "commitment": {
+    "n": 298,
+    "max_abs_dif": 4.76837158203125e-07,
+    "argmax_igual": 1.0
+  }
+}

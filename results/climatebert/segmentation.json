@@ -1,0 +1,47 @@
+{
+  "informes": 343,
+  "parrafos": 690717,
+  "palabras_extraidas": 28322073,
+  "palabras_en_pasajes": 23939367,
+  "cuota_palabras_en_pasajes": 0.84525475942386,
+  "pasajes": 318258,
+  "pasajes_por_informe": {
+    "mediana": 793.0,
+    "min": 19,
+    "max": 3340
+  },
+  "palabras_por_pasaje": {
+    "p05": 32.0,
+    "p50": 60.0,
+    "p95": 178.0
+  },
+  "min_palabras": 30,
+  "max_palabras": 250,
+  "idioma": {
+    "muestra_langdetect": 20523,
+    "cuota_en_muestra": 0.9989767577839497,
+    "otros_idiomas_muestra": {
+      "de": 9,
+      "fr": 2,
+      "es": 2,
+      "nl": 2,
+      "pt": 1,
+      "ca": 1,
+      "da": 1,
+      "it": 1,
+      "ro": 1,
+      "cy": 1
+    },
+    "cuota_en_por_informe": {
+      "min": 0.95,
+      "p05": 0.9833333333333333,
+      "mediana": 1.0
+    },
+    "informes_con_menos_de_90pct_en": 0,
+    "cuota_palabras_funcionales_en_por_informe": {
+      "min": 0.3328463870475526,
+      "mediana": 0.36680580658954987
+    },
+    "pasajes_con_cuota_funcional_lt_0.10": 0.004257552048966562
+  }
+}

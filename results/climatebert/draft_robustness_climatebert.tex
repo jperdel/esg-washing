@@ -1,0 +1,27 @@
+% Draft for Section 5 (Robustness), NOT inserted in the paper.
+% Needs bingler2022, bingler2024 and webersinke2021 (results/issue2_lit/refs.bib,
+% branch issue-2-lit-review) in paper/references.bib; campbell1959 is already there.
+% All figures from scripts/cb_analysis.py (results/climatebert/summary.json,
+% correlations.csv). Intervals: bootstrap over firms (2,000 draws); 2024 contrasts
+% with firm fixed effects and firm-clustered errors.
+
+\paragraph{An independent text instrument.} As a check of convergent and
+discriminant validity \citep{campbell1959}, we apply to the same extracted text,
+split into 318{,}258 paragraph-length passages, the open ClimateBERT classifiers
+\citep{webersinke2021} with which \citet{bingler2022,bingler2024} build a
+cheap-talk index, the share of climate commitments that are not specific. Tone
+converges: the classifiers' net climate sentiment correlates with $\Z(\SEN)$ at
+$\rho = 0.58$ (95\,\% interval $[0.42, 0.72]$), within firms ($r = 0.51$) and
+between them ($r = 0.62$), and passage by passage (median within-report
+$\rho = 0.42$, positive in all but one report). Substance does not converge with
+specificity: $\susdens$ tracks the share of climate passages ($\rho = 0.65$) but
+not the share of specific ones ($\rho = -0.11$; within firms $r = -0.35$), while
+$\QUANT$ does, weakly ($\rho = 0.20$). The cheap-talk index is unrelated to
+$\ESGSI$ ($\rho = -0.06$, $[-0.27, 0.14]$), to $\ESGSIext$ ($0.02$) and to
+$\HEDGE$ ($0.15$, $[-0.08, 0.35]$), so neither score is a proxy for cheap talk.
+In 2024 the classifiers also register a change, but a different one: fewer
+passages framed as opportunities and fewer commitments, not more framed as risks
+(net sentiment $-0.69$ standard deviations against 2018--2023). By contrast, the
+2024 fall of $\Z(\SEN)$ vanishes ($-0.02$, $p = 0.87$) once 24 words of the
+negative list that name ESRS disclosure topics are excluded. The check shares the
+text with the scores and covers climate passages only.
