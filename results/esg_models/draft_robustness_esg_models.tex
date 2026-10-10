@@ -1,0 +1,22 @@
+% Draft for Section 5 (Robustness), NOT inserted in the paper (issue #5).
+% To follow or replace the end of "An independent text instrument".
+% Needs huang2023finbert and schimanski2024esgbert (results/esg_models/refs.bib).
+% Figures from scripts/esgm_analysis.py (results/esg_models/summary.json,
+% correlations.csv): 200 passages per report (67,448), firm-bootstrap intervals
+% (2,000 draws), 2024 contrasts with firm fixed effects and firm-clustered errors.
+% ~180 words.
+
+Open classifiers that cover the whole text point the same way. FinBERT's
+sentence-level tone \citep{huang2023finbert}, on a random sample of 200 passages
+per report, correlates with $\Z(\SEN)$ at $\rho = 0.77$ ($[0.68, 0.84]$; within
+firms $r = 0.73$), and also within environmental, social and governance passages
+($0.66$, $0.69$ and $0.41$). Pillar shares from FinBERT-ESG and ESGBERT
+\citep{schimanski2024esgbert} track ours ($\rho = 0.83$ for governance, $0.88$
+and $0.70$ for the environmental and social pillars), and both reproduce the fall
+of the governance share between 2018 and 2024. The 2024 change in tone has two
+parts. The fall of $\Z(\SEN)$ sits in the disclosure-topic words of the ESRS
+tables and vanishes without them, but both FinBERT and ClimateBERT also find fewer
+positive statements in environmental and social narrative ($-0.27$ standard
+deviations for FinBERT, unchanged without those words), which the dictionary does
+not register. In a re-read of 98 reports, at most 8\,\% of the text that ESGBERT
+labels as ESG lies outside the extraction.

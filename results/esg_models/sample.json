@@ -1,0 +1,13 @@
+{
+  "pasajes_totales": 318258,
+  "informes": 343,
+  "pasajes_por_informe_en_muestra": 200,
+  "semilla": 20261011,
+  "pasajes_muestra": 67448,
+  "textos_distintos_muestra": 64814,
+  "informes_con_menos_de_200_pasajes": 17,
+  "fraccion_muestreada": 0.21192868678870602,
+  "frases_muestra": 196719,
+  "frases_por_pasaje_media": 3.0351312987934707,
+  "palabras_por_frase_mediana": 24.0
+}
