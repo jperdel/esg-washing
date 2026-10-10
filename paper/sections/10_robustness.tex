@@ -145,8 +145,28 @@ per 100 words, or retaining hot paragraphs without their neighbours, keeps
 slopes between $-0.203$ and $-0.260$. A looser rule than the adopted one
 cannot be simulated from the extracted text.
 
+\paragraph{An independent text instrument.} As a check of convergent and
+discriminant validity \citep{campbell1959}, we apply to the same extracted text,
+split into 318{,}258 paragraph-length passages, the open ClimateBERT classifiers
+\citep{webersinke2021} with which \citet{bingler2022,bingler2024} build a
+cheap-talk index, the share of climate commitments that are not specific. Tone
+converges: the classifiers' net climate sentiment correlates with $\Z(\SEN)$ at
+$\rho = 0.58$ (95\,\% interval $[0.42, 0.72]$ from resampling firms), within
+firms ($r = 0.51$) and between them ($r = 0.62$), and passage by passage (median
+within-report $\rho = 0.42$, positive in all but one report). Substance does not
+converge with specificity: $\susdens$ tracks the share of climate passages
+($\rho = 0.65$) but not the share of specific ones ($\rho = -0.11$; within firms
+$r = -0.35$), while $\QUANT$ does, weakly ($\rho = 0.20$). The cheap-talk index
+is unrelated to $\ESGSI$ ($\rho = -0.06$, $[-0.27, 0.14]$), to $\ESGSIext$
+($0.02$) and to $\HEDGE$ ($0.15$, $[-0.08, 0.35]$), so neither score is a proxy
+for cheap talk. In 2024 the classifiers also register a change, but a different
+one: fewer passages framed as opportunities and fewer commitments, not more
+framed as risks (net sentiment $-0.69$ standard deviations against 2018--2023).
+The check shares the text with the scores and covers climate passages only.
+
 Except under unit-length scaling of substance, the ranking of reports is
 largely preserved and the trend stays negative; its size depends on the
 environmental and transversal vocabulary. These checks bound how far
-the scores depend on the choices varied; they do not validate the scores
-(\S\ref{sec:limitations}).
+the scores depend on the choices varied, and the independent instrument
+supports the tone component; they do not validate the scores as measures of
+conduct (\S\ref{sec:limitations}).
