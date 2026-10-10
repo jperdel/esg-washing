@@ -700,7 +700,7 @@ def block_c(df, idx, extra, out, tex, S, n_boot):
 
     trends = {c: trend_block(d, c, n_boot, SEED)
               for c in ("ESGSI", "ESGSI_ext", "SEN_Score", "SUS_density", "QUANT_Score",
-                        "HEDGE_Score", "ESGSI_lagasio")}
+                        "HEDGE_Score", "Z_SEN", "Z_SUS", "Z_QUANT", "Z_HEDGE", "ESGSI_lagasio")}
     ger = d[d["country"] == "Germany"]
     trends["ESGSI_Alemania"] = trend_block(ger, "ESGSI", n_boot, SEED)
     trends["ESGSI_ext_Alemania"] = trend_block(ger, "ESGSI_ext", n_boot, SEED)

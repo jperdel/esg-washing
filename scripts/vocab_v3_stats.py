@@ -263,6 +263,26 @@ def main() -> None:
     }
     S["hedge"].update(hedge_raw_audit(texts))
 
+    # ------------------------------------------------------------ precision
+    # Precision ponderada por frecuencia del vocabulario v3, estimada de las
+    # concordancias revisadas en contexto (KWIC): p_j de cada entrada (columna
+    # 'precision' de ESG_terms_v3.csv) sobre n_j concordancias, pesos w_j =
+    # ocurrencias / total. EE estratificado: sum w_j^2 p_j (1 - p_j) / n_j.
+    v = pd.read_csv(MET / "ESG_terms_v3.csv", sep=";", encoding="utf-8-sig")
+    samples = pd.concat([pd.read_csv(BASE / "paper" / "_research" / d / "indice.csv", sep=";")
+                         for d in ("kwic", "kwic_candidatos", "kwic_colocaciones")])
+    samples["k"] = samples["termino"].astype(str).str.strip().str.lower()
+    v["k"] = v["termino"].astype(str).str.strip().str.lower()
+    a = v.merge(samples.drop_duplicates("k", keep="last")[["k", "n_muestras"]], on="k", how="left")
+    a = a[a["precision"].notna() & a["n_muestras"].notna()]
+    w = a["ocurrencias"] / a["ocurrencias"].sum()
+    p = float((w * a["precision"]).sum())
+    se = float(np.sqrt((w ** 2 * a["precision"] * (1 - a["precision"]) / a["n_muestras"]).sum()))
+    S["precision"] = {"ponderada_por_frecuencia": p, "ee": se, "ic95": [p - 1.96 * se, p + 1.96 * se],
+                      "entradas": int(len(a)), "concordancias_revisadas": int(a["n_muestras"].sum()),
+                      "ocurrencias_cubiertas": int(a["ocurrencias"].sum()),
+                      "nota": "estimacion sobre muestras KWIC, no medicion sobre la extraccion final"}
+
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(S, ensure_ascii=False, indent=1), encoding="utf-8")
     print(json.dumps(S, ensure_ascii=False, indent=1))

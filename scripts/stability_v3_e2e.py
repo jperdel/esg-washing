@@ -138,26 +138,25 @@ def read_paragraphs(res: pd.DataFrame):
 
 
 def quant_hedge_counts(paras: list[str]) -> dict:
-    """Aciertos QUANT y HEDGE por parrafo, con los patrones y el lexico del
-    analizador (config.QUANT_PATTERNS, config.HEDGE_KEYWORDS)."""
+    """Aciertos SEN, QUANT y HEDGE por parrafo sobre el texto crudo, con las
+    mismas funciones del analizador que usa el pipeline (ESGSIAnalyzer)."""
     import config
     from esgsi_analyzer import ESGSIAnalyzer
-    qp = [re.compile(v, re.IGNORECASE) for v in config.QUANT_PATTERNS.values()]
-    hedge = set(config.HEDGE_KEYWORDS)
-    word_re = ESGSIAnalyzer._WORD_RE
-    qh = np.zeros(len(paras)); hh = np.zeros(len(paras)); ht = np.zeros(len(paras))
+    an = ESGSIAnalyzer(keywords=list(config.ESG_KEYWORDS), hedge_words=config.HEDGE_KEYWORDS,
+                       quant_patterns=config.QUANT_PATTERNS, positive_words=config.LM_POSITIVE,
+                       negative_words=config.LM_NEGATIVE)
+    n = len(paras)
+    qh = np.zeros(n); hh = np.zeros(n); ht = np.zeros(n); pos = np.zeros(n); neg = np.zeros(n)
     for i, p in enumerate(paras):
-        qh[i] = sum(len(pat.findall(p)) for pat in qp)
-        toks = word_re.findall(p.lower())
-        ht[i] = len(toks)
-        hh[i] = sum(1 for t in toks if t in hedge)
-    return {"quant_hits": qh, "hedge_hits": hh, "hedge_tokens": ht,
-            "hedge_lexicon_size": len(hedge)}
+        qh[i] = an.quant_hits(p)
+        hh[i], ht[i] = an.hedge_counts(p)
+        pos[i], neg[i] = an.sen_counts(p)
+    return {"quant_hits": qh, "hedge_hits": hh, "hedge_tokens": ht, "pos": pos, "neg": neg,
+            "hedge_lexicon_size": len(an.hedge_words)}
 
 
 def build_cache() -> dict:
     from text_processor import TextProcessor
-    import pysentiment2 as ps
 
     t0 = time.time()
     res = pd.read_csv(RESULTS_CSV, sep=";")
@@ -197,12 +196,7 @@ def build_cache() -> dict:
     sus_cols = list(cv.get_feature_names_out())
     tokens = np.array([len(x.split()) for x in lemmas], dtype=float)
 
-    lm = ps.LM()
-    pos = np.zeros(len(paras)); neg = np.zeros(len(paras))
-    for i, x in enumerate(lemmas):
-        s = lm.get_score(lm.tokenize(x))
-        pos[i], neg[i] = s["Positive"], s["Negative"]
-    print(f"SUS y SEN por parrafo ({time.time() - t0:.0f}s)")
+    print(f"SUS por parrafo ({time.time() - t0:.0f}s)")
 
     # Entrada -> columna del SUS (lema del termino, si es columna).
     col_of = {t: j for j, t in enumerate(sus_cols)}
@@ -213,7 +207,7 @@ def build_cache() -> dict:
 
     cache = {
         "entries": entries, "kinds": kinds, "entry_col": np.array(entry_col),
-        "sus_cols": sus_cols, "R": R, "L": L, "tokens": tokens, "pos": pos, "neg": neg,
+        "sus_cols": sus_cols, "R": R, "L": L, "tokens": tokens,
         "words": np.array([max(len(p.split()), 1) for p in paras], dtype=float),
         "raw_words": np.array([len(p.split()) for p in paras], dtype=float),
         "chars": np.array([len(p) for p in paras], dtype=float),
@@ -230,7 +224,7 @@ def build_cache() -> dict:
 def ensure_quant_hedge(c: dict) -> dict:
     """Anade a una cache anterior los recuentos QUANT/HEDGE por parrafo, releyendo
     los mismos JSON en el mismo orden (comprobado con el numero de caracteres)."""
-    if "quant_hits" in c:
+    if "quant_hits" in c and "pos" in c:
         return c
     t0 = time.time()
     paras, para_doc, _ = read_paragraphs(c["results"])
@@ -278,14 +272,21 @@ class Model:
         keep_c[ec[keep_e & (ec >= 0)]] = True
         return keep_c
 
-    def selection(self, keep_e: np.ndarray) -> np.ndarray:
+    def selection(self, keep_e: np.ndarray, threshold: float = KW_THRESHOLD,
+                  window: int = 1) -> np.ndarray:
+        """Regla de extraccion sobre los parrafos ya extraidos. Un umbral mayor
+        o una ventana menor que los del pipeline seleccionan un subconjunto, asi
+        que tambien se pueden simular (no un umbral menor ni una ventana mayor)."""
+        if threshold < KW_THRESHOLD or window > 1:
+            raise ValueError("solo se simulan reglas mas estrictas que la del pipeline")
         c = self.c
         hits = c["R"] @ keep_e.astype(float)
-        hot = hits / c["words"] * 100 >= KW_THRESHOLD
+        hot = hits / c["words"] * 100 >= threshold
         hot &= c["raw_words"] > 0
         sel = hot.copy()
-        sel[1:] |= hot[:-1] & self.same_prev[1:]
-        sel[:-1] |= hot[1:] & self.same_next[:-1]
+        if window == 1:
+            sel[1:] |= hot[:-1] & self.same_prev[1:]
+            sel[:-1] |= hot[1:] & self.same_next[:-1]
         # Tramos contiguos de seleccionados dentro de una zona = zonas nuevas.
         start = sel & ~(np.r_[False, sel[:-1]] & self.same_prev)
         run = np.cumsum(start) - 1
@@ -295,9 +296,9 @@ class Model:
         ok[idx] = run_len[run[idx]] >= MIN_ZONE_LEN
         return ok
 
-    def components(self, keep_e: np.ndarray, reextract: bool):
+    def components(self, keep_e: np.ndarray, reextract: bool, **rule):
         c = self.c
-        sel = self.selection(keep_e) if reextract else self.all_sel
+        sel = self.selection(keep_e, **rule) if reextract else self.all_sel
         w = sel.astype(float)
         counts = c["L"] @ self.cols_kept(keep_e).astype(float)
         n = self.n_docs
@@ -324,9 +325,9 @@ class Model:
     def index(self, keep_e: np.ndarray, reextract: bool) -> np.ndarray:
         return self.indices(keep_e, reextract)["ESGSI"]
 
-    def compare(self, keep_e: np.ndarray, reextract: bool) -> dict:
+    def compare(self, keep_e: np.ndarray, reextract: bool, **rule) -> dict:
         mo = "re-extraida" if reextract else "fija"
-        comp = self.components(keep_e, reextract)
+        comp = self.components(keep_e, reextract, **rule)
         idx = self.combine(comp)
         words = self.c["raw_words"]
         out = {"texto_conservado": float(words[comp["sel"]].sum() / words.sum())}
@@ -414,6 +415,28 @@ def main() -> None:
     bd_col = c["sus_cols"].index("board director")
     variants["sin 'board director'"] = c["entry_col"] != bd_col
 
+    # Admision dependiente del final de la muestra (revision): las entradas que
+    # con solo los informes de 2018-2019 no habrian pasado la regla de
+    # dispersion (>= 50 apariciones en >= 5 empresas, con el umbral de
+    # apariciones escalado a 2 de 7 anos) y las que concentran su masa en
+    # 2022-2024. Son borrados del vocabulario actual, no otro vocabulario.
+    hits_doc = sp.csr_matrix((np.ones(len(c["doc"])), (c["doc"], np.arange(len(c["doc"])))),
+                             shape=(m.n_docs, len(c["doc"]))) @ c["R"]
+    hits_doc = np.asarray(hits_doc.todense())
+    early = np.isin(m.years, [2018, 2019])
+    late = np.isin(m.years, [2022, 2023, 2024])
+    occ_early = hits_doc[early].sum(axis=0)
+    firms_early = np.array([len(set(m.firms[early][hits_doc[early][:, j] > 0])) for j in range(n)])
+    occ_total = hits_doc.sum(axis=0)
+    late_share = np.divide(hits_doc[late].sum(axis=0), occ_total, out=np.zeros(n), where=occ_total > 0)
+    LATE_SHARE = 0.75
+    variants["admision tardia (2018-2019)"] = ~((occ_early < 50 * 2 / 7) | (firms_early < 5))
+    variants[f"masa >= {LATE_SHARE:.0%} en 2022-2024"] = ~(late_share >= LATE_SHARE)
+    temporal = {"umbral_apariciones_2018_2019": 50 * 2 / 7, "umbral_cuota_2022_2024": LATE_SHARE,
+                "cuota_esperada_2022_2024_por_texto": float(hits_doc[late].sum() / hits_doc.sum()),
+                "entradas_admision_tardia": [e for e, k in zip(c["entries"], variants["admision tardia (2018-2019)"]) if not k],
+                "entradas_masa_tardia": [e for e, k in zip(c["entries"], variants[f"masa >= {LATE_SHARE:.0%} en 2022-2024"]) if not k]}
+
     out_var = {}
     for name, keep in variants.items():
         k = int((~keep).sum())
@@ -425,6 +448,16 @@ def main() -> None:
                 r[mo][ix].update(null_position(r[mo][ix], null, prefix=f"{mo}_{ix}_"))
         out_var[name] = r
         print(f"{name}: hecho ({time.time() - t0:.0f}s)", flush=True)
+
+    # Sensibilidad a la regla de extraccion (revision), con el vocabulario
+    # completo y frente a la referencia re-extraida.
+    rules = {"umbral 2 por 100 palabras": {"threshold": 2.0}, "sin parrafos de contexto": {"window": 0},
+             "umbral 1.5 por 100 palabras": {"threshold": 1.5}}
+    out_rule = {name: m.compare(full, True, **rule) for name, rule in rules.items()}
+    for name, r in out_rule.items():
+        e = r["ESGSI"]
+        print(f"regla {name}: rho={e['rho']:.3f} top={e['top10']:.2f} bot={e['bot10']:.2f} "
+              f"pte_ef={e['pendiente_ef']:+.3f} texto={r['texto_conservado']:.1%}", flush=True)
 
     draws = []
     for f in FRACTIONS:
@@ -456,7 +489,8 @@ def main() -> None:
                "referencia": {mo: {ix: {"pendiente_mco": m.cmp[mo][ix](m.ref[mo][ix])["pendiente_mco"],
                                         "pendiente_ef": m.cmp[mo][ix].slope_fe(m.ref[mo][ix])}
                                    for ix in INDICES} for mo, _ in MODES},
-               "variantes": out_var, "borrado_aleatorio": agg,
+               "variantes": out_var, "admision_temporal": temporal, "reglas_extraccion": out_rule,
+               "borrado_aleatorio": agg,
                "segundos": round(time.time() - t0)}
     (OUT_DIR / "e2e_summary.json").write_text(
         json.dumps(summary, ensure_ascii=False, indent=1, default=float), encoding="utf-8")

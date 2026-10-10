@@ -14,9 +14,15 @@ Produce dos ficheros en metadata/:
         "co2" o "human rights" nunca podrían puntuar.
 
   · lm_hedge.txt               ← pysentiment2/static/LM.csv
-        Palabras de las categorías Uncertainty, WeakModal, StrongModal y
-        Constraining del diccionario maestro de Loughran-McDonald, en su forma
+        Palabras de las categorías Uncertainty y WeakModal del diccionario
+        maestro de Loughran-McDonald, sin "risk"/"risks", en su forma
         original: el HEDGE se calcula sobre el texto crudo.
+
+  · lm_positive.txt, lm_negative.txt  ← pysentiment2/static/LM.csv
+        Listas Positive y Negative del mismo diccionario, en su forma
+        original: el SEN se calcula sobre el texto crudo, sin reducir a raíz.
+
+    python scripts/build_lexicons.py --lm-only   # solo los léxicos de L&M
 
 Este script NO importa config.py a propósito: config.py lee los ficheros que
 este script genera, así que importarlo crearía una dependencia circular.
@@ -40,7 +46,11 @@ from text_processor import TextProcessor, PROTECTED_PHRASES_FILE
 
 # --- Sincronizar con config.py -------------------------------------------
 SPACY_MODEL    = "en_core_web_md"
-HEDGE_CATEGORIES = ["Uncertainty", "WeakModal", "StrongModal", "Constraining"]
+HEDGE_CATEGORIES = ["Uncertainty", "WeakModal"]
+# "risk"/"risks" están en Uncertainty, pero nombrar un riesgo no es matizar una
+# afirmación: son casi un tercio de los aciertos y miden cuánto se habla de
+# riesgo, que en los informes es contenido exigido (TCFD, ESRS).
+HEDGE_EXCLUDED = {"risk", "risks"}
 
 # Colapsos revisados a mano y admitidos: la palabra superviviente es lo
 # bastante específica en este corpus como para no generar falsos positivos.
@@ -184,46 +194,74 @@ def build_protected_phrases(plain: TextProcessor, sources: list[str]) -> list[tu
     return ordered
 
 
+def _lm_master() -> pd.DataFrame:
+    """Diccionario maestro de L&M tal como lo distribuye pysentiment2."""
+    import pysentiment2
+    return pd.read_csv(Path(pysentiment2.__file__).parent / "static" / "LM.csv")
+
+
 def build_hedge_lexicon() -> list[str]:
     """
     Léxico HEDGE: las formas del diccionario maestro de Loughran-McDonald en
-    las categorías Uncertainty (297), Constraining (184), WeakModal (27) y
-    StrongModal (19), tal como las distribuye pysentiment2 (el mismo
-    diccionario que usa el SEN). En el maestro, Modal = 3 es WeakModal y
-    Modal = 1 StrongModal; Modal = 2 (moderados) no entra.
+    las categorías Uncertainty y WeakModal, tal como las distribuye
+    pysentiment2 (el mismo diccionario que usa el SEN), sin HEDGE_EXCLUDED.
+    En el maestro, Modal = 3 es WeakModal.
+
+    StrongModal (must, will) y Constraining (requirements, required) quedan
+    fuera: expresan obligación o compromiso, lo contrario de una cautela.
 
     Se guardan las formas originales, sin lematizar: el HEDGE se calcula sobre
-    el texto CRUDO, donde aparecen flexionadas. La versión anterior lematizaba
-    y unía formas y lemas, lo que metía palabras que no son de L&M ("and",
-    "for", "time" salen de partir expresiones), y partía de
+    el texto CRUDO, donde aparecen flexionadas. No se parte de
     RAW_LM_dictionary.csv, que no es el maestro de L&M sino una versión
     ampliada con sinónimos (767 Uncertainty frente a 297).
     """
-    import pysentiment2
-    src = Path(pysentiment2.__file__).parent / "static" / "LM.csv"
-    df = pd.read_csv(src)
-    mask = (df["Uncertainty"] != 0) | (df["Constraining"] != 0) | df["Modal"].isin([1, 3])
+    df = _lm_master()
+    mask = (df["Uncertainty"] != 0) | (df["Modal"] == 3)
     counts = {"Uncertainty": int((df["Uncertainty"] != 0).sum()),
-              "Constraining": int((df["Constraining"] != 0).sum()),
-              "WeakModal": int((df["Modal"] == 3).sum()),
-              "StrongModal": int((df["Modal"] == 1).sum())}
-    vocab = sorted(set(df.loc[mask, "Word"].astype(str).str.lower().str.strip()))
-    logger.success(f"Léxico HEDGE: {len(vocab)} formas únicas de L&M {counts}.")
+              "WeakModal": int((df["Modal"] == 3).sum())}
+    vocab = sorted(set(df.loc[mask, "Word"].astype(str).str.lower().str.strip()) - HEDGE_EXCLUDED)
+    logger.success(f"Léxico HEDGE: {len(vocab)} formas únicas de L&M {counts}, sin {sorted(HEDGE_EXCLUDED)}.")
 
     out = METADATA_DIR / "lm_hedge.txt"
     header = (
         "# GENERADO POR scripts/build_lexicons.py — NO EDITAR A MANO.\n"
         "# Fuente: diccionario maestro Loughran-McDonald (pysentiment2/static/LM.csv).\n"
-        f"# Categorias: {counts}. Formas originales, para cruzar con texto crudo.\n"
+        f"# Categorias: {counts}, sin {sorted(HEDGE_EXCLUDED)}. Formas originales, para cruzar con texto crudo.\n"
     )
     out.write_text(header + "\n".join(vocab) + "\n", encoding="utf-8")
     logger.success(f"Escrito: {out}")
     return vocab
 
 
+def build_sentiment_lexicons() -> dict[str, list[str]]:
+    """
+    Listas Positive y Negative de L&M en sus formas originales, para el SEN.
+    El diccionario es una lista de formas flexionadas; se cruza con las
+    palabras del texto crudo tal cual, sin lematizar ni reducir a raíz.
+    """
+    df = _lm_master()
+    out_lists = {}
+    for cat, fname in (("Positive", "lm_positive.txt"), ("Negative", "lm_negative.txt")):
+        vocab = sorted(set(df.loc[df[cat] != 0, "Word"].astype(str).str.lower().str.strip()))
+        header = (
+            "# GENERADO POR scripts/build_lexicons.py — NO EDITAR A MANO.\n"
+            f"# Fuente: diccionario maestro Loughran-McDonald (pysentiment2/static/LM.csv), categoria {cat}.\n"
+            "# Formas originales, para cruzar con texto crudo sin reducir a raiz.\n"
+        )
+        (METADATA_DIR / fname).write_text(header + "\n".join(vocab) + "\n", encoding="utf-8")
+        logger.success(f"Léxico {cat}: {len(vocab)} formas -> {fname}")
+        out_lists[cat] = vocab
+    return out_lists
+
+
 def main():
     logger.remove()
     logger.add(sys.stderr, format="<level>{level: <8}</level> | {message}", level="INFO")
+
+    if "--lm-only" in sys.argv[1:]:
+        build_hedge_lexicon()
+        build_sentiment_lexicons()
+        return
 
     sw_path = METADATA_DIR / "personal_stopwords.txt"
     personal_sw = _read_terms(sw_path)
@@ -246,6 +284,7 @@ def main():
     build_esg_vocabulary(processor, source="esg_terms_sectorial.txt",
                          target="esg_terms_sectorial_lemmatized.txt", protected_tokens=tokens)
     build_hedge_lexicon()
+    build_sentiment_lexicons()
 
     logger.success("Léxicos regenerados. Recuerda re-ejecutar el pipeline con "
                    "run_preproc=True si has cambiado el preprocesado.")

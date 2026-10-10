@@ -94,13 +94,18 @@ if INCLUDE_SECTORAL:
     logger.info(f"Vocabulario SECTORIAL activo: +{len(_sec)} términos "
                 f"({len(ESG_KEYWORDS)} en total).")
 
-# HEDGE — categorías L&M de lenguaje impreciso/especulativo (Uncertainty,
-# Constraining, WeakModal, StrongModal) del diccionario maestro que distribuye
-# pysentiment2, en su forma original: el HEDGE se calcula sobre texto crudo.
+# HEDGE — categorías L&M de lenguaje no comprometido (Uncertainty, WeakModal)
+# del diccionario maestro que distribuye pysentiment2, en su forma original:
+# el HEDGE se calcula sobre texto crudo. Sin "risk"/"risks" (ver build_lexicons).
 HEDGE_KEYWORDS = set(_load_generated_lexicon(
     METADATA_DIR / "lm_hedge.txt",
     METADATA_DIR / "lm_hedge.txt",
 ))
+
+# SEN — listas Positive y Negative de L&M en sus formas originales, para
+# cruzarlas con el texto crudo sin reducir a raíz (ver ESGSIAnalyzer.sen_counts).
+LM_POSITIVE = set(_load_generated_lexicon(METADATA_DIR / "lm_positive.txt", METADATA_DIR / "lm_positive.txt"))
+LM_NEGATIVE = set(_load_generated_lexicon(METADATA_DIR / "lm_negative.txt", METADATA_DIR / "lm_negative.txt"))
 
 with open(METADATA_DIR / 'personal_stopwords.txt', 'r', encoding='utf-8') as f:
     PERSONAL_SW = f.read().split("\n")
@@ -113,20 +118,22 @@ with open(METADATA_DIR / 'lda_stopwords.txt', 'r', encoding='utf-8') as f:
         if line.strip() and not line.startswith("#")
     )
 
-# QUANT SCORE — patrones RegEx para contenido cuantificable y marcos regulatorios.
+# QUANT SCORE — patrones RegEx para contenido cuantificable.
 # IMPORTANTE: se aplican sobre el texto CRUDO (raw_text), nunca sobre el texto
 # preprocesado: el preprocesado elimina los tokens numéricos, así que sobre él
 # 'percentages' y 'large_numbers' darían siempre cero.
+# Solo cifras: ni nombres de marcos (GRI, CSRD, "taxonomy"), que no son
+# cuantificación y crecen con los mandatos, ni CO2/GHG sueltos, que son
+# vocabulario de tema y ya puntúan en el SUS. El analizador descarta además
+# las cifras grandes que son códigos de norma, actos legales o rangos de años.
 QUANT_PATTERNS = {
     # Porcentajes (ej. "42%", "3.5 %")
     "percentages":     r'\b\d+(?:[.,]\d+)?\s*%',
     # Cifras métricas grandes (4+ dígitos), excluyendo años 19xx/20xx: un informe
     # no es más cuantitativo por citar muchas fechas.
     "large_numbers":   r'\b(?!(?:19|20)\d{2}\b)\d{4,}\b',
-    # Unidades de emisiones y energía
-    "units":           r'\b(?:tonne|ton|mt|ktco2|co2e?|ghg|kwh|mwh|gwh|twh|mw|gw|litre|liter|m3|cubic meter)\b',
-    # Marcos regulatorios de referencia
-    "frameworks":      r'\b(?:gri|tcfd|sasb|issb|sdg|ungc|sfdr|csrd|un global compact|paris agreement|taxonomy)\b',
+    # Unidades físicas de emisiones, energía y volumen
+    "units":           r'\b(?:tonne|ton|mt|kwh|mwh|gwh|twh|mw|gw|litre|liter|m3|cubic meter)\b',
 }
 
 # SUS — especificación del componente de sustancia.

@@ -18,7 +18,7 @@ from metadata_loader import load_document_metadata, get_doc_type
 
 from config import (
     METADATA_EXCEL,
-    SPACY_MODEL, ESG_KEYWORDS, HEDGE_KEYWORDS, QUANT_PATTERNS, ESGSI_EXT_WEIGHTS, PERSONAL_SW,
+    SPACY_MODEL, ESG_KEYWORDS, HEDGE_KEYWORDS, LM_POSITIVE, LM_NEGATIVE, QUANT_PATTERNS, ESGSI_EXT_WEIGHTS, PERSONAL_SW,
     SUS_MODE,
     K_TOPICS_LIST, ALPHA_LIST, K_ITERS, LDA_STOPWORDS,
     LDA_N_SEEDS, LDA_TOPN_STABILITY,
@@ -89,6 +89,8 @@ def main(
                 quant_patterns=QUANT_PATTERNS,
                 ext_weights=ESGSI_EXT_WEIGHTS,
                 sus_mode=SUS_MODE,
+                positive_words=LM_POSITIVE,
+                negative_words=LM_NEGATIVE,
             )
 
         # -- Extracción lexical (reemplaza chunking + filtrado semántico) ----
@@ -246,7 +248,9 @@ def main(
             sus_scores   = sus_variants[SUS_MODE]
             breadth      = analyzer.calculate_breadth_scores(texts_list)
 
-            sen_scores   = analyzer.calculate_sen_scores(texts_list)
+            # SEN sobre el crudo: las listas de L&M son formas flexionadas y el
+            # preprocesado quita las negaciones (stopwords).
+            sen_scores   = analyzer.calculate_sen_scores(raw_texts_list)
             quant_scores = analyzer.calculate_quant_scores(raw_texts_list)
             # HEDGE también sobre el crudo: el preprocesado elimina los modales.
             hedge_scores = analyzer.calculate_hedge_scores(raw_texts_list)

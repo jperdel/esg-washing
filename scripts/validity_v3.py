@@ -81,7 +81,7 @@ import analysis_v3 as A  # noqa: E402
 
 SPECS = ["density", "tfidf_length", "lagasio"]
 LN_SPECS = ["density", "tfidf_length"]          # normalizadas por longitud
-FAMILIES = ["percentages", "large_numbers", "units", "frameworks"]
+FAMILIES = ["percentages", "large_numbers", "units"]
 DISJOINT_FAMILIES = ["percentages", "large_numbers"]
 
 
@@ -195,10 +195,14 @@ def sublinear_diagnostics(C: np.ndarray, L: np.ndarray, R: np.ndarray,
 
 
 def family_hits(raw_texts: list[str], patterns: dict[str, str]) -> pd.DataFrame:
+    """Aciertos por familia, con el mismo filtro de magnitudes que el analizador
+    para las cifras grandes (sin codigos de norma, actos legales ni rangos de anos)."""
+    from esgsi_analyzer import _is_magnitude
     comp = {k: re.compile(v, re.IGNORECASE) for k, v in patterns.items()}
     rows = []
     for t in raw_texts:
-        rows.append({k: len(p.findall(t)) for k, p in comp.items()})
+        rows.append({k: (sum(1 for m in p.finditer(t) if _is_magnitude(t, m)) if k == "large_numbers"
+                         else len(p.findall(t))) for k, p in comp.items()})
     return pd.DataFrame(rows)
 
 
