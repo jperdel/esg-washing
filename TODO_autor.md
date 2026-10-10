@@ -35,9 +35,12 @@ Los identificadores anónimos (`Financials-04`, etc.) son los del análisis **an
   - ¿Deben contar las cifras con separador de miles (`14,918`)? Ahora no cuentan.
 - [ ] **Validación con codificación humana:** ¿se hace? Serían unos 300 pasajes, 2 codificadores, 4–5 días-persona y como mucho una página de apéndice.
 - [ ] **Diccionario ESG externo** como validez convergente de SUS: ¿se incluye? Roza la directriz 2.
-- [x] **Límite de páginas:** el límite de 15 páginas del núcleo técnico es blando. Ahora ocupa unas 15,5, y no hay que recortar mientras no crezca mucho más.
+- [x] **Límite de páginas:** el límite de 15 páginas del núcleo técnico es blando. Con ClimateBERT ocupa unas 15,5–16 (la bibliografía empieza en la 16), y no hay que recortar mientras no crezca mucho más.
 - [ ] **Título:** ¿se acota el alcance? Por ejemplo, grandes emisores cotizados, o "densidad de contenido ESG" en lugar de "sustancia".
-- [ ] **ClimateBERT:** después de la reejecución, ¿entra la media página de validez convergente en §5? El borrador está en la rama `issue-2-climatebert`. Antes de citarlo, conviene leer completo Bingler et al. (2022, 2024) para confirmar la definición del índice de *cheap talk*.
+- [x] **ClimateBERT:** integrado en §5, con el contraste de 2024 en §4.1 y el matiz sobre HEDGE en §3.3 (issue #4, rama `climatebert`).
+- [ ] **Lecturas antes del envío** (issue #4):
+  - Bingler et al. (2022, 2024) completo, para confirmar la definición del índice de *cheap talk*.
+  - Bax, Paterlini y Valentini (2026, *Economics Letters*), que parece encontrar el mismo salto del *cheap talk* con la CSRD en el EURO STOXX 50. Si se confirma, conviene citarlo.
 - [ ] **Sesgo del extractor** hacia `taxonomy`, CO2 y GHG (issue #1, pregunta 5): ¿se menciona en limitaciones?
 
 ## 4. Corpus: anomalías que quedan por decidir
@@ -70,10 +73,8 @@ Los cuatro informes de 2024 ya están corregidos. Quedan tres casos de 2018 con 
 
 ## 7. Repositorio
 
-- [ ] **Commits y push.** Todo está solo en local:
-  - la rama `fix/corpus-and-measures`, con los cambios de la Tabla 3 y estas correcciones;
-  - las ramas `issue-1-quant-trend`, `issue-2-*` y `issue-2-climatebert`.
-
-  ¿Hago commit y subo alguna?
-- [ ] **Nombres de empresa en un repo público.** `metadata/empresas_supersector.csv` (ya publicado) y `metadata/empresas_tickers.csv` y `metadata/mandates.csv` (en ramas locales) llevan nombres. ¿Se mantienen públicos o pasan a un fichero no versionado?
+- [x] **Commits y push** de `fix/corpus-and-measures` y `climatebert`: hecho el 10-10-2026.
+- [ ] **Ramas de los issues** (`issue-1-quant-trend`, `issue-2-*`, `issue-2-climatebert`): siguen solo en local. ¿Se suben?
+- [ ] **Merge a `main`:** `climatebert` contiene a `fix/corpus-and-measures`. ¿Se hace el merge?
+- [ ] **Nombres de empresa en un repo público.** `metadata/empresas_supersector.csv` y `metadata/mandates.csv` (ya publicados) y `metadata/empresas_tickers.csv` (rama local) llevan nombres. ¿Se mantienen públicos o pasan a un fichero no versionado?
 - [ ] **Carpeta antigua `data/chunks_lexical/`:** una ejecución mal configurada sobrescribió 23 de sus JSON. El paper no la usa. ¿Se regenera o se borra?
