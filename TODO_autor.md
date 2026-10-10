@@ -75,6 +75,6 @@ Los cuatro informes de 2024 ya están corregidos. Quedan tres casos de 2018 con 
 
 - [x] **Commits y push** de `fix/corpus-and-measures` y `climatebert`: hecho el 10-10-2026.
 - [ ] **Ramas de los issues** (`issue-1-quant-trend`, `issue-2-*`, `issue-2-climatebert`): siguen solo en local. ¿Se suben?
-- [ ] **Merge a `main`:** `climatebert` contiene a `fix/corpus-and-measures`. ¿Se hace el merge?
+- [x] **Merge a `main`:** hecho el 10-10-2026 por fast-forward de `main` hasta `climatebert`, que incluye `fix/corpus-and-measures`.
 - [ ] **Nombres de empresa en un repo público.** `metadata/empresas_supersector.csv` y `metadata/mandates.csv` (ya publicados) y `metadata/empresas_tickers.csv` (rama local) llevan nombres. ¿Se mantienen públicos o pasan a un fichero no versionado?
 - [ ] **Carpeta antigua `data/chunks_lexical/`:** una ejecución mal configurada sobrescribió 23 de sus JSON. El paper no la usa. ¿Se regenera o se borra?
