@@ -79,8 +79,8 @@ Preguntas para entonces:
 ## 7. Repositorio
 
 - [x] **Commits y push** de `fix/corpus-and-measures` y `climatebert`: hecho el 10-10-2026.
-- [ ] **Ramas de los issues** (`issue-1-quant-trend`, `issue-2-*`, `issue-2-climatebert`): siguen solo en local. ¿Se suben?
+- [x] **Ramas de los issues** (`issue-1-quant-trend` y las siete `issue-2-*`): subidas a origin el 11-10-2026, sin merge. Su material es exploratorio; lo que llegó al paper ya está en `main`.
 - [x] **Merge a `main`:** hecho el 10-10-2026 por fast-forward de `main` hasta `climatebert`, que incluye `fix/corpus-and-measures`.
 - [x] **Merge de `esg-models` a `main`:** hecho el 11-10-2026 por fast-forward (issue #5).
-- [ ] **Nombres de empresa en un repo público.** `metadata/empresas_supersector.csv` y `metadata/mandates.csv` (ya publicados) y `metadata/empresas_tickers.csv` (rama local) llevan nombres. ¿Se mantienen públicos o pasan a un fichero no versionado?
+- [x] **Nombres de empresa en un repo público:** pueden quedarse en los metadatos y datos del repositorio. Lo que se evita es centrar el análisis o el paper en empresas concretas.
 - [ ] **Carpeta antigua `data/chunks_lexical/`:** una ejecución mal configurada sobrescribió 23 de sus JSON. El paper no la usa. ¿Se regenera o se borra?
