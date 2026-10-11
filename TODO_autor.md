@@ -55,13 +55,14 @@ Los cuatro informes de 2024 ya están corregidos. Quedan tres casos de 2018 con 
 - [ ] Health Care-03, 2018: solo la DPEF (28 páginas).
 - [ ] Financials-08, 2018: 179 páginas, frente a una mediana de 546.
 
-## 5. Consecuencias financieras (issue #2)
+## 5. Consecuencias financieras (issue #2): aplazado
 
-- [ ] ¿Tiene la universidad acceso a **WRDS** o a **LSEG**? Si lo tiene, H1 (I/B/E/S) y H2 (RepRisk) se pueden contrastar. Los ISIN y LEI ya están preparados.
-- [ ] Definición de **controversia** (recuento, índice de RepRisk o binaria), **horizonte** de H2 (t+1, t+2) y año final de los datos.
-- [ ] **Dispersión de analistas:** sobre la media o sobre el precio, y en qué fecha se mide.
-- [ ] ¿Merece la pena pagar **Violation Tracker Global** como criterio complementario?
-- [ ] ¿Pedir la descarga del **Sabin Center**? Es gratis, pero requiere un formulario.
+Cerrado el 11-10-2026. Con datos gratuitos y 49 empresas no se puede contrastar H1 ni H2, así que queda para trabajos futuros. Si se retoma, el punto de partida está en los comentarios del issue #2 y en las ramas locales `issue-2-*`: ISIN y LEI, calendario de mandatos, pipeline validado con datos simulados y pilotos nulos con su efecto mínimo detectable.
+
+Preguntas para entonces:
+- ¿Hay acceso a **WRDS** o **LSEG** (I/B/E/S, RepRisk)?
+- ¿Cómo se define la **controversia**, con qué **horizonte** y cómo se mide la **dispersión de analistas**?
+- ¿Merece la pena una fuente de pago (Violation Tracker Global) o pedir la descarga del Sabin Center?
 
 ## 6. Secciones que escribes tú
 
@@ -80,5 +81,6 @@ Los cuatro informes de 2024 ya están corregidos. Quedan tres casos de 2018 con 
 - [x] **Commits y push** de `fix/corpus-and-measures` y `climatebert`: hecho el 10-10-2026.
 - [ ] **Ramas de los issues** (`issue-1-quant-trend`, `issue-2-*`, `issue-2-climatebert`): siguen solo en local. ¿Se suben?
 - [x] **Merge a `main`:** hecho el 10-10-2026 por fast-forward de `main` hasta `climatebert`, que incluye `fix/corpus-and-measures`.
+- [x] **Merge de `esg-models` a `main`:** hecho el 11-10-2026 por fast-forward (issue #5).
 - [ ] **Nombres de empresa en un repo público.** `metadata/empresas_supersector.csv` y `metadata/mandates.csv` (ya publicados) y `metadata/empresas_tickers.csv` (rama local) llevan nombres. ¿Se mantienen públicos o pasan a un fichero no versionado?
 - [ ] **Carpeta antigua `data/chunks_lexical/`:** una ejecución mal configurada sobrescribió 23 de sus JSON. El paper no la usa. ¿Se regenera o se borra?
