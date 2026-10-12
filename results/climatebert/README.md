@@ -1,5 +1,11 @@
 # Issue #4: validez convergente con ClimateBERT (medidas y corpus corregidos)
 
+> **Nota (12-10-2026, issue #6).** Las cifras de este informe se calcularon con QUANT V2b. Los CSV y
+> `summary.json` de esta carpeta están regenerados con QUANT V2c, que deja de contar los 0 % y las
+> unidades sin cifra. Solo cambian las cifras de Z(QUANT) y ESGSI_ext, y poco. Por ejemplo, Z(QUANT)
+> frente a la cuota específica pasa de ρ = 0,20 a 0,23 [0,03; 0,41], y ESGSI_ext frente al CTI sigue en
+> 0,02. Para las cifras vigentes, ver los CSV.
+
 Informe de trabajo (10 de octubre de 2026). Rehace el piloto del issue #2 (rama `issue-2-climatebert`)
 con las medidas corregidas de la rama `fix/corpus-and-measures`: SEN = polaridad de Loughran-McDonald
 sobre formas exactas del texto crudo, con negación; QUANT = solo cifras; HEDGE = Uncertainty +

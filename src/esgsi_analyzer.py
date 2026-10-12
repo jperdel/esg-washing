@@ -72,7 +72,8 @@ class ESGSIAnalyzer:
     Índice extendido (esta implementación):
         ESGSI_ext = Z(SEN) - Z(SUS) - w_quant·Z(QUANT) + w_hedge·Z(HEDGE)
 
-        · QUANT: densidad de contenido cuantificable (cifras, marcos regulatorios…)
+        · QUANT: densidad de cifras (porcentajes no nulos, cifras grandes que son
+          magnitudes y unidades físicas precedidas de una cifra)
           Un informe rico en datos duros es menos susceptible de washing → se resta.
         · HEDGE: densidad de lenguaje impreciso / especulativo (diccionario L&M)
           Un informe lleno de evasivas eleva el riesgo de washing → se suma.
@@ -279,13 +280,17 @@ class ESGSIAnalyzer:
 
     def calculate_quant_scores(self, raw_texts: List[str]) -> np.ndarray:
         """
-        Densidad de contenido cuantificable: porcentajes, cifras grandes que son
-        magnitudes y unidades físicas, por token del documento.
+        Densidad de contenido cuantificable: porcentajes no nulos, cifras grandes
+        que son magnitudes y unidades físicas precedidas de una cifra, por token
+        del documento.
 
         No cuenta nombres de marcos (GRI, CSRD, "taxonomy"), que no son cifras y
         crecen con los mandatos de reporte; ni CO2/GHG como palabras sueltas, que
         son vocabulario de tema y ya puntúan en el SUS; ni códigos de norma,
-        números de actos legales o rangos de años (ver _is_magnitude).
+        números de actos legales o rangos de años (ver _is_magnitude); ni los
+        0 % de las plantillas de la Taxonomía; ni unidades sin cifra; ni cifras
+        con separador de miles, que en el texto extraído son sobre todo tablas
+        financieras y de remuneración (issue #6).
 
         ATENCIÓN: recibe el texto CRUDO extraído del PDF, no el preprocesado.
         El preprocesado descarta los tokens numéricos, así que sobre él los

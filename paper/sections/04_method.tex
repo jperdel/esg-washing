@@ -43,7 +43,8 @@ extraction kept 66,591 zones holding 28.3 million of the 71.4 million words of
 the PDF text layers, 39.7\,\% (per report, median 38.6\,\%, range
 7.1--75.6\,\%). The share rises over the window, from a mean of 31.6\,\% of a
 report in 2018 to 49.6\,\% in 2024: ESG disclosure takes a growing part of the
-documents. The procedure depends only on the PDF and the vocabulary, and its
+documents, although about a tenth of the rise comes from the transversal entries,
+umbrella terms and the names of reporting regimes (\S\ref{sec:limitations}). The procedure depends only on the PDF and the vocabulary, and its
 recall is bounded by the vocabulary: a passage that uses none of its entries
 is never selected. To size what is lost, we re-read 98 reports, two per firm
 and 14 per year, and classified passages of the retained and the discarded
@@ -173,13 +174,18 @@ preprocessing removes numerals:
 \[
 \QUANT_d \;=\; m_d / R_d,
 \]
-where $m_d$ is the number of matches of three pattern families: percentages;
-numbers of four or more digits that are magnitudes, excluding years, year
-ranges, standard codes (ISO 14001) and the numbers of legal acts; and physical
-units of mass, energy, power and volume. Only figures count: the names of
-reporting frameworks are not quantification and grow with reporting mandates,
-and \emph{CO$_2$} or \emph{GHG} without a figure are topic words that the
-substance component already counts.
+where $m_d$ is the number of matches of three pattern families: percentages
+other than zero; numbers of four or more consecutive digits that are
+magnitudes, excluding years, year ranges, standard codes (ISO 14001) and the
+numbers of legal acts; and units of mass, energy, power and volume preceded by
+a figure (\emph{15 tonnes}, \emph{3.5 MWh}). Only figures count: the names of
+reporting frameworks are not quantification and grow with reporting mandates;
+\emph{CO$_2$}, \emph{GHG} or a unit without a figure are topic words; and the
+zero cells of the taxonomy templates, which arrive with the templates in
+2022--2023, record no figure the firm chose to report. Numbers written with
+thousands separators are not counted either: in the extracted text fewer than
+a third of them sit next to an ESG metric, the rest belonging to financial and
+remuneration tables.
 
 \paragraph{Hedging.} Qualified language (\emph{may}, \emph{could},
 \emph{uncertain}) weakens whatever a report asserts. The hedging component is
@@ -251,13 +257,13 @@ no statistics of the other reports, a report's substance does not change when
 the sample does. As a check of convergent validity in the sense of
 \citet{campbell1959}, substance should move with quantification, which is
 counted with patterns on the raw text rather than with the vocabulary. Measures
-that keep the amount of disclosure agree with it to a similar degree (0.45 for
-density, 95\,\% interval 0.27--0.60 from resampling firms; 0.46 for a TF-IDF
+that keep the amount of disclosure agree with it to a similar degree (0.43 for
+density, 95\,\% interval 0.25--0.56 from resampling firms; 0.44 for a TF-IDF
 count divided by length), while a TF-IDF specification that scales each
 report's term vector to unit length, and so discards the amount, agrees much
-less (0.22). The agreement is mainly between firms (0.60 across firm means,
-0.23 within firms), and it holds when the entries that both measures count are
-removed from the vocabulary (0.38). Since $\QUANT$ is also a component of
+less (0.22). The agreement is mainly between firms (0.59 across firm means,
+0.18 within firms), and it holds when the entries that both measures count are
+removed from the vocabulary (0.37). Since $\QUANT$ is also a component of
 $\ESGSIext$, this is a check on substance, not on the score.
 \S\ref{sec:robustness} reports the scores under these alternative
 specifications. Tone is read with the
@@ -270,7 +276,7 @@ expresses a report's value in standard deviations from the corpus mean, and
 the difference in \eqref{eq:esgsi} is then a difference of relative positions
 on a common scale. A score is measured in standard deviations of its
 components, not of itself: its own standard deviation is 1.27 for $\ESGSI$
-and 1.53 for $\ESGSIext$, and slopes are reported on the component scale. The
+and 1.52 for $\ESGSIext$, and slopes are reported on the component scale. The
 scale has no natural zero. Zero is the corpus mean of
 the combination, and no external benchmark exists against which a boundary
 could be calibrated for these reports (\S\ref{sec:limitations}). We therefore

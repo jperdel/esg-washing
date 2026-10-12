@@ -1,5 +1,16 @@
 # Validez convergente con otros modelos ESG abiertos (issue #5)
 
+> **Nota (12-10-2026, issue #6).** Las cifras de este informe se calcularon con QUANT V2b. Los CSV y
+> `summary.json` de esta carpeta están regenerados con QUANT V2c, que deja de contar los 0 % y las
+> unidades sin cifra. Solo cambian, y poco, las cifras de Z(QUANT) y ESGSI_ext:
+> - Z(QUANT) ~ tono FinBERT: 0,18 → 0,19.
+> - Z(QUANT) ~ acción: 0,08 → 0,10.
+> - Z(QUANT) ~ objetivos NetZero: 0,22 → 0,21.
+> - Solo los objetivos de reducción: 0,31 → 0,30.
+> - ESGSI_ext ~ tono FinBERT: 0,17 → 0,16.
+>
+> Las cifras de tono, pilares y recall no cambian.
+
 Continuación del #4 (ClimateBERT, solo pasajes climáticos). Aquí se aplican al
 mismo texto extraído modelos abiertos que cubren el tono de todo el texto y los
 pilares S y G, y se mide además el *recall* de la extracción. Solo scores

@@ -156,10 +156,10 @@
       "max": 10.424502955400325
     },
     "QUANT_clim": {
-      "media": 0.004018238833004581,
-      "dt": 0.00273002005104875,
+      "media": 0.0041566772898510695,
+      "dt": 0.0027004943900061033,
       "min": 0.0,
-      "max": 0.024090157154673282
+      "max": 0.023986765922249794
     },
     "HEDGE_clim": {
       "media": 0.004603511814179765,
@@ -401,10 +401,10 @@
     "rho_CTI": {
       "Z_SEN": -0.04224921819565209,
       "Z_SUS": 0.022456197707946712,
-      "Z_QUANT": -0.19026021201596255,
+      "Z_QUANT": -0.1999401724001272,
       "Z_HEDGE": 0.14089582237696205,
       "ESGSI": -0.028048324686792997,
-      "ESGSI_ext": 0.042151828448684134
+      "ESGSI_ext": 0.04250109508882837
     }
   },
   "mtmm": {
@@ -429,13 +429,13 @@
       },
       {
         "par": "Z_QUANT~spec_share",
-        "validez": 0.2037886676261824,
+        "validez": 0.23107636890274458,
         "max_het_het": 0.19438005694581437,
         "cumple": true
       },
       {
         "par": "Z_QUANT~clim_share",
-        "validez": 0.39464472940156503,
+        "validez": 0.39010180233198777,
         "max_het_het": 0.3145037405369124,
         "cumple": true
       },
@@ -453,8 +453,8 @@
       },
       {
         "par": "ESGSI_ext~CTI",
-        "validez": 0.01916619880439804,
-        "max_het_het": 0.6452296831978409,
+        "validez": 0.019388941525521564,
+        "max_het_het": 0.6491794524883416,
         "cumple": false
       }
     ],
@@ -479,13 +479,13 @@
       },
       {
         "par": "Z_QUANT~spec_share",
-        "validez": 0.1280948768784625,
-        "max_het_het": 0.14702032047143115,
-        "cumple": false
+        "validez": 0.14475313524599234,
+        "max_het_het": 0.1435193314273827,
+        "cumple": true
       },
       {
         "par": "Z_QUANT~clim_share",
-        "validez": 0.19485310785350843,
+        "validez": 0.13802975876523543,
         "max_het_het": 0.28605295371092043,
         "cumple": false
       },
@@ -503,8 +503,8 @@
       },
       {
         "par": "ESGSI_ext~CTI",
-        "validez": -0.05866007581417431,
-        "max_het_het": 0.5833780065621675,
+        "validez": -0.06054926932114802,
+        "max_het_het": 0.5721046936216508,
         "cumple": false
       }
     ],
@@ -529,13 +529,13 @@
       },
       {
         "par": "Z_QUANT~spec_share",
-        "validez": 0.2648845666021631,
-        "max_het_het": 0.24653381381060727,
+        "validez": 0.27535683788302096,
+        "max_het_het": 0.2479920528511289,
         "cumple": true
       },
       {
         "par": "Z_QUANT~clim_share",
-        "validez": 0.5967692260411622,
+        "validez": 0.6052297312221595,
         "max_het_het": 0.27694260815157673,
         "cumple": true
       },
@@ -553,8 +553,8 @@
       },
       {
         "par": "ESGSI_ext~CTI",
-        "validez": 0.12340651500385733,
-        "max_het_het": 0.6517835527672111,
+        "validez": 0.1241334322693461,
+        "max_het_het": 0.6555990342950214,
         "cumple": false
       }
     ],
@@ -579,13 +579,13 @@
       },
       {
         "par": "Z_QUANT~spec_share",
-        "validez": 0.1356630625538863,
-        "max_het_het": 0.135585723671829,
+        "validez": 0.1269716231850186,
+        "max_het_het": 0.12322899485271985,
         "cumple": true
       },
       {
         "par": "Z_QUANT~clim_share",
-        "validez": 0.18509551726533793,
+        "validez": 0.18797448251315932,
         "max_het_het": 0.43325533633878394,
         "cumple": false
       },
@@ -603,8 +603,8 @@
       },
       {
         "par": "ESGSI_ext~CTI",
-        "validez": 0.00586993477770619,
-        "max_het_het": 0.3263815891437709,
+        "validez": 0.0014064360513565408,
+        "max_het_het": 0.3261773342652362,
         "cumple": false
       }
     ],
@@ -623,8 +623,8 @@
       },
       {
         "par": "QUANT_clim~spec_share",
-        "validez": 0.3161748807604121,
-        "max_het_het": 0.26349671774319633,
+        "validez": 0.34556773059632656,
+        "max_het_het": 0.2730358287161197,
         "cumple": true
       },
       {
@@ -1734,18 +1734,18 @@
     },
     "ESGSI_ext~CTI": {
       "k": 34,
-      "top": 5,
+      "top": 4,
       "bottom": 9,
       "esperado": 3.3801169590643276,
-      "p_top": 0.23821517197132216,
+      "p_top": 0.44491962789936573,
       "p_bottom": 0.0028928076404100066
     },
     "ESGSI_ext~CTI_prob": {
       "k": 34,
-      "top": 3,
+      "top": 2,
       "bottom": 9,
       "esperado": 3.3801169590643276,
-      "p_top": 0.6841031398577264,
+      "p_top": 0.8782061656754974,
       "p_bottom": 0.0028928076404100066
     }
   },
@@ -1769,21 +1769,21 @@
       "pasajes": 118258
     },
     "quant~p_spec": {
-      "informes": 330,
-      "mediana_rho": 0.4497120518909431,
-      "p25": 0.3835063931975078,
-      "p75": 0.5043708885728247,
-      "cuota_positiva": 0.9939393939393939,
-      "rho_agregado_todos_los_pasajes": 0.47144360482289327,
+      "informes": 336,
+      "mediana_rho": 0.46914968774102683,
+      "p25": 0.3980684940601543,
+      "p75": 0.5258953159018578,
+      "cuota_positiva": 0.9940476190476191,
+      "rho_agregado_todos_los_pasajes": 0.49049656227442284,
       "pasajes": 118258
     },
     "quant~cb_net": {
-      "informes": 330,
-      "mediana_rho": 0.1641136678314495,
-      "p25": 0.0936595354586574,
-      "p75": 0.23682220053584865,
-      "cuota_positiva": 0.9484848484848485,
-      "rho_agregado_todos_los_pasajes": 0.18727152058756297,
+      "informes": 336,
+      "mediana_rho": 0.17889291537531116,
+      "p25": 0.11035024087717313,
+      "p75": 0.24698646591936319,
+      "cuota_positiva": 0.9494047619047619,
+      "rho_agregado_todos_los_pasajes": 0.20483752619281959,
       "pasajes": 118258
     },
     "hedge~p_spec": {
@@ -1832,5 +1832,5 @@
       "2024": 0.4070814703102582
     }
   },
-  "segundos_analisis": 125.9
+  "segundos_analisis": 117.4
 }

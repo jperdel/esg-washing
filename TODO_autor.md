@@ -30,9 +30,11 @@ Los identificadores anónimos (`Financials-04`, etc.) son los del análisis **an
   - SEN por forma exacta de Loughran–McDonald;
   - QUANT V2b;
   - HEDGE con Uncertainty + Weak Modal, sin *risk/risks* y sin *May* como mes.
-- [ ] **QUANT V2b, detalles abiertos del issue #1:**
-  - ¿Cuentan las celdas `0%` de las plantillas de la Taxonomía? Ahora sí cuentan.
-  - ¿Deben contar las cifras con separador de miles (`14,918`)? Ahora no cuentan.
+- [x] **QUANT V2c** (issue #6, rama `quant-v2c`), decidido el 12-10-2026:
+  - Las celdas `0%` de las plantillas de la Taxonomía ya no cuentan.
+  - Las unidades solo cuentan si llevan una cifra delante. Se añaden los plurales (*tonnes*, *litres*…).
+  - Las cifras con separador de miles (`14,918`) siguen sin contar: son sobre todo tablas financieras y de remuneración (solo un 30 % son métricas ESG).
+  - Análisis completo reejecutado y cifras del paper actualizadas (§3–§5, Tablas 3–5 y figuras). Solo cambian QUANT y el ESGSI extendido, y poco: pendiente del extendido de −0,255 a −0,244.
 - [ ] **Validación con codificación humana:** ¿se hace? Serían unos 300 pasajes, 2 codificadores, 4–5 días-persona y como mucho una página de apéndice.
 - [ ] **Diccionario ESG externo** como validez convergente de SUS: ¿se incluye? Roza la directriz 2.
 - [x] **Límite de páginas:** el límite de 15 páginas del núcleo técnico es blando. Con ClimateBERT y los modelos del #5 ocupa unas 16,5 (limitaciones en la 16, bibliografía en la 17). No hay que recortar mientras no crezca mucho más.
@@ -45,7 +47,7 @@ Los identificadores anónimos (`Financials-04`, etc.) son los del análisis **an
   - Bingler et al. (2022, 2024) completo, para confirmar la definición del índice de *cheap talk*.
   - Bax, Paterlini y Valentini (2026, *Economics Letters*), que parece encontrar el mismo salto del *cheap talk* con la CSRD en el EURO STOXX 50. Si se confirma, conviene citarlo.
   - Huang, Wang y Yang (2023, FinBERT) y Schimanski et al. (2024, ESGBERT), citados en §3.1 y §5.
-- [ ] **Sesgo del extractor** hacia `taxonomy`, CO2 y GHG (issue #1, pregunta 5): ¿se menciona en limitaciones?
+- [x] **Sesgo del extractor** (issue #6): nueva limitación en §6 ("Selection by the scoring vocabulary") y una frase en §3.1. Alrededor de una décima parte de la subida del texto extraído (31,6 % → 49,6 %) se debe a las entradas transversales: sin ellas la subida sería 30,2 % → 46,4 %.
 
 ## 4. Corpus: anomalías que quedan por decidir
 
@@ -79,7 +81,7 @@ Preguntas para entonces:
 ## 7. Repositorio
 
 - [x] **Commits y push** de `fix/corpus-and-measures` y `climatebert`: hecho el 10-10-2026.
-- [x] **Ramas de los issues** (`issue-1-quant-trend` y las siete `issue-2-*`): subidas a origin el 11-10-2026, sin merge. Su material es exploratorio; lo que llegó al paper ya está en `main`.
+- [x] **Ramas de los issues** (`issue-1-quant-trend` y las `issue-2-*`): subidas a origin el 11-10-2026, sin merge. `issue-2-climatebert` se borró el 11-10-2026 porque la sustituye `climatebert`. Su material es exploratorio; lo que llegó al paper ya está en `main`.
 - [x] **Merge a `main`:** hecho el 10-10-2026 por fast-forward de `main` hasta `climatebert`, que incluye `fix/corpus-and-measures`.
 - [x] **Merge de `esg-models` a `main`:** hecho el 11-10-2026 por fast-forward (issue #5).
 - [x] **Nombres de empresa en un repo público:** pueden quedarse en los metadatos y datos del repositorio. Lo que se evita es centrar el análisis o el paper en empresas concretas.

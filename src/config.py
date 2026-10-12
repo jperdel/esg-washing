@@ -126,14 +126,23 @@ with open(METADATA_DIR / 'lda_stopwords.txt', 'r', encoding='utf-8') as f:
 # cuantificación y crecen con los mandatos, ni CO2/GHG sueltos, que son
 # vocabulario de tema y ya puntúan en el SUS. El analizador descarta además
 # las cifras grandes que son códigos de norma, actos legales o rangos de años.
+# Versión V2c (issue #6): sin los 0 % y con las unidades solo cuando acompañan
+# a una cifra. Las cifras con separador de miles ("14,918") siguen sin contar:
+# en el texto extraído son sobre todo tablas financieras y de remuneración
+# (solo ~30 % son métricas ESG); las métricas ESG con unidad física cuentan
+# por 'units'.
 QUANT_PATTERNS = {
-    # Porcentajes (ej. "42%", "3.5 %")
-    "percentages":     r'\b\d+(?:[.,]\d+)?\s*%',
-    # Cifras métricas grandes (4+ dígitos), excluyendo años 19xx/20xx: un informe
-    # no es más cuantitativo por citar muchas fechas.
+    # Porcentajes (ej. "42%", "3.5 %"). Los 0 % no cuentan: casi todos son
+    # casillas vacías de las plantillas de la Taxonomía, no cifras aportadas.
+    "percentages":     r'\b(?!0+(?:[.,]0+)?\s*%)\d+(?:[.,]\d+)?\s*%',
+    # Cifras métricas grandes (4+ dígitos seguidos), excluyendo años 19xx/20xx:
+    # un informe no es más cuantitativo por citar muchas fechas.
     "large_numbers":   r'\b(?!(?:19|20)\d{2}\b)\d{4,}\b',
-    # Unidades físicas de emisiones, energía y volumen
-    "units":           r'\b(?:tonne|ton|mt|kwh|mwh|gwh|twh|mw|gw|litre|liter|m3|cubic meter)\b',
+    # Unidades físicas de emisiones, energía y volumen, solo precedidas de una
+    # cifra ("15,000 tonnes", "3.5 MWh", "1.2 million tonnes"): la palabra
+    # suelta ("energy in MWh") no es una cifra.
+    "units":           (r'\b\d+(?:[.,]\d+)*\s*(?:(?:thousand|million|billion|mn|bn)\s+)?(?:metric\s+)?'
+                        r'(?:tonnes?|tons?|mt|kwh|mwh|gwh|twh|mw|gw|litres?|liters?|m3|cubic\s+met(?:er|re)s?)\b'),
 }
 
 # SUS — especificación del componente de sustancia.
