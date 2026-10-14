@@ -118,7 +118,7 @@ DECILE_Q = 0.10
 DESC_VARS = {
     "SUS_density": r"\susdens", "SUS_tfidf_length": r"\sustfidf", "SUS_lagasio": r"\suslag",
     "Breadth": r"\BREADTH", "SEN_Score": r"\SEN", "QUANT_Score": r"\QUANT",
-    "HEDGE_Score": r"\HEDGE", "ESGSI": r"\ESGSI", "ESGSI_ext": r"\ESGSIext",
+    "UNBACK_Score": r"\UNBACK", "ESGSI": r"\ESGSI", "ESGSI_ext": r"\ESGSIext",
 }
 
 # Entradas que NOMBRAN un regimen de divulgacion, un estandar, un marco o una
@@ -320,7 +320,7 @@ def load_results(path: Path, sectors_path: Path) -> pd.DataFrame:
 
 def load_corpus(processed: Path, with_raw: bool = False) -> tuple[pd.DataFrame, list[dict]]:
     """Mismo corpus y misma deduplicacion (MD5 de clean_text) que main.py.
-    with_raw=True conserva tambien raw_text (QUANT y HEDGE se miden sobre el)."""
+    with_raw=True conserva tambien raw_text (QUANT se mide sobre el)."""
     usecols = KEY + ["clean_text"] + (["raw_text"] if with_raw else [])
     df = pd.read_csv(processed, sep=";", usecols=usecols, encoding="utf-8")
     df = norm_keys(df)
@@ -569,7 +569,7 @@ def means_by(df: pd.DataFrame, by: str | None) -> pd.DataFrame:
                 mean_ESGSI_ext=("ESGSI_ext", "mean"), sd_ESGSI_ext=("ESGSI_ext", "std"),
                 mean_SEN=("SEN_Score", "mean"), mean_SUS=("SUS_density", "mean"),
                 mean_Breadth=("Breadth", "mean"), mean_QUANT=("QUANT_Score", "mean"),
-                mean_HEDGE=("HEDGE_Score", "mean")).reset_index()
+                mean_UNBACK=("UNBACK_Score", "mean")).reset_index()
     out = out.rename(columns={out.columns[0]: "group"})
     out.insert(0, "dimension", by or "all")
     return out
@@ -581,7 +581,7 @@ def block_a(df, out, tex, S):
     S["a_descriptivos"] = {r["variable"]: {k: r[k] for k in desc.columns if k != "variable"}
                            for r in desc.to_dict(orient="records")}
     dec = {"SUS_density": 3, "SUS_tfidf_length": 3, "SUS_lagasio": 4, "Breadth": 2,
-           "SEN_Score": 3, "QUANT_Score": 4, "HEDGE_Score": 4, "ESGSI": 3, "ESGSI_ext": 3}
+           "SEN_Score": 3, "QUANT_Score": 4, "UNBACK_Score": 4, "ESGSI": 3, "ESGSI_ext": 3}
     rows = [[f"${DESC_VARS[r.variable]}$"] +
             [tnum(getattr(r, k), dec[r.variable]) for k in ("mean", "sd", "min", "p25", "median", "p75", "max")]
             for r in desc.itertuples()]
@@ -598,7 +598,7 @@ def block_a(df, out, tex, S):
                                 "ESGSI": r["mean_ESGSI"], "ESGSI_sd": r["sd_ESGSI"],
                                 "ESGSI_ext": r["mean_ESGSI_ext"], "ESGSI_ext_sd": r["sd_ESGSI_ext"],
                                 "SEN": r["mean_SEN"], "SUS_density": r["mean_SUS"],
-                                "QUANT": r["mean_QUANT"], "HEDGE": r["mean_HEDGE"]}
+                                "QUANT": r["mean_QUANT"], "UNBACK": r["mean_UNBACK"]}
               for r in gm[gm.dimension == dim].to_dict(orient="records")}
         for dim in gm["dimension"].unique() if dim != "all"}
     rows, mids = [], []
@@ -673,15 +673,15 @@ def block_b(df, out, tex, S):
 def block_c(df, idx, extra, out, tex, S, n_boot):
     d = df.assign(ESGSI_tfidf_length=idx["tfidf_length"], ESGSI_lagasio=idx["lagasio"],
                   Z_SEN=z(df["SEN_Score"]), Z_SUS=z(df["SUS_density"]),
-                  Z_QUANT=z(df["QUANT_Score"]), Z_HEDGE=z(df["HEDGE_Score"]),
+                  Z_QUANT=z(df["QUANT_Score"]), Z_UNBACK=z(df["UNBACK_Score"]),
                   tokens=extra["tokens"], mentions=extra["mentions"], distinct=extra["distinct"])
     cols = ["ESGSI", "ESGSI_lagasio", "ESGSI_tfidf_length", "ESGSI_ext", "Z_SEN", "Z_SUS",
-            "Z_QUANT", "Z_HEDGE", "SUS_density", "SEN_Score", "QUANT_Score", "HEDGE_Score",
+            "Z_QUANT", "Z_UNBACK", "SUS_density", "SEN_Score", "QUANT_Score", "UNBACK_Score",
             "Breadth", "tokens", "mentions", "distinct"]
     score_cols = ["year", "country", "doctype", "supersector", "industry",
                   "SUS_density", "SUS_tfidf_length", "SUS_lagasio", "Breadth", "SEN_Score",
-                  "QUANT_Score", "HEDGE_Score", "ESGSI", "ESGSI_ext", "ESGSI_tfidf_length",
-                  "ESGSI_lagasio", "Z_SEN", "Z_SUS", "Z_QUANT", "Z_HEDGE", "tokens", "mentions", "distinct"]
+                  "QUANT_Score", "UNBACK_Score", "ESGSI", "ESGSI_ext", "ESGSI_tfidf_length",
+                  "ESGSI_lagasio", "Z_SEN", "Z_SUS", "Z_QUANT", "Z_UNBACK", "tokens", "mentions", "distinct"]
     # Tabla a nivel documento: anonima (la usan las figuras) e interna (con claves).
     save_csv(d[["firm_label"] + score_cols].rename(columns={"firm_label": "firm_id"}), out / "doc_level.csv")
     save_csv(d[KEY + ["firm", "firm_label"] + score_cols], out / "doc_level_internal.csv")
@@ -695,12 +695,12 @@ def block_c(df, idx, extra, out, tex, S, n_boot):
                    "cambio_pct_2018_2024": float(100 * (yr[c].iloc[-1] / yr[c].iloc[0] - 1))
                    if yr[c].iloc[0] != 0 else None}
     ci = pd.concat([yearly_ci(d, c) for c in ("ESGSI", "ESGSI_ext", "Z_SEN", "Z_SUS", "Z_QUANT",
-                                              "Z_HEDGE", "SUS_density", "SEN_Score")], ignore_index=True)
+                                              "Z_UNBACK", "SUS_density", "SEN_Score")], ignore_index=True)
     save_csv(ci, out / "yearly_ci.csv")
 
     trends = {c: trend_block(d, c, n_boot, SEED)
               for c in ("ESGSI", "ESGSI_ext", "SEN_Score", "SUS_density", "QUANT_Score",
-                        "HEDGE_Score", "Z_SEN", "Z_SUS", "Z_QUANT", "Z_HEDGE", "ESGSI_lagasio")}
+                        "UNBACK_Score", "Z_SEN", "Z_SUS", "Z_QUANT", "Z_UNBACK", "ESGSI_lagasio")}
     ger = d[d["country"] == "Germany"]
     trends["ESGSI_Alemania"] = trend_block(ger, "ESGSI", n_boot, SEED)
     trends["ESGSI_ext_Alemania"] = trend_block(ger, "ESGSI_ext", n_boot, SEED)
@@ -712,7 +712,7 @@ def block_c(df, idx, extra, out, tex, S, n_boot):
     names = [("ESGSI", r"$\ESGSI(\susdens)$ (adopted)", 3), ("ESGSI_tfidf_length", r"$\ESGSI(\sustfidf)$", 3),
              ("ESGSI_lagasio", r"$\ESGSI(\suslag)$", 3), ("ESGSI_ext", r"$\ESGSIext$", 3),
              ("Z_SEN", r"$\Z(\SEN)$", 3), ("Z_SUS", r"$\Z(\susdens)$", 3),
-             ("Z_QUANT", r"$\Z(\QUANT)$", 3), ("Z_HEDGE", r"$\Z(\HEDGE)$", 3)]
+             ("Z_QUANT", r"$\Z(\QUANT)$", 3), ("Z_UNBACK", r"$\Z(\UNBACK)$", 3)]
     rows = [[lab] + [tnum(v, dd) for v in yr[c]] for c, lab, dd in names]
     rows.append(["Documents"] + [str(int(n)) for n in d.groupby("year").size()])
     write_tabular(tex / "yearly_index.tex", "l" + "r" * len(years), [""] + [str(y) for y in years],
@@ -723,7 +723,7 @@ def block_c(df, idx, extra, out, tex, S, n_boot):
            ("SUS_density", r"$\susdens$ (mentions per 100 words)", 2),
            ("Breadth", r"$\BREADTH$ (effective distinct terms)", 2),
            ("SEN_Score", r"$\SEN$", 3),
-           ("QUANT_Score", r"$\QUANT$", 4), ("HEDGE_Score", r"$\HEDGE$", 4)]
+           ("QUANT_Score", r"$\QUANT$", 4), ("UNBACK_Score", r"$\UNBACK$", 4)]
     rows = []
     for c, lab, dd in drv:
         a, b = yr[c].iloc[0], yr[c].iloc[-1]
@@ -919,7 +919,7 @@ def block_e(d, out, tex, S):
     agg = {"firm_label": ("firm_label", "first"), "country": ("country", "first"),
            "industry": ("industry", "first"), "supersector": ("supersector", "first"),
            "SUS_density": ("SUS_density", "mean"), "SEN": ("SEN_Score", "mean"),
-           "QUANT": ("QUANT_Score", "mean"), "HEDGE": ("HEDGE_Score", "mean")}
+           "QUANT": ("QUANT_Score", "mean"), "UNBACK": ("UNBACK_Score", "mean")}
     for y in SCORES:
         agg[y] = (y, "mean")
         agg[f"sd_{y}"] = (y, "std")
@@ -1062,7 +1062,7 @@ def block_f(d, C, cols, pillar, sectoral, regime_lemmas, out, tex, S, n_boot):
 
     # Tendencia sin las entradas de marcos/regimenes (ESGSI y ESGSI_ext).
     zsen = z(d["SEN_Score"])
-    ext_part = -EXT_DEFAULT[0] * z(d["QUANT_Score"]) + EXT_DEFAULT[1] * z(d["HEDGE_Score"])
+    ext_part = -EXT_DEFAULT[0] * z(d["QUANT_Score"]) + EXT_DEFAULT[1] * z(d["UNBACK_Score"])
     full_idx = zsen - z(total / tokens * 100)
     gap = float(np.abs(full_idx - d["ESGSI"].to_numpy()).max())
     reg = {v for v in regime_lemmas.values() if v}
@@ -1264,9 +1264,10 @@ def anon_dedup(dedup_info: list[dict], df: pd.DataFrame) -> list[dict]:
     return out
 
 
-def quant_hedge_full(raw_texts: list[str]) -> tuple[np.ndarray, np.ndarray]:
-    """QUANT y HEDGE a precision completa con el analizador real (results.csv los
-    redondea a 4 decimales). Solo lectura: no toca data/ ni results.csv."""
+def quant_full(raw_texts: list[str]) -> np.ndarray:
+    """QUANT a precision completa con el analizador real (results.csv lo redondea
+    a 4 decimales; UNBACK se guarda con 6). Solo lectura: no toca data/ ni
+    results.csv."""
     import config
     from esgsi_analyzer import ESGSIAnalyzer
     from loguru import logger
@@ -1274,18 +1275,18 @@ def quant_hedge_full(raw_texts: list[str]) -> tuple[np.ndarray, np.ndarray]:
     an = ESGSIAnalyzer(keywords=list(config.ESG_KEYWORDS), hedge_words=config.HEDGE_KEYWORDS,
                        quant_patterns=config.QUANT_PATTERNS, ext_weights=config.ESGSI_EXT_WEIGHTS,
                        sus_mode=config.SUS_MODE)
-    return an.calculate_quant_scores(raw_texts), an.calculate_hedge_scores(raw_texts)
+    return an.calculate_quant_scores(raw_texts)
 
 
 def block_w(d, out, tex, S):
     """
     Rejilla de pesos del ESGSI extendido: ESGSI_ext(w_q, w_h) = ESGSI - w_q Z(QUANT)
-    + w_h Z(HEDGE), con z poblacional sobre QUANT y HEDGE a precision completa.
+    + w_h Z(UNBACK), con z poblacional sobre QUANT y UNBACK a precision completa.
     Para cada par: Spearman con el ESGSI y con el extendido adoptado (0,5; 0,5),
     solapamiento de deciles extremos con ambos y pendiente con EF de empresa (SE
     agrupados por empresa). (0, 0) es el ESGSI.
     """
-    zq, zh = z(d["QUANT_Score"]), z(d["HEDGE_Score"])
+    zq, zh = z(d["QUANT_Score"]), z(d["UNBACK_Score"])
     base = d["ESGSI"].to_numpy(float)
 
     def ext(wq, wh):
@@ -1312,7 +1313,7 @@ def block_w(d, out, tex, S):
     near = g[(np.abs(g.w_q - EXT_DEFAULT[0]) <= 0.25) & (np.abs(g.w_h - EXT_DEFAULT[1]) <= 0.25)]
     k = compare_scores(base, base)["k_decil"]
     S["w_pesos_ext"] = {
-        "definicion": "ESGSI_ext(w_q, w_h) = ESGSI - w_q*Z(QUANT) + w_h*Z(HEDGE); z poblacional",
+        "definicion": "ESGSI_ext(w_q, w_h) = ESGSI - w_q*Z(QUANT) + w_h*Z(UNBACK); z poblacional",
         "rejilla": list(EXT_WEIGHT_GRID), "adoptado": list(EXT_DEFAULT), "k_decil": k,
         "recalculo_ESGSI_ext_dif_max": gap,
         "filas": g.to_dict(orient="records"),
@@ -1382,15 +1383,15 @@ def main():
     df = df.merge(corpus, on=KEY, how="left", validate="one_to_one")
     if df["clean_text"].isna().any():
         raise ValueError(f"{df['clean_text'].isna().sum()} filas de results sin clean_text")
-    # QUANT y HEDGE a precision completa (results.csv los guarda con 4 decimales).
-    q_full, h_full = quant_hedge_full(df["raw_text"].astype(str).tolist())
-    chk = {"QUANT_dif_max_vs_redondeado": float(np.abs(np.round(q_full, 4) - df["QUANT_Score"]).max()),
-           "HEDGE_dif_max_vs_redondeado": float(np.abs(np.round(h_full, 4) - df["HEDGE_Score"]).max())}
+    # QUANT a precision completa (results.csv lo guarda con 4 decimales).
+    q_full = quant_full(df["raw_text"].astype(str).tolist())
+    chk = {"QUANT_dif_max_vs_redondeado": float(np.abs(np.round(q_full, 4) - df["QUANT_Score"]).max())}
     if max(chk.values()) > 1e-4 + 1e-9:
-        raise ValueError(f"QUANT/HEDGE recalculados no reproducen results.csv: {chk}")
-    df["QUANT_Score"], df["HEDGE_Score"] = q_full, h_full
+        raise ValueError(f"QUANT recalculado no reproduce results.csv: {chk}")
+    df["QUANT_Score"] = q_full
     df = df.drop(columns="raw_text")
-    S["precision_componentes"] = {**chk, "nota": "QUANT y HEDGE recalculados con ESGSIAnalyzer sobre raw_text"}
+    S["precision_componentes"] = {**chk, "nota": "QUANT recalculado con ESGSIAnalyzer sobre raw_text; "
+                                                  "UNBACK de results.csv (6 decimales)"}
     S["corpus"] = {"documentos": len(df), "empresas": int(df["firm"].nunique()),
                    "anos": sorted(df["year"].unique().tolist()),
                    "por_ano": df.groupby("year").size().to_dict(),

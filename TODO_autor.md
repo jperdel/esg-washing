@@ -35,6 +35,9 @@ Los identificadores anónimos (`Financials-04`, etc.) son los del análisis **an
   - Las unidades solo cuentan si llevan una cifra delante. Se añaden los plurales (*tonnes*, *litres*…).
   - Las cifras con separador de miles (`14,918`) siguen sin contar: son sobre todo tablas financieras y de remuneración (solo un 30 % son métricas ESG).
   - Análisis completo reejecutado y cifras del paper actualizadas (§3–§5, Tablas 3–5 y figuras). Solo cambian QUANT y el ESGSI extendido, y poco: pendiente del extendido de −0,255 a −0,244.
+- [x] **UNBACK sustituye a HEDGE** (issue #7, rama `unback`): compromisos ESG sin cantidad, plazo ni año base, con reglas. Integrado en el pipeline y en el paper (§3.3 con tabla de ejemplos, §4, §5, §6). La última versión con HEDGE queda en la etiqueta `paper-hedge`.
+- [ ] **Precisión de UNBACK (marca `[Author: …]` en §3.3):** revisar una muestra de unas 100 frases de compromiso detectadas (¿es un compromiso ESG? ¿está bien marcado el respaldo?) para dar una precisión con intervalo. Te preparo la hoja cuando quieras.
+- [ ] **Extensión:** con UNBACK el paper pasa a 19 páginas; las limitaciones empiezan en la 17. Decidir si se recorta.
 - [ ] **Validación con codificación humana:** ¿se hace? Serían unos 300 pasajes, 2 codificadores, 4–5 días-persona y como mucho una página de apéndice.
 - [ ] **Diccionario ESG externo** como validez convergente de SUS: ¿se incluye? Roza la directriz 2.
 - [x] **Límite de páginas:** el límite de 15 páginas del núcleo técnico es blando. Con ClimateBERT y los modelos del #5 ocupa unas 16,5 (limitaciones en la 16, bibliografía en la 17). No hay que recortar mientras no crezca mucho más.
@@ -44,8 +47,8 @@ Los identificadores anónimos (`Financials-04`, etc.) son los del análisis **an
 - [ ] **Lectura de 2024:** ahora el paper dice que la caída de SEN es vocabulario de las tablas ESRS, pero que FinBERT y ClimateBERT ven además un texto narrativo menos positivo que SEN no capta. Revisa que la introducción y las conclusiones que escribas no digan que el tono no cambió.
 - [ ] **Licencia de FinBERT:** los modelos de FinBERT no declaran licencia en Hugging Face (el código es Apache-2.0 y la ficha pide citar a Huang et al., 2023). ¿Se menciona en la disponibilidad de datos y código?
 - [ ] **Lecturas antes del envío** (issues #4 y #5):
-  - Bingler et al. (2022, 2024) completo, para confirmar la definición del índice de *cheap talk*.
-  - Bax, Paterlini y Valentini (2026, *Economics Letters*), que parece encontrar el mismo salto del *cheap talk* con la CSRD en el EURO STOXX 50. Si se confirma, conviene citarlo.
+  - Bingler et al. (2024) completo. El índice de *cheap talk* es de ese artículo, no del de 2022 (ya corregido en §5); la definición y el α = 0,17 están comprobados por un agente en el texto completo (issue #7).
+  - Bax, Paterlini y Valentini (2026, *Economics Letters*, 10.1016/j.econlet.2026.112835), que encuentra el mismo salto del *cheap talk* con la CSRD en el EURO STOXX 50. Solo leído el resumen; si se confirma, conviene citarlo.
   - Huang, Wang y Yang (2023, FinBERT) y Schimanski et al. (2024, ESGBERT), citados en §3.1 y §5.
 - [x] **Sesgo del extractor** (issue #6): nueva limitación en §6 ("Selection by the scoring vocabulary") y una frase en §3.1. Alrededor de una décima parte de la subida del texto extraído (31,6 % → 49,6 %) se debe a las entradas transversales: sin ellas la subida sería 30,2 % → 46,4 %.
 

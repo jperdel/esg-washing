@@ -7,7 +7,7 @@ Pruebas de estabilidad del indice frente al vocabulario v3, en dos modos:
               con la que se puntua el SUS (como stability_v3.py).
   re-extraida al quitar terminos se vuelve a aplicar la regla de extraccion,
               asi que desaparecen los parrafos que solo se extraian por ellos,
-              y SUS, SEN, QUANT y HEDGE se recalculan sobre el texto que queda.
+              y SUS, SEN, QUANT y UNBACK se recalculan sobre el texto que queda.
 
     python scripts/stability_v3_e2e.py            # usa la cache si existe
     python scripts/stability_v3_e2e.py --rebuild  # rehace la cache (~40 min)
@@ -37,7 +37,7 @@ Aproximaciones (se miden en la validacion del principio):
     parrafo esta caliente; no se comprueba si otra entrada mas corta la habria
     capturado ("carbon" dentro de "carbon footprint"). Subestima un poco los
     disparos de la variante, asi que exagera ligeramente lo que se pierde.
-  * QUANT y HEDGE se cuentan por parrafo sobre el texto crudo (el pipeline los
+  * QUANT y UNBACK se cuentan por parrafo sobre el texto crudo (el pipeline los
     cuenta sobre el documento entero con los espacios colapsados).
 
 UNIVERSO DE ENTRADAS
@@ -88,7 +88,7 @@ SEED = 20260919
 FRACTIONS = [0.10, 0.20, 0.30, 0.40, 0.50]
 N_DRAWS = 1000
 N_DRAWS_MATCHED = 1000
-W_QUANT, W_HEDGE = 0.5, 0.5
+W_QUANT, W_UNBACK = 0.5, 0.5
 MODES = (("fija", False), ("re-extraida", True))
 INDICES = ("ESGSI", "ESGSI_ext")
 MEASURES = ("rho", "r", "top10", "bot10", "pendiente_mco", "pendiente_ef")
@@ -155,6 +155,19 @@ def quant_hedge_counts(paras: list[str]) -> dict:
             "hedge_lexicon_size": len(an.hedge_words)}
 
 
+def unback_counts(paras: list[str], para_doc, results: pd.DataFrame) -> dict:
+    """Compromisos ESG y suma de (3 - Q - D - B) / 3 por parrafo, con las mismas
+    funciones que el pipeline (src/unback.py). La ventana de +-1 frase no cruza
+    parrafos, asi que las sumas por parrafo agregan exactamente."""
+    import unback
+    years = results["Año"].astype(int).to_numpy()
+    n = len(paras)
+    un, us = np.zeros(n), np.zeros(n)
+    for i, (p, d) in enumerate(zip(paras, para_doc)):
+        un[i], us[i] = unback.paragraph_counts(p, int(years[d]))
+    return {"unback_n": un, "unback_sum": us}
+
+
 def build_cache() -> dict:
     from text_processor import TextProcessor
 
@@ -212,7 +225,7 @@ def build_cache() -> dict:
         "raw_words": np.array([len(p.split()) for p in paras], dtype=float),
         "chars": np.array([len(p) for p in paras], dtype=float),
         "doc": np.array(para_doc), "zone": np.array(para_zone),
-        "results": res, **quant_hedge_counts(paras),
+        "results": res, **quant_hedge_counts(paras), **unback_counts(paras, para_doc, res),
     }
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     with open(CACHE, "wb") as fh:
@@ -224,7 +237,7 @@ def build_cache() -> dict:
 def ensure_quant_hedge(c: dict) -> dict:
     """Anade a una cache anterior los recuentos QUANT/HEDGE por parrafo, releyendo
     los mismos JSON en el mismo orden (comprobado con el numero de caracteres)."""
-    if "quant_hits" in c and "pos" in c:
+    if "quant_hits" in c and "pos" in c and "unback_n" in c:
         return c
     t0 = time.time()
     paras, para_doc, _ = read_paragraphs(c["results"])
@@ -232,6 +245,7 @@ def ensure_quant_hedge(c: dict) -> dict:
             or not np.array_equal(np.array([len(p) for p in paras], dtype=float), c["chars"]):
         raise ValueError("los parrafos releidos no coinciden con la cache: usa --rebuild")
     c.update(quant_hedge_counts(paras))
+    c.update(unback_counts(paras, para_doc, c["results"]))
     with open(CACHE, "wb") as fh:
         pickle.dump(c, fh, protocol=pickle.HIGHEST_PROTOCOL)
     print(f"cache ampliada con QUANT/HEDGE por parrafo ({time.time() - t0:.0f}s)")
@@ -311,13 +325,15 @@ class Model:
         p, q = dsum(c["pos"]), dsum(c["neg"])
         sen = (p - q) / (p + q + self.EPS)
         quant = dsum(c["quant_hits"]) / np.maximum(dsum(c["raw_words"]), 1)
-        hedge = dsum(c["hedge_hits"]) / np.maximum(dsum(c["hedge_tokens"]), 1)
-        return {"sus": sus_num / toks * 100, "sen": sen, "quant": quant, "hedge": hedge, "sel": sel}
+        # UNBACK suavizado hacia la media del texto que queda, como en el pipeline.
+        import unback
+        unb = unback.scores(dsum(c["unback_n"]), dsum(c["unback_sum"]))
+        return {"sus": sus_num / toks * 100, "sen": sen, "quant": quant, "unback": unb, "sel": sel}
 
     @staticmethod
     def combine(comp: dict) -> dict:
         e = z(comp["sen"]) - z(comp["sus"])
-        return {"ESGSI": e, "ESGSI_ext": e - W_QUANT * z(comp["quant"]) + W_HEDGE * z(comp["hedge"])}
+        return {"ESGSI": e, "ESGSI_ext": e - W_QUANT * z(comp["quant"]) + W_UNBACK * z(comp["unback"])}
 
     def indices(self, keep_e: np.ndarray, reextract: bool) -> dict:
         return self.combine(self.components(keep_e, reextract))
@@ -380,7 +396,7 @@ def main() -> None:
         "r_SUS_vs_pipeline": float(np.corrcoef(comp["sus"], res["SUS_density"])[0, 1]),
         "r_SEN_vs_pipeline": float(np.corrcoef(comp["sen"], res["SEN_Score"])[0, 1]),
         "r_QUANT_vs_pipeline": float(np.corrcoef(comp["quant"], res["QUANT_Score"])[0, 1]),
-        "r_HEDGE_vs_pipeline": float(np.corrcoef(comp["hedge"], res["HEDGE_Score"])[0, 1]),
+        "r_UNBACK_vs_pipeline": float(np.corrcoef(comp["unback"], res["UNBACK_Score"])[0, 1]),
     }
     for ix in INDICES:
         val[f"r_{ix}_vs_pipeline"] = float(np.corrcoef(ref_e2e[ix], res[ix])[0, 1])
@@ -485,7 +501,7 @@ def main() -> None:
         agg.append(row)
 
     summary = {"validacion": val, "entradas": n, "decil_k": m.cmp["fija"]["ESGSI"].k,
-               "pesos_ext": {"w_quant": W_QUANT, "w_hedge": W_HEDGE},
+               "pesos_ext": {"w_quant": W_QUANT, "w_unback": W_UNBACK},
                "referencia": {mo: {ix: {"pendiente_mco": m.cmp[mo][ix](m.ref[mo][ix])["pendiente_mco"],
                                         "pendiente_ef": m.cmp[mo][ix].slope_fe(m.ref[mo][ix])}
                                    for ix in INDICES} for mo, _ in MODES},

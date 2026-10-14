@@ -74,7 +74,7 @@ CUT = 0.5
 PILOT_CACHE = CACHE_DIR / "pilot_cache"
 
 CB_VARS = ["sent_net", "spec_share", "clim_share", "CTI", "CTI_prob", "commit_share"]
-OUR_VARS = ["Z_SEN", "Z_SUS", "Z_QUANT", "Z_HEDGE", "ESGSI", "ESGSI_ext"]
+OUR_VARS = ["Z_SEN", "Z_SUS", "Z_QUANT", "Z_UNBACK", "ESGSI", "ESGSI_ext"]
 SCOPE_VARS = ["SEN_clim", "SEN_nonclim", "SUS_clim", "SUS_nonclim", "QUANT_clim", "HEDGE_clim"]
 
 # --- Vocabulario de temas ESRS dentro de la lista Negative de L&M ----------
@@ -213,7 +213,7 @@ def doc_frame(P: pd.DataFrame, scores: pd.DataFrame) -> pd.DataFrame:
         rows.append(r)
     D = pd.DataFrame(rows)
     keep = ["doc_key", "firm_label", "year", "country", "industry", "SEN_Score", "SUS_density",
-            "QUANT_Score", "HEDGE_Score"] + OUR_VARS
+            "QUANT_Score", "UNBACK_Score"] + OUR_VARS
     D = scores[keep].merge(D, on="doc_key", how="left", validate="one_to_one")
     assert len(D) == 343
     f = CACHE_DIR / "sus_scope.csv"
@@ -312,18 +312,18 @@ def boot_corr(D: pd.DataFrame, xs: list[str], ys: list[str]) -> pd.DataFrame:
 # MTMM
 # ---------------------------------------------------------------------------
 
-MTMM_DICT = ["Z_SEN", "Z_SUS", "Z_QUANT", "Z_HEDGE", "ESGSI", "ESGSI_ext"]
+MTMM_DICT = ["Z_SEN", "Z_SUS", "Z_QUANT", "Z_UNBACK", "ESGSI", "ESGSI_ext"]
 MTMM_CB = ["sent_net", "spec_share", "clim_share", "CTI"]
 TRAITS = {"Z_SEN": {"tone"}, "sent_net": {"tone"},
           "Z_SUS": {"substance"}, "Z_QUANT": {"substance"}, "spec_share": {"substance"},
           "clim_share": {"substance"},
-          "Z_HEDGE": {"vagueness"}, "CTI": {"vagueness", "composite"},
+          "Z_UNBACK": {"vagueness"}, "CTI": {"vagueness", "composite"},
           "ESGSI": {"composite"}, "ESGSI_ext": {"composite"}}
 COMPOSITES = {"ESGSI", "ESGSI_ext"}
 # Pares de validez (mismo rasgo, distinto metodo) con el signo esperado.
 VALIDITY = [("Z_SEN", "sent_net", +1), ("Z_SUS", "spec_share", +1), ("Z_SUS", "clim_share", +1),
             ("Z_QUANT", "spec_share", +1), ("Z_QUANT", "clim_share", +1),
-            ("Z_HEDGE", "CTI", +1), ("ESGSI", "CTI", +1), ("ESGSI_ext", "CTI", +1)]
+            ("Z_UNBACK", "CTI", +1), ("ESGSI", "CTI", +1), ("ESGSI_ext", "CTI", +1)]
 
 
 def mtmm(D: pd.DataFrame, vars_: list[str], view: str, method: str) -> pd.DataFrame:

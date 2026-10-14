@@ -402,9 +402,9 @@
       "Z_SEN": -0.04224921819565209,
       "Z_SUS": 0.022456197707946712,
       "Z_QUANT": -0.1999401724001272,
-      "Z_HEDGE": 0.14089582237696205,
+      "Z_UNBACK": 0.1866066481243982,
       "ESGSI": -0.028048324686792997,
-      "ESGSI_ext": 0.04250109508882837
+      "ESGSI_ext": 0.06672465223204836
     }
   },
   "mtmm": {
@@ -412,37 +412,37 @@
       {
         "par": "Z_SEN~sent_net",
         "validez": 0.5844980145514959,
-        "max_het_het": 0.3500331601616368,
+        "max_het_het": 0.19299926479919866,
         "cumple": true
       },
       {
         "par": "Z_SUS~spec_share",
         "validez": -0.10898482161648874,
-        "max_het_het": 0.19438005694581437,
+        "max_het_het": 0.19983455492217317,
         "cumple": false
       },
       {
         "par": "Z_SUS~clim_share",
         "validez": 0.6522061521784425,
-        "max_het_het": 0.3145037405369124,
+        "max_het_het": 0.2084921971671755,
         "cumple": true
       },
       {
         "par": "Z_QUANT~spec_share",
         "validez": 0.23107636890274458,
-        "max_het_het": 0.19438005694581437,
+        "max_het_het": 0.19983455492217317,
         "cumple": true
       },
       {
         "par": "Z_QUANT~clim_share",
         "validez": 0.39010180233198777,
-        "max_het_het": 0.3145037405369124,
+        "max_het_het": 0.2084921971671755,
         "cumple": true
       },
       {
-        "par": "Z_HEDGE~CTI",
-        "validez": 0.1487512378464625,
-        "max_het_het": 0.3500331601616368,
+        "par": "Z_UNBACK~CTI",
+        "validez": 0.17608488119240334,
+        "max_het_het": 0.2084921971671755,
         "cumple": false
       },
       {
@@ -453,8 +453,8 @@
       },
       {
         "par": "ESGSI_ext~CTI",
-        "validez": 0.019388941525521564,
-        "max_het_het": 0.6491794524883416,
+        "validez": 0.03346531986299152,
+        "max_het_het": 0.5537134590706132,
         "cumple": false
       }
     ],
@@ -480,19 +480,19 @@
       {
         "par": "Z_QUANT~spec_share",
         "validez": 0.14475313524599234,
-        "max_het_het": 0.1435193314273827,
-        "cumple": true
+        "max_het_het": 0.20045196166970344,
+        "cumple": false
       },
       {
         "par": "Z_QUANT~clim_share",
         "validez": 0.13802975876523543,
-        "max_het_het": 0.28605295371092043,
+        "max_het_het": 0.2804268227997481,
         "cumple": false
       },
       {
-        "par": "Z_HEDGE~CTI",
-        "validez": 0.025263683152899227,
-        "max_het_het": 0.28605295371092043,
+        "par": "Z_UNBACK~CTI",
+        "validez": 0.20565449858333248,
+        "max_het_het": 0.2804268227997481,
         "cumple": false
       },
       {
@@ -503,8 +503,8 @@
       },
       {
         "par": "ESGSI_ext~CTI",
-        "validez": -0.06054926932114802,
-        "max_het_het": 0.5721046936216508,
+        "validez": 0.015341359158994424,
+        "max_het_het": 0.5852712256526353,
         "cumple": false
       }
     ],
@@ -512,37 +512,37 @@
       {
         "par": "Z_SEN~sent_net",
         "validez": 0.6168998467773759,
-        "max_het_het": 0.29665294148959953,
+        "max_het_het": 0.10496205275378903,
         "cumple": true
       },
       {
         "par": "Z_SUS~spec_share",
         "validez": 0.043103196192616426,
-        "max_het_het": 0.11307120751658681,
+        "max_het_het": 0.28676690386360093,
         "cumple": false
       },
       {
         "par": "Z_SUS~clim_share",
         "validez": 0.5653910401817082,
-        "max_het_het": 0.27694260815157673,
+        "max_het_het": 0.1403889748057599,
         "cumple": true
       },
       {
         "par": "Z_QUANT~spec_share",
         "validez": 0.27535683788302096,
-        "max_het_het": 0.2479920528511289,
-        "cumple": true
+        "max_het_het": 0.28676690386360093,
+        "cumple": false
       },
       {
         "par": "Z_QUANT~clim_share",
         "validez": 0.6052297312221595,
-        "max_het_het": 0.27694260815157673,
+        "max_het_het": 0.2479920528511289,
         "cumple": true
       },
       {
-        "par": "Z_HEDGE~CTI",
-        "validez": 0.10981340404975874,
-        "max_het_het": 0.29665294148959953,
+        "par": "Z_UNBACK~CTI",
+        "validez": 0.21754253323591285,
+        "max_het_het": 0.28676690386360093,
         "cumple": false
       },
       {
@@ -553,8 +553,8 @@
       },
       {
         "par": "ESGSI_ext~CTI",
-        "validez": 0.1241334322693461,
-        "max_het_het": 0.6555990342950214,
+        "validez": 0.13533610903943424,
+        "max_het_het": 0.5582388316569272,
         "cumple": false
       }
     ],
@@ -568,31 +568,31 @@
       {
         "par": "Z_SUS~spec_share",
         "validez": -0.23573392432245302,
-        "max_het_het": 0.17049989322845557,
+        "max_het_het": 0.20196991792320973,
         "cumple": false
       },
       {
         "par": "Z_SUS~clim_share",
         "validez": 0.5923390505079955,
-        "max_het_het": 0.43325533633878394,
+        "max_het_het": 0.40176074737016615,
         "cumple": true
       },
       {
         "par": "Z_QUANT~spec_share",
         "validez": 0.1269716231850186,
-        "max_het_het": 0.12322899485271985,
-        "cumple": true
+        "max_het_het": 0.20196991792320973,
+        "cumple": false
       },
       {
         "par": "Z_QUANT~clim_share",
         "validez": 0.18797448251315932,
-        "max_het_het": 0.43325533633878394,
+        "max_het_het": 0.40176074737016615,
         "cumple": false
       },
       {
-        "par": "Z_HEDGE~CTI",
-        "validez": 0.012574484056776367,
-        "max_het_het": 0.43325533633878394,
+        "par": "Z_UNBACK~CTI",
+        "validez": 0.19381657319129933,
+        "max_het_het": 0.20196991792320973,
         "cumple": false
       },
       {
@@ -603,8 +603,8 @@
       },
       {
         "par": "ESGSI_ext~CTI",
-        "validez": 0.0014064360513565408,
-        "max_het_het": 0.3261773342652362,
+        "validez": 0.0876089079517335,
+        "max_het_het": 0.2737990789853916,
         "cumple": false
       }
     ],
@@ -1734,19 +1734,19 @@
     },
     "ESGSI_ext~CTI": {
       "k": 34,
-      "top": 4,
-      "bottom": 9,
+      "top": 5,
+      "bottom": 10,
       "esperado": 3.3801169590643276,
-      "p_top": 0.44491962789936573,
-      "p_bottom": 0.0028928076404100066
+      "p_top": 0.23821517197132216,
+      "p_bottom": 0.0006107703258891256
     },
     "ESGSI_ext~CTI_prob": {
       "k": 34,
-      "top": 2,
-      "bottom": 9,
+      "top": 5,
+      "bottom": 11,
       "esperado": 3.3801169590643276,
-      "p_top": 0.8782061656754974,
-      "p_bottom": 0.0028928076404100066
+      "p_top": 0.23821517197132216,
+      "p_bottom": 0.00010856140984139717
     }
   },
   "pasaje": {
@@ -1832,5 +1832,5 @@
       "2024": 0.4070814703102582
     }
   },
-  "segundos_analisis": 117.4
+  "segundos_analisis": 112.1
 }

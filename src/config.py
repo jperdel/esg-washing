@@ -154,10 +154,11 @@ QUANT_PATTERNS = {
 SUS_MODE = 'density'
 
 # ESGSI EXTENDIDO — pesos para los dos nuevos componentes
-# ESGSI_ext = Z(SEN) - Z(SUS) - w_quant*Z(QUANT) + w_hedge*Z(HEDGE)
-# QUANT alto → menos washing (el informe tiene datos duros) → se resta
-# HEDGE alto → más washing (el informe elude compromisos concretos) → se suma
+# ESGSI_ext = Z(SEN) - Z(SUS) - w_quant*Z(QUANT) + w_unback*Z(UNBACK)
+# QUANT alto → la sustancia lleva cifras → se resta, del lado de SUS
+# UNBACK alto → compromisos sin cantidad, plazo ni año base (src/unback.py)
+#               → afirmación sin respaldo → se suma, del lado de SEN
 ESGSI_EXT_WEIGHTS = {
     "w_quant": 0.5,
-    "w_hedge": 0.5,
+    "w_unback": 0.5,
 }

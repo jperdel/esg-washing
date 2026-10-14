@@ -3,8 +3,8 @@
 
 We extract the ESG passages of each report (\S\ref{sec:method-extraction}),
 count in them the mentions of a documented ESG vocabulary
-(\S\ref{sec:method-vocab}) and combine tone, substance, quantification and
-hedging into two scores (\S\ref{sec:method-index}); \S\ref{sec:method-choices}
+(\S\ref{sec:method-vocab}) and combine tone, substance, quantification and the
+backing of commitments into two scores (\S\ref{sec:method-index}); \S\ref{sec:method-choices}
 explains the design and \S\ref{sec:method-inference} the panel inference.
 
 \subsection{Extraction of ESG passages}
@@ -187,25 +187,66 @@ thousands separators are not counted either: in the extracted text fewer than
 a third of them sit next to an ESG metric, the rest belonging to financial and
 remuneration tables.
 
-\paragraph{Hedging.} Qualified language (\emph{may}, \emph{could},
-\emph{uncertain}) weakens whatever a report asserts. The hedging component is
-the share of hedging words in the raw text,
+\paragraph{Unbacked commitments.} A commitment that states no quantity,
+deadline or base year cannot be verified: a report that aims to reduce its
+emissions may mean 0.5\,\% or 50\,\%, by 2030 or by 2050
+\citep{bingler2024}. $\UNBACK$ measures how much of this backing the ESG
+commitments of a report lack. A sentence of the raw text, split within its
+paragraph, is an ESG commitment if it names the firm (\emph{we}, \emph{our},
+\emph{the Group}, \emph{the Company}), contains a cue of commitment or
+aspiration (\emph{commit to}, \emph{aim to}, \emph{our target}, \emph{goal} or
+\emph{ambition}, \emph{pledge}, \emph{plan}, \emph{intend}, \emph{seek} or
+\emph{strive to}, \emph{net zero}, \emph{carbon neutral}, or \emph{will}
+followed by a verb of action such as \emph{reduce} or \emph{achieve}) and at
+least one entry of the vocabulary of \S\ref{sec:method-vocab}. Conditional
+sentences (\emph{if}, \emph{could}, \emph{might}, \emph{may}), cross-references,
+disclaimers on forward-looking statements and financial contexts
+(remuneration, assurance, dividends) are not commitments. Following the
+elements that the ESRS require of every target \citep{esrs2023}, a commitment
+is backed by a quantity $Q$ (a figure counted by $\QUANT$, an amount of money,
+\emph{halve} or \emph{double}), a deadline $D$ (\emph{by}, \emph{until} or
+\emph{before} a year later than the report's) and a base year $B$
+(\emph{compared with}, \emph{versus} or \emph{from} a year not later than the
+report's, or \emph{baseline}), each sought in the sentence and in the sentences
+just before and after it in the same paragraph. Commitment $k$ lacks the share
+$u_k = (3 - Q_k - D_k - B_k)/3$ of the three elements, and
 \[
-\HEDGE_d \;=\; h_d / W_d,
+\UNBACK_d \;=\; \frac{\sum_{k=1}^{n_d} u_k + n_0\,\bar u}{n_d + n_0},
 \]
-where $W_d$ is the number of words (letter runs, hyphenated compounds kept
-whole) and $h_d$ the number of them in the Uncertainty and Weak Modal lists of
-the Loughran--McDonald master dictionary, 295 word forms taken as written. The
-Strong Modal and Constraining lists (\emph{must}, \emph{will},
-\emph{required}) express commitment or obligation rather than qualification,
-and \emph{risk} and \emph{risks}, although in the Uncertainty list, are left
-out: naming a risk is disclosure that frameworks require, not a qualification
-of a claim. \emph{May} is not counted where it names the month. $\HEDGE$ is
-computed on the raw text because the modal verbs (\emph{may}, \emph{might},
-\emph{could}) are stopwords. It measures reserved language in general, not
-the vagueness of commitments: it does not track the share of non-specific
-climate commitments found by an independent classifier
-(\S\ref{sec:robustness}).
+the mean over the $n_d$ commitments of the report, shrunk towards the mean
+$\bar u$ of all commitments in the corpus with $n_0 = 5$ pseudo-commitments,
+so that a report with few commitments does not take an extreme value
+(Table~\ref{tab:method-unback}). The rules find 19,727 commitments, 43 per
+report at the median; 73\,\% carry none of the three elements, 18\,\% a
+quantity, 17\,\% a deadline and 5\,\% a base year.
+\textbf{[Author: precision of the commitment rules, from a reading of a random
+sample of the sentences they select.]} $\UNBACK$ measures how well what a
+report promises is backed, not how much it promises, and like $\QUANT$ it reads
+form, not truth: a commitment with all three elements may still not be met.
+
+\begin{table}[tbp]
+\centering
+\small
+\caption{How $\UNBACK$ scores sentences: four ESG commitments and a statement
+of past performance. $Q$, $D$, $B$: quantity, deadline and base year found in
+the sentence or its neighbours; $u$: share of the three that is missing. The
+report-level score is the mean of $u$ over its commitments, shrunk towards the
+corpus mean.}
+\label{tab:method-unback}
+\begin{tabular}{@{}p{0.70\linewidth}cccc@{}}
+\toprule
+Sentence & $Q$ & $D$ & $B$ & $u$ \\
+\midrule
+\emph{We are committed to reducing our environmental footprint across our value
+chain.} & -- & -- & -- & 1.00 \\
+\emph{Our ambition is to reach net zero emissions by 2050.} & -- & \checkmark & -- & 0.67 \\
+\emph{We aim to cut Scope 1 and 2 emissions by 42\,\%.} & \checkmark & -- & -- & 0.67 \\
+\emph{We commit to reducing absolute Scope 1 and 2 emissions by 42\,\% by 2030
+compared with 2019.} & \checkmark & \checkmark & \checkmark & 0.00 \\
+\emph{In 2023, we reduced our water consumption by 12\,\%.} & \multicolumn{4}{c}{not a commitment} \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \paragraph{Pillars.} For description only, the pillar density counts the
 mentions of a pillar's entries per 100 lemmatised tokens, so that the four
@@ -221,8 +262,8 @@ scores are
 \label{eq:esgsi}
 \ESGSI_d    &= \Z(\SEN)_d - \Z(\SUS)_d, \\[2pt]
 \label{eq:esgsiext}
-\ESGSIext_d &= \Z(\SEN)_d - \Z(\SUS)_d - w_q\,\Z(\QUANT)_d + w_h\,\Z(\HEDGE)_d,
-\qquad w_q = w_h = 0.5 .
+\ESGSIext_d &= \Z(\SEN)_d - \Z(\SUS)_d - w_q\,\Z(\QUANT)_d + w_u\,\Z(\UNBACK)_d,
+\qquad w_q = w_u = 0.5 .
 \end{align}
 $\ESGSI$~\eqref{eq:esgsi} is the main score of the paper: it follows the
 architecture of \citet{lagasio2024}, tone minus substance with each rescaled
@@ -230,8 +271,12 @@ across the sample, with the components defined above. A higher value means
 more positive tone relative to the ESG content of the text. The Extended
 ESGSI~\eqref{eq:esgsiext} is the new metric this paper proposes. Quantified
 disclosure is further evidence of substance, so $\Z(\QUANT)$ is subtracted, on
-the same side as $\Z(\SUS)$; hedging qualifies whatever a report asserts, so
-$\Z(\HEDGE)$ is added, on the side of tone. The weights give each added
+the same side as $\Z(\SUS)$; a commitment without backing is a claim without
+substance, so $\Z(\UNBACK)$ is added, on the side of tone. The score thus sets
+what a report claims (its tone and its unbacked commitments) against what it
+discloses (the density of its ESG content and its figures). The quantity
+element of $\UNBACK$ reuses the figure patterns of $\QUANT$, so the two are
+correlated by construction (\S\ref{sec:method-choices}). The weights give each added
 component half the weight of an original one, so that together they weigh as
 much as one of them and the tone--substance contrast remains the core of the
 score. They are a stated choice, not an estimate, since no external criterion
@@ -276,7 +321,7 @@ expresses a report's value in standard deviations from the corpus mean, and
 the difference in \eqref{eq:esgsi} is then a difference of relative positions
 on a common scale. A score is measured in standard deviations of its
 components, not of itself: its own standard deviation is 1.27 for $\ESGSI$
-and 1.52 for $\ESGSIext$, and slopes are reported on the component scale. The
+and 1.61 for $\ESGSIext$, and slopes are reported on the component scale. The
 scale has no natural zero. Zero is the corpus mean of
 the combination, and no external benchmark exists against which a boundary
 could be calibrated for these reports (\S\ref{sec:limitations}). We therefore
@@ -284,7 +329,7 @@ read each score as a relative position and apply no threshold: we compare
 positions within the corpus through differences of means, trends, rank
 correlations and the overlap of the top and bottom deciles. The Extended ESGSI
 adds the two features of disclosure that the tone--substance contrast leaves
-out, whether substance is quantified and whether claims are qualified.
+out, whether substance is quantified and whether commitments are backed.
 
 \subsection{Inference on the panel}
 \label{sec:method-inference}

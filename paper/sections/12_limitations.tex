@@ -61,18 +61,26 @@
   taxonomy alignment and of the ESRS gives only weak variation in exposure,
   and it detects no jump (\S\ref{sec:results-mandate}), so the rise in
   substance cannot be split into changed conduct and compliance, and
-  compliance itself lowers both scores.
+  compliance itself lowers both scores. The ESRS also require targets to
+  state a base year and a target year, so part of any fall in $\UNBACK$ may
+  be compliance as well.
 \item \emph{Weights.} The weights of the Extended ESGSI are a choice. Its
-  ranking is stable near them but depends on $w_h$ further away, and its
-  trend barely depends on either (\S\ref{sec:robustness}).
+  ranking is stable near them but depends on $w_u$ further away, and so does
+  the size of its trend, which is negative at every weight
+  (\S\ref{sec:robustness}).
 \item \emph{Dictionaries.} $\SEN$ applies a finance dictionary to
   non-financial narrative, and as a bounded ratio it ignores how many
   sentiment words a text contains. Some negative words of the dictionary
   name ESG topics (\emph{corruption}, \emph{injury}), so a report that covers
   them more reads as more negative, and in 2024 it misses a fall in positive
   narrative tone that two classifiers find (\S\ref{sec:robustness}).
-  $\HEDGE$ matches by form, not by sense
-  (\S\ref{sec:method-index}).
+\item \emph{Rules for commitments.} $\UNBACK$ rests on hand-written rules
+  that match form, not sense: a deadline written in words (\emph{within five
+  years}) is missed, and a figure in a neighbouring sentence can back a
+  commitment it does not refer to. It reads how well commitments are backed,
+  not how many a report makes, and a report with few commitments is pulled
+  towards the corpus mean (\S\ref{sec:method-index}). Its quantity element
+  reuses the figures that $\QUANT$ counts.
 \end{itemize}
 
 \paragraph{Data and code availability.} The code, the derived data and a

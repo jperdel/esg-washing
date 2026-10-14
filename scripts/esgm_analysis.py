@@ -229,7 +229,7 @@ def doc_frame(S: pd.DataFrame, scores: pd.DataFrame) -> tuple[pd.DataFrame, pd.D
                                              (g["lm_pos"] + g["lm_neg"]).to_numpy(float), N)})
     D = pd.DataFrame(rows)
     keep = ["doc_key", "firm_label", "year", "country", "industry", "SEN_Score", "SUS_density", "QUANT_Score",
-            "HEDGE_Score", "Z_SEN", "Z_SUS", "Z_QUANT", "Z_HEDGE", "ESGSI", "ESGSI_ext"]
+            "UNBACK_Score", "Z_SEN", "Z_SUS", "Z_QUANT", "Z_UNBACK", "ESGSI", "ESGSI_ext"]
     D = scores[keep].merge(D, on="doc_key", how="left", validate="one_to_one")
     assert len(D) == 343 and D["fin_tone"].notna().all()
     return D, pd.DataFrame(se_rows)
@@ -509,7 +509,7 @@ def main():
     # --- Correlaciones
     C = []
     C.append(corr_block(D, ["fin_tone", "fin_tone_prob", "fin_pos", "fin_neg"],
-                        ["Z_SEN", "SEN_s", "Z_SUS", "Z_QUANT", "Z_HEDGE", "ESGSI", "ESGSI_ext"], "1_tono"))
+                        ["Z_SEN", "SEN_s", "Z_SUS", "Z_QUANT", "Z_UNBACK", "ESGSI", "ESGSI_ext"], "1_tono"))
     C.append(corr_pairs(D, [("fin_tone", "sent_net"), ("SEN_s", "Z_SEN"), ("fin_tone_exAdom", "SEN_s_exAdom"),
                             ("fin_tone", "SEN_s_exAw")], "1_tono_extra"))
     pairs = []

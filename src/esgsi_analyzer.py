@@ -70,13 +70,15 @@ class ESGSIAnalyzer:
         ESGSI = Z(SEN) - Z(SUS)
 
     Índice extendido (esta implementación):
-        ESGSI_ext = Z(SEN) - Z(SUS) - w_quant·Z(QUANT) + w_hedge·Z(HEDGE)
+        ESGSI_ext = Z(SEN) - Z(SUS) - w_quant·Z(QUANT) + w_unback·Z(UNBACK)
 
         · QUANT: densidad de cifras (porcentajes no nulos, cifras grandes que son
           magnitudes y unidades físicas precedidas de una cifra)
           Un informe rico en datos duros es menos susceptible de washing → se resta.
-        · HEDGE: densidad de lenguaje impreciso / especulativo (diccionario L&M)
-          Un informe lleno de evasivas eleva el riesgo de washing → se suma.
+        · UNBACK: respaldo que falta a los compromisos ESG del informe
+          (cantidad, plazo, año base; src/unback.py) → se suma.
+          Las funciones HEDGE (léxico L&M) se conservan en esta clase, pero
+          HEDGE ya no entra en el índice.
 
     ------------------------------------------------------------------
     El componente SUS: tres especificaciones
@@ -127,7 +129,7 @@ class ESGSIAnalyzer:
         self.positive_words = positive_words if positive_words is not None else _read_lexicon("lm_positive.txt")
         self.negative_words = negative_words if negative_words is not None else _read_lexicon("lm_negative.txt")
         self.quant_patterns = {k: re.compile(v, re.IGNORECASE) for k, v in quant_patterns.items()}
-        self.ext_weights = ext_weights or {"w_quant": 0.5, "w_hedge": 0.5}
+        self.ext_weights = ext_weights or {"w_quant": 0.5, "w_unback": 0.5}
         self.sus_mode = sus_mode
 
         # El vocabulario contiene expresiones multipalabra ya lematizadas
@@ -351,18 +353,18 @@ class ESGSIAnalyzer:
         sus_scores: np.ndarray,
         sen_scores: np.ndarray,
         quant_scores: np.ndarray,
-        hedge_scores: np.ndarray,
+        unback_scores: np.ndarray,
     ) -> np.ndarray:
         """
         ESGSI extendido:
-            Z(SEN) - Z(SUS) - w_quant·Z(QUANT) + w_hedge·Z(HEDGE)
+            Z(SEN) - Z(SUS) - w_quant·Z(QUANT) + w_unback·Z(UNBACK)
         """
         logger.info("Calculando ESGSI extendido...")
         w_q = self.ext_weights["w_quant"]
-        w_h = self.ext_weights["w_hedge"]
+        w_u = self.ext_weights["w_unback"]
         return (
             self._z_score(sen_scores)
             - self._z_score(sus_scores)
             - w_q * self._z_score(quant_scores)
-            + w_h * self._z_score(hedge_scores)
+            + w_u * self._z_score(unback_scores)
         )

@@ -1,7 +1,8 @@
 """
 unback_pilot.py
 ---------------
-Piloto del issue #7: UNBACK, compromisos no respaldados, como sustituto de
+Piloto del issue #7 (historico: la version adoptada esta en src/unback.py y
+main.py): UNBACK, compromisos no respaldados, como sustituto de
 HEDGE. Medida de reglas, sin modelos de lenguaje.
 
 Unidad: la frase, dentro de los parrafos del texto extraido (la misma lectura
@@ -211,7 +212,7 @@ def main():
     S = scan(scores)
     S.to_csv(CACHE / "sentences_internal.csv.gz", sep=";", index=False)
     A = aggregate(S)
-    D = scores[["doc_key", "firm", "firm_label", "year", "Z_SEN", "Z_SUS", "Z_QUANT", "Z_HEDGE",
+    D = scores[["doc_key", "firm", "firm_label", "year", "Z_SEN", "Z_SUS", "Z_QUANT",
                 "ESGSI", "ESGSI_ext"]].merge(A, on="doc_key", how="left", validate="1:1")
     cb = pd.read_csv(MAIN_DIR / "results" / "climatebert" / "doc_level_cb.csv", sep=";")
     em = pd.read_csv(MAIN_DIR / "results" / "esg_models" / "doc_level_esgm.csv", sep=";")
@@ -228,7 +229,7 @@ def main():
     measures = ["UNBACK", "UNBACK_bin", "UNBACK_DB", "UNBACK_w0", "UNBACK_bin_w0",
                 "UNBACK_clim", "UNBACK_bin_clim", "UNBACK_DB_clim", "commit_rate"]
     targets = ["CTI", "CTI_prob", "spec_share", "commit_share", "nz_clim", "nz_red",
-               "Z_SEN", "Z_SUS", "Z_QUANT", "Z_HEDGE", "sent_net", "fin_tone"]
+               "Z_SEN", "Z_SUS", "Z_QUANT", "sent_net", "fin_tone"]
     corr = {m: {t: boot_corr(D, m, t, rng) for t in targets} for m in measures}
     corr["ESGSI_ext_unback"] = {t: boot_corr(D, "ESGSI_ext_unback", t, rng) for t in ["ESGSI_ext", "ESGSI", "CTI"]}
 

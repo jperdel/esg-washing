@@ -5,7 +5,7 @@ Diagnosticos pedidos en la revision simulada (issue #3, seccion 1 de la
 sintesis). Lee las salidas de analysis_v3.py y escribe
 results/analysis_v3/revision.json (y tablas csv) con:
 
-  r1  Correlaciones entre Z(SEN), Z(SUS), Z(QUANT) y Z(HEDGE): agrupada, dentro
+  r1  Correlaciones entre Z(SEN), Z(SUS), Z(QUANT) y Z(UNBACK): agrupada, dentro
       de empresa (desviaciones de la media de empresa) y entre empresas (medias
       de empresa, n = 49); IC 95 % por bootstrap de empresas.
   r2  Varianza de los indices (ESGSI y ESGSI_ext no tienen varianza 1: son
@@ -53,9 +53,9 @@ PROCESSED = BASE_DIR / "data" / "clean_v3_sec" / "processed_texts.csv"
 
 SEED = 20261010
 B = 2000
-COMPONENTS = ["Z_SEN", "Z_SUS", "Z_QUANT", "Z_HEDGE"]
+COMPONENTS = ["Z_SEN", "Z_SUS", "Z_QUANT", "Z_UNBACK"]
 INDICES = ["ESGSI", "ESGSI_ext"]
-W_QUANT, W_HEDGE = 0.5, 0.5
+W_QUANT, W_UNBACK = 0.5, 0.5
 MDE_FACTOR = 2.8           # z_{0,975} + z_{0,80}
 ESRS_RE = re.compile(r"\bESRS\s?(?:E[1-5]|S[1-4]|G1|2)\b")
 ESRS_MIN = 10              # remisiones a normas tematicas para contar como estado ESRS
@@ -144,7 +144,7 @@ def main() -> None:
     S["r3_descomposicion_varianza"] = {c: var_decomp(dl, c) for c in COMPONENTS + INDICES}
 
     # r4 ----------------------------------------------------------------------
-    w = {"Z_SEN": 1.0, "Z_SUS": -1.0, "Z_QUANT": -W_QUANT, "Z_HEDGE": W_HEDGE}
+    w = {"Z_SEN": 1.0, "Z_SUS": -1.0, "Z_QUANT": -W_QUANT, "Z_UNBACK": W_UNBACK}
     ext = sum(wt * dl[c] for c, wt in w.items())
     vext = float(ext.var(ddof=0))
     S["r4_pesos_efectivos_ext"] = {

@@ -10,7 +10,7 @@ indice: solo lee CSV/JSON ya escritos.
 
 Salidas en paper/figures/:
     fig_temporal.pdf            media anual del ESGSI y del ESGSI extendido (IC 95 % agrupado),
-                                componentes Z(SUS), Z(SEN) y componentes anadidos Z(QUANT), Z(HEDGE)
+                                componentes Z(SUS), Z(SEN) y componentes anadidos Z(QUANT), Z(UNBACK)
     fig_industry_year.pdf       mapas de calor industria x ano: (a) ESGSI, (b) ESGSI extendido
     fig_firms.pdf               empresas ANONIMAS por industria: media 2018-2024 y rango anual,
                                 (a) ESGSI, (b) ESGSI extendido
@@ -144,7 +144,7 @@ def fig_temporal(A: Path, out: Path):
     # (b) los dos componentes del ESGSI; (c) los dos que anade el extendido,
     # en la misma escala (eje compartido) para comparar su movimiento.
     for ax, comps in ((b, (("Z_SUS", C1, "o", r"$Z$(SUS$^{\rm dens}$)"), ("Z_SEN", C2, "s", r"$Z$(SEN)"))),
-                      (c, (("Z_QUANT", C3, "^", r"$Z$(QUANT)"), ("Z_HEDGE", C4, "v", r"$Z$(HEDGE)")))):
+                      (c, (("Z_QUANT", C3, "^", r"$Z$(QUANT)"), ("Z_UNBACK", C4, "v", r"$Z$(UNBACK)")))):
         for var, col, mk, lab in comps:
             s = ci[ci.variable == var]
             ax.fill_between(s.year, s.ci_lo, s.ci_hi, color=col, alpha=0.13, lw=0)
@@ -153,7 +153,7 @@ def fig_temporal(A: Path, out: Path):
         ax.legend(loc="upper left", handlelength=1.6)
     b.set_title("(b) Components of the ESGSI")
     c.set_title("(c) Added in the Extended ESGSI")
-    lo = ci[ci.variable.isin(["ESGSI", "ESGSI_ext", "Z_SUS", "Z_SEN", "Z_QUANT", "Z_HEDGE"])]
+    lo = ci[ci.variable.isin(["ESGSI", "ESGSI_ext", "Z_SUS", "Z_SEN", "Z_QUANT", "Z_UNBACK"])]
     lim = np.ceil(max(abs(lo.ci_lo.min()), abs(lo.ci_hi.max())) * 4 + 0.5) / 4
     for ax in (a, b, c):
         # tres paneles en el ancho de texto: todos los anos marcados, rotulados uno de cada dos
@@ -470,7 +470,7 @@ def fig_ext_weights(A: Path, out: Path):
         ja, ia = wq.index(0.5), wh.index(0.5)
         ax.add_patch(plt.Rectangle((ja - 0.5, ia - 0.5), 1, 1, fill=False, ec=INK, lw=1.2))
         ax.set_xlabel(r"$w_q$ (weight on $Z$(QUANT), subtracted)")
-        ax.set_ylabel(r"$w_h$ (weight on $Z$(HEDGE), added)")
+        ax.set_ylabel(r"$w_u$ (weight on $Z$(UNBACK), added)")
         ax.set_title(title)
     nneg, nsig = int((g.pendiente_ef < 0).sum()), int((g.p_ef < 0.05).sum())
     fig.supxlabel(f"Framed cell: adopted weights. Slopes: firm fixed effects, standard errors clustered by firm "

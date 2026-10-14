@@ -5,6 +5,8 @@
 > unidades sin cifra. Solo cambian las cifras de Z(QUANT) y ESGSI_ext, y poco. Por ejemplo, Z(QUANT)
 > frente a la cuota específica pasa de ρ = 0,20 a 0,23 [0,03; 0,41], y ESGSI_ext frente al CTI sigue en
 > 0,02. Para las cifras vigentes, ver los CSV.
+>
+> **Nota (14-10-2026, issue #7).** En la rama `unback`, HEDGE deja de ser componente: los CSV usan Z(UNBACK), compromisos no respaldados, en lugar de Z(HEDGE), y ESGSI_ext se recalcula con él. Las cifras de HEDGE citadas en este informe se refieren a la versión anterior (etiqueta `paper-hedge`).
 
 Informe de trabajo (10 de octubre de 2026). Rehace el piloto del issue #2 (rama `issue-2-climatebert`)
 con las medidas corregidas de la rama `fix/corpus-and-measures`: SEN = polaridad de Loughran-McDonald

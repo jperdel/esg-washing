@@ -10,6 +10,8 @@
 > - ESGSI_ext ~ tono FinBERT: 0,17 → 0,16.
 >
 > Las cifras de tono, pilares y recall no cambian.
+>
+> **Nota (14-10-2026, issue #7).** En la rama `unback`, HEDGE deja de ser componente: los CSV usan Z(UNBACK), compromisos no respaldados, en lugar de Z(HEDGE), y ESGSI_ext se recalcula con él. Las cifras de HEDGE citadas en este informe se refieren a la versión anterior (etiqueta `paper-hedge`).
 
 Continuación del #4 (ClimateBERT, solo pasajes climáticos). Aquí se aplican al
 mismo texto extraído modelos abiertos que cubren el tono de todo el texto y los

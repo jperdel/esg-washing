@@ -4,7 +4,7 @@ stability_v3.py
 Pruebas de estabilidad del indice frente al vocabulario, con la extraccion
 CONGELADA en la del vocabulario v3 con sectoriales (ESG_RUN_TAG=v3,
 ESG_INCLUDE_SECTORAL=1). Solo cambia el vocabulario con el que se puntua el
-SUS; SEN, QUANT y HEDGE son los de esa misma ejecucion y no dependen del
+SUS; SEN, QUANT y UNBACK son los de esa misma ejecucion y no dependen del
 vocabulario.
 
     python scripts/stability_v3.py
@@ -18,7 +18,7 @@ Solo se perturba el vocabulario v3 (directrices, 2): no hay comparaciones con
 vocabularios ni ejecuciones anteriores.
 
 Referencias: ESGSI = z(SEN) - z(SUS_density) con el v3 completo, y
-ESGSI_ext = ESGSI - 0.5 z(QUANT) + 0.5 z(HEDGE). Para cada variante del
+ESGSI_ext = ESGSI - 0.5 z(QUANT) + 0.5 z(UNBACK). Para cada variante del
 vocabulario se miden, contra la referencia del mismo indice, solo medidas de
 score (directrices, 5):
     rho            correlacion de Spearman con el score de referencia
@@ -73,7 +73,7 @@ SEED = 20260918
 FRACTIONS = [0.10, 0.20, 0.30, 0.40, 0.50]
 N_DRAWS = 2000
 N_DRAWS_MATCHED = 5000
-W_QUANT, W_HEDGE = 0.5, 0.5          # pesos adoptados del ESGSI_ext (config.ESGSI_EXT_WEIGHTS)
+W_QUANT, W_UNBACK = 0.5, 0.5          # pesos adoptados del ESGSI_ext (config.ESGSI_EXT_WEIGHTS)
 DECILE = 0.10
 INDICES = ("ESGSI", "ESGSI_ext")
 MEASURES = ("rho", "r", "top10", "bot10", "pendiente_mco", "pendiente_ef")
@@ -155,7 +155,7 @@ def read_lexicon(text: str) -> list[str]:
 
 
 def load_corpus() -> pd.DataFrame:
-    """Mismo corpus y misma deduplicacion que main.py, con SEN/QUANT/HEDGE de la ejecucion."""
+    """Mismo corpus y misma deduplicacion que main.py, con SEN/QUANT/UNBACK de la ejecucion."""
     df = pd.read_csv(CLEAN_CSV, sep=";", usecols=["Documento", "País", "Compañía", "Año", "clean_text"])
     digest = df["clean_text"].astype(str).map(lambda t: hashlib.md5(t.encode("utf-8")).hexdigest())
     df = df[~digest.duplicated()].reset_index(drop=True)
@@ -163,7 +163,7 @@ def load_corpus() -> pd.DataFrame:
     key = ["Documento", "País", "Compañía", "Año"]
     df["Año"] = df["Año"].astype(str)
     res["Año"] = res["Año"].astype(str)
-    df = df.merge(res[key + ["SEN_Score", "SUS_density", "QUANT_Score", "HEDGE_Score",
+    df = df.merge(res[key + ["SEN_Score", "SUS_density", "QUANT_Score", "UNBACK_Score",
                              "ESGSI", "ESGSI_ext"]],
                   on=key, how="inner", validate="one_to_one")
     if len(df) != len(res):
@@ -186,14 +186,14 @@ def main() -> None:
     years = df["Año"].astype(int).to_numpy()
     firms = df["Compañía"].to_numpy()
     zsen = z(df["SEN_Score"].to_numpy())
-    # Parte del ESGSI_ext que no depende del vocabulario, -wq z(QUANT) + wh z(HEDGE).
+    # Parte del ESGSI_ext que no depende del vocabulario, -wq z(QUANT) + wh z(UNBACK).
     # Se toma como ESGSI_ext - ESGSI de la ejecucion (4 decimales cada uno): QUANT y
     # HEDGE estan redondeados a 4 decimales en results.csv y recalcularla desde ellos
     # introduciria un error de redondeo mayor. Se comprueba que ambas coinciden.
     ext_extra = (df["ESGSI_ext"] - df["ESGSI"]).to_numpy(float)
-    ext_gap = float(np.abs(ext_extra - (-W_QUANT * z(df["QUANT_Score"]) + W_HEDGE * z(df["HEDGE_Score"]))).max())
+    ext_gap = float(np.abs(ext_extra - (-W_QUANT * z(df["QUANT_Score"]) + W_UNBACK * z(df["UNBACK_Score"]))).max())
     if ext_gap > 0.05:
-        raise ValueError(f"ESGSI_ext - ESGSI no es -wq z(QUANT) + wh z(HEDGE) (dif. max {ext_gap:.3g})")
+        raise ValueError(f"ESGSI_ext - ESGSI no es -wq z(QUANT) + wh z(UNBACK) (dif. max {ext_gap:.3g})")
     print(f"corpus: {len(df)} documentos ({time.time() - t0:.0f}s)")
 
     base = read_lexicon((METADATA_DIR / "esg_terms_lemmatized.txt").read_text(encoding="utf-8"))
@@ -332,7 +332,7 @@ def main() -> None:
                    "top": s.head(15).to_dict(orient="records")}
     summary = {
         "documentos": len(df), "entradas_v3": n, "decil_k": cmp["ESGSI"].k,
-        "pesos_ext": {"w_quant": W_QUANT, "w_hedge": W_HEDGE},
+        "pesos_ext": {"w_quant": W_QUANT, "w_unback": W_UNBACK},
         "ext_parte_fija_dif_max_vs_recalculo_redondeado": ext_gap,
         "medidas": "rho Spearman, r Pearson, top10/bot10 solapamiento de deciles extremos, "
                    "pendiente MCO y de efectos fijos de empresa (puntual)",

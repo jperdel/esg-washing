@@ -2,6 +2,8 @@ from __future__ import annotations
 import sys
 import re
 import hashlib
+import json
+import numpy as np
 import pandas as pd
 from pathlib import Path
 from loguru import logger
@@ -13,6 +15,7 @@ sys.path.insert(0, str(Path(__file__).parent / "src"))
 from topic_modeler import LDATopicModeler
 from text_processor import TextProcessor
 from esgsi_analyzer import ESGSIAnalyzer
+import unback
 from lexical_document_filter import LexicalDocumentFilter
 from metadata_loader import load_document_metadata, get_doc_type
 
@@ -252,12 +255,23 @@ def main(
             # preprocesado quita las negaciones (stopwords).
             sen_scores   = analyzer.calculate_sen_scores(raw_texts_list)
             quant_scores = analyzer.calculate_quant_scores(raw_texts_list)
-            # HEDGE también sobre el crudo: el preprocesado elimina los modales.
-            hedge_scores = analyzer.calculate_hedge_scores(raw_texts_list)
+            # UNBACK: compromisos ESG sin cantidad, plazo ni año base. Necesita
+            # los párrafos, que el raw_text colapsado pierde: se leen las zonas
+            # del JSON de extracción de cada informe.
+            logger.info("Calculando UNBACK scores (compromisos no respaldados)...")
+            unback_n, unback_s = [], []
+            for d in corpus_data:
+                js_path = lexical_data_dir / d["País"] / d["Compañía"] / d["Documento"]
+                with open(js_path, encoding="utf-8") as fh:
+                    zones = [z["text"] for z in json.load(fh).get("zones", [])]
+                n_c, s_c = unback.document_counts(zones, int(d["Año"]))
+                unback_n.append(n_c)
+                unback_s.append(s_c)
+            unback_scores = unback.scores(np.array(unback_n), np.array(unback_s))
 
             esgsi_scores     = analyzer.compute_index(sus_scores, sen_scores)
             esgsi_ext_scores = analyzer.compute_extended_index(
-                sus_scores, sen_scores, quant_scores, hedge_scores
+                sus_scores, sen_scores, quant_scores, unback_scores
             )
 
             results = []
@@ -279,7 +293,8 @@ def main(
                     "Breadth":        round(float(breadth[i]),          4),
                     "SEN_Score":      round(float(sen_scores[i]),       4),
                     "QUANT_Score":    round(float(quant_scores[i]),     4),
-                    "HEDGE_Score":    round(float(hedge_scores[i]),     4),
+                    "UNBACK_Score":   round(float(unback_scores[i]),    6),
+                    "UNBACK_n":       int(unback_n[i]),
                     "ESGSI":          round(float(esgsi_scores[i]),     4),
                     "ESGSI_ext":      round(float(esgsi_ext_scores[i]), 4),
                     "Etiqueta":       "Potential ESG-washing" if esgsi_scores[i]     > 0 else "Likely Genuine",
