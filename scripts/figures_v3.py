@@ -9,8 +9,8 @@ indice: solo lee CSV/JSON ya escritos.
     python scripts/figures_v3.py --analysis <dir> --stability-dir <dir> --out <dir>
 
 Salidas en paper/figures/:
-    fig_temporal.pdf            media anual del ESGSI y del ESGSI extendido (IC 95 % agrupado)
-                                y componentes Z(SUS), Z(SEN)
+    fig_temporal.pdf            media anual del ESGSI y del ESGSI extendido (IC 95 % agrupado),
+                                componentes Z(SUS), Z(SEN) y componentes anadidos Z(QUANT), Z(HEDGE)
     fig_industry_year.pdf       mapas de calor industria x ano: (a) ESGSI, (b) ESGSI extendido
     fig_firms.pdf               empresas ANONIMAS por industria: media 2018-2024 y rango anual,
                                 (a) ESGSI, (b) ESGSI extendido
@@ -130,7 +130,7 @@ def save(fig, out: Path, name: str):
 
 def fig_temporal(A: Path, out: Path):
     ci = rd(A / "yearly_ci.csv")
-    fig, (a, b) = plt.subplots(1, 2, figsize=(FULL, 2.6), sharey=True, layout="constrained")
+    fig, (a, b, c) = plt.subplots(1, 3, figsize=(FULL, 2.6), sharey=True, layout="constrained")
     years = sorted(ci.year.unique())
     for var, st in SCORE_STYLE.items():
         e = ci[ci.variable == var]
@@ -138,20 +138,27 @@ def fig_temporal(A: Path, out: Path):
         a.plot(e.year, e["mean"], color=st["color"], ls=st["ls"], marker=st["marker"], ms=4.5,
                mec="white", mew=1, label=st["label"])
     a.axhline(0, color=AXIS, lw=0.8)
-    a.set_title("(a) Yearly mean and 95% CI (clustered by firm)")
-    a.set_ylabel("Mean (z units; 0 = corpus mean)")
+    a.set_title("(a) Scores")
+    a.set_ylabel("Mean and 95% CI (z units; 0 = corpus mean)")
     a.legend(loc="upper right", handlelength=2.2)
-    for var, col, mk, lab in (("Z_SUS", C1, "o", r"$Z$(SUS$^{\rm dens}$)"), ("Z_SEN", C2, "s", r"$Z$(SEN)")):
-        s = ci[ci.variable == var]
-        b.fill_between(s.year, s.ci_lo, s.ci_hi, color=col, alpha=0.13, lw=0)
-        b.plot(s.year, s["mean"], color=col, marker=mk, ms=4.5, mec="white", mew=1, label=lab)
-    b.axhline(0, color=AXIS, lw=0.8)
-    b.set_title(f"(b) Components: ESGSI = $Z$(SEN) {MINUS} $Z$(SUS)")
-    b.legend(loc="upper left", handlelength=1.6)
-    lo = ci[ci.variable.isin(["ESGSI", "ESGSI_ext", "Z_SUS", "Z_SEN"])]
+    # (b) los dos componentes del ESGSI; (c) los dos que anade el extendido,
+    # en la misma escala (eje compartido) para comparar su movimiento.
+    for ax, comps in ((b, (("Z_SUS", C1, "o", r"$Z$(SUS$^{\rm dens}$)"), ("Z_SEN", C2, "s", r"$Z$(SEN)"))),
+                      (c, (("Z_QUANT", C3, "^", r"$Z$(QUANT)"), ("Z_HEDGE", C4, "v", r"$Z$(HEDGE)")))):
+        for var, col, mk, lab in comps:
+            s = ci[ci.variable == var]
+            ax.fill_between(s.year, s.ci_lo, s.ci_hi, color=col, alpha=0.13, lw=0)
+            ax.plot(s.year, s["mean"], color=col, marker=mk, ms=4.5, mec="white", mew=1, label=lab)
+        ax.axhline(0, color=AXIS, lw=0.8)
+        ax.legend(loc="upper left", handlelength=1.6)
+    b.set_title("(b) Components of the ESGSI")
+    c.set_title("(c) Added in the Extended ESGSI")
+    lo = ci[ci.variable.isin(["ESGSI", "ESGSI_ext", "Z_SUS", "Z_SEN", "Z_QUANT", "Z_HEDGE"])]
     lim = np.ceil(max(abs(lo.ci_lo.min()), abs(lo.ci_hi.max())) * 4 + 0.5) / 4
-    for ax in (a, b):
+    for ax in (a, b, c):
+        # tres paneles en el ancho de texto: todos los anos marcados, rotulados uno de cada dos
         ax.set_xticks(years)
+        ax.set_xticklabels([str(y) if (y - years[0]) % 2 == 0 else "" for y in years])
         ax.set_xlim(years[0] - 0.4, years[-1] + 0.4)
     a.set_ylim(-lim, lim)
     save(fig, out, "fig_temporal.pdf")
