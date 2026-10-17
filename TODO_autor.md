@@ -35,7 +35,7 @@ Los identificadores anónimos (`Financials-04`, etc.) son los del análisis **an
   - Las unidades solo cuentan si llevan una cifra delante. Se añaden los plurales (*tonnes*, *litres*…).
   - Las cifras con separador de miles (`14,918`) siguen sin contar: son sobre todo tablas financieras y de remuneración (solo un 30 % son métricas ESG).
   - Análisis completo reejecutado y cifras del paper actualizadas (§3–§5, Tablas 3–5 y figuras). Solo cambian QUANT y el ESGSI extendido, y poco: pendiente del extendido de −0,255 a −0,244.
-- [x] **UNBACK sustituye a HEDGE** (issue #7, rama `unback`): compromisos ESG sin cantidad, plazo ni año base, con reglas. Integrado en el pipeline y en el paper (§3.3 con tabla de ejemplos, §4, §5, §6). La última versión con HEDGE queda en la etiqueta `paper-hedge`.
+- [x] **UNBACK sustituye a HEDGE** (issue #7, rama `unback`): compromisos ESG sin cantidad, plazo ni año base, con reglas. Integrado en el pipeline y en el paper (§3.3 con tabla de ejemplos, §4, §5, §6) y fusionado en `main` el 17-10-2026. La última versión con HEDGE queda en la etiqueta `paper-hedge`.
 - [ ] **Precisión de UNBACK (marca `[Author: …]` en §3.3):** revisar una muestra de unas 100 frases de compromiso detectadas (¿es un compromiso ESG? ¿está bien marcado el respaldo?) para dar una precisión con intervalo. Te preparo la hoja cuando quieras.
 - [ ] **Extensión:** con UNBACK el paper pasa a 19 páginas; las limitaciones empiezan en la 17. Decidir si se recorta.
 - [ ] **Validación con codificación humana:** ¿se hace? Serían unos 300 pasajes, 2 codificadores, 4–5 días-persona y como mucho una página de apéndice.
@@ -87,5 +87,6 @@ Preguntas para entonces:
 - [x] **Ramas de los issues** (`issue-1-quant-trend` y las `issue-2-*`): subidas a origin el 11-10-2026, sin merge. `issue-2-climatebert` se borró el 11-10-2026 porque la sustituye `climatebert`. Su material es exploratorio; lo que llegó al paper ya está en `main`.
 - [x] **Merge a `main`:** hecho el 10-10-2026 por fast-forward de `main` hasta `climatebert`, que incluye `fix/corpus-and-measures`.
 - [x] **Merge de `esg-models` a `main`:** hecho el 11-10-2026 por fast-forward (issue #5).
+- [x] **Merge de `quant-v2c` y `unback` a `main`:** hechos el 12-10-2026 y el 17-10-2026 por fast-forward (issues #6 y #7).
 - [x] **Nombres de empresa en un repo público:** pueden quedarse en los metadatos y datos del repositorio. Lo que se evita es centrar el análisis o el paper en empresas concretas.
 - [ ] **Carpeta antigua `data/chunks_lexical/`:** una ejecución mal configurada sobrescribió 23 de sus JSON. El paper no la usa. ¿Se regenera o se borra?
