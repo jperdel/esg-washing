@@ -22,7 +22,11 @@
 % ---------------------------------------------------------------------------
 % Shared macros — see _research/conventions.md. Do not redefine in sections.
 % ---------------------------------------------------------------------------
-\newcommand{\SUS}{\ensuremath{\mathrm{SUS}}}
+% DEN: densidad de contenido ESG, el componente que Lagasio (2024) llama
+% "sustancia" (SUS). \SUS se mantiene como alias para no tocar cada sección;
+% en el código la columna sigue siendo SUS_density.
+\newcommand{\DEN}{\ensuremath{\mathrm{DEN}}}
+\newcommand{\SUS}{\DEN}
 \newcommand{\SEN}{\ensuremath{\mathrm{SEN}}}
 \newcommand{\QUANT}{\ensuremath{\mathrm{QUANT}}}
 \newcommand{\UNBACK}{\ensuremath{\mathrm{UNBACK}}}
@@ -33,11 +37,11 @@
 % La etiqueta de especificación va como SUPERÍNDICE para dejar libre el
 % subíndice, que §6 necesita para el índice de documento (\susdens_d).
 % Con la etiqueta en el subíndice, \susdens_d daba «Double subscript».
-\newcommand{\susdens}{\ensuremath{\SUS^{\mathrm{dens}}}}
-\newcommand{\sustfidf}{\ensuremath{\SUS^{\mathrm{tfidf}\text{-}\ell}}}
-\newcommand{\suslag}{\ensuremath{\SUS^{\mathrm{tfidf}\text{-}L2}}}
+\newcommand{\susdens}{\DEN}
+\newcommand{\sustfidf}{\ensuremath{\DEN^{\mathrm{tfidf}\text{-}\ell}}}
+\newcommand{\suslag}{\ensuremath{\DEN^{\mathrm{tfidf}\text{-}L2}}}
 
-\title{Tone Relative to Substance in European ESG Disclosure:\\
+\title{Tone Relative to ESG Content in European Disclosure:\\
 A Continuous Corpus-Relative Score, 2018--2024}
 \author{}
 \date{}

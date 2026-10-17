@@ -1,16 +1,134 @@
 \section{Results}
 \label{sec:results}
 
-This section asks how tone relative to substance moved over 2018--2024 and why, how much of the
-movement reporting mandates could account for, and where firms, industries and countries stand.
-Components are in corpus standard deviations and $\ESGSI$~\eqref{eq:esgsi} and
+This section first places firms, industries and countries relative to one another, each year
+against the corpus of that year, and then reports how the scores move over the window, how much
+of that movement the reporting mandates could account for, and how the pillar composition
+changes. Components are in corpus standard deviations and $\ESGSI$~\eqref{eq:esgsi} and
 $\ESGSIext$~\eqref{eq:esgsiext} in standard deviations of their components
 (\S\ref{sec:method-choices}), with trends and intervals estimated as in
 \S\ref{sec:method-inference}. Industries are ordered by mean $\ESGSI$ throughout.
 
+\subsection{Firms, industries and countries}
+\label{sec:results-groups}
+
+Most of what the scores record is a difference between firms. For $\ESGSI$, 59.2\% of the
+variation lies between firm means and 16.9\% between year means, and the correlation between two
+reports of the same firm, net of year (the intraclass correlation), is $0.669$ ($\ESGSIext$:
+63.7\%, 13.8\%, $0.700$). The two components divide this differently: tone varies almost only
+between firms (69.7\% of $\Z(\SEN)$ between firm means, 1.2\% between years), while density
+also moves with the year (56.9\% and 18.4\%). Positions persist from one year to the next and
+reshuffle over the window: the Spearman correlation of firms' $\ESGSI$ between consecutive years
+averages $0.842$ (range $0.770$ to $0.916$) but is $0.303$ between 2018 and 2024 ($\ESGSIext$:
+$0.826$ and $0.404$). The decline is general but not uniform: 43 of the 49 firm slopes are negative
+for $\ESGSI$ and 46 for $\ESGSIext$.
+
+Industry and country are constant within firm, so every comparison between groups rests on 49
+firms in cells of one to seventeen (Table~\ref{tab:results-groups}), and every country contrast
+is also a document-type contrast (\S\ref{sec:data}). Because every firm is observed in every
+year, a group's mean over the window equals its mean in deviation from the corpus mean of each
+year, and a group's slope is read against the slope of the corpus: the movement common to all
+firms, and with it the part of the reporting mandates that applies to all of them, cancels out
+of every comparison in this subsection. What does not cancel is exposure that differs between
+groups. The Taxonomy weighs more on industries whose activities it covers, financial firms report
+alignment on templates of their own, and the ESRS were legally required for 2024 only where the
+directive had been transposed (\S\ref{sec:results-mandate}); a group contrast may therefore still
+carry a difference in regulatory exposure.
+
+\begin{table}[tbp]
+\centering
+\caption{Scores by ICB industry and by country, each ordered by mean $\ESGSI$. Firms: number of
+firms, each contributing seven reports. Means are over the group's reports; $\susdens$ in
+mentions per 100 tokens. Slope and 95\% interval: group slope minus the corpus slope ($-0.239$
+for $\ESGSI$, $-0.295$ for $\ESGSIext$), with the $t$ interval on the group's firm-level slopes
+shifted by the same amount (\S\ref{sec:method-inference}); a negative value means a faster decline
+than the corpus. None for a one-firm group.}
+\label{tab:results-groups}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrrrcrrc@{}}
+\toprule
+ & & & \multicolumn{3}{c}{$\ESGSI$} & \multicolumn{3}{c}{$\ESGSIext$} \\
+\cmidrule(lr){4-6}\cmidrule(l){7-9}
+ & Firms & $\susdens$ & Mean & Slope & 95\% interval & Mean & Slope & 95\% interval \\
+\midrule
+\multicolumn{9}{@{}l}{\textit{Industry (ICB)}} \\
+\quad Technology             & 3  & $6.17$ & $1.085$ & $-0.106$ & $[-0.509, 0.297]$ & $1.585$ & $-0.132$ & $[-0.557, 0.293]$ \\
+\quad Telecommunications     & 2  & $6.12$ & $0.841$ & $-0.185$ & $[-1.845, 1.474]$ & $0.657$ & $-0.298$ & $[-2.925, 2.329]$ \\
+\quad Basic Materials        & 2  & $7.08$ & $0.676$ & $-0.190$ & $[-0.682, 0.302]$ & $0.302$ & $-0.209$ & $[-2.955, 2.536]$ \\
+\quad Consumer Discretionary & 10 & $6.56$ & $0.237$ & $-0.117$ & $[-0.297, 0.063]$ & $0.624$ & $-0.087$ & $[-0.290, 0.115]$ \\
+\quad Industrials            & 9  & $6.41$ & $0.160$ & $0.093$ & $[-0.062, 0.249]$ & $0.081$ & $0.063$ & $[-0.079, 0.204]$ \\
+\quad Health Care            & 3  & $6.77$ & $-0.154$ & $0.048$ & $[-0.180, 0.276]$ & $-0.117$ & $0.009$ & $[-0.589, 0.608]$ \\
+\quad Consumer Staples       & 5  & $7.15$ & $-0.229$ & $-0.011$ & $[-0.227, 0.205]$ & $-0.860$ & $-0.025$ & $[-0.264, 0.214]$ \\
+\quad Financials             & 11 & $5.96$ & $-0.254$ & $0.031$ & $[-0.073, 0.136]$ & $0.032$ & $0.017$ & $[-0.082, 0.117]$ \\
+\quad Utilities              & 2  & $9.86$ & $-0.980$ & $0.535$ & $[0.287, 0.782]$ & $-1.977$ & $0.809$ & $[-1.791, 3.408]$ \\
+\quad Energy                 & 2  & $7.33$ & $-1.872$ & $-0.056$ & $[-1.098, 0.987]$ & $-2.695$ & $0.004$ & $[-2.786, 2.793]$ \\
+\midrule
+\multicolumn{9}{@{}l}{\textit{Country}} \\
+\quad Germany                & 14 & $5.63$ & $0.611$ & $-0.121$ & $[-0.252, 0.010]$ & $0.802$ & $-0.126$ & $[-0.261, 0.009]$ \\
+\quad France                 & 17 & $6.85$ & $-0.056$ & $0.007$ & $[-0.065, 0.079]$ & $-0.256$ & $-0.033$ & $[-0.132, 0.067]$ \\
+\quad Belgium                & 1  & $6.37$ & $-0.109$ & $-0.189$ & --- & $-0.733$ & $-0.332$ & --- \\
+\quad Finland                & 2  & $6.50$ & $-0.157$ & $-0.001$ & $[-0.688, 0.687]$ & $-0.434$ & $-0.127$ & $[-0.588, 0.333]$ \\
+\quad Spain                  & 4  & $8.51$ & $-0.194$ & $0.153$ & $[-0.291, 0.596]$ & $0.032$ & $0.217$ & $[-0.209, 0.643]$ \\
+\quad Netherlands            & 6  & $7.04$ & $-0.447$ & $0.017$ & $[-0.261, 0.295]$ & $-0.223$ & $0.044$ & $[-0.218, 0.306]$ \\
+\quad Italy                  & 5  & $6.65$ & $-0.744$ & $0.210$ & $[-0.090, 0.510]$ & $-0.813$ & $0.354$ & $[-0.121, 0.830]$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Levels.} Industry means of $\ESGSI$ run from $1.085$ (Technology, three firms) to
+$-1.872$ (Energy, two); Utilities has by far the highest $\susdens$ and the second-lowest score.
+Both ends rest on two or three firms, dispersion within an industry can exceed the distance
+between industries (Financials' firm means span $-1.56$ to $1.05$), and the ordering moves within
+the window (Figure~\ref{fig:results-industry}, which shows each industry against the corpus mean
+of the same year): Technology stays above the mean of every year and Energy below it, Utilities
+climbs from $2.50$ below the mean in 2018 to $0.50$ above it in 2024, and Basic Materials and
+Telecommunications drift from more than one standard deviation above it to about the mean. $\ESGSIext$ reorders the industries where
+quantification and the backing of commitments differ most: Energy, with the best-backed
+commitments, moves from $-1.872$ to $-2.695$ and Utilities, with the highest $\QUANT$, from
+$-0.980$ to $-1.977$, while Technology, with the fewest figures, rises from $1.085$ to $1.585$. Within a single country and document regime, industry orders the firm means
+of $\ESGSI$ in France (adjusted $R^2$ of $0.557$; 17 firms, seven industries) but not in Germany
+($-0.312$; 14 firms, seven industries).
+
+Germany stands apart among countries ($0.611$ against $-0.056$ for France), and in four of the
+five industries present in both countries the German mean exceeds the French one; the gap is a
+contrast of country and document type at once, and neither is identified. By document type,
+annual reports average $0.023$, URDs $0.021$ and the one firm's sustainability reports
+$-1.059$. At report level, year explains $0.169$ of the variance of $\ESGSI$, industry adds
+$0.151$ to $0.211$ and country $0.060$ to $0.120$, depending on the order of entry, and firm
+identity still adds $0.309$ of $R^2$ after year, industry, country and document type
+($\ESGSIext$: $0.276$); across the 49 firm means, industry and country together reach an adjusted
+$R^2$ of $0.211$ ($\ESGSIext$: $0.339$). Most of the difference between firms is firm-specific: a
+report's position says more about its firm's own reporting practice than about the firm's sector
+or country.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.76\linewidth]{figures/fig_industry_year.pdf}
+\caption{Mean (a) $\ESGSI$ and (b) $\ESGSIext$ by ICB industry and year minus the corpus mean of
+the same year, in standard deviations of the components, on a diverging colour scale centred on
+zero. Industries are ordered by mean
+$\ESGSI$; the number of firms, in parentheses, is also the number of reports averaged in each
+cell.}
+\label{fig:results-industry}
+\end{figure}
+
+\paragraph{Slopes.} Group slopes are read against the corpus slope and through the intervals on
+the group's firm-level slopes (Table~\ref{tab:results-groups}, \S\ref{sec:method-inference}); with
+few firms a clustered interval is too narrow, as Energy shows, whose $\ESGSI$ slope has a
+clustered interval of $[-0.415, -0.176]$ and a firm-slope interval of $[-1.338, 0.748]$. Read this
+way, the decline is common to the groups: no industry or country of more than two firms declines
+distinguishably faster or more slowly than the corpus under either score. Germany comes closest
+to a faster decline ($-0.121$ against the corpus, $[-0.252, 0.010]$) and Industrials to a slower
+one ($0.093$, $[-0.062, 0.249]$). The one distinguishable departure is Utilities, whose $\ESGSI$
+rises against the corpus ($0.535$, $[0.287, 0.782]$), but with two firms the interval rests on one
+degree of freedom and says nothing about the industry.
+
 \subsection{The yearly series and the trend}
 \label{sec:results-time}
 
+Over the window the scores fall, and the fall is reported here as one result among others:
+it is likely to reflect the reporting mandates at least in part (\S\ref{sec:results-mandate}).
 Both scores fall in every year of the window: mean $\ESGSI$ from $0.557$ in 2018 to $-1.109$ in
 2024, mean $\ESGSIext$ from $0.871$ to $-1.037$ (Table~\ref{tab:results-trend},
 Figure~\ref{fig:results-time}a). The within-firm trend is $-0.239$ per year for $\ESGSI$ (95\%
@@ -23,7 +141,7 @@ slope is $-0.161$ ($[-0.227, -0.095]$), still clearly negative, and the slope ov
 is a summary of a steady decline followed by a step. $\ESGSIext$ falls more evenly: its slope over
 2018--2023 is $-0.265$ and linearity is not rejected ($p = 0.11$), because the decline of
 $\UNBACK$ before 2024 steepens the early years and its rise in 2024 softens the step (below). In
-both cases and the standard errors do not cover a shock common to all firms in one year
+both cases the standard errors do not cover a shock common to all firms in one year
 (\S\ref{sec:method-inference}). The crossing of zero between 2021 and 2022 is not an event, since
 both scores average zero over the window by construction.
 
@@ -77,7 +195,7 @@ $\Z(\UNBACK)$ & $-0.102$ & $0.028$ & $-0.158$ & $-0.046$ & $6.4\times10^{-4}$ & 
 \end{tabular}
 \end{table}
 
-What moves steadily is substance. A lower score can mean less positive tone or more substance
+What moves steadily is density. A lower score can mean less positive tone or denser ESG content
 (Figure~\ref{fig:results-time}b). $\susdens$ rises in every year, from $5.75$ to $8.22$ mentions
 per 100 tokens ($0.384$ a year, about $0.31$ of its within-firm standard deviation), because
 mentions per report grow faster ($+218\%$) than the extracted text that divides them
@@ -105,7 +223,8 @@ $\ESGSI$ until 2023 and by about as much in 2024. In terms of disclosure practic
 devote a growing part of their ESG text to identifiable ESG content without putting more figures
 on it, back their commitments better until 2023, and in 2024 also report more adverse events: the
 scores fall because ESG disclosure became denser, its commitments more specific and, in the last
-year, its content more prescribed. The narrative of 2024 is also less positive, but the scores do not
+year, its content more prescribed, all changes that the reporting mandates of the window could
+produce by themselves (\S\ref{sec:results-mandate}). The narrative of 2024 is also less positive, but the scores do not
 measure that change.
 
 The panel is balanced, so the series is not a change in the set of firms or in the country mix,
@@ -157,113 +276,14 @@ The steps in exposure produce no detectable jump of their own, which is consiste
 anticipation, with a drift unrelated to the mandates, or with too little power, and the
 confound is left unresolved. Neither step moves $\ESGSI$ detectably either ($-0.09$, SE $0.17$, and
 $-0.07$, SE $0.28$). One consequence belongs to the architecture: since both scores fall when
-substance rises, a firm that adds a mandated disclosure moves down the scale for having complied.
+density rises, a firm that adds a mandated disclosure moves down the scale for having complied.
 In 2024 the same holds on the side of tone, since reporting the negative impacts, incidents and
 grievances that the ESRS require adds words of the negative list
-(\S\ref{sec:results-time}). A user of the scores should
-therefore read the decline over this window as denser disclosure, whatever its cause, and not as
-evidence that firms became more candid.
-
-\subsection{Firms, industries and countries}
-\label{sec:results-groups}
-
-Most of what the scores record is a difference between firms. For $\ESGSI$, 59.2\% of the
-variation lies between firm means and 16.9\% between year means, and the correlation between two
-reports of the same firm, net of year (the intraclass correlation), is $0.669$ ($\ESGSIext$:
-63.7\%, 13.8\%, $0.700$). The two components divide this differently: tone varies almost only
-between firms (69.7\% of $\Z(\SEN)$ between firm means, 1.2\% between years), while substance
-also moves with the year (56.9\% and 18.4\%). Positions persist from one year to the next and
-reshuffle over the window: the Spearman correlation of firms' $\ESGSI$ between consecutive years
-averages $0.842$ (range $0.770$ to $0.916$) but is $0.303$ between 2018 and 2024 ($\ESGSIext$:
-$0.826$ and $0.404$). The decline is general but not uniform: 43 of the 49 firm slopes are negative
-for $\ESGSI$ and 46 for $\ESGSIext$.
-
-Industry and country are constant within firm, so every comparison between groups rests on 49
-firms in cells of one to seventeen (Table~\ref{tab:results-groups}), and every country contrast
-is also a document-type contrast (\S\ref{sec:data}).
-
-\begin{table}[tbp]
-\centering
-\caption{Scores by ICB industry and by country, each ordered by mean $\ESGSI$. Firms: number of
-firms, each contributing seven reports. Means are over the group's reports; $\susdens$ in
-mentions per 100 tokens. Slope and 95\% interval: group slope and $t$ interval on the group's
-firm-level slopes (\S\ref{sec:method-inference}); none for a one-firm group.}
-\label{tab:results-groups}
-\footnotesize
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{@{}lrrrrcrrc@{}}
-\toprule
- & & & \multicolumn{3}{c}{$\ESGSI$} & \multicolumn{3}{c}{$\ESGSIext$} \\
-\cmidrule(lr){4-6}\cmidrule(l){7-9}
- & Firms & $\susdens$ & Mean & Slope & 95\% interval & Mean & Slope & 95\% interval \\
-\midrule
-\multicolumn{9}{@{}l}{\textit{Industry (ICB)}} \\
-\quad Technology             & 3  & $6.17$ & $1.085$ & $-0.345$ & $[-0.748, 0.058]$ & $1.585$ & $-0.427$ & $[-0.852, -0.002]$ \\
-\quad Telecommunications     & 2  & $6.12$ & $0.841$ & $-0.425$ & $[-2.084, 1.235]$ & $0.657$ & $-0.593$ & $[-3.220, 2.034]$ \\
-\quad Basic Materials        & 2  & $7.08$ & $0.676$ & $-0.429$ & $[-0.921, 0.063]$ & $0.302$ & $-0.505$ & $[-3.250, 2.241]$ \\
-\quad Consumer Discretionary & 10 & $6.56$ & $0.237$ & $-0.356$ & $[-0.536, -0.176]$ & $0.624$ & $-0.383$ & $[-0.585, -0.180]$ \\
-\quad Industrials            & 9  & $6.41$ & $0.160$ & $-0.146$ & $[-0.302, 0.010]$ & $0.081$ & $-0.232$ & $[-0.374, -0.091]$ \\
-\quad Health Care            & 3  & $6.77$ & $-0.154$ & $-0.192$ & $[-0.420, 0.036]$ & $-0.117$ & $-0.286$ & $[-0.884, 0.313]$ \\
-\quad Consumer Staples       & 5  & $7.15$ & $-0.229$ & $-0.251$ & $[-0.466, -0.035]$ & $-0.860$ & $-0.321$ & $[-0.560, -0.082]$ \\
-\quad Financials             & 11 & $5.96$ & $-0.254$ & $-0.208$ & $[-0.312, -0.104]$ & $0.032$ & $-0.278$ & $[-0.377, -0.179]$ \\
-\quad Utilities              & 2  & $9.86$ & $-0.980$ & $0.295$ & $[0.048, 0.543]$ & $-1.977$ & $0.513$ & $[-2.086, 3.113]$ \\
-\quad Energy                 & 2  & $7.33$ & $-1.872$ & $-0.295$ & $[-1.338, 0.748]$ & $-2.695$ & $-0.291$ & $[-3.081, 2.498]$ \\
-\midrule
-\multicolumn{9}{@{}l}{\textit{Country}} \\
-\quad Germany                & 14 & $5.63$ & $0.611$ & $-0.360$ & $[-0.492, -0.229]$ & $0.802$ & $-0.421$ & $[-0.556, -0.286]$ \\
-\quad France                 & 17 & $6.85$ & $-0.056$ & $-0.233$ & $[-0.305, -0.160]$ & $-0.256$ & $-0.328$ & $[-0.427, -0.229]$ \\
-\quad Belgium                & 1  & $6.37$ & $-0.109$ & $-0.429$ & --- & $-0.733$ & $-0.627$ & --- \\
-\quad Finland                & 2  & $6.50$ & $-0.157$ & $-0.240$ & $[-0.927, 0.447]$ & $-0.434$ & $-0.423$ & $[-0.883, 0.038]$ \\
-\quad Spain                  & 4  & $8.51$ & $-0.194$ & $-0.087$ & $[-0.530, 0.357]$ & $0.032$ & $-0.078$ & $[-0.504, 0.348]$ \\
-\quad Netherlands            & 6  & $7.04$ & $-0.447$ & $-0.222$ & $[-0.500, 0.056]$ & $-0.223$ & $-0.251$ & $[-0.513, 0.011]$ \\
-\quad Italy                  & 5  & $6.65$ & $-0.744$ & $-0.029$ & $[-0.329, 0.270]$ & $-0.813$ & $0.059$ & $[-0.416, 0.534]$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\paragraph{Levels.} Industry means of $\ESGSI$ run from $1.085$ (Technology, three firms) to
-$-1.872$ (Energy, two); Utilities has by far the highest $\susdens$ and the second-lowest score.
-Both ends rest on two or three firms, dispersion within an industry can exceed the distance
-between industries (Financials' firm means span $-1.56$ to $1.05$), and the ordering moves within
-the window (Figure~\ref{fig:results-industry}): Basic Materials and Telecommunications go from
-well above the corpus mean in 2018 to below it in 2024. $\ESGSIext$ reorders the industries where
-quantification and the backing of commitments differ most: Energy, with the best-backed
-commitments, moves from $-1.872$ to $-2.695$ and Utilities, with the highest $\QUANT$, from
-$-0.980$ to $-1.977$, while Technology, with the fewest figures, rises from $1.085$ to $1.585$. Within a single country and document regime, industry orders the firm means
-of $\ESGSI$ in France (adjusted $R^2$ of $0.557$; 17 firms, seven industries) but not in Germany
-($-0.312$; 14 firms, seven industries).
-
-Germany stands apart among countries ($0.611$ against $-0.056$ for France), and in four of the
-five industries present in both countries the German mean exceeds the French one; the gap is a
-contrast of country and document type at once, and neither is identified. By document type,
-annual reports average $0.023$, URDs $0.021$ and the one firm's sustainability reports
-$-1.059$. At report level, year explains $0.169$ of the variance of $\ESGSI$, industry adds
-$0.151$ to $0.211$ and country $0.060$ to $0.120$, depending on the order of entry, and firm
-identity still adds $0.309$ of $R^2$ after year, industry, country and document type
-($\ESGSIext$: $0.276$); across the 49 firm means, industry and country together reach an adjusted
-$R^2$ of $0.211$ ($\ESGSIext$: $0.339$). Most of the difference between firms is firm-specific: a
-report's position says more about its firm's own reporting practice than about the firm's sector
-or country.
-
-\begin{figure}[tbp]
-\centering
-\includegraphics[width=0.76\linewidth]{figures/fig_industry_year.pdf}
-\caption{Mean (a) $\ESGSI$ and (b) $\ESGSIext$ by ICB industry and year, in standard deviations
-of the components, on a diverging colour scale centred on the corpus mean. Industries are ordered by mean
-$\ESGSI$; the number of firms, in parentheses, is also the number of reports averaged in each
-cell.}
-\label{fig:results-industry}
-\end{figure}
-
-\paragraph{Slopes.} Group slopes are read through the intervals on the group's firm-level slopes
-(Table~\ref{tab:results-groups}, \S\ref{sec:method-inference}). Energy shows why: its $\ESGSI$
-slope has a clustered interval of $[-0.415, -0.176]$ and a firm-slope interval of $[-1.338,
-0.748]$. Read this way, the $\ESGSI$ decline is distinguishable from zero in Consumer
-Discretionary (10 firms), Consumer Staples (5), Financials (11), Germany (14) and France (17);
-Industrials (9) has the flattest decline among the larger industries, with an interval that just
-includes zero, and under $\ESGSIext$ it also declines distinguishably. No group of one to three
-firms supports a statement about its slope: with two firms the interval rests on one degree of
-freedom, so even Utilities, whose two firms both rise, says nothing about the industry.
+(\S\ref{sec:results-time}). The decline of both
+scores over this window may therefore be due, in whole or in part, to the legislation. A user of
+the scores should read it as denser and more prescribed disclosure, not as evidence that firms
+became more candid, and should compare firms against the corpus of the same year
+(\S\ref{sec:results-groups}) rather than across years.
 
 \subsection{Pillar composition}
 \label{sec:results-pillars}
@@ -275,7 +295,7 @@ to 23\% and the social share stays between 16\% and 20\%. In density, environmen
 in every year, from $1.73$ to $3.35$ per 100 tokens, and transversal ones from $0.63$ to $1.57$,
 while governance mentions fall from $2.34$ to $1.90$: governance loses ground absolutely, not only
 by dilution. Two supervised classifiers reproduce the fall of the governance share
-(\S\ref{sec:robustness}). The rise in substance is, in other words, environmental and regulatory
+(\S\ref{sec:robustness}). The rise in density is, in other words, environmental and regulatory
 (\S\ref{sec:results-mandate}).
 
 \begin{figure}[tbp]
@@ -293,7 +313,7 @@ density of $6.04$ mentions per 100 tokens, against $4.11$ in Energy, the next in
 the highest $\susdens$ in Table~\ref{tab:results-groups}; Financials and Telecommunications are
 the governance-heavy industries (37\% and 35\%). The entries most over-represented in an industry
 are its own vocabulary (\emph{hydroelectric} and \emph{smart meter} in Utilities, \emph{oil
-spill} and \emph{methane} in Energy), so a firm scores substance partly for describing its
+spill} and \emph{methane} in Energy), so a firm scores density partly for describing its
 business. The sectoral entries hold 1.0\% of all mentions and at most 2.7\% in any industry
 (Consumer Staples), too little to account for the position of Utilities or Energy. Mentions are
 concentrated (15 of the 399 scoring entries hold 48.1\% of them); scoring without the sectoral
@@ -303,7 +323,8 @@ entries, without each pillar and without the most frequent entry is examined in
 \paragraph{Reading the results.} Neither score measures a quantity
 (\S\ref{sec:method-choices}): a yearly mean of $-1.109$ is a position within this corpus, and no
 level here is comparable with another application of the architecture. What is interpretable is
-the ordering within the sample and the direction of change: denser ESG disclosure, at unchanged
-dictionary tone until the prescribed statements of 2024, and firms differing far more than years. None of this is
-evidence about conduct: the reporting mandates of the same window could move the scores with
-conduct held fixed, and this design cannot exclude them (\S\ref{sec:results-mandate}).
+the ordering within the sample, which is mostly a difference between firms that persists from year
+to year, and, with the caveat of the mandates, the direction of change: denser ESG disclosure, at
+unchanged dictionary tone until the prescribed statements of 2024. None of this is evidence about
+conduct: the reporting mandates of the same window could move the scores with conduct held fixed,
+and this design cannot exclude them (\S\ref{sec:results-mandate}).

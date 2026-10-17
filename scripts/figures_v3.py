@@ -10,8 +10,9 @@ indice: solo lee CSV/JSON ya escritos.
 
 Salidas en paper/figures/:
     fig_temporal.pdf            media anual del ESGSI y del ESGSI extendido (IC 95 % agrupado),
-                                componentes Z(SUS), Z(SEN) y componentes anadidos Z(QUANT), Z(UNBACK)
-    fig_industry_year.pdf       mapas de calor industria x ano: (a) ESGSI, (b) ESGSI extendido
+                                componentes Z(DEN) (columna SUS_density), Z(SEN) y anadidos Z(QUANT), Z(UNBACK)
+    fig_industry_year.pdf       mapas de calor industria x ano, en diferencia con la media del
+                                corpus de cada ano: (a) ESGSI, (b) ESGSI extendido
     fig_firms.pdf               empresas ANONIMAS por industria: media 2018-2024 y rango anual,
                                 (a) ESGSI, (b) ESGSI extendido
     fig_pillars.pdf             cuota de menciones por pilar, por industria y por ano
@@ -143,7 +144,7 @@ def fig_temporal(A: Path, out: Path):
     a.legend(loc="upper right", handlelength=2.2)
     # (b) los dos componentes del ESGSI; (c) los dos que anade el extendido,
     # en la misma escala (eje compartido) para comparar su movimiento.
-    for ax, comps in ((b, (("Z_SUS", C1, "o", r"$Z$(SUS$^{\rm dens}$)"), ("Z_SEN", C2, "s", r"$Z$(SEN)"))),
+    for ax, comps in ((b, (("Z_SUS", C1, "o", r"$Z$(DEN)"), ("Z_SEN", C2, "s", r"$Z$(SEN)"))),
                       (c, (("Z_QUANT", C3, "^", r"$Z$(QUANT)"), ("Z_UNBACK", C4, "v", r"$Z$(UNBACK)")))):
         for var, col, mk, lab in comps:
             s = ci[ci.variable == var]
@@ -186,7 +187,10 @@ def fig_industry_year(A: Path, out: Path):
     d = rd(A / "doc_level.csv")
     nf = d.groupby("industry")["firm_id"].nunique()
     order = industry_order(d)
-    ms = {v: d.pivot_table(index="industry", columns="year", values=v, aggfunc="mean").loc[order]
+    # Diferencia con la media del corpus en el mismo ano: quita lo que afecta a
+    # todas las empresas a la vez (la caida comun, los mandatos comunes).
+    ms = {v: (d.pivot_table(index="industry", columns="year", values=v, aggfunc="mean")
+              - d.groupby("year")[v].mean()).loc[order]
           for v in SCORE_STYLE}
     vmax = max(np.nanmax(np.abs(m.to_numpy())) for m in ms.values())
     v = np.ceil(vmax * 2) / 2      # escala simetrica comun, redondeada
@@ -201,7 +205,7 @@ def fig_industry_year(A: Path, out: Path):
         ax.set_title(f"({tag}) {SCORE_STYLE[var]['label']}", pad=14 if tag == "a" else 4)
         ax.set_ylabel("ICB industry (number of firms)")
     cb = fig.colorbar(im, ax=axes, fraction=0.03, pad=0.015, aspect=40)
-    cb.set_label("Mean of the industry's reports (z units; 0 = corpus mean)", color=INK2, fontsize=7.5)
+    cb.set_label("Industry mean minus the corpus mean of the same year (z units)", color=INK2, fontsize=7.5)
     cb.outline.set_visible(False)
     cb.ax.tick_params(labelsize=FS_SMALL, length=2)
     save(fig, out, "fig_industry_year.pdf")

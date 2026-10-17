@@ -5,39 +5,43 @@ Investors, lenders and supervisors read the ESG sections of
 corporate reports, and a recurring concern is that positive language may run
 ahead of the content that supports it. This paper measures that relation
 directly in the text: how the tone of a report's ESG disclosure stands relative
-to the substance of that disclosure. Tone is the polarity of the ESG text under
-the finance dictionary of \citet{loughran2011}; substance is the density, in
-the same text, of mentions of a documented ESG vocabulary (\S\ref{sec:method}).
-We compute the measure for 343 reports of 49 listed firms from seven euro-area
-countries, one report per firm and year over 2018--2024 (\S\ref{sec:data}). All
-of these firms already had to publish a non-financial statement under the
-Non-Financial Reporting Directive from the first year of the window; what
-changed was how much of its content was prescribed, with the alignment
-indicators of the EU Taxonomy from 2022 (2023 for financial firms) and, for
-2024, statements under the European Sustainability Reporting Standards (ESRS).
+to the density of its ESG content. Tone is the polarity of the ESG text under
+the finance dictionary of \citet{loughran2011}; density is the number of
+mentions, in the same text, of a documented ESG vocabulary
+(\S\ref{sec:method}). We compute the measure for 343 reports of 49 listed
+firms from seven euro-area countries, one report per firm and year over
+2018--2024 (\S\ref{sec:data}). All of these firms already had to publish a
+non-financial statement under the Non-Financial Reporting Directive from the
+first year of the window; what changed was how much of its content was
+prescribed, with the alignment indicators of the EU Taxonomy from 2022 (2023
+for financial firms) and, for 2024, statements under the European
+Sustainability Reporting Standards (ESRS).
 
 The measure is a continuous score, and it is relative to the corpus. Each
 component is standardised over the 343 reports, so a value locates a report
 within this corpus and has no meaning outside it; its sign says only whether
 the report lies above or below the corpus mean (\S\ref{sec:method-choices}).
-The idea behind the score, positive language in excess of the substance that
+The idea behind the score, positive language in excess of the ESG content that
 supports it, fixes which direction of the score is of interest. The score
-describes disclosure, not conduct.
+describes disclosure, not conduct. Its main use is comparative: where firms,
+industries and countries stand relative to one another, each year and over the
+window. How the scores move over time is reported as one result among others,
+because over this window it reflects the reporting mandates at least as much
+as any change in how firms write (\S\ref{sec:results-mandate}).
 
 \paragraph{Two scores.} We follow the architecture of \citet{lagasio2024}:
-tone relative to substance, measured as a tone component minus a substance
-component, each rescaled across the sample. The main score,
-$\ESGSI$~\eqref{eq:esgsi}, keeps that architecture and adapts its components
-to our corpus and question. The second score, the Extended ESGSI
-$\ESGSIext$~\eqref{eq:esgsiext}, is the new metric this paper proposes. It adds
-quantification on the side of substance and unbacked commitments on the side of tone, with
-weights that are a choice rather than an estimate; we report how far the score
-moves when they change (\S\ref{sec:robustness}).
+a tone component minus a content component, each rescaled across the sample.
+The main score, $\ESGSI$~\eqref{eq:esgsi}, keeps that architecture and adapts
+its components to our corpus and question. The second score, the Extended
+ESGSI $\ESGSIext$~\eqref{eq:esgsiext}, is the new metric this paper proposes.
+It adds quantification on the side of content and unbacked commitments on the
+side of tone, with weights that are a choice rather than an estimate; we report
+how far the score moves when they change (\S\ref{sec:robustness}).
 
 \paragraph{Adapting the architecture.} \citet{lagasio2024} introduced the index
 on a 2023 cross-section of 749 standalone English-language sustainability
-reports. Our question is how tone and substance evolve within the same firms
-over seven years, and four design choices follow from it.
+reports. We compare the same firms over seven years, and four design choices
+follow from it.
 \begin{itemize}
   \item \emph{Corpus and extraction.} A balanced panel needs a document that
         every firm publishes every year: for all but one of our firms, the
@@ -45,11 +49,15 @@ over seven years, and four design choices follow from it.
         embed ESG disclosure in a much larger financial and legal document, so
         we score the extracted ESG passages rather than whole reports
         (\S\ref{sec:method-extraction}).
-  \item \emph{Substance as density.} Substance is the number of ESG mentions
-        per 100 words of ESG text, an amount that is comparable across reports
-        of very different length (\S\ref{sec:method-choices}). It measures how
-        much of the text is about identifiable ESG matters, the density of ESG
-        content, not whether that content is specific or verified.
+  \item \emph{Density, not substance.} The content component is the number of
+        ESG mentions per 100 words of ESG text, an amount that is comparable
+        across reports of very different length (\S\ref{sec:method-choices}).
+        It takes the place of the substance component of
+        \citet{lagasio2024}, but we call it $\DEN$, for density, because that is
+        what it measures: how much of the text is about identifiable ESG
+        matters, not whether that content is specific, verified or about
+        concrete action, which independent classifiers confirm it does not
+        track (\S\ref{sec:robustness}).
   \item \emph{Finance dictionary.} Tone is measured with the
         Loughran--McDonald dictionary, built for the language of corporate
         filings.
@@ -63,7 +71,8 @@ comparison is attempted.
 
 \paragraph{Roadmap.} \S\ref{sec:data} describes the corpus and
 \S\ref{sec:method} the extraction, vocabulary, scores and inference.
-\S\ref{sec:results} reports the scores over time, against the confound of
-reporting mandates, by firm group and by pillar; \S\ref{sec:robustness} tests
-their sensitivity to the choices of the method, and \S\ref{sec:limitations}
-states the limitations.
+\S\ref{sec:results} reports where firms, industries and countries stand,
+against the corpus of each year, then the yearly series, the confound of
+reporting mandates and the pillar composition; \S\ref{sec:robustness} tests
+the sensitivity of the scores to the choices of the method, and
+\S\ref{sec:limitations} states the limitations.

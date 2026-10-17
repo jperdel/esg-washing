@@ -3,7 +3,7 @@
 
 We extract the ESG passages of each report (\S\ref{sec:method-extraction}),
 count in them the mentions of a documented ESG vocabulary
-(\S\ref{sec:method-vocab}) and combine tone, substance, quantification and the
+(\S\ref{sec:method-vocab}) and combine tone, density of ESG content, quantification and the
 backing of commitments into two scores (\S\ref{sec:method-index}); \S\ref{sec:method-choices}
 explains the design and \S\ref{sec:method-inference} the panel inference.
 
@@ -58,7 +58,7 @@ about half were audit reports, director biographies or product descriptions.
 \label{sec:method-vocab}
 
 The vocabulary defines what counts as an ESG mention, both for selecting
-passages and for measuring substance, so it is documented in full. Candidate
+passages and for measuring the density of ESG content, so it is documented in full. Candidate
 entries came from three sources: the disclosure topics and terminology of
 reporting frameworks and standards (GRI, SASB, TCFD and the ESRS), including
 the names of the frameworks and regulatory regimes under which firms label
@@ -115,9 +115,9 @@ Total               & 320 & 82 & 32 & 434 & 36 & 399 & 100.0 \\
 \end{table}
 
 One vocabulary drives both extraction and scoring: all 434 entries select the
-passages, and the 402 terms, lemmatised, are what the substance component
+passages, and the 402 terms, lemmatised, are what the density component
 counts. Changing the vocabulary therefore changes the text on which every
-component is computed, not only the substance count. For scoring, the extracted
+component is computed, not only the density count. For scoring, the extracted
 text is lowercased, tokenised and lemmatised with a standard English language
 model; stopwords (the standard list and 189 corpus-specific words),
 punctuation, numerals and tokens shorter than three characters are removed, and
@@ -143,7 +143,7 @@ word sequences of one to four tokens (the length of the longest entry). Entries
 are counted independently, so an occurrence of a multi-word entry also counts
 for any shorter entry it contains.
 
-\paragraph{Substance.} $\SUS$ is the density of ESG mentions, the number of
+\paragraph{Density of ESG content.} $\DEN$ is the density of ESG mentions, the number of
 vocabulary occurrences per 100 lemmatised tokens, with every entry weighted
 equally:
 \[
@@ -168,7 +168,7 @@ three words by a negation (\emph{no}, \emph{not}, \emph{none},
 $-1$ (only negative words) to $1$ (only positive words) and depends on the
 balance of positive and negative words, not on how many there are.
 
-\paragraph{Quantification.} A report that discloses substance can also put
+\paragraph{Quantification.} A report that discloses ESG content can also put
 numbers on it. $\QUANT$ counts such evidence on the raw text, because
 preprocessing removes numerals:
 \[
@@ -266,19 +266,19 @@ scores are
 \qquad w_q = w_u = 0.5 .
 \end{align}
 $\ESGSI$~\eqref{eq:esgsi} is the main score of the paper: it follows the
-architecture of \citet{lagasio2024}, tone minus substance with each rescaled
+architecture of \citet{lagasio2024}, tone minus content with each rescaled
 across the sample, with the components defined above. A higher value means
 more positive tone relative to the ESG content of the text. The Extended
 ESGSI~\eqref{eq:esgsiext} is the new metric this paper proposes. Quantified
-disclosure is further evidence of substance, so $\Z(\QUANT)$ is subtracted, on
+disclosure is further evidence of content, so $\Z(\QUANT)$ is subtracted, on
 the same side as $\Z(\SUS)$; a commitment without backing is a claim without
-substance, so $\Z(\UNBACK)$ is added, on the side of tone. The score thus sets
+support, so $\Z(\UNBACK)$ is added, on the side of tone. The score thus sets
 what a report claims (its tone and its unbacked commitments) against what it
 discloses (the density of its ESG content and its figures). The quantity
 element of $\UNBACK$ reuses the figure patterns of $\QUANT$, so the two are
 correlated by construction (\S\ref{sec:method-choices}). The weights give each added
 component half the weight of an original one, so that together they weigh as
-much as one of them and the tone--substance contrast remains the core of the
+much as one of them and the tone--content contrast remains the core of the
 score. They are a stated choice, not an estimate, since no external criterion
 is available to calibrate them; \S\ref{sec:robustness} reports the scores over
 a grid of weights.
@@ -289,18 +289,18 @@ a grid of weights.
 The score contrasts two positions in the corpus: where a report stands on
 tone and where it stands on the density of its ESG content. It is a contrast of
 relative positions, not a residual. It does not model the tone that a report's
-substance would predict, and could not usefully do so here: the two components
+ESG content would predict, and could not usefully do so here: the two components
 are only weakly correlated (0.20 pooled, 95\,\% interval $-0.03$ to $0.41$
 from resampling firms; 0.11 within firms and 0.25 between firm means), so tone
-net of substance is almost tone itself. Each component is chosen for that
+net of density is almost tone itself. Each component is chosen for that
 contrast.
 
-Substance is an amount per unit of text. Counting ESG mentions per 100 words
-means that a long report does not score more substance merely for being long,
+Density is an amount per unit of text. Counting ESG mentions per 100 words
+means that a long report does not score higher merely for being long,
 so reports of very different length are comparable; and since the count uses
-no statistics of the other reports, a report's substance does not change when
+no statistics of the other reports, a report's density does not change when
 the sample does. As a check of convergent validity in the sense of
-\citet{campbell1959}, substance should move with quantification, which is
+\citet{campbell1959}, density should move with quantification, which is
 counted with patterns on the raw text rather than with the vocabulary. Measures
 that keep the amount of disclosure agree with it to a similar degree (0.43 for
 density, 95\,\% interval 0.25--0.56 from resampling firms; 0.44 for a TF-IDF
@@ -309,13 +309,13 @@ report's term vector to unit length, and so discards the amount, agrees much
 less (0.22). The agreement is mainly between firms (0.59 across firm means,
 0.18 within firms), and it holds when the entries that both measures count are
 removed from the vocabulary (0.37). Since $\QUANT$ is also a component of
-$\ESGSIext$, this is a check on substance, not on the score.
+$\ESGSIext$, this is a check on density, not on the score.
 \S\ref{sec:robustness} reports the scores under these alternative
 specifications. Tone is read with the
 Loughran--McDonald dictionary because it was built from corporate filings and
 classifies words by the sense they carry in that register \citep{loughran2011}.
 
-Tone and substance come in different units, a bounded ratio and mentions per
+Tone and density come in different units, a bounded ratio and mentions per
 100 words, so each is standardised before they are combined: a $z$-score
 expresses a report's value in standard deviations from the corpus mean, and
 the difference in \eqref{eq:esgsi} is then a difference of relative positions
@@ -328,8 +328,8 @@ could be calibrated for these reports (\S\ref{sec:limitations}). We therefore
 read each score as a relative position and apply no threshold: we compare
 positions within the corpus through differences of means, trends, rank
 correlations and the overlap of the top and bottom deciles. The Extended ESGSI
-adds the two features of disclosure that the tone--substance contrast leaves
-out, whether substance is quantified and whether commitments are backed.
+adds the two features of disclosure that the tone--content contrast leaves
+out, whether content is quantified and whether commitments are backed.
 
 \subsection{Inference on the panel}
 \label{sec:method-inference}

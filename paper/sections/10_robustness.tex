@@ -2,7 +2,7 @@
 \label{sec:robustness}
 
 A score built on a hand-made vocabulary and chosen weights is useful only if
-its conclusions do not hinge on those choices. We vary four of them---the substance specification, the weights of the Extended
+its conclusions do not hinge on those choices. We vary four of them---the specification of density, the weights of the Extended
 ESGSI, the vocabulary and the extraction rule---and compare each variant with a reference score
 over the same 343 reports. Every comparison asks three questions. Is the
 ranking of reports preserved (Spearman rank correlation $\rho$ with the
@@ -55,8 +55,8 @@ Random 50\,\%      & 217 & 73.8 & 0.9145 & 26/25 & $-0.176$ & 0.9291 & 27/28 & $
 \end{tabular}
 \end{table}
 
-\paragraph{Substance specification.} We recompute $\ESGSI$ with two TF-IDF
-versions of substance, in which each entry's count is weighted by how few
+\paragraph{Specification of density.} We recompute $\ESGSI$ with two TF-IDF
+versions of the content component, in which each entry's count is weighted by how few
 reports use it. If the weighted count is divided by the length of the text, as
 density is, the ranking is almost unchanged ($\rho = 0.992$; 33/31 of the
 extreme deciles kept): how entries are weighted matters little. If instead
@@ -155,7 +155,7 @@ index, the share of climate commitments that are not specific. Tone
 converges: the classifiers' net climate sentiment correlates with $\Z(\SEN)$ at
 $\rho = 0.58$ (95\,\% interval $[0.42, 0.72]$ from resampling firms), within
 firms ($r = 0.51$) and between them ($r = 0.62$), and passage by passage (median
-within-report $\rho = 0.42$, positive in all but one report). Substance does not
+within-report $\rho = 0.42$, positive in all but one report). Density does not
 converge with specificity: $\susdens$ tracks the share of climate passages
 ($\rho = 0.65$) but not the share of specific ones ($\rho = -0.11$; within firms
 $r = -0.35$), while $\QUANT$ does, weakly ($\rho = 0.23$). The cheap-talk index
@@ -187,7 +187,7 @@ and ESGBERT \citep{schimanski2024esgbert} track ours ($\rho = 0.83$ for
 governance with both, $0.85$--$0.88$ for the environmental and $0.69$--$0.70$
 for the social pillar), and both reproduce the fall of the governance share
 (from $0.45$ to $0.29$ and from $0.33$ to $0.21$ of ESG passages between 2018
-and 2024). Substance again tracks how much ESG text a report holds (with the
+and 2024). Density again tracks how much ESG text a report holds (with the
 share of passages ESGBERT labels as ESG, $\rho = 0.72$), not how much of it
 describes concrete action ($-0.03$ with the share of environmental passages
 classified as actions). The classifiers also split the change in tone in 2024
@@ -200,7 +200,7 @@ negative ones, and by as much without the passages dominated by those words. On
 the same passages without those words $\SEN$ does not move ($+0.01$): the
 dictionary misses a narrative that became less positive.
 
-Except under unit-length scaling of substance, the ranking of reports is
+Except under unit-length scaling of the content component, the ranking of reports is
 largely preserved and the trend stays negative; its size depends on the
 environmental and transversal vocabulary. These checks bound how far
 the scores depend on the choices varied, and the independent classifiers
